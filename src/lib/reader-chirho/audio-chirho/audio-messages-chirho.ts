@@ -4,6 +4,9 @@ import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
 
 export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 	en: {
+		show_ipa_chirho: 'Show IPA',
+		ipa_unavailable_chirho: 'IPA unavailable for this reading',
+		ipa_guide_chirho: 'IPA guide · Draft; — marks an unresolved reading.',
 		pronunciation_note_chirho: 'Pronunciation note',
 		ipa_draft_chirho: 'Israeli Hebrew · IPA draft, awaiting pronunciation review.',
 		recorded_ipa_ready_chirho:
@@ -50,6 +53,9 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		failed_chirho: 'The device could not read this text. You can try another word or verse.'
 	},
 	es: {
+		show_ipa_chirho: 'Mostrar AFI',
+		ipa_unavailable_chirho: 'AFI no disponible para esta lectura',
+		ipa_guide_chirho: 'Guía AFI · Borrador; — indica una lectura sin resolver.',
 		pronunciation_note_chirho: 'Nota de pronunciación',
 		ipa_draft_chirho: 'Hebreo israelí · AFI provisional, pendiente de revisión de pronunciación.',
 		recorded_ipa_ready_chirho:

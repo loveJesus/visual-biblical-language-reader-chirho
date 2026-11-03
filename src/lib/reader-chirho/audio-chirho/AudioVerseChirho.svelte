@@ -98,6 +98,12 @@
 	/>
 {/snippet}
 
+{#snippet ipaToggleChirho()}
+	<label class="ipa-toggle-chirho"
+		><input type="checkbox" data-show-ipa-chirho disabled />{audioTChirho('show_ipa_chirho')}</label
+	>
+{/snippet}
+
 <div
 	class="audio-controls-chirho"
 	data-audio-controls-chirho
@@ -157,7 +163,9 @@
 					<option value="1">{audioTChirho('normal_chirho')}</option>
 				</select>
 			</label>
+			{#if lessonChirho.language_chirho !== 'grc'}{@render ipaToggleChirho()}{/if}
 		</div>
+		{#if lessonChirho.language_chirho === 'grc'}{@render ipaToggleChirho()}{/if}
 		<div class="audio-playback-chirho">
 			<div
 				class="verse-transport-chirho"
@@ -184,5 +192,36 @@
 			{audioTChirho('qere_chirho')}
 		</p>
 	{/if}
+	<p class="small-note-chirho" data-ipa-guide-chirho hidden>{audioTChirho('ipa_guide_chirho')}</p>
 	<noscript><p class="small-note-chirho">{audioTChirho('javascript_chirho')}</p></noscript>
 </div>
+
+<style>
+	.ipa-toggle-chirho {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		min-height: 44px;
+		padding: 8px 10px;
+		border: 1px solid #bac7b5;
+		border-radius: 9px;
+		background: #fafbf7;
+		color: #34503d;
+		font-size: 13px;
+		cursor: pointer;
+	}
+	.ipa-toggle-chirho input {
+		width: 16px;
+		height: 16px;
+		margin: 0;
+		accent-color: #355443;
+	}
+	.ipa-toggle-chirho:focus-within {
+		outline: 2px solid #405a89;
+		outline-offset: 3px;
+	}
+	.ipa-toggle-chirho input:checked {
+		background-color: #355443;
+		border-color: #355443;
+	}
+</style>

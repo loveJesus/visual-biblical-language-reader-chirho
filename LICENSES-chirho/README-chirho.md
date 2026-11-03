@@ -18,6 +18,7 @@ Third-party resources retain their own licenses and notices:
 - Global Bible Tools approved gloss exports: the CC0 basis and exact source revisions are recorded per language and source. English NT GBT permission-only glosses were not imported.
 - Berean Interlinear Bible glosses: public domain as stated in the extraction README and Berean dedication; retain the recorded source and naming notes.
 - Adapted unfoldingWord Hebrew Grammar help text: CC BY-SA 4.0 with unfoldingWord attribution and links; this material retains its own license.
+- HavarotJS Hebrew syllable analysis, Charles Loder: MIT; the full dependency notice is retained in havarotjs-MIT-chirho.txt. IPA teaching rules and their source links are documented separately; an IPA display is not listener approval.
 - Gradle wrapper and any other third-party build artifacts: their upstream licenses remain applicable. Runtime/development packages are not relicensed by Hinneh's code grant.
 
 Per-passage source records, acquisition manifests and the public Sources page provide the specific titles, authors, revisions, links, adaptation notes and license evidence. These notices do not replace those source-specific terms. Credential files, private operational records, provider account details and private R2 contents are outside the source release.

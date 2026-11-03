@@ -460,6 +460,7 @@ export const INFORMATION_PAGES_CHIRHO = {
 					title_chirho: 'Grammar, illustrations and audio',
 					paragraphs_chirho: [
 						'Hebrew grammar help draws on unfoldingWord Hebrew Grammar. Adapted help text is credited to unfoldingWord under CC BY-SA 4.0; the compact cue layout is Hinneh’s teaching convention.',
+						'Optional IPA guides reuse the Hebrew pronunciation analysis and the chosen Greek teaching convention. Hebrew syllable analysis uses HavarotJS by Charles Loder (MIT). Greek sounds follow the cited pronunciation references; these are word-level teaching transcriptions, not a reconstruction of ancient pitch.',
 						'Verse scenes and word pictures are AI-assisted and retain their review labels. Pronunciation clips are AI-generated study aids, with profile, source binding and review information retained. A fluent voice or attractive image does not certify linguistic accuracy.'
 					],
 					links_chirho: [
@@ -470,6 +471,18 @@ export const INFORMATION_PAGES_CHIRHO = {
 						{
 							label_chirho: 'CC BY-SA 4.0',
 							href_chirho: 'https://creativecommons.org/licenses/by-sa/4.0/'
+						},
+						{
+							label_chirho: 'HavarotJS · MIT',
+							href_chirho: 'https://github.com/charlesLoder/havarotjs'
+						},
+						{
+							label_chirho: 'Greek pronunciation rules / Κανόνες προφοράς',
+							href_chirho: 'https://blogs.sch.gr/4dimgala/kanones-proforas-tis-ellinikis-glossas/'
+						},
+						{
+							label_chirho: 'Greek breathing marks',
+							href_chirho: 'https://dcc.dickinson.edu/grammar/age/breathing-marks'
 						}
 					]
 				}
@@ -542,6 +555,7 @@ export const INFORMATION_PAGES_CHIRHO = {
 					title_chirho: 'Gramática, ilustraciones y audio',
 					paragraphs_chirho: [
 						'La ayuda gramatical hebrea utiliza unfoldingWord Hebrew Grammar. El texto adaptado se atribuye a unfoldingWord bajo CC BY-SA 4.0. La disposición de marcas es una convención didáctica de Hinneh.',
+						'Las guías AFI opcionales reutilizan el análisis de pronunciación hebrea y la convención griega elegida. El análisis de sílabas hebreas utiliza HavarotJS de Charles Loder (MIT). Los sonidos griegos siguen las fuentes citadas; son transcripciones didácticas por palabra, no una reconstrucción del tono antiguo.',
 						'Las escenas e imágenes de palabras utilizan IA y conservan sus estados de revisión. Las pronunciaciones son ayudas de estudio generadas por IA; se mantiene la información de perfil, fuente y revisión. Una voz fluida o una imagen atractiva no certifican exactitud lingüística.'
 					],
 					links_chirho: [
@@ -552,6 +566,18 @@ export const INFORMATION_PAGES_CHIRHO = {
 						{
 							label_chirho: 'CC BY-SA 4.0',
 							href_chirho: 'https://creativecommons.org/licenses/by-sa/4.0/'
+						},
+						{
+							label_chirho: 'HavarotJS · MIT',
+							href_chirho: 'https://github.com/charlesLoder/havarotjs'
+						},
+						{
+							label_chirho: 'Greek pronunciation rules / Κανόνες προφοράς',
+							href_chirho: 'https://blogs.sch.gr/4dimgala/kanones-proforas-tis-ellinikis-glossas/'
+						},
+						{
+							label_chirho: 'Greek breathing marks',
+							href_chirho: 'https://dcc.dickinson.edu/grammar/age/breathing-marks'
 						}
 					]
 				}

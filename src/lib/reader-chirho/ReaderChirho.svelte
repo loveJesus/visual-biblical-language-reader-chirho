@@ -1,5 +1,6 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import { installIpaChirho } from './controls-chirho/ipa-controls-chirho';
 	import SceneChirho from '$lib/reader-chirho/scene-chirho/SceneChirho.svelte';
 	import PronunciationNoteChirho from './audio-chirho/PronunciationNoteChirho.svelte';
 	import PictureNoteChirho from './PictureNoteChirho.svelte';
@@ -101,12 +102,14 @@
 	});
 	onMount(() => {
 		const helpChirho = installHelpChirho(document);
+		const ipaChirho = installIpaChirho(document);
 		const mediaChirho = installMediaChirho(document);
 		const glossesChirho = installGlossesChirho(document);
 		const wordsChirho = installWordNavigationChirho(document);
 		speechControlsChirho = installSpeechChirho(document);
 		return () => {
 			speechControlsChirho?.destroyChirho();
+			ipaChirho();
 			helpChirho();
 			mediaChirho();
 			glossesChirho();

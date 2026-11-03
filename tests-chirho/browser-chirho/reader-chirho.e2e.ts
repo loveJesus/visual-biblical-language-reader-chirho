@@ -201,6 +201,10 @@ testChirho(
 			await contextChirho.setOffline(true);
 			await pageChirho.goto(pathToFileURLChirho(outputChirho).href);
 			await expectChirho(pageChirho.locator('.word-unit-chirho')).toHaveCount(9);
+			await pageChirho.getByRole('checkbox', { name: 'Show IPA', exact: true }).check();
+			await expectChirho(
+				pageChirho.locator('.verse-chirho [data-word-ipa-chirho]').filter({ hasText: '/naˈve/' })
+			).toBeVisible();
 			const wordLinkChirho = pageChirho.locator('[data-word-jump-chirho]').first();
 			const wordCardIdChirho = await wordLinkChirho.getAttribute('data-word-jump-chirho');
 			await wordLinkChirho.click();

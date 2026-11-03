@@ -124,3 +124,68 @@ testChirho(
 		}
 	}
 );
+
+testChirho(
+	'optional IPA follows Hebrew words, persists, and remains a source annotation',
+	async ({ page: pageChirho }) => {
+		const audioRequestsChirho: string[] = [];
+		pageChirho.on('request', (requestChirho) => {
+			if (requestChirho.url().endsWith('.mp3')) audioRequestsChirho.push(requestChirho.url());
+		});
+		await pageChirho.goto('/?lang_chirho=en#Prov.26.1');
+		const wordsChirho = pageChirho.locator('.verse-chirho [data-source-word-chirho]');
+		await expectChirho(wordsChirho).toHaveCount(9);
+		const sourceChirho = await wordsChirho.allTextContents();
+		const toggleChirho = pageChirho.getByRole('checkbox', { name: 'Show IPA', exact: true });
+		await expectChirho(toggleChirho).not.toBeChecked();
+		await expectChirho(
+			pageChirho.locator('.verse-chirho [data-word-ipa-chirho]').first()
+		).toBeHidden();
+		await toggleChirho.focus();
+		await pageChirho.keyboard.press('Space');
+		await expectChirho(
+			pageChirho.locator('.verse-chirho [data-word-ipa-chirho]').filter({ hasText: '/naˈve/' })
+		).toBeVisible();
+		expectChirho(await wordsChirho.allTextContents()).toEqual(sourceChirho);
+		await pageChirho.reload();
+		await expectChirho(toggleChirho).toBeChecked();
+		for (const widthChirho of [320, 390, 1440]) {
+			await pageChirho.setViewportSize({ width: widthChirho, height: 900 });
+			expectChirho(
+				await pageChirho.evaluate(() => document.documentElement.scrollWidth <= innerWidth)
+			).toBe(true);
+		}
+		await toggleChirho.uncheck();
+		await expectChirho(
+			pageChirho.locator('.verse-chirho [data-word-ipa-chirho]').first()
+		).toBeHidden();
+		expectChirho(audioRequestsChirho).toEqual([]);
+	}
+);
+
+testChirho(
+	'Greek IPA follows the selected pronunciation and the Spanish switch',
+	async ({ page: pageChirho }) => {
+		await pageChirho.goto('/?lang_chirho=en#John.1.2');
+		await pageChirho.getByRole('checkbox', { name: 'Show IPA', exact: true }).check();
+		const choiceChirho = pageChirho.locator('[data-greek-rendition-chirho]');
+		const ipaChirho = pageChirho.locator('.greek-verse-chirho [data-word-ipa-chirho]').first();
+		await choiceChirho.selectOption('modern_aspirates');
+		await expectChirho(ipaChirho).toHaveText('/ˈhutos/');
+		await choiceChirho.selectOption('modern');
+		await expectChirho(ipaChirho).toHaveText('/ˈutos/');
+		await choiceChirho.selectOption('erasmian');
+		await expectChirho(ipaChirho).toHaveText('/ˈhuːtos/');
+		await pageChirho.goto('/?lang_chirho=es#John.1.2');
+		await expectChirho(
+			pageChirho.getByRole('checkbox', { name: 'Mostrar AFI', exact: true })
+		).toBeChecked();
+		await expectChirho(ipaChirho).toHaveText('/ˈhuːtos/');
+		for (const widthChirho of [320, 390]) {
+			await pageChirho.setViewportSize({ width: widthChirho, height: 900 });
+			expectChirho(
+				await pageChirho.evaluate(() => document.documentElement.scrollWidth <= innerWidth)
+			).toBe(true);
+		}
+	}
+);

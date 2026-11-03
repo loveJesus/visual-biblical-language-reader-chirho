@@ -6,6 +6,7 @@ import { installHelpChirho } from '../../src/lib/reader-chirho/controls-chirho/h
 import { installMediaChirho } from '../../src/lib/reader-chirho/controls-chirho/media-controls-chirho';
 import { installGlossesChirho } from '../../src/lib/reader-chirho/controls-chirho/gloss-controls-chirho';
 import { installWordNavigationChirho } from '../../src/lib/reader-chirho/controls-chirho/word-controls-chirho';
+import { installIpaChirho } from '../../src/lib/reader-chirho/controls-chirho/ipa-controls-chirho';
 import { installSpeechChirho } from '../../src/lib/reader-chirho/audio-chirho/speech-controls-chirho';
 import { readArtworkCatalogueChirho } from '../publish-chirho/r2-chirho/catalogue-chirho';
 import { sha256Chirho } from '../publish-chirho/release_rules_chirho';
@@ -105,7 +106,7 @@ for (const imageChirho of [...htmlChirho.matchAll(/<img\b[^>]*src="([^"]+)"[^>]*
 htmlChirho = htmlChirho
 	.replace(/<dialog\b[^>]*>[\s\S]*?<\/dialog>/gi, '')
 	.replace(/<button\b[^>]*class="[^"]*report-artwork-chirho[^"]*"[^>]*>[\s\S]*?<\/button>/gi, '');
-const scriptChirho = `(${installHelpChirho.toString()})(document);(${installMediaChirho.toString()})(document);(${installGlossesChirho.toString()})(document);(${installWordNavigationChirho.toString()})(document);(${installSpeechChirho.toString()})(document);`;
+const scriptChirho = `(${installHelpChirho.toString()})(document);(${installMediaChirho.toString()})(document);(${installGlossesChirho.toString()})(document);(${installWordNavigationChirho.toString()})(document);(${installSpeechChirho.toString()})(document);(${installIpaChirho.toString()})(document);`;
 // A saved reader distributes its embedded controls too: retain the code grant and source offer.
 const licenseChirho = `<footer class="snapshot-note-chirho">Hinneh reader code: <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3 or later</a>. <a href="${SITE_ORIGIN_CHIRHO}/sources-chirho/">Corresponding source and source-specific licenses</a>. Hinneh-held media rights: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; retain the passage's credits and review labels.</footer>`;
 htmlChirho = htmlChirho.replace(
