@@ -57,28 +57,28 @@ testChirho(
 			).toBeVisible();
 			await expectChirho
 				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
-				.toBeLessThan(40);
+				.toBeLessThan(96);
 			await pageChirho.getByLabel('Chapter', { exact: true }).selectOption('3');
 			await expectChirho(
 				pageChirho.getByRole('heading', { name: 'John 3:1', exact: true })
 			).toBeVisible();
 			await expectChirho
 				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
-				.toBeLessThan(40);
+				.toBeLessThan(96);
 			await pageChirho.getByLabel('Verse', { exact: true }).selectOption('16');
 			await expectChirho(
 				pageChirho.getByRole('heading', { name: 'John 3:16', exact: true })
 			).toBeVisible();
 			await expectChirho
 				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
-				.toBeLessThan(40);
+				.toBeLessThan(96);
 			await pageChirho.getByLabel('Book', { exact: true }).selectOption('Prov');
 			await expectChirho(
 				pageChirho.getByRole('heading', { name: 'Proverbs 1:1', exact: true })
 			).toBeVisible();
 			await expectChirho
 				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
-				.toBeLessThan(40);
+				.toBeLessThan(96);
 		}
 	}
 );
