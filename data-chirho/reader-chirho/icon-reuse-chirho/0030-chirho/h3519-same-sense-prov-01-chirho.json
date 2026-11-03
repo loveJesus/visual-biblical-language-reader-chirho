@@ -1,0 +1,52 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3519-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The wreath represents honor or esteem in these listed honor occurrences, not material wealth or a literal award event.",
+	"source_icon_id_chirho": "prov-icon-08-chirho",
+	"source_sha256_chirho": "550f0675239bba0f17a163cd96e46179b1332c13d8e6c63901c9dbf363b29b80",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.26.1",
+		"token_id_chirho": "20GsM",
+		"text_chirho": "כָּבֽוֹד",
+		"gloss_chirho": "honor",
+		"canonical_sha256_chirho": "94b6df7f5a9016538e9d0613aa57103f047da6aa23998754aff7a0bd183f44ac"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3519",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "כָּבוֹד"
+	},
+	"contextual_meaning_chirho": "honor",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.11.16",
+			"token_id_chirho": "20f29",
+			"text_chirho": "כָּב֑וֹד",
+			"gloss_chirho": "honor",
+			"canonical_sha256_chirho": "4b70f5d951678a71c49540ea55887449adcb712cdce0d16bc17412cf7c27b5ba"
+		},
+		{
+			"verse_id_chirho": "Prov.26.8",
+			"token_id_chirho": "20yyS",
+			"text_chirho": "כָּבֽוֹד",
+			"gloss_chirho": "honor",
+			"canonical_sha256_chirho": "eeb62dcabca1ce5e1dd66a2a1eba2fe26f264668b0b70d5e8c388872706b3d40"
+		},
+		{
+			"verse_id_chirho": "Prov.29.23",
+			"token_id_chirho": "20BNN",
+			"text_chirho": "כָּבֽוֹד",
+			"gloss_chirho": "honor",
+			"canonical_sha256_chirho": "c9c0b561376674fa10013be87abe03bd0594711a90dde021bf85718500f8511f"
+		}
+	],
+	"alternatives_chirho": [
+		{
+			"icon_id_chirho": "prov-icon-15-chirho",
+			"sha256_chirho": "703eb928b921cf432d7e9a4ec4dd8c165653e8cc0e234535b657212e1d15bcf2"
+		}
+	]
+}

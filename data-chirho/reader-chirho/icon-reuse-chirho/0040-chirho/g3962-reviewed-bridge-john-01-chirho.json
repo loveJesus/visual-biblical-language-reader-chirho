@@ -1,0 +1,95 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g3962-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The neutral adult portrait is a relationship mnemonic for the listed human fathers and ancestors. Divine Father and devil-as-father contexts are not included in this initial bridge.",
+	"source_icon_id_chirho": "proverbs-worker-v2-icon-00-chirho",
+	"source_sha256_chirho": "03ae8c9f36320dcc531ede1087ba53808b3554dcc92cd3d62c1a7435307f8cbe",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.8",
+		"token_id_chirho": "20uLf",
+		"text_chirho": "אָבִ֑יךָ",
+		"gloss_chirho": "your father",
+		"canonical_sha256_chirho": "d94f8728b594e8ef1338f4cd01085ecc1e998f9243849470ae344934cb82c848"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G3962",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "πατήρ"
+	},
+	"contextual_meaning_chirho": "father or ancestor",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.6.31",
+			"token_id_chirho": "John.6.31!2",
+			"text_chirho": "πατέρες",
+			"gloss_chirho": "fathers",
+			"canonical_sha256_chirho": "041510478725b83f9a0944db7c28e70ac99dcabc50c36849292dcbb0864b73df"
+		},
+		{
+			"verse_id_chirho": "John.6.42",
+			"token_id_chirho": "John.6.42!14",
+			"text_chirho": "πατέρα",
+			"gloss_chirho": "father",
+			"canonical_sha256_chirho": "2277e841af5b6d97e2652a04e49f012231bd76910a768286dc463bd87b6bdbbd"
+		},
+		{
+			"verse_id_chirho": "John.6.49",
+			"token_id_chirho": "John.6.49!2",
+			"text_chirho": "πατέρες",
+			"gloss_chirho": "fathers",
+			"canonical_sha256_chirho": "6b3e0d821f734fce49036a15fbed8f9a1f8112326924d710e88502024712fa96"
+		},
+		{
+			"verse_id_chirho": "John.6.58",
+			"token_id_chirho": "John.6.58!13",
+			"text_chirho": "πατέρες",
+			"gloss_chirho": "fathers",
+			"canonical_sha256_chirho": "be07dbf4b33f359bfaae08f58ecd7d33e91cc3f8f1e61d6ed0126f0457b26fcd"
+		},
+		{
+			"verse_id_chirho": "John.4.12",
+			"token_id_chirho": "John.4.12!6",
+			"text_chirho": "πατρὸς",
+			"gloss_chirho": "father",
+			"canonical_sha256_chirho": "56273bd151c49e03f1d5322059ca0d77fc3bb25f56812268711a42e0dfe92ffc"
+		},
+		{
+			"verse_id_chirho": "John.4.20",
+			"token_id_chirho": "John.4.20!2",
+			"text_chirho": "πατέρες",
+			"gloss_chirho": "fathers",
+			"canonical_sha256_chirho": "8a950c2ec89ebe69985b51c0fd9ea19f4ee3620fe4c6165952b6b3b1ea139869"
+		},
+		{
+			"verse_id_chirho": "John.4.53",
+			"token_id_chirho": "John.4.53!4",
+			"text_chirho": "πατὴρ",
+			"gloss_chirho": "father",
+			"canonical_sha256_chirho": "683c1e00b0848cd547cb63c28ef4a362aec98503e7a31df5b2286c1474a51f37"
+		},
+		{
+			"verse_id_chirho": "John.8.39",
+			"token_id_chirho": "John.8.39!6",
+			"text_chirho": "πατὴρ",
+			"gloss_chirho": "father",
+			"canonical_sha256_chirho": "5938c5b392e19a30b1795e413681a6421ff8778c97b7575d7acb872c340442f2"
+		},
+		{
+			"verse_id_chirho": "John.8.53",
+			"token_id_chirho": "John.8.53!6",
+			"text_chirho": "πατρὸς",
+			"gloss_chirho": "father",
+			"canonical_sha256_chirho": "1ab8c9311b341e91d3716b7d2050170c8db69c1d386baa0de28d2d560cb432ac"
+		},
+		{
+			"verse_id_chirho": "John.7.22",
+			"token_id_chirho": "John.7.22!17",
+			"text_chirho": "πατέρων",
+			"gloss_chirho": "fathers",
+			"canonical_sha256_chirho": "201099007046f14401d7880104ea2261670be7f4503a2af0dc6969e3dd5bb4b0"
+		}
+	]
+}

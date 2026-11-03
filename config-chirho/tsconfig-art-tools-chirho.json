@@ -1,0 +1,8 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": { "types": ["node"], "noEmit": true },
+	"include": [
+		"../scripts-chirho/art-chirho/comparison-chirho/**/*.ts",
+		"../tests-chirho/art-chirho/model-comparison-chirho.test.ts"
+	]
+}

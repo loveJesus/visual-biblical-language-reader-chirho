@@ -1,0 +1,270 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h776-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The soil/grass patch represents land as ground or territory. These explicitly listed tokens preserve the land gloss, rather than a separate person or nation identity.",
+	"source_icon_id_chirho": "icon-46cee3348975438a9f24f7ab877af3ff-00-chirho",
+	"source_sha256_chirho": "1aa4b21ef2628bf22fad14217c67d09cf3643f2a466f8370ac570df84b7da6e8",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.21",
+		"token_id_chirho": "20Ygn",
+		"text_chirho": "אָ֑רֶץ",
+		"gloss_chirho": "the land",
+		"canonical_sha256_chirho": "89f8cb70debf13edaf93ed106f6c2df3371f7b71bb0ef135d392528bcbb2bccf"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H776",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "אֶרֶץ"
+	},
+	"contextual_meaning_chirho": "land",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.12.6",
+			"token_id_chirho": "019mB",
+			"text_chirho": "בָּאָ֔רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "2ce7161dad145ca8d0a779ba24ad6c7c06bf39e8cb89a18a0418bb69de5d423e"
+		},
+		{
+			"verse_id_chirho": "Gen.13.6",
+			"token_id_chirho": "01zJe",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "73b7c77ea1b59e23911592aeff5da7dfe5104b12638e2c82c987827331311056"
+		},
+		{
+			"verse_id_chirho": "Gen.13.9",
+			"token_id_chirho": "01E9M",
+			"text_chirho": "הָאָ֨רֶץ֙",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "b255518ea137ded4ab5dc08e17e253ee5ed85de85f0a156db7ba4dc91672a2ea"
+		},
+		{
+			"verse_id_chirho": "Gen.13.15",
+			"token_id_chirho": "01g6w",
+			"text_chirho": "הָאָ֛רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "dd76a47c17f56b6cdb9548335acaad191b0301149f828ac52c780e02a45787f1"
+		},
+		{
+			"verse_id_chirho": "Gen.21.23",
+			"token_id_chirho": "01ZC6",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "fb3f719c74db93c8866e95cee5c1d3c2a96cf5d53424f147e2de11e80464edbd"
+		},
+		{
+			"verse_id_chirho": "Gen.23.7",
+			"token_id_chirho": "01Vw1",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "88677b738a9b3f4f0d06e6a6798347bc39a1e82bf7ec9f2f18f2047d3185f3c6"
+		},
+		{
+			"verse_id_chirho": "Gen.23.12",
+			"token_id_chirho": "01Xcv",
+			"text_chirho": "הָאָֽרֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "bf2d33a4382ddceef9d3a843344db92b2c44929f5c0cc708c997f03e396f937f"
+		},
+		{
+			"verse_id_chirho": "Gen.23.13",
+			"token_id_chirho": "01VzQ",
+			"text_chirho": "הָאָ֨רֶץ֙",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "38859899f5e87919665f59bc23b6962e1e9cf0957fd81c80c9513762604d562d"
+		},
+		{
+			"verse_id_chirho": "Gen.24.5",
+			"token_id_chirho": "019JG",
+			"text_chirho": "הָאָ֣רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "87731fa9f1cd542e2f21903430d107b33837597ac9e7c444d45b5a8804285019"
+		},
+		{
+			"verse_id_chirho": "Gen.24.5",
+			"token_id_chirho": "01vJw",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "87731fa9f1cd542e2f21903430d107b33837597ac9e7c444d45b5a8804285019"
+		},
+		{
+			"verse_id_chirho": "Gen.27.46",
+			"token_id_chirho": "01q2b",
+			"text_chirho": "הָאָ֔רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "395ff5df6fa75b9dc9470465fc9454a70a67450b747cea51d1e74c309cfea78a"
+		},
+		{
+			"verse_id_chirho": "Gen.28.13",
+			"token_id_chirho": "017oV",
+			"text_chirho": "הָאָ֗רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "ebbda7f7bcb948c88bda5f923daac6acc449cdadb501c7f9ced99afa328e1539"
+		},
+		{
+			"verse_id_chirho": "Gen.34.1",
+			"token_id_chirho": "01Pg3",
+			"text_chirho": "הָאָֽרֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "31d5c6d7a531ecdf67ff1f39acbb7b3e730879abc65aab6bd816f8a8b0384ce3"
+		},
+		{
+			"verse_id_chirho": "Gen.34.30",
+			"token_id_chirho": "01HPu",
+			"text_chirho": "הָאָ֔רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "be881a31307b9a6c18e51de0eedf7aada7e1622e8c4e2e396f5b099d8dc0443b"
+		},
+		{
+			"verse_id_chirho": "Gen.35.12",
+			"token_id_chirho": "01tUL",
+			"text_chirho": "הָאָ֗רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "5b8a955eb1f557315e2a62908efafc65dd53dab4d91e425027303888416e869f"
+		},
+		{
+			"verse_id_chirho": "Gen.35.12",
+			"token_id_chirho": "01kEf",
+			"text_chirho": "הָאָֽרֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "5b8a955eb1f557315e2a62908efafc65dd53dab4d91e425027303888416e869f"
+		},
+		{
+			"verse_id_chirho": "Gen.36.20",
+			"token_id_chirho": "01XE3",
+			"text_chirho": "הָאָ֑רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "5716cedeca785c08c55bcdb2d26c812284a8e9493ad486fa6c81d8cbd8a7f360"
+		},
+		{
+			"verse_id_chirho": "Gen.41.30",
+			"token_id_chirho": "01x3g",
+			"text_chirho": "הָאָֽרֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "359f92cd19caeef14c8dfdd6fd089fe5b4fabc488c38bab479ee35ec28374e8c"
+		},
+		{
+			"verse_id_chirho": "Gen.41.34",
+			"token_id_chirho": "01SUm",
+			"text_chirho": "הָאָ֑רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "8e20523d9c1d65ad38461275b20807ad4136e6fb816e2c75611885cc31caeff9"
+		},
+		{
+			"verse_id_chirho": "Gen.41.36",
+			"token_id_chirho": "01fyN",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "6c3b1fc0aa3338cc3970d03dedf4fe466719295f5f1a330555b4d571d9b0f311"
+		},
+		{
+			"verse_id_chirho": "Gen.42.6",
+			"token_id_chirho": "019PW",
+			"text_chirho": "הָאָ֔רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "7697b8f0b26598290b749931b474b9e90ea17aab0c5660a7f2f780d98879808a"
+		},
+		{
+			"verse_id_chirho": "Gen.42.6",
+			"token_id_chirho": "017dZ",
+			"text_chirho": "הָאָ֑רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "7697b8f0b26598290b749931b474b9e90ea17aab0c5660a7f2f780d98879808a"
+		},
+		{
+			"verse_id_chirho": "Gen.42.9",
+			"token_id_chirho": "01fBM",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "9eac1fc1b5f1469cd87e6063d5c8f5c5c65fa5f0a7175b5975d69d2a24e2b3ba"
+		},
+		{
+			"verse_id_chirho": "Gen.42.12",
+			"token_id_chirho": "01DKe",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "98ea909794876d3a4993ca78b0f34147878359f7533a598f408bb1aed22cb851"
+		},
+		{
+			"verse_id_chirho": "Gen.42.30",
+			"token_id_chirho": "01fw2",
+			"text_chirho": "הָאָ֛רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "0a7bf69a7c40b552eda0e967370e4350bf355b12e40f8ae02f9a1c0137b58dc2"
+		},
+		{
+			"verse_id_chirho": "Gen.43.11",
+			"token_id_chirho": "011Bt",
+			"text_chirho": "הָאָ֨רֶץ֙",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "7ed8c0ef273c78d1152ca23596e70cc375c081226901866fcf116b1ac7801799"
+		},
+		{
+			"verse_id_chirho": "Gen.45.6",
+			"token_id_chirho": "01bvg",
+			"text_chirho": "הָאָ֑רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "1613288c86927bd4643aadd7da3ca26cacd7454859159accd05371c490fd0c59"
+		},
+		{
+			"verse_id_chirho": "Gen.45.18",
+			"token_id_chirho": "01A2L",
+			"text_chirho": "הָאָֽרֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "f6c193caa3ee64ed1f4cace2162c8e6df60ef86a40bcba945970905bcae35750"
+		},
+		{
+			"verse_id_chirho": "Gen.47.6",
+			"token_id_chirho": "01rGv",
+			"text_chirho": "הָאָ֔רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "ed9611819270db9652f9d69bb6495295f7033f2af2eea76016697d1dd9b3267e"
+		},
+		{
+			"verse_id_chirho": "Gen.47.11",
+			"token_id_chirho": "01vQN",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "1ecd2b0bd1bed020b2e06d2f4794ca0c1fd95346299e943e3b50db676f4a70b8"
+		},
+		{
+			"verse_id_chirho": "Gen.47.13",
+			"token_id_chirho": "01umk",
+			"text_chirho": "הָאָ֔רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "03da87f7a0ccdf5a02534f20c809655e89f3fcb6d3eadd8c7d21f49b60679bcf"
+		},
+		{
+			"verse_id_chirho": "Gen.47.20",
+			"token_id_chirho": "015fa",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "dfc83e1b66d89d90138ca339ccbb3613ab9109e943274e7592c5954a73168759"
+		},
+		{
+			"verse_id_chirho": "Gen.49.15",
+			"token_id_chirho": "01xSA",
+			"text_chirho": "הָאָ֖רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "b3efdd1d84702f9f76a249023c14a3f208d2ce59fda778cb5b4c511e0c35e8c4"
+		},
+		{
+			"verse_id_chirho": "Gen.50.11",
+			"token_id_chirho": "01gr9",
+			"text_chirho": "הָאָ֨רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "0702b25661df961e2f572bdd5285179f49becb1d30780adc7d243a965b6557a9"
+		},
+		{
+			"verse_id_chirho": "Gen.50.24",
+			"token_id_chirho": "01Lgu",
+			"text_chirho": "הָאָ֕רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "110e2c3c5d51fd6b0ec641156ac59e0bed3a1bc9b66fe6c306adf01a8a17c154"
+		}
+	]
+}

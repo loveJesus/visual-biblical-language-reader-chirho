@@ -1,0 +1,361 @@
+{
+	"schema_version_chirho": 1,
+	"reference_id_chirho": "Prov.26.1",
+	"languages_chirho": [
+		{
+			"id_chirho": "arb",
+			"lang_chirho": "ar",
+			"label_chirho": "Arabic",
+			"direction_chirho": "rtl",
+			"source_folder_chirho": "are",
+			"revision_chirho": "6c511c2a8cc4ab341337f912763592f3ab5da0b1",
+			"source_url_chirho": "https://raw.githubusercontent.com/globalbibletools/data/6c511c2a8cc4ab341337f912763592f3ab5da0b1/are/20-Pro.json",
+			"source_sha256_chirho": "ceb5a44f02d79cf823d957e3701acf0acba222b9865d901d455d2fae550eec80",
+			"approval_status_chirho": "approved_upstream",
+			"exported_at_chirho": "2026-10-26T00:18:09.454Z",
+			"file_updated_at_chirho": "2024-12-20T18:38:27Z",
+			"license_chirho": "CC0-1.0, as stated by Global Bible Tools itself (globalbibletools/platform@5d4041d4, src/ui/study/components/AttributionDialog.tsx); the data repository carries no LICENSE file. GBT's published attribution dedicates these glosses under CC0 1.0 and links the language folder in the data repository; that statement is the public-use license basis.",
+			"attribution_chirho": "Arabic Glosses by Global Bible Tools (https://globalbibletools.com) are available under Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/).",
+			"words_chirho": [
+				{
+					"token_id_chirho": "20ikj",
+					"upstream_word_id_chirho": "2002600101",
+					"text_chirho": "כַּשֶּׁ֤לֶג ׀",
+					"gloss_chirho": "كالثلج"
+				},
+				{
+					"token_id_chirho": "20Yxf",
+					"upstream_word_id_chirho": "2002600102",
+					"text_chirho": "בַּקַּ֗יִץ",
+					"gloss_chirho": "في الصيفِ"
+				},
+				{
+					"token_id_chirho": "20Jji",
+					"upstream_word_id_chirho": "2002600103",
+					"text_chirho": "וְכַמָּטָ֥ר",
+					"gloss_chirho": "وكالمطر"
+				},
+				{
+					"token_id_chirho": "20vF1",
+					"upstream_word_id_chirho": "2002600104",
+					"text_chirho": "בַּקָּצִ֑יר",
+					"gloss_chirho": "في الحصاد"
+				},
+				{
+					"token_id_chirho": "20baH",
+					"upstream_word_id_chirho": "2002600105",
+					"text_chirho": "כֵּ֤ן",
+					"gloss_chirho": "هكذا"
+				},
+				{
+					"token_id_chirho": "20DYG",
+					"upstream_word_id_chirho": "2002600106",
+					"text_chirho": "לֹא־",
+					"gloss_chirho": "لا"
+				},
+				{
+					"token_id_chirho": "20wMm",
+					"upstream_word_id_chirho": "2002600107",
+					"text_chirho": "נָאוֶ֖ה",
+					"gloss_chirho": "لائق"
+				},
+				{
+					"token_id_chirho": "206Bv",
+					"upstream_word_id_chirho": "2002600108",
+					"text_chirho": "לִכְסִ֣יל",
+					"gloss_chirho": "لجاهل"
+				},
+				{
+					"token_id_chirho": "20GsM",
+					"upstream_word_id_chirho": "2002600109",
+					"text_chirho": "כָּבֽוֹד׃",
+					"gloss_chirho": "مجد"
+				}
+			]
+		},
+		{
+			"id_chirho": "eng",
+			"lang_chirho": "en",
+			"label_chirho": "English",
+			"direction_chirho": "ltr",
+			"source_folder_chirho": "eng",
+			"revision_chirho": "6c511c2a8cc4ab341337f912763592f3ab5da0b1",
+			"source_url_chirho": "https://raw.githubusercontent.com/globalbibletools/data/6c511c2a8cc4ab341337f912763592f3ab5da0b1/eng/20-Pro.json",
+			"source_sha256_chirho": "c36c0827c09f5ef58f9d471b50f3d869e8d92f1edb72251f777795ec19ec4ce2",
+			"approval_status_chirho": "approved_upstream",
+			"exported_at_chirho": "2026-10-26T00:18:09.454Z",
+			"file_updated_at_chirho": "2024-12-20T18:33:59Z",
+			"license_chirho": "CC0-1.0, as stated by Global Bible Tools itself (globalbibletools/platform@5d4041d4, src/ui/study/components/AttributionDialog.tsx); the data repository carries no LICENSE file. GBT's published attribution dedicates these glosses under CC0 1.0 and links the language folder in the data repository; that statement is the public-use license basis. English caveat: GBT's exporter now skips English until Alan Bunning's NT glosses have an open license; this Old Testament file is the 2024-12-20 export, which GBT's attribution places under its CC0 statement.",
+			"attribution_chirho": "English Glosses by Global Bible Tools (https://globalbibletools.com) are available under Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/).",
+			"words_chirho": [
+				{
+					"token_id_chirho": "20ikj",
+					"upstream_word_id_chirho": "2002600101",
+					"text_chirho": "כַּשֶּׁ֤לֶג ׀",
+					"gloss_chirho": "As snow"
+				},
+				{
+					"token_id_chirho": "20Yxf",
+					"upstream_word_id_chirho": "2002600102",
+					"text_chirho": "בַּקַּ֗יִץ",
+					"gloss_chirho": "in summer"
+				},
+				{
+					"token_id_chirho": "20Jji",
+					"upstream_word_id_chirho": "2002600103",
+					"text_chirho": "וְכַמָּטָ֥ר",
+					"gloss_chirho": "and rain"
+				},
+				{
+					"token_id_chirho": "20vF1",
+					"upstream_word_id_chirho": "2002600104",
+					"text_chirho": "בַּקָּצִ֑יר",
+					"gloss_chirho": "in harvest"
+				},
+				{
+					"token_id_chirho": "20baH",
+					"upstream_word_id_chirho": "2002600105",
+					"text_chirho": "כֵּ֤ן",
+					"gloss_chirho": "so"
+				},
+				{
+					"token_id_chirho": "20DYG",
+					"upstream_word_id_chirho": "2002600106",
+					"text_chirho": "לֹא־",
+					"gloss_chirho": "not"
+				},
+				{
+					"token_id_chirho": "20wMm",
+					"upstream_word_id_chirho": "2002600107",
+					"text_chirho": "נָאוֶ֖ה",
+					"gloss_chirho": "is fitting"
+				},
+				{
+					"token_id_chirho": "206Bv",
+					"upstream_word_id_chirho": "2002600108",
+					"text_chirho": "לִכְסִ֣יל",
+					"gloss_chirho": "for a fool"
+				},
+				{
+					"token_id_chirho": "20GsM",
+					"upstream_word_id_chirho": "2002600109",
+					"text_chirho": "כָּבֽוֹד׃",
+					"gloss_chirho": "honor"
+				}
+			]
+		},
+		{
+			"id_chirho": "fra",
+			"lang_chirho": "fr",
+			"label_chirho": "French",
+			"direction_chirho": "ltr",
+			"source_folder_chirho": "fra",
+			"revision_chirho": "6c511c2a8cc4ab341337f912763592f3ab5da0b1",
+			"source_url_chirho": "https://raw.githubusercontent.com/globalbibletools/data/6c511c2a8cc4ab341337f912763592f3ab5da0b1/fra/20-Pro.json",
+			"source_sha256_chirho": "22c413c80b7b491c1f0fea74f1d9cf0ee0ecf8aebfe86fa0dd3ad576c576e80c",
+			"approval_status_chirho": "approved_upstream",
+			"exported_at_chirho": "2026-10-26T00:18:09.454Z",
+			"file_updated_at_chirho": "2024-12-20T18:39:02Z",
+			"license_chirho": "CC0-1.0, as stated by Global Bible Tools itself (globalbibletools/platform@5d4041d4, src/ui/study/components/AttributionDialog.tsx); the data repository carries no LICENSE file. GBT's published attribution dedicates these glosses under CC0 1.0 and links the language folder in the data repository; that statement is the public-use license basis.",
+			"attribution_chirho": "French Glosses by Global Bible Tools (https://globalbibletools.com) are available under Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/).",
+			"words_chirho": [
+				{
+					"token_id_chirho": "20ikj",
+					"upstream_word_id_chirho": "2002600101",
+					"text_chirho": "כַּשֶּׁ֤לֶג ׀",
+					"gloss_chirho": "Comme la neige"
+				},
+				{
+					"token_id_chirho": "20Yxf",
+					"upstream_word_id_chirho": "2002600102",
+					"text_chirho": "בַּקַּ֗יִץ",
+					"gloss_chirho": "en été"
+				},
+				{
+					"token_id_chirho": "20Jji",
+					"upstream_word_id_chirho": "2002600103",
+					"text_chirho": "וְכַמָּטָ֥ר",
+					"gloss_chirho": "et comme l'averse"
+				},
+				{
+					"token_id_chirho": "20vF1",
+					"upstream_word_id_chirho": "2002600104",
+					"text_chirho": "בַּקָּצִ֑יר",
+					"gloss_chirho": "pendant la moisson"
+				},
+				{
+					"token_id_chirho": "20baH",
+					"upstream_word_id_chirho": "2002600105",
+					"text_chirho": "כֵּ֤ן",
+					"gloss_chirho": "ainsi"
+				},
+				{
+					"token_id_chirho": "20DYG",
+					"upstream_word_id_chirho": "2002600106",
+					"text_chirho": "לֹא־",
+					"gloss_chirho": "ne pas"
+				},
+				{
+					"token_id_chirho": "20wMm",
+					"upstream_word_id_chirho": "2002600107",
+					"text_chirho": "נָאוֶ֖ה",
+					"gloss_chirho": "convenable"
+				},
+				{
+					"token_id_chirho": "206Bv",
+					"upstream_word_id_chirho": "2002600108",
+					"text_chirho": "לִכְסִ֣יל",
+					"gloss_chirho": "pour l'insensé"
+				},
+				{
+					"token_id_chirho": "20GsM",
+					"upstream_word_id_chirho": "2002600109",
+					"text_chirho": "כָּבֽוֹד׃",
+					"gloss_chirho": "la gloire"
+				}
+			]
+		},
+		{
+			"id_chirho": "por",
+			"lang_chirho": "pt",
+			"label_chirho": "Portuguese",
+			"direction_chirho": "ltr",
+			"source_folder_chirho": "por",
+			"revision_chirho": "6c511c2a8cc4ab341337f912763592f3ab5da0b1",
+			"source_url_chirho": "https://raw.githubusercontent.com/globalbibletools/data/6c511c2a8cc4ab341337f912763592f3ab5da0b1/por/20-Pro.json",
+			"source_sha256_chirho": "e683853ada80a1bf53bfda626f011ad8bdf8d8596ba7fe3e6d4f457ceafd39ee",
+			"approval_status_chirho": "approved_upstream",
+			"exported_at_chirho": "2026-10-26T00:18:09.454Z",
+			"file_updated_at_chirho": "2024-12-20T17:59:13Z",
+			"license_chirho": "CC0-1.0, as stated by Global Bible Tools itself (globalbibletools/platform@5d4041d4, src/ui/study/components/AttributionDialog.tsx); the data repository carries no LICENSE file. GBT's published attribution dedicates these glosses under CC0 1.0 and links the language folder in the data repository; that statement is the public-use license basis.",
+			"attribution_chirho": "Portuguese Glosses by Global Bible Tools (https://globalbibletools.com) are available under Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/).",
+			"words_chirho": [
+				{
+					"token_id_chirho": "20ikj",
+					"upstream_word_id_chirho": "2002600101",
+					"text_chirho": "כַּשֶּׁ֤לֶג ׀",
+					"gloss_chirho": "como a neve"
+				},
+				{
+					"token_id_chirho": "20Yxf",
+					"upstream_word_id_chirho": "2002600102",
+					"text_chirho": "בַּקַּ֗יִץ",
+					"gloss_chirho": "no verão"
+				},
+				{
+					"token_id_chirho": "20Jji",
+					"upstream_word_id_chirho": "2002600103",
+					"text_chirho": "וְכַמָּטָ֥ר",
+					"gloss_chirho": "e como a chuvarada"
+				},
+				{
+					"token_id_chirho": "20vF1",
+					"upstream_word_id_chirho": "2002600104",
+					"text_chirho": "בַּקָּצִ֑יר",
+					"gloss_chirho": "na colheita"
+				},
+				{
+					"token_id_chirho": "20baH",
+					"upstream_word_id_chirho": "2002600105",
+					"text_chirho": "כֵּ֤ן",
+					"gloss_chirho": "assim"
+				},
+				{
+					"token_id_chirho": "20DYG",
+					"upstream_word_id_chirho": "2002600106",
+					"text_chirho": "לֹא־",
+					"gloss_chirho": "não"
+				},
+				{
+					"token_id_chirho": "20wMm",
+					"upstream_word_id_chirho": "2002600107",
+					"text_chirho": "נָאוֶ֖ה",
+					"gloss_chirho": "conveniente"
+				},
+				{
+					"token_id_chirho": "206Bv",
+					"upstream_word_id_chirho": "2002600108",
+					"text_chirho": "לִכְסִ֣יל",
+					"gloss_chirho": "para tolo"
+				},
+				{
+					"token_id_chirho": "20GsM",
+					"upstream_word_id_chirho": "2002600109",
+					"text_chirho": "כָּבֽוֹד׃",
+					"gloss_chirho": "honra"
+				}
+			]
+		},
+		{
+			"id_chirho": "spa",
+			"lang_chirho": "es",
+			"label_chirho": "Spanish",
+			"direction_chirho": "ltr",
+			"source_folder_chirho": "spa",
+			"revision_chirho": "6c511c2a8cc4ab341337f912763592f3ab5da0b1",
+			"source_url_chirho": "https://raw.githubusercontent.com/globalbibletools/data/6c511c2a8cc4ab341337f912763592f3ab5da0b1/spa/20-Pro.json",
+			"source_sha256_chirho": "068b3460518772b441cfbb585aef375b55e4c9ad9187a303d735410de3cc798b",
+			"approval_status_chirho": "approved_upstream",
+			"exported_at_chirho": "2026-10-26T00:18:09.454Z",
+			"file_updated_at_chirho": "2024-12-20T18:28:21Z",
+			"license_chirho": "CC0-1.0, as stated by Global Bible Tools itself (globalbibletools/platform@5d4041d4, src/ui/study/components/AttributionDialog.tsx); the data repository carries no LICENSE file. GBT's published attribution dedicates these glosses under CC0 1.0 and links the language folder in the data repository; that statement is the public-use license basis.",
+			"attribution_chirho": "Spanish Glosses by Global Bible Tools (https://globalbibletools.com) are available under Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/).",
+			"words_chirho": [
+				{
+					"token_id_chirho": "20ikj",
+					"upstream_word_id_chirho": "2002600101",
+					"text_chirho": "כַּשֶּׁ֤לֶג ׀",
+					"gloss_chirho": "Como nieve"
+				},
+				{
+					"token_id_chirho": "20Yxf",
+					"upstream_word_id_chirho": "2002600102",
+					"text_chirho": "בַּקַּ֗יִץ",
+					"gloss_chirho": "en verano"
+				},
+				{
+					"token_id_chirho": "20Jji",
+					"upstream_word_id_chirho": "2002600103",
+					"text_chirho": "וְכַמָּטָ֥ר",
+					"gloss_chirho": "y como lluvia"
+				},
+				{
+					"token_id_chirho": "20vF1",
+					"upstream_word_id_chirho": "2002600104",
+					"text_chirho": "בַּקָּצִ֑יר",
+					"gloss_chirho": "en la siega"
+				},
+				{
+					"token_id_chirho": "20baH",
+					"upstream_word_id_chirho": "2002600105",
+					"text_chirho": "כֵּ֤ן",
+					"gloss_chirho": "así"
+				},
+				{
+					"token_id_chirho": "20DYG",
+					"upstream_word_id_chirho": "2002600106",
+					"text_chirho": "לֹא־",
+					"gloss_chirho": "no"
+				},
+				{
+					"token_id_chirho": "20wMm",
+					"upstream_word_id_chirho": "2002600107",
+					"text_chirho": "נָאוֶ֖ה",
+					"gloss_chirho": "es apropiado"
+				},
+				{
+					"token_id_chirho": "206Bv",
+					"upstream_word_id_chirho": "2002600108",
+					"text_chirho": "לִכְסִ֣יל",
+					"gloss_chirho": "para el necio"
+				},
+				{
+					"token_id_chirho": "20GsM",
+					"upstream_word_id_chirho": "2002600109",
+					"text_chirho": "כָּבֽוֹד׃",
+					"gloss_chirho": "el honor"
+				}
+			]
+		}
+	]
+}

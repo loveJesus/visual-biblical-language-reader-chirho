@@ -1,0 +1,130 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g3788-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The eye represents physical eyes and looking in the listed seeing/healing and looking-up contexts. The separate prophetic hardening passage is not included.",
+	"source_icon_id_chirho": "proverbs-worker-icon-02-chirho",
+	"source_sha256_chirho": "26c79f0da1c623fdb48da8ae8300d917c35c705dfd21c198a7440c13cf04f2d8",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.3.21",
+		"token_id_chirho": "20irW",
+		"text_chirho": "מֵעֵינֶ֑יךָ",
+		"gloss_chirho": "from your eyes",
+		"canonical_sha256_chirho": "7e838d26a45e7fe73036323727923374500faaae21b11c3ee7e75501c4997c44"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G3788",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "ὀφθαλμός"
+	},
+	"contextual_meaning_chirho": "eye",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.9.6",
+			"token_id_chirho": "John.9.6!18",
+			"text_chirho": "ὀφθαλμούς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "eb375ae6f00076c9e0792968e4bb9ecb4e883b08029b74111d8734db31f8911a"
+		},
+		{
+			"verse_id_chirho": "John.9.10",
+			"token_id_chirho": "John.9.10!9",
+			"text_chirho": "ὀφθαλμοί",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "9984bba64d18631a9b9c52b7f39e6de6edba283c02bdcdb263b95fa7c13e48cf"
+		},
+		{
+			"verse_id_chirho": "John.9.11",
+			"token_id_chirho": "John.9.11!14",
+			"text_chirho": "ὀφθαλμοὺς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "b0ab38ca5f2e59273be0cf8ee6cd410ee4cd4460d1afc0cc16fe6daa53359839"
+		},
+		{
+			"verse_id_chirho": "John.9.14",
+			"token_id_chirho": "John.9.14!16",
+			"text_chirho": "ὀφθαλμούς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "9a55b036f67d5e52ccaf2d7eda5b3fd8bfa6c0f21e3a06f224a21b8e92d47d6e"
+		},
+		{
+			"verse_id_chirho": "John.9.15",
+			"token_id_chirho": "John.9.15!19",
+			"text_chirho": "ὀφθαλμούς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "7efb246ffb6dd5542ccb5fe80a13de3ccee83837411ad545506073385bc20e36"
+		},
+		{
+			"verse_id_chirho": "John.9.17",
+			"token_id_chirho": "John.9.17!15",
+			"text_chirho": "ὀφθαλμούς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "7094fa662b6442e69317a605377205b11b79d666b6940dc7207ae3086bbfd34a"
+		},
+		{
+			"verse_id_chirho": "John.9.21",
+			"token_id_chirho": "John.9.21!12",
+			"text_chirho": "ὀφθαλμοὺς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "892bbd89c0d36651fa6a206089bf5f60535843ed3a67de02ce649203353af5e7"
+		},
+		{
+			"verse_id_chirho": "John.9.26",
+			"token_id_chirho": "John.9.26!11",
+			"text_chirho": "ὀφθαλμούς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "4b0b46c592331aae3249e4eafdcc2d2e5b0a1e4a2c0aa623efa37cbe0def59e1"
+		},
+		{
+			"verse_id_chirho": "John.9.30",
+			"token_id_chirho": "John.9.30!23",
+			"text_chirho": "ὀφθαλμούς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "65bfb4746e11810823235777b51c0e8227c8313f52ec301a6c2ec5884de512f1"
+		},
+		{
+			"verse_id_chirho": "John.9.32",
+			"token_id_chirho": "John.9.32!9",
+			"text_chirho": "ὀφθαλμοὺς",
+			"gloss_chirho": "[the] eyes",
+			"canonical_sha256_chirho": "9407f71d6fb94d5af4b4fbfbd9836218d8a0cc38845fbaf49620caf14f0e6b63"
+		},
+		{
+			"verse_id_chirho": "John.6.5",
+			"token_id_chirho": "John.6.5!4",
+			"text_chirho": "ὀφθαλμοὺς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "8f46a27d4623425928361300e36ce3bee963fa87145d3315375c20bddb0fac19"
+		},
+		{
+			"verse_id_chirho": "John.4.35",
+			"token_id_chirho": "John.4.35!17",
+			"text_chirho": "ὀφθαλμοὺς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "5027b81c68e6e1f2539fa1e899dc5ea117f8dcb55b6c361c1edfce8ed5b60e90"
+		},
+		{
+			"verse_id_chirho": "John.11.37",
+			"token_id_chirho": "John.11.37!12",
+			"text_chirho": "ὀφθαλμοὺς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "e10df3b6f14d50674dcf8d942136cc22cea4d8f47a89ad98c8e7acf0c70bce22"
+		},
+		{
+			"verse_id_chirho": "John.11.41",
+			"token_id_chirho": "John.11.41!10",
+			"text_chirho": "ὀφθαλμοὺς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "139d757008b570df0881c7c299b6611dda4bcf3304bd3a53df563bc7f55db9b4"
+		},
+		{
+			"verse_id_chirho": "John.17.1",
+			"token_id_chirho": "John.17.1!7",
+			"text_chirho": "ὀφθαλμοὺς",
+			"gloss_chirho": "eyes",
+			"canonical_sha256_chirho": "e798fb6abad13a65b2d8bc929e2accb127dda488a631c96f4c520e82e9ce7a0c"
+		}
+	]
+}

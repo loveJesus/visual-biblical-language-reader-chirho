@@ -1,0 +1,186 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g5457-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The sun/rays icon illustrates illumination as a word mnemonic. The Hebrew source compares righteousness to light; the listed Johannine light uses include figurative illumination. It does not identify the sun as a divine person or assert a sun in the scene.",
+	"source_icon_id_chirho": "icon-76335323a77140898a15dd56e185dbfd-10-chirho",
+	"source_sha256_chirho": "726c7467a9f9860877b88a7cee1fb5f87b17560147a0bcdf27782438aca689a6",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.4.18",
+		"token_id_chirho": "20ayu",
+		"text_chirho": "כְּא֣וֹר",
+		"gloss_chirho": "[is] like sun of",
+		"canonical_sha256_chirho": "f734ce36909661b4be44aac862a0a5daa65b022cff65035d9b68a310d73851a2"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G5457",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "φῶς"
+	},
+	"contextual_meaning_chirho": "light, illumination",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.9.5",
+			"token_id_chirho": "John.9.5!6",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "[the] light",
+			"canonical_sha256_chirho": "8423d0abbf64191dbcc22104115e34fd8c8ab513a68b8069778ec7d36061a728"
+		},
+		{
+			"verse_id_chirho": "John.5.35",
+			"token_id_chirho": "John.5.35!17",
+			"text_chirho": "φωτὶ",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "146baff8aac285bebcb7b17a337bcaf1597e20d6f025abdae380933a6ee2c53d"
+		},
+		{
+			"verse_id_chirho": "John.3.19",
+			"token_id_chirho": "John.3.19!8",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "7b9b6d71199c9558ba77144bc145022cb40fd89390bc9414c482715c74c3ffcf"
+		},
+		{
+			"verse_id_chirho": "John.3.19",
+			"token_id_chirho": "John.3.19!22",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "7b9b6d71199c9558ba77144bc145022cb40fd89390bc9414c482715c74c3ffcf"
+		},
+		{
+			"verse_id_chirho": "John.3.20",
+			"token_id_chirho": "John.3.20!8",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "29961e6bc1ff18b79e06a235f1a2b7211adfe73b6bb7eddbb10d75594bfab4dd"
+		},
+		{
+			"verse_id_chirho": "John.3.20",
+			"token_id_chirho": "John.3.20!14",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "29961e6bc1ff18b79e06a235f1a2b7211adfe73b6bb7eddbb10d75594bfab4dd"
+		},
+		{
+			"verse_id_chirho": "John.3.21",
+			"token_id_chirho": "John.3.21!9",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "ccf8e56e779605837da3d4e7bcf645c7a9b4e79436d5500cd0ff2f6474122d10"
+		},
+		{
+			"verse_id_chirho": "John.11.9",
+			"token_id_chirho": "John.11.9!19",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "3af7f83cd93428d059d2a84f89df628c7f55027a56ee3d2b95c576e669e30277"
+		},
+		{
+			"verse_id_chirho": "John.11.10",
+			"token_id_chirho": "John.11.10!11",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "2e8d5320b8b2011395d0e755af782a361e65c970308f5191a88847371c1904fe"
+		},
+		{
+			"verse_id_chirho": "John.8.12",
+			"token_id_chirho": "John.8.12!11",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "1e2d913e98dc1ec685017c2baedf11cca8344cd712b65f0911af8fca5d8701e1"
+		},
+		{
+			"verse_id_chirho": "John.8.12",
+			"token_id_chirho": "John.8.12!26",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "1e2d913e98dc1ec685017c2baedf11cca8344cd712b65f0911af8fca5d8701e1"
+		},
+		{
+			"verse_id_chirho": "John.1.4",
+			"token_id_chirho": "John.1.4!10",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "33dbc9a5bfafef6017a9ea0528955c165a19991b1a72d8d8ff66617408985530"
+		},
+		{
+			"verse_id_chirho": "John.1.5",
+			"token_id_chirho": "John.1.5!3",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "09af4752222c029e2a6a003142da19b75a3b02ef92cedf4f48be5297b3cb7993"
+		},
+		{
+			"verse_id_chirho": "John.1.7",
+			"token_id_chirho": "John.1.7!9",
+			"text_chirho": "φωτός",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "d224b65aa949a8bd43ad715e6c8497b03e8fe3dabb3c9151572a2fae38ae4f33"
+		},
+		{
+			"verse_id_chirho": "John.1.8",
+			"token_id_chirho": "John.1.8!5",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "cff87fe068b4ab229334222260725f2d1f773c00057412e415e5190fa19dded1"
+		},
+		{
+			"verse_id_chirho": "John.1.8",
+			"token_id_chirho": "John.1.8!11",
+			"text_chirho": "φωτός",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "cff87fe068b4ab229334222260725f2d1f773c00057412e415e5190fa19dded1"
+		},
+		{
+			"verse_id_chirho": "John.1.9",
+			"token_id_chirho": "John.1.9!3",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "Light",
+			"canonical_sha256_chirho": "83d9e706c805bde9db6909341bb42e81851f5a77aa4f1bdf84268af237f01b6c"
+		},
+		{
+			"verse_id_chirho": "John.12.35",
+			"token_id_chirho": "John.12.35!10",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "b892576949ceb194264c2c9a9f58db5b6b265eb6708b9caed514b0023c731d89"
+		},
+		{
+			"verse_id_chirho": "John.12.35",
+			"token_id_chirho": "John.12.35!17",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "b892576949ceb194264c2c9a9f58db5b6b265eb6708b9caed514b0023c731d89"
+		},
+		{
+			"verse_id_chirho": "John.12.36",
+			"token_id_chirho": "John.12.36!3",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "ad68de80b1514b23d95d868b396e183fc303dabe5ffe4e4d1fcc6938f6904def"
+		},
+		{
+			"verse_id_chirho": "John.12.36",
+			"token_id_chirho": "John.12.36!8",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "light",
+			"canonical_sha256_chirho": "ad68de80b1514b23d95d868b396e183fc303dabe5ffe4e4d1fcc6938f6904def"
+		},
+		{
+			"verse_id_chirho": "John.12.36",
+			"token_id_chirho": "John.12.36!11",
+			"text_chirho": "φωτὸς",
+			"gloss_chirho": "of light",
+			"canonical_sha256_chirho": "ad68de80b1514b23d95d868b396e183fc303dabe5ffe4e4d1fcc6938f6904def"
+		},
+		{
+			"verse_id_chirho": "John.12.46",
+			"token_id_chirho": "John.12.46!2",
+			"text_chirho": "φῶς",
+			"gloss_chirho": "a light",
+			"canonical_sha256_chirho": "833257f6c71cf93e77058474722936aeb83f0af8257efca13cacd203f5f0d785"
+		}
+	]
+}

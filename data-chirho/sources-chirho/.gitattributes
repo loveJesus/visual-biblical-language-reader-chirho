@@ -1,0 +1,7 @@
+# For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
+
+# Pinned upstream originals. The importer refuses any file whose sha256 differs from
+# acquisition-manifest-chirho.json, so git must never convert their line endings (HebrewStrong.xml
+# and HebrewMorphologyCodes.html are CRLF upstream) or flag their upstream whitespace.
+morphhb-chirho/** -text -whitespace
+hebrew-lexicon-chirho/** -text -whitespace

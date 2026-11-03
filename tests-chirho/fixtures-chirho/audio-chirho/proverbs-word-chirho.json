@@ -1,0 +1,47 @@
+{
+	"source_plan_path_chirho": "batches-chirho/0000-chirho/batch-0000-chirho/plan-chirho.json",
+	"source_plan_sha256_chirho": "18d42147d21bbe6322eff9964a1d861ddd04654ddad6e42a5d941d3899aa2af0",
+	"words_chirho": [
+		{
+			"key_chirho": "2c4646e075eb9a4f32d66c9340662d6bd03e6d458ec50b3ceea11cd9ddac94bc",
+			"job_chirho": {
+				"id_chirho": "word-2c4646e075eb9a4f32d66c93-chirho",
+				"lesson_id_chirho": "Prov.1.1",
+				"token_id_chirho": "20xeN",
+				"language_chirho": "he",
+				"text_chirho": "מִ֭שְׁלֵי",
+				"canonical_sha256_chirho": "b10e3ae620234c6444a2c8380118eb7c8fe5bf35df3b22e2eb5ed392a825bb03",
+				"recipe_id_chirho": "israeli-ipa-word-library-v1-chirho",
+				"synthesis_text_chirho": "\"/miʃˈle/\"",
+				"ipa_chirho": "miʃˈle"
+			},
+			"occurrences_chirho": [
+				{
+					"lesson_id_chirho": "Prov.1.1",
+					"token_id_chirho": "20xeN",
+					"text_chirho": "מִ֭שְׁלֵי",
+					"canonical_sha256_chirho": "b10e3ae620234c6444a2c8380118eb7c8fe5bf35df3b22e2eb5ed392a825bb03",
+					"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-01-chirho.json",
+					"content_sha256_chirho": "9cc2ec24fd18af0e94df0d5ba73cc7f3ce3a60a8fdb7e9acc7be66058cb985c6"
+				},
+				{
+					"lesson_id_chirho": "Prov.10.1",
+					"token_id_chirho": "20k5t",
+					"text_chirho": "מִשְׁלֵ֗י",
+					"canonical_sha256_chirho": "269bb6eb9354c4a13adc3468f77c2e7f610376def225c8e4a0c16e81826e3419",
+					"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-10-chirho.json",
+					"content_sha256_chirho": "9100298545bd1631f29c7febcb88bd08ebb122ec1da72083bad74b133cfb5ca3"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.1",
+					"token_id_chirho": "20WU8",
+					"text_chirho": "מִשְׁלֵ֣י",
+					"canonical_sha256_chirho": "1eb9ec61280e3c01c33eaa7901674d78142559cdbb5c534cbff1651963d3e703",
+					"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-25-chirho.json",
+					"content_sha256_chirho": "9353c172d9fe71b9248aa62285de289a2603dfea1616e7194415774621a35dba"
+				}
+			],
+			"analysis_note_chirho": "Stress from identical pointed form, lemma and morphology at Prov.25.1!20WU8; pending listener review."
+		}
+	]
+}

@@ -1,0 +1,60 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g2374-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The door is an entryway mnemonic for the listed literal doors and entrances. The I am the door declarations are outside this initial bridge.",
+	"source_icon_id_chirho": "proverbs-worker-v3-icon-15-chirho",
+	"source_sha256_chirho": "ce954437a34042a632ae8b2267199fc5783a6b9739c9c6e7b34b9a55cf164945",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.5.8",
+		"token_id_chirho": "20Uv6",
+		"text_chirho": "פֶּ֥תַח",
+		"gloss_chirho": "the door of",
+		"canonical_sha256_chirho": "6fa7413dd9c8c05a6dab253411d0b1c4bf466c28f2e3cad8e4919eca04b6de63"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G2374",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "θύρα"
+	},
+	"contextual_meaning_chirho": "door or entrance",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.10.1",
+			"token_id_chirho": "John.10.1!10",
+			"text_chirho": "θύρας",
+			"gloss_chirho": "door",
+			"canonical_sha256_chirho": "60184233ccb3dddaaf6cfa7e91f6a27910c34570963aad07cfaa9646283567a1"
+		},
+		{
+			"verse_id_chirho": "John.10.2",
+			"token_id_chirho": "John.10.2!6",
+			"text_chirho": "θύρας",
+			"gloss_chirho": "door",
+			"canonical_sha256_chirho": "1f881762a2099955cc14ba9e4248db289699f83d63419ace6341ff9eb6022ad2"
+		},
+		{
+			"verse_id_chirho": "John.18.16",
+			"token_id_chirho": "John.18.16!7",
+			"text_chirho": "θύρᾳ",
+			"gloss_chirho": "door",
+			"canonical_sha256_chirho": "a48f789d8b7f35601620479c7bafcd3eb6492f733a2a93fd26cea414266c60ec"
+		},
+		{
+			"verse_id_chirho": "John.20.19",
+			"token_id_chirho": "John.20.19!12",
+			"text_chirho": "θυρῶν",
+			"gloss_chirho": "doors",
+			"canonical_sha256_chirho": "e24a7e08bab0b57c111645a50e0fe26eced2207e505e9471d7bc285bd8a9770b"
+		},
+		{
+			"verse_id_chirho": "John.20.26",
+			"token_id_chirho": "John.20.26!19",
+			"text_chirho": "θυρῶν",
+			"gloss_chirho": "doors",
+			"canonical_sha256_chirho": "7b5f7b90095c00144968fd78d8eb870d2cfad4b7717c3e32dafc327fb1553ef8"
+		}
+	]
+}

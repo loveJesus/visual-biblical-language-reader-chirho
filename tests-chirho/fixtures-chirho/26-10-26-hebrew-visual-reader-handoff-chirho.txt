@@ -1,0 +1,374 @@
+Hebrew Visual Reader Chi Rho Coding Agent Handoff
+Version 2026-10-26
+
+Purpose and authority
+
+Build a local project collaboratively with the user, preserving the working Hebrew reading prototype and preparing a future Cloudflare Workers application. This is an implementation specification, not evidence of a deployment. Start by inspecting the supplied files and running the existing checks. Work incrementally; show the user the reading surface before broadening the content. This specification's current decisions override older conflicting notes or codes.
+
+The deliverable requested now is this plain UTF-8 text handoff. No Cloudflare account creation, login, paid service, provisioning, public deployment, domain change, repository publication or transfer onto a different computer is authorized by this document. Obtain separate authorization for those actions. No credentials or private personal notes are required.
+
+1 Current project and launch reality
+
+Verified project directory in the producing environment:
+  /workspace/shared/hebrew-visual-chirho
+This is a shared workspace path, NOT a confirmed path on the user's Mac or any other local computer. Localhost belongs to the machine running a process. The execution workspace and visible desktop/browser can have separate localhost contexts even when files appear shared. A successful test server here does not prove a browser elsewhere can reach it. Materialize/copy the complete folder onto the actual target computer, verify readable files there, and launch there. Do not claim a local desktop launch or transfer without checking it on that computer. No desktop or Worker launch is performed by this handoff.
+
+Files to carry together:
+  app_chirho.py                 Python standard-library renderer/server/exporter
+  lesson_chirho.json            Current app-facing nine-token lesson
+  sample-source-chirho.json     Auditable source extract, IDs and morphology
+  SOURCE_NOTES_CHIRHO.txt        Licensing, data acquisition and lexical cautions
+  README-chirho.txt             Existing launch and verification notes
+  scene-chirho.png              Whole-verse imaginative scene
+  assets/snow-root-chirho.png   Transparent snow mnemonic
+  assets/rain-root-chirho.png   Transparent rain mnemonic
+  lesson-preview-chirho.html    Self-contained offline snapshot with embedded images
+  test_chirho.py                Dependency-free unit and HTTP tests
+  test_browser_chirho.js        Optional browser QA, not a runtime dependency
+  test_help_chirho.js           Dependency-free mock-DOM help interaction test
+  legend_help_chirho.json       All 29 legend explanations
+  legend_sources_chirho.json    Primary grammar source URL map
+  gallery-original.sha256       Preservation check for separate original gallery
+  hebrew-visual-reader-chirho-spec.txt  This handoff
+Do not require __pycache__ or machine-specific generated files.
+
+Current runtime: Python 3.9+, standard library only; no package installation, API key or login. Run on the same computer as the browser:
+  cd /workspace/shared/hebrew-visual-chirho
+  python3 app_chirho.py --open-browser
+  http://127.0.0.1:8766/
+Use the actual destination path after copying. Ctrl+C stops the server. --port 8767 changes the port if necessary. Server binds only 127.0.0.1. Python/CSS changes require restarting; JSON is reread per request. Supported HTTP routes are /, /index.html and /scene-chirho.png; other paths return 404. Root stickers are embedded in generated HTML, not separate HTTP endpoints.
+
+Offline: open lesson-preview-chirho.html directly. Regenerate to a NEW filename:
+  python3 app_chirho.py --export /path/to/NEW-lesson-chirho.html
+The export command uses exclusive creation and refuses to overwrite an existing output. Snapshot content is frozen at export time. This is not an installed offline PWA.
+
+Separate original image gallery:
+  /workspace/shared/hebrew-lesson/gallery.py
+  python3 /workspace/shared/hebrew-lesson/gallery.py --open-browser
+  http://127.0.0.1:8765/
+Do not confuse gallery port 8765 with reader port 8766. Preserve gallery.py and its original illustrations; they are not the new reader implementation. The gallery contains other illustrated verses, but those images are NOT verified reader lessons.
+
+2 Learning objective and scope
+
+Read the Hebrew from a visual scene rather than receiving an English answer first. The desktop hero has the compact Hebrew verse on the physical LEFT and the scene on the physical RIGHT. Hebrew itself reads RTL. Retain niqqud, cantillation, punctuation, and correct combining-mark placement. Keep grammatical cues compact enough that the verse remains readable as a verse, not a wall of flashcards.
+
+Initial real content is Proverbs 26:1 only. It has nine word tokens, five nouns, two adjectives and two particles. Six words are masculine, honor is both/common, and the particles have gender N/A. All inflected tokens here are singular. There are NO verbs, feminine words, plural/dual words or sourced exceptional/suppletive forms. Therefore no such marks may be fabricated merely to demonstrate the legend. Five nouns show centered i for absolute state; adjectives do not get noun-state superscripts. Synthetic forms belong only in explicitly labeled developer fixtures, never in this lesson.
+
+Exact canonical verse:
+כַּשֶּׁ֤לֶג ׀ בַּקַּ֗יִץ וְכַמָּטָ֥ר בַּקָּצִ֑יר כֵּ֤ן לֹא־נָאוֶ֖ה לִכְסִ֣יל כָּבֽוֹד׃
+
+App-authored translation, hidden initially:
+Like snow in summer and rain at harvest, so honor is not fitting for a fool.
+
+Larger pericopes, additional books and Greek are a roadmap, not implemented or authorized content expansion. Do not translate the Hebrew-specific encoding automatically onto Greek.
+
+3 Approved visual encoding
+
+These layers are independent. Do not reuse the same layer for a different grammatical feature.
+
+Gender background on WORD:
+  masculine: baby blue #dff0ff
+  feminine: pink #ffe4ed
+  both/common, N/A, unknown: clear/transparent
+Transparent does not mean masculine, nor does it merge the underlying categories. Expose the actual category in accessible labels and lower details. Existing lower cards also use gender backgrounds.
+
+Number line UNDER WORD, never under the sticker:
+  plural: yellow #e9c92d
+  dual: green #36a36a
+  singular, N/A, unknown: no underline
+Unknown is not a positive claim of singular. Number must come from sourced morphology, not spelling or English gloss.
+
+Form change or irregularity line OVER WORD:
+  solid orange #dd7b24: documented exceptional or suppletive forms
+  dotted orange #dd7b24: documented predictable weak/form-change patterns
+  Both require explicit classification, explanatory text and source URL.
+  Both need hover, keyboard-focus and tap-accessible explanations.
+  missing metadata: no line and no inferred claim of regularity
+Never infer either line from an unresolved root, unusual-looking spelling, a weak radical alone or an automated heuristic. Dotted weak-pattern marking is a sourced form-change cue, not a claim that all weak forms are exceptional. No asterisk substitutes for this line. Reserve space so the line avoids cantillation and sits below superscripts. It must coexist independently with a plural/dual underline.
+
+Verb superscripts, VERBS ONLY:
+  Arabic stem NUMBER physically LEFT above word
+  conjugation LETTER physically RIGHT above word
+Use physical CSS left/right coordinates, not start/end positions that reverse under RTL. They are two separate superscripts, not a combined badge in the compact line. A combined code may be used in lower detail cards. No noun or adjective gets a verb code.
+  1 Qal
+  2 Niphal
+  3 Piel
+  4 Pual
+  5 Hiphil
+  6 Hophal
+  7 Hithpael
+  P qatal
+  I yiqtol
+  M imperative
+  A participle
+  C infinitive construct
+  B infinitive absolute
+I and M MUST remain visibly and verbally distinct. In this app 1A means Qal participle. These number/letter assignments are LOCAL TEACHING CODES, not universal scholarly standards, not OSHB raw codes and not automatic English tenses. Participles remain verb forms and retain stem; do not force a separate participle POS color. Unsupported stems/forms must retain raw morphology and an explicit unsupported state, not be forced into a familiar code.
+
+Noun state superscript, NOUNS ONLY:
+  lowercase Roman i = absolute
+  lowercase Roman ii = construct
+  CENTERED above word, only when sourced
+Adjective state stays in lower details. Definiteness, suffixes and possession are not new noun states. Do not invent a third state. Unknown/unavailable state has no numeral.
+
+Rounded border around tiny root/sense ICON encodes POS:
+  noun: teal #18847d
+  verb: purple #8152b1
+  adjective: orange #c57820
+  particle: gray #7c8589
+  unknown: gray DASHED border
+The outline is not gender. Keep it even when the icon is pending. Existing dimensions: 27x25 px frame, 2 px border, 5 px radius, approximately 19x19 px image; these are reference values, adjustable for legibility after visual QA.
+
+Root/sense sticker sits directly BELOW its word. Two mappings exist: snow and rain. Seven other slots are pending, shown as a neutral diamond with a clear pending label, not a misleading generic picture. Do not silently fill those slots. Transparent-background mnemonic art should remain crisp at tiny size. Images illustrate a contextual sense, not historical etymology or universal meaning of a root.
+
+4 Reading surface and interaction
+
+Top: small project identity/reference, compact RTL verse and scene. The scene is explicitly an imaginative learning aid, not a historical depiction or morphology source. Do not show an English translation or English word-by-word glosses by default. Keep translation behind Show translation; it can open and close repeatedly without changing the lesson.
+
+Below: seven-row grammar legend, then visible lower word/root cards, exact canonical verse reveal, reading key and sources. Lower cards contain word, root link or not assigned, concise morphology; English gloss and longer analysis/source notes are inside Show meaning & morphology. Do not move a wall of root labels or English glosses into the top line. Current stickers do not implement a root-browser or alternate-sense selector; do not claim click behavior that is not present.
+
+Keep exactly seven separately labeled legend rows:
+  Gender; Number; Noun state; Verb stem LEFT; Verb conjugation RIGHT;
+  Icon outline POS; Form pattern.
+Use VERB CONJUGATION as the primary category label. Use qatal / yiqtol as
+primary labels; perfect / imperfect belong only in explanatory help as
+traditional terminology. Stem remains a separate category. The last row must
+explain both solid exceptional/suppletive and dotted predictable-weak cues.
+These terminology/cue changes supersede the older Verb form / True irregular
+labels still found in earlier snapshots.
+Show ALL seven stem codes and ALL six form codes, not a few examples. Include a small note for affix dots, pending icons and local-code status. The current seven-row arrangement is approved; enhance it rather than replace it with an unrelated layout.
+
+Latest requested addition: each legend item needs an explanatory hover help surface AND equivalent keyboard-focus and tap access. Hover alone or a title attribute alone is insufficient. Preserve compact closed appearance. Use semantic, focusable triggers; expose expanded state and the help association; support tap toggle, dismiss/close and Escape where appropriate, and never trap focus. Avoid accidental toggles when selecting Hebrew. Help must not obscure the verse permanently. Test repeat open/close and moving from one item to another. This addition is now implemented in the Python prototype with 29 legend controls. Hover or focus shows help; click/tap pins or unpins it; Escape or blur closes it; right-edge viewport clamping is included. Each trigger is a button with aria-describedby and aria-expanded, paired with a hidden role=tooltip element. Flagged words use a focusable role=button trigger with Enter/Space activation and the same source-note help. A native title fallback remains. These interactions passed a minimal-DOM test; actual browser rendering and screen-reader behavior still require target-computer QA.
+
+Help should clarify grammar rather than promise fixed translations. Verb stem summaries must be nuanced: Qal is the basic stem, not always an active English verb; Niphal often passive/middle; Piel has varied lexical functions, not always intensive; Pual is often the passive counterpart of Piel; Hiphil often causative; Hophal often passive causative; Hithpael often reflexive/middle, sometimes reciprocal. Existing wording is stored in legend_help_chirho.json; its publisher-source map is legend_sources_chirho.json, using unfoldingWord Hebrew Grammar at https://uhg.readthedocs.io/en/stable/. The prototype worker verified those primary grammar sources on 2026-10-26. Preserve those citations and review any wording changes; the grammar sources do not establish the custom numeric/letter code. Qatal/yiqtol (traditionally called perfect/imperfect) are Hebrew conjugation labels, not a universal past/future switch. Keep those traditional English labels secondary in help, not primary legend labels. The broad app category also includes participles and infinitives; explain that pedagogical grouping without claiming all members are finite conjugations. Distinguish sourced wayyiqtol from simple conjunction plus yiqtol in future data; preserve jussive/cohortative distinctions when provided, without inventing additional present codes. Do not derive these from the presence of waw alone.
+
+Responsive baseline: desktop two columns; at <=640 px current prototype stacks verse before scene. Existing verse font is about 43 px desktop / 36 px mobile, generous mark clearance; font stack SBL Hebrew, Ezra SIL, Noto Serif Hebrew, Times New Roman, serif. No external font download currently occurs. Ensure all glyphs render; if bundling a font later, verify its license. Wrap between tokens, never inside a base+marks cluster. Test narrow 320/390 px and desktop 1440 px. No horizontal page/card overflow. Accessible text must communicate color-coded categories; color alone is not enough. English text uses LTR isolation without corrupting Hebrew reading order.
+
+5 Unicode and source integrity
+
+Canonical verse is an immutable source string, independent of decorated rendering. Preserve original code points, niqqud, cantillation, paseq, maqaf, sof pasuq and spaces. Do NOT normalize the stored canonical source to NFC. OSHB documentation warns about normalization. Internal normalized comparisons may validate equivalence but must not replace source bytes.
+
+Source slash-separated affix boundaries become DISPLAY-ONLY dots. Never insert dots inside a base letter plus following combining marks. Every segment must be nonempty, must not begin with a combining mark, and must reconstruct its token. The current code compares reconstruction under NFD while retaining source strings. Future import validation should also record exact reconstruction and flag any reordered source data rather than silently repair it. Keep canonical copy/export free of teaching dots, icon placeholders and superscripts.
+
+The current renderer locates token strings sequentially in canonical text and carries intervening punctuation unchanged. For a growing corpus, use stable token IDs plus explicit source spans or ordered word/punctuation records so repeated words are not ambiguous. Maintain a regression that stripping only annotation DOM from compact rendering reproduces the exact canonical verse. Never strip Hebrew marks to simplify rendering.
+
+6 Current data contract
+
+lesson_chirho.json top level:
+  reference: string
+  verse: exact Unicode canonical string
+  translation: app-authored English learning gloss
+  note: explanatory caveats
+  sources: array of {title, url}
+  tokens: ordered array of token objects
+Current token fields:
+  text: canonical token string
+  segments: string[] sourced display boundaries
+  pos: noun | verb | adjective | particle | unknown
+  gender: masculine | feminine | common | na | unknown
+  number: singular | plural | dual | na | unknown
+  state: absolute | construct | na | unknown (nullable future)
+  root: Hebrew string or null; NOT lemma
+  gloss, status, analysis, source_note: strings
+  root_icon: optional local .png path (currently app folder or assets/ only)
+  icon_alt: optional contextual mnemonic description
+  verb_code: optional exactly one digit 1-7 plus P/I/M/A/C/B, verbs only
+  form_note: optional {kind, text, source}
+    kind = predictable_weak | exceptional | suppletive
+    text must explain the actual form; source must be an HTTP(S) URL
+Current missing/invalid form_note is ignored for marking. Strengthen schema validation to report malformed curated data rather than silently hide errors in future authoring tooling.
+
+sample-source-chirho.json is separate evidence, not another editable rendering model. It records OSIS reference, source URL/hash, licensing, attribution and word/punctuation records. Word records include OSHB stable id, source_segmented, raw morph, lemma_id, lexical_form, per-segment morphology/role, root_entry and root_note. Preserve this provenance when migrating; do not throw it away after deriving UI fields.
+
+Recommended versioned future model, NOT yet implemented:
+  Lesson {schemaVersion, id, language, reference, canonicalText,
+          tokens, punctuation/spans, translation, sceneAssetId,
+          sourceRefs, reviewStatus}
+  Token {id, text, canonicalSpan, sourceSegments, rawMorphology,
+         lemmaId, lexicalForm, pos, gender, number, state,
+         verbStem, verbForm, moodOrConstruction?, rootRelation?,
+         selectedSenseId?, selectedIconId?, formNote?, evidenceRefs}
+  RootRelation {rootId/rootText?, relationshipType, lexicalEntryIds,
+                certainty, explanation, evidenceRefs}
+  Sense {senseId, rootId?, lemmaIds, contextualMeaning, evidenceRefs}
+  Icon {iconId, senseId, assetPath, alt, provenance, reviewStatus}
+  Source {id, url, pinnedRevision?, sha256?, license, attribution,
+          retrievedAt, locator}
+Use explicit unknown / N/A / unresolved states. A null root can mean unresolved or not applicable; add a reason field rather than treating both as the same fact. Use separate curated field-level evidence where available. Do not require a database for one lesson.
+
+Root is not lemma. One root can have multiple meanings; the selected icon is contextual. Reuse a snow/rain icon only in a verified matching sense, not merely on a matching consonant string. Future root_icon_alternatives may list sense, filename and source explicitly; selection UI and automatic alternatives do not exist now. Do not equate homographs or invent a single etymology by stripping affixes.
+
+7 Provenance and licenses
+
+Official sources checked for this handoff on 2026-10-26:
+  https://github.com/openscriptures/morphhb/blob/master/LICENSE.md
+  https://github.com/openscriptures/HebrewLexicon
+The WLC base text is public domain. OSHB lemma/morphology work is CC BY 4.0. Preserve this attribution:
+  Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb
+Link the license, identify adaptations and do not imply endorsement. HebrewLexicon digital files are CC BY 4.0; underlying BDB/Strong dictionary text is public domain. Credit the Open Scriptures Hebrew Bible Project. Keep text, morphology, lexicon and app-created image/gloss provenance separate.
+
+Full upstream data files and guides for reproducible import:
+  https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/Prov.xml
+  https://github.com/openscriptures/morphhb/tree/master/wlc
+  https://hb.openscriptures.org/parsing/HebrewMorphologyCodes.html
+  https://github.com/openscriptures/morphhb/releases
+  https://raw.githubusercontent.com/openscriptures/HebrewLexicon/master/HebrewStrong.xml
+  https://raw.githubusercontent.com/openscriptures/HebrewLexicon/master/AugIndex.xml
+  https://raw.githubusercontent.com/openscriptures/HebrewLexicon/master/LexicalIndex.xml
+  https://raw.githubusercontent.com/openscriptures/HebrewLexicon/master/BrownDriverBriggs.xml
+The sample records Prov.xml SHA-256:
+  964f99c00239b53b854c4686c99490c8d1ac7664784a30afdfc23781a3abb161
+This is the recorded source hash, not a promise that today's master URL has the same bytes. Pin fetched revisions and verify hashes. Full Prov.xml and HebrewStrong.xml were found in /tmp in the producing environment; temporary files are not bundled project dependencies and may disappear. The portable project currently has the verse extract, NOT a complete Bible/lexicon distribution. Download and pin needed originals into a deliberate source directory for a reproducible future import. Do not rely on /tmp or claim the full corpus is already shipped.
+
+Importer guidance: parse OSIS XML namespaces and retain <w> plus <seg> punctuation and relevant notes. Slashes align morphology/lemma segments; initial H or A applies to the morphology language of the whole word. Preserve raw data before deriving labels. Handle missing/ambiguous parses, ketiv/qere and notes explicitly. AugIndex maps augmented Strong IDs into LexicalIndex. A Strong ID is a lemma/lexical entry reference, not proof of a root. Use verse-specific OSHB morphology for grammatical cues rather than a dictionary's general POS label.
+
+Specific current lexical cautions, already recorded in project evidence:
+  Snow H7950 relates to H7949, but the verb is described as denominative
+  from the noun. Summer H7019/H6972 has similar directionality caution.
+  Label these traditional lexical relationships, not certain historical origin.
+  Fitting H5000 has alternative derivations H4998 (נאה) or H5116 (נוה);
+  leave root null rather than selecting one as certain.
+  Negative particle H3808 has no assigned verbal root; root null.
+  כסיל is parsed as adjective in THIS verse; do not override from a noun
+  dictionary heading.
+  כבוד Ncbsa has gender b = both; UI common means both, not masculine-only.
+  Four Rd prefixes include an inseparable preposition plus definite article.
+  No pronominal suffix and no verb occur in this verse.
+These explanations rely on existing sample-source/SOURCE_NOTES records; preserve their evidence and review any changes against the lexical entries. Traditional Strong derivations are not modern historical-etymology consensus. Glosses, scene and stickers are app-created learning aids.
+
+ETCBC BHSA is an alternative, not the selected pipeline. Existing source notes flag its data as CC BY-NC 4.0 with commercial-use restrictions/consent requirements. Do not substitute it or confuse a software license with a dataset license without rechecking its current terms and the intended use.
+
+8 Future Cloudflare architecture
+
+Target is a proposed Workers-hosted web reader, developed locally first. The existing Python HTTP server is a reference prototype, not a Worker and not an implementation to deploy unchanged.
+
+Official technical reference checked 2026-10-26:
+  https://developers.cloudflare.com/workers/static-assets/
+Workers supports serving HTML/CSS/images as static assets alongside Worker logic. Default asset routing and API handling must be configured deliberately; a SPA fallback must not swallow API 404s. Consult current configuration documentation when implementing. No prices, quotas, bindings, account IDs or deployment readiness are assumed here.
+
+Proposed shape, subject to local project choice:
+  Static frontend: semantic HTML/CSS and TypeScript, with a small framework only
+  if it helps. Reproduce the current reading contract before adding complexity.
+  Read-only lesson data: versioned JSON checked into the project initially.
+  Worker API: optional thin layer for validated lesson lookup; no generative
+  morphology, online lexicon dependency or secret needed for the first lesson.
+  Assets: bundled scene/stickers first. Optional R2-backed asset storage later
+  if scale warrants it; R2 provisioning/bindings/API details are deferred and
+  require current official documentation plus user authorization.
+  Import tooling: separate offline scripts for source fetch/parse/review/export,
+  not runtime network calls for each word.
+  Persistence: no accounts, progress database or analytics unless requested.
+
+Candidate application endpoints, not existing APIs:
+  GET /api/lessons/Prov.26.1 -> validated Lesson JSON
+  GET /api/lessons -> manifest of reviewed, available lessons only
+  GET /assets/<versioned-name> -> scene/sticker assets
+Unsupported lesson IDs should return a useful 404 rather than fabricate data. Validation failures should expose a safe unavailable state, not a half-rendered false analysis. Keep source attribution accessible offline and online. Keep the offline snapshot as a useful fallback; a future PWA needs a separate caching/update design.
+
+Suggested project separation:
+  src/reader/    components, RTL rendering, legend/help
+  src/domain/    schema, cue derivation, validation
+  src/worker/    optional read-only API
+  data/lessons/  reviewed app records
+  data/sources/ pinned raw evidence and manifests
+  public/assets/ scene/stickers
+  scripts/      import and offline export
+  tests/        domain, fixtures, browser, source invariants
+Names/framework/package manager are proposals, not pre-existing files. Pin versions after checking the target environment. Add a lockfile and a short README with actual verified commands. No remote writes in a local-first bootstrap.
+
+9 Verification and acceptance gates
+
+The pre-help baseline had 13 Python tests. After the latest legend-help update, 14 Python tests pass; the dependency-free test_help_chirho.js interaction test and Python compilation also pass. These checks were independently rerun while finalizing this handoff on 2026-10-26. The Python tests cover Unicode clusters and segmentation, nine-token invariants, hidden English, exact compact reconstruction, verb left/right CSS/code validation, dual/plural cues, Roman noun state, sourced form notes, true-irregular overline, seven legend rows, escaping, and live HTTP routes. Synthetic forms test rendering, not real biblical analyses.
+  cd /workspace/shared/hebrew-visual-chirho
+  python3 -m unittest -v test_chirho.py
+  python3 -m py_compile app_chirho.py test_chirho.py
+  node test_help_chirho.js
+The Node test uses a minimal DOM mock, not a browser or screen reader. It checks hover, focus, tap pinning, Escape, blur, word-note keyboard activation and viewport clamping. Report actual check results on the target computer rather than assuming the producing environment result transfers. The original optional browser QA previously failed to launch Chromium in this executor with process_singleton socket() Operation not permitted. That is a browser-launch blocker, not a visual pass. Its script also assumes installed Playwright and /usr/bin/chromium; adapt only in the actual target environment. Separate visible-desktop evidence reported by the parent at 12:19:18 UTC on 2026-10-26: the restarted live page rendered 29 help items; clicking Niphal showed the expected popup; primary qatal/yiqtol labels and solid/dotted orange legend keys were visible. This is a limited real-browser visual/interaction check, not full mobile, screen-reader or synthetic flagged-word visual coverage. The nine-token lesson still contains no flagged words.
+
+Required implementation acceptance:
+  A. Canonical source equals fixture exactly; punctuation and marks survive.
+  B. No dot splits a combining cluster; bad segments are rejected visibly.
+  C. Nine current tokens; five noun i markers; no fabricated verb/feminine/
+     plural/dual/irregular cues; two loaded stickers and seven pending slots.
+  D. Desktop scene right, Hebrew left; RTL token flow and physical stem/form
+     positions correct. Inspect actual pixels, not only DOM/CSS strings.
+  E. Gender, number, POS, state and irregularity coexist independently in
+     synthetic fixtures. Include masculine/feminine/common/unknown, plural,
+     dual, absolute/construct, verbs, dotted weak and solid exceptional/
+     suppletive notes. Missing explanation/source must never produce either
+     overline. Both cues need accessible help and remain independent of number.
+  F. Full seven-row legend; each item has mouse, keyboard and touch help.
+     Repeated opening, closing, Escape and focus movement work without traps.
+  G. Translation and all English glosses hidden initially; reveal controls
+     reversible; no top English spoiler added by new components.
+  H. Root unresolved states and alternative derivation caveats remain truthful.
+     No generic image presented as a verified root-specific mapping.
+  I. Images load in local server AND offline snapshot. Inspect transparent
+     stickers at intended size and full Hebrew accents at multiple font scales.
+  J. At 1440, 390 and 320 px, no page/card overflow, clipping, overlapping marks,
+     colliding superscripts/overlines or broken tap targets; inspect zoom too.
+  K. HTML content escaped; source/asset URLs validated; no arbitrary filesystem
+     serving, path traversal, external scripts, analytics or hidden uploads.
+  L. If future API exists: unknown IDs 404, malformed data safely rejected,
+     API paths not swallowed by SPA routes, attribution present, no secrets
+     shipped to the frontend. Test stale/missing asset and unavailable lesson.
+  M. Preserve original gallery checksum and assets. Report unit/type/lint/
+     browser checks separately as passed, failed or not run.
+
+10 Incremental build plan
+
+Stage 0: Inspect files on actual target executor, relevant checkout instructions
+and .agents/skills if present. Verify directory and assets, baseline tests and
+local browser launch. Record platform/font/browser constraints. No transfer or
+localhost assumptions. Do not access unrelated private notes.
+
+Stage 1: Freeze fixture and provenance; introduce versioned schema and cue
+functions with exact-source regression tests. Preserve all current behavior.
+Improve validation, not morphology guesses.
+
+Stage 2: Port reader UI locally. Match scene/verse orientation, seven-row legend,
+all cue positions, hidden English and lower details. Implement/verify accessible
+legend explanations. Run synthetic feature fixtures separately from content.
+
+Stage 3: Inspect real desktop/mobile pixels, Unicode, focus/tap and offline
+behavior; reconcile source fidelity and user feedback. Ship a reproducible local
+project with actual commands and verification notes. Do not call it deployed.
+
+Stage 4: Add reviewed contextual sense/icon records incrementally, including
+seven pending words only after agreeing artwork/semantics with the user. Retain
+uncertainty and evidence. An illustration is not an etymological claim.
+
+Stage 5: With approval, prepare Workers configuration and local simulation;
+verify current official docs. A later separately authorized deployment may
+provision resources and publish. Check the deployed URL and content only after
+that authorization. Public/account/cost decisions are explicit gates.
+
+Stage 6: Only after one-verse acceptance, discuss verified additional verses,
+pericope navigation, richer verb constructions and eventually a distinct Greek
+schema. Do not silently add them during the bootstrap.
+
+11 Open product choices
+
+Ask only when a choice blocks the next stage; use the existing prototype as the
+default rather than reopening approved cues.
+  - Actual local destination/repository and framework/package manager.
+  - Whether first Workers release needs any API at all or just static lessons.
+  - Which Hebrew font may be bundled and its license.
+  - Final mobile scene/verse ordering if user wants a change from current stack.
+  - Legend help interaction style and final linguistically reviewed wording.
+  - How to expose future wayyiqtol/jussive/cohortative without overloading codes.
+  - Next sourced verse chosen to demonstrate currently absent forms.
+  - Art and sense selection for seven pending icons; future alternate-sense UI.
+  - Whether root details need explicit uncertainty badges rather than prose.
+  - Pericope boundaries, navigation and Greek-specific pedagogy, all deferred.
+  - Hosting account/domain/budget/access policy and deployment authorization.
+
+Definition of first local milestone done
+
+A local coding agent can launch the reader on the intended computer using its
+README, reproduce Proverbs 26:1 faithfully, inspect all seven visual layers and
+accessible legend explanations, pass source/domain tests and browser checks,
+and open a working offline preview. Sources and uncertainty remain visible;
+original gallery is preserved. Future content and hosting are clearly labeled
+future, not claimed complete. Return changed files, exact commands, test results
+and remaining blockers before requesting another product decision.

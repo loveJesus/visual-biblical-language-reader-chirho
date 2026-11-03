@@ -1,0 +1,46 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h1-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The neutral adult portrait is a mnemonic for the father relationship. The listed your father occurrences retain that kinship meaning; it is not a historical portrait.",
+	"source_icon_id_chirho": "proverbs-worker-v2-icon-00-chirho",
+	"source_sha256_chirho": "03ae8c9f36320dcc531ede1087ba53808b3554dcc92cd3d62c1a7435307f8cbe",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.8",
+		"token_id_chirho": "20uLf",
+		"text_chirho": "אָבִ֑יךָ",
+		"gloss_chirho": "your father",
+		"canonical_sha256_chirho": "d94f8728b594e8ef1338f4cd01085ecc1e998f9243849470ae344934cb82c848"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H1",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "אָב"
+	},
+	"contextual_meaning_chirho": "father",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.6.20",
+			"token_id_chirho": "209Na",
+			"text_chirho": "אָבִ֑יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "bbff50311e9ba3ef39c7b1a12c22677624f300125b8d9e3d0421b2ffc5b22565"
+		},
+		{
+			"verse_id_chirho": "Prov.23.25",
+			"token_id_chirho": "20Lgi",
+			"text_chirho": "אָבִ֥יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "3029d9795bfee82bb49af4b0ab935c1c7c0313f9314611f53b0e279d9c237907"
+		},
+		{
+			"verse_id_chirho": "Prov.27.10",
+			"token_id_chirho": "201ML",
+			"text_chirho": "אָבִ֡יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "c35c44563ff559a267f03de1aeedeee7755d611d24801e567cfbafebb366070d"
+		}
+	]
+}

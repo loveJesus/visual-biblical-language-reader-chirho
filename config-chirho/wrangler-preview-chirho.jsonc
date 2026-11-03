@@ -1,0 +1,33 @@
+// For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
+// Static text/audio; only artwork and challenged reports invoke the bounded R2 Worker. No D1.
+{
+	"$schema": "../node_modules/wrangler/config-schema.json",
+	"name": "hinneh-chirho",
+	"compatibility_date": "2026-10-26",
+	"assets": {
+		"directory": "../build-chirho/preview-chirho/public-chirho",
+		"html_handling": "auto-trailing-slash",
+		"not_found_handling": "404-page",
+		"binding": "ASSETS_CHIRHO",
+		"run_worker_first": ["/assets-chirho/*", "/audio-chirho/sha256-chirho/*", "/api-chirho/*"]
+	},
+	"routes": [
+		{
+			"pattern": "hinneh.us",
+			"custom_domain": true
+		},
+		{
+			"pattern": "hinneh.bible.systems",
+			"custom_domain": true
+		}
+	],
+	"workers_dev": false,
+	"preview_urls": false,
+	"main": "../build-chirho/preview-chirho/artwork-worker-chirho.mjs",
+	"r2_buckets": [
+		{
+			"binding": "HINNEH_MEDIA_CHIRHO",
+			"bucket_name": "hinneh-media-chirho"
+		}
+	]
+}

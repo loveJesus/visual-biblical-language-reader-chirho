@@ -1,0 +1,39 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h776-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The soil/grass patch represents land as ground or territory. These explicitly listed tokens preserve the land gloss, rather than a separate person or nation identity.",
+	"source_icon_id_chirho": "icon-46cee3348975438a9f24f7ab877af3ff-00-chirho",
+	"source_sha256_chirho": "1aa4b21ef2628bf22fad14217c67d09cf3643f2a466f8370ac570df84b7da6e8",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.21",
+		"token_id_chirho": "20Ygn",
+		"text_chirho": "אָ֑רֶץ",
+		"gloss_chirho": "the land",
+		"canonical_sha256_chirho": "89f8cb70debf13edaf93ed106f6c2df3371f7b71bb0ef135d392528bcbb2bccf"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H776",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "אֶרֶץ"
+	},
+	"contextual_meaning_chirho": "land",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.29.4",
+			"token_id_chirho": "206Ay",
+			"text_chirho": "אָ֑רֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "7a758e97547445f642c3bfeeea2f7509b029e1da59549ee5329e16895ba3933a"
+		},
+		{
+			"verse_id_chirho": "Prov.31.23",
+			"token_id_chirho": "204M4",
+			"text_chirho": "אָֽרֶץ",
+			"gloss_chirho": "the land",
+			"canonical_sha256_chirho": "5c04817df38efa08d4815e351dc5257bba9f7635f645867b02070a90fe355cc4"
+		}
+	]
+}

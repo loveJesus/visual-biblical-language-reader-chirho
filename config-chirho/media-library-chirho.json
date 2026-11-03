@@ -1,0 +1,8 @@
+{
+	"schema_version_chirho": 1,
+	"bucket_chirho": "hinneh-media-chirho",
+	"bucket_status_chirho": "Existing private Hinneh bucket. Verified lossy WebP delivery is served through an allowlisted edge-cached Worker; source evidence remains private.",
+	"public_access_chirho": false,
+	"key_scheme_chirho": "media-chirho/sha256-chirho/<sha256 of the WebP bytes>.webp",
+	"storage_mode_chirho": "r2"
+}

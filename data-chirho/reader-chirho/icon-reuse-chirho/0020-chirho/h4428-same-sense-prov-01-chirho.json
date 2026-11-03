@@ -1,0 +1,32 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h4428-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The crowned figure represents the royal office of king. It is not a portrait of a particular ruler. Each listed occurrence retains the king of sense.",
+	"source_icon_id_chirho": "proverbs-worker-v2-icon-03-chirho",
+	"source_sha256_chirho": "e270675f3e6f8532285cc835b7edafbce7ffb2fce4bbbeb5aff0ceb212def3e8",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.1",
+		"token_id_chirho": "20TSc",
+		"text_chirho": "מֶ֝֗לֶךְ",
+		"gloss_chirho": "king of",
+		"canonical_sha256_chirho": "b10e3ae620234c6444a2c8380118eb7c8fe5bf35df3b22e2eb5ed392a825bb03"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H4428",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "מֶלֶךְ"
+	},
+	"contextual_meaning_chirho": "king",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.25.1",
+			"token_id_chirho": "20LAQ",
+			"text_chirho": "מֶֽלֶךְ",
+			"gloss_chirho": "king of",
+			"canonical_sha256_chirho": "1eb9ec61280e3c01c33eaa7901674d78142559cdbb5c534cbff1651963d3e703"
+		}
+	]
+}

@@ -1,0 +1,109 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3899-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The loaf represents bread as nourishment in these listed bread occurrences, including bread used as a figurative vehicle. The icon does not assert the substance of a metaphorical referent.",
+	"source_icon_id_chirho": "proverbs-worker-icon-15-chirho",
+	"source_sha256_chirho": "a3591d200cf51e226645a3f14ae92901a78b49bd242714621bcf7d3f91ecf174",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.6.26",
+		"token_id_chirho": "20Tgd",
+		"text_chirho": "לָ֥חֶם",
+		"gloss_chirho": "bread",
+		"canonical_sha256_chirho": "d027749bca8d15c80ad40bc2ed0f3ec0ef1eee7a1f4b7a0c69bebc549689a295"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3899",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "לֶחֶם"
+	},
+	"contextual_meaning_chirho": "bread",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.3.19",
+			"token_id_chirho": "012Ss",
+			"text_chirho": "לֶ֔חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "9c984f5c6b7cb27d137297997a7c31ae7478c7c6ca9f09588396ee05b660f750"
+		},
+		{
+			"verse_id_chirho": "Gen.14.18",
+			"token_id_chirho": "013qw",
+			"text_chirho": "לֶ֣חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "6464bfcf1bd7135bf93f22377005352b35de4d916e86b4e2c192d95d1ddc45f6"
+		},
+		{
+			"verse_id_chirho": "Gen.18.5",
+			"token_id_chirho": "01ApD",
+			"text_chirho": "לֶ֜חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "1addfc8a149f95e0217d46c1c6d63e2d1dee0464247e2642eaafbf356c462e17"
+		},
+		{
+			"verse_id_chirho": "Gen.21.14",
+			"token_id_chirho": "01Q4E",
+			"text_chirho": "לֶחֶם֩",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "77344aa78e0b54fb09a32d3ce6805e64c4e76154555e31107cd96188e1f73ebd"
+		},
+		{
+			"verse_id_chirho": "Gen.25.34",
+			"token_id_chirho": "01jE7",
+			"text_chirho": "לֶ֚חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "27e5a8fbb35dfb0c86b7d3c29bc7d2d8c53aca4251efcdc295a024b54273c012"
+		},
+		{
+			"verse_id_chirho": "Gen.28.20",
+			"token_id_chirho": "01weY",
+			"text_chirho": "לֶ֛חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "f60f8ba5f617ebaa3f8a44713d0df294bd1b8bce11dfd7f071d0e4b4e9e0aa72"
+		},
+		{
+			"verse_id_chirho": "Gen.31.54",
+			"token_id_chirho": "01ivT",
+			"text_chirho": "לָ֑חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "7768b3fa05f00f5b2232c7d04ebfe9bab1f8fa508fcd9f7893c9ba700cc37781"
+		},
+		{
+			"verse_id_chirho": "Gen.31.54",
+			"token_id_chirho": "01cEe",
+			"text_chirho": "לֶ֔חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "7768b3fa05f00f5b2232c7d04ebfe9bab1f8fa508fcd9f7893c9ba700cc37781"
+		},
+		{
+			"verse_id_chirho": "Gen.41.54",
+			"token_id_chirho": "01jte",
+			"text_chirho": "לָֽחֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "5d1c35e7ea1ef41c938172f0762ddf59c2d2cf617a21f917766880c6ccf3a5d8"
+		},
+		{
+			"verse_id_chirho": "Gen.43.25",
+			"token_id_chirho": "018o1",
+			"text_chirho": "לָֽחֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "e39232e34f72e97746872e03ea42c08a07994c9ceea7b58a32cf4a210f2a2f47"
+		},
+		{
+			"verse_id_chirho": "Gen.47.15",
+			"token_id_chirho": "01iUx",
+			"text_chirho": "לֶ֔חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "57d432a624b08ef2d8e0e890318e4e343ead067712c001dd5d1a868171e3fb86"
+		},
+		{
+			"verse_id_chirho": "Gen.47.17",
+			"token_id_chirho": "01G4H",
+			"text_chirho": "לֶ֜חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "bfb0630bfd479984f81942852719026503fe6b59d27ea5296ec2ef0515b11ee1"
+		}
+	]
+}

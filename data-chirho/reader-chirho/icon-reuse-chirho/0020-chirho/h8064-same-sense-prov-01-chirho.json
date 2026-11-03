@@ -1,0 +1,32 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h8064-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The sky symbol represents the heavens as the above/celestial realm in these listed occurrences. It does not make a cosmological or event claim.",
+	"source_icon_id_chirho": "icon-a98da23931ab4104a28eb4d22e8d69f8-03-chirho",
+	"source_sha256_chirho": "40adcb79ae52e7cc75515d817041e9b493d36927972b41ddc44f2becd4998d37",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.3.19",
+		"token_id_chirho": "202UV",
+		"text_chirho": "שָׁ֝מַ֗יִם",
+		"gloss_chirho": "the heavens",
+		"canonical_sha256_chirho": "94af0b4afbb7a8520a9d134dced5bebcb6363d1cc5c8673ca3f8a5ba3a9c5671"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H8064",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "שָׁמַיִם"
+	},
+	"contextual_meaning_chirho": "the heavens",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.8.27",
+			"token_id_chirho": "20Qra",
+			"text_chirho": "שָׁ֭מַיִם",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "db4bcc4debf9264703d9669fdfe4805e35d75a23a7ff319f7afb94d5da5c93e6"
+		}
+	]
+}

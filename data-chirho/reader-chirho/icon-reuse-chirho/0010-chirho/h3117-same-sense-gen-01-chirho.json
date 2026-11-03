@@ -1,0 +1,186 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3117-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "Sunrise is a mnemonic for the day time unit. These listed days occurrences preserve that word sense; the icon makes no claim about the length of a narrative period.",
+	"source_icon_id_chirho": "icon-46cee3348975438a9f24f7ab877af3ff-07-chirho",
+	"source_sha256_chirho": "546d80f07b98599f8690d2ddbb97d65ff15202bc07d21157170ab8253248d2d5",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.3.2",
+		"token_id_chirho": "20mrn",
+		"text_chirho": "יָ֭מִים",
+		"gloss_chirho": "days",
+		"canonical_sha256_chirho": "25c7df9fc0ac4b1f014055d9af2205d6cc714d40dc8597c0b42b96a3ce258b4b"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3117",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "יוֹם"
+	},
+	"contextual_meaning_chirho": "days",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.7.4",
+			"token_id_chirho": "019eB",
+			"text_chirho": "י֔וֹם",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "13f3b38c99109f56757cccd7c7553b7e402a7ac5c9801bb48b5ec35f9d98c3d6"
+		},
+		{
+			"verse_id_chirho": "Gen.7.10",
+			"token_id_chirho": "01Q1t",
+			"text_chirho": "הַיָּמִ֑ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "b1954a000d3db8e1a1d982f024dbeaea4429bcf908c026edcf9f0032f36bfb4f"
+		},
+		{
+			"verse_id_chirho": "Gen.7.12",
+			"token_id_chirho": "01fK1",
+			"text_chirho": "י֔וֹם",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "67b0e3db3faa3f380e2e01222e0536fca7d72ffb14427fbea13f6d0ffac2f505"
+		},
+		{
+			"verse_id_chirho": "Gen.7.17",
+			"token_id_chirho": "01t52",
+			"text_chirho": "י֖וֹם",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "56999dbe8ecd57330a8ea68080b437c953280dddd1f96ae888f8409f418f7087"
+		},
+		{
+			"verse_id_chirho": "Gen.7.24",
+			"token_id_chirho": "01Z4q",
+			"text_chirho": "יֽוֹם",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "48832ddc349ae7089deab1b11df4835324a3b713f962f0f4a2d6145b9b540171"
+		},
+		{
+			"verse_id_chirho": "Gen.8.3",
+			"token_id_chirho": "01hjj",
+			"text_chirho": "יֽוֹם",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "e7ec5fcb714a08550126868a61f279961dac9d0461e7043d22eaaed44a9f90d9"
+		},
+		{
+			"verse_id_chirho": "Gen.8.6",
+			"token_id_chirho": "0153W",
+			"text_chirho": "י֑וֹם",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "effcc164b49c5943298b18ddec075068a75d00b2a5ebe418903f2f89030fc2b4"
+		},
+		{
+			"verse_id_chirho": "Gen.8.10",
+			"token_id_chirho": "01FoN",
+			"text_chirho": "יָמִ֖ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "c3d1a31f07cd37180968e64ce545da04902a4efecdd3a802605dedbc587ca1f2"
+		},
+		{
+			"verse_id_chirho": "Gen.8.12",
+			"token_id_chirho": "01oVM",
+			"text_chirho": "יָמִ֖ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "ac9cc6bc92c7723db880f5820039692d02a8d5455a9e6a09625b0d28ee6b2096"
+		},
+		{
+			"verse_id_chirho": "Gen.17.12",
+			"token_id_chirho": "01BkQ",
+			"text_chirho": "יָמִ֗ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "37759e10621acda65ef320b53c04a42ec9622d09831fd62ebce4fec57fd6aad2"
+		},
+		{
+			"verse_id_chirho": "Gen.21.4",
+			"token_id_chirho": "017xX",
+			"text_chirho": "יָמִ֑ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "7cc7d845fc012afed568b9e4a82c17fb1960ab5ce02be0a70784e624717afb96"
+		},
+		{
+			"verse_id_chirho": "Gen.21.34",
+			"token_id_chirho": "018oD",
+			"text_chirho": "יָמִ֥ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "79f580bd4e5492f35c2dcb6affd3ca70c18353921410e610f464265e80c53d3c"
+		},
+		{
+			"verse_id_chirho": "Gen.29.20",
+			"token_id_chirho": "01VUM",
+			"text_chirho": "כְּיָמִ֣ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "fbf4b6a632296afb645ab197d7b019f54ee86a288f411fe0b7422ab2ade05539"
+		},
+		{
+			"verse_id_chirho": "Gen.35.29",
+			"token_id_chirho": "01jSe",
+			"text_chirho": "יָמִ֑ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "23ce50ac18010cd1da64464c1c02bc31c42a121bc13979a6d242a264ceba23b5"
+		},
+		{
+			"verse_id_chirho": "Gen.37.34",
+			"token_id_chirho": "01Ce9",
+			"text_chirho": "יָמִ֥ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "1358876fb9ba172aa9f9cebb9038064d3a447f482c3e41d3006bfb583149ed63"
+		},
+		{
+			"verse_id_chirho": "Gen.40.12",
+			"token_id_chirho": "01erx",
+			"text_chirho": "יָמִ֖ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "855906c22a9c4b41ef96ef72e88e526678df36b5d64d89d511b319e3fc3d394d"
+		},
+		{
+			"verse_id_chirho": "Gen.40.13",
+			"token_id_chirho": "01XDT",
+			"text_chirho": "יָמִ֗ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "ad9567f850f692831464b31f05ff91274dd85f5b653a3c892a96bb4cdfb1649d"
+		},
+		{
+			"verse_id_chirho": "Gen.40.18",
+			"token_id_chirho": "01ias",
+			"text_chirho": "יָמִ֖ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "5f20650ce1f98e0b234272846dc5ff6b87574dc31447b26d9a2e31e6ccd02ed4"
+		},
+		{
+			"verse_id_chirho": "Gen.40.19",
+			"token_id_chirho": "01KAh",
+			"text_chirho": "יָמִ֗ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "6dca4146bffc2934a1c1c75d5e47fa1c18b956a9e18a2beb0ccddbd1134a9d73"
+		},
+		{
+			"verse_id_chirho": "Gen.42.17",
+			"token_id_chirho": "01vHF",
+			"text_chirho": "יָמִֽים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "7a36219b00040bcdb25ae7ab3e64fd1154711e4ce062bc2a0f2357bf70e544f5"
+		},
+		{
+			"verse_id_chirho": "Gen.50.3",
+			"token_id_chirho": "01mWy",
+			"text_chirho": "י֔וֹם",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "f4f714dc929f402500412604003fcf9524472035144e5df1392c64753ac31b17"
+		},
+		{
+			"verse_id_chirho": "Gen.50.3",
+			"token_id_chirho": "01jYf",
+			"text_chirho": "יֽוֹם",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "f4f714dc929f402500412604003fcf9524472035144e5df1392c64753ac31b17"
+		},
+		{
+			"verse_id_chirho": "Gen.50.10",
+			"token_id_chirho": "01paY",
+			"text_chirho": "יָמִֽים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "ccbe55abde78a6e5ffa70156b50be743cfbeeb8dcc25ee49e84d1f910184713f"
+		}
+	]
+}

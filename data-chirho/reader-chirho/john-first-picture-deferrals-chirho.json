@@ -1,0 +1,161 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "John",
+	"scope_chirho": "initial_lemma_picture_only",
+	"reviewed_by_chirho": "gpt_chirho",
+	"art_review_chirho": "pending",
+	"inventory_sha256_chirho": "4d2320cf6103581d9d094fc33f10f6316fb2df08672c3b978eedf8c220627184",
+	"source_snapshot_chirho": {
+		"data-chirho/corpus-chirho/john-lemma-inventory-chirho.json": "4d2320cf6103581d9d094fc33f10f6316fb2df08672c3b978eedf8c220627184",
+		"data-chirho/corpus-chirho/john-chirho/chapter-01-chirho.json": "80defa55138462833d25846ced30d6ad751a60b39ced092e2a504d44d1c30daf",
+		"data-chirho/corpus-chirho/john-chirho/chapter-02-chirho.json": "8a5e2aa2a0044d3d4b6d43ede136876bd2fd963257fc58cf7163361437d33c3c",
+		"data-chirho/corpus-chirho/john-chirho/chapter-03-chirho.json": "8ccc0d176ba492046f78e6e2c22343a2c8212fc37af3024ce09851fd88608118",
+		"data-chirho/corpus-chirho/john-chirho/chapter-04-chirho.json": "c603027a33d573dd5d546d8f6bc9c604e11b46d78c7441ed68aa1dfcd2d8ab30",
+		"data-chirho/corpus-chirho/john-chirho/chapter-05-chirho.json": "26f049c03a3047a39ab9d28b815ea146ffd25d7d2ec1ee057c5ee1c091bcecb5",
+		"data-chirho/corpus-chirho/john-chirho/chapter-06-chirho.json": "ba7e4bff9009ab4419b58cb4169750b5577bfb594bb1c0e82db34381ffefd7ae",
+		"data-chirho/corpus-chirho/john-chirho/chapter-07-chirho.json": "66baf1e6d90d2fb3806758045eaf0044cd50d9966c6f3df53b0fd5ffe05481cb",
+		"data-chirho/corpus-chirho/john-chirho/chapter-08-chirho.json": "a4a288a3bd62439791960197e1597687f114f597b87bf40d91eb925bc27db04b",
+		"data-chirho/corpus-chirho/john-chirho/chapter-09-chirho.json": "270b7797e87d9dccb84c5994728a625fb0262b767e2def4262414501088678ca",
+		"data-chirho/corpus-chirho/john-chirho/chapter-10-chirho.json": "44f502098346628b1f3f8ee2d581b6df1d3bee474791cc95469b774a4db76f40",
+		"data-chirho/corpus-chirho/john-chirho/chapter-11-chirho.json": "7b08ff82ac572634706226ec65f771a2b824a8987a311105c6df88b485a708ff",
+		"data-chirho/corpus-chirho/john-chirho/chapter-12-chirho.json": "d41b998638b62e38ca885f64489171b3f6a315a8672e85d9f675b5a91ddb77c5",
+		"data-chirho/corpus-chirho/john-chirho/chapter-13-chirho.json": "4b9a7c9f01cd75815887feaef95ef6b954eb91ec9ef8d65a9882cab59f2a71ad",
+		"data-chirho/corpus-chirho/john-chirho/chapter-14-chirho.json": "09ef76b35fbaa2697cfbcf22c36857a8abac1e946c8e06cc9d0bf29a257716bc",
+		"data-chirho/corpus-chirho/john-chirho/chapter-15-chirho.json": "84e65b30d0b6f86953c3c039bdf2a694a26707d56b7ef2cfe78108550063c6fe",
+		"data-chirho/corpus-chirho/john-chirho/chapter-16-chirho.json": "47cadf646e9d4202d97aed7f2e37e72319be8bf02ed81f4e3f7977320bdf33fd",
+		"data-chirho/corpus-chirho/john-chirho/chapter-17-chirho.json": "39746f843fffcd73b3e77393f521dfa8201fcb4076221cca335a9e85c6e738d0",
+		"data-chirho/corpus-chirho/john-chirho/chapter-18-chirho.json": "9beaf82688fcc7ff6ec062f888f9a415ce50447cbbd9745dd935db5abb4e55bd",
+		"data-chirho/corpus-chirho/john-chirho/chapter-19-chirho.json": "f8ed0df9cdef8b107ca5b4bc5e7edd90de3f90153266d4044446d04bbddb1374",
+		"data-chirho/corpus-chirho/john-chirho/chapter-20-chirho.json": "50b149f3042979f30245bfbfd5f9377a2216196334e0118c71898b6195520d00",
+		"data-chirho/corpus-chirho/john-chirho/chapter-21-chirho.json": "122b0581d4490a64a09b9de679241f3dbe8f74a632e0e31458f1b49e1e71af48",
+		"data-chirho/corpus-chirho/sources-chirho/nestle1904-chirho/morph/Nestle1904.csv": "3beee6abb6302f691110fe0fc949fc195593b999cf2d0e463c9b573c1bb67150",
+		"data-chirho/corpus-chirho/sources-chirho/nestle1904-chirho/morph/parsing.txt": "777b2b93acddb162dad0cfa9ad83c1dba5064fd5930163704e7da02f7eeeddb8",
+		"data-chirho/corpus-chirho/sources-chirho/nestle1904-chirho/glosses/berean-interlinear-glosses.xml": "21bcd97d90d7fb40b2e632b74020105b6de3223f316c6fa58e618ca9c9fc3a6d",
+		"data-chirho/sources-chirho/acquisition-manifest-chirho.json": "78c0a89ea046f9b138413bc1d1792529103f9d97050b02425a9cd6b44a451cd9",
+		"data-chirho/corpus-chirho/sources-chirho/acquisition-manifest-chirho.json": "f9520f3eda232a5cb588a4e1753841055a49427703cd3117f3b272b84263ba80",
+		"static/assets-chirho/icons-chirho/proverbs-v1-chirho/0000-chirho/cell-00-chirho.webp": "d248b0635c48d884527c1130b498d8baf6cdcbfb69d329406996df80ee30b0a2"
+	},
+	"coverage_note_chirho": "1019 of 1027 full John lemmas currently have a general picture; these eight remain unpictured. This reconciles the eligible first-picture work for independent production and does not claim complete picture, sense or human-art acceptance. Original operational hold identities and retry caps remain unchanged.",
+	"deferrals_chirho": [
+		{
+			"lexeme_key_chirho": ["John", "G4159", "πόθεν"],
+			"occurrence_chirho": {
+				"verse_id_chirho": "John.1.48",
+				"token_id_chirho": "John.1.48!4",
+				"source_form_chirho": "Πόθεν",
+				"berean_gloss_chirho": "From where"
+			},
+			"status_chirho": "deferred_art",
+			"reason_chirho": "The person and fig tree do not convey from where at small size. Existing image-attempt budgets and original failures remain protected; no replacement request is authorized by this disposition.",
+			"attempt_chirho": "attempt-508c4c7ad781444083b21998a96894b0-chirho",
+			"cell_chirho": 2,
+			"plan_sha256_chirho": "0a1f1cd88dd4879ca1b504e421c1ef7220e75ca98bf2804d7dcbccfe828b7ec5",
+			"evidence_sha256_chirho": "d66f516b9f9e1b5ce27cfa25e115fc7f49f72d391685d3016552217487d54c0f"
+		},
+		{
+			"lexeme_key_chirho": ["John", "G4178", "πολλάκις"],
+			"occurrence_chirho": {
+				"verse_id_chirho": "John.18.2",
+				"token_id_chirho": "John.18.2!11",
+				"source_form_chirho": "πολλάκις",
+				"berean_gloss_chirho": "often"
+			},
+			"status_chirho": "deferred_art",
+			"reason_chirho": "The repeated gathering loses the return arrow and repetition at small size. Existing image-attempt budgets and original failures remain protected; no replacement request is authorized by this disposition.",
+			"attempt_chirho": "attempt-508c4c7ad781444083b21998a96894b0-chirho",
+			"cell_chirho": 9,
+			"plan_sha256_chirho": "0a1f1cd88dd4879ca1b504e421c1ef7220e75ca98bf2804d7dcbccfe828b7ec5",
+			"evidence_sha256_chirho": "d66f516b9f9e1b5ce27cfa25e115fc7f49f72d391685d3016552217487d54c0f"
+		},
+		{
+			"lexeme_key_chirho": ["John", "G1893", "ἐπεί"],
+			"occurrence_chirho": {
+				"verse_id_chirho": "John.13.29",
+				"token_id_chirho": "John.13.29!4",
+				"source_form_chirho": "ἐπεὶ",
+				"berean_gloss_chirho": "since"
+			},
+			"status_chirho": "deferred_art",
+			"reason_chirho": "Dice do not convey the causal conjunction since. Existing image-attempt budgets and original failures remain protected; no replacement request is authorized by this disposition.",
+			"attempt_chirho": "attempt-ecba19e10ea54eae8b027b3ba988f245-chirho",
+			"cell_chirho": 2,
+			"plan_sha256_chirho": "97d5bb53a2b6f8cd3cdc4b2f17d2433f55bfe36cd4771a6eb4ff8be8cd8c1ea5",
+			"evidence_sha256_chirho": "250665ea81cc27e829d55433854cab94b53b68b50009b41b2278653014a89f70"
+		},
+		{
+			"lexeme_key_chirho": ["John", "G1961", "ἐπιμένω"],
+			"occurrence_chirho": {
+				"verse_id_chirho": "John.8.7",
+				"token_id_chirho": "John.8.7!3",
+				"source_form_chirho": "ἐπέμενον",
+				"berean_gloss_chirho": "they continued"
+			},
+			"status_chirho": "deferred_art",
+			"reason_chirho": "The continued-asking picture is indistinguishable from asking and loses continuation. Existing image-attempt budgets and original failures remain protected; no replacement request is authorized by this disposition.",
+			"attempt_chirho": "attempt-ecba19e10ea54eae8b027b3ba988f245-chirho",
+			"cell_chirho": 13,
+			"plan_sha256_chirho": "97d5bb53a2b6f8cd3cdc4b2f17d2433f55bfe36cd4771a6eb4ff8be8cd8c1ea5",
+			"evidence_sha256_chirho": "250665ea81cc27e829d55433854cab94b53b68b50009b41b2278653014a89f70"
+		},
+		{
+			"lexeme_key_chirho": ["John", "G1540", "ἑκατόν"],
+			"occurrence_chirho": {
+				"verse_id_chirho": "John.19.39",
+				"token_id_chirho": "John.19.39!19",
+				"source_form_chirho": "ἑκατόν",
+				"berean_gloss_chirho": "a hundred"
+			},
+			"status_chirho": "deferred_art",
+			"reason_chirho": "The abacus has seventy beads, not one hundred; the count is not readable. Existing image-attempt budgets and original failures remain protected; no replacement request is authorized by this disposition.",
+			"attempt_chirho": "attempt-1e611330f4e24c599dcbb4ab200f55d8-chirho",
+			"cell_chirho": 7,
+			"plan_sha256_chirho": "112b0fab09d10ea535e3ed0c78c4cb4e6ce8f88846e57e5eab35c51c8046b02b",
+			"evidence_sha256_chirho": "4aac76f6c6b262ea4ec21a72402da41419435375d12e39b8922d681bb2afb103"
+		},
+		{
+			"lexeme_key_chirho": ["John", "G1574", "ἐκκεντέω"],
+			"occurrence_chirho": {
+				"verse_id_chirho": "John.19.37",
+				"token_id_chirho": "John.19.37!9",
+				"source_form_chirho": "ἐξεκέντησαν",
+				"berean_gloss_chirho": "they have pierced"
+			},
+			"status_chirho": "deferred_art",
+			"reason_chirho": "Cloth hangs from the spear without visibly being pierced. Existing image-attempt budgets and original failures remain protected; no replacement request is authorized by this disposition.",
+			"attempt_chirho": "attempt-1e611330f4e24c599dcbb4ab200f55d8-chirho",
+			"cell_chirho": 13,
+			"plan_sha256_chirho": "112b0fab09d10ea535e3ed0c78c4cb4e6ce8f88846e57e5eab35c51c8046b02b",
+			"evidence_sha256_chirho": "4aac76f6c6b262ea4ec21a72402da41419435375d12e39b8922d681bb2afb103"
+		},
+		{
+			"lexeme_key_chirho": ["John", "G501", "ἀντλέω"],
+			"occurrence_chirho": {
+				"verse_id_chirho": "John.2.8",
+				"token_id_chirho": "John.2.8!4",
+				"source_form_chirho": "Ἀντλήσατε",
+				"berean_gloss_chirho": "Draw out"
+			},
+			"status_chirho": "deferred_art",
+			"reason_chirho": "The visible action pours toward the jar instead of drawing liquid out. Existing image-attempt budgets and original failures remain protected; no replacement request is authorized by this disposition.",
+			"attempt_chirho": "attempt-cfd677cea2884b26b38c7cdb86edcf84-chirho",
+			"cell_chirho": 10,
+			"plan_sha256_chirho": "a87d41be3dcf6cd93c6e8725583b5ed38ce8d36c962522842b65a5a633911e6c",
+			"evidence_sha256_chirho": "01083d5d606eea69320ac3cf782ce028d33004eacee85f53a19aac16109ad0a3"
+		},
+		{
+			"lexeme_key_chirho": ["John", "G847", "αὐτοῦ"],
+			"occurrence_chirho": {
+				"verse_id_chirho": "John.11.32",
+				"token_id_chirho": "John.11.32!12",
+				"source_form_chirho": "αὐτοῦ",
+				"berean_gloss_chirho": "of Him"
+			},
+			"status_chirho": "deferred_source",
+			"reason_chirho": "Nestle assigns G847, an adverb there, while the Berean gloss at John 11:32 is possessive of Him. Retain the exact source disagreement unillustrated; no new meaning or image is selected.",
+			"attempt_chirho": "attempt-3f296b123689409bbd363b71c9efce7f-chirho",
+			"cell_chirho": 11,
+			"plan_sha256_chirho": "8362763677624e72edfd560bd1ecde058af62d3fb1e6ce1017a385153417ac82",
+			"evidence_sha256_chirho": "16795f492065086ab963114c1673b548c6f03522781194337811a41b959adef7"
+		}
+	]
+}

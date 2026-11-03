@@ -1,0 +1,221 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h1-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The neutral adult portrait is a mnemonic for the father relationship. The listed your father occurrences retain that kinship meaning; it is not a historical portrait.",
+	"source_icon_id_chirho": "proverbs-worker-v2-icon-00-chirho",
+	"source_sha256_chirho": "03ae8c9f36320dcc531ede1087ba53808b3554dcc92cd3d62c1a7435307f8cbe",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.8",
+		"token_id_chirho": "20uLf",
+		"text_chirho": "אָבִ֑יךָ",
+		"gloss_chirho": "your father",
+		"canonical_sha256_chirho": "d94f8728b594e8ef1338f4cd01085ecc1e998f9243849470ae344934cb82c848"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H1",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "אָב"
+	},
+	"contextual_meaning_chirho": "father",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.12.1",
+			"token_id_chirho": "01ckh",
+			"text_chirho": "אָבִ֑יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "4e30f9c9a72df1a238c3299be697fde4dca5bbd486fcad311c3936fe93cbab1c"
+		},
+		{
+			"verse_id_chirho": "Gen.24.23",
+			"token_id_chirho": "01Tfb",
+			"text_chirho": "אָבִ֛יךְ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "469c1caad77ac5791fa7b6540303265796442621d3bda68d6251063a4f045dae"
+		},
+		{
+			"verse_id_chirho": "Gen.26.3",
+			"token_id_chirho": "01sxM",
+			"text_chirho": "אָבִֽיךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "613c854c2d399c3d288170255be4ed0c1de95c0439c305251d44a835c8c1e86e"
+		},
+		{
+			"verse_id_chirho": "Gen.26.24",
+			"token_id_chirho": "01AqG",
+			"text_chirho": "אָבִ֑יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "858f4d5897f277b0f5a3b5a2a960871ec629fcf0fbf2655908a0e1a204dd5039"
+		},
+		{
+			"verse_id_chirho": "Gen.27.6",
+			"token_id_chirho": "01bme",
+			"text_chirho": "אָבִ֔יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "41bda4096aeacddb66d5dc969ab86bcd57dc758838b314af2330680972aefc5a"
+		},
+		{
+			"verse_id_chirho": "Gen.28.13",
+			"token_id_chirho": "01G6m",
+			"text_chirho": "אָבִ֔יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "ebbda7f7bcb948c88bda5f923daac6acc449cdadb501c7f9ced99afa328e1539"
+		},
+		{
+			"verse_id_chirho": "Gen.31.5",
+			"token_id_chirho": "01Rpm",
+			"text_chirho": "אֲבִיכֶ֔ן",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "9e138ce9c75f49d50d3d9b3e5679bcc0fda7ee280eb37fbe779b0617d536d145"
+		},
+		{
+			"verse_id_chirho": "Gen.31.6",
+			"token_id_chirho": "01Y15",
+			"text_chirho": "אֲבִיכֶֽן",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "66956208423b29ef54d073c300571b71bd2d4065a2894dd986cadd7b494e4e4e"
+		},
+		{
+			"verse_id_chirho": "Gen.31.9",
+			"token_id_chirho": "01a6y",
+			"text_chirho": "אֲבִיכֶ֖ם",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "b471fb79beb91ca8a122a94b99f6a19534168b1dfb2c3106f8d473424fac673b"
+		},
+		{
+			"verse_id_chirho": "Gen.31.29",
+			"token_id_chirho": "01kJu",
+			"text_chirho": "אֲבִיכֶ֜ם",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "8d8c1947e882efeeab0d6defb33ec6bce47ec3819e498eea9b6a3ddb27e521d9"
+		},
+		{
+			"verse_id_chirho": "Gen.31.30",
+			"token_id_chirho": "017Dh",
+			"text_chirho": "אָבִ֑יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "8056a796eeff632825c6d44ee9591d507105175f19cbf4820bb5addb28863a08"
+		},
+		{
+			"verse_id_chirho": "Gen.43.7",
+			"token_id_chirho": "017oG",
+			"text_chirho": "אֲבִיכֶ֥ם",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "c1a1a517b39a9ba0d66bc6e46f109b22e095c751cb43eab3923b11cc32c7b414"
+		},
+		{
+			"verse_id_chirho": "Gen.43.23",
+			"token_id_chirho": "01Jso",
+			"text_chirho": "אֲבִיכֶם֙",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "b601d81af92994013efdd4741360fd87d1779f4bf326d4adc6b58c8cf5d7891c"
+		},
+		{
+			"verse_id_chirho": "Gen.43.27",
+			"token_id_chirho": "017Y3",
+			"text_chirho": "אֲבִיכֶ֥ם",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "3574584a421bc3812db9e956ad5b5c2e413655e5b0ed0783735e993a6501fd6c"
+		},
+		{
+			"verse_id_chirho": "Gen.44.17",
+			"token_id_chirho": "01vVh",
+			"text_chirho": "אֲבִיכֶֽם",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "27a09a0bf1fcd7108aacd0e29b4b597a9753f77bc4e8ff7529decc749acca2b5"
+		},
+		{
+			"verse_id_chirho": "Gen.45.18",
+			"token_id_chirho": "01h3y",
+			"text_chirho": "אֲבִיכֶ֛ם",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "f6c193caa3ee64ed1f4cace2162c8e6df60ef86a40bcba945970905bcae35750"
+		},
+		{
+			"verse_id_chirho": "Gen.45.19",
+			"token_id_chirho": "01qZr",
+			"text_chirho": "אֲבִיכֶ֖ם",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "94b1c8f8cb854cdc046e5f17f4fcd128019088d30f4e72e86bf51ceae8db9ce3"
+		},
+		{
+			"verse_id_chirho": "Gen.46.3",
+			"token_id_chirho": "01GNf",
+			"text_chirho": "אָבִ֑יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "7cc0d9b6f9c1d45bd41e994dea608421361bf24b0764d719301cd1ace39c4bfd"
+		},
+		{
+			"verse_id_chirho": "Gen.47.6",
+			"token_id_chirho": "01cmh",
+			"text_chirho": "אָבִ֖יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "ed9611819270db9652f9d69bb6495295f7033f2af2eea76016697d1dd9b3267e"
+		},
+		{
+			"verse_id_chirho": "Gen.48.1",
+			"token_id_chirho": "01J66",
+			"text_chirho": "אָבִ֖יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "5424a2acfb188fbcbd50c0ab95ce2b3e87238561aad5fd2a7512900fb2a38484"
+		},
+		{
+			"verse_id_chirho": "Gen.49.2",
+			"token_id_chirho": "01dRP",
+			"text_chirho": "אֲבִיכֶֽם",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "8a566ba87498dd6e1a09dd506f0282cb501585e01282dc16083ed8050c07b847"
+		},
+		{
+			"verse_id_chirho": "Gen.49.4",
+			"token_id_chirho": "012Hi",
+			"text_chirho": "אָבִ֑יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "832df9fa7b2aff94c35e9c92fd77ef0eb2eaa879b0bd4231f458b77280ec3b4b"
+		},
+		{
+			"verse_id_chirho": "Gen.49.8",
+			"token_id_chirho": "019cJ",
+			"text_chirho": "אָבִֽיךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "aead677cb4934a423e9d9acc63d2e2f87f0a8e392c611d501a5a2bda0cd4581b"
+		},
+		{
+			"verse_id_chirho": "Gen.49.25",
+			"token_id_chirho": "01HoS",
+			"text_chirho": "אָבִ֜יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "0d3dbf25cbd24a79afe61aa210612ac4cae8a3c9e5bbe4e328da92c23bc4016d"
+		},
+		{
+			"verse_id_chirho": "Gen.49.26",
+			"token_id_chirho": "01zht",
+			"text_chirho": "אָבִ֗יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "8e7bb86f5f2b428813699863a7dd0dda6fac08f0cd00f455e7a67dc3922e436a"
+		},
+		{
+			"verse_id_chirho": "Gen.50.6",
+			"token_id_chirho": "01iou",
+			"text_chirho": "אָבִ֖יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "ddb21f8035a6b45793f3e5c5ecaa4592b8f8f8fb3f2ac03dcf56ff518328c766"
+		},
+		{
+			"verse_id_chirho": "Gen.50.16",
+			"token_id_chirho": "01t5v",
+			"text_chirho": "אָבִ֣יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "ad0dca724c2a517e50c62f91427e36794a2fa007ea754f9e7a05bb255d7ca4f6"
+		},
+		{
+			"verse_id_chirho": "Gen.50.17",
+			"token_id_chirho": "01Jtq",
+			"text_chirho": "אָבִ֑יךָ",
+			"gloss_chirho": "your father",
+			"canonical_sha256_chirho": "d9f2afcb6a6f1fd91ff62c7a788c3e4cb65e98910922d29f7692d2846ef1c39d"
+		}
+	]
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
+<!-- Native vector of the shared mark; the 42dp-wide book stays inside the adaptive safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <group android:translateX="22" android:translateY="22">
+        <path android:fillColor="#FAF6E9"
+            android:pathData="M32,19 Q22,12 11,17 V46 Q23,42 32,49 Q42,42 53,46 V17 Q42,12 32,19 Z" />
+        <path android:fillColor="#00000000" android:strokeColor="#AEB9A4"
+            android:strokeWidth="2" android:strokeLineCap="round"
+            android:pathData="M32,19 V49 M17,24 Q23,22 27,25 M17,31 Q23,29 27,32 M37,25 Q43,22 48,24 M37,32 Q43,29 48,31" />
+        <path android:fillColor="#C48059"
+            android:pathData="M40,14 V34 L44,30 L48,32 V14 Z" />
+    </group>
+</vector>

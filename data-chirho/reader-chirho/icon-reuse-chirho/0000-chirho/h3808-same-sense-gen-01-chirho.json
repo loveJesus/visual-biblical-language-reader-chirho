@@ -1,0 +1,878 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3808-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The prohibition sign conveys the negative particle not. Reuse is confined to the listed H3808 occurrences glossed not; it does not assign clause scope or a new lexical meaning.",
+	"source_icon_id_chirho": "prov-icon-05-chirho",
+	"source_sha256_chirho": "e3d84956616c6501ae227e79d0670aab4fe1b56168cc8e761e00a1e39b1cfe91",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.26.1",
+		"token_id_chirho": "20DYG",
+		"text_chirho": "לֹא",
+		"gloss_chirho": "not",
+		"canonical_sha256_chirho": "94b6df7f5a9016538e9d0613aa57103f047da6aa23998754aff7a0bd183f44ac"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3808",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "לֹא"
+	},
+	"contextual_meaning_chirho": "not",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.2.5",
+			"token_id_chirho": "01brh",
+			"text_chirho": "לֹ֨א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "8ffb13e652691705d96b32f9d79f2bab341f5d099f66bae568b57a95a9643136"
+		},
+		{
+			"verse_id_chirho": "Gen.2.17",
+			"token_id_chirho": "01j8W",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "66e07b70419770fdea5ef9dfa2312992a223e707ca5918e7a7778a6c2e2276fb"
+		},
+		{
+			"verse_id_chirho": "Gen.2.18",
+			"token_id_chirho": "01SGf",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "70776c1cf323d5711263d73e8b6ba0e4c207af1ebe79acdb1c5f4037e69fefa5"
+		},
+		{
+			"verse_id_chirho": "Gen.2.20",
+			"token_id_chirho": "01fiV",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "af54c8f7fb9fe8c3750f8cf7eec3805752f0c1ac637fd92b2752ba10e80207a5"
+		},
+		{
+			"verse_id_chirho": "Gen.3.1",
+			"token_id_chirho": "01ayu",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "fc7ed667061c78367ea0c2e057962beffd2f7540627b9d8c707f6d6c82ab8258"
+		},
+		{
+			"verse_id_chirho": "Gen.3.3",
+			"token_id_chirho": "01sEP",
+			"text_chirho": "לֹ֤א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "fce0259c0df82ef608b59013ed28573dc4717f35ccefb7f744f83eb48810492d"
+		},
+		{
+			"verse_id_chirho": "Gen.3.4",
+			"token_id_chirho": "01dDm",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "84a3d56d09917777c325751599317b47942ce982eafd0ac3c4401d0349be9d9c"
+		},
+		{
+			"verse_id_chirho": "Gen.3.17",
+			"token_id_chirho": "01GXC",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "1f729c42857a285b7d103e5ecc0d4fd80d2aacc2ec7e3274867d6cea6686d2a6"
+		},
+		{
+			"verse_id_chirho": "Gen.4.5",
+			"token_id_chirho": "01fJd",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "52177021bda41cf43ec96b586db3e163f52ea93eec6a95c563a674e7b42e5f3d"
+		},
+		{
+			"verse_id_chirho": "Gen.4.7",
+			"token_id_chirho": "01k3m",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "d5bab54cdb1e759c7070c520879bd7804691888fb1ef627ef3c57e9c3d75e152"
+		},
+		{
+			"verse_id_chirho": "Gen.4.9",
+			"token_id_chirho": "01rhu",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "2ba527920c1b2d52d1cd963be89e9de9e33b5445ab5f7b3dedd0a40e7d1fe03b"
+		},
+		{
+			"verse_id_chirho": "Gen.6.3",
+			"token_id_chirho": "01c3J",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "c6a0bf8323d7135b80d866545f1183c736dbe9409952bc3a501f60da9caab19d"
+		},
+		{
+			"verse_id_chirho": "Gen.7.2",
+			"token_id_chirho": "01EJ6",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "e82b1f851ce01598289af2c00f0c91870605a7c953c307302cd650998305f55f"
+		},
+		{
+			"verse_id_chirho": "Gen.8.22",
+			"token_id_chirho": "01eb4",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "bd5aee37fd00c23d1cc4b170f8aef59d1ae2b48bfe53ee3e6553ddf0a57f508f"
+		},
+		{
+			"verse_id_chirho": "Gen.9.4",
+			"token_id_chirho": "01L6v",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "ce1a0b50f99fa21602ea7051350f5414e7e5185c96bb8fad9800fda891912c3a"
+		},
+		{
+			"verse_id_chirho": "Gen.9.23",
+			"token_id_chirho": "01JA6",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "438ca967a25b3b34e5c17f35c42753a9c955875045e9f0e0c23d6a0520b7e3c6"
+		},
+		{
+			"verse_id_chirho": "Gen.11.7",
+			"token_id_chirho": "01Xbu",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "1ff343f3537f3b89e43411dc61b9d1d45d7af309fc487dbc86bf72fb8d949939"
+		},
+		{
+			"verse_id_chirho": "Gen.12.18",
+			"token_id_chirho": "01GSJ",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "e57eab77451f5c9f14b56047907320cf681e59642cd1f81f10ba42df582701e9"
+		},
+		{
+			"verse_id_chirho": "Gen.15.3",
+			"token_id_chirho": "01pZy",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "e68851137edf7196a467b21d8ad10b74142039ca74559f7902b477279340648e"
+		},
+		{
+			"verse_id_chirho": "Gen.15.4",
+			"token_id_chirho": "01Y86",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "2104776a20b8f890a404bfb28411358bba4805be020a7f22391841402dbcc1e5"
+		},
+		{
+			"verse_id_chirho": "Gen.15.10",
+			"token_id_chirho": "01TCC",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "a3e8437db2a0e2a164df67b04300695e995db9725af5558f111820bbf46fde65"
+		},
+		{
+			"verse_id_chirho": "Gen.15.16",
+			"token_id_chirho": "018mf",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "562fa0dc3fb30b03d0c12bb4caa7d8556cf8e32e32781e9f157e1656b49b2cb2"
+		},
+		{
+			"verse_id_chirho": "Gen.16.1",
+			"token_id_chirho": "01ncc",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "3c6110e7633da12037fd914a153265c5378b87337a3bbf6c5241ec4c64a1a832"
+		},
+		{
+			"verse_id_chirho": "Gen.17.12",
+			"token_id_chirho": "01ceA",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "37759e10621acda65ef320b53c04a42ec9622d09831fd62ebce4fec57fd6aad2"
+		},
+		{
+			"verse_id_chirho": "Gen.17.14",
+			"token_id_chirho": "01FwU",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "6969e0149841ff0db5c8ea94dde608ef9bed6e5a83287b970a345d2b5c94dabb"
+		},
+		{
+			"verse_id_chirho": "Gen.17.15",
+			"token_id_chirho": "01b7a",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "977ef862f82b313e829af7128bf34a18fcee698f4b28b45a967b861d2cff6bd7"
+		},
+		{
+			"verse_id_chirho": "Gen.18.15",
+			"token_id_chirho": "0198g",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "8fbd241966a20d3fe583a998c26a8b946c5ee2a585313e50a7c7caf4d6be4541"
+		},
+		{
+			"verse_id_chirho": "Gen.18.21",
+			"token_id_chirho": "01R2m",
+			"text_chirho": "לֹ֖א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "d7974c1189e0c83fe08edb76c8008085c17c47975b5a83bc5d54adfd18d8e301"
+		},
+		{
+			"verse_id_chirho": "Gen.18.25",
+			"token_id_chirho": "01zfB",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "bd361ac5c1faa6dfae5264c10e1831052687d7daf5700a2af894b9ad046af30b"
+		},
+		{
+			"verse_id_chirho": "Gen.18.28",
+			"token_id_chirho": "01JP4",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "418a2443a247a2fd57d6d4b15c04bdde9c6e92162f10d5eea6fff31cba49edda"
+		},
+		{
+			"verse_id_chirho": "Gen.18.29",
+			"token_id_chirho": "017DJ",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "040c0ab65955b36825176a999774178fc13c49e087aa71d768bb8f601e74077e"
+		},
+		{
+			"verse_id_chirho": "Gen.18.30",
+			"token_id_chirho": "01AYP",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "80a62877f610e100991a362150b095daa0ed5c4134e896fd2a45e75d9ea1ffdc"
+		},
+		{
+			"verse_id_chirho": "Gen.18.31",
+			"token_id_chirho": "01kSx",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "97ee2e4da6f5604325505542033cd3145d17de0e80f5107de00293a843ebf8ec"
+		},
+		{
+			"verse_id_chirho": "Gen.18.32",
+			"token_id_chirho": "01DbG",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "89f1d3c7e6da4f56e6903d19ea36dc13eef7ba2f1b2af9608839ce459be3c231"
+		},
+		{
+			"verse_id_chirho": "Gen.19.8",
+			"token_id_chirho": "01MDc",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "4f27beab1f1199b2afb0327b12b3613602adbe7d9419b2765fd2c02cc6b44c3f"
+		},
+		{
+			"verse_id_chirho": "Gen.19.19",
+			"token_id_chirho": "01B9T",
+			"text_chirho": "לֹ֤א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "983a359a6d39ca03613732fe36b6d691a3d3c49ef708435240b171c3a513d102"
+		},
+		{
+			"verse_id_chirho": "Gen.20.4",
+			"token_id_chirho": "01UsU",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "a73a4632438238214dce0c1eae3135013eb80d3a6945dbe6de2694e8424e5a20"
+		},
+		{
+			"verse_id_chirho": "Gen.20.6",
+			"token_id_chirho": "01gtJ",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "39d9b625dab47bb6dc7f67b70f07eeee8f834a0980bce7afec3ecf7afce94f23"
+		},
+		{
+			"verse_id_chirho": "Gen.20.9",
+			"token_id_chirho": "01XmE",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "bcfea761465a0cfa56767447feaac24df63a148ffbb6f4afdf9214b0d292c8ff"
+		},
+		{
+			"verse_id_chirho": "Gen.20.12",
+			"token_id_chirho": "01SXf",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "8ce7dc97dae96191ef7352d7fc369b0a64d0913b057a6b62a4d6a2643425941d"
+		},
+		{
+			"verse_id_chirho": "Gen.21.10",
+			"token_id_chirho": "01Qvc",
+			"text_chirho": "לֹ֤א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "de71a09eaa3e8ad2109df28a4d80e38f3e5a2688b6417ef8d79e14705903f0ed"
+		},
+		{
+			"verse_id_chirho": "Gen.21.26",
+			"token_id_chirho": "01p8S",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "b8694fa1bb716b1c0f0bee0b95951f3646019d1bb3d414ff5bf0058f3333b986"
+		},
+		{
+			"verse_id_chirho": "Gen.21.26",
+			"token_id_chirho": "01EQq",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "b8694fa1bb716b1c0f0bee0b95951f3646019d1bb3d414ff5bf0058f3333b986"
+		},
+		{
+			"verse_id_chirho": "Gen.21.26",
+			"token_id_chirho": "01eMk",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "b8694fa1bb716b1c0f0bee0b95951f3646019d1bb3d414ff5bf0058f3333b986"
+		},
+		{
+			"verse_id_chirho": "Gen.24.3",
+			"token_id_chirho": "01RVq",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "8fd58584f0769992289784477df0ffc51ec533d777fe2e345742aa3ab2163185"
+		},
+		{
+			"verse_id_chirho": "Gen.24.5",
+			"token_id_chirho": "01Hqs",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "87731fa9f1cd542e2f21903430d107b33837597ac9e7c444d45b5a8804285019"
+		},
+		{
+			"verse_id_chirho": "Gen.24.8",
+			"token_id_chirho": "01w77",
+			"text_chirho": "לֹ֨א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "42460b81bd5c63f0dabe396b911fa2761498f418d15bcf2fe42a3fcc34339e81"
+		},
+		{
+			"verse_id_chirho": "Gen.24.8",
+			"token_id_chirho": "01P68",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "42460b81bd5c63f0dabe396b911fa2761498f418d15bcf2fe42a3fcc34339e81"
+		},
+		{
+			"verse_id_chirho": "Gen.24.21",
+			"token_id_chirho": "01BXH",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "757fe4056aa44c98f7c87e1cc18d52fb6113701ff48b090f250d5c215f4ae57a"
+		},
+		{
+			"verse_id_chirho": "Gen.24.27",
+			"token_id_chirho": "01jEY",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "2a3fe463d691467d01b7401a9d39594f02d5d462979cad0f51a387a07eab5ca9"
+		},
+		{
+			"verse_id_chirho": "Gen.24.33",
+			"token_id_chirho": "01ubD",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "9bb5f42d4b84794d6e062756d384c92ca01d71843dae30101b243f6217994355"
+		},
+		{
+			"verse_id_chirho": "Gen.24.37",
+			"token_id_chirho": "01QWF",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "4a4b88f12d850c94021e2c64bedd23989d1e87e71a5a78e074806dba62be8524"
+		},
+		{
+			"verse_id_chirho": "Gen.24.39",
+			"token_id_chirho": "01ipi",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "045ad817f50f0a59dcade59b6acd63e6c2a6c2ce1eb4a263573ff1b3c70ca11a"
+		},
+		{
+			"verse_id_chirho": "Gen.24.41",
+			"token_id_chirho": "01apP",
+			"text_chirho": "לֹ֤א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "86e66d2f56af715c679a4aedf992b0ae8e31a072cfce92b5295959ffc96c827d"
+		},
+		{
+			"verse_id_chirho": "Gen.24.49",
+			"token_id_chirho": "01v7k",
+			"text_chirho": "לֹ֕א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "2812fc0a7e5cc906fc52a8e98e86aa3749fbdffdf6d2a3acf5f9c00e71f570f5"
+		},
+		{
+			"verse_id_chirho": "Gen.26.29",
+			"token_id_chirho": "01jvH",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "a05825a1043c7ccbe9d2a18215db7f1113e285402e2635d4ca4be2b6bffe0daf"
+		},
+		{
+			"verse_id_chirho": "Gen.27.2",
+			"token_id_chirho": "01yM6",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "0796faf912d77c56a4ba14114cfee6e2788f397c133214501254d1f137be2941"
+		},
+		{
+			"verse_id_chirho": "Gen.27.21",
+			"token_id_chirho": "01v2Y",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "3cfc1c3079144df7f15e5f0fd80542a4d55e270ebf26980a57e93e52e332726a"
+		},
+		{
+			"verse_id_chirho": "Gen.27.36",
+			"token_id_chirho": "01YBb",
+			"text_chirho": "הֲלֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "72c8d0e7b8efb727deadaed07b66d971da09589d3a3c3c622ae23d4241da1654"
+		},
+		{
+			"verse_id_chirho": "Gen.28.1",
+			"token_id_chirho": "01x6p",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "5b896369b1331f867781876460e6ed4004c6ca54b1b45e94037fab973f2c2d9f"
+		},
+		{
+			"verse_id_chirho": "Gen.28.6",
+			"token_id_chirho": "01Uib",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "5c25b5ee50f4e412a6c0c61ac89530939b1a2029394a497769d44245a0896b61"
+		},
+		{
+			"verse_id_chirho": "Gen.28.15",
+			"token_id_chirho": "01g6h",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "5cc5b7958f83f447d28f355ae3c8eef411781f473e1819b53266179d37482c53"
+		},
+		{
+			"verse_id_chirho": "Gen.28.16",
+			"token_id_chirho": "01gLK",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "6143a15af420a810ce8c9ac216e8792f59e6c1e9fcf9d50a11f4bd1dcc3a7e78"
+		},
+		{
+			"verse_id_chirho": "Gen.29.7",
+			"token_id_chirho": "01S2Q",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "1c98c2fcd26a901b604859e49636fdcfd7e407522c48d552dd789d07cb2e143a"
+		},
+		{
+			"verse_id_chirho": "Gen.29.26",
+			"token_id_chirho": "01HhT",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "b23dbceba23d396f78420e3a00eb79efd6c7ebcde514793be868c08a14893bd0"
+		},
+		{
+			"verse_id_chirho": "Gen.30.31",
+			"token_id_chirho": "01DiD",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "3d6c54ffee6e6eec49b9ce43d10d9b407c46f0ef1d3cea2e293efcf870ee5228"
+		},
+		{
+			"verse_id_chirho": "Gen.30.42",
+			"token_id_chirho": "01Qqf",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "3d7917ae9d90808491f00e98191f28f8cfdde17a61c39655225b310a36e98d8a"
+		},
+		{
+			"verse_id_chirho": "Gen.31.32",
+			"token_id_chirho": "012UF",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "841ca47c3e831086e2e8256ba252135026c7d903187e5cc5351c06eb32610a02"
+		},
+		{
+			"verse_id_chirho": "Gen.31.38",
+			"token_id_chirho": "01q4X",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "8a9c87e5b44bb065ac8cb8a05395115cb1c3eb1c0523c9eda31cd42d304dcffc"
+		},
+		{
+			"verse_id_chirho": "Gen.31.38",
+			"token_id_chirho": "01tz4",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "8a9c87e5b44bb065ac8cb8a05395115cb1c3eb1c0523c9eda31cd42d304dcffc"
+		},
+		{
+			"verse_id_chirho": "Gen.31.39",
+			"token_id_chirho": "01evq",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "158c63c167d742e8d63b2cc7b94439c8e9c3a49e3d83e8853d7cbbc5eba5ec13"
+		},
+		{
+			"verse_id_chirho": "Gen.31.52",
+			"token_id_chirho": "01oGY",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "adc9bf34118da8c1cdb545ff8f8b03962a171933207c18b06daeb2c8401890cd"
+		},
+		{
+			"verse_id_chirho": "Gen.31.52",
+			"token_id_chirho": "012UZ",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "adc9bf34118da8c1cdb545ff8f8b03962a171933207c18b06daeb2c8401890cd"
+		},
+		{
+			"verse_id_chirho": "Gen.32.26",
+			"token_id_chirho": "01zbk",
+			"text_chirho": "לֹ֤א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "93eae46061cd706bbc0251d739fd2588e5aade12773ee69e19b1ff9697dcb5a3"
+		},
+		{
+			"verse_id_chirho": "Gen.32.27",
+			"token_id_chirho": "01FK9",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "e4252ad5089adf1ae1ef9762959da988f075b281208f7ecc6a46f2b6c636f18a"
+		},
+		{
+			"verse_id_chirho": "Gen.32.29",
+			"token_id_chirho": "01cTB",
+			"text_chirho": "לֹ֤א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "933ac4a51a71e8f5f8236f11584740fed6bcb9382ee85fe43eca8b7e93c393d9"
+		},
+		{
+			"verse_id_chirho": "Gen.32.33",
+			"token_id_chirho": "01cwr",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "7ec56d11f1d9be7b2db46205229a294c1444b92b5930fabb2d779f617ffd6f11"
+		},
+		{
+			"verse_id_chirho": "Gen.34.7",
+			"token_id_chirho": "01QGA",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "90abd7fdbca94c58f609867b10aec063bea20f3040a0d5c68d4b8f33d24dc24c"
+		},
+		{
+			"verse_id_chirho": "Gen.34.17",
+			"token_id_chirho": "01ptT",
+			"text_chirho": "לֹ֧א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "d9ef0c4b656ece3083554eec1c4f272540c06ba9e83b2dc6aa46f1c1d62953de"
+		},
+		{
+			"verse_id_chirho": "Gen.35.10",
+			"token_id_chirho": "01SoK",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "358632e9b431f28fced4e31dbb9193b7f9ef618d74fd965761ae448e4e3783b8"
+		},
+		{
+			"verse_id_chirho": "Gen.37.21",
+			"token_id_chirho": "01n7W",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "993dd1e77a3ae3a667b0145ed1a421161a576a4aee1c4aaab6e1ed6657be5588"
+		},
+		{
+			"verse_id_chirho": "Gen.37.22",
+			"token_id_chirho": "01bhs",
+			"text_chirho": "אַל",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "f0380a5a5701b2ad52d575fb004d417bd4c63c6363a955e3233dd8904fc7e7ab"
+		},
+		{
+			"verse_id_chirho": "Gen.37.32",
+			"token_id_chirho": "01dEA",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "f50a56ca0199c0f5a4df090437c76e93c3572c4161b15f80406f5f710fa7c306"
+		},
+		{
+			"verse_id_chirho": "Gen.38.9",
+			"token_id_chirho": "016Gw",
+			"text_chirho": "לֹּ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "79a2c130c4c2b0ce408e63946ee358486d98763b50994c9296c65a7bc5c4963b"
+		},
+		{
+			"verse_id_chirho": "Gen.38.14",
+			"token_id_chirho": "01iPu",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "2f73a746cdf1ccfab46f7ec69884d77a9c012513bd81fa2c31412cc8ffeffb23"
+		},
+		{
+			"verse_id_chirho": "Gen.38.16",
+			"token_id_chirho": "01jvS",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "478912b02c222fcc9e4c664f9e437867a2887962303c0dde19186e966a07a0a9"
+		},
+		{
+			"verse_id_chirho": "Gen.38.23",
+			"token_id_chirho": "01bXn",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "f8b9f6928a482a7c278c9122be708289ea17966c28822c69dc9bf452adf8a689"
+		},
+		{
+			"verse_id_chirho": "Gen.38.26",
+			"token_id_chirho": "01fgi",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "06c87aeb6315f896d7fc9b17861ba498f1758b3bebbdf161a1aff2cb0aef39f5"
+		},
+		{
+			"verse_id_chirho": "Gen.39.8",
+			"token_id_chirho": "01aP7",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "d797dfaecb4363f7757ff91074b51c5ba40830c585f4cf560cce9efd6fe42df4"
+		},
+		{
+			"verse_id_chirho": "Gen.40.15",
+			"token_id_chirho": "01Yzr",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "2c7c5e76e9b65fb25239d80a928a88c66618c7e5ac14e53790146471f8b80bd5"
+		},
+		{
+			"verse_id_chirho": "Gen.41.44",
+			"token_id_chirho": "01pHM",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "997ed3f451e333a9e7c6b7acc695c911d07b1e857317551d320b334f65c3fcd2"
+		},
+		{
+			"verse_id_chirho": "Gen.42.4",
+			"token_id_chirho": "01tyK",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "9388e116bec433584a62566191ec74176d5568ccd41272a05d35920ae3b2fff9"
+		},
+		{
+			"verse_id_chirho": "Gen.42.8",
+			"token_id_chirho": "01QKB",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "49fbb5951fd7c18955dc07153b81ee8edcc7765f3ae26d9613900ca847cf2655"
+		},
+		{
+			"verse_id_chirho": "Gen.42.11",
+			"token_id_chirho": "01ioE",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "ebc8117752363cb3b299854952159b9ad348860838975b092e5456bcdb109770"
+		},
+		{
+			"verse_id_chirho": "Gen.42.16",
+			"token_id_chirho": "01qXa",
+			"text_chirho": "לֹ֕א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "4c368ee8f46ba7c4243035974600cea060538c501ae5fb9ff32545fd84685e79"
+		},
+		{
+			"verse_id_chirho": "Gen.42.23",
+			"token_id_chirho": "01Fkc",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "65a6759215800c9cb3d2ef20879cda225f6c0347455c99c620abf2dadccffd62"
+		},
+		{
+			"verse_id_chirho": "Gen.42.31",
+			"token_id_chirho": "01hYZ",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "9bc12d8e1e2b4a3f9828260733be8800d7b61211a3b0b7dcfcf9e2ae1292ea01"
+		},
+		{
+			"verse_id_chirho": "Gen.42.34",
+			"token_id_chirho": "01apK",
+			"text_chirho": "לֹ֤א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "a35cdbfd5416ab986deb4a98436b2f7dca86f5fe1ccf6383fe1107d5cac4a0fe"
+		},
+		{
+			"verse_id_chirho": "Gen.42.37",
+			"token_id_chirho": "01gaE",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "bc49f1bf2fdb1a5aa22b657688f94ef5f88d1d7032fa2857693a10b9519529a3"
+		},
+		{
+			"verse_id_chirho": "Gen.42.38",
+			"token_id_chirho": "01io1",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "09387747a291f3a7210c79b85f00ed59cdaddfec67479a2d9ee3337f16b09657"
+		},
+		{
+			"verse_id_chirho": "Gen.43.3",
+			"token_id_chirho": "01dGH",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "a1b3c351449c1fe119c2765c0b06bac741a266bd70dde186790e9cc528c1908d"
+		},
+		{
+			"verse_id_chirho": "Gen.43.5",
+			"token_id_chirho": "015Yb",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "81e72cca064302f53d10e0161d18122f72130ee570f18412258c34b28bc1e158"
+		},
+		{
+			"verse_id_chirho": "Gen.43.5",
+			"token_id_chirho": "01giC",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "81e72cca064302f53d10e0161d18122f72130ee570f18412258c34b28bc1e158"
+		},
+		{
+			"verse_id_chirho": "Gen.43.9",
+			"token_id_chirho": "01fJ2",
+			"text_chirho": "לֹ֨א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "702cfe588f7c152c3fc0ebc760b94a4e01a9aea5b6b8b83cb2c3a219c88b6122"
+		},
+		{
+			"verse_id_chirho": "Gen.43.22",
+			"token_id_chirho": "01TrY",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "93d366519aabff857637be03061a4f7a5a6b87823cb1e59a355fd30e0530e103"
+		},
+		{
+			"verse_id_chirho": "Gen.43.32",
+			"token_id_chirho": "01V7M",
+			"text_chirho": "לֹ֨א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "0b5c78089c5c751cff4605b8a0b80e0dfaad5a2904144506f88b5c28e6c99bbf"
+		},
+		{
+			"verse_id_chirho": "Gen.44.4",
+			"token_id_chirho": "01fV1",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "4659dce273898c46be3140fa9499ba046445d117d4c683cea7985093ef38a4d7"
+		},
+		{
+			"verse_id_chirho": "Gen.44.22",
+			"token_id_chirho": "01SZ8",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "161f74a1cc258e67b7ce26e36de3399b12c175670a574e4c287eace0120c6614"
+		},
+		{
+			"verse_id_chirho": "Gen.44.23",
+			"token_id_chirho": "01SgP",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "e9337af6d0dd777c49126a56c6446a066a1239ed1f9b8e082f11462dbbf91c68"
+		},
+		{
+			"verse_id_chirho": "Gen.44.26",
+			"token_id_chirho": "01gXd",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "f83c7b19e8bbee247456f3873d4c7b316fe56efc996454975d1f02bdba5a1f09"
+		},
+		{
+			"verse_id_chirho": "Gen.44.32",
+			"token_id_chirho": "01xPs",
+			"text_chirho": "לֹ֤א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "2e9f8c24363563fb42de41623a7fe41dde6999c4b9b475393ecf6b5ed3fc49ca"
+		},
+		{
+			"verse_id_chirho": "Gen.45.8",
+			"token_id_chirho": "01qJh",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "a10f225c5d48c75a1959f05707486a020a41e3409dd85ee1edf4f5bca0af1fb5"
+		},
+		{
+			"verse_id_chirho": "Gen.45.26",
+			"token_id_chirho": "01kGq",
+			"text_chirho": "לֹא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "4443a1935fdcfe725847fc79e7fd0368eb41c782e9dc79e465f930e440c3a990"
+		},
+		{
+			"verse_id_chirho": "Gen.47.18",
+			"token_id_chirho": "01gZn",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "84a994f692fcd9e91e7f1b1ebc8e17c39b0db48f5504f19797bc9eac5666930d"
+		},
+		{
+			"verse_id_chirho": "Gen.47.19",
+			"token_id_chirho": "01DJa",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "e40b916008a5d6cc17198c6568d777a5058a639254fa2cbbf6ec024716eaa23e"
+		},
+		{
+			"verse_id_chirho": "Gen.47.22",
+			"token_id_chirho": "01SrR",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "1104d1865d8efabd3e6b5603a3b30998f67a7bc11cc5b13444f335bd05899405"
+		},
+		{
+			"verse_id_chirho": "Gen.47.22",
+			"token_id_chirho": "01HVP",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "1104d1865d8efabd3e6b5603a3b30998f67a7bc11cc5b13444f335bd05899405"
+		},
+		{
+			"verse_id_chirho": "Gen.47.26",
+			"token_id_chirho": "01Mpj",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "99329b3c843c85f57b0d8cbc3b4c746040df36be15d7c39686d0ca718c186acb"
+		},
+		{
+			"verse_id_chirho": "Gen.48.10",
+			"token_id_chirho": "01u1X",
+			"text_chirho": "לֹ֥א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "8f641cfddf86578b2b6df1f3bac32677bc79b6b9cbaf02aa0c5a28b1f71ce2f3"
+		},
+		{
+			"verse_id_chirho": "Gen.48.11",
+			"token_id_chirho": "017HZ",
+			"text_chirho": "לֹ֣א",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "fb6d35429c92b9329026acb4159362205639b9cab37efdab753cfb6f5bc57fa4"
+		},
+		{
+			"verse_id_chirho": "Gen.49.10",
+			"token_id_chirho": "01TNL",
+			"text_chirho": "לֹֽא",
+			"gloss_chirho": "not",
+			"canonical_sha256_chirho": "77d900d96fb968ae3dd16f390ff3c79876a6417accb55c36e658b418d9c9946b"
+		}
+	],
+	"alternatives_chirho": [
+		{
+			"icon_id_chirho": "prov-icon-13-chirho",
+			"sha256_chirho": "10abea699040198a433099902252fa34a3de587b7ec4865bd6f53f303520cedf"
+		}
+	]
+}

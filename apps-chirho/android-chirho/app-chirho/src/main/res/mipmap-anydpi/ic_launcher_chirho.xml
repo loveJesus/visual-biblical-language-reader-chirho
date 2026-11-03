@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
+<!-- The shared Hinneh mark (apps-chirho/branding-chirho/, GPT) on its adaptive background. -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/launcher_background_chirho" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground_chirho" />
+    <monochrome android:drawable="@drawable/ic_launcher_monochrome_chirho" />
+</adaptive-icon>

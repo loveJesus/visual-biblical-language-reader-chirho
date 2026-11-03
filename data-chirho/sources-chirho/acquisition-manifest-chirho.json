@@ -1,0 +1,138 @@
+{
+	"schema_version_chirho": 1,
+	"retrieved_at_chirho": "2026-10-26",
+	"retrieved_by_chirho": "VBLREADER_CHIRHO/claude_chirho",
+	"method_chirho": "git clone --filter=blob:none of each repository, then git show <commit>:<upstream path> written byte for byte. scripts-chirho/import-chirho/acquire_sources_chirho.py re-downloads the same commits and compares sha256.",
+	"repositories_chirho": [
+		{
+			"id_chirho": "morphhb-chirho",
+			"url_chirho": "https://github.com/openscriptures/morphhb",
+			"branch_chirho": "master",
+			"commit_chirho": "3d15126fb1ef74867fc1434be1942e837932691f",
+			"commit_date_chirho": "2024-08-27T15:19:54+02:00",
+			"local_dir_chirho": "morphhb-chirho"
+		},
+		{
+			"id_chirho": "hebrew-lexicon-chirho",
+			"url_chirho": "https://github.com/openscriptures/HebrewLexicon",
+			"branch_chirho": "master",
+			"commit_chirho": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+			"commit_date_chirho": "2019-09-02T18:24:11-04:00",
+			"local_dir_chirho": "hebrew-lexicon-chirho"
+		}
+	],
+	"files_chirho": [
+		{
+			"id_chirho": "oshb-prov-chirho",
+			"repository_chirho": "morphhb-chirho",
+			"upstream_path_chirho": "wlc/Prov.xml",
+			"role_chirho": "data",
+			"title_chirho": "Open Scriptures Hebrew Bible, wlc/Prov.xml: Westminster Leningrad Codex text with OSHB lemmas and morphology",
+			"bytes_chirho": 678669,
+			"sha256_chirho": "964f99c00239b53b854c4686c99490c8d1ac7664784a30afdfc23781a3abb161",
+			"last_changed_commit_chirho": "2408955b1f3a1ea8acfdf5f51155674917e491b0",
+			"license_chirho": "WLC text: public domain. OSHB lemmas and morphology: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/",
+			"attribution_chirho": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb",
+			"adaptation_chirho": "word-division slashes removed from the display text, XML whitespace collapsed to single spaces, morphology codes decoded into English labels and Strong numbers written with an H prefix",
+			"note_chirho": "This sha256 equals the one recorded in the handoff, section 7. The latest tagged release, v.2.2 (6a5db284c715c18b239422e57bb89684e6a19f00), carries different bytes (9fd1a249f57be4f865b0900253f6cadb96e5eaaa08a5b7c7cd1d8f7767e253ab), so the pin is a commit, not a release."
+		},
+		{
+			"id_chirho": "oshb-license-chirho",
+			"repository_chirho": "morphhb-chirho",
+			"upstream_path_chirho": "LICENSE.md",
+			"role_chirho": "license",
+			"title_chirho": "Open Scriptures Hebrew Bible license",
+			"bytes_chirho": 1476,
+			"sha256_chirho": "9bf4a2890c25372e4c1dc750d550bfb4eacfbfcb63c53123b0628159370d1878",
+			"last_changed_commit_chirho": "2df99cb1611fa633e7a8fa3afad134b8941f7b06",
+			"license_chirho": "CC BY 4.0, https://creativecommons.org/licenses/by/4.0/",
+			"attribution_chirho": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb",
+			"adaptation_chirho": "none",
+			"note_chirho": "States the required attribution sentence."
+		},
+		{
+			"id_chirho": "oshb-readme-chirho",
+			"repository_chirho": "morphhb-chirho",
+			"upstream_path_chirho": "README.md",
+			"role_chirho": "documentation",
+			"title_chirho": "Open Scriptures Hebrew Bible README",
+			"bytes_chirho": 5027,
+			"sha256_chirho": "2da25acf89375558b843dab582bdf00833137baf1c8afe2b32cf09e251179999",
+			"last_changed_commit_chirho": "6a5db284c715c18b239422e57bb89684e6a19f00",
+			"license_chirho": "CC BY 4.0, https://creativecommons.org/licenses/by/4.0/",
+			"attribution_chirho": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb",
+			"adaptation_chirho": "none",
+			"note_chirho": "Documents the lemma, morph and immutable id attributes, and says uses of OSHB should avoid NFC normalization."
+		},
+		{
+			"id_chirho": "oshb-morphology-codes-chirho",
+			"repository_chirho": "morphhb-chirho",
+			"upstream_path_chirho": "parsing/HebrewMorphologyCodes.html",
+			"role_chirho": "reference",
+			"title_chirho": "OSHB Hebrew Morphology Codes",
+			"bytes_chirho": 18944,
+			"sha256_chirho": "4ef067cd9f2508de19d81aab93bf2d7e24d1687a7664c5168de1411adaf4ee1d",
+			"last_changed_commit_chirho": "d4d3238143bdd668689b5512e6120ab6ecd7725d",
+			"license_chirho": "CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ (stated in the page footer)",
+			"attribution_chirho": "Credit: the Open Scriptures Hebrew Bible Project, https://github.com/openscriptures/morphhb",
+			"adaptation_chirho": "code tables transcribed into the importer's morphology decoder",
+			"note_chirho": "Published at https://hb.openscriptures.org/parsing/HebrewMorphologyCodes.html; the gh-pages branch carries the same blob."
+		},
+		{
+			"id_chirho": "strong-chirho",
+			"repository_chirho": "hebrew-lexicon-chirho",
+			"upstream_path_chirho": "HebrewStrong.xml",
+			"role_chirho": "data",
+			"title_chirho": "OSHB Hebrew Lexicon, HebrewStrong.xml: Strong's Hebrew Dictionary",
+			"bytes_chirho": 2749042,
+			"sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+			"last_changed_commit_chirho": "a961acd2be93a96696a3d328b2b01b4ab36d0039",
+			"license_chirho": "Digital file: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Strong's Hebrew Dictionary text: public domain.",
+			"attribution_chirho": "Credit: the Open Scriptures Hebrew Bible Project, https://github.com/openscriptures/HebrewLexicon",
+			"adaptation_chirho": "entries for the lesson's words extracted, with their derivation references read as traditional lexical relationships",
+			"note_chirho": "CRLF line endings upstream; kept byte for byte."
+		},
+		{
+			"id_chirho": "aug-index-chirho",
+			"repository_chirho": "hebrew-lexicon-chirho",
+			"upstream_path_chirho": "AugIndex.xml",
+			"role_chirho": "data",
+			"title_chirho": "OSHB Hebrew Lexicon, AugIndex.xml: augmented Strong numbers to Lexical Index ids",
+			"bytes_chirho": 213975,
+			"sha256_chirho": "e7217ca8ff8ff3f21f9cf1bbe87411adf55f6aa88bcf5ed9ddc886cc6b160c5d",
+			"last_changed_commit_chirho": "f4b43bfddbc0787d5589ddff5f90dcba8556c0e3",
+			"license_chirho": "CC BY 4.0, https://creativecommons.org/licenses/by/4.0/",
+			"attribution_chirho": "Credit: the Open Scriptures Hebrew Bible Project, https://github.com/openscriptures/HebrewLexicon",
+			"adaptation_chirho": "used to resolve augmented Strong numbers such as 7105 a",
+			"note_chirho": "Keys are written without the space OSHB lemmas use: OSHB 7105 a is AugIndex 7105a."
+		},
+		{
+			"id_chirho": "lexical-index-chirho",
+			"repository_chirho": "hebrew-lexicon-chirho",
+			"upstream_path_chirho": "LexicalIndex.xml",
+			"role_chirho": "data",
+			"title_chirho": "OSHB Hebrew Lexicon, LexicalIndex.xml: where BDB, Strong and TWOT numbers meet",
+			"bytes_chirho": 1782592,
+			"sha256_chirho": "8f7a605c58899d2f44430149c143c00903976e1e91232476677972a69e5bc85f",
+			"last_changed_commit_chirho": "565ee98f9ca6721932ddff276d804d47f2e0cae1",
+			"license_chirho": "Digital file: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Brown-Driver-Briggs and Strong's text: public domain. Upstream includes TWOT numbers for reference only.",
+			"attribution_chirho": "Credit: the Open Scriptures Hebrew Bible Project, https://github.com/openscriptures/HebrewLexicon",
+			"adaptation_chirho": "entries and root families for the lesson's words extracted",
+			"note_chirho": "Its etym records give a second, BDB-based root view that the importer checks against Strong's."
+		},
+		{
+			"id_chirho": "lexicon-readme-chirho",
+			"repository_chirho": "hebrew-lexicon-chirho",
+			"upstream_path_chirho": "readme.md",
+			"role_chirho": "license",
+			"title_chirho": "OSHB Hebrew Lexicon readme",
+			"bytes_chirho": 2503,
+			"sha256_chirho": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22",
+			"last_changed_commit_chirho": "ccd1d620c2077834dd045cabfcc7946b2685e584",
+			"license_chirho": "CC BY 4.0, https://creativecommons.org/licenses/by/4.0/",
+			"attribution_chirho": "Credit: the Open Scriptures Hebrew Bible Project, https://github.com/openscriptures/HebrewLexicon",
+			"adaptation_chirho": "none",
+			"note_chirho": "States the CC BY 4.0 release, the public-domain status of the BDB and Strong's text, and the credit line."
+		}
+	]
+}

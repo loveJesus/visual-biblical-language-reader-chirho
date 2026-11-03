@@ -1,0 +1,107 @@
+{
+	"schema_version_chirho": 1,
+	"description_chirho": "Unchanged rows from the first prepared whole-Bible word plan: three Israeli-Hebrew IPA words and one Modern Greek word. No receipts, requests, funding authority or credentials.",
+	"plan_path_chirho": "batches-chirho/0000-chirho/batch-0000-chirho/plan-chirho.json",
+	"plan_sha256_chirho": "e01d1272220504c32459936bace1015add5a418628d5ef36354e776020c387c2",
+	"words_chirho": [
+		{
+			"key_chirho": "b28138844990a4de2d985cecf98003d93c7e6744fcd8cb7be47ce64bd2ca4b6d",
+			"job_chirho": {
+				"id_chirho": "word-b28138844990a4de2d985cec-chirho",
+				"lesson_id_chirho": "Exod.2.10",
+				"token_id_chirho": "02pAw",
+				"language_chirho": "he",
+				"text_chirho": "מֹשֶׁ֔ה",
+				"canonical_sha256_chirho": "aaaff2690a9b1f871cf7535faeea9b84c2411073f67fc8551c7da12592520eb1",
+				"recipe_id_chirho": "israeli-ipa-word-library-v1-chirho",
+				"synthesis_text_chirho": "\"/moˈʃe/\"",
+				"ipa_chirho": "moˈʃe"
+			},
+			"occurrences_chirho": [
+				{
+					"lesson_id_chirho": "Exod.2.10",
+					"token_id_chirho": "02pAw",
+					"text_chirho": "מֹשֶׁ֔ה",
+					"canonical_sha256_chirho": "aaaff2690a9b1f871cf7535faeea9b84c2411073f67fc8551c7da12592520eb1",
+					"content_path_chirho": "/content-chirho/exodus-chirho/chapter-02-chirho.json",
+					"content_sha256_chirho": "5325685a411a75c433323391cf56c2dfcbdd7af5e3ff36eabc6d39d90e59c508"
+				}
+			],
+			"analysis_note_chirho": "Source accent and pointed-form analysis; pending listener review."
+		},
+		{
+			"key_chirho": "a765f231bc73a7ac2be7e07d286c18eadab1d2fe18afc53b0ae4b5fe97853370",
+			"job_chirho": {
+				"id_chirho": "word-a765f231bc73a7ac2be7e07d-chirho",
+				"lesson_id_chirho": "Exod.29.30",
+				"token_id_chirho": "02ykL",
+				"language_chirho": "he",
+				"text_chirho": "הַכֹּהֵ֛ן",
+				"canonical_sha256_chirho": "7c4f551b23fdaf20fa2a80b2a38ba27af5ccb17e822c5349bd26fa0424ae84cd",
+				"recipe_id_chirho": "israeli-ipa-word-library-v1-chirho",
+				"synthesis_text_chirho": "\"/hakoˈhen/\"",
+				"ipa_chirho": "hakoˈhen"
+			},
+			"occurrences_chirho": [
+				{
+					"lesson_id_chirho": "Exod.29.30",
+					"token_id_chirho": "02ykL",
+					"text_chirho": "הַכֹּהֵ֛ן",
+					"canonical_sha256_chirho": "7c4f551b23fdaf20fa2a80b2a38ba27af5ccb17e822c5349bd26fa0424ae84cd",
+					"content_path_chirho": "/content-chirho/exodus-chirho/chapter-29-chirho.json",
+					"content_sha256_chirho": "7e6da8f936080d8981ffd0b04f9612eef4a9a3d5ff65d562bd5e6a7e0be17c59"
+				}
+			],
+			"analysis_note_chirho": "Source accent and pointed-form analysis; pending listener review."
+		},
+		{
+			"key_chirho": "a172700e5682272e9ac5162f37a8cf4fb7904e90e23a3fe03a4ff4e95632a602",
+			"job_chirho": {
+				"id_chirho": "word-a172700e5682272e9ac5162f-chirho",
+				"lesson_id_chirho": "Josh.10.1",
+				"token_id_chirho": "06YgF",
+				"language_chirho": "he",
+				"text_chirho": "יְרוּשָׁלִַ֗ם",
+				"canonical_sha256_chirho": "e535458f2cdcab69c8eb8a73b4da4ebbc9d3afbd1d92fbefe5f83d4617cea62e",
+				"recipe_id_chirho": "israeli-ipa-word-library-v1-chirho",
+				"synthesis_text_chirho": "\"/jeʁuʃaˈlaim/\"",
+				"ipa_chirho": "jeʁuʃaˈlaim"
+			},
+			"occurrences_chirho": [
+				{
+					"lesson_id_chirho": "Josh.10.1",
+					"token_id_chirho": "06YgF",
+					"text_chirho": "יְרוּשָׁלִַ֗ם",
+					"canonical_sha256_chirho": "e535458f2cdcab69c8eb8a73b4da4ebbc9d3afbd1d92fbefe5f83d4617cea62e",
+					"content_path_chirho": "/content-chirho/joshua-chirho/chapter-10-chirho.json",
+					"content_sha256_chirho": "f6c9f6ab40e799445be146d5bafd97b086eb964f3f540e9c9008c0af58c9a784"
+				}
+			],
+			"analysis_note_chirho": "Source accent and pointed-form analysis; pending listener review."
+		},
+		{
+			"key_chirho": "de01868b986d86c1805f96ae6a9c5ca89cd0c3436a74748352220d738e5e6d9a",
+			"job_chirho": {
+				"id_chirho": "word-de01868b986d86c1805f96ae-chirho",
+				"lesson_id_chirho": "Matt.12.47",
+				"token_id_chirho": "Matt.12.47!11",
+				"language_chirho": "el",
+				"text_chirho": "ἀδελφοί",
+				"canonical_sha256_chirho": "866c90db1efc029da0dd779e5bdf4fcee282566ba3beb6532204505ab8f09ed3",
+				"recipe_id_chirho": "modern-greek-word-library-v1-chirho",
+				"synthesis_text_chirho": "ἀδελφοί"
+			},
+			"occurrences_chirho": [
+				{
+					"lesson_id_chirho": "Matt.12.47",
+					"token_id_chirho": "Matt.12.47!11",
+					"text_chirho": "ἀδελφοί",
+					"canonical_sha256_chirho": "866c90db1efc029da0dd779e5bdf4fcee282566ba3beb6532204505ab8f09ed3",
+					"content_path_chirho": "/content-chirho/matthew-chirho/chapter-12-chirho.json",
+					"content_sha256_chirho": "bbae713d877ddf364b841f9e393e31436b4771ba1e3c4977a3073279288c3dc3"
+				}
+			],
+			"analysis_note_chirho": "Native Modern Greek, exact accented source; capitalization and canonically equivalent marks folded on the synthesis copy only."
+		}
+	]
+}

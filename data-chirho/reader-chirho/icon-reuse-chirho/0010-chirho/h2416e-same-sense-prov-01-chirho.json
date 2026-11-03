@@ -1,0 +1,158 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h2416e-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The sprout represents life or being alive. The exact augmented lemma and gloss are separately pinned, so life H2416e and alive H2416a are not merged.",
+	"source_icon_id_chirho": "icon-5af11d72042a49048fab4cee6c063937-13-chirho",
+	"source_sha256_chirho": "12cee53f3231f5c0e704246bb3af6a904e5d6d257c38fa08c849081690f06e91",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.19",
+		"token_id_chirho": "20F88",
+		"text_chirho": "חַיִּֽים",
+		"gloss_chirho": "life",
+		"canonical_sha256_chirho": "b418110efe55c85c87e37cdf733b8d10a47a3c49069a99100e5717a935f89bed"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H2416",
+		"lemma_augment_chirho": "e",
+		"lexical_form_chirho": "חַי"
+	},
+	"contextual_meaning_chirho": "life",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.3.2",
+			"token_id_chirho": "20D3a",
+			"text_chirho": "חַיִּ֑ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "25c7df9fc0ac4b1f014055d9af2205d6cc714d40dc8597c0b42b96a3ce258b4b"
+		},
+		{
+			"verse_id_chirho": "Prov.3.18",
+			"token_id_chirho": "20MDX",
+			"text_chirho": "חַיִּ֣ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "dc5d3aaecffb2b511e997728da517c02a4200ded320b5e6d745f1043b3c547c4"
+		},
+		{
+			"verse_id_chirho": "Prov.3.22",
+			"token_id_chirho": "204CS",
+			"text_chirho": "חַיִּ֣ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "bf84c28549d035f4a4babca9b39fed6464561f4c711f8760db05db84e1ce5a41"
+		},
+		{
+			"verse_id_chirho": "Prov.4.22",
+			"token_id_chirho": "20Baw",
+			"text_chirho": "חַיִּ֣ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "b26e6855d67d47f9dfc42e10ee89d5996f664f1670e446c58d985b01fce6ccc1"
+		},
+		{
+			"verse_id_chirho": "Prov.4.23",
+			"token_id_chirho": "20Qjd",
+			"text_chirho": "חַיִּֽים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "c429918fb3363432ae66770bd99b2178845dad2526b9487a36c93f668a9b2a8d"
+		},
+		{
+			"verse_id_chirho": "Prov.5.6",
+			"token_id_chirho": "20azH",
+			"text_chirho": "חַ֭יִּים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "b6d65388b7545c13867a22235838d3a587253cabd8d08d1c7b98b65eefd75fa3"
+		},
+		{
+			"verse_id_chirho": "Prov.6.23",
+			"token_id_chirho": "20eAA",
+			"text_chirho": "חַ֝יִּ֗ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "dc2b96e396b4fe8f58c6c94427dfd785999b4d044c0098fe543225c97f4a3771"
+		},
+		{
+			"verse_id_chirho": "Prov.8.35",
+			"token_id_chirho": "20x6W",
+			"text_chirho": "חַיִּ֑ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "f37a4d52d939a18ac274b33bd738b6554d7b36d34d776183fc0138c76c941008"
+		},
+		{
+			"verse_id_chirho": "Prov.9.11",
+			"token_id_chirho": "20W8V",
+			"text_chirho": "חַיִּֽים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "d325d9feee3d964271191349e8b542f1f9404afb5d3a6fe09af4e45213547731"
+		},
+		{
+			"verse_id_chirho": "Prov.10.11",
+			"token_id_chirho": "20rsj",
+			"text_chirho": "חַ֭יִּים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "674ef93b5d365a76d813e6933c3aabcfdbfce6614ddd42021544ac1429ef800e"
+		},
+		{
+			"verse_id_chirho": "Prov.11.30",
+			"token_id_chirho": "208Do",
+			"text_chirho": "חַיִּ֑ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "57a01e534a850ad6bf97cddba266abb1a98c5d2f58597aea90574510453f916a"
+		},
+		{
+			"verse_id_chirho": "Prov.13.12",
+			"token_id_chirho": "20T6s",
+			"text_chirho": "חַ֝יִּ֗ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "b056acdcc23b2f40c943eb2eebfefb4d391a5a491a63148dd4de4b429f0a0c3b"
+		},
+		{
+			"verse_id_chirho": "Prov.13.14",
+			"token_id_chirho": "20Pj9",
+			"text_chirho": "חַיִּ֑ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "40bec77785a588fe67d66153363e751dbf7d8aeb48f97a9185c20c8d312cdc6b"
+		},
+		{
+			"verse_id_chirho": "Prov.14.27",
+			"token_id_chirho": "20c5u",
+			"text_chirho": "חַיִּ֑ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "e50bcb0b3f34c24ba5cab0bb7c106c32e14af91743a21611fb18e396abb8752e"
+		},
+		{
+			"verse_id_chirho": "Prov.15.4",
+			"token_id_chirho": "20Ade",
+			"text_chirho": "חַיִּ֑ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "73a0fcbdc76765227d0a954be8db1e50bff449f3226d4de2bb04336387f2668a"
+		},
+		{
+			"verse_id_chirho": "Prov.15.24",
+			"token_id_chirho": "20JA2",
+			"text_chirho": "חַ֭יִּים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "dc988e3efc2683e2c9ec5823d42763840088698ccae2e772fd9b90d462f0d6d5"
+		},
+		{
+			"verse_id_chirho": "Prov.15.31",
+			"token_id_chirho": "20GFA",
+			"text_chirho": "חַיִּ֑ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "4dfe1eaf84cd7ac746217c4c034fbb44e9f729f99e1445389cef1224e5c78dd4"
+		},
+		{
+			"verse_id_chirho": "Prov.16.22",
+			"token_id_chirho": "20AYM",
+			"text_chirho": "חַ֭יִּים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "2a7421994901628a7c0a7f136446f77d9a42e8a9177119d29fbbe4bf55381c6c"
+		},
+		{
+			"verse_id_chirho": "Prov.21.21",
+			"token_id_chirho": "207h8",
+			"text_chirho": "חַ֝יִּ֗ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "1a06ad297d42b79e94becadc5fc62aafef7343ab93fe87900c098574e0727948"
+		}
+	]
+}

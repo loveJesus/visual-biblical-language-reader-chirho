@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
+<!-- Spanish reader text mirrors the website's final copy (src/lib/i18n-chirho). -->
+<resources>
+    <string name="tagline_chirho">Mira. Observa. Lee.</string>
+
+    <string name="book_chirho">Libro</string>
+    <string name="chapter_chirho">Capítulo</string>
+    <string name="verse_chirho">Versículo</string>
+    <string name="high_quality_books_chirho">Ilustraciones de alta calidad</string>
+    <string name="other_books_chirho">Más libros</string>
+    <string name="previous_verse_chirho">Versículo anterior</string>
+    <string name="next_verse_chirho">Versículo siguiente</string>
+    <string name="loading_chirho">Cargando %1$s %2$d:%3$d…</string>
+    <string name="retry_chirho">Reintentar</string>
+    <string name="error_book_chirho">No se pudo cargar ni verificar este libro. Inténtelo de nuevo.</string>
+    <string name="error_verse_chirho">No se pudo cargar ni verificar este versículo. Inténtelo de nuevo.</string>
+    <string name="absent_verse_chirho">Este versículo no forma parte de esta edición de la fuente.</string>
+
+    <string name="read_rtl_chirho">Lea de derecha a izquierda. Tómese su tiempo.</string>
+    <string name="read_ltr_chirho">Lea de izquierda a derecha. Tómese su tiempo.</string>
+    <string name="show_translation_chirho">Mostrar traducción</string>
+    <string name="hide_translation_chirho">Ocultar traducción</string>
+    <string name="kjv_numbering_chirho">Numeración hebrea del versículo · Biblia inglesa (KJV): %1$s</string>
+
+    <string name="scene_caption_chirho">Una ayuda imaginativa para aprender</string>
+    <string name="scene_caption_sub_chirho">Una reflexión visual sobre el versículo</string>
+    <string name="scene_missing_chirho">La escena no está disponible. Aún puede leer el texto preservado y sus indicaciones gramaticales.</string>
+    <string name="scene_awaiting_note_chirho">Se está preparando una ilustración para este pasaje.</string>
+    <string name="scene_unavailable_chirho">La ilustración no está disponible en este momento.</string>
+    <string name="scene_standard_chirho">Estándar</string>
+    <string name="scene_reduced_chirho">Representación reducida</string>
+    <string name="art_pending_chirho">Ilustración generada por IA · pendiente de revisión artística</string>
+    <string name="art_approved_chirho">Ilustración generada por IA · revisada</string>
+
+    <string name="look_closer_chirho">Mirar de cerca</string>
+    <string name="lemma_unverified_chirho">Enlace al lema sin verificar</string>
+    <string name="lexical_form_chirho">Forma léxica:</string>
+    <string name="source_morphology_chirho">Morfología de la fuente:</string>
+    <string name="root_not_applicable_chirho">No aplica</string>
+    <string name="root_traditional_chirho">Tradicional</string>
+    <string name="root_unresolved_chirho">Sin resolver</string>
+    <string name="root_relationship_chirho">Relación con la raíz</string>
+    <string name="meaning_morphology_chirho">Significado y morfología</string>
+    <string name="gloss_unavailable_chirho">Todavía no hay un significado revisado para esta palabra.</string>
+    <string name="origin_gbt_chirho">Aprobado en la exportación de Global Bible Tools</string>
+    <string name="origin_app_chirho">Glosa de aprendizaje escrita por la aplicación</string>
+    <string name="origin_unavailable_chirho">Significado no disponible</string>
+    <string name="berean_gloss_note_chirho">Glosa en inglés de la Berean Interlinear Bible, mediante biblicalhumanities.org</string>
+    <string name="not_separately_short_chirho">no se traduce por separado</string>
+    <string name="qere_label_chirho">Lectura (qere)</string>
+    <string name="qere_note_chirho">La lectura se conserva aparte del texto escrito (ketiv) de arriba.</string>
+    <string name="general_picture_chirho">Imagen general de la palabra:</string>
+    <string name="general_picture_caveat_chirho">El significado en este versículo puede pedir otra imagen.</string>
+    <string name="icon_general_chirho">imagen general de la palabra</string>
+    <string name="icon_contextual_chirho">ilustración contextual</string>
+    <string name="icon_unavailable_chirho">ilustración no disponible</string>
+    <string name="other_meanings_chirho">Otros significados revisados</string>
+
+    <string name="pronounce_word_chirho">Pronunciar %1$s</string>
+    <string name="hear_word_chirho">Oír la palabra</string>
+    <string name="listen_verse_chirho">Escuchar este versículo</string>
+    <string name="stop_chirho">Detener</string>
+    <string name="recorded_failed_chirho">No se pudo reproducir la grabación. Inténtalo de nuevo.</string>
+    <string name="audition_note_chirho">Prueba de voz IA · %1$s. Pronunciación pendiente de revisión.</string>
+    <string name="no_word_recording_chirho">Todavía no hay una grabación guardada de esta palabra.</string>
+    <string name="rendition_chirho">Pronunciación</string>
+    <string name="modern_aspirates_chirho">Moderna con aspiración</string>
+    <string name="modern_choice_chirho">Griega moderna</string>
+    <string name="erasmian_chirho">Erasmiana</string>
+    <string name="rendition_unavailable_chirho">Esta pronunciación aún no está grabada para este pasaje.</string>
+    <string name="speed_chirho">Velocidad</string>
+    <string name="slow_chirho">Lenta</string>
+    <string name="gentle_chirho">Pausada</string>
+    <string name="slightly_slower_chirho" formatted="false">12% más lenta</string>
+    <string name="normal_chirho">Normal</string>
+
+    <string name="source_eyebrow_chirho">Fundado en la fuente</string>
+    <string name="source_heading_chirho">Conserve el texto. Conserve el contexto.</string>
+    <string name="sources_summary_chirho">Fuentes, licencias y referencias gramaticales</string>
+    <string name="credit_hebrew_rest_chirho">Archivos léxicos: Open Scriptures Hebrew Bible Project. La morfología y los archivos léxicos se usan bajo CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) y se adaptan aquí en segmentos de palabras, indicaciones gramaticales y notas de fuente. El texto hebreo es de dominio público. No se implica ningún respaldo.</string>
+    <string name="credit_greek_chirho">Texto griego: Nestle 1904 (dominio público). Morfología y lemas: Ulrik Sandborg-Petersen y biblicalhumanities.org (CC0). Glosas en inglés: Berean Interlinear Bible, mediante biblicalhumanities.org; vea los términos de dominio público (https://berean.bible/terms.htm).</string>
+    <string name="reveal_canonical_hebrew_chirho">Mostrar el hebreo canónico exacto</string>
+    <string name="reveal_canonical_greek_chirho">Mostrar el texto griego exacto</string>
+    <string name="canonical_note_chirho">Este es el texto fuente preservado, sin puntos didácticos, superíndices ni marcadores de iconos. Selecciónelo para copiarlo.</string>
+    <string name="root_lemma_note_chirho">La raíz y el lema son distintos. Una relación léxica tradicional no afirma un origen histórico seguro. Las ilustraciones son ayudas para aprender; el texto original y su morfología documentada guían la lectura.</string>
+    <string name="greek_sources_note_chirho">El texto griego y la gramática siguen la fuente morfológica de Nestle 1904. Los significados en inglés provienen de la Berean Interlinear Bible; son glosas por palabra, no una traducción de la oración ni aprobaciones de Global Bible Tools.</string>
+    <string name="greek_cues_note_chirho">Los numerales romanos centrados marcan el caso. Arriba a la izquierda, un código de tiempo en mayúscula va seguido de un código de voz en minúscula. Arriba a la derecha, un número de persona va seguido de un código de modo en mayúscula. Por ejemplo, Ia a la izquierda y 3I a la derecha significan imperfecto activo, tercera persona del indicativo. Un participio también puede llevar un numeral de caso centrado.</string>
+    <string name="open_on_web_chirho">Abrir este versículo en hinneh.us</string>
+    <string name="report_on_web_chirho">Para informar un problema con una imagen, abra este versículo en hinneh.us.</string>
+
+    <string name="settings_chirho">Ajustes de lectura</string>
+    <string name="interface_language_chirho">Idioma de la interfaz</string>
+    <string name="device_language_chirho">Idioma del dispositivo</string>
+    <string name="close_chirho">Cerrar</string>
+</resources>

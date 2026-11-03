@@ -1,0 +1,8 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": { "noEmit": true, "types": ["node"] },
+	"include": [
+		"../../scripts-chirho/bible-chirho/**/*.ts",
+		"../../tests-chirho/bible-chirho/**/*.ts"
+	]
+}

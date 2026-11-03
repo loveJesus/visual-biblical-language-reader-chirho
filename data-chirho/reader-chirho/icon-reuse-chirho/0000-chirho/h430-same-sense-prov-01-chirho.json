@@ -1,0 +1,39 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h430-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The flame is a symbolic mnemonic for God, not a portrait or a depiction of an event. Each listed source token is glossed God; plural gods and other senses are outside this review.",
+	"source_icon_id_chirho": "icon-6f55aaf24cb24aebbfeb5a4f9db24573-09-chirho",
+	"source_sha256_chirho": "05cd650671ac9026fc3720bab5438d1f4275dd05cb6a951770fc5a18feef3ad2",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.5",
+		"token_id_chirho": "20WPn",
+		"text_chirho": "אֱלֹהִ֣ים",
+		"gloss_chirho": "God",
+		"canonical_sha256_chirho": "f0e742474701b290e78920b8409e76293dc407dd3b9531d3f618336b7f7d7536"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H430",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "אֱלֹהִים"
+	},
+	"contextual_meaning_chirho": "God",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.3.4",
+			"token_id_chirho": "20QvZ",
+			"text_chirho": "אֱלֹהִ֣ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "d29a706eaf0f36472e6248ba744e094aba2f482cdde14ae419c762ee71dcaec9"
+		},
+		{
+			"verse_id_chirho": "Prov.25.2",
+			"token_id_chirho": "20vXv",
+			"text_chirho": "אֱ֭לֹהִים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "a718d81b72ae018c765f1ba4fb7e76161a0cc93e54ade96ad0bec0804d636952"
+		}
+	]
+}

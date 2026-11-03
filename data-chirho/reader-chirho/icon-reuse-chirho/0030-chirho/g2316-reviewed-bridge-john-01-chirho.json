@@ -1,0 +1,592 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g2316-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The Hebrew God symbol is a mnemonic for the explicitly divine, singular God sense of these exact Greek theos occurrences. The separately glossed plural gods is excluded. This is an agent-reviewed cross-language sense link, not upstream icon approval.",
+	"source_icon_id_chirho": "icon-6f55aaf24cb24aebbfeb5a4f9db24573-09-chirho",
+	"source_sha256_chirho": "05cd650671ac9026fc3720bab5438d1f4275dd05cb6a951770fc5a18feef3ad2",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.5",
+		"token_id_chirho": "20WPn",
+		"text_chirho": "אֱלֹהִ֣ים",
+		"gloss_chirho": "God",
+		"canonical_sha256_chirho": "f0e742474701b290e78920b8409e76293dc407dd3b9531d3f618336b7f7d7536"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G2316",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "θεός"
+	},
+	"contextual_meaning_chirho": "God",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.9.3",
+			"token_id_chirho": "John.9.3!16",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "5776a47e69751e1805da4f7d51c6a27bfb7938ad3b582d31ea166f902b538611"
+		},
+		{
+			"verse_id_chirho": "John.9.16",
+			"token_id_chirho": "John.9.16!11",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "db55c198e4f2d86bdbb1b3178ddf6ffd0d80724451c8fe41a2995a5af40fce15"
+		},
+		{
+			"verse_id_chirho": "John.9.24",
+			"token_id_chirho": "John.9.24!16",
+			"text_chirho": "Θεῷ",
+			"gloss_chirho": "to God",
+			"canonical_sha256_chirho": "5e027a5c442aa07f29771749d75ee9e59c4a16da5beff87809f411e808ebcb14"
+		},
+		{
+			"verse_id_chirho": "John.9.29",
+			"token_id_chirho": "John.9.29!7",
+			"text_chirho": "Θεός",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "ce2a5c77647d67ba5e285b7d2c89787e426d6ba1f8ec8170f897ad5eb5ed488b"
+		},
+		{
+			"verse_id_chirho": "John.9.31",
+			"token_id_chirho": "John.9.31!4",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "34af8a2023435bc6318af5c476819db67328775c33510fbcf78ba1ae6a76151d"
+		},
+		{
+			"verse_id_chirho": "John.9.33",
+			"token_id_chirho": "John.9.33!6",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "57c125e4296a6aeb42e0c69519f0db14ab73f52ea2c57099050e42e223ad58ab"
+		},
+		{
+			"verse_id_chirho": "John.10.33",
+			"token_id_chirho": "John.10.33!21",
+			"text_chirho": "Θεόν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "988840c95456122075679011b93d29e183d94ed03ba4ec470c15a0c877d2637d"
+		},
+		{
+			"verse_id_chirho": "John.10.35",
+			"token_id_chirho": "John.10.35!10",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "1f9506579139fa25141e80af9bfbc69a4dbf47c02947e56d1c3ca380b8f18b53"
+		},
+		{
+			"verse_id_chirho": "John.10.36",
+			"token_id_chirho": "John.10.36!18",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "4e2913d138616f73edd9a21cdebb5261a0024ade5de5d7ad60387aea1843905a"
+		},
+		{
+			"verse_id_chirho": "John.5.18",
+			"token_id_chirho": "John.5.18!22",
+			"text_chirho": "Θεόν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "6592564714bfaec55f2d027ce0b4015e7d60bf301ef281b109fc654adb205d0a"
+		},
+		{
+			"verse_id_chirho": "John.5.18",
+			"token_id_chirho": "John.5.18!27",
+			"text_chirho": "Θεῷ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "6592564714bfaec55f2d027ce0b4015e7d60bf301ef281b109fc654adb205d0a"
+		},
+		{
+			"verse_id_chirho": "John.5.25",
+			"token_id_chirho": "John.5.25!20",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "cb813031a844e3d0917fff249160efb6566927e1006d1656da5eea72b5da683e"
+		},
+		{
+			"verse_id_chirho": "John.5.42",
+			"token_id_chirho": "John.5.42!8",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "a6995656621d66ca9b9ef06140b1c3a39536765047a990efe3e4dbfa6a368b6d"
+		},
+		{
+			"verse_id_chirho": "John.5.44",
+			"token_id_chirho": "John.5.44!16",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b27129fcae21edfd42979ce04fc21ee014944dc479228dfb22600872134f6746"
+		},
+		{
+			"verse_id_chirho": "John.19.7",
+			"token_id_chirho": "John.19.7!16",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "1065307651f54686dc63f64d4501059588ead524644c45fd76ae8d2e5e0f1c39"
+		},
+		{
+			"verse_id_chirho": "John.6.27",
+			"token_id_chirho": "John.6.27!28",
+			"text_chirho": "Θεός",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b4ee887760e60f0f2ea86a061944e72ab00bbcf2dba12769d9be5263cfc01548"
+		},
+		{
+			"verse_id_chirho": "John.6.28",
+			"token_id_chirho": "John.6.28!12",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "9ee213b7573506614fb3356f739ce9b02c2ef28eb8db68b8769491b2c90f54ed"
+		},
+		{
+			"verse_id_chirho": "John.6.29",
+			"token_id_chirho": "John.6.29!11",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "fbf532c333ff1694bebc9a99eb58241fc7b6d1690a347a5fae68e7c026bbf494"
+		},
+		{
+			"verse_id_chirho": "John.6.33",
+			"token_id_chirho": "John.6.33!5",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "09be34a49aea8d83d896b1f3d9aa382090fab84c8191a19778c191e7e1de9fc5"
+		},
+		{
+			"verse_id_chirho": "John.6.45",
+			"token_id_chirho": "John.6.45!10",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "b5b30d409f1b1ab899eaf762cf5d1294959cb1e033e078688f3d224a3e446faa"
+		},
+		{
+			"verse_id_chirho": "John.6.46",
+			"token_id_chirho": "John.6.46!13",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "ae7149d8422593ccabbf9c001cf748b2ceede9da83c121375f4e7aa06e17eef0"
+		},
+		{
+			"verse_id_chirho": "John.6.69",
+			"token_id_chirho": "John.6.69!12",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "c31b1733064fa5060388be1abf58ee70d4c18df5a9a0309237cacda0f4635eb7"
+		},
+		{
+			"verse_id_chirho": "John.13.3",
+			"token_id_chirho": "John.13.3!14",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7df01b1936349de9ad0cccaa70bd5f4891780719f770a52f37fe632948857d99"
+		},
+		{
+			"verse_id_chirho": "John.13.3",
+			"token_id_chirho": "John.13.3!19",
+			"text_chirho": "Θεὸν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7df01b1936349de9ad0cccaa70bd5f4891780719f770a52f37fe632948857d99"
+		},
+		{
+			"verse_id_chirho": "John.13.31",
+			"token_id_chirho": "John.13.31!14",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "e203263f384806ba3f8daf180a01361217d7f70873ac66be044056453f00f405"
+		},
+		{
+			"verse_id_chirho": "John.13.32",
+			"token_id_chirho": "John.13.32!3",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "f65abcee68b7cc74f0fcc833d984b3b35c6c240061f3f445818e87adbdc75dc2"
+		},
+		{
+			"verse_id_chirho": "John.13.32",
+			"token_id_chirho": "John.13.32!9",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "f65abcee68b7cc74f0fcc833d984b3b35c6c240061f3f445818e87adbdc75dc2"
+		},
+		{
+			"verse_id_chirho": "John.21.19",
+			"token_id_chirho": "John.21.19!9",
+			"text_chirho": "Θεόν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "96142ef36ea2b228a050fc788c8e75a49688eae473111707208aef72532e3c74"
+		},
+		{
+			"verse_id_chirho": "John.16.2",
+			"token_id_chirho": "John.16.2!16",
+			"text_chirho": "Θεῷ",
+			"gloss_chirho": "to God",
+			"canonical_sha256_chirho": "83e0497e30bd1457f69219a8615d0073ba1bd0693038ecec7ed8fc6ae642f895"
+		},
+		{
+			"verse_id_chirho": "John.16.27",
+			"token_id_chirho": "John.16.27!17",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "811ee5efb8d14646073594a1387dd3729c43549da075094ff73323d953cb1c24"
+		},
+		{
+			"verse_id_chirho": "John.16.30",
+			"token_id_chirho": "John.16.30!19",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "29bca652cf4c4f98752c81506e334aec26b98255471eb9f4c6a6e06b396bb350"
+		},
+		{
+			"verse_id_chirho": "John.3.2",
+			"token_id_chirho": "John.3.2!13",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "a0183d396e1f81c0961bb696c894f0ec4188c0170847639405103fa9f8b25342"
+		},
+		{
+			"verse_id_chirho": "John.3.2",
+			"token_id_chirho": "John.3.2!30",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "a0183d396e1f81c0961bb696c894f0ec4188c0170847639405103fa9f8b25342"
+		},
+		{
+			"verse_id_chirho": "John.3.3",
+			"token_id_chirho": "John.3.3!21",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "8c5e918900285b5fc1708fac0285b234df0b1ae75b94c0714506e7f73fa807cc"
+		},
+		{
+			"verse_id_chirho": "John.3.5",
+			"token_id_chirho": "John.3.5!22",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "9f46edcbcc2a71f33fb97f13e1a979eccf96fc7757d503f6ded2ef1dc402c85b"
+		},
+		{
+			"verse_id_chirho": "John.3.16",
+			"token_id_chirho": "John.3.16!5",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "8a624ca4a26a798e60a8c117046b381c4620b6ddae80d74c73b3c9c386cad987"
+		},
+		{
+			"verse_id_chirho": "John.3.17",
+			"token_id_chirho": "John.3.17!5",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "86c1f7c3fee1ce5d7d1f4e92a96443532bc894fdedee89fcafa61831f990fd71"
+		},
+		{
+			"verse_id_chirho": "John.3.18",
+			"token_id_chirho": "John.3.18!22",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "9dc2108e1b0f01ffdf6302bc38e9f7fb1cd2dbb1f426c7250e355e7439e9434f"
+		},
+		{
+			"verse_id_chirho": "John.3.21",
+			"token_id_chirho": "John.3.21!17",
+			"text_chirho": "Θεῷ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "ccf8e56e779605837da3d4e7bcf645c7a9b4e79436d5500cd0ff2f6474122d10"
+		},
+		{
+			"verse_id_chirho": "John.3.33",
+			"token_id_chirho": "John.3.33!9",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "2fae4596ee6971cb8e839740be72dbe6aff0f145bbd47ac7d05d99d4b7bc3a90"
+		},
+		{
+			"verse_id_chirho": "John.3.34",
+			"token_id_chirho": "John.3.34!5",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7455a840a19fa5987c62d23d4393225c496a8be6f63695d9a5d7e1e4f4bb2e43"
+		},
+		{
+			"verse_id_chirho": "John.3.34",
+			"token_id_chirho": "John.3.34!9",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "7455a840a19fa5987c62d23d4393225c496a8be6f63695d9a5d7e1e4f4bb2e43"
+		},
+		{
+			"verse_id_chirho": "John.3.36",
+			"token_id_chirho": "John.3.36!21",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "2ac80b76a70b804d360944772cc07b68372d852fc8b8f7371cfb2a4cd5222b3a"
+		},
+		{
+			"verse_id_chirho": "John.4.10",
+			"token_id_chirho": "John.4.10!11",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "ae5027ae3ef415bc353ea7ebef5ee05d1680da58dc8aba43c46c32de81fa2567"
+		},
+		{
+			"verse_id_chirho": "John.4.24",
+			"token_id_chirho": "John.4.24!3",
+			"text_chirho": "Θεός",
+			"gloss_chirho": "God [is]",
+			"canonical_sha256_chirho": "5cfece4c75b4dd4cfb3acb78960741dd75210255393be9590121622dc0dc2492"
+		},
+		{
+			"verse_id_chirho": "John.11.4",
+			"token_id_chirho": "John.11.4!18",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "cfcccee9df670ede0af41825a04800d1ce9732ea7a8f0b8a1d23fc672f72dde9"
+		},
+		{
+			"verse_id_chirho": "John.11.4",
+			"token_id_chirho": "John.11.4!24",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "cfcccee9df670ede0af41825a04800d1ce9732ea7a8f0b8a1d23fc672f72dde9"
+		},
+		{
+			"verse_id_chirho": "John.11.22",
+			"token_id_chirho": "John.11.22!9",
+			"text_chirho": "Θεὸν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "bc22b044cdf64824cf04056c0ce64eb86d33b64a199327470d559899b80346c4"
+		},
+		{
+			"verse_id_chirho": "John.11.22",
+			"token_id_chirho": "John.11.22!13",
+			"text_chirho": "Θεός",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "bc22b044cdf64824cf04056c0ce64eb86d33b64a199327470d559899b80346c4"
+		},
+		{
+			"verse_id_chirho": "John.11.27",
+			"token_id_chirho": "John.11.27!15",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "424d9408419b14f1a0e3f047da3293887b59be9c724bebcaf7d896bb819441da"
+		},
+		{
+			"verse_id_chirho": "John.11.40",
+			"token_id_chirho": "John.11.40!15",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "5cdc9e8586bac03f2210533633e03c7b91e385b13b0558cabb3f1950d524049c"
+		},
+		{
+			"verse_id_chirho": "John.11.52",
+			"token_id_chirho": "John.11.52!13",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "b1ab85036946de4091777d56ab9ee174c0154609b6658d2c9981c4323e3618e7"
+		},
+		{
+			"verse_id_chirho": "John.14.1",
+			"token_id_chirho": "John.14.1!9",
+			"text_chirho": "Θεόν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "0a2922a9c5cb4eb9e81a3236ed966ae35b54eb8abeeee88f92ccb3e78137b10a"
+		},
+		{
+			"verse_id_chirho": "John.8.40",
+			"token_id_chirho": "John.8.40!16",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "fec3f2b7852006cad0ce23a8071675b6e90d6c8db8e4afe13c10efc45d4e47f1"
+		},
+		{
+			"verse_id_chirho": "John.8.41",
+			"token_id_chirho": "John.8.41!19",
+			"text_chirho": "Θεόν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b5be8703a9aefd5a55b874db4bd835d21261ec2eb30cbd64e1e2714a303c1d8e"
+		},
+		{
+			"verse_id_chirho": "John.8.42",
+			"token_id_chirho": "John.8.42!7",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "f2ac81aa494331d61ebe29f009b1a52f15d30c5081caee2454740259725dd464"
+		},
+		{
+			"verse_id_chirho": "John.8.42",
+			"token_id_chirho": "John.8.42!18",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "f2ac81aa494331d61ebe29f009b1a52f15d30c5081caee2454740259725dd464"
+		},
+		{
+			"verse_id_chirho": "John.8.47",
+			"token_id_chirho": "John.8.47!5",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "c922f5bcc991258cb4a5cebd752c1370470f36069dbffa580c07095b9a9f5f46"
+		},
+		{
+			"verse_id_chirho": "John.8.47",
+			"token_id_chirho": "John.8.47!9",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "c922f5bcc991258cb4a5cebd752c1370470f36069dbffa580c07095b9a9f5f46"
+		},
+		{
+			"verse_id_chirho": "John.8.47",
+			"token_id_chirho": "John.8.47!19",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "c922f5bcc991258cb4a5cebd752c1370470f36069dbffa580c07095b9a9f5f46"
+		},
+		{
+			"verse_id_chirho": "John.8.54",
+			"token_id_chirho": "John.8.54!23",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b48451b934af839006d0a27f861802fbe47bf967cda8896d1bf7f854350b269c"
+		},
+		{
+			"verse_id_chirho": "John.1.1",
+			"token_id_chirho": "John.1.1!12",
+			"text_chirho": "Θεόν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "f93c3be4a8d16983b6c4f702311f53b3a54e53f2f00e7b6e35eb0d0426ac25d9"
+		},
+		{
+			"verse_id_chirho": "John.1.1",
+			"token_id_chirho": "John.1.1!14",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "f93c3be4a8d16983b6c4f702311f53b3a54e53f2f00e7b6e35eb0d0426ac25d9"
+		},
+		{
+			"verse_id_chirho": "John.1.2",
+			"token_id_chirho": "John.1.2!7",
+			"text_chirho": "Θεόν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "d0e274b51a0013fece493671d91896cdeeb7e39fc2b09e9b5181ed412da2b7dc"
+		},
+		{
+			"verse_id_chirho": "John.1.6",
+			"token_id_chirho": "John.1.6!5",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "63ae8efc77d5cf4905be9bf3df96cb16ea85ce9496e8727c7bb96aabae1d94d8"
+		},
+		{
+			"verse_id_chirho": "John.1.12",
+			"token_id_chirho": "John.1.12!9",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "7a6ad7015f0b84caf9c71282da55361ca5c9cc5c8423ac70eb4f97edd331256b"
+		},
+		{
+			"verse_id_chirho": "John.1.13",
+			"token_id_chirho": "John.1.13!15",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3b121bdc8da44e273990282410b4f6ca56073e605fef086a1de8d166cef7694e"
+		},
+		{
+			"verse_id_chirho": "John.1.18",
+			"token_id_chirho": "John.1.18!1",
+			"text_chirho": "Θεὸν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "52f4bf493a52366ffe6977d2efa6c551e7b7923deb3ebea04546ed47e542b3d2"
+		},
+		{
+			"verse_id_chirho": "John.1.18",
+			"token_id_chirho": "John.1.18!6",
+			"text_chirho": "Θεὸς",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "52f4bf493a52366ffe6977d2efa6c551e7b7923deb3ebea04546ed47e542b3d2"
+		},
+		{
+			"verse_id_chirho": "John.1.29",
+			"token_id_chirho": "John.1.29!15",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "2b72102ec713163a386573a98a1c04c7ad5860cd0433450191b25c73e7ed4fbd"
+		},
+		{
+			"verse_id_chirho": "John.1.34",
+			"token_id_chirho": "John.1.34!11",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "77338d4d2a50e56c0eac0e691e099e0e06d035adda16c9597b62947bdbcc72bd"
+		},
+		{
+			"verse_id_chirho": "John.1.36",
+			"token_id_chirho": "John.1.36!11",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "148b01e6fd61c6b72bd75ef89c9951a287b71d2a73ef496eaf11514153930cd1"
+		},
+		{
+			"verse_id_chirho": "John.1.49",
+			"token_id_chirho": "John.1.49!10",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "7a6be96b12f46b0808790f469f2fe2bd8593ae2732648c3127fd26bae2fbe380"
+		},
+		{
+			"verse_id_chirho": "John.1.51",
+			"token_id_chirho": "John.1.51!16",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "8560912d81c0ef127b307dcc1e29684960a7fd3eb752472070403a807f1027dd"
+		},
+		{
+			"verse_id_chirho": "John.17.3",
+			"token_id_chirho": "John.17.3!13",
+			"text_chirho": "Θεὸν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "0955c2bf0ba9eafbacd82c6590c627abf9fbdf51ab46b562e89cf0bd92bdd54d"
+		},
+		{
+			"verse_id_chirho": "John.20.17",
+			"token_id_chirho": "John.20.17!31",
+			"text_chirho": "Θεόν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "4071a5a319d83400b23a7b7861c4765431e3ee939465a8c724644cb9f2539026"
+		},
+		{
+			"verse_id_chirho": "John.20.17",
+			"token_id_chirho": "John.20.17!34",
+			"text_chirho": "Θεὸν",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "4071a5a319d83400b23a7b7861c4765431e3ee939465a8c724644cb9f2539026"
+		},
+		{
+			"verse_id_chirho": "John.20.28",
+			"token_id_chirho": "John.20.28!11",
+			"text_chirho": "Θεός",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "d14ed3c87dfcbafcb62151316e8cf8856ba743499511e4a9731b366530d44923"
+		},
+		{
+			"verse_id_chirho": "John.20.31",
+			"token_id_chirho": "John.20.31!14",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "5797e963787c7cec8bf3498d8e373fe71f59b5895a680488a15882a775c8f9d1"
+		},
+		{
+			"verse_id_chirho": "John.12.43",
+			"token_id_chirho": "John.12.43!12",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "of God",
+			"canonical_sha256_chirho": "cba42b56741061fbc841f3046d93efc6256fa44da267b7ed0abf5f55f5eba783"
+		},
+		{
+			"verse_id_chirho": "John.7.17",
+			"token_id_chirho": "John.7.17!15",
+			"text_chirho": "Θεοῦ",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "ae601d0e895eaf30eac06de8c51fea4ae536ca9891bc18d455762be1e8a353e3"
+		}
+	]
+}

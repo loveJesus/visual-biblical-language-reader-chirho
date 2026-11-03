@@ -1,0 +1,217 @@
+{
+	"schema_version_chirho": 1,
+	"excerpts_chirho": [
+		{
+			"id_chirho": "Gen.1.1",
+			"language_chirho": "he",
+			"canonical_text_chirho": "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃",
+			"content_path_chirho": "/content-chirho/genesis-chirho/chapter-01-chirho.json",
+			"content_sha256_chirho": "0b3cc609dfa701263f8b8c75bb83acc0b1fc7ca6695603f95d62d2b1696d93b7",
+			"scene_chirho": {
+				"lesson_id_chirho": "Gen.1.1",
+				"asset_path_chirho": "/assets-chirho/scenes-chirho/genesis-ordered-v1-chirho/chapter-01-chirho/genesis-01-001-chirho.webp",
+				"alt_chirho": "Golden light streams through clouds over mountains, a broad coast, and blue water in a watercolor landscape.",
+				"width_chirho": 1200,
+				"height_chirho": 900,
+				"sha256_chirho": "8ea4e7a30631203b322d1f447d48d949948ae15f19fa1cf8d09899ec4d0cd761",
+				"art_review_chirho": "pending",
+				"reading_note_chirho": "This imaginative landscape evokes the heavens and earth named in the verse; its specific landscape and light are artistic interpretation."
+			},
+			"words_chirho": [
+				{
+					"id_chirho": "01xeN",
+					"text_chirho": "בְּרֵאשִׁ֖ית",
+					"gloss_chirho": "In the beginning",
+					"spanish_gloss_chirho": "En principio",
+					"gender_chirho": "feminine",
+					"number_chirho": "singular",
+					"pos_chirho": "noun",
+					"cues_chirho": {
+						"background_chirho": "#ffe4ed",
+						"underline_chirho": "transparent",
+						"outline_chirho": "#18847d",
+						"left_chirho": "",
+						"center_chirho": "i",
+						"right_chirho": ""
+					},
+					"icon_chirho": {
+						"asset_path_chirho": "/assets-chirho/icons-chirho/proverbs-worker-v1-chirho/attempt-df239fb10476473c9660c1ceace52cc0-chirho/0010-chirho/cell-15-chirho.webp",
+						"sha256_chirho": "a1a99a34a25986e2f0acba7f2ca4209582ffad892305873cf67efca42568b35e",
+						"alt_chirho": "sprouting seed for beginning",
+						"art_review_chirho": "pending",
+						"assignment_chirho": "lemma_default"
+					},
+					"audio_chirho": {
+						"asset_path_chirho": "/audio-chirho/sha256-chirho/db7c28b240a2983eb83cb8572a8fed77e2f02dedb4bfced40e1f16172b61e096-chirho.mp3",
+						"sha256_chirho": "db7c28b240a2983eb83cb8572a8fed77e2f02dedb4bfced40e1f16172b61e096",
+						"review_chirho": "audition"
+					}
+				},
+				{
+					"id_chirho": "01Nvk",
+					"text_chirho": "בָּרָ֣א",
+					"gloss_chirho": "created",
+					"spanish_gloss_chirho": "creó",
+					"gender_chirho": "masculine",
+					"number_chirho": "singular",
+					"pos_chirho": "verb",
+					"cues_chirho": {
+						"background_chirho": "#dff0ff",
+						"underline_chirho": "transparent",
+						"outline_chirho": "#8152b1",
+						"left_chirho": "1",
+						"center_chirho": "",
+						"right_chirho": "P"
+					},
+					"icon_chirho": {
+						"asset_path_chirho": "/assets-chirho/icons-chirho/genesis-worker-v1-chirho/attempt-3abfa9ae375343659be8617d9adbb8cd-chirho/0000-chirho/cell-02-chirho.webp",
+						"sha256_chirho": "33805dc9ae90e8f0934bae60fad830032f5bf4bac35d015e830849a14dbd3b3a",
+						"alt_chirho": "An earth below stars and radiant light, symbolizing creation without depicting God.",
+						"art_review_chirho": "pending",
+						"assignment_chirho": "contextual"
+					},
+					"audio_chirho": {
+						"asset_path_chirho": "/audio-chirho/sha256-chirho/79a56aa09619164c1a1a83fb1b77768e238552e2994e420502701b2b7dff1036-chirho.mp3",
+						"sha256_chirho": "79a56aa09619164c1a1a83fb1b77768e238552e2994e420502701b2b7dff1036",
+						"review_chirho": "audition"
+					}
+				},
+				{
+					"id_chirho": "01TyA",
+					"text_chirho": "אֱלֹהִ֑ים",
+					"gloss_chirho": "God",
+					"spanish_gloss_chirho": "Dios",
+					"gender_chirho": "masculine",
+					"number_chirho": "plural",
+					"pos_chirho": "noun",
+					"cues_chirho": {
+						"background_chirho": "#dff0ff",
+						"underline_chirho": "#e9c92d",
+						"outline_chirho": "#18847d",
+						"left_chirho": "",
+						"center_chirho": "i",
+						"right_chirho": ""
+					},
+					"icon_chirho": {
+						"asset_path_chirho": "/assets-chirho/icons-chirho/proverbs-worker-v1-chirho/attempt-6f55aaf24cb24aebbfeb5a4f9db24573-chirho/0000-chirho/cell-09-chirho.webp",
+						"sha256_chirho": "c6d6e76cac7354e0a0cc22c75f520ad35cbe3d11a76e415365e403042b89c113",
+						"alt_chirho": "flame illustration",
+						"art_review_chirho": "pending",
+						"assignment_chirho": "contextual"
+					},
+					"audio_chirho": {
+						"asset_path_chirho": "/audio-chirho/sha256-chirho/e91d8032ae9fb0d21decc20e63f3693404467a78a6bc9aeaa3789bb1dfee0686-chirho.mp3",
+						"sha256_chirho": "e91d8032ae9fb0d21decc20e63f3693404467a78a6bc9aeaa3789bb1dfee0686",
+						"review_chirho": "audition"
+					}
+				}
+			]
+		},
+		{
+			"id_chirho": "John.1.1",
+			"language_chirho": "grc",
+			"canonical_text_chirho": "Ἐν ἀρχῇ ἦν ὁ Λόγος, καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν, καὶ Θεὸς ἦν ὁ Λόγος.",
+			"content_path_chirho": "/content-chirho/john-chirho/chapter-01-chirho.json",
+			"content_sha256_chirho": "80defa55138462833d25846ced30d6ad751a60b39ced092e2a504d44d1c30daf",
+			"scene_chirho": {
+				"lesson_id_chirho": "John.1.1",
+				"asset_path_chirho": "/assets-chirho/scenes-chirho/john-ordered-v1-chirho/chapter-01-chirho/john-01-001-chirho.webp",
+				"alt_chirho": "A flowing ribbon of golden light curves through a brilliant center, surrounded by layered blue and ochre watercolor clouds.",
+				"width_chirho": 1200,
+				"height_chirho": 900,
+				"sha256_chirho": "785f22f0a8713d5a96fdedce4f1504e5f5f13c1fc5df3a127dda356729fe72dc",
+				"art_review_chirho": "pending",
+				"reading_note_chirho": "This imaginative watercolor uses a flowing current within one radiance to evoke John 1:1: the Word was in the beginning, was with God, and was God. The image is a metaphor, not a literal depiction. The English wording follows the verse's Berean Interlinear token glosses, identified as uncurated in the source."
+			},
+			"words_chirho": [
+				{
+					"id_chirho": "John.1.1!1",
+					"text_chirho": "Ἐν",
+					"gloss_chirho": "In [the]",
+					"spanish_gloss_chirho": "en",
+					"gender_chirho": "na",
+					"number_chirho": "na",
+					"pos_chirho": "particle",
+					"cues_chirho": {
+						"background_chirho": "transparent",
+						"underline_chirho": "transparent",
+						"outline_chirho": "#7c8589",
+						"left_chirho": "",
+						"center_chirho": "",
+						"right_chirho": ""
+					},
+					"icon_chirho": {
+						"asset_path_chirho": "/assets-chirho/icons-chirho/john-worker-v1-chirho/attempt-eb116cd7e87547a380ee844fd5db2eae-chirho/0010-chirho/cell-10-chirho.webp",
+						"sha256_chirho": "2ac83e8aa6aa1469e2ed69aa3b995215dca740c52e026995b306ac8b233d678b",
+						"alt_chirho": "A small sunrise enclosed inside a simple round ring, symbolizing being within a beginning.",
+						"art_review_chirho": "pending",
+						"assignment_chirho": "contextual"
+					},
+					"audio_chirho": {
+						"asset_path_chirho": "/audio-chirho/sha256-chirho/90c27a0c383664f0b0ab72ae66a001ec2d917944c4716d273527ff2215e7948d-chirho.mp3",
+						"sha256_chirho": "90c27a0c383664f0b0ab72ae66a001ec2d917944c4716d273527ff2215e7948d",
+						"review_chirho": "audition"
+					}
+				},
+				{
+					"id_chirho": "John.1.1!2",
+					"text_chirho": "ἀρχῇ",
+					"gloss_chirho": "beginning",
+					"spanish_gloss_chirho": "principio",
+					"gender_chirho": "feminine",
+					"number_chirho": "singular",
+					"pos_chirho": "noun",
+					"cues_chirho": {
+						"background_chirho": "#ffe4ed",
+						"underline_chirho": "transparent",
+						"outline_chirho": "#18847d",
+						"left_chirho": "",
+						"center_chirho": "iii",
+						"right_chirho": ""
+					},
+					"icon_chirho": {
+						"asset_path_chirho": "/assets-chirho/icons-chirho/john-worker-v1-chirho/attempt-3b5c3e44ec044378b8db69e3897a922c-chirho/0010-chirho/cell-15-chirho.webp",
+						"sha256_chirho": "aaeebcc221ecab232e0c1ca5acc706e69b2bcf69e23508c7cc0af9e96729597f",
+						"alt_chirho": "A low sun with rays over hills and trees.",
+						"art_review_chirho": "pending",
+						"assignment_chirho": "contextual"
+					},
+					"audio_chirho": {
+						"asset_path_chirho": "/audio-chirho/sha256-chirho/fcfaea8b36c2760c07e8ca0e064f71dd1cc453eede80ec6cff6e5cf45d8eb938-chirho.mp3",
+						"sha256_chirho": "fcfaea8b36c2760c07e8ca0e064f71dd1cc453eede80ec6cff6e5cf45d8eb938",
+						"review_chirho": "audition"
+					}
+				},
+				{
+					"id_chirho": "John.1.1!3",
+					"text_chirho": "ἦν",
+					"gloss_chirho": "was",
+					"spanish_gloss_chirho": "era",
+					"gender_chirho": "na",
+					"number_chirho": "singular",
+					"pos_chirho": "verb",
+					"cues_chirho": {
+						"background_chirho": "transparent",
+						"underline_chirho": "transparent",
+						"outline_chirho": "#8152b1",
+						"left_chirho": "Ia",
+						"center_chirho": "",
+						"right_chirho": "3I"
+					},
+					"icon_chirho": {
+						"asset_path_chirho": "/assets-chirho/icons-chirho/john-worker-v1-chirho/attempt-70298d3e9e144510acb35f38ec419c77-chirho/0010-chirho/cell-14-chirho.webp",
+						"sha256_chirho": "64a6b73ee8c50e86704c02cc6b9c8637edac7e412987804fcd5087d8fb2af0e9",
+						"alt_chirho": "A sturdy old olive tree, a visual cue for continuing existence.",
+						"art_review_chirho": "pending",
+						"assignment_chirho": "contextual"
+					},
+					"audio_chirho": {
+						"asset_path_chirho": "/audio-chirho/sha256-chirho/25d288409310d6fad0ab40c2e2022dfd6bab3639e41bec4c60a0bee60d9509ef-chirho.mp3",
+						"sha256_chirho": "25d288409310d6fad0ab40c2e2022dfd6bab3639e41bec4c60a0bee60d9509ef",
+						"review_chirho": "audition"
+					}
+				}
+			]
+		}
+	]
+}

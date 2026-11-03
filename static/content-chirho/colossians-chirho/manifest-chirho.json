@@ -1,0 +1,34 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Col",
+	"label_chirho": "Colossians",
+	"language_chirho": "grc",
+	"revision_chirho": "713f28a3b7d4d66132f5aa809fa223fe79762e5d",
+	"source_sha256_chirho": "3beee6abb6302f691110fe0fc949fc195593b999cf2d0e463c9b573c1bb67150",
+	"chapters_chirho": [
+		{
+			"number_chirho": 1,
+			"verse_count_chirho": 29,
+			"path_chirho": "/content-chirho/colossians-chirho/chapter-01-chirho.json",
+			"sha256_chirho": "63e47f04ebc0e996f7f47d805f3d22107f50ac3946478dafe5e8967f81af65a3"
+		},
+		{
+			"number_chirho": 2,
+			"verse_count_chirho": 23,
+			"path_chirho": "/content-chirho/colossians-chirho/chapter-02-chirho.json",
+			"sha256_chirho": "c7bb0cb5e4da4e73120884c84ca6aba27cd195c79660e5085873a632bc83f3d9"
+		},
+		{
+			"number_chirho": 3,
+			"verse_count_chirho": 25,
+			"path_chirho": "/content-chirho/colossians-chirho/chapter-03-chirho.json",
+			"sha256_chirho": "960156d9969bf6867766c30ce5186b8071e33c8fb3d4cb5404a27fa3e09f731c"
+		},
+		{
+			"number_chirho": 4,
+			"verse_count_chirho": 18,
+			"path_chirho": "/content-chirho/colossians-chirho/chapter-04-chirho.json",
+			"sha256_chirho": "c8c56db0672c03b76f23ee1ef6d3fc946321b40c4b9d67af63a364db729c75db"
+		}
+	]
+}

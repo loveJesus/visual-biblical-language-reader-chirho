@@ -1,0 +1,59 @@
+# For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
+
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+/build-chirho/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+# Playwright
+test-results
+
+# Cloudflare's local-secrets file. It holds real credentials the moment anyone runs
+# `wrangler dev` against live services, and none of the rules above cover it.
+.dev.vars
+.dev.vars.*
+playwright-report
+.playwright-mcp/
+__pycache__/
+
+# Raw interviews, intake exports, credentials and other client PII are local fleet inputs. Keep
+# sanitized decisions in spec-chirho/; never let a broad git add publish the private source.
+/workspace-chirho/
+
+# Public source exports retain workflows, not the owner's operational ledger or task history.
+/spec-chirho/*
+!/spec-chirho/workflows-chirho/
+
+# NOTE: worker-configuration.d.ts is deliberately NOT ignored. `check` and `build` both run
+# `wrangler types --check`, which errors with "Types file not found" rather than regenerating it —
+# so ignoring it breaks the first command anyone runs on a fresh clone.
+
+# Ephemeral main-less config used only by the bounded type-generation wrapper.
+.wrangler-typegen-config-chirho.json
+
+# Local authoring leases are regenerated from the versioned corpus inventory.
+/workspace-chirho/art-chirho/queue-chirho/
+
+# In-flight atomic media manifests are never source artifacts.
+/data-chirho/media-chirho/*.tmp
+# Public source keeps audio catalogues; generated MP3 bytes are delivered from private R2.
+/static/audio-chirho/sha256-chirho/

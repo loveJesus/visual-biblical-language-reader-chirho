@@ -1,0 +1,1835 @@
+{
+  "schema_version_chirho": 1,
+  "lemmas_chirho": [
+    {
+      "lemma_key_chirho": "[\"H6093\",null]",
+      "lemma_id_chirho": "H6093",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עִצָּבוֹן",
+      "occurrence_count_chirho": 3,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Gen.3.16",
+          "token_id_chirho": "01rKT",
+          "text_chirho": "עִצְּבוֹנֵ֣ךְ",
+          "gloss_chirho": "your sorrow",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "7a479ad6e7efd730f074f99e92c232354cb70f205212a95d0355b9905a643bc4"
+        },
+        {
+          "lesson_id_chirho": "Gen.3.17",
+          "token_id_chirho": "01Zy7",
+          "text_chirho": "בְּעִצָּבוֹן֙",
+          "gloss_chirho": "in toil",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "7a479ad6e7efd730f074f99e92c232354cb70f205212a95d0355b9905a643bc4"
+        },
+        {
+          "lesson_id_chirho": "Gen.5.29",
+          "token_id_chirho": "018sY",
+          "text_chirho": "וּמֵעִצְּב֣וֹן",
+          "gloss_chirho": "and the toil of",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b8e8b7926df564f81e021af1c0923d2a39a9cddcfbf0f685f2c1193cef2ef5ef"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H8084\",null]",
+      "lemma_id_chirho": "H8084",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שְׁמֹנִים",
+      "occurrence_count_chirho": 38,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Gen.5.25",
+          "token_id_chirho": "0126m",
+          "text_chirho": "וּשְׁמֹנִ֛ים",
+          "gloss_chirho": "and eighty",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b8e8b7926df564f81e021af1c0923d2a39a9cddcfbf0f685f2c1193cef2ef5ef"
+        },
+        {
+          "lesson_id_chirho": "Gen.5.26",
+          "token_id_chirho": "01ZXZ",
+          "text_chirho": "וּשְׁמוֹנִים֙",
+          "gloss_chirho": "and eighty",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b8e8b7926df564f81e021af1c0923d2a39a9cddcfbf0f685f2c1193cef2ef5ef"
+        },
+        {
+          "lesson_id_chirho": "Gen.5.28",
+          "token_id_chirho": "0131V",
+          "text_chirho": "וּשְׁמֹנִ֛ים",
+          "gloss_chirho": "and eighty",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b8e8b7926df564f81e021af1c0923d2a39a9cddcfbf0f685f2c1193cef2ef5ef"
+        },
+        {
+          "lesson_id_chirho": "Gen.16.16",
+          "token_id_chirho": "01tXE",
+          "text_chirho": "שְׁמֹנִ֥ים",
+          "gloss_chirho": "eighty",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-16-chirho.json",
+          "content_sha256_chirho": "ef8f6c98b417080adf80790912515f417b316aee52bf026d5b0cec290ca13a51"
+        },
+        {
+          "lesson_id_chirho": "Gen.35.28",
+          "token_id_chirho": "01tXF",
+          "text_chirho": "וּשְׁמֹנִ֥ים",
+          "gloss_chirho": "and eighty",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-35-chirho.json",
+          "content_sha256_chirho": "5016afcb17470ed875b6b93d26d42b5c94457b379df3c0daf31953076fe957aa"
+        },
+        {
+          "lesson_id_chirho": "Exod.7.7",
+          "token_id_chirho": "02896",
+          "text_chirho": "שְׁמֹנִ֣ים",
+          "gloss_chirho": "eighty",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-07-chirho.json",
+          "content_sha256_chirho": "338d698250ec97d5ca82499c99082c27c3f9ef91ca52c47a66a4544aeabd013e"
+        },
+        {
+          "lesson_id_chirho": "Exod.7.7",
+          "token_id_chirho": "02ssX",
+          "text_chirho": "וּשְׁמֹנִ֖ים",
+          "gloss_chirho": "and eighty",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-07-chirho.json",
+          "content_sha256_chirho": "338d698250ec97d5ca82499c99082c27c3f9ef91ca52c47a66a4544aeabd013e"
+        },
+        {
+          "lesson_id_chirho": "Num.2.9",
+          "token_id_chirho": "04gJ1",
+          "text_chirho": "וּשְׁמֹנִ֥ים",
+          "gloss_chirho": "and eighty",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "9effb17f084f3761aa5a7b927da58ce8af371ca7016afd862f3ab151053dd9c0"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"H2030\",\"a\"]",
+      "lemma_id_chirho": "H2030",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "הָרֶה",
+      "occurrence_count_chirho": 13,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Gen.16.11",
+          "token_id_chirho": "01vT5",
+          "text_chirho": "הָרָ֖ה",
+          "gloss_chirho": "you have conceived",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-16-chirho.json",
+          "content_sha256_chirho": "ef8f6c98b417080adf80790912515f417b316aee52bf026d5b0cec290ca13a51"
+        },
+        {
+          "lesson_id_chirho": "Gen.38.24",
+          "token_id_chirho": "01ZDp",
+          "text_chirho": "הָרָ֖ה",
+          "gloss_chirho": "she [is] pregnant",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-38-chirho.json",
+          "content_sha256_chirho": "9f70c30158dd73c89053e114471b106085264c3434e6f3783c7ca85571ef00a6"
+        },
+        {
+          "lesson_id_chirho": "Gen.38.25",
+          "token_id_chirho": "01YFM",
+          "text_chirho": "הָרָ֑ה",
+          "gloss_chirho": "[am] pregnant",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-38-chirho.json",
+          "content_sha256_chirho": "9f70c30158dd73c89053e114471b106085264c3434e6f3783c7ca85571ef00a6"
+        },
+        {
+          "lesson_id_chirho": "Exod.21.22",
+          "token_id_chirho": "0236n",
+          "text_chirho": "הָרָה֙",
+          "gloss_chirho": "pregnant",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-21-chirho.json",
+          "content_sha256_chirho": "a8dbe11e17f8687e44d8d21b525386fb9d935014c984a6c2de81829c1b5c1fe7"
+        },
+        {
+          "lesson_id_chirho": "1Sam.4.19",
+          "token_id_chirho": "098eL",
+          "text_chirho": "הָרָ֣ה",
+          "gloss_chirho": "was pregnant",
+          "content_path_chirho": "/content-chirho/1-samuel-chirho/chapter-04-chirho.json",
+          "content_sha256_chirho": "18573dfd7a60f58c695518a873fdd367e15e2f3c649a8b3aace8537e8b4c098b"
+        },
+        {
+          "lesson_id_chirho": "2Sam.11.5",
+          "token_id_chirho": "10v1C",
+          "text_chirho": "הָרָ֥ה",
+          "gloss_chirho": "pregnant",
+          "content_path_chirho": "/content-chirho/2-samuel-chirho/chapter-11-chirho.json",
+          "content_sha256_chirho": "bdc1885324ab7377605a28b1ae4da037bcee4600ef8fe460a6d8882a041ddf0c"
+        },
+        {
+          "lesson_id_chirho": "2Kgs.8.12",
+          "token_id_chirho": "12nm9",
+          "text_chirho": "וְהָרֹתֵיהֶ֖ם",
+          "gloss_chirho": "and their pregnant [women]",
+          "content_path_chirho": "/content-chirho/2-kings-chirho/chapter-08-chirho.json",
+          "content_sha256_chirho": "9af1c00116fb9d27d7a45952ffcec72e5ebf01a649b49def42efe73fc1f244dd"
+        },
+        {
+          "lesson_id_chirho": "2Kgs.15.16",
+          "token_id_chirho": "125YU",
+          "text_chirho": "הֶהָ֥רוֹתֶ֖יהָ",
+          "gloss_chirho": "the women [there] who were pregnant",
+          "content_path_chirho": "/content-chirho/2-kings-chirho/chapter-15-chirho.json",
+          "content_sha256_chirho": "5e9ba6f13e18c10ab7f7c3abba4b9c044362f7243995258647f4d45916dc2721"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H4751\",null]",
+      "lemma_id_chirho": "H4751",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מַר",
+      "occurrence_count_chirho": 39,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Gen.27.34",
+          "token_id_chirho": "01Ve8",
+          "text_chirho": "וּמָרָ֖ה",
+          "gloss_chirho": "and bitter",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-27-chirho.json",
+          "content_sha256_chirho": "5a9d11eb69d811c565a2c5151e2247701ff13a85d6e98460d330b1f84583c784"
+        },
+        {
+          "lesson_id_chirho": "Exod.15.23",
+          "token_id_chirho": "027xo",
+          "text_chirho": "מָרִ֖ים",
+          "gloss_chirho": "[were] bitter",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-15-chirho.json",
+          "content_sha256_chirho": "f0da0c1374550f4786527e8ae16d0a327b14ab69380d33e3668da3e9d56b510d"
+        },
+        {
+          "lesson_id_chirho": "Num.5.18",
+          "token_id_chirho": "04vB3",
+          "text_chirho": "הַמָּרִ֖ים",
+          "gloss_chirho": "the bitter",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "0fa016bc603290db22eb25ac4f086c9cc7d7a2f6001dff2a2f23c87d7c8d250d"
+        },
+        {
+          "lesson_id_chirho": "Num.5.19",
+          "token_id_chirho": "04io8",
+          "text_chirho": "הַמָּרִ֥ים",
+          "gloss_chirho": "bitter",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "0fa016bc603290db22eb25ac4f086c9cc7d7a2f6001dff2a2f23c87d7c8d250d"
+        },
+        {
+          "lesson_id_chirho": "Num.5.23",
+          "token_id_chirho": "044U9",
+          "text_chirho": "הַמָּרִֽים",
+          "gloss_chirho": "the bitter",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "0fa016bc603290db22eb25ac4f086c9cc7d7a2f6001dff2a2f23c87d7c8d250d"
+        },
+        {
+          "lesson_id_chirho": "Num.5.24",
+          "token_id_chirho": "04DL4",
+          "text_chirho": "הַמָּרִ֖ים",
+          "gloss_chirho": "the bitter",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "0fa016bc603290db22eb25ac4f086c9cc7d7a2f6001dff2a2f23c87d7c8d250d"
+        },
+        {
+          "lesson_id_chirho": "Num.5.24",
+          "token_id_chirho": "04Q5x",
+          "text_chirho": "לְמָרִֽים",
+          "gloss_chirho": "[to become] bitter",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "0fa016bc603290db22eb25ac4f086c9cc7d7a2f6001dff2a2f23c87d7c8d250d"
+        },
+        {
+          "lesson_id_chirho": "Num.5.27",
+          "token_id_chirho": "04sAH",
+          "text_chirho": "לְמָרִ֔ים",
+          "gloss_chirho": "[and become] bitter",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "0fa016bc603290db22eb25ac4f086c9cc7d7a2f6001dff2a2f23c87d7c8d250d"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"H3756\",null]",
+      "lemma_id_chirho": "H3756",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "כַּרְמִי",
+      "occurrence_count_chirho": 8,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Gen.46.9",
+          "token_id_chirho": "01K6w",
+          "text_chirho": "וְכַרְמִֽי",
+          "gloss_chirho": "and Carmi",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-46-chirho.json",
+          "content_sha256_chirho": "aee9e0a9cd5f277d1b7a28f364a444d937ebf4092db82e7f90f8957afd38e3f3"
+        },
+        {
+          "lesson_id_chirho": "Exod.6.14",
+          "token_id_chirho": "028e9",
+          "text_chirho": "וְכַרְמִ֔י",
+          "gloss_chirho": "and Carmi",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-06-chirho.json",
+          "content_sha256_chirho": "b8c55381c8c2a59991171f0bee34f79bd9d85507889c4236e61fa5e147efbe2d"
+        },
+        {
+          "lesson_id_chirho": "Num.26.6",
+          "token_id_chirho": "04x9t",
+          "text_chirho": "לְכַרְמִ֕י",
+          "gloss_chirho": "[of] Carmi",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-26-chirho.json",
+          "content_sha256_chirho": "415b401c187012e8a8f33998d816820a3cf315d242417c831b7472053d194009"
+        },
+        {
+          "lesson_id_chirho": "Josh.7.1",
+          "token_id_chirho": "06qch",
+          "text_chirho": "כַּרְמִי֩",
+          "gloss_chirho": "Carmi",
+          "content_path_chirho": "/content-chirho/joshua-chirho/chapter-07-chirho.json",
+          "content_sha256_chirho": "b89b8db5634584aa14f3c1cf9202cc797b2b2b34857911acfe216f6b8695cd85"
+        },
+        {
+          "lesson_id_chirho": "Josh.7.18",
+          "token_id_chirho": "06Moi",
+          "text_chirho": "כַּרְמִ֧י",
+          "gloss_chirho": "Carmi",
+          "content_path_chirho": "/content-chirho/joshua-chirho/chapter-07-chirho.json",
+          "content_sha256_chirho": "b89b8db5634584aa14f3c1cf9202cc797b2b2b34857911acfe216f6b8695cd85"
+        },
+        {
+          "lesson_id_chirho": "1Chr.2.7",
+          "token_id_chirho": "13Qpj",
+          "text_chirho": "כַּרְמִ֑י",
+          "gloss_chirho": "Carmi",
+          "content_path_chirho": "/content-chirho/1-chronicles-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "92dad909b4b63fb1eba28182e7b60180901d28bcd45cfd50cd3d6ad8725a1120"
+        },
+        {
+          "lesson_id_chirho": "1Chr.4.1",
+          "token_id_chirho": "13wEW",
+          "text_chirho": "וְכַרְמִ֖י",
+          "gloss_chirho": "and Carmi",
+          "content_path_chirho": "/content-chirho/1-chronicles-chirho/chapter-04-chirho.json",
+          "content_sha256_chirho": "050a88e02c3ac5ae6b8af4a238ba9b59da2ad1f878a0ff3479be44fb596b54e3"
+        },
+        {
+          "lesson_id_chirho": "1Chr.5.3",
+          "token_id_chirho": "13oQV",
+          "text_chirho": "וְכַרְמִֽי",
+          "gloss_chirho": "and Carmi",
+          "content_path_chirho": "/content-chirho/1-chronicles-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "9db13f6b113fb2b24947b76d4bb14d300b40c94f383b7b644c5cd601a60c1805"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"H3456\",null]",
+      "lemma_id_chirho": "H3456",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָשַׁם",
+      "occurrence_count_chirho": 4,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Gen.47.19",
+          "token_id_chirho": "01wXf",
+          "text_chirho": "תֵשָֽׁם",
+          "gloss_chirho": "may be desolate",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-47-chirho.json",
+          "content_sha256_chirho": "df49bbf8909250d0e763ca10fcb3f697c922b13bab90c24b9a194747889551ee"
+        },
+        {
+          "lesson_id_chirho": "Ezek.6.6",
+          "token_id_chirho": "26QKM",
+          "text_chirho": "תִּישָׁ֑מְנָה",
+          "gloss_chirho": "shall be desolate",
+          "content_path_chirho": "/content-chirho/ezekiel-chirho/chapter-06-chirho.json",
+          "content_sha256_chirho": "922da89c9270040066c1cd0887f6bbd3bcfc2d2c4eff6de733ed92a9464bd157"
+        },
+        {
+          "lesson_id_chirho": "Ezek.12.19",
+          "token_id_chirho": "26tHL",
+          "text_chirho": "תֵּשַׁ֤ם",
+          "gloss_chirho": "may be emptied",
+          "content_path_chirho": "/content-chirho/ezekiel-chirho/chapter-12-chirho.json",
+          "content_sha256_chirho": "9a9d95ed3a0ba396b6b115f1d988fbd7336e5d4770023f7946bb394a27449a75"
+        },
+        {
+          "lesson_id_chirho": "Ezek.19.7",
+          "token_id_chirho": "26yhE",
+          "text_chirho": "וַתֵּ֤שַׁם",
+          "gloss_chirho": "and was desolated",
+          "content_path_chirho": "/content-chirho/ezekiel-chirho/chapter-19-chirho.json",
+          "content_sha256_chirho": "a0095d50186fb7f96ccd6e136a8ea8c9da42facf36ea2221b8c9cdc25620d268"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"H4393\",null]",
+      "lemma_id_chirho": "H4393",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְלֹא",
+      "occurrence_count_chirho": 38,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Gen.48.19",
+          "token_id_chirho": "01vRd",
+          "text_chirho": "מְלֹֽא",
+          "gloss_chirho": "a multitude of",
+          "content_path_chirho": "/content-chirho/genesis-chirho/chapter-48-chirho.json",
+          "content_sha256_chirho": "bb1ced92eb2da30a3baa66175ea09aae916a3b453bfb37d88b9526dd29acff66"
+        },
+        {
+          "lesson_id_chirho": "Exod.9.8",
+          "token_id_chirho": "023iU",
+          "text_chirho": "מְלֹ֣א",
+          "gloss_chirho": "-  of",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-09-chirho.json",
+          "content_sha256_chirho": "00276694a6c3a1e89676d6445fe0c39d21ea28072512ff5cfdc5a093a94d8ef1"
+        },
+        {
+          "lesson_id_chirho": "Exod.16.32",
+          "token_id_chirho": "02tSV",
+          "text_chirho": "מְלֹ֤א",
+          "gloss_chirho": "Fill of",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-16-chirho.json",
+          "content_sha256_chirho": "b32c61c2d12a222ce1e1a96d534be9cfbcad9abdfab0c37cce0bcca50d20ace6"
+        },
+        {
+          "lesson_id_chirho": "Exod.16.33",
+          "token_id_chirho": "026WH",
+          "text_chirho": "מְלֹֽא",
+          "gloss_chirho": "full of",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-16-chirho.json",
+          "content_sha256_chirho": "b32c61c2d12a222ce1e1a96d534be9cfbcad9abdfab0c37cce0bcca50d20ace6"
+        },
+        {
+          "lesson_id_chirho": "Lev.2.2",
+          "token_id_chirho": "03qVd",
+          "text_chirho": "מְלֹ֣א",
+          "gloss_chirho": "the fullness of",
+          "content_path_chirho": "/content-chirho/leviticus-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "ee9d771f4968eebf033f28ed87f3fc7fc1a79b5362a5d8b772fd9c2d82fe6f86"
+        },
+        {
+          "lesson_id_chirho": "Lev.5.12",
+          "token_id_chirho": "035Xt",
+          "text_chirho": "מְל֨וֹא",
+          "gloss_chirho": "his full of",
+          "content_path_chirho": "/content-chirho/leviticus-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b542622569ad2a72018dc29be4fc622491173830d19181418a32a4d6e12c192c"
+        },
+        {
+          "lesson_id_chirho": "Lev.16.12",
+          "token_id_chirho": "03XQ4",
+          "text_chirho": "מְלֹֽא",
+          "gloss_chirho": "full of",
+          "content_path_chirho": "/content-chirho/leviticus-chirho/chapter-16-chirho.json",
+          "content_sha256_chirho": "efa94e9e2e0c74c9ef28bd3db46797f5445056f701db40542e937b7f219753e8"
+        },
+        {
+          "lesson_id_chirho": "Lev.16.12",
+          "token_id_chirho": "03VCX",
+          "text_chirho": "וּמְלֹ֣א",
+          "gloss_chirho": "and full of",
+          "content_path_chirho": "/content-chirho/leviticus-chirho/chapter-16-chirho.json",
+          "content_sha256_chirho": "efa94e9e2e0c74c9ef28bd3db46797f5445056f701db40542e937b7f219753e8"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"H7950\",null]",
+      "lemma_id_chirho": "H7950",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שֶׁלֶג",
+      "occurrence_count_chirho": 20,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Exod.4.6",
+          "token_id_chirho": "02vfm",
+          "text_chirho": "כַּשָּֽׁלֶג",
+          "gloss_chirho": "like snow",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-04-chirho.json",
+          "content_sha256_chirho": "437e6ce8993ae3800581d902b4329c438d61d502bc55a32284652d94d15f8b0e"
+        },
+        {
+          "lesson_id_chirho": "Num.12.10",
+          "token_id_chirho": "045ho",
+          "text_chirho": "כַּשָּׁ֑לֶג",
+          "gloss_chirho": "as [white as] snow",
+          "content_path_chirho": "/content-chirho/numbers-chirho/chapter-12-chirho.json",
+          "content_sha256_chirho": "f48a251fae42cee033f1523adf8237bda35970686c974de5103e0dabb9ef5ce4"
+        },
+        {
+          "lesson_id_chirho": "2Sam.23.20",
+          "token_id_chirho": "10HEf",
+          "text_chirho": "הַשָּֽׁלֶג",
+          "gloss_chirho": "snowy",
+          "content_path_chirho": "/content-chirho/2-samuel-chirho/chapter-23-chirho.json",
+          "content_sha256_chirho": "d3e40396415ea9fe116023cb74a67b48be1d6bf334b6606f32be1b5117c9ee91"
+        },
+        {
+          "lesson_id_chirho": "2Kgs.5.27",
+          "token_id_chirho": "12YXi",
+          "text_chirho": "כַּשָּֽׁלֶג",
+          "gloss_chirho": "[as white] as snow",
+          "content_path_chirho": "/content-chirho/2-kings-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "ce66486498209613530619fd4dae493f19694ab2087982f320617e67cd525c12"
+        },
+        {
+          "lesson_id_chirho": "1Chr.11.22",
+          "token_id_chirho": "137h8",
+          "text_chirho": "הַשָּֽׁלֶג",
+          "gloss_chirho": "snowy",
+          "content_path_chirho": "/content-chirho/1-chronicles-chirho/chapter-11-chirho.json",
+          "content_sha256_chirho": "e4fd810aa29403fe84813f18880ca9153c3f1d829c9f2b41577bc37fb9a9c6c2"
+        },
+        {
+          "lesson_id_chirho": "Job.6.16",
+          "token_id_chirho": "18nDr",
+          "text_chirho": "שָֽׁלֶג",
+          "gloss_chirho": "the snow",
+          "content_path_chirho": "/content-chirho/job-chirho/chapter-06-chirho.json",
+          "content_sha256_chirho": "ebeebca3e0360fc35f81ef5e309062c9eb1b97f661436ae275f4f9109625a210"
+        },
+        {
+          "lesson_id_chirho": "Job.9.30",
+          "token_id_chirho": "18bxs",
+          "text_chirho": "שָׁ֑לֶג",
+          "gloss_chirho": "snow",
+          "content_path_chirho": "/content-chirho/job-chirho/chapter-09-chirho.json",
+          "content_sha256_chirho": "f54867c094480f233b11baf345e8048b509c96786ee45b245eb1b43e10cf84f9"
+        },
+        {
+          "lesson_id_chirho": "Job.24.19",
+          "token_id_chirho": "18kTv",
+          "text_chirho": "שֶׁ֗לֶג",
+          "gloss_chirho": "snow",
+          "content_path_chirho": "/content-chirho/job-chirho/chapter-24-chirho.json",
+          "content_sha256_chirho": "a2777dfe46f596294acef1e38ab3b86b4064b2e1b15149874bcdf712de2cef78"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"H2176\",null]",
+      "lemma_id_chirho": "H2176",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זִמְרָת",
+      "occurrence_count_chirho": 3,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Exod.15.2",
+          "token_id_chirho": "02d4U",
+          "text_chirho": "וְזִמְרָת֙",
+          "gloss_chirho": "and song of",
+          "content_path_chirho": "/content-chirho/exodus-chirho/chapter-15-chirho.json",
+          "content_sha256_chirho": "f0da0c1374550f4786527e8ae16d0a327b14ab69380d33e3668da3e9d56b510d"
+        },
+        {
+          "lesson_id_chirho": "Ps.118.14",
+          "token_id_chirho": "19rWv",
+          "text_chirho": "וְזִמְרָ֣ת",
+          "gloss_chirho": "and song of",
+          "content_path_chirho": "/content-chirho/psalms-chirho/chapter-118-chirho.json",
+          "content_sha256_chirho": "f361e62f4a32a766b0553f006d6853ceabd38bdc59684ce41ed452e9619b7b44"
+        },
+        {
+          "lesson_id_chirho": "Isa.12.2",
+          "token_id_chirho": "23AjX",
+          "text_chirho": "וְזִמְרָת֙",
+          "gloss_chirho": "and song",
+          "content_path_chirho": "/content-chirho/isaiah-chirho/chapter-12-chirho.json",
+          "content_sha256_chirho": "405747f1cf1a0e0af506d147779e5a3134f36ad5d6598b041937750a9018147c"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H4096\",null]",
+      "lemma_id_chirho": "H4096",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִדְרָךְ",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Deut.2.5",
+          "token_id_chirho": "05Ao4",
+          "text_chirho": "מִדְרַ֣ךְ",
+          "gloss_chirho": "a footprint of",
+          "content_path_chirho": "/content-chirho/deuteronomy-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "9864f20c981f8f0904c516c78f51886b430aee142bd061c71ec2967b53f27e69"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H3309\",null]",
+      "lemma_id_chirho": "H3309",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָפִיעַ",
+      "occurrence_count_chirho": 5,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Josh.10.3",
+          "token_id_chirho": "06wY4",
+          "text_chirho": "יָפִ֧יעַ",
+          "gloss_chirho": "Japhia",
+          "content_path_chirho": "/content-chirho/joshua-chirho/chapter-10-chirho.json",
+          "content_sha256_chirho": "f6c9f6ab40e799445be146d5bafd97b086eb964f3f540e9c9008c0af58c9a784"
+        },
+        {
+          "lesson_id_chirho": "Josh.19.12",
+          "token_id_chirho": "06ySt",
+          "text_chirho": "יָפִֽיעַ",
+          "gloss_chirho": "Japhia",
+          "content_path_chirho": "/content-chirho/joshua-chirho/chapter-19-chirho.json",
+          "content_sha256_chirho": "569a80b862d49afb370fb1ccbfec9227877dff740357c69dda7dc33cecd19a21"
+        },
+        {
+          "lesson_id_chirho": "2Sam.5.15",
+          "token_id_chirho": "10CNX",
+          "text_chirho": "וְיָפִֽיעַ",
+          "gloss_chirho": "and Japhia",
+          "content_path_chirho": "/content-chirho/2-samuel-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "92942ecdec7e9d1ce0b57e5f6e6f12fd57b0b02ef50bad49a263e0024cfdbdb6"
+        },
+        {
+          "lesson_id_chirho": "1Chr.3.7",
+          "token_id_chirho": "13PTT",
+          "text_chirho": "וְיָפִֽיעַ",
+          "gloss_chirho": "and Japhia",
+          "content_path_chirho": "/content-chirho/1-chronicles-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "b4007463a3f9ff7e698f2e2ad7f155d05c629f81a7622d5029c078b7ba6d4a34"
+        },
+        {
+          "lesson_id_chirho": "1Chr.14.6",
+          "token_id_chirho": "13nU3",
+          "text_chirho": "וְיָפִֽיעַ",
+          "gloss_chirho": "and Japhia",
+          "content_path_chirho": "/content-chirho/1-chronicles-chirho/chapter-14-chirho.json",
+          "content_sha256_chirho": "97034aa8608b475bb9416e24f2b901326e0b03c647ee8570a6c053f243bbc502"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H1046\",null]",
+      "lemma_id_chirho": "H1046",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "בֵּית פֶּלֶט",
+      "occurrence_count_chirho": 4,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Josh.15.27",
+          "token_id_chirho": "06iWG",
+          "text_chirho": "וּבֵ֥ית",
+          "gloss_chirho": "and Beth Pelet",
+          "content_path_chirho": "/content-chirho/joshua-chirho/chapter-15-chirho.json",
+          "content_sha256_chirho": "96cff9d86eda0d482229e62d7fd5c4140667b2d6808b311693f2278c982b8db7"
+        },
+        {
+          "lesson_id_chirho": "Josh.15.27",
+          "token_id_chirho": "06v6C",
+          "text_chirho": "פָּֽלֶט",
+          "gloss_chirho": null,
+          "content_path_chirho": "/content-chirho/joshua-chirho/chapter-15-chirho.json",
+          "content_sha256_chirho": "96cff9d86eda0d482229e62d7fd5c4140667b2d6808b311693f2278c982b8db7"
+        },
+        {
+          "lesson_id_chirho": "Neh.11.26",
+          "token_id_chirho": "16kJL",
+          "text_chirho": "וּבְבֵ֥ית",
+          "gloss_chirho": null,
+          "content_path_chirho": "/content-chirho/nehemiah-chirho/chapter-11-chirho.json",
+          "content_sha256_chirho": "c6dc6aa2fa419fa602cadf039d86835e11a61243423e4b3b51db55b611c9b296"
+        },
+        {
+          "lesson_id_chirho": "Neh.11.26",
+          "token_id_chirho": "16SLq",
+          "text_chirho": "פָּֽלֶט",
+          "gloss_chirho": null,
+          "content_path_chirho": "/content-chirho/nehemiah-chirho/chapter-11-chirho.json",
+          "content_sha256_chirho": "c6dc6aa2fa419fa602cadf039d86835e11a61243423e4b3b51db55b611c9b296"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H6969\",null]",
+      "lemma_id_chirho": "H6969",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "קוּן",
+      "occurrence_count_chirho": 8,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "2Sam.1.17",
+          "token_id_chirho": "10uXX",
+          "text_chirho": "וַיְקֹנֵ֣ן",
+          "gloss_chirho": "And lamented",
+          "content_path_chirho": "/content-chirho/2-samuel-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "538f0d4760b4bff330b101dba0e9e3dae3844436796d7d84d44e60ab8daace3e"
+        },
+        {
+          "lesson_id_chirho": "2Sam.3.33",
+          "token_id_chirho": "10TYN",
+          "text_chirho": "וַיְקֹנֵ֥ן",
+          "gloss_chirho": "And sang [a lament]",
+          "content_path_chirho": "/content-chirho/2-samuel-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "8f1baca523c2495d3d9de6e3619ae97b8c1878d51bb33a75457e083088315c85"
+        },
+        {
+          "lesson_id_chirho": "2Chr.35.25",
+          "token_id_chirho": "14VDp",
+          "text_chirho": "וַיְקוֹנֵ֣ן",
+          "gloss_chirho": "And lamented",
+          "content_path_chirho": "/content-chirho/2-chronicles-chirho/chapter-35-chirho.json",
+          "content_sha256_chirho": "b44ceb17fb58eef2d190d88f5488a89215a31cb1de9635818ae129431134b6f6"
+        },
+        {
+          "lesson_id_chirho": "Jer.9.16",
+          "token_id_chirho": "24mgi",
+          "text_chirho": "לַמְקוֹנְנ֖וֹת",
+          "gloss_chirho": "for the mourning women",
+          "content_path_chirho": "/content-chirho/jeremiah-chirho/chapter-09-chirho.json",
+          "content_sha256_chirho": "2c986b8d5e14c28cc7497c798b0fb5eed5c02a2e05993e37385517b9df96bfa4"
+        },
+        {
+          "lesson_id_chirho": "Ezek.27.32",
+          "token_id_chirho": "26km3",
+          "text_chirho": "וְקוֹנְנ֖וּ",
+          "gloss_chirho": "and lament",
+          "content_path_chirho": "/content-chirho/ezekiel-chirho/chapter-27-chirho.json",
+          "content_sha256_chirho": "efde4bda57e77cba7a10f2a75e246b8b523d00fd4e1bf63ce8c7132d1db13820"
+        },
+        {
+          "lesson_id_chirho": "Ezek.32.16",
+          "token_id_chirho": "2696d",
+          "text_chirho": "וְק֣וֹנְנ֔וּהָ",
+          "gloss_chirho": "and with which they shall lament her",
+          "content_path_chirho": "/content-chirho/ezekiel-chirho/chapter-32-chirho.json",
+          "content_sha256_chirho": "4b1727a686fd0bdbca20a8c8976d22bcc6bb3a6d737b6dadfdc574da6826488b"
+        },
+        {
+          "lesson_id_chirho": "Ezek.32.16",
+          "token_id_chirho": "26Epo",
+          "text_chirho": "תְּקוֹנֵ֣נָּה",
+          "gloss_chirho": "shall lament",
+          "content_path_chirho": "/content-chirho/ezekiel-chirho/chapter-32-chirho.json",
+          "content_sha256_chirho": "4b1727a686fd0bdbca20a8c8976d22bcc6bb3a6d737b6dadfdc574da6826488b"
+        },
+        {
+          "lesson_id_chirho": "Ezek.32.16",
+          "token_id_chirho": "26RRj",
+          "text_chirho": "תְּקוֹנֵ֣נָּה",
+          "gloss_chirho": "they shall lament",
+          "content_path_chirho": "/content-chirho/ezekiel-chirho/chapter-32-chirho.json",
+          "content_sha256_chirho": "4b1727a686fd0bdbca20a8c8976d22bcc6bb3a6d737b6dadfdc574da6826488b"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H3124\",null]",
+      "lemma_id_chirho": "H3124",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יוֹנָה",
+      "occurrence_count_chirho": 19,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "2Kgs.14.25",
+          "token_id_chirho": "12Zvg",
+          "text_chirho": "יוֹנָ֤ה",
+          "gloss_chirho": "Jonah",
+          "content_path_chirho": "/content-chirho/2-kings-chirho/chapter-14-chirho.json",
+          "content_sha256_chirho": "40d1a67c5dbf40c16e2cabea6723bea1a049f6736fae26578affc7fc265c4876"
+        },
+        {
+          "lesson_id_chirho": "Jonah.1.1",
+          "token_id_chirho": "32TSc",
+          "text_chirho": "יוֹנָ֥ה",
+          "gloss_chirho": "Jonah",
+          "content_path_chirho": "/content-chirho/jonah-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "91a3f875b2763067b6e08276499d3035f27f752ea2663daafd00d038979c8fa7"
+        },
+        {
+          "lesson_id_chirho": "Jonah.1.3",
+          "token_id_chirho": "32thY",
+          "text_chirho": "יוֹנָה֙",
+          "gloss_chirho": "Jonah",
+          "content_path_chirho": "/content-chirho/jonah-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "91a3f875b2763067b6e08276499d3035f27f752ea2663daafd00d038979c8fa7"
+        },
+        {
+          "lesson_id_chirho": "Jonah.1.5",
+          "token_id_chirho": "32A4a",
+          "text_chirho": "וְיוֹנָ֗ה",
+          "gloss_chirho": "but Jonah",
+          "content_path_chirho": "/content-chirho/jonah-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "91a3f875b2763067b6e08276499d3035f27f752ea2663daafd00d038979c8fa7"
+        },
+        {
+          "lesson_id_chirho": "Jonah.1.7",
+          "token_id_chirho": "32dns",
+          "text_chirho": "יוֹנָֽה",
+          "gloss_chirho": "Jonah",
+          "content_path_chirho": "/content-chirho/jonah-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "91a3f875b2763067b6e08276499d3035f27f752ea2663daafd00d038979c8fa7"
+        },
+        {
+          "lesson_id_chirho": "Jonah.1.15",
+          "token_id_chirho": "32Xzm",
+          "text_chirho": "יוֹנָ֔ה",
+          "gloss_chirho": "Jonah",
+          "content_path_chirho": "/content-chirho/jonah-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "91a3f875b2763067b6e08276499d3035f27f752ea2663daafd00d038979c8fa7"
+        },
+        {
+          "lesson_id_chirho": "Jonah.2.1",
+          "token_id_chirho": "32bYD",
+          "text_chirho": "יוֹנָ֑ה",
+          "gloss_chirho": "Jonah",
+          "content_path_chirho": "/content-chirho/jonah-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "b67a044e500f9269378d1f9e333c8c1b60a4ff4e0a34f820c4bed938acb1de69"
+        },
+        {
+          "lesson_id_chirho": "Jonah.2.1",
+          "token_id_chirho": "327vt",
+          "text_chirho": "יוֹנָה֙",
+          "gloss_chirho": "Jonah",
+          "content_path_chirho": "/content-chirho/jonah-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "b67a044e500f9269378d1f9e333c8c1b60a4ff4e0a34f820c4bed938acb1de69"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H7288\",null]",
+      "lemma_id_chirho": "H7288",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "רַדַּי",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "1Chr.2.14",
+          "token_id_chirho": "13vpT",
+          "text_chirho": "רַדַּ֖י",
+          "gloss_chirho": "Raddai",
+          "content_path_chirho": "/content-chirho/1-chronicles-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "92dad909b4b63fb1eba28182e7b60180901d28bcd45cfd50cd3d6ad8725a1120"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H2144\",null]",
+      "lemma_id_chirho": "H2144",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זֶכֶר",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "1Chr.8.31",
+          "token_id_chirho": "13Jon",
+          "text_chirho": "וָזָֽכֶר",
+          "gloss_chirho": "and Zecher",
+          "content_path_chirho": "/content-chirho/1-chronicles-chirho/chapter-08-chirho.json",
+          "content_sha256_chirho": "be9c70915aaaa413aa52ab3cbfcaf2a46f4ec3b20ad3d8221e99ca4ddeeeeade"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H383\",null]",
+      "lemma_id_chirho": "H383",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אִיתַי",
+      "occurrence_count_chirho": 16,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Ezra.4.16",
+          "token_id_chirho": "15iSw",
+          "text_chirho": "אִיתַ֖י",
+          "gloss_chirho": "is",
+          "content_path_chirho": "/content-chirho/ezra-chirho/chapter-04-chirho.json",
+          "content_sha256_chirho": "e061dd84932fd9b6e4bcb8a8c8abb398d673bc38b307beab0a911b414413d238"
+        },
+        {
+          "lesson_id_chirho": "Ezra.5.17",
+          "token_id_chirho": "15yAj",
+          "text_chirho": "אִיתַ֗י",
+          "gloss_chirho": "[it] is [so]",
+          "content_path_chirho": "/content-chirho/ezra-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "e071638638a7d8fc54697a1ba6436ee133e3ed6490854e5a036c5d2d639d311f"
+        },
+        {
+          "lesson_id_chirho": "Dan.2.10",
+          "token_id_chirho": "276Vi",
+          "text_chirho": "אִיתַ֤י",
+          "gloss_chirho": "[There] is",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "ca4248641b5e0a1d597364e260e3b120ae3ce5e83f057d7133fa2cf8a15ca003"
+        },
+        {
+          "lesson_id_chirho": "Dan.2.11",
+          "token_id_chirho": "2789r",
+          "text_chirho": "אִיתַ֔י",
+          "gloss_chirho": "[there] is",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "ca4248641b5e0a1d597364e260e3b120ae3ce5e83f057d7133fa2cf8a15ca003"
+        },
+        {
+          "lesson_id_chirho": "Dan.2.11",
+          "token_id_chirho": "27w1U",
+          "text_chirho": "אִיתֽוֹהִי",
+          "gloss_chirho": "is",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "ca4248641b5e0a1d597364e260e3b120ae3ce5e83f057d7133fa2cf8a15ca003"
+        },
+        {
+          "lesson_id_chirho": "Dan.2.28",
+          "token_id_chirho": "27Gpp",
+          "text_chirho": "אִיתַ֞י",
+          "gloss_chirho": "[there] is",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "ca4248641b5e0a1d597364e260e3b120ae3ce5e83f057d7133fa2cf8a15ca003"
+        },
+        {
+          "lesson_id_chirho": "Dan.2.30",
+          "token_id_chirho": "27XQw",
+          "text_chirho": "אִיתַ֥י",
+          "gloss_chirho": "is",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "ca4248641b5e0a1d597364e260e3b120ae3ce5e83f057d7133fa2cf8a15ca003"
+        },
+        {
+          "lesson_id_chirho": "Dan.3.12",
+          "token_id_chirho": "27D1c",
+          "text_chirho": "אִיתַ֞י",
+          "gloss_chirho": "[There] are",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "83f6226ac796b623859e15fe55b028d2a791f2ec15c36f0cf1e6f67f3a19bc8e"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H2606\",null]",
+      "lemma_id_chirho": "H2606",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חֲנַנְאֵל",
+      "occurrence_count_chirho": 4,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Neh.3.1",
+          "token_id_chirho": "16Cpt",
+          "text_chirho": "חֲנַנְאֵֽל",
+          "gloss_chirho": "Hananel",
+          "content_path_chirho": "/content-chirho/nehemiah-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "090712e6e74a34e0ce7cb80ae174ee88aab4983b227043c0f0e5f7c68c7bdd71"
+        },
+        {
+          "lesson_id_chirho": "Neh.12.39",
+          "token_id_chirho": "16art",
+          "text_chirho": "חֲנַנְאֵל֙",
+          "gloss_chirho": "Hananel",
+          "content_path_chirho": "/content-chirho/nehemiah-chirho/chapter-12-chirho.json",
+          "content_sha256_chirho": "01691c0239203d3137aeb1579e9c852f7b448e558b7bc12239e6c8a26d64be44"
+        },
+        {
+          "lesson_id_chirho": "Jer.31.38",
+          "token_id_chirho": "24ytK",
+          "text_chirho": "חֲנַנְאֵ֖ל",
+          "gloss_chirho": null,
+          "content_path_chirho": "/content-chirho/jeremiah-chirho/chapter-31-chirho.json",
+          "content_sha256_chirho": "788fbe24f3b9eacfd6bc5c9e4bf4afa1eeb7e54f9cd23de0f7a80e0d5daedf4f"
+        },
+        {
+          "lesson_id_chirho": "Zech.14.10",
+          "token_id_chirho": "38C3i",
+          "text_chirho": "חֲנַנְאֵ֔ל",
+          "gloss_chirho": "Hananel",
+          "content_path_chirho": "/content-chirho/zechariah-chirho/chapter-14-chirho.json",
+          "content_sha256_chirho": "0dcde8bf1dc0ce68ce798cfb5b135f2198e93adfbb276855591429d089549ccf"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H4462\",null]",
+      "lemma_id_chirho": "H4462",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְמוּכָן",
+      "occurrence_count_chirho": 3,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Esth.1.14",
+          "token_id_chirho": "17WvG",
+          "text_chirho": "מְמוּכָ֑ן",
+          "gloss_chirho": "[and] Memucan",
+          "content_path_chirho": "/content-chirho/esther-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "69ae6996462e752c05ed8b8f326bb1ff458fc65a5972e48d08416370bda2631f"
+        },
+        {
+          "lesson_id_chirho": "Esth.1.16",
+          "token_id_chirho": "17ecS",
+          "text_chirho": "מומכן",
+          "gloss_chirho": "Memucan",
+          "content_path_chirho": "/content-chirho/esther-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "69ae6996462e752c05ed8b8f326bb1ff458fc65a5972e48d08416370bda2631f"
+        },
+        {
+          "lesson_id_chirho": "Esth.1.21",
+          "token_id_chirho": "17RuM",
+          "text_chirho": "מְמוּכָֽן",
+          "gloss_chirho": "Memucan",
+          "content_path_chirho": "/content-chirho/esther-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "69ae6996462e752c05ed8b8f326bb1ff458fc65a5972e48d08416370bda2631f"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H1979\",null]",
+      "lemma_id_chirho": "H1979",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "הֲלִיכָה",
+      "occurrence_count_chirho": 6,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Job.6.19",
+          "token_id_chirho": "18qsm",
+          "text_chirho": "הֲלִיכֹ֥ת",
+          "gloss_chirho": "the travelers of",
+          "content_path_chirho": "/content-chirho/job-chirho/chapter-06-chirho.json",
+          "content_sha256_chirho": "ebeebca3e0360fc35f81ef5e309062c9eb1b97f661436ae275f4f9109625a210"
+        },
+        {
+          "lesson_id_chirho": "Ps.68.25",
+          "token_id_chirho": "19gDj",
+          "text_chirho": "הֲלִיכוֹתֶ֣יךָ",
+          "gloss_chirho": "Your procession",
+          "content_path_chirho": "/content-chirho/psalms-chirho/chapter-68-chirho.json",
+          "content_sha256_chirho": "67fee5e0b46b6acd4cfe438d0ffc68258fafb40bf831d76a06b40dff9e35f471"
+        },
+        {
+          "lesson_id_chirho": "Ps.68.25",
+          "token_id_chirho": "199Ye",
+          "text_chirho": "הֲלִ֘יכ֤וֹת",
+          "gloss_chirho": "the procession of",
+          "content_path_chirho": "/content-chirho/psalms-chirho/chapter-68-chirho.json",
+          "content_sha256_chirho": "67fee5e0b46b6acd4cfe438d0ffc68258fafb40bf831d76a06b40dff9e35f471"
+        },
+        {
+          "lesson_id_chirho": "Prov.31.27",
+          "token_id_chirho": "20te8",
+          "text_chirho": "הֲלִיכ֣וֹת",
+          "gloss_chirho": "over the ways of",
+          "content_path_chirho": "/content-chirho/proverbs-chirho/chapter-31-chirho.json",
+          "content_sha256_chirho": "09e845f2b173a5f8ac960bf822570cbb5f85a3634f9c3e4a48804a1d076ca079"
+        },
+        {
+          "lesson_id_chirho": "Nah.2.6",
+          "token_id_chirho": "34GvF",
+          "text_chirho": "בהלכותם",
+          "gloss_chirho": "in their walks",
+          "content_path_chirho": "/content-chirho/nahum-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "e9929cb3f10214dbe5c290a556c833f2c9c02a0ddf10ab4e2c5026f6a2f74648"
+        },
+        {
+          "lesson_id_chirho": "Hab.3.6",
+          "token_id_chirho": "355Ja",
+          "text_chirho": "הֲלִיכ֥וֹת",
+          "gloss_chirho": "ways [are] of",
+          "content_path_chirho": "/content-chirho/habakkuk-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "67f56ed9a98c044273aa0b11b4238f8067a76c7c4154af8582a85b18b92f4870"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"H4461\",null]",
+      "lemma_id_chirho": "H4461",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מֵמַד",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Job.38.5",
+          "token_id_chirho": "18gqX",
+          "text_chirho": "מְ֭מַדֶּיהָ",
+          "gloss_chirho": "its measurements",
+          "content_path_chirho": "/content-chirho/job-chirho/chapter-38-chirho.json",
+          "content_sha256_chirho": "3633e1dc05d3db1ee0e4ecfab479c49a2c92f19321377bfae83921774c6ec645"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H5156\",null]",
+      "lemma_id_chirho": "H5156",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "נְחִיר",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Job.41.12",
+          "token_id_chirho": "18kf1",
+          "text_chirho": "מִ֭נְּחִירָיו",
+          "gloss_chirho": "Out of his nostrils",
+          "content_path_chirho": "/content-chirho/job-chirho/chapter-41-chirho.json",
+          "content_sha256_chirho": "ecc4f2f755afd1c4ddc11f7086c5ed7e348703539a813e604a3d4e13afd87c8d"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H2300\",\"b\"]",
+      "lemma_id_chirho": "H2300",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "חָדַד",
+      "occurrence_count_chirho": 2,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Prov.27.17",
+          "token_id_chirho": "20Fbc",
+          "text_chirho": "יָ֑חַד",
+          "gloss_chirho": "sharpens",
+          "content_path_chirho": "/content-chirho/proverbs-chirho/chapter-27-chirho.json",
+          "content_sha256_chirho": "72ebd09a04003d0bcaa5b7cd3dbae6be7cb0036775d399459f516aa6e783b627"
+        },
+        {
+          "lesson_id_chirho": "Prov.27.17",
+          "token_id_chirho": "201Kb",
+          "text_chirho": "יַ֣חַד",
+          "gloss_chirho": "sharpens",
+          "content_path_chirho": "/content-chirho/proverbs-chirho/chapter-27-chirho.json",
+          "content_sha256_chirho": "72ebd09a04003d0bcaa5b7cd3dbae6be7cb0036775d399459f516aa6e783b627"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"H8568\",null]",
+      "lemma_id_chirho": "H8568",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "תַּנָּה",
+      "occurrence_count_chirho": 2,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Lam.4.3",
+          "token_id_chirho": "25f13",
+          "text_chirho": "תנין",
+          "gloss_chirho": null,
+          "content_path_chirho": "/content-chirho/lamentations-chirho/chapter-04-chirho.json",
+          "content_sha256_chirho": "fbcc88c1974aa7777507a2e281c9a263799208fb6e2596e96330c25b835f96d7"
+        },
+        {
+          "lesson_id_chirho": "Mal.1.3",
+          "token_id_chirho": "39g2y",
+          "text_chirho": "לְתַנּ֥וֹת",
+          "gloss_chirho": "for the jackals",
+          "content_path_chirho": "/content-chirho/malachi-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "761ea95a2aab918d2ba2ef422c2af2dc59ac4e088a1855f814786428cb32b72a"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H7044\",null]",
+      "lemma_id_chirho": "H7044",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "קָלָל",
+      "occurrence_count_chirho": 2,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Ezek.1.7",
+          "token_id_chirho": "26nLp",
+          "text_chirho": "קָלָֽל",
+          "gloss_chirho": "burnished",
+          "content_path_chirho": "/content-chirho/ezekiel-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "3ddfd1fa894ec8cb6c61f7280889f99ee4f718f4af3713b5101842ba1eee848c"
+        },
+        {
+          "lesson_id_chirho": "Dan.10.6",
+          "token_id_chirho": "27L7f",
+          "text_chirho": "קָלָ֑ל",
+          "gloss_chirho": "burnished",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-10-chirho.json",
+          "content_sha256_chirho": "22d4a26018988aa85c6a3b1ff29debd141b3151b31276cf12e76daff1576a66b"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H1535\",null]",
+      "lemma_id_chirho": "H1535",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "גַּלְגַּל",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Dan.7.9",
+          "token_id_chirho": "27EDb",
+          "text_chirho": "גַּלְגִּלּ֖וֹהִי",
+          "gloss_chirho": "Its wheels",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-07-chirho.json",
+          "content_sha256_chirho": "70b2d23c8ab7bc6fcced03cf644429587b5a84140613fdc229107ec36dbaea1f"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H2742\",\"c\"]",
+      "lemma_id_chirho": "H2742",
+      "lemma_augment_chirho": "c",
+      "lexical_form_chirho": "חֲרוּץ",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Dan.9.25",
+          "token_id_chirho": "274MJ",
+          "text_chirho": "וְחָר֔וּץ",
+          "gloss_chirho": "and the wall",
+          "content_path_chirho": "/content-chirho/daniel-chirho/chapter-09-chirho.json",
+          "content_sha256_chirho": "d83b93a857d4c00750444f14f889085a2ae1053ab82f4e7e2ba897776346a881"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H4502\",null]",
+      "lemma_id_chirho": "H4502",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִנְּזָר",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Nah.3.17",
+          "token_id_chirho": "34rHn",
+          "text_chirho": "מִנְּזָרַ֨יִךְ֙",
+          "gloss_chirho": "Your commanders [are]",
+          "content_path_chirho": "/content-chirho/nahum-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "8312a054d20d426fb1e97d232ec1fc14c41876e2f554833ea43623bcc8d45004"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"H4365\",\"a\"]",
+      "lemma_id_chirho": "H4365",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "מִכְמֶרֶת",
+      "occurrence_count_chirho": 2,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Hab.1.15",
+          "token_id_chirho": "35rTK",
+          "text_chirho": "בְּמִכְמַרְתּ֑וֹ",
+          "gloss_chirho": "in their dragnet",
+          "content_path_chirho": "/content-chirho/habakkuk-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "689a2be6d6e408106f9dea84f24eff8e1e70979fb3c05127900797aeb038bd34"
+        },
+        {
+          "lesson_id_chirho": "Hab.1.16",
+          "token_id_chirho": "354W9",
+          "text_chirho": "לְמִכְמַרְתּ֑וֹ",
+          "gloss_chirho": "to their dragnet",
+          "content_path_chirho": "/content-chirho/habakkuk-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "689a2be6d6e408106f9dea84f24eff8e1e70979fb3c05127900797aeb038bd34"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"G2007\",\"ἐπιτίθημι\"]",
+      "lemma_id_chirho": "G2007",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "ἐπιτίθημι",
+      "occurrence_count_chirho": 40,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Matt.9.18",
+          "token_id_chirho": "Matt.9.18!20",
+          "text_chirho": "ἐπίθες",
+          "gloss_chirho": "lay",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-09-chirho.json",
+          "content_sha256_chirho": "d35a7731f4429088bfb3bcef35753beb77bcc9c707ae707ad58c9441f50c4358"
+        },
+        {
+          "lesson_id_chirho": "Matt.19.13",
+          "token_id_chirho": "Matt.19.13!8",
+          "text_chirho": "ἐπιθῇ",
+          "gloss_chirho": "He might lay",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-19-chirho.json",
+          "content_sha256_chirho": "4fe2a2f4cb1f3be225be25321b07ceaa1dd31e54a216a23517e3791fd5628dd3"
+        },
+        {
+          "lesson_id_chirho": "Matt.19.15",
+          "token_id_chirho": "Matt.19.15!2",
+          "text_chirho": "ἐπιθεὶς",
+          "gloss_chirho": "having laid",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-19-chirho.json",
+          "content_sha256_chirho": "4fe2a2f4cb1f3be225be25321b07ceaa1dd31e54a216a23517e3791fd5628dd3"
+        },
+        {
+          "lesson_id_chirho": "Matt.21.7",
+          "token_id_chirho": "Matt.21.7!8",
+          "text_chirho": "ἐπέθηκαν",
+          "gloss_chirho": "put",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-21-chirho.json",
+          "content_sha256_chirho": "a9ff9da66c837875573073e9c3b2a25e94b6641e28761c60836c9e6ab4c97b25"
+        },
+        {
+          "lesson_id_chirho": "Matt.23.4",
+          "token_id_chirho": "Matt.23.4!6",
+          "text_chirho": "ἐπιτιθέασιν",
+          "gloss_chirho": "lay [them]",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-23-chirho.json",
+          "content_sha256_chirho": "1baa7e11a043ed84026385cedc0e686225f9395964257299c78b466a2610ab8c"
+        },
+        {
+          "lesson_id_chirho": "Matt.27.29",
+          "token_id_chirho": "Matt.27.29!6",
+          "text_chirho": "ἐπέθηκαν",
+          "gloss_chirho": "they put [it]",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-27-chirho.json",
+          "content_sha256_chirho": "767657a38329e3d0bba3c2f8f5921b1120843c12d0554f42eaefe1a343eb10d0"
+        },
+        {
+          "lesson_id_chirho": "Matt.27.37",
+          "token_id_chirho": "Matt.27.37!2",
+          "text_chirho": "ἐπέθηκαν",
+          "gloss_chirho": "they put up",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-27-chirho.json",
+          "content_sha256_chirho": "767657a38329e3d0bba3c2f8f5921b1120843c12d0554f42eaefe1a343eb10d0"
+        },
+        {
+          "lesson_id_chirho": "Mark.3.16",
+          "token_id_chirho": "Mark.3.16!6",
+          "text_chirho": "ἐπέθηκεν",
+          "gloss_chirho": "He added",
+          "content_path_chirho": "/content-chirho/mark-chirho/chapter-03-chirho.json",
+          "content_sha256_chirho": "31957bbd787b87f0abac841debe73ee9a8327fcbcc4d7ce2f4ca94e47733074f"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G5523\",\"Χοραζίν\"]",
+      "lemma_id_chirho": "G5523",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "Χοραζίν",
+      "occurrence_count_chirho": 2,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Matt.11.21",
+          "token_id_chirho": "Matt.11.21!3",
+          "text_chirho": "Χοραζείν",
+          "gloss_chirho": "Chorazin",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-11-chirho.json",
+          "content_sha256_chirho": "1bef552c574245e5e0d843151b3b71258c8457a628ab205b5e020c6af019b8e1"
+        },
+        {
+          "lesson_id_chirho": "Luke.10.13",
+          "token_id_chirho": "Luke.10.13!3",
+          "text_chirho": "Χοραζείν",
+          "gloss_chirho": "Chorazin",
+          "content_path_chirho": "/content-chirho/luke-chirho/chapter-10-chirho.json",
+          "content_sha256_chirho": "2b6071dac1b0e9a8b72a6eed04d41067d7e40a168a215069e85e8277a235384e"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G2608\",\"κατάγνυμι\"]",
+      "lemma_id_chirho": "G2608",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "κατάγνυμι",
+      "occurrence_count_chirho": 4,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Matt.12.20",
+          "token_id_chirho": "Matt.12.20!4",
+          "text_chirho": "κατεάξει",
+          "gloss_chirho": "He will break",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-12-chirho.json",
+          "content_sha256_chirho": "bbae713d877ddf364b841f9e393e31436b4771ba1e3c4977a3073279288c3dc3"
+        },
+        {
+          "lesson_id_chirho": "John.19.31",
+          "token_id_chirho": "John.19.31!30",
+          "text_chirho": "κατεαγῶσιν",
+          "gloss_chirho": "might be broken",
+          "content_path_chirho": "/content-chirho/john-chirho/chapter-19-chirho.json",
+          "content_sha256_chirho": "f8ed0df9cdef8b107ca5b4bc5e7edd90de3f90153266d4044446d04bbddb1374"
+        },
+        {
+          "lesson_id_chirho": "John.19.32",
+          "token_id_chirho": "John.19.32!9",
+          "text_chirho": "κατέαξαν",
+          "gloss_chirho": "broke",
+          "content_path_chirho": "/content-chirho/john-chirho/chapter-19-chirho.json",
+          "content_sha256_chirho": "f8ed0df9cdef8b107ca5b4bc5e7edd90de3f90153266d4044446d04bbddb1374"
+        },
+        {
+          "lesson_id_chirho": "John.19.33",
+          "token_id_chirho": "John.19.33!12",
+          "text_chirho": "κατέαξαν",
+          "gloss_chirho": "they did break",
+          "content_path_chirho": "/content-chirho/john-chirho/chapter-19-chirho.json",
+          "content_sha256_chirho": "f8ed0df9cdef8b107ca5b4bc5e7edd90de3f90153266d4044446d04bbddb1374"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G1388\",\"δόλος\"]",
+      "lemma_id_chirho": "G1388",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "δόλος",
+      "occurrence_count_chirho": 11,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Matt.26.4",
+          "token_id_chirho": "Matt.26.4!6",
+          "text_chirho": "δόλῳ",
+          "gloss_chirho": "by guile",
+          "content_path_chirho": "/content-chirho/matthew-chirho/chapter-26-chirho.json",
+          "content_sha256_chirho": "57f79e0a8a8afdbdf20127544e46a4ba135e2c051450f7d01329e0452f8349e7"
+        },
+        {
+          "lesson_id_chirho": "Mark.7.22",
+          "token_id_chirho": "Mark.7.22!4",
+          "text_chirho": "δόλος",
+          "gloss_chirho": "deceit",
+          "content_path_chirho": "/content-chirho/mark-chirho/chapter-07-chirho.json",
+          "content_sha256_chirho": "424fa65c88389ac4f4d8b4569dcc181d3126f5dcad0d0d251ab195375a6d04f0"
+        },
+        {
+          "lesson_id_chirho": "Mark.14.1",
+          "token_id_chirho": "Mark.14.1!21",
+          "text_chirho": "δόλῳ",
+          "gloss_chirho": "stealth",
+          "content_path_chirho": "/content-chirho/mark-chirho/chapter-14-chirho.json",
+          "content_sha256_chirho": "d502d141676f22cf42909f4de3bb92e5c91606ab49c1f62fdc7b8d116a0c8d63"
+        },
+        {
+          "lesson_id_chirho": "John.1.47",
+          "token_id_chirho": "John.1.47!17",
+          "text_chirho": "δόλος",
+          "gloss_chirho": "deceit",
+          "content_path_chirho": "/content-chirho/john-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "80defa55138462833d25846ced30d6ad751a60b39ced092e2a504d44d1c30daf"
+        },
+        {
+          "lesson_id_chirho": "Acts.13.10",
+          "token_id_chirho": "Acts.13.10!5",
+          "text_chirho": "δόλου",
+          "gloss_chirho": "deceit",
+          "content_path_chirho": "/content-chirho/acts-chirho/chapter-13-chirho.json",
+          "content_sha256_chirho": "add6b56900e14df70ba631927ef5ea20a36808912a35c50df66ad8e8ee197cef"
+        },
+        {
+          "lesson_id_chirho": "Rom.1.29",
+          "token_id_chirho": "Rom.1.29!11",
+          "text_chirho": "δόλου",
+          "gloss_chirho": "deceit",
+          "content_path_chirho": "/content-chirho/romans-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "a9c3d823860dc7cbbe7839d76c1d708ee06f00982360ac152df6c826bfe8d03c"
+        },
+        {
+          "lesson_id_chirho": "2Cor.12.16",
+          "token_id_chirho": "2Cor.12.16!10",
+          "text_chirho": "δόλῳ",
+          "gloss_chirho": "by trickery",
+          "content_path_chirho": "/content-chirho/2-corinthians-chirho/chapter-12-chirho.json",
+          "content_sha256_chirho": "de45743ac461ebf7e3f297ad5a516fbdf2f295c32f9e47f3a427242f081276b6"
+        },
+        {
+          "lesson_id_chirho": "1Thess.2.3",
+          "token_id_chirho": "1Thess.2.3!13",
+          "text_chirho": "δόλῳ",
+          "gloss_chirho": "trickery",
+          "content_path_chirho": "/content-chirho/1-thessalonians-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "f097534a9e042886e61027d12517d6c2a9e8bcfa33719f70ccfe274f0710bb17"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G4325\",\"προσδαπανάω\"]",
+      "lemma_id_chirho": "G4325",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "προσδαπανάω",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Luke.10.35",
+          "token_id_chirho": "Luke.10.35!19",
+          "text_chirho": "προσδαπανήσῃς",
+          "gloss_chirho": "you might expend",
+          "content_path_chirho": "/content-chirho/luke-chirho/chapter-10-chirho.json",
+          "content_sha256_chirho": "2b6071dac1b0e9a8b72a6eed04d41067d7e40a168a215069e85e8277a235384e"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"G5579\",\"ψεῦδος\"]",
+      "lemma_id_chirho": "G5579",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "ψεῦδος",
+      "occurrence_count_chirho": 10,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "John.8.44",
+          "token_id_chirho": "John.8.44!36",
+          "text_chirho": "ψεῦδος",
+          "gloss_chirho": "falsehood",
+          "content_path_chirho": "/content-chirho/john-chirho/chapter-08-chirho.json",
+          "content_sha256_chirho": "a4a288a3bd62439791960197e1597687f114f597b87bf40d91eb925bc27db04b"
+        },
+        {
+          "lesson_id_chirho": "Rom.1.25",
+          "token_id_chirho": "Rom.1.25!9",
+          "text_chirho": "ψεύδει",
+          "gloss_chirho": "falsehood",
+          "content_path_chirho": "/content-chirho/romans-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "a9c3d823860dc7cbbe7839d76c1d708ee06f00982360ac152df6c826bfe8d03c"
+        },
+        {
+          "lesson_id_chirho": "Eph.4.25",
+          "token_id_chirho": "Eph.4.25!4",
+          "text_chirho": "ψεῦδος",
+          "gloss_chirho": "falsehood",
+          "content_path_chirho": "/content-chirho/ephesians-chirho/chapter-04-chirho.json",
+          "content_sha256_chirho": "1e7a7ab73a5e304f09a6fe21139d6a8af93f82d66b9b6c96345a0f0edd97da55"
+        },
+        {
+          "lesson_id_chirho": "2Thess.2.9",
+          "token_id_chirho": "2Thess.2.9!16",
+          "text_chirho": "ψεύδους",
+          "gloss_chirho": "of falsehood",
+          "content_path_chirho": "/content-chirho/2-thessalonians-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "86e0980193f85f27cbe752173789116fab75b3dc0bb0714ad287aa34634f0044"
+        },
+        {
+          "lesson_id_chirho": "2Thess.2.11",
+          "token_id_chirho": "2Thess.2.11!15",
+          "text_chirho": "ψεύδει",
+          "gloss_chirho": "[is] false",
+          "content_path_chirho": "/content-chirho/2-thessalonians-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "86e0980193f85f27cbe752173789116fab75b3dc0bb0714ad287aa34634f0044"
+        },
+        {
+          "lesson_id_chirho": "1John.2.21",
+          "token_id_chirho": "1John.2.21!16",
+          "text_chirho": "ψεῦδος",
+          "gloss_chirho": "lie",
+          "content_path_chirho": "/content-chirho/1-john-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "f8df4290a33755c4b52d5c650ee5600b603b175dc080bbd5cc2caed714c727f2"
+        },
+        {
+          "lesson_id_chirho": "1John.2.27",
+          "token_id_chirho": "1John.2.27!35",
+          "text_chirho": "ψεῦδος",
+          "gloss_chirho": "a lie",
+          "content_path_chirho": "/content-chirho/1-john-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "f8df4290a33755c4b52d5c650ee5600b603b175dc080bbd5cc2caed714c727f2"
+        },
+        {
+          "lesson_id_chirho": "Rev.14.5",
+          "token_id_chirho": "Rev.14.5!8",
+          "text_chirho": "ψεῦδος",
+          "gloss_chirho": "a lie",
+          "content_path_chirho": "/content-chirho/revelation-chirho/chapter-14-chirho.json",
+          "content_sha256_chirho": "c5d30afc6301ab520da72c5e1af9ce6acd32d2767636104811821cc6273b7be4"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G5350\",\"φθέγγομαι\"]",
+      "lemma_id_chirho": "G5350",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "φθέγγομαι",
+      "occurrence_count_chirho": 3,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Acts.4.18",
+          "token_id_chirho": "Acts.4.18!7",
+          "text_chirho": "φθέγγεσθαι",
+          "gloss_chirho": "to speak",
+          "content_path_chirho": "/content-chirho/acts-chirho/chapter-04-chirho.json",
+          "content_sha256_chirho": "e046a64684692dd8ef67ce914ed4e02df807b59d6f201f704242f89829ef677a"
+        },
+        {
+          "lesson_id_chirho": "2Pet.2.16",
+          "token_id_chirho": "2Pet.2.16!11",
+          "text_chirho": "φθεγξάμενον",
+          "gloss_chirho": "having spoken",
+          "content_path_chirho": "/content-chirho/2-peter-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "baf8fef1067177485aea2fb6670e56ad8f5c3d2b521ca347b4a454a734979093"
+        },
+        {
+          "lesson_id_chirho": "2Pet.2.18",
+          "token_id_chirho": "2Pet.2.18!4",
+          "text_chirho": "φθεγγόμενοι",
+          "gloss_chirho": "speaking words",
+          "content_path_chirho": "/content-chirho/2-peter-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "baf8fef1067177485aea2fb6670e56ad8f5c3d2b521ca347b4a454a734979093"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G4581\",\"Σελεύκεια\"]",
+      "lemma_id_chirho": "G4581",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "Σελεύκεια",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Acts.13.4",
+          "token_id_chirho": "Acts.13.4!11",
+          "text_chirho": "Σελεύκιαν",
+          "gloss_chirho": "Seleucia",
+          "content_path_chirho": "/content-chirho/acts-chirho/chapter-13-chirho.json",
+          "content_sha256_chirho": "add6b56900e14df70ba631927ef5ea20a36808912a35c50df66ad8e8ee197cef"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"G4588\",\"Σέργιος\"]",
+      "lemma_id_chirho": "G4588",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "Σέργιος",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Acts.13.7",
+          "token_id_chirho": "Acts.13.7!6",
+          "text_chirho": "Σεργίῳ",
+          "gloss_chirho": "Sergius",
+          "content_path_chirho": "/content-chirho/acts-chirho/chapter-13-chirho.json",
+          "content_sha256_chirho": "add6b56900e14df70ba631927ef5ea20a36808912a35c50df66ad8e8ee197cef"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"G5386\",\"φιλόσοφος\"]",
+      "lemma_id_chirho": "G5386",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "φιλόσοφος",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Acts.17.18",
+          "token_id_chirho": "Acts.17.18!8",
+          "text_chirho": "φιλοσόφων",
+          "gloss_chirho": "philosophers",
+          "content_path_chirho": "/content-chirho/acts-chirho/chapter-17-chirho.json",
+          "content_sha256_chirho": "33f277f3a72b0429971f84d61df7f8331601ac0cce5d584890f1e9fa800ca502"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"G4467\",\"ῥᾳδιούργημα\"]",
+      "lemma_id_chirho": "G4467",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "ῥᾳδιούργημα",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Acts.18.14",
+          "token_id_chirho": "Acts.18.14!20",
+          "text_chirho": "ῥᾳδιούργημα",
+          "gloss_chirho": "crime",
+          "content_path_chirho": "/content-chirho/acts-chirho/chapter-18-chirho.json",
+          "content_sha256_chirho": "be97bdb2e54d2ccfb4f222538334a3b14d3446e74f117d3a9de5ef4a8ef9e7da"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"G2115\",\"εὐθύμως\"]",
+      "lemma_id_chirho": "G2115",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "εὐθύμως",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Acts.24.10",
+          "token_id_chirho": "Acts.24.10!20",
+          "text_chirho": "εὐθύμως",
+          "gloss_chirho": "cheerfully",
+          "content_path_chirho": "/content-chirho/acts-chirho/chapter-24-chirho.json",
+          "content_sha256_chirho": "7d2d21decc2ec1a035f6055b70b23a270124a21af61161d37c79aba5c4bbd86d"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"G2834\",\"Κνίδος\"]",
+      "lemma_id_chirho": "G2834",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "Κνίδος",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Acts.27.7",
+          "token_id_chirho": "Acts.27.7!11",
+          "text_chirho": "Κνίδον",
+          "gloss_chirho": "Cnidus",
+          "content_path_chirho": "/content-chirho/acts-chirho/chapter-27-chirho.json",
+          "content_sha256_chirho": "eee8b353352b27f5afa87729e41b8a8b12a9f21c659564e93da6942de41cbd0d"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G895\",\"ἄψυχος\"]",
+      "lemma_id_chirho": "G895",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "ἄψυχος",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "1Cor.14.7",
+          "token_id_chirho": "1Cor.14.7!3",
+          "text_chirho": "ἄψυχα",
+          "gloss_chirho": "lifeless things",
+          "content_path_chirho": "/content-chirho/1-corinthians-chirho/chapter-14-chirho.json",
+          "content_sha256_chirho": "72252e091e3211f46817c6df58c273079a0c1496c89d79644797d92c99209c0f"
+        }
+      ],
+      "has_picture_chirho": false
+    },
+    {
+      "lemma_key_chirho": "[\"G4636\",\"σκῆνος\"]",
+      "lemma_id_chirho": "G4636",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "σκῆνος",
+      "occurrence_count_chirho": 2,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "2Cor.5.1",
+          "token_id_chirho": "2Cor.5.1!10",
+          "text_chirho": "σκήνους",
+          "gloss_chirho": "tent",
+          "content_path_chirho": "/content-chirho/2-corinthians-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b654783507b5d0b0dd9574da58b3aab0e778253e33cd4f6c7d91a24e7f0df972"
+        },
+        {
+          "lesson_id_chirho": "2Cor.5.4",
+          "token_id_chirho": "2Cor.5.4!7",
+          "text_chirho": "σκήνει",
+          "gloss_chirho": "tent",
+          "content_path_chirho": "/content-chirho/2-corinthians-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b654783507b5d0b0dd9574da58b3aab0e778253e33cd4f6c7d91a24e7f0df972"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G1553\",\"ἐκδημέω\"]",
+      "lemma_id_chirho": "G1553",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "ἐκδημέω",
+      "occurrence_count_chirho": 3,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "2Cor.5.6",
+          "token_id_chirho": "2Cor.5.6!11",
+          "text_chirho": "ἐκδημοῦμεν",
+          "gloss_chirho": "we are absent",
+          "content_path_chirho": "/content-chirho/2-corinthians-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b654783507b5d0b0dd9574da58b3aab0e778253e33cd4f6c7d91a24e7f0df972"
+        },
+        {
+          "lesson_id_chirho": "2Cor.5.8",
+          "token_id_chirho": "2Cor.5.8!6",
+          "text_chirho": "ἐκδημῆσαι",
+          "gloss_chirho": "to be absent",
+          "content_path_chirho": "/content-chirho/2-corinthians-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b654783507b5d0b0dd9574da58b3aab0e778253e33cd4f6c7d91a24e7f0df972"
+        },
+        {
+          "lesson_id_chirho": "2Cor.5.9",
+          "token_id_chirho": "2Cor.5.9!7",
+          "text_chirho": "ἐκδημοῦντες",
+          "gloss_chirho": "being away",
+          "content_path_chirho": "/content-chirho/2-corinthians-chirho/chapter-05-chirho.json",
+          "content_sha256_chirho": "b654783507b5d0b0dd9574da58b3aab0e778253e33cd4f6c7d91a24e7f0df972"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G1811\",\"ἐξακολουθέω\"]",
+      "lemma_id_chirho": "G1811",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "ἐξακολουθέω",
+      "occurrence_count_chirho": 3,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "2Pet.1.16",
+          "token_id_chirho": "2Pet.1.16!5",
+          "text_chirho": "ἐξακολουθήσαντες",
+          "gloss_chirho": "having followed out",
+          "content_path_chirho": "/content-chirho/2-peter-chirho/chapter-01-chirho.json",
+          "content_sha256_chirho": "8c2309536f38b9bad4916b0f05d223c6f70640907aa7082ac7e92c80791a088d"
+        },
+        {
+          "lesson_id_chirho": "2Pet.2.2",
+          "token_id_chirho": "2Pet.2.2!3",
+          "text_chirho": "ἐξακολουθήσουσιν",
+          "gloss_chirho": "will follow after",
+          "content_path_chirho": "/content-chirho/2-peter-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "baf8fef1067177485aea2fb6670e56ad8f5c3d2b521ca347b4a454a734979093"
+        },
+        {
+          "lesson_id_chirho": "2Pet.2.15",
+          "token_id_chirho": "2Pet.2.15!5",
+          "text_chirho": "ἐξακολουθήσαντες",
+          "gloss_chirho": "having followed",
+          "content_path_chirho": "/content-chirho/2-peter-chirho/chapter-02-chirho.json",
+          "content_sha256_chirho": "baf8fef1067177485aea2fb6670e56ad8f5c3d2b521ca347b4a454a734979093"
+        }
+      ],
+      "has_picture_chirho": true
+    },
+    {
+      "lemma_key_chirho": "[\"G2367\",\"θύϊνος\"]",
+      "lemma_id_chirho": "G2367",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "θύϊνος",
+      "occurrence_count_chirho": 1,
+      "examples_chirho": [
+        {
+          "lesson_id_chirho": "Rev.18.12",
+          "token_id_chirho": "Rev.18.12!21",
+          "text_chirho": "θύϊνον",
+          "gloss_chirho": "citron",
+          "content_path_chirho": "/content-chirho/revelation-chirho/chapter-18-chirho.json",
+          "content_sha256_chirho": "9300817f30ea79723887d5318c630d5d94e13fee000768d842dd318233a93f26"
+        }
+      ],
+      "has_picture_chirho": false
+    }
+  ]
+}

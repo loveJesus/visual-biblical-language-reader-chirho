@@ -1,0 +1,407 @@
+{
+  "schema_version_chirho": 1,
+  "new_recorded_occurrences_chirho": 62,
+  "reused_recording_forms_chirho": 24763,
+  "missing_recording_forms_chirho": 38324,
+  "estimated_missing_credits_chirho": 439182,
+  "lemma_count_chirho": 14425,
+  "pictured_lemmas_chirho": 5778,
+  "books_chirho": [
+    {
+      "book_id_chirho": "Gen",
+      "words_chirho": 20612,
+      "pictured_words_chirho": 19577,
+      "recorded_words_chirho": 20350
+    },
+    {
+      "book_id_chirho": "Exod",
+      "words_chirho": 16713,
+      "pictured_words_chirho": 14149,
+      "recorded_words_chirho": 15178
+    },
+    {
+      "book_id_chirho": "Lev",
+      "words_chirho": 11950,
+      "pictured_words_chirho": 10263,
+      "recorded_words_chirho": 10858
+    },
+    {
+      "book_id_chirho": "Num",
+      "words_chirho": 16413,
+      "pictured_words_chirho": 13760,
+      "recorded_words_chirho": 14998
+    },
+    {
+      "book_id_chirho": "Deut",
+      "words_chirho": 14294,
+      "pictured_words_chirho": 13095,
+      "recorded_words_chirho": 12671
+    },
+    {
+      "book_id_chirho": "Josh",
+      "words_chirho": 10051,
+      "pictured_words_chirho": 8280,
+      "recorded_words_chirho": 9132
+    },
+    {
+      "book_id_chirho": "Judg",
+      "words_chirho": 9885,
+      "pictured_words_chirho": 8658,
+      "recorded_words_chirho": 8863
+    },
+    {
+      "book_id_chirho": "Ruth",
+      "words_chirho": 1294,
+      "pictured_words_chirho": 1116,
+      "recorded_words_chirho": 1081
+    },
+    {
+      "book_id_chirho": "1Sam",
+      "words_chirho": 13264,
+      "pictured_words_chirho": 11736,
+      "recorded_words_chirho": 11963
+    },
+    {
+      "book_id_chirho": "2Sam",
+      "words_chirho": 11039,
+      "pictured_words_chirho": 9515,
+      "recorded_words_chirho": 9972
+    },
+    {
+      "book_id_chirho": "1Kgs",
+      "words_chirho": 13140,
+      "pictured_words_chirho": 11363,
+      "recorded_words_chirho": 12100
+    },
+    {
+      "book_id_chirho": "2Kgs",
+      "words_chirho": 12281,
+      "pictured_words_chirho": 10601,
+      "recorded_words_chirho": 11371
+    },
+    {
+      "book_id_chirho": "1Chr",
+      "words_chirho": 10747,
+      "pictured_words_chirho": 7957,
+      "recorded_words_chirho": 9423
+    },
+    {
+      "book_id_chirho": "2Chr",
+      "words_chirho": 13316,
+      "pictured_words_chirho": 11343,
+      "recorded_words_chirho": 12140
+    },
+    {
+      "book_id_chirho": "Ezra",
+      "words_chirho": 3754,
+      "pictured_words_chirho": 1914,
+      "recorded_words_chirho": 2208
+    },
+    {
+      "book_id_chirho": "Neh",
+      "words_chirho": 5312,
+      "pictured_words_chirho": 4059,
+      "recorded_words_chirho": 4517
+    },
+    {
+      "book_id_chirho": "Esth",
+      "words_chirho": 3045,
+      "pictured_words_chirho": 2349,
+      "recorded_words_chirho": 2644
+    },
+    {
+      "book_id_chirho": "Job",
+      "words_chirho": 8343,
+      "pictured_words_chirho": 7089,
+      "recorded_words_chirho": 6255
+    },
+    {
+      "book_id_chirho": "Ps",
+      "words_chirho": 19587,
+      "pictured_words_chirho": 16965,
+      "recorded_words_chirho": 15510
+    },
+    {
+      "book_id_chirho": "Prov",
+      "words_chirho": 6915,
+      "pictured_words_chirho": 6894,
+      "recorded_words_chirho": 6610
+    },
+    {
+      "book_id_chirho": "Eccl",
+      "words_chirho": 2987,
+      "pictured_words_chirho": 2704,
+      "recorded_words_chirho": 2498
+    },
+    {
+      "book_id_chirho": "Song",
+      "words_chirho": 1251,
+      "pictured_words_chirho": 954,
+      "recorded_words_chirho": 840
+    },
+    {
+      "book_id_chirho": "Isa",
+      "words_chirho": 16932,
+      "pictured_words_chirho": 14143,
+      "recorded_words_chirho": 13227
+    },
+    {
+      "book_id_chirho": "Jer",
+      "words_chirho": 21836,
+      "pictured_words_chirho": 19057,
+      "recorded_words_chirho": 19298
+    },
+    {
+      "book_id_chirho": "Lam",
+      "words_chirho": 1542,
+      "pictured_words_chirho": 1288,
+      "recorded_words_chirho": 1156
+    },
+    {
+      "book_id_chirho": "Ezek",
+      "words_chirho": 18730,
+      "pictured_words_chirho": 16046,
+      "recorded_words_chirho": 15974
+    },
+    {
+      "book_id_chirho": "Dan",
+      "words_chirho": 5919,
+      "pictured_words_chirho": 2058,
+      "recorded_words_chirho": 1906
+    },
+    {
+      "book_id_chirho": "Hos",
+      "words_chirho": 2381,
+      "pictured_words_chirho": 2071,
+      "recorded_words_chirho": 1879
+    },
+    {
+      "book_id_chirho": "Joel",
+      "words_chirho": 957,
+      "pictured_words_chirho": 805,
+      "recorded_words_chirho": 801
+    },
+    {
+      "book_id_chirho": "Amos",
+      "words_chirho": 2042,
+      "pictured_words_chirho": 1742,
+      "recorded_words_chirho": 1713
+    },
+    {
+      "book_id_chirho": "Obad",
+      "words_chirho": 291,
+      "pictured_words_chirho": 251,
+      "recorded_words_chirho": 242
+    },
+    {
+      "book_id_chirho": "Jonah",
+      "words_chirho": 688,
+      "pictured_words_chirho": 614,
+      "recorded_words_chirho": 580
+    },
+    {
+      "book_id_chirho": "Mic",
+      "words_chirho": 1396,
+      "pictured_words_chirho": 1175,
+      "recorded_words_chirho": 1114
+    },
+    {
+      "book_id_chirho": "Nah",
+      "words_chirho": 558,
+      "pictured_words_chirho": 430,
+      "recorded_words_chirho": 379
+    },
+    {
+      "book_id_chirho": "Hab",
+      "words_chirho": 671,
+      "pictured_words_chirho": 553,
+      "recorded_words_chirho": 508
+    },
+    {
+      "book_id_chirho": "Zeph",
+      "words_chirho": 767,
+      "pictured_words_chirho": 638,
+      "recorded_words_chirho": 632
+    },
+    {
+      "book_id_chirho": "Hag",
+      "words_chirho": 600,
+      "pictured_words_chirho": 518,
+      "recorded_words_chirho": 545
+    },
+    {
+      "book_id_chirho": "Zech",
+      "words_chirho": 3128,
+      "pictured_words_chirho": 2693,
+      "recorded_words_chirho": 2701
+    },
+    {
+      "book_id_chirho": "Mal",
+      "words_chirho": 876,
+      "pictured_words_chirho": 793,
+      "recorded_words_chirho": 729
+    },
+    {
+      "book_id_chirho": "Matt",
+      "words_chirho": 18299,
+      "pictured_words_chirho": 17559,
+      "recorded_words_chirho": 16804
+    },
+    {
+      "book_id_chirho": "Mark",
+      "words_chirho": 11277,
+      "pictured_words_chirho": 10839,
+      "recorded_words_chirho": 10389
+    },
+    {
+      "book_id_chirho": "Luke",
+      "words_chirho": 19456,
+      "pictured_words_chirho": 18536,
+      "recorded_words_chirho": 17416
+    },
+    {
+      "book_id_chirho": "John",
+      "words_chirho": 15643,
+      "pictured_words_chirho": 15618,
+      "recorded_words_chirho": 15643
+    },
+    {
+      "book_id_chirho": "Acts",
+      "words_chirho": 18393,
+      "pictured_words_chirho": 17157,
+      "recorded_words_chirho": 15807
+    },
+    {
+      "book_id_chirho": "Rom",
+      "words_chirho": 7100,
+      "pictured_words_chirho": 6709,
+      "recorded_words_chirho": 6284
+    },
+    {
+      "book_id_chirho": "1Cor",
+      "words_chirho": 6820,
+      "pictured_words_chirho": 6342,
+      "recorded_words_chirho": 6038
+    },
+    {
+      "book_id_chirho": "2Cor",
+      "words_chirho": 4469,
+      "pictured_words_chirho": 4178,
+      "recorded_words_chirho": 3859
+    },
+    {
+      "book_id_chirho": "Gal",
+      "words_chirho": 2228,
+      "pictured_words_chirho": 2111,
+      "recorded_words_chirho": 1953
+    },
+    {
+      "book_id_chirho": "Eph",
+      "words_chirho": 2419,
+      "pictured_words_chirho": 2279,
+      "recorded_words_chirho": 2157
+    },
+    {
+      "book_id_chirho": "Phil",
+      "words_chirho": 1630,
+      "pictured_words_chirho": 1504,
+      "recorded_words_chirho": 1420
+    },
+    {
+      "book_id_chirho": "Col",
+      "words_chirho": 1575,
+      "pictured_words_chirho": 1448,
+      "recorded_words_chirho": 1369
+    },
+    {
+      "book_id_chirho": "1Thess",
+      "words_chirho": 1473,
+      "pictured_words_chirho": 1375,
+      "recorded_words_chirho": 1331
+    },
+    {
+      "book_id_chirho": "2Thess",
+      "words_chirho": 822,
+      "pictured_words_chirho": 775,
+      "recorded_words_chirho": 749
+    },
+    {
+      "book_id_chirho": "1Tim",
+      "words_chirho": 1588,
+      "pictured_words_chirho": 1420,
+      "recorded_words_chirho": 1260
+    },
+    {
+      "book_id_chirho": "2Tim",
+      "words_chirho": 1237,
+      "pictured_words_chirho": 1142,
+      "recorded_words_chirho": 1007
+    },
+    {
+      "book_id_chirho": "Titus",
+      "words_chirho": 658,
+      "pictured_words_chirho": 591,
+      "recorded_words_chirho": 509
+    },
+    {
+      "book_id_chirho": "Phlm",
+      "words_chirho": 335,
+      "pictured_words_chirho": 308,
+      "recorded_words_chirho": 299
+    },
+    {
+      "book_id_chirho": "Heb",
+      "words_chirho": 4955,
+      "pictured_words_chirho": 4563,
+      "recorded_words_chirho": 4084
+    },
+    {
+      "book_id_chirho": "Jas",
+      "words_chirho": 1739,
+      "pictured_words_chirho": 1581,
+      "recorded_words_chirho": 1446
+    },
+    {
+      "book_id_chirho": "1Pet",
+      "words_chirho": 1676,
+      "pictured_words_chirho": 1539,
+      "recorded_words_chirho": 1335
+    },
+    {
+      "book_id_chirho": "2Pet",
+      "words_chirho": 1098,
+      "pictured_words_chirho": 982,
+      "recorded_words_chirho": 872
+    },
+    {
+      "book_id_chirho": "1John",
+      "words_chirho": 2136,
+      "pictured_words_chirho": 2117,
+      "recorded_words_chirho": 2040
+    },
+    {
+      "book_id_chirho": "2John",
+      "words_chirho": 245,
+      "pictured_words_chirho": 238,
+      "recorded_words_chirho": 226
+    },
+    {
+      "book_id_chirho": "3John",
+      "words_chirho": 219,
+      "pictured_words_chirho": 212,
+      "recorded_words_chirho": 183
+    },
+    {
+      "book_id_chirho": "Jude",
+      "words_chirho": 457,
+      "pictured_words_chirho": 420,
+      "recorded_words_chirho": 370
+    },
+    {
+      "book_id_chirho": "Rev",
+      "words_chirho": 9832,
+      "pictured_words_chirho": 9278,
+      "recorded_words_chirho": 8936
+    }
+  ]
+}

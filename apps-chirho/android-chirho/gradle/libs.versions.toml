@@ -1,0 +1,45 @@
+# For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
+# Reviewed 2026-11-03 against Google Maven, Maven Central, services.gradle.org, the AGP release
+# notes and kotlinlang.org's KGP compatibility table; every pin was published at least a week
+# earlier (Google Maven Last-Modified: BOM 2026.09.00 on 2026-09-09, lifecycle 2.11.0 on
+# 2026-06-17, core-ktx 1.19.1 on 2026-09-23). Android platform 37.0 is installed (root, DM #2709),
+# so compileSdk/targetSdk are 37 and BOM 2026.09.00 (Compose 1.12.1, Material3 1.4.0) applies.
+# AGP and the Gradle wrapper are being settled with GPT; lint reports their newer releases unsuppressed.
+
+[versions]
+agp-chirho = "9.5.0"
+kotlin-chirho = "2.4.21"
+compose-bom-chirho = "2026.09.00"
+activity-compose-chirho = "1.13.0"
+# core-ktx is declared because the app uses its SharedPreferences.edit extension directly.
+core-ktx-chirho = "1.19.1"
+lifecycle-chirho = "2.11.0"
+serialization-chirho = "1.12.0"
+coroutines-chirho = "1.11.0"
+junit-chirho = "4.13.2"
+androidx-test-runner-chirho = "1.7.0"
+androidx-test-ext-chirho = "1.3.0"
+
+[libraries]
+kotlin-gradle-plugin-chirho = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-chirho" }
+compose-bom-chirho = { module = "androidx.compose:compose-bom", version.ref = "compose-bom-chirho" }
+compose-ui-chirho = { module = "androidx.compose.ui:ui" }
+compose-foundation-chirho = { module = "androidx.compose.foundation:foundation" }
+compose-material3-chirho = { module = "androidx.compose.material3:material3" }
+compose-ui-test-junit4-chirho = { module = "androidx.compose.ui:ui-test-junit4" }
+compose-ui-test-manifest-chirho = { module = "androidx.compose.ui:ui-test-manifest" }
+activity-compose-chirho = { module = "androidx.activity:activity-compose", version.ref = "activity-compose-chirho" }
+core-ktx-chirho = { module = "androidx.core:core-ktx", version.ref = "core-ktx-chirho" }
+lifecycle-viewmodel-compose-chirho = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle-chirho" }
+lifecycle-runtime-compose-chirho = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-chirho" }
+serialization-json-chirho = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization-chirho" }
+coroutines-android-chirho = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines-chirho" }
+coroutines-test-chirho = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines-chirho" }
+junit-chirho = { module = "junit:junit", version.ref = "junit-chirho" }
+androidx-test-runner-chirho = { module = "androidx.test:runner", version.ref = "androidx-test-runner-chirho" }
+androidx-test-ext-junit-chirho = { module = "androidx.test.ext:junit", version.ref = "androidx-test-ext-chirho" }
+
+[plugins]
+android-application-chirho = { id = "com.android.application", version.ref = "agp-chirho" }
+kotlin-compose-chirho = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin-chirho" }
+kotlin-serialization-chirho = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-chirho" }

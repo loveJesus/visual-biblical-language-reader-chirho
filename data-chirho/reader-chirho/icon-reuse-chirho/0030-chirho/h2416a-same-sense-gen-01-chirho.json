@@ -1,0 +1,53 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h2416a-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The sprout represents life or being alive. The exact augmented lemma and gloss are separately pinned, so life H2416e and alive H2416a are not merged.",
+	"source_icon_id_chirho": "icon-48ecc67d82104a6599bbc8085781fe5d-00-chirho",
+	"source_sha256_chirho": "7ea17892ce0c9f3b10217147de2f059deb48fb0aea2e885eb7b6578526ed5f5b",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.12",
+		"token_id_chirho": "20Wxq",
+		"text_chirho": "חַיִּ֑ים",
+		"gloss_chirho": "alive",
+		"canonical_sha256_chirho": "5407c7986b6bec0388ec63ae78ec70156d20c27a067293d1857295ec1c16d97b"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H2416",
+		"lemma_augment_chirho": "a",
+		"lexical_form_chirho": "חַי"
+	},
+	"contextual_meaning_chirho": "alive",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.43.7",
+			"token_id_chirho": "014FJ",
+			"text_chirho": "חַי֙",
+			"gloss_chirho": "alive",
+			"canonical_sha256_chirho": "c1a1a517b39a9ba0d66bc6e46f109b22e095c751cb43eab3923b11cc32c7b414"
+		},
+		{
+			"verse_id_chirho": "Gen.43.27",
+			"token_id_chirho": "01FvD",
+			"text_chirho": "חָֽי",
+			"gloss_chirho": "alive",
+			"canonical_sha256_chirho": "3574584a421bc3812db9e956ad5b5c2e413655e5b0ed0783735e993a6501fd6c"
+		},
+		{
+			"verse_id_chirho": "Gen.43.28",
+			"token_id_chirho": "01VHp",
+			"text_chirho": "חָ֑י",
+			"gloss_chirho": "alive",
+			"canonical_sha256_chirho": "bc0ad909ada7b4059afa1e98b52ec957b94cb113963ae9d10036f5ace0fd4618"
+		},
+		{
+			"verse_id_chirho": "Gen.45.26",
+			"token_id_chirho": "01kET",
+			"text_chirho": "חַ֔י",
+			"gloss_chirho": "alive",
+			"canonical_sha256_chirho": "4443a1935fdcfe725847fc79e7fd0368eb41c782e9dc79e465f930e440c3a990"
+		}
+	]
+}

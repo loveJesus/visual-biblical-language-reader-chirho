@@ -1,0 +1,137 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g935-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The crowned figure is a generic royal-office mnemonic for the listed Greek king occurrences. It is not a portrait or a claim about the character or worldly nature of a particular kingship.",
+	"source_icon_id_chirho": "proverbs-worker-v2-icon-03-chirho",
+	"source_sha256_chirho": "e270675f3e6f8532285cc835b7edafbce7ffb2fce4bbbeb5aff0ceb212def3e8",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.1",
+		"token_id_chirho": "20TSc",
+		"text_chirho": "מֶ֝֗לֶךְ",
+		"gloss_chirho": "king of",
+		"canonical_sha256_chirho": "b10e3ae620234c6444a2c8380118eb7c8fe5bf35df3b22e2eb5ed392a825bb03"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G935",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "βασιλεύς"
+	},
+	"contextual_meaning_chirho": "king",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.19.3",
+			"token_id_chirho": "John.19.3!9",
+			"text_chirho": "Βασιλεὺς",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "d61d97e9b238b75d106173e5f965c9c684a57217f16c6cf771da14357fd405c9"
+		},
+		{
+			"verse_id_chirho": "John.19.12",
+			"token_id_chirho": "John.19.12!23",
+			"text_chirho": "βασιλέα",
+			"gloss_chirho": "a king",
+			"canonical_sha256_chirho": "57cf73e67fecebc3e0280aa1fa8575925992589cf44df8c6f202f62118cd8a4a"
+		},
+		{
+			"verse_id_chirho": "John.19.14",
+			"token_id_chirho": "John.19.14!16",
+			"text_chirho": "Βασιλεὺς",
+			"gloss_chirho": "king",
+			"canonical_sha256_chirho": "a7498be0acd6df57b5ad9bc7badd25f2d1d98498daa6efd3a096337e8d383153"
+		},
+		{
+			"verse_id_chirho": "John.19.15",
+			"token_id_chirho": "John.19.15!13",
+			"text_chirho": "Βασιλέα",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "248e0333085604f86996d484337f0c879a40a585eb4891244655f52cfe7d6c1e"
+		},
+		{
+			"verse_id_chirho": "John.19.15",
+			"token_id_chirho": "John.19.15!21",
+			"text_chirho": "βασιλέα",
+			"gloss_chirho": "a king",
+			"canonical_sha256_chirho": "248e0333085604f86996d484337f0c879a40a585eb4891244655f52cfe7d6c1e"
+		},
+		{
+			"verse_id_chirho": "John.19.19",
+			"token_id_chirho": "John.19.19!19",
+			"text_chirho": "ΒΑΣΙΛΕΥΣ",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "8c1de462ce3be5d29e431278442e4ef548ae5ee7649daa98bd9823bf7cd1a570"
+		},
+		{
+			"verse_id_chirho": "John.19.21",
+			"token_id_chirho": "John.19.21!12",
+			"text_chirho": "Βασιλεὺς",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "8b7027cb900e55f19a006cb29dd67154018517d53880f613432932c754a39540"
+		},
+		{
+			"verse_id_chirho": "John.19.21",
+			"token_id_chirho": "John.19.21!19",
+			"text_chirho": "Βασιλεύς",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "8b7027cb900e55f19a006cb29dd67154018517d53880f613432932c754a39540"
+		},
+		{
+			"verse_id_chirho": "John.6.15",
+			"token_id_chirho": "John.6.15!12",
+			"text_chirho": "βασιλέα",
+			"gloss_chirho": "king",
+			"canonical_sha256_chirho": "4699d70d319bf486b9374ab7d80429d82086ee7d872a371c8971af3246235659"
+		},
+		{
+			"verse_id_chirho": "John.18.33",
+			"token_id_chirho": "John.18.33!19",
+			"text_chirho": "Βασιλεὺς",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "7d122ab3807ba292556b731d57ea5de5bcf5ccaf28b21be61f77c35403e2ba99"
+		},
+		{
+			"verse_id_chirho": "John.18.37",
+			"token_id_chirho": "John.18.37!7",
+			"text_chirho": "βασιλεὺς",
+			"gloss_chirho": "a king",
+			"canonical_sha256_chirho": "f8c770becacb40926eda577a1b79e9aa40f3f4233018a4285f96b8dbe7c1e522"
+		},
+		{
+			"verse_id_chirho": "John.18.37",
+			"token_id_chirho": "John.18.37!16",
+			"text_chirho": "βασιλεύς",
+			"gloss_chirho": "a king",
+			"canonical_sha256_chirho": "f8c770becacb40926eda577a1b79e9aa40f3f4233018a4285f96b8dbe7c1e522"
+		},
+		{
+			"verse_id_chirho": "John.18.39",
+			"token_id_chirho": "John.18.39!17",
+			"text_chirho": "Βασιλέα",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "eaadcc5c8d7050017ed8a4fd3bef049f3f59032a5cd6c08789632e4b5a21304b"
+		},
+		{
+			"verse_id_chirho": "John.1.49",
+			"token_id_chirho": "John.1.49!12",
+			"text_chirho": "Βασιλεὺς",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "7a6be96b12f46b0808790f469f2fe2bd8593ae2732648c3127fd26bae2fbe380"
+		},
+		{
+			"verse_id_chirho": "John.12.13",
+			"token_id_chirho": "John.12.13!22",
+			"text_chirho": "Βασιλεὺς",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "393c1c01cf3b6690bace1dfe6117b33e09ba8b1a0171e319a64f6bef4a7d337a"
+		},
+		{
+			"verse_id_chirho": "John.12.15",
+			"token_id_chirho": "John.12.15!7",
+			"text_chirho": "Βασιλεύς",
+			"gloss_chirho": "King",
+			"canonical_sha256_chirho": "1d5417796741736701e76f21eaae251f71db4753e68064235fa5b8c6b23501a1"
+		}
+	]
+}

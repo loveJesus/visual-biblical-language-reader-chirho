@@ -1,0 +1,46 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3899-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The loaf represents bread as nourishment in these listed bread occurrences, including bread used as a figurative vehicle. The icon does not assert the substance of a metaphorical referent.",
+	"source_icon_id_chirho": "proverbs-worker-icon-15-chirho",
+	"source_sha256_chirho": "a3591d200cf51e226645a3f14ae92901a78b49bd242714621bcf7d3f91ecf174",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.6.26",
+		"token_id_chirho": "20Tgd",
+		"text_chirho": "לָ֥חֶם",
+		"gloss_chirho": "bread",
+		"canonical_sha256_chirho": "d027749bca8d15c80ad40bc2ed0f3ec0ef1eee7a1f4b7a0c69bebc549689a295"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3899",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "לֶחֶם"
+	},
+	"contextual_meaning_chirho": "bread",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.12.9",
+			"token_id_chirho": "20etw",
+			"text_chirho": "לָֽחֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "5cbc5d94ddc1a496d063df51550b91ea9f44973cca46dbee3b25875a107fc7f1"
+		},
+		{
+			"verse_id_chirho": "Prov.25.21",
+			"token_id_chirho": "20hEP",
+			"text_chirho": "לָ֑חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "7dab8cd20d1bc7006362569e7bbb873ddd17445a07edeba4c93b7cc3695ded58"
+		},
+		{
+			"verse_id_chirho": "Prov.28.21",
+			"token_id_chirho": "20rfK",
+			"text_chirho": "לֶ֝֗חֶם",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "24afcf589dd3798f98e02916ff7d08de7c04f7ba2f02b10068c8312bad5b4b51"
+		}
+	]
+}

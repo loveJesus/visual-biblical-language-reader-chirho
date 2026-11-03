@@ -1,0 +1,88 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h4194-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The grave marker is a mnemonic for death. It does not portray a specific burial or assert that a death occurs in a warning verse.",
+	"source_icon_id_chirho": "icon-5af11d72042a49048fab4cee6c063937-10-chirho",
+	"source_sha256_chirho": "003a7178b94e7e98fbb355788bc7348dc97d3e5d5416fa30fedccbbac3a92585",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.18",
+		"token_id_chirho": "20WFU",
+		"text_chirho": "מָ֣וֶת",
+		"gloss_chirho": "death",
+		"canonical_sha256_chirho": "9759ac83fc140e5b5c8aa45a27b703ffe63fcd58613599a8380566fda176d434"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H4194",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "מָוֶת"
+	},
+	"contextual_meaning_chirho": "death",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.7.27",
+			"token_id_chirho": "20eKG",
+			"text_chirho": "מָֽוֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "355a16d066ec3eed2aca73b38bb0e6e32c4e17499c81801c0f5196010ca14991"
+		},
+		{
+			"verse_id_chirho": "Prov.8.36",
+			"token_id_chirho": "20ZXZ",
+			"text_chirho": "מָֽוֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "a7829c8bff4c3556192d1ab7964f07848a26bf08e407c0b590422753395128f4"
+		},
+		{
+			"verse_id_chirho": "Prov.12.28",
+			"token_id_chirho": "2053W",
+			"text_chirho": "מָֽוֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "e2c682db5afb3bd1f9590e6aaf7b9f10b3850d01cea4b26b074a3b04384e9444"
+		},
+		{
+			"verse_id_chirho": "Prov.13.14",
+			"token_id_chirho": "20YWx",
+			"text_chirho": "מָֽוֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "40bec77785a588fe67d66153363e751dbf7d8aeb48f97a9185c20c8d312cdc6b"
+		},
+		{
+			"verse_id_chirho": "Prov.14.12",
+			"token_id_chirho": "20We7",
+			"text_chirho": "מָֽוֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "b514ac93eab3908ff9ae4ed8def13153263b642a7c06436aa833c486e0ecda33"
+		},
+		{
+			"verse_id_chirho": "Prov.14.27",
+			"token_id_chirho": "20skP",
+			"text_chirho": "מָֽוֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "e50bcb0b3f34c24ba5cab0bb7c106c32e14af91743a21611fb18e396abb8752e"
+		},
+		{
+			"verse_id_chirho": "Prov.16.14",
+			"token_id_chirho": "20Jjb",
+			"text_chirho": "מָ֑וֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "9583b8578e8c7bcbf14aa059512dd09793e1174216f3333b63c2fe06644adf57"
+		},
+		{
+			"verse_id_chirho": "Prov.16.25",
+			"token_id_chirho": "20erv",
+			"text_chirho": "מָֽוֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "b514ac93eab3908ff9ae4ed8def13153263b642a7c06436aa833c486e0ecda33"
+		},
+		{
+			"verse_id_chirho": "Prov.21.6",
+			"token_id_chirho": "20QkU",
+			"text_chirho": "מָֽוֶת",
+			"gloss_chirho": "death",
+			"canonical_sha256_chirho": "a7218114abd504816e14a3e89e0a83c6c6a6c50066c232963d71e0994e6a2780"
+		}
+	]
+}

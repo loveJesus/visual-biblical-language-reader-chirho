@@ -1,0 +1,39 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3117-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "Sunrise is a mnemonic for the day time unit. These listed days occurrences preserve that word sense; the icon makes no claim about the length of a narrative period.",
+	"source_icon_id_chirho": "icon-46cee3348975438a9f24f7ab877af3ff-07-chirho",
+	"source_sha256_chirho": "546d80f07b98599f8690d2ddbb97d65ff15202bc07d21157170ab8253248d2d5",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.3.2",
+		"token_id_chirho": "20mrn",
+		"text_chirho": "יָ֭מִים",
+		"gloss_chirho": "days",
+		"canonical_sha256_chirho": "25c7df9fc0ac4b1f014055d9af2205d6cc714d40dc8597c0b42b96a3ce258b4b"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3117",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "יוֹם"
+	},
+	"contextual_meaning_chirho": "days",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.3.16",
+			"token_id_chirho": "20idy",
+			"text_chirho": "יָ֭מִים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "71afe0391234c60a2e1133fad444db93feebe740f184c5f4f36450ced34e95e1"
+		},
+		{
+			"verse_id_chirho": "Prov.10.27",
+			"token_id_chirho": "20LuD",
+			"text_chirho": "יָמִ֑ים",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "68fbbcfda990258ca0cc7ac5da86f0101c45e1700363b5286872d8e7169a3846"
+		}
+	]
+}

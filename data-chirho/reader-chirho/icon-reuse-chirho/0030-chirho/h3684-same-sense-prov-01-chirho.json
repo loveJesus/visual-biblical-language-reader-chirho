@@ -1,0 +1,46 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3684-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The refusing-to-listen figure represents the fool refusing wisdom in the listed for a fool occurrences. It is a teaching mnemonic, not a historical portrait.",
+	"source_icon_id_chirho": "prov-icon-07-chirho",
+	"source_sha256_chirho": "56b9f198d1d56fb56605488ef1c34d34a5a8fe9f91b88618d30e7214baa66440",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.26.1",
+		"token_id_chirho": "206Bv",
+		"text_chirho": "לִכְסִ֣יל",
+		"gloss_chirho": "for a fool",
+		"canonical_sha256_chirho": "94b6df7f5a9016538e9d0613aa57103f047da6aa23998754aff7a0bd183f44ac"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3684",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "כְּסִיל"
+	},
+	"contextual_meaning_chirho": "fool refusing wisdom",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.19.10",
+			"token_id_chirho": "20qEq",
+			"text_chirho": "לִכְסִ֣יל",
+			"gloss_chirho": "for a fool",
+			"canonical_sha256_chirho": "0f5e35e22e6559a475eba68f704a1eb770a60405e5d035f877aeedb19d2c1728"
+		},
+		{
+			"verse_id_chirho": "Prov.26.12",
+			"token_id_chirho": "20zHu",
+			"text_chirho": "לִכְסִ֣יל",
+			"gloss_chirho": "for a fool",
+			"canonical_sha256_chirho": "1f88d494b00f2a415ccc011009df51e5d6d0913e6ab29fd918b1bd62a59d8e68"
+		},
+		{
+			"verse_id_chirho": "Prov.29.20",
+			"token_id_chirho": "20oNh",
+			"text_chirho": "לִכְסִ֣יל",
+			"gloss_chirho": "for a fool",
+			"canonical_sha256_chirho": "a6b75bfee5c895a6bb622fc4e55603418042e177d841adefe8ee2b8f152c921a"
+		}
+	]
+}

@@ -1,0 +1,60 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h2416e-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The sprout represents life or being alive. The exact augmented lemma and gloss are separately pinned, so life H2416e and alive H2416a are not merged.",
+	"source_icon_id_chirho": "icon-5af11d72042a49048fab4cee6c063937-13-chirho",
+	"source_sha256_chirho": "12cee53f3231f5c0e704246bb3af6a904e5d6d257c38fa08c849081690f06e91",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.19",
+		"token_id_chirho": "20F88",
+		"text_chirho": "חַיִּֽים",
+		"gloss_chirho": "life",
+		"canonical_sha256_chirho": "b418110efe55c85c87e37cdf733b8d10a47a3c49069a99100e5717a935f89bed"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H2416",
+		"lemma_augment_chirho": "e",
+		"lexical_form_chirho": "חַי"
+	},
+	"contextual_meaning_chirho": "life",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.2.7",
+			"token_id_chirho": "012UV",
+			"text_chirho": "חַיִּ֑ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "dfa59f51fd0a71cc43a1229975259c6b597fa9d70dc931199cf3c3e96f10ece8"
+		},
+		{
+			"verse_id_chirho": "Gen.3.22",
+			"token_id_chirho": "01KZa",
+			"text_chirho": "הַֽחַיִּ֔ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "51c5b22461d47cd5a74e8b26ec1a1bda3006f943857700f017aa186395587052"
+		},
+		{
+			"verse_id_chirho": "Gen.3.24",
+			"token_id_chirho": "01oYa",
+			"text_chirho": "הַֽחַיִּֽים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "7f48cae1195ea0db8a5d45839931e937b4681b1f385ab64fa028e24faebad36a"
+		},
+		{
+			"verse_id_chirho": "Gen.6.17",
+			"token_id_chirho": "01rwi",
+			"text_chirho": "חַיִּ֔ים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "d535e5d7604ec926662327adb430ac82b44d821467fdf34a500dc6b3e745fbc9"
+		},
+		{
+			"verse_id_chirho": "Gen.7.15",
+			"token_id_chirho": "01aoK",
+			"text_chirho": "חַיִּֽים",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "0c48778c812cb93b06fd5fdbc9bee47229b4fe6a9db77e1c90fac09053e9b18b"
+		}
+	]
+}

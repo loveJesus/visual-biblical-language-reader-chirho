@@ -1,0 +1,1327 @@
+{
+	"schema_version_chirho": 1,
+	"osis_ref_chirho": "Prov.26.1",
+	"generated_by_chirho": "scripts-chirho/import-chirho/import_lesson_chirho.py",
+	"verified_files_chirho": [
+		{
+			"id_chirho": "oshb-prov-chirho",
+			"upstream_path_chirho": "wlc/Prov.xml",
+			"revision_chirho": "3d15126fb1ef74867fc1434be1942e837932691f",
+			"sha256_chirho": "964f99c00239b53b854c4686c99490c8d1ac7664784a30afdfc23781a3abb161"
+		},
+		{
+			"id_chirho": "oshb-license-chirho",
+			"upstream_path_chirho": "LICENSE.md",
+			"revision_chirho": "3d15126fb1ef74867fc1434be1942e837932691f",
+			"sha256_chirho": "9bf4a2890c25372e4c1dc750d550bfb4eacfbfcb63c53123b0628159370d1878"
+		},
+		{
+			"id_chirho": "oshb-readme-chirho",
+			"upstream_path_chirho": "README.md",
+			"revision_chirho": "3d15126fb1ef74867fc1434be1942e837932691f",
+			"sha256_chirho": "2da25acf89375558b843dab582bdf00833137baf1c8afe2b32cf09e251179999"
+		},
+		{
+			"id_chirho": "oshb-morphology-codes-chirho",
+			"upstream_path_chirho": "parsing/HebrewMorphologyCodes.html",
+			"revision_chirho": "3d15126fb1ef74867fc1434be1942e837932691f",
+			"sha256_chirho": "4ef067cd9f2508de19d81aab93bf2d7e24d1687a7664c5168de1411adaf4ee1d"
+		},
+		{
+			"id_chirho": "strong-chirho",
+			"upstream_path_chirho": "HebrewStrong.xml",
+			"revision_chirho": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+			"sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4"
+		},
+		{
+			"id_chirho": "aug-index-chirho",
+			"upstream_path_chirho": "AugIndex.xml",
+			"revision_chirho": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+			"sha256_chirho": "e7217ca8ff8ff3f21f9cf1bbe87411adf55f6aa88bcf5ed9ddc886cc6b160c5d"
+		},
+		{
+			"id_chirho": "lexical-index-chirho",
+			"upstream_path_chirho": "LexicalIndex.xml",
+			"revision_chirho": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+			"sha256_chirho": "8f7a605c58899d2f44430149c143c00903976e1e91232476677972a69e5bc85f"
+		},
+		{
+			"id_chirho": "lexicon-readme-chirho",
+			"upstream_path_chirho": "readme.md",
+			"revision_chirho": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+			"sha256_chirho": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22"
+		}
+	],
+	"canonical_text_chirho": "כַּשֶּׁ֤לֶג ׀ בַּקַּ֗יִץ וְכַמָּטָ֥ר בַּקָּצִ֑יר כֵּ֤ן לֹא־נָאוֶ֖ה לִכְסִ֣יל כָּבֽוֹד׃",
+	"canonical_text_utf8_sha256_chirho": "94b6df7f5a9016538e9d0613aa57103f047da6aa23998754aff7a0bd183f44ac",
+	"canonical_text_utf16_length_chirho": 86,
+	"translation_ref_chirho": "spec-chirho/handoff-chirho/26-10-26-hebrew-visual-reader-handoff-chirho.txt, line 61 (section 2, app-authored translation, hidden initially)",
+	"handoff_comparison_chirho": {
+		"handoff_ref_chirho": "spec-chirho/handoff-chirho/26-10-26-hebrew-visual-reader-handoff-chirho.txt, line 58 (section 2, exact canonical verse as pasted)",
+		"handoff_text_chirho": "כַּשֶּׁ֤לֶג ׀ בַּקַּ֗יִץ וְכַמָּטָ֥ר בַּקָּצִ֑יר כֵּ֤ן לֹא־נָאוֶ֖ה לִכְסִ֣יל כָּבֽוֹד׃",
+		"byte_exact_chirho": false,
+		"nfd_equal_chirho": true,
+		"source_is_nfc_chirho": false,
+		"handoff_is_nfc_chirho": true,
+		"kept_chirho": "source",
+		"differences_chirho": [
+			{
+				"record_chirho": "20ikj",
+				"source_code_points_chirho": "05DB 05BC 05B7 05E9 05C1 05BC 05B6 05A4 05DC 05B6 05D2",
+				"handoff_code_points_chirho": "05DB 05B7 05BC 05E9 05B6 05BC 05C1 05A4 05DC 05B6 05D2"
+			},
+			{
+				"record_chirho": "20Yxf",
+				"source_code_points_chirho": "05D1 05BC 05B7 05E7 05BC 05B7 0597 05D9 05B4 05E5",
+				"handoff_code_points_chirho": "05D1 05B7 05BC 05E7 05B7 05BC 0597 05D9 05B4 05E5"
+			},
+			{
+				"record_chirho": "20Jji",
+				"source_code_points_chirho": "05D5 05B0 05DB 05B7 05DE 05BC 05B8 05D8 05B8 05A5 05E8",
+				"handoff_code_points_chirho": "05D5 05B0 05DB 05B7 05DE 05B8 05BC 05D8 05B8 05A5 05E8"
+			},
+			{
+				"record_chirho": "20vF1",
+				"source_code_points_chirho": "05D1 05BC 05B7 05E7 05BC 05B8 05E6 05B4 0591 05D9 05E8",
+				"handoff_code_points_chirho": "05D1 05B7 05BC 05E7 05B8 05BC 05E6 05B4 0591 05D9 05E8"
+			},
+			{
+				"record_chirho": "20baH",
+				"source_code_points_chirho": "05DB 05BC 05B5 05A4 05DF",
+				"handoff_code_points_chirho": "05DB 05B5 05BC 05A4 05DF"
+			},
+			{
+				"record_chirho": "20GsM",
+				"source_code_points_chirho": "05DB 05BC 05B8 05D1 05BD 05D5 05B9 05D3",
+				"handoff_code_points_chirho": "05DB 05B8 05BC 05D1 05BD 05D5 05B9 05D3"
+			}
+		]
+	},
+	"words_chirho": [
+		{
+			"oshb_id_chirho": "20ikj",
+			"position_chirho": 1,
+			"source_text_chirho": "כַּ/שֶּׁ֤לֶג",
+			"text_chirho": "כַּשֶּׁ֤לֶג",
+			"start_chirho": 0,
+			"end_chirho": 11,
+			"raw_attributes_chirho": {
+				"id": "20ikj",
+				"lemma": "k/7950",
+				"morph": "HRd/Ncmsa",
+				"n": "1.0.0"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "כַּ",
+					"role_chirho": "prefix",
+					"lemma_chirho": "k",
+					"morph_code_chirho": "Rd",
+					"morphology_chirho": "preposition with definite article"
+				},
+				{
+					"text_chirho": "שֶּׁ֤לֶג",
+					"role_chirho": "main",
+					"lemma_chirho": "7950",
+					"morph_code_chirho": "Ncmsa",
+					"morphology_chirho": "noun, common, masculine, singular, absolute"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "7950",
+				"strong_id_chirho": "H7950",
+				"augment_chirho": null,
+				"aug_index_key_chirho": "7950",
+				"lexical_index_id_chirho": "muw"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "traditional",
+				"root_text_chirho": "שׁלג",
+				"root_entry_id_chirho": "H7949",
+				"strong_refs_chirho": [
+					"H7949"
+				],
+				"family_entry_chirho": "muy",
+				"family_strong_ids_chirho": [
+					"H7949",
+					"H7950"
+				]
+			}
+		},
+		{
+			"oshb_id_chirho": "20Yxf",
+			"position_chirho": 2,
+			"source_text_chirho": "בַּ/קַּ֗יִץ",
+			"text_chirho": "בַּקַּ֗יִץ",
+			"start_chirho": 14,
+			"end_chirho": 24,
+			"raw_attributes_chirho": {
+				"id": "20Yxf",
+				"lemma": "b/7019",
+				"morph": "HRd/Ncmsa",
+				"n": "1.0"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "בַּ",
+					"role_chirho": "prefix",
+					"lemma_chirho": "b",
+					"morph_code_chirho": "Rd",
+					"morphology_chirho": "preposition with definite article"
+				},
+				{
+					"text_chirho": "קַּ֗יִץ",
+					"role_chirho": "main",
+					"lemma_chirho": "7019",
+					"morph_code_chirho": "Ncmsa",
+					"morphology_chirho": "noun, common, masculine, singular, absolute"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "7019",
+				"strong_id_chirho": "H7019",
+				"augment_chirho": null,
+				"aug_index_key_chirho": "7019",
+				"lexical_index_id_chirho": "lgx"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "traditional",
+				"root_text_chirho": "קיץ",
+				"root_entry_id_chirho": "H6972",
+				"strong_refs_chirho": [
+					"H6972"
+				],
+				"family_entry_chirho": "lgy",
+				"family_strong_ids_chirho": [
+					"H6972",
+					"H7019"
+				]
+			}
+		},
+		{
+			"oshb_id_chirho": "20Jji",
+			"position_chirho": 3,
+			"source_text_chirho": "וְ/כַ/מָּטָ֥ר",
+			"text_chirho": "וְכַמָּטָ֥ר",
+			"start_chirho": 25,
+			"end_chirho": 36,
+			"raw_attributes_chirho": {
+				"id": "20Jji",
+				"lemma": "c/k/4306",
+				"morph": "HC/Rd/Ncmsa"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "וְ",
+					"role_chirho": "prefix",
+					"lemma_chirho": "c",
+					"morph_code_chirho": "C",
+					"morphology_chirho": "conjunction"
+				},
+				{
+					"text_chirho": "כַ",
+					"role_chirho": "prefix",
+					"lemma_chirho": "k",
+					"morph_code_chirho": "Rd",
+					"morphology_chirho": "preposition with definite article"
+				},
+				{
+					"text_chirho": "מָּטָ֥ר",
+					"role_chirho": "main",
+					"lemma_chirho": "4306",
+					"morph_code_chirho": "Ncmsa",
+					"morphology_chirho": "noun, common, masculine, singular, absolute"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "4306",
+				"strong_id_chirho": "H4306",
+				"augment_chirho": null,
+				"aug_index_key_chirho": "4306",
+				"lexical_index_id_chirho": "gvn"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "traditional",
+				"root_text_chirho": "מטר",
+				"root_entry_id_chirho": "H4305",
+				"strong_refs_chirho": [
+					"H4305"
+				],
+				"family_entry_chirho": "gvn",
+				"family_strong_ids_chirho": [
+					"H4305",
+					"H4306"
+				]
+			}
+		},
+		{
+			"oshb_id_chirho": "20vF1",
+			"position_chirho": 4,
+			"source_text_chirho": "בַּ/קָּצִ֑יר",
+			"text_chirho": "בַּקָּצִ֑יר",
+			"start_chirho": 37,
+			"end_chirho": 48,
+			"raw_attributes_chirho": {
+				"id": "20vF1",
+				"lemma": "b/7105 a",
+				"morph": "HRd/Ncmsa",
+				"n": "1"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "בַּ",
+					"role_chirho": "prefix",
+					"lemma_chirho": "b",
+					"morph_code_chirho": "Rd",
+					"morphology_chirho": "preposition with definite article"
+				},
+				{
+					"text_chirho": "קָּצִ֑יר",
+					"role_chirho": "main",
+					"lemma_chirho": "7105 a",
+					"morph_code_chirho": "Ncmsa",
+					"morphology_chirho": "noun, common, masculine, singular, absolute"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "7105 a",
+				"strong_id_chirho": "H7105",
+				"augment_chirho": "a",
+				"aug_index_key_chirho": "7105a",
+				"lexical_index_id_chirho": "lkv"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "traditional",
+				"root_text_chirho": "קצר",
+				"root_entry_id_chirho": "H7114",
+				"strong_refs_chirho": [
+					"H7114"
+				],
+				"family_entry_chirho": "lli",
+				"family_strong_ids_chirho": [
+					"H7105",
+					"H7114"
+				]
+			}
+		},
+		{
+			"oshb_id_chirho": "20baH",
+			"position_chirho": 5,
+			"source_text_chirho": "כֵּ֤ן",
+			"text_chirho": "כֵּ֤ן",
+			"start_chirho": 49,
+			"end_chirho": 54,
+			"raw_attributes_chirho": {
+				"id": "20baH",
+				"lemma": "3651 c",
+				"morph": "HTm"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "כֵּ֤ן",
+					"role_chirho": "main",
+					"lemma_chirho": "3651 c",
+					"morph_code_chirho": "Tm",
+					"morphology_chirho": "particle, demonstrative"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "3651 c",
+				"strong_id_chirho": "H3651",
+				"augment_chirho": "c",
+				"aug_index_key_chirho": "3651c",
+				"lexical_index_id_chirho": "fug"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "unresolved",
+				"root_text_chirho": null,
+				"root_entry_id_chirho": null,
+				"strong_refs_chirho": [
+					"H3559"
+				],
+				"family_entry_chirho": null,
+				"family_strong_ids_chirho": []
+			}
+		},
+		{
+			"oshb_id_chirho": "20DYG",
+			"position_chirho": 6,
+			"source_text_chirho": "לֹא",
+			"text_chirho": "לֹא",
+			"start_chirho": 55,
+			"end_chirho": 58,
+			"raw_attributes_chirho": {
+				"id": "20DYG",
+				"lemma": "3808",
+				"morph": "HTn"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "לֹא",
+					"role_chirho": "main",
+					"lemma_chirho": "3808",
+					"morph_code_chirho": "Tn",
+					"morphology_chirho": "particle, negative"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "3808",
+				"strong_id_chirho": "H3808",
+				"augment_chirho": null,
+				"aug_index_key_chirho": "3808",
+				"lexical_index_id_chirho": "gav"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "not_applicable",
+				"root_text_chirho": null,
+				"root_entry_id_chirho": null,
+				"strong_refs_chirho": [],
+				"family_entry_chirho": null,
+				"family_strong_ids_chirho": []
+			}
+		},
+		{
+			"oshb_id_chirho": "20wMm",
+			"position_chirho": 7,
+			"source_text_chirho": "נָאוֶ֖ה",
+			"text_chirho": "נָאוֶ֖ה",
+			"start_chirho": 59,
+			"end_chirho": 66,
+			"raw_attributes_chirho": {
+				"id": "20wMm",
+				"lemma": "5000",
+				"morph": "HAamsa"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "נָאוֶ֖ה",
+					"role_chirho": "main",
+					"lemma_chirho": "5000",
+					"morph_code_chirho": "Aamsa",
+					"morphology_chirho": "adjective, masculine, singular, absolute"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "5000",
+				"strong_id_chirho": "H5000",
+				"augment_chirho": null,
+				"aug_index_key_chirho": "5000",
+				"lexical_index_id_chirho": "hxo"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "unresolved",
+				"root_text_chirho": null,
+				"root_entry_id_chirho": null,
+				"strong_refs_chirho": [
+					"H4998",
+					"H5116"
+				],
+				"family_entry_chirho": "hxn",
+				"family_strong_ids_chirho": [
+					"H4998",
+					"H5000"
+				]
+			}
+		},
+		{
+			"oshb_id_chirho": "206Bv",
+			"position_chirho": 8,
+			"source_text_chirho": "לִ/כְסִ֣יל",
+			"text_chirho": "לִכְסִ֣יל",
+			"start_chirho": 67,
+			"end_chirho": 76,
+			"raw_attributes_chirho": {
+				"id": "206Bv",
+				"lemma": "l/3684",
+				"morph": "HR/Aamsa"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "לִ",
+					"role_chirho": "prefix",
+					"lemma_chirho": "l",
+					"morph_code_chirho": "R",
+					"morphology_chirho": "preposition"
+				},
+				{
+					"text_chirho": "כְסִ֣יל",
+					"role_chirho": "main",
+					"lemma_chirho": "3684",
+					"morph_code_chirho": "Aamsa",
+					"morphology_chirho": "adjective, masculine, singular, absolute"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "3684",
+				"strong_id_chirho": "H3684",
+				"augment_chirho": null,
+				"aug_index_key_chirho": "3684",
+				"lexical_index_id_chirho": "fvo"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "traditional",
+				"root_text_chirho": "כסל",
+				"root_entry_id_chirho": "H3688",
+				"strong_refs_chirho": [
+					"H3688"
+				],
+				"family_entry_chirho": "fvs",
+				"family_strong_ids_chirho": [
+					"H3684",
+					"H3685",
+					"H3687",
+					"H3688",
+					"H3689",
+					"H3690"
+				]
+			}
+		},
+		{
+			"oshb_id_chirho": "20GsM",
+			"position_chirho": 9,
+			"source_text_chirho": "כָּבֽוֹד",
+			"text_chirho": "כָּבֽוֹד",
+			"start_chirho": 77,
+			"end_chirho": 85,
+			"raw_attributes_chirho": {
+				"id": "20GsM",
+				"lemma": "3519",
+				"morph": "HNcbsa",
+				"n": "0"
+			},
+			"language_chirho": "Hebrew",
+			"segments_chirho": [
+				{
+					"text_chirho": "כָּבֽוֹד",
+					"role_chirho": "main",
+					"lemma_chirho": "3519",
+					"morph_code_chirho": "Ncbsa",
+					"morphology_chirho": "noun, common, gender both, singular, absolute"
+				}
+			],
+			"lemma_chirho": {
+				"raw_chirho": "3519",
+				"strong_id_chirho": "H3519",
+				"augment_chirho": null,
+				"aug_index_key_chirho": "3519",
+				"lexical_index_id_chirho": "foc"
+			},
+			"root_assessment_chirho": {
+				"status_chirho": "traditional",
+				"root_text_chirho": "כבד",
+				"root_entry_id_chirho": "H3513",
+				"strong_refs_chirho": [
+					"H3513"
+				],
+				"family_entry_chirho": "fnw",
+				"family_strong_ids_chirho": [
+					"H3513",
+					"H3514",
+					"H3515",
+					"H3516",
+					"H3517",
+					"H3519",
+					"H3520"
+				]
+			}
+		}
+	],
+	"punctuation_chirho": [
+		{
+			"type_chirho": "x-paseq",
+			"text_chirho": "׀",
+			"start_chirho": 12,
+			"end_chirho": 13,
+			"after_word_chirho": "20ikj"
+		},
+		{
+			"type_chirho": "x-maqqef",
+			"text_chirho": "־",
+			"start_chirho": 58,
+			"end_chirho": 59,
+			"after_word_chirho": "20DYG"
+		},
+		{
+			"type_chirho": "x-sof-pasuq",
+			"text_chirho": "׃",
+			"start_chirho": 85,
+			"end_chirho": 86,
+			"after_word_chirho": "20GsM"
+		}
+	],
+	"strong_entries_chirho": [
+		{
+			"strong_id_chirho": "H3513",
+			"lemma_chirho": "כָּבַד",
+			"raw_attributes_chirho": {
+				"pos": "v",
+				"pron": "kaw-bad'",
+				"xlit": "kâbad",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "or כָּבֵד; a primitive root;",
+			"source_refs_chirho": [],
+			"meaning_text_chirho": "to be heavy, i.e. in a bad sense (burdensome, severe, dull) or in a good sense (numerous, rich, honorable); causatively, to make weighty (in the same two senses)",
+			"usage_text_chirho": "abounding with, more grievously afflict, boast, be chargeable, × be dim, glorify, be (make) glorious (things), glory, (very) great, be grievous, harden, be (make) heavy, be heavier, lay heavily, (bring to, come to, do, get, be had in) honour (self), (be) honourable (man), lade, × more be laid, make self many, nobles, prevail, promote (to honour), be rich, be (go) sore, stop."
+		},
+		{
+			"strong_id_chirho": "H3519",
+			"lemma_chirho": "כָּבוֹד",
+			"raw_attributes_chirho": {
+				"pos": "n-m",
+				"pron": "kaw-bode'",
+				"xlit": "kâbôwd",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "rarely כָּבֹד; from 3513;",
+			"source_refs_chirho": [
+				"H3513"
+			],
+			"meaning_text_chirho": "properly, weight, but only figuratively in a good sense, splendor or copiousness",
+			"usage_text_chirho": "glorious(-ly), glory, honour(-able)."
+		},
+		{
+			"strong_id_chirho": "H3559",
+			"lemma_chirho": "כּוּן",
+			"raw_attributes_chirho": {
+				"pos": "v n-m",
+				"pron": "koon",
+				"xlit": "kûwn",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "a primitive root;",
+			"source_refs_chirho": [],
+			"meaning_text_chirho": "properly, to be erect (i.e. stand perpendicular); hence (causatively) to set up, in a great variety of applications, whether literal (establish, fix, prepare, apply), or figurative (appoint, render sure, proper or prosperous)",
+			"usage_text_chirho": "certain(-ty), confirm, direct, faithfulness, fashion, fasten, firm, be fitted, be fixed, frame, be meet, ordain, order, perfect, (make) preparation, prepare (self), provide, make provision, (be, make) ready, right, set (aright, fast, forth), be stable, (e-) stablish, stand, tarry, × very deed."
+		},
+		{
+			"strong_id_chirho": "H3651",
+			"lemma_chirho": "כֵּן",
+			"raw_attributes_chirho": {
+				"pos": "adv",
+				"pron": "kane",
+				"xlit": "kên",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "from 3559;",
+			"source_refs_chirho": [
+				"H3559"
+			],
+			"meaning_text_chirho": "properly, set upright; hence (figuratively as adjective) just; but usually (as adverb or conjunction) rightly or so (in various applications to manner, time and relation; often with other particles)",
+			"usage_text_chirho": "after that (this, -ward, -wards), as... as,   (for-) asmuch as yet,   be (for which) cause,   following, howbeit, in (the) like (manner, -wise), × the more, right, (even) so, state, straightway, such (thing), surely,   there (where) -fore, this, thus, true, well, × you."
+		},
+		{
+			"strong_id_chirho": "H3684",
+			"lemma_chirho": "כְּסִיל",
+			"raw_attributes_chirho": {
+				"pos": "n-m",
+				"pron": "kes-eel'",
+				"xlit": "kᵉçîyl",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "from 3688;",
+			"source_refs_chirho": [
+				"H3688"
+			],
+			"meaning_text_chirho": "properly, fat, i.e. (figuratively) stupid or silly",
+			"usage_text_chirho": "fool(-ish)."
+		},
+		{
+			"strong_id_chirho": "H3688",
+			"lemma_chirho": "כָּסַל",
+			"raw_attributes_chirho": {
+				"pos": "v",
+				"pron": "kaw-sal'",
+				"xlit": "kâçal",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "a primitive root;",
+			"source_refs_chirho": [],
+			"meaning_text_chirho": "properly, to be fat, i.e. (figuratively) silly",
+			"usage_text_chirho": "be foolish."
+		},
+		{
+			"strong_id_chirho": "H3808",
+			"lemma_chirho": "לֹא",
+			"raw_attributes_chirho": {
+				"pos": "adv",
+				"pron": "lo",
+				"xlit": "lôʼ",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "or לוֹא; or לֹה; (Deuteronomy 3:11), a primitive particle;",
+			"source_refs_chirho": [],
+			"meaning_text_chirho": "not (the simple or abs. negation); by implication, no; often used with other particles",
+			"usage_text_chirho": "× before,   or else, ere,   except, ig(-norant), much, less, nay, neither, never, no((-ne), -r, (-thing)), (× as though...,(can-), for) not (out of), of nought, otherwise, out of,   surely,   as truly as,   of a truth,   verily, for want,   whether, without."
+		},
+		{
+			"strong_id_chirho": "H4305",
+			"lemma_chirho": "מָטַר",
+			"raw_attributes_chirho": {
+				"pos": "v",
+				"pron": "maw-tar'",
+				"xlit": "mâṭar",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "a primitive root;",
+			"source_refs_chirho": [],
+			"meaning_text_chirho": "to rain",
+			"usage_text_chirho": "(cause to) rain (upon)."
+		},
+		{
+			"strong_id_chirho": "H4306",
+			"lemma_chirho": "מָטַר",
+			"raw_attributes_chirho": {
+				"pos": "n-m",
+				"pron": "maw-tawr'",
+				"xlit": "mâṭar",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "from 4305;",
+			"source_refs_chirho": [
+				"H4305"
+			],
+			"meaning_text_chirho": "rain",
+			"usage_text_chirho": "rain."
+		},
+		{
+			"strong_id_chirho": "H4998",
+			"lemma_chirho": "נָאָה",
+			"raw_attributes_chirho": {
+				"pos": "v",
+				"pron": "naw-aw'",
+				"xlit": "nâʼâh",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "a primitive root;",
+			"source_refs_chirho": [],
+			"meaning_text_chirho": "properly, to be at home, i.e. (by implication) to be pleasant (or suitable), i.e. beautiful",
+			"usage_text_chirho": "be beautiful, become, be comely."
+		},
+		{
+			"strong_id_chirho": "H5000",
+			"lemma_chirho": "נָאוֶה",
+			"raw_attributes_chirho": {
+				"pos": "a",
+				"pron": "naw-veh'",
+				"xlit": "nâʼveh",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "from 4998 or 5116;",
+			"source_refs_chirho": [
+				"H4998",
+				"H5116"
+			],
+			"meaning_text_chirho": "suitable, or beautiful",
+			"usage_text_chirho": "becometh, comely, seemly."
+		},
+		{
+			"strong_id_chirho": "H5116",
+			"lemma_chirho": "נָוֶה",
+			"raw_attributes_chirho": {
+				"pos": "n",
+				"pron": "naw-veh'",
+				"xlit": "nâveh",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "or (feminine) נָוָה; from 5115;",
+			"source_refs_chirho": [
+				"H5115"
+			],
+			"meaning_text_chirho": "(adjectively) at home; hence (by implication of satisfaction) lovely; also (noun) a home, of God (temple), men (residence), flocks (pasture), or wild animals (den)",
+			"usage_text_chirho": "comely, dwelling (place), fold, habitation, pleasant place, sheepcote, stable, tarried."
+		},
+		{
+			"strong_id_chirho": "H6972",
+			"lemma_chirho": "קוּץ",
+			"raw_attributes_chirho": {
+				"pos": "n-m",
+				"pron": "koots",
+				"xlit": "qûwts",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "a primitive root; to clip off; used only as denominative from 7019;",
+			"source_refs_chirho": [
+				"H7019"
+			],
+			"meaning_text_chirho": "to spend the harvest season",
+			"usage_text_chirho": "summer."
+		},
+		{
+			"strong_id_chirho": "H7019",
+			"lemma_chirho": "קַיִץ",
+			"raw_attributes_chirho": {
+				"pos": "n-m",
+				"pron": "kah'-yits",
+				"xlit": "qayits",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "from 6972;",
+			"source_refs_chirho": [
+				"H6972"
+			],
+			"meaning_text_chirho": "harvest (as the crop), whether the product (grain or fruit) or the (dry) season",
+			"usage_text_chirho": "summer (fruit, house)."
+		},
+		{
+			"strong_id_chirho": "H7105",
+			"lemma_chirho": "קָצִיר",
+			"raw_attributes_chirho": {
+				"pos": "n-m",
+				"pron": "kaw-tseer'",
+				"xlit": "qâtsîyr",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "from 7114;",
+			"source_refs_chirho": [
+				"H7114"
+			],
+			"meaning_text_chirho": "severed, i.e. harvest (as reaped), the crop, the time, the reaper, or figuratively; also a limb (of a tree, or simply foliage)",
+			"usage_text_chirho": "bough, branch, harvest (man)."
+		},
+		{
+			"strong_id_chirho": "H7114",
+			"lemma_chirho": "קָצַר",
+			"raw_attributes_chirho": {
+				"pos": "v",
+				"pron": "kaw-tsar'",
+				"xlit": "qâtsar",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "a primitive root;",
+			"source_refs_chirho": [],
+			"meaning_text_chirho": "to dock off, i.e. curtail (transitive or intransitive, literal or figurative); especially to harvest (grass or grain)",
+			"usage_text_chirho": "× at all, cut down, much discouraged, grieve, harvestman, lothe, mourn, reap(-er), (be, wax) short(-en, -er), straiten, trouble, vex."
+		},
+		{
+			"strong_id_chirho": "H7949",
+			"lemma_chirho": "שָׁלַג",
+			"raw_attributes_chirho": {
+				"pos": "v",
+				"pron": "shaw-lag'",
+				"xlit": "shâlag",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "a primitive root; properly, meaning to be white; used only as denominative from 7950;",
+			"source_refs_chirho": [
+				"H7950"
+			],
+			"meaning_text_chirho": "to be snow-white (with the linen clothing of the slain)",
+			"usage_text_chirho": "be as snow."
+		},
+		{
+			"strong_id_chirho": "H7950",
+			"lemma_chirho": "שֶׁלֶג",
+			"raw_attributes_chirho": {
+				"pos": "n-m",
+				"pron": "sheh'-leg",
+				"xlit": "sheleg",
+				"xml:lang": "heb"
+			},
+			"source_text_chirho": "from 7949;",
+			"source_refs_chirho": [
+				"H7949"
+			],
+			"meaning_text_chirho": "snow (probably from its whiteness)",
+			"usage_text_chirho": "snow(-y)."
+		}
+	],
+	"lexical_index_entries_chirho": [
+		{
+			"id_chirho": "fnw",
+			"lemma_chirho": "כָּבֵד",
+			"xlit_chirho": "kābēd",
+			"pos_chirho": "V",
+			"def_chirho": "be heavy",
+			"raw_xref_chirho": {
+				"bdb": "k.af.aa",
+				"strong": "3513",
+				"twot": "943"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": "כבד",
+			"etym_targets_chirho": [
+				"fnx",
+				"fny",
+				"fnz",
+				"foa",
+				"foc",
+				"fod",
+				"foe"
+			]
+		},
+		{
+			"id_chirho": "fnx",
+			"lemma_chirho": "כָּבֵד",
+			"xlit_chirho": "kābēd",
+			"pos_chirho": "N",
+			"def_chirho": "liver",
+			"raw_xref_chirho": {
+				"bdb": "k.af.ac",
+				"strong": "3516",
+				"twot": "943b"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fnw"
+			]
+		},
+		{
+			"id_chirho": "fny",
+			"lemma_chirho": "כָּבֵד",
+			"xlit_chirho": "kābēd",
+			"pos_chirho": "A",
+			"def_chirho": "heavy",
+			"raw_xref_chirho": {
+				"bdb": "k.af.ab",
+				"strong": "3515",
+				"twot": "943a"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fnw"
+			]
+		},
+		{
+			"id_chirho": "fnz",
+			"lemma_chirho": "כֹּ֫בֶד",
+			"xlit_chirho": "kōbed",
+			"pos_chirho": "N",
+			"def_chirho": "weight",
+			"raw_xref_chirho": {
+				"bdb": "k.af.ad",
+				"strong": "3514",
+				"twot": "943c"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fnw"
+			]
+		},
+		{
+			"id_chirho": "foa",
+			"lemma_chirho": "כְּבֵדֻת",
+			"xlit_chirho": "kĕbēdut",
+			"pos_chirho": "N",
+			"def_chirho": "heaviness",
+			"raw_xref_chirho": {
+				"bdb": "k.af.ah",
+				"strong": "3517",
+				"twot": "943g"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fnw"
+			]
+		},
+		{
+			"id_chirho": "foc",
+			"lemma_chirho": "כָּבוֹד",
+			"xlit_chirho": "kābôd",
+			"pos_chirho": "N",
+			"def_chirho": "abundance",
+			"raw_xref_chirho": {
+				"bdb": "k.af.af",
+				"strong": "3519",
+				"twot": "943e"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fnw"
+			]
+		},
+		{
+			"id_chirho": "fod",
+			"lemma_chirho": "כָּבוֹד",
+			"xlit_chirho": "kābôd",
+			"pos_chirho": "A",
+			"def_chirho": "glorious",
+			"raw_xref_chirho": {
+				"aug": "a",
+				"bdb": "k.af.ae",
+				"strong": "3520",
+				"twot": "943d"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fnw"
+			]
+		},
+		{
+			"id_chirho": "foe",
+			"lemma_chirho": "כְּבוּדָּ֯ה",
+			"xlit_chirho": "kĕbûddâ",
+			"pos_chirho": "N",
+			"def_chirho": "abundance",
+			"raw_xref_chirho": {
+				"aug": "b",
+				"bdb": "k.af.ag",
+				"strong": "3520",
+				"twot": "943f"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fnw"
+			]
+		},
+		{
+			"id_chirho": "fug",
+			"lemma_chirho": "כֵּן",
+			"xlit_chirho": "kēn",
+			"pos_chirho": "D",
+			"def_chirho": "so",
+			"raw_xref_chirho": {
+				"aug": "c",
+				"bdb": "k.by.aa",
+				"strong": "3651",
+				"twot": "964b"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": []
+		},
+		{
+			"id_chirho": "fvo",
+			"lemma_chirho": "כְּסִיל",
+			"xlit_chirho": "kĕsîl",
+			"pos_chirho": "N",
+			"def_chirho": "stupid fellow",
+			"raw_xref_chirho": {
+				"bdb": "k.cj.ad",
+				"strong": "3684",
+				"twot": "1011c"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fvs"
+			]
+		},
+		{
+			"id_chirho": "fvp",
+			"lemma_chirho": "כְּסִיל",
+			"xlit_chirho": "kĕsîl",
+			"pos_chirho": "N",
+			"def_chirho": "Orion",
+			"raw_xref_chirho": {
+				"bdb": "k.cj.af",
+				"strong": "3685",
+				"twot": "1011e"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fvs"
+			]
+		},
+		{
+			"id_chirho": "fvq",
+			"lemma_chirho": "כְּסִילוּת",
+			"xlit_chirho": "kĕsîlût",
+			"pos_chirho": "N",
+			"def_chirho": "stupidity",
+			"raw_xref_chirho": {
+				"bdb": "k.cj.ae",
+				"strong": "3687",
+				"twot": "1011d"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fvs"
+			]
+		},
+		{
+			"id_chirho": "fvr",
+			"lemma_chirho": "כֶּ֫סֶל",
+			"xlit_chirho": "kesel",
+			"pos_chirho": "N",
+			"def_chirho": "loins",
+			"raw_xref_chirho": {
+				"bdb": "k.cj.ab",
+				"strong": "3689",
+				"twot": "1011a"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fvs"
+			]
+		},
+		{
+			"id_chirho": "fvs",
+			"lemma_chirho": "כָּסַל",
+			"xlit_chirho": "kāsal",
+			"pos_chirho": "V",
+			"def_chirho": "be stupid",
+			"raw_xref_chirho": {
+				"bdb": "k.cj.aa",
+				"strong": "3688",
+				"twot": "1011"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": "כסל",
+			"etym_targets_chirho": [
+				"fvo",
+				"fvp",
+				"fvq",
+				"fvr",
+				"fvt"
+			]
+		},
+		{
+			"id_chirho": "fvt",
+			"lemma_chirho": "כִּסְלָה",
+			"xlit_chirho": "kislâ",
+			"pos_chirho": "N",
+			"def_chirho": "trust",
+			"raw_xref_chirho": {
+				"bdb": "k.cj.ac",
+				"strong": "3690",
+				"twot": "1011b"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"fvs"
+			]
+		},
+		{
+			"id_chirho": "gav",
+			"lemma_chirho": "לֹא",
+			"xlit_chirho": "lōʾ",
+			"pos_chirho": "D",
+			"def_chirho": "not",
+			"raw_xref_chirho": {
+				"bdb": "l.ab.aa",
+				"strong": "3808",
+				"twot": "1064"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": []
+		},
+		{
+			"id_chirho": "gvm",
+			"lemma_chirho": "מָטַר",
+			"xlit_chirho": "māṭar",
+			"pos_chirho": "V",
+			"def_chirho": "rain",
+			"raw_xref_chirho": {
+				"bdb": "m.bs.ab",
+				"strong": "4305",
+				"twot": "1187"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"gvn"
+			]
+		},
+		{
+			"id_chirho": "gvn",
+			"lemma_chirho": "מָטַר",
+			"xlit_chirho": "māṭar",
+			"pos_chirho": "N",
+			"def_chirho": "rain",
+			"raw_xref_chirho": {
+				"bdb": "m.bs.aa",
+				"strong": "4306",
+				"twot": "1187a"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": "מטר",
+			"etym_targets_chirho": [
+				"gvm"
+			]
+		},
+		{
+			"id_chirho": "hxn",
+			"lemma_chirho": "נָאָה",
+			"xlit_chirho": "nāʾâ",
+			"pos_chirho": "V",
+			"def_chirho": "be comely",
+			"raw_xref_chirho": {
+				"bdb": "n.ac.aa",
+				"strong": "4998",
+				"twot": "1271"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": "נאה",
+			"etym_targets_chirho": [
+				"hxo"
+			]
+		},
+		{
+			"id_chirho": "hxo",
+			"lemma_chirho": "נָאוֶה",
+			"xlit_chirho": "nāʾweh",
+			"pos_chirho": "A",
+			"def_chirho": "comely",
+			"raw_xref_chirho": {
+				"bdb": "n.ac.ab",
+				"strong": "5000",
+				"twot": "1271a"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"hxn"
+			]
+		},
+		{
+			"id_chirho": "lgx",
+			"lemma_chirho": "קַ֫יִץ",
+			"xlit_chirho": "qayiṣ",
+			"pos_chirho": "N",
+			"def_chirho": "summer",
+			"raw_xref_chirho": {
+				"bdb": "s.bm.ab",
+				"strong": "7019",
+				"twot": "2020a"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"lgy"
+			]
+		},
+		{
+			"id_chirho": "lgy",
+			"lemma_chirho": "קיץ",
+			"xlit_chirho": "qyṣ",
+			"pos_chirho": "N",
+			"def_chirho": "summer",
+			"raw_xref_chirho": {
+				"bdb": "s.bm.aa",
+				"strong": "6972",
+				"twot": "2020"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": "קיץ",
+			"etym_targets_chirho": [
+				"lgx"
+			]
+		},
+		{
+			"id_chirho": "lkv",
+			"lemma_chirho": "קָצִיר",
+			"xlit_chirho": "qāṣîr",
+			"pos_chirho": "N",
+			"def_chirho": "harvesting",
+			"raw_xref_chirho": {
+				"aug": "a",
+				"bdb": "s.cx.ab",
+				"strong": "7105",
+				"twot": "2062a"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"lli"
+			]
+		},
+		{
+			"id_chirho": "lkw",
+			"lemma_chirho": "קָצִיר",
+			"xlit_chirho": "qāṣîr",
+			"pos_chirho": "N",
+			"def_chirho": "boughs",
+			"raw_xref_chirho": {
+				"aug": "b",
+				"bdb": "s.cx.ac",
+				"strong": "7105",
+				"twot": "2062b"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"lli"
+			]
+		},
+		{
+			"id_chirho": "lli",
+			"lemma_chirho": "קָצַר",
+			"xlit_chirho": "qāṣar",
+			"pos_chirho": "V",
+			"def_chirho": "reap",
+			"raw_xref_chirho": {
+				"aug": "b",
+				"bdb": "s.cx.aa",
+				"strong": "7114",
+				"twot": "2062"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": "קצר",
+			"etym_targets_chirho": [
+				"lkv",
+				"lkw"
+			]
+		},
+		{
+			"id_chirho": "muw",
+			"lemma_chirho": "שֶׁ֫לֶג",
+			"xlit_chirho": "šeleg",
+			"pos_chirho": "N",
+			"def_chirho": "snow",
+			"raw_xref_chirho": {
+				"bdb": "v.di.ab",
+				"strong": "7950",
+				"twot": "2391a"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"muy"
+			]
+		},
+		{
+			"id_chirho": "mux",
+			"lemma_chirho": "שָׁלַג",
+			"xlit_chirho": "šālag",
+			"pos_chirho": "V",
+			"def_chirho": "snow",
+			"raw_xref_chirho": {
+				"bdb": "v.di.ac",
+				"strong": "7949",
+				"twot": "2391"
+			},
+			"etym_type_chirho": "sub",
+			"etym_root_chirho": null,
+			"etym_targets_chirho": [
+				"muy"
+			]
+		},
+		{
+			"id_chirho": "muy",
+			"lemma_chirho": "שׁלג",
+			"xlit_chirho": "šlg",
+			"pos_chirho": null,
+			"def_chirho": null,
+			"raw_xref_chirho": {
+				"bdb": "v.di.aa"
+			},
+			"etym_type_chirho": "main",
+			"etym_root_chirho": "שׁלג",
+			"etym_targets_chirho": [
+				"muw",
+				"mux"
+			]
+		}
+	]
+}

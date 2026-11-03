@@ -1,0 +1,21 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "John",
+	"scenes_chirho": [
+		{
+			"lesson_id_chirho": "John.1.2",
+			"variant_chirho": "representation_reduced",
+			"asset_path_chirho": "/assets-chirho/scenes-chirho/john-reduced-v1-chirho/chapter-01-chirho/john-01-002-chirho.webp",
+			"alt_chirho": "An unlettered parchment scroll rests within warm golden radiance amid deep blue watercolor clouds and stars.",
+			"width_chirho": 1448,
+			"height_chirho": 1086,
+			"sha256_chirho": "9ebaa2e8fb3753e79ebec494941ee023527f5efac847da4a073483b6245f125b",
+			"art_review_chirho": "pending",
+			"reading_note_chirho": "A symbolic meditation on John 1:2: the Word was with God in the beginning. The scroll recalls the Word without depicting Jesus as a person. It is an illustration, not a claim that the Word is a created object or that this scene shows His pre-incarnation appearance.",
+			"prompt_chirho": "Use case: illustration-story.\nAsset type: optional Representation reduced scene for John 1:2 in the Hinneh reader.\nSource: John 1:2, Nestle 1904, exactly: Οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν Θεόν.\nThe verse says He was in the beginning with God; in context He refers to the Word. This is a visual meditation, not a literal depiction of a pre-incarnation location or object.\nInput image 1: existing John 1:2 Standard scene, a composition and color reference. Preserve its luminous deep blue and warm gold watercolor atmosphere, but create an optional alternative with no human figure. Do not replace or overwrite that original.\nInput image 2: Proverbs 26:1, style reference only: warm detailed hand-painted watercolor storybook art, delicate inked contours and painted paper texture.\nCreate one coherent 4:3 landscape composition. In the left-center, show a beautiful, unlettered ancient parchment scroll, gently open, within a flowing warm golden radiance. The scroll is an explicitly symbolic reminder of the Word, not an assertion that the Word is a created scroll. Let the surrounding blue and golden expanse feel timeless and still, and the same continuous light embrace the scroll and lead toward a brighter center-right presence. Avoid dividing the light into two gods. No depiction of God or Jesus as a person, no face, body, silhouette, hands, dove or halo. Keep all essential forms comfortably inside the frame. No lettering, readable writing, text, captions, symbols, panels, border, collage or watermark. Rich, restrained brushwork; reverent, luminous, excellent finished illustration, matching the references rather than photorealism.\n",
+			"tool_chirho": "image_gen.imagegen",
+			"model_chirho": "tool-managed; not exposed",
+			"style_reference_chirho": "/assets-chirho/proverbs-26-1-scene-chirho.webp"
+		}
+	]
+}

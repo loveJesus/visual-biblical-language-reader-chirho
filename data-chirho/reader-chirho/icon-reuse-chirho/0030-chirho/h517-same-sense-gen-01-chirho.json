@@ -1,0 +1,46 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h517-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The neutral female portrait is a mnemonic for the mother relationship at the listed your mother occurrences, not a historical portrait.",
+	"source_icon_id_chirho": "proverbs-worker-v2-icon-01-chirho",
+	"source_sha256_chirho": "ccdaaee27453e1bed734bd706dcc93a7906033c2b4305ce6449112302d1143aa",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.8",
+		"token_id_chirho": "207am",
+		"text_chirho": "אִמֶּֽךָ",
+		"gloss_chirho": "your mother",
+		"canonical_sha256_chirho": "d94f8728b594e8ef1338f4cd01085ecc1e998f9243849470ae344934cb82c848"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H517",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "אֵם"
+	},
+	"contextual_meaning_chirho": "mother",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.27.29",
+			"token_id_chirho": "01R3Z",
+			"text_chirho": "אִמֶּ֑ךָ",
+			"gloss_chirho": "your mother",
+			"canonical_sha256_chirho": "9d2be8c05e0ada9b906f1aa7485ba2ef701fda948aaaf3a050da521817336d3f"
+		},
+		{
+			"verse_id_chirho": "Gen.28.2",
+			"token_id_chirho": "01GrK",
+			"text_chirho": "אִמֶּ֑ךָ",
+			"gloss_chirho": "your mother",
+			"canonical_sha256_chirho": "6876eaef463c03c08822ac647795dd84896a1b7b4c06a5a91c42dcb2f49d29c2"
+		},
+		{
+			"verse_id_chirho": "Gen.28.2",
+			"token_id_chirho": "01eeb",
+			"text_chirho": "אִמֶּֽךָ",
+			"gloss_chirho": "your mother",
+			"canonical_sha256_chirho": "6876eaef463c03c08822ac647795dd84896a1b7b4c06a5a91c42dcb2f49d29c2"
+		}
+	]
+}

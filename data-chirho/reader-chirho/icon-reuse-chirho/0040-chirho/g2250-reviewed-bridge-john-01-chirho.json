@@ -1,0 +1,242 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g2250-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "Sunrise is a day/time-unit mnemonic for the explicitly listed Greek day and days occurrences. It does not decide the length or eschatological interpretation of a period; number and morphology remain in the source cues.",
+	"source_icon_id_chirho": "icon-46cee3348975438a9f24f7ab877af3ff-07-chirho",
+	"source_sha256_chirho": "546d80f07b98599f8690d2ddbb97d65ff15202bc07d21157170ab8253248d2d5",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.3.2",
+		"token_id_chirho": "20mrn",
+		"text_chirho": "יָ֭מִים",
+		"gloss_chirho": "days",
+		"canonical_sha256_chirho": "25c7df9fc0ac4b1f014055d9af2205d6cc714d40dc8597c0b42b96a3ce258b4b"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G2250",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "ἡμέρα"
+	},
+	"contextual_meaning_chirho": "day",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.9.4",
+			"token_id_chirho": "John.9.4!10",
+			"text_chirho": "ἡμέρα",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "8422f43a4a8e23fc8fad17a81f443303e0cb5ce885443da668a25a55e29c8998"
+		},
+		{
+			"verse_id_chirho": "John.9.14",
+			"token_id_chirho": "John.9.14!6",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "9a55b036f67d5e52ccaf2d7eda5b3fd8bfa6c0f21e3a06f224a21b8e92d47d6e"
+		},
+		{
+			"verse_id_chirho": "John.5.9",
+			"token_id_chirho": "John.5.9!20",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "1a3684f942b62fe8362c073b6e01340e54a232b87bb94c9040d6bd8f50875dbe"
+		},
+		{
+			"verse_id_chirho": "John.19.31",
+			"token_id_chirho": "John.19.31!22",
+			"text_chirho": "ἡμέρα",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "a072d98163be8177a781b520d4a76273556d861dc618317321b729649396ae49"
+		},
+		{
+			"verse_id_chirho": "John.6.39",
+			"token_id_chirho": "John.6.39!24",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "eee3bbf5499c6a630ae77c92ae1f59fc0839b30a2d599d538afaa58900cca85d"
+		},
+		{
+			"verse_id_chirho": "John.6.40",
+			"token_id_chirho": "John.6.40!29",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "4b85afd32d540cadf77d82dc1a22d8059ab5c633a118e40c1e053e86e520338e"
+		},
+		{
+			"verse_id_chirho": "John.6.44",
+			"token_id_chirho": "John.6.44!21",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "1bbbd7900de0e7ac3ba09e444223f277e91405c66c27ed781aca174baf60c77b"
+		},
+		{
+			"verse_id_chirho": "John.6.54",
+			"token_id_chirho": "John.6.54!19",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "89a61290c298cf15f8afaa3e2e95b284d7c3cec898b1018756d37509d605a1f4"
+		},
+		{
+			"verse_id_chirho": "John.16.23",
+			"token_id_chirho": "John.16.23!5",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "fffa37b07ab6acfa8d67f8487fc075110a4e16277180bdbb3cb0a2e0c3f78569"
+		},
+		{
+			"verse_id_chirho": "John.16.26",
+			"token_id_chirho": "John.16.26!4",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "215b592d2cabcaee1ce379fbdbbb2868d73341b21541083ae45092ba2939ac73"
+		},
+		{
+			"verse_id_chirho": "John.4.40",
+			"token_id_chirho": "John.4.40!17",
+			"text_chirho": "ἡμέρας",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "01c7ae059dd8651d9897668e3e9385107f4e686993c6a3792abf5a15a7d5c2ff"
+		},
+		{
+			"verse_id_chirho": "John.4.43",
+			"token_id_chirho": "John.4.43!5",
+			"text_chirho": "ἡμέρας",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "f27998d1cfe8448cdceddb8bd516bc2b97fec8589658848f656338452497e44a"
+		},
+		{
+			"verse_id_chirho": "John.11.6",
+			"token_id_chirho": "John.11.6!14",
+			"text_chirho": "ἡμέρας",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "eda3e6a0f03389b38ca79e6ae68c2a9669fa8da74088820be83ef04de8db1b7f"
+		},
+		{
+			"verse_id_chirho": "John.11.9",
+			"token_id_chirho": "John.11.9!8",
+			"text_chirho": "ἡμέρας",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "3af7f83cd93428d059d2a84f89df628c7f55027a56ee3d2b95c576e669e30277"
+		},
+		{
+			"verse_id_chirho": "John.11.9",
+			"token_id_chirho": "John.11.9!14",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "3af7f83cd93428d059d2a84f89df628c7f55027a56ee3d2b95c576e669e30277"
+		},
+		{
+			"verse_id_chirho": "John.11.17",
+			"token_id_chirho": "John.11.17!9",
+			"text_chirho": "ἡμέρας",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "b3d77f8c2738440de8e251b422567a67b3d7f225a2aca6888198823f1e23d40d"
+		},
+		{
+			"verse_id_chirho": "John.11.24",
+			"token_id_chirho": "John.11.24!14",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "ba2c5790117b03b89347459286b1d5914e262cd000b21aeaa36ecf3f42c47d19"
+		},
+		{
+			"verse_id_chirho": "John.11.53",
+			"token_id_chirho": "John.11.53!5",
+			"text_chirho": "ἡμέρας",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "c4960facc08988e79392f3463328e5d778e7d94d65d1560a485a07602a5cc654"
+		},
+		{
+			"verse_id_chirho": "John.14.20",
+			"token_id_chirho": "John.14.20!4",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "576d7c21fb7132382726eb0cbb59107f41f41e4c83a4a24fd9d2fc51ce7a3d13"
+		},
+		{
+			"verse_id_chirho": "John.8.56",
+			"token_id_chirho": "John.8.56!9",
+			"text_chirho": "ἡμέραν",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "167b77fca066e06e2f9115038069c54160499e1613654901188b96ec062f0faf"
+		},
+		{
+			"verse_id_chirho": "John.1.39",
+			"token_id_chirho": "John.1.39!17",
+			"text_chirho": "ἡμέραν",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "5e76c1cb935ccc3f16ad3c874ce6f1c1a8eba82796325507993420f33899a28b"
+		},
+		{
+			"verse_id_chirho": "John.2.1",
+			"token_id_chirho": "John.2.1!3",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "7d17c9d845582049f288737fba4b6df377f1c4b985ca3f77b38cff30aba9ebd4"
+		},
+		{
+			"verse_id_chirho": "John.2.12",
+			"token_id_chirho": "John.2.12!23",
+			"text_chirho": "ἡμέρας",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "2d858fbe0eee5834a935708d78bf09ecd0ee9c3bb1abdeee6f3479c5e5bca508"
+		},
+		{
+			"verse_id_chirho": "John.2.19",
+			"token_id_chirho": "John.2.19!13",
+			"text_chirho": "ἡμέραις",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "1668bddaaa5a2d8f6d90f1c12373b1100720b50eecc4f70d129495e6327cde87"
+		},
+		{
+			"verse_id_chirho": "John.2.20",
+			"token_id_chirho": "John.2.20!17",
+			"text_chirho": "ἡμέραις",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "42235e643b3162db489382f010c6ae0ab4f2558ebecfd01f95603b3ce3193333"
+		},
+		{
+			"verse_id_chirho": "John.20.19",
+			"token_id_chirho": "John.20.19!5",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "e24a7e08bab0b57c111645a50e0fe26eced2207e505e9471d7bc285bd8a9770b"
+		},
+		{
+			"verse_id_chirho": "John.20.26",
+			"token_id_chirho": "John.20.26!3",
+			"text_chirho": "ἡμέρας",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "7b5f7b90095c00144968fd78d8eb870d2cfad4b7717c3e32dafc327fb1553ef8"
+		},
+		{
+			"verse_id_chirho": "John.12.1",
+			"token_id_chirho": "John.12.1!6",
+			"text_chirho": "ἡμερῶν",
+			"gloss_chirho": "days",
+			"canonical_sha256_chirho": "631bbf18afa456f8fd207200c739a171214a6596160c6c9a300b5659960ff958"
+		},
+		{
+			"verse_id_chirho": "John.12.7",
+			"token_id_chirho": "John.12.7!10",
+			"text_chirho": "ἡμέραν",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "b93d084d21bdfb9efb06267538ab93accc8e29ef1e894f9ca77337580d9bf814"
+		},
+		{
+			"verse_id_chirho": "John.12.48",
+			"token_id_chirho": "John.12.48!24",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "197e5d20559f184bff574b71cdfcb4c5e06f6e5fd1516a9d3992d6419a277fd4"
+		},
+		{
+			"verse_id_chirho": "John.7.37",
+			"token_id_chirho": "John.7.37!5",
+			"text_chirho": "ἡμέρᾳ",
+			"gloss_chirho": "day",
+			"canonical_sha256_chirho": "519a4661da2f7d2e8cdeb2ec043a35cda1087f294aca7ae092a2729310492e0d"
+		}
+	]
+}

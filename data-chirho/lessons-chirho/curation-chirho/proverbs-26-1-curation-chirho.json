@@ -1,0 +1,85 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "Prov.26.1",
+	"language_chirho": "he",
+	"reference_chirho": "Proverbs 26:1",
+	"source_file_chirho": "oshb-prov-chirho",
+	"lesson_file_chirho": "proverbs-26-1-chirho.json",
+	"extract_file_chirho": "prov-26-1-extract-chirho.json",
+	"handoff_ref_chirho": "spec-chirho/handoff-chirho/26-10-26-hebrew-visual-reader-handoff-chirho.txt, line 58 (section 2, exact canonical verse as pasted)",
+	"handoff_text_chirho": "כַּשֶּׁ֤לֶג ׀ בַּקַּ֗יִץ וְכַמָּטָ֥ר בַּקָּצִ֑יר כֵּ֤ן לֹא־נָאוֶ֖ה לִכְסִ֣יל כָּבֽוֹד׃",
+	"translation_chirho": "Like snow in summer and rain at harvest, so honor is not fitting for a fool.",
+	"translation_ref_chirho": "spec-chirho/handoff-chirho/26-10-26-hebrew-visual-reader-handoff-chirho.txt, line 61 (section 2, app-authored translation, hidden initially)",
+	"app_source_chirho": {
+		"id_chirho": "app-authored-prov-26-1-chirho",
+		"title_chirho": "App-authored translation, glosses and notes for Proverbs 26:1",
+		"revision_chirho": "draft 2026-10-26",
+		"license_chirho": "Written for this app; not part of any source text. Terms are set by the project owner.",
+		"attribution_chirho": "Translation: app-authored in the project handoff, version 2026-10-26. Glosses and notes: drafted by an AI agent (claude_chirho) from the pinned sources on 2026-10-26, pending L.J.'s review."
+	},
+	"tokens_chirho": {
+		"20ikj": {
+			"gloss_chirho": "like (the) snow",
+			"root_status_chirho": "traditional",
+			"root_entry_id_chirho": "H7949",
+			"root_note_chirho": "Traditional lexical relationship, not a claim about historical origin. Strong's derives H7950 from H7949 but describes H7949 as used only as a denominative from H7950, so the direction is uncertain. The OSHB Lexical Index files both words under one root.",
+			"source_note_chirho": "OSHB codes the prefix Rd: the inseparable preposition is pointed to show the definite article. A paseq follows this word."
+		},
+		"20Yxf": {
+			"gloss_chirho": "in (the) summer",
+			"root_status_chirho": "traditional",
+			"root_entry_id_chirho": "H6972",
+			"root_note_chirho": "Traditional lexical relationship, not a claim about historical origin. Strong's derives H7019 from H6972 but describes H6972 as used only as a denominative from H7019, so the direction is uncertain. The OSHB Lexical Index spells the root with yod, while Strong's spells the H6972 headword with vav.",
+			"source_note_chirho": "OSHB codes the prefix Rd: the inseparable preposition is pointed to show the definite article."
+		},
+		"20Jji": {
+			"gloss_chirho": "and like (the) rain",
+			"root_status_chirho": "traditional",
+			"root_entry_id_chirho": "H4305",
+			"root_note_chirho": "Traditional lexical relationship, not a claim about historical origin. Strong's derives the noun H4306 from the verb H4305. The OSHB Lexical Index runs the other way: the noun is the main entry of the root and the verb is filed under it.",
+			"source_note_chirho": "OSHB codes the prefixes C and Rd: the conjunction, then the inseparable preposition pointed to show the definite article. Both pinned lexicon files point the headword with patah under the tet, while this verse has qamats and Strong's pronunciation reads maw-tawr'. The source spelling is kept unchanged."
+		},
+		"20vF1": {
+			"gloss_chirho": "at (the) harvest",
+			"root_status_chirho": "traditional",
+			"root_entry_id_chirho": "H7114",
+			"root_note_chirho": "Traditional lexical relationship, not a claim about historical origin. Strong's derives H7105 from H7114, and the OSHB Lexical Index files this word under the same root.",
+			"source_note_chirho": "OSHB codes the prefix Rd: the inseparable preposition is pointed to show the definite article. The augmented lemma 7105 a selects the harvesting sense (Lexical Index lkv); 7105 b, boughs, is a separate homograph that Strong's merges into H7105."
+		},
+		"20baH": {
+			"gloss_chirho": "so",
+			"root_status_chirho": "unresolved",
+			"root_entry_id_chirho": null,
+			"root_note_chirho": "Not assigned. Strong's treats H3651 as one entry derived from H3559. The OSHB Lexical Index splits it into homographs: the one used here (3651 c, so) has no root, while 3651 a (right) is filed under the root of H3559.",
+			"source_note_chirho": "OSHB parses this word as a demonstrative particle (Tm), while Strong's heading labels H3651 an adverb. The verse-specific parse is used."
+		},
+		"20DYG": {
+			"gloss_chirho": "not",
+			"root_status_chirho": "not_applicable",
+			"root_entry_id_chirho": null,
+			"root_note_chirho": "No root. Strong's calls H3808 a primitive particle, and the OSHB Lexical Index assigns it none.",
+			"source_note_chirho": "OSHB parses this word as a negative particle (Tn). A maqqef joins it to the next word."
+		},
+		"20wMm": {
+			"gloss_chirho": "fitting",
+			"root_status_chirho": "unresolved",
+			"root_entry_id_chirho": null,
+			"root_note_chirho": "Not assigned. Strong's derives H5000 from H4998 or H5116. The OSHB Lexical Index files it under the root of H4998, but this lesson does not treat either derivation as certain.",
+			"source_note_chirho": "OSHB parses this word as an adjective (Aamsa), as does Strong's heading for H5000."
+		},
+		"206Bv": {
+			"gloss_chirho": "for a fool",
+			"root_status_chirho": "traditional",
+			"root_entry_id_chirho": "H3688",
+			"root_note_chirho": "Traditional lexical relationship, not a claim about historical origin. Strong's derives H3684 from H3688, and the OSHB Lexical Index files this word under the same root.",
+			"source_note_chirho": "OSHB parses this word as an adjective in this verse (HR/Aamsa), although the Strong's and Lexical Index headings list H3684 as a noun. The verse-specific parse is used."
+		},
+		"20GsM": {
+			"gloss_chirho": "honor",
+			"root_status_chirho": "traditional",
+			"root_entry_id_chirho": "H3513",
+			"root_note_chirho": "Traditional lexical relationship, not a claim about historical origin. Strong's derives H3519 from H3513, and the OSHB Lexical Index files this word under the same root.",
+			"source_note_chirho": "OSHB gender code b means both; the lesson shows it as common, not masculine-only, although Strong's heading lists H3519 as masculine. Sof pasuq ends the verse."
+		}
+	}
+}

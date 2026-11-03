@@ -1,0 +1,9 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"noEmit": true,
+		"allowImportingTsExtensions": true,
+		"types": ["node"]
+	},
+	"include": ["../scripts-chirho/publish-chirho/**/*.ts", "../tests-chirho/publish-chirho/**/*.ts"]
+}

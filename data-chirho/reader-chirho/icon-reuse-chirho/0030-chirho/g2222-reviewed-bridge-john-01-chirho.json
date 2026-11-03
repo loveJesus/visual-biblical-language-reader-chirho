@@ -1,0 +1,277 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g2222-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The sprout is a conceptual mnemonic for life. The listed Greek zoe occurrences express life, including eternal life; the image is not a claim of plant life or a physical event.",
+	"source_icon_id_chirho": "icon-5af11d72042a49048fab4cee6c063937-13-chirho",
+	"source_sha256_chirho": "12cee53f3231f5c0e704246bb3af6a904e5d6d257c38fa08c849081690f06e91",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.19",
+		"token_id_chirho": "20F88",
+		"text_chirho": "חַיִּֽים",
+		"gloss_chirho": "life",
+		"canonical_sha256_chirho": "b418110efe55c85c87e37cdf733b8d10a47a3c49069a99100e5717a935f89bed"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G2222",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "ζωή"
+	},
+	"contextual_meaning_chirho": "life",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.10.10",
+			"token_id_chirho": "John.10.10!16",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "09db657a2ba5caf7740a5c85bb248df850d968c73d4d349953f6d6ac90c33ef9"
+		},
+		{
+			"verse_id_chirho": "John.10.28",
+			"token_id_chirho": "John.10.28!4",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "8d7d74aa2448ec477ab9235793326cd750334fa916dfb5744729dcc2c35bfa8d"
+		},
+		{
+			"verse_id_chirho": "John.5.24",
+			"token_id_chirho": "John.5.24!17",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "f47b05157522abd340a3a3ae57449c16524c59d763e66897935d0915b15d6241"
+		},
+		{
+			"verse_id_chirho": "John.5.24",
+			"token_id_chirho": "John.5.24!31",
+			"text_chirho": "ζωήν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "f47b05157522abd340a3a3ae57449c16524c59d763e66897935d0915b15d6241"
+		},
+		{
+			"verse_id_chirho": "John.5.26",
+			"token_id_chirho": "John.5.26!6",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "3f270a9fb81128e604dec5e514f7fc195f860623c18a6df067cfe172ed5071c8"
+		},
+		{
+			"verse_id_chirho": "John.5.26",
+			"token_id_chirho": "John.5.26!14",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "3f270a9fb81128e604dec5e514f7fc195f860623c18a6df067cfe172ed5071c8"
+		},
+		{
+			"verse_id_chirho": "John.5.29",
+			"token_id_chirho": "John.5.29!9",
+			"text_chirho": "ζωῆς",
+			"gloss_chirho": "of life",
+			"canonical_sha256_chirho": "91f399c66837bdc7aec4500cce2b0dc4388afc3aefc2bf81a22619e91c086cee"
+		},
+		{
+			"verse_id_chirho": "John.5.39",
+			"token_id_chirho": "John.5.39!9",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "7a32ea6750d58bccb2cf7ed010fb973b1e4b1d890972d8ca0ea78e649ff9a27d"
+		},
+		{
+			"verse_id_chirho": "John.5.40",
+			"token_id_chirho": "John.5.40!8",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "2fa6ac14b3c2c58e2df3fc69a04f61fa535c879168f5944b595899b620e09ca3"
+		},
+		{
+			"verse_id_chirho": "John.6.27",
+			"token_id_chirho": "John.6.27!13",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "b4ee887760e60f0f2ea86a061944e72ab00bbcf2dba12769d9be5263cfc01548"
+		},
+		{
+			"verse_id_chirho": "John.6.33",
+			"token_id_chirho": "John.6.33!13",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "09be34a49aea8d83d896b1f3d9aa382090fab84c8191a19778c191e7e1de9fc5"
+		},
+		{
+			"verse_id_chirho": "John.6.35",
+			"token_id_chirho": "John.6.35!10",
+			"text_chirho": "ζωῆς",
+			"gloss_chirho": "of life",
+			"canonical_sha256_chirho": "b686471b09eb04a10689944ac93dabda3620b27bab9ff875fe703e1225165327"
+		},
+		{
+			"verse_id_chirho": "John.6.40",
+			"token_id_chirho": "John.6.40!20",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "4b85afd32d540cadf77d82dc1a22d8059ab5c633a118e40c1e053e86e520338e"
+		},
+		{
+			"verse_id_chirho": "John.6.47",
+			"token_id_chirho": "John.6.47!8",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "be9f71368edd4da36cec8af9ad44b73c5afd849a8e346435f6f60856f191ab59"
+		},
+		{
+			"verse_id_chirho": "John.6.48",
+			"token_id_chirho": "John.6.48!6",
+			"text_chirho": "ζωῆς",
+			"gloss_chirho": "of life",
+			"canonical_sha256_chirho": "eb5024c8b1f8ef5840609abb5454cc40a0642fa78649def063bafc5fb529f468"
+		},
+		{
+			"verse_id_chirho": "John.6.51",
+			"token_id_chirho": "John.6.51!38",
+			"text_chirho": "ζωῆς",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "90f0e1763f112ce0325c9c3fd8065f802df13e34e42cf5cd5ff810a31c8431a5"
+		},
+		{
+			"verse_id_chirho": "John.6.53",
+			"token_id_chirho": "John.6.53!26",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "911ac371327998def9014ffada4e770cc2ec054c327c4013581a91042248a3eb"
+		},
+		{
+			"verse_id_chirho": "John.6.54",
+			"token_id_chirho": "John.6.54!12",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "89a61290c298cf15f8afaa3e2e95b284d7c3cec898b1018756d37509d605a1f4"
+		},
+		{
+			"verse_id_chirho": "John.6.63",
+			"token_id_chirho": "John.6.63!20",
+			"text_chirho": "ζωή",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "d5c77d17482285a049e9ba88451797e65c39af8a646e0abbd4065e9f6d8ddbb8"
+		},
+		{
+			"verse_id_chirho": "John.6.68",
+			"token_id_chirho": "John.6.68!10",
+			"text_chirho": "ζωῆς",
+			"gloss_chirho": "of life",
+			"canonical_sha256_chirho": "7a88af72c704658175d3dd89662af4db7bc1bc6c7a49bd55ce1a99f754afb879"
+		},
+		{
+			"verse_id_chirho": "John.3.15",
+			"token_id_chirho": "John.3.15!8",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "7c4fe1b8e8269c22967ab3c65f8d2d29b229996c40f58fa70736f2f4778fcb7c"
+		},
+		{
+			"verse_id_chirho": "John.3.16",
+			"token_id_chirho": "John.3.16!24",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "8a624ca4a26a798e60a8c117046b381c4620b6ddae80d74c73b3c9c386cad987"
+		},
+		{
+			"verse_id_chirho": "John.3.36",
+			"token_id_chirho": "John.3.36!7",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "2ac80b76a70b804d360944772cc07b68372d852fc8b8f7371cfb2a4cd5222b3a"
+		},
+		{
+			"verse_id_chirho": "John.3.36",
+			"token_id_chirho": "John.3.36!16",
+			"text_chirho": "ζωήν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "2ac80b76a70b804d360944772cc07b68372d852fc8b8f7371cfb2a4cd5222b3a"
+		},
+		{
+			"verse_id_chirho": "John.4.14",
+			"token_id_chirho": "John.4.14!31",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "d1ef365eadd861b0035360e3834eba9f8d8d5fcaf1466b62fcf7a273f8871384"
+		},
+		{
+			"verse_id_chirho": "John.4.36",
+			"token_id_chirho": "John.4.36!9",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "fe0f31d54e6369f9fb4ce913737f0fc0307fdc31c762aa79cb814c3fb42930c2"
+		},
+		{
+			"verse_id_chirho": "John.11.25",
+			"token_id_chirho": "John.11.25!11",
+			"text_chirho": "ζωή",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "d38ebe20a63a65ef02352410defdfd447f75b3b24828401b9cb661fed1162215"
+		},
+		{
+			"verse_id_chirho": "John.14.6",
+			"token_id_chirho": "John.14.6!13",
+			"text_chirho": "ζωή",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "5b5827cf3a11c11529bd5e5b53d5752c74ce916ed4c600da986ef05599f85f35"
+		},
+		{
+			"verse_id_chirho": "John.8.12",
+			"token_id_chirho": "John.8.12!28",
+			"text_chirho": "ζωῆς",
+			"gloss_chirho": "of life",
+			"canonical_sha256_chirho": "1e2d913e98dc1ec685017c2baedf11cca8344cd712b65f0911af8fca5d8701e1"
+		},
+		{
+			"verse_id_chirho": "John.1.4",
+			"token_id_chirho": "John.1.4!3",
+			"text_chirho": "ζωὴ",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "33dbc9a5bfafef6017a9ea0528955c165a19991b1a72d8d8ff66617408985530"
+		},
+		{
+			"verse_id_chirho": "John.1.4",
+			"token_id_chirho": "John.1.4!7",
+			"text_chirho": "ζωὴ",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "33dbc9a5bfafef6017a9ea0528955c165a19991b1a72d8d8ff66617408985530"
+		},
+		{
+			"verse_id_chirho": "John.17.2",
+			"token_id_chirho": "John.17.2!14",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "52ed76942cf21a7715d00356f184fa72b9ed8962b666d7c32c9a60387bbfd7ce"
+		},
+		{
+			"verse_id_chirho": "John.17.3",
+			"token_id_chirho": "John.17.3!6",
+			"text_chirho": "ζωὴ",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "0955c2bf0ba9eafbacd82c6590c627abf9fbdf51ab46b562e89cf0bd92bdd54d"
+		},
+		{
+			"verse_id_chirho": "John.20.31",
+			"token_id_chirho": "John.20.31!18",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "5797e963787c7cec8bf3498d8e373fe71f59b5895a680488a15882a775c8f9d1"
+		},
+		{
+			"verse_id_chirho": "John.12.25",
+			"token_id_chirho": "John.12.25!19",
+			"text_chirho": "ζωὴν",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "1efcd1494f151b8ff0b14965c814e3f8b3f99afb7b37ea4a54f5a524d7a3fa92"
+		},
+		{
+			"verse_id_chirho": "John.12.50",
+			"token_id_chirho": "John.12.50!7",
+			"text_chirho": "ζωὴ",
+			"gloss_chirho": "life",
+			"canonical_sha256_chirho": "782611f1de155a41f5865e6bd04cc535fcd2732dde9f0ce9fdc6bb4d704ee6c7"
+		}
+	]
+}

@@ -1,0 +1,172 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h4148-reviewed-instruction-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "Read the verse gloss sequences for all 30 Proverbs H4148 occurrences. These 21 listed contexts use the educational instruction sense already pictured at 1:2; conjunctions, suffixes and construct state do not change that sense. The book is a learning mnemonic, not a claim that instruction is literally a physical book. Excluded the chastening, stocks, rod/correction and harsh-discipline contexts, along with the anomalous promptly gloss at 13:24; those need their own context review. No root is assigned and no artwork approval is granted.",
+	"source_icon_id_chirho": "icon-1e396358a20743fcaec1369c32ec0883-06-chirho",
+	"source_sha256_chirho": "4b46fa727da90d2f03dcfed4e9067605be4eb6206a3ee25695edb71e6c1ad88f",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.2",
+		"token_id_chirho": "20Qzf",
+		"text_chirho": "וּמוּסָ֑ר",
+		"gloss_chirho": "and instruction",
+		"canonical_sha256_chirho": "85a5d535e18a948e0a6c86a87d1654ad21f8d5de3bdc18a7cf577bf2065eefc7"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H4148",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "מוּסָר"
+	},
+	"contextual_meaning_chirho": "instruction",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho", "lexical-index-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.1.3",
+			"token_id_chirho": "20EVS",
+			"text_chirho": "מוּסַ֣ר",
+			"gloss_chirho": "the instruction of",
+			"canonical_sha256_chirho": "7948ba4005e63b6f2763ae79636f63ed5eb323ad1030e571ce229716c797a65e"
+		},
+		{
+			"verse_id_chirho": "Prov.1.7",
+			"token_id_chirho": "20wrL",
+			"text_chirho": "וּ֝מוּסָ֗ר",
+			"gloss_chirho": "and instruction",
+			"canonical_sha256_chirho": "e8797351bee9ff6d37d73647a263bdd794f9706c590d2937c88bf9bd7bcf1d92"
+		},
+		{
+			"verse_id_chirho": "Prov.1.8",
+			"token_id_chirho": "20NQN",
+			"text_chirho": "מוּסַ֣ר",
+			"gloss_chirho": "the instruction of",
+			"canonical_sha256_chirho": "d94f8728b594e8ef1338f4cd01085ecc1e998f9243849470ae344934cb82c848"
+		},
+		{
+			"verse_id_chirho": "Prov.4.1",
+			"token_id_chirho": "20VFM",
+			"text_chirho": "מ֣וּסַר",
+			"gloss_chirho": "the instruction of",
+			"canonical_sha256_chirho": "196e2ab668f379198418eed7b39c982029e28c215d4edc342d581db69b8437e0"
+		},
+		{
+			"verse_id_chirho": "Prov.4.13",
+			"token_id_chirho": "20i9m",
+			"text_chirho": "בַּמּוּסָ֣ר",
+			"gloss_chirho": "of instruction",
+			"canonical_sha256_chirho": "9c597ae2414e4d02ae6e57bbba097751b8c59861b440af664c73ca33cfc2dddf"
+		},
+		{
+			"verse_id_chirho": "Prov.5.12",
+			"token_id_chirho": "20e65",
+			"text_chirho": "מוּסָ֑ר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "28fc1df0e198ecb9cad16c12cba494fbef2eb127ec59083948ebc17792a63bcf"
+		},
+		{
+			"verse_id_chirho": "Prov.5.23",
+			"token_id_chirho": "20GXC",
+			"text_chirho": "מוּסָ֑ר",
+			"gloss_chirho": "of instruction",
+			"canonical_sha256_chirho": "1c5f2064c60ccfeb7f729cd1196bfd3ac6dbbeaf32c73630e742757db6751d77"
+		},
+		{
+			"verse_id_chirho": "Prov.6.23",
+			"token_id_chirho": "20bmL",
+			"text_chirho": "מוּסָֽר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "dc2b96e396b4fe8f58c6c94427dfd785999b4d044c0098fe543225c97f4a3771"
+		},
+		{
+			"verse_id_chirho": "Prov.8.10",
+			"token_id_chirho": "20bTz",
+			"text_chirho": "מוּסָרִ֥י",
+			"gloss_chirho": "my instruction",
+			"canonical_sha256_chirho": "afd19dcb5604b240806a09d5808df06aa5aa84f5ce9c62f363e3be7ad941bc69"
+		},
+		{
+			"verse_id_chirho": "Prov.8.33",
+			"token_id_chirho": "20kRy",
+			"text_chirho": "מוּסָ֥ר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "fa3d01133b7897705b67d0add90cf2734fe4780cca2f2acf5ace7427b0cf5fbb"
+		},
+		{
+			"verse_id_chirho": "Prov.10.17",
+			"token_id_chirho": "20Wuj",
+			"text_chirho": "מוּסָ֑ר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "ab2bde7cf52e47970620cc7372418e4e353023ceb7c19c2f27173c268ad5ec56"
+		},
+		{
+			"verse_id_chirho": "Prov.12.1",
+			"token_id_chirho": "20gwY",
+			"text_chirho": "מ֭וּסָר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "2259de22d49b156b9af37bd762dc7c9bb6da5373ad1fc99a100a02fadcd90455"
+		},
+		{
+			"verse_id_chirho": "Prov.13.1",
+			"token_id_chirho": "20ztw",
+			"text_chirho": "מ֣וּסַר",
+			"gloss_chirho": "instruction of",
+			"canonical_sha256_chirho": "6bf6c8a3ddc1d81034f0e154d079db12b05ce9ce47ed1844ed60d00a6f266b66"
+		},
+		{
+			"verse_id_chirho": "Prov.15.5",
+			"token_id_chirho": "2075Z",
+			"text_chirho": "מוּסַ֣ר",
+			"gloss_chirho": "instruction of",
+			"canonical_sha256_chirho": "9395622ac5a927805dd23e683c982a42e706c3fcf491ea237472da81ef47a5a1"
+		},
+		{
+			"verse_id_chirho": "Prov.15.32",
+			"token_id_chirho": "20dTc",
+			"text_chirho": "מ֭וּסָר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "dd653ed3da57a89ac88ec566ceae10f656e25244d18191d300d4c3aadbef91a5"
+		},
+		{
+			"verse_id_chirho": "Prov.15.33",
+			"token_id_chirho": "20o1v",
+			"text_chirho": "מוּסַ֣ר",
+			"gloss_chirho": "[is] the instruction of",
+			"canonical_sha256_chirho": "352436193c6b44bc74092ea82dc6ec8d020cff34d20a5e4b1114f1eb1923b76f"
+		},
+		{
+			"verse_id_chirho": "Prov.19.20",
+			"token_id_chirho": "20hmj",
+			"text_chirho": "מוּסָ֑ר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "374feadc1ff643efffd3bd508b643d6aaeb8497ecdf6ad129bd2453c30598f3a"
+		},
+		{
+			"verse_id_chirho": "Prov.19.27",
+			"token_id_chirho": "20Rdh",
+			"text_chirho": "מוּסָ֑ר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "fc7053b8772f2a19e17767ecea00276244430dd64044e49f40f4601ef852705d"
+		},
+		{
+			"verse_id_chirho": "Prov.23.12",
+			"token_id_chirho": "20pYz",
+			"text_chirho": "לַמּוּסָ֣ר",
+			"gloss_chirho": "to instruction",
+			"canonical_sha256_chirho": "9524f7b32ad82a765a1be4a2f3811d3c3f86d23da8962d2c48f896fb299ba284"
+		},
+		{
+			"verse_id_chirho": "Prov.23.23",
+			"token_id_chirho": "204SZ",
+			"text_chirho": "וּמוּסָ֣ר",
+			"gloss_chirho": "and instruction",
+			"canonical_sha256_chirho": "36159dab836e2ca2f4bc9f2847b62fdd56385fbd6f16ad32e0f9fa14b66e1b88"
+		},
+		{
+			"verse_id_chirho": "Prov.24.32",
+			"token_id_chirho": "20Wo6",
+			"text_chirho": "מוּסָֽר",
+			"gloss_chirho": "instruction",
+			"canonical_sha256_chirho": "bfec2842a04e238d1a8a25dbb2249de43b48e899a8aecda775dff662578d8bf6"
+		}
+	]
+}

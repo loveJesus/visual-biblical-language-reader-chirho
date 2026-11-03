@@ -1,0 +1,81 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g1093-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The soil patch represents physical land/ground in the listed country, shore, writing-on-ground and grain-in-ground contexts. The broader earthly-origin expressions are not included.",
+	"source_icon_id_chirho": "icon-46cee3348975438a9f24f7ab877af3ff-00-chirho",
+	"source_sha256_chirho": "1aa4b21ef2628bf22fad14217c67d09cf3643f2a466f8370ac570df84b7da6e8",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.21",
+		"token_id_chirho": "20Ygn",
+		"text_chirho": "אָ֑רֶץ",
+		"gloss_chirho": "the land",
+		"canonical_sha256_chirho": "89f8cb70debf13edaf93ed106f6c2df3371f7b71bb0ef135d392528bcbb2bccf"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G1093",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "γῆ"
+	},
+	"contextual_meaning_chirho": "land or ground",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.6.21",
+			"token_id_chirho": "John.6.21!15",
+			"text_chirho": "γῆς",
+			"gloss_chirho": "land",
+			"canonical_sha256_chirho": "b390cc4d01baa6d05a1917d8c498cb76c6567028ea5864e1650bc4d51a968e46"
+		},
+		{
+			"verse_id_chirho": "John.21.8",
+			"token_id_chirho": "John.21.8!14",
+			"text_chirho": "γῆς",
+			"gloss_chirho": "land",
+			"canonical_sha256_chirho": "f3bb796cedb234f47413b05f7e14a3ea21d27a1cba5c4a24b1ecb1927047f2f1"
+		},
+		{
+			"verse_id_chirho": "John.21.9",
+			"token_id_chirho": "John.21.9!6",
+			"text_chirho": "γῆν",
+			"gloss_chirho": "land",
+			"canonical_sha256_chirho": "a7d0a330927b40ea598ba683b6d21282296439e8e9d04d2ce11490439d03bab2"
+		},
+		{
+			"verse_id_chirho": "John.21.11",
+			"token_id_chirho": "John.21.11!10",
+			"text_chirho": "γῆν",
+			"gloss_chirho": "land",
+			"canonical_sha256_chirho": "eecae28b3928bd1e8c722355f5e8bbd731249a0b11d5e94dd29470b58c2c27d3"
+		},
+		{
+			"verse_id_chirho": "John.3.22",
+			"token_id_chirho": "John.3.22!13",
+			"text_chirho": "γῆν",
+			"gloss_chirho": "land",
+			"canonical_sha256_chirho": "b9444ab4b8066303c2b7d340a9e2348a307257c67f5fd4bf0e74a866311ab285"
+		},
+		{
+			"verse_id_chirho": "John.8.6",
+			"token_id_chirho": "John.8.6!20",
+			"text_chirho": "γῆν",
+			"gloss_chirho": "ground",
+			"canonical_sha256_chirho": "67117ff89a54f95b05f64dd9f69f3a463b89dda6556847c3b0dafd6330e57c5d"
+		},
+		{
+			"verse_id_chirho": "John.8.8",
+			"token_id_chirho": "John.8.8!8",
+			"text_chirho": "γῆν",
+			"gloss_chirho": "ground",
+			"canonical_sha256_chirho": "921c864d446a3d31282d0d42fd1dc1238dbe157dcd577705401dde8dcfe5c1cd"
+		},
+		{
+			"verse_id_chirho": "John.12.24",
+			"token_id_chirho": "John.12.24!14",
+			"text_chirho": "γῆν",
+			"gloss_chirho": "ground",
+			"canonical_sha256_chirho": "7953f4c57d23b267994517d01f852fee8d49698f1c2dca564eb01b69420c6d60"
+		}
+	]
+}

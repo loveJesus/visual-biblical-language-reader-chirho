@@ -1,0 +1,200 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h259-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The single pebble is a quantity-one mnemonic, not a claim about the object being counted. These tokens explicitly retain the numeral one.",
+	"source_icon_id_chirho": "icon-48ecc67d82104a6599bbc8085781fe5d-10-chirho",
+	"source_sha256_chirho": "f52bd92bf2bff5f8b31414488b01413ca9d656b12b70e78860a202362dad4026",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.14",
+		"token_id_chirho": "20NPq",
+		"text_chirho": "אֶ֝חָ֗ד",
+		"gloss_chirho": "one",
+		"canonical_sha256_chirho": "3e33c1d014cefb6560043054bd1ef9b41c6cf60a525986688b16ec0b2a109017"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H259",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "אֶחָד"
+	},
+	"contextual_meaning_chirho": "one",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.1.5",
+			"token_id_chirho": "01NFp",
+			"text_chirho": "אֶחָֽד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "8e646115991c68ec7158051cbd53130ac241f7fb80919fe2643d4391f95816f6"
+		},
+		{
+			"verse_id_chirho": "Gen.1.9",
+			"token_id_chirho": "01dv1",
+			"text_chirho": "אֶחָ֔ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "32df9690c1ea4d75965d9864fd192af4cba9fb6acb4b6c578cbb25cc446af103"
+		},
+		{
+			"verse_id_chirho": "Gen.2.21",
+			"token_id_chirho": "01fjK",
+			"text_chirho": "אַחַת֙",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "1eb8f821c2110dc87feb3590a3cc73ac97c0cd11d9f6d200a569164ba497267d"
+		},
+		{
+			"verse_id_chirho": "Gen.2.24",
+			"token_id_chirho": "01RGz",
+			"text_chirho": "אֶחָֽד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "a05de71ebb85db71226cafda6e6bb96883dc5a86426ff4f216b123649e58d4c1"
+		},
+		{
+			"verse_id_chirho": "Gen.11.1",
+			"token_id_chirho": "01xj3",
+			"text_chirho": "אֶחָ֑ת",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "cf03b3a64999f4cbd68353f876f7a90586215505900482521c72e2fb57b58d48"
+		},
+		{
+			"verse_id_chirho": "Gen.11.1",
+			"token_id_chirho": "01rNq",
+			"text_chirho": "אֲחָדִֽים",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "cf03b3a64999f4cbd68353f876f7a90586215505900482521c72e2fb57b58d48"
+		},
+		{
+			"verse_id_chirho": "Gen.11.6",
+			"token_id_chirho": "01m63",
+			"text_chirho": "אֶחָד֙",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "116f73e5abc182d17fc6f859b4c63fc652af6a1088bb4f1964eb5a48ac6f234c"
+		},
+		{
+			"verse_id_chirho": "Gen.11.6",
+			"token_id_chirho": "013aE",
+			"text_chirho": "אַחַת֙",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "116f73e5abc182d17fc6f859b4c63fc652af6a1088bb4f1964eb5a48ac6f234c"
+		},
+		{
+			"verse_id_chirho": "Gen.27.38",
+			"token_id_chirho": "01H9q",
+			"text_chirho": "אַחַ֤ת",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "aeafb5fec348f34b6ba133b692db9a4f110eb62f6a3d62021acde31cab998802"
+		},
+		{
+			"verse_id_chirho": "Gen.32.9",
+			"token_id_chirho": "01tLk",
+			"text_chirho": "הָאַחַ֖ת",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "cf1d6abaa6a0c0064f9d415976accb4f359ddcbdba462018e08f5eaa42789517"
+		},
+		{
+			"verse_id_chirho": "Gen.33.13",
+			"token_id_chirho": "01dLn",
+			"text_chirho": "אֶחָ֔ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "4e4396398573956ed2932f29d9cb3b11edf80169bc3ca25eff6c274d624303d3"
+		},
+		{
+			"verse_id_chirho": "Gen.34.16",
+			"token_id_chirho": "018N2",
+			"text_chirho": "אֶחָֽד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "5fefd4469609ebce11b6b29652cb8d633e19aae0d64f9b47232f1a54f106728d"
+		},
+		{
+			"verse_id_chirho": "Gen.34.22",
+			"token_id_chirho": "018r7",
+			"text_chirho": "אֶחָ֑ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "b9c7abb35b14311bf56acbf3e597c3ff60c0c4ea2f0da0a1a01ab4bd90d88181"
+		},
+		{
+			"verse_id_chirho": "Gen.40.5",
+			"token_id_chirho": "018NZ",
+			"text_chirho": "אֶחָ֔ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "3de66ca11b7a83a5a21e510f1f80ee293b0b1ee1ee7ec5b09f9b175543d5fe12"
+		},
+		{
+			"verse_id_chirho": "Gen.41.5",
+			"token_id_chirho": "012uj",
+			"text_chirho": "אֶחָ֖ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "ae874e2b8c6cc000f68a92bc0e91e8ec2a9bc981184447a4f5abc4bcfa9e071e"
+		},
+		{
+			"verse_id_chirho": "Gen.41.11",
+			"token_id_chirho": "01wSi",
+			"text_chirho": "אֶחָ֖ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "9aae05bf2b017a91d145a8aac3829ec77703b73aaf815a01100ce5930ee54dbf"
+		},
+		{
+			"verse_id_chirho": "Gen.41.22",
+			"token_id_chirho": "01XbB",
+			"text_chirho": "אֶחָ֖ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "046d4dcca87c3201ad3826a36de0fbe8c4b12c5185a81138d83f8cf5326096dc"
+		},
+		{
+			"verse_id_chirho": "Gen.41.25",
+			"token_id_chirho": "01CyX",
+			"text_chirho": "אֶחָ֣ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "2419610a076c5ec267c1bfaa599585d9e7b9850d5e05e6c8c427649d5ee7c9d3"
+		},
+		{
+			"verse_id_chirho": "Gen.41.26",
+			"token_id_chirho": "01QFU",
+			"text_chirho": "אֶחָ֥ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "48933d47fa36b18e2c2b331c64bc4b7be2575748f5d3dfccd9418b965305f85c"
+		},
+		{
+			"verse_id_chirho": "Gen.42.11",
+			"token_id_chirho": "01M5b",
+			"text_chirho": "אֶחָ֖ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "ebc8117752363cb3b299854952159b9ad348860838975b092e5456bcdb109770"
+		},
+		{
+			"verse_id_chirho": "Gen.42.13",
+			"token_id_chirho": "01Vrd",
+			"text_chirho": "אֶחָ֖ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "40a6d88842adeaf87cf57544e61d0cfaeaa62991e50315fbbb6a5143540b665c"
+		},
+		{
+			"verse_id_chirho": "Gen.42.16",
+			"token_id_chirho": "01L9c",
+			"text_chirho": "אֶחָד֮",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "4c368ee8f46ba7c4243035974600cea060538c501ae5fb9ff32545fd84685e79"
+		},
+		{
+			"verse_id_chirho": "Gen.42.19",
+			"token_id_chirho": "01wBd",
+			"text_chirho": "אֶחָ֔ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "efbc8635db8a59e211369623223c695a832c36d205413ec340f0efb7c75fb2c3"
+		},
+		{
+			"verse_id_chirho": "Gen.42.33",
+			"token_id_chirho": "01mzp",
+			"text_chirho": "הָֽאֶחָד֙",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "4a04d47996aadfb9a92b2698f806719a705058d2cd2d77c82f1419ac072b1f8b"
+		},
+		{
+			"verse_id_chirho": "Gen.48.22",
+			"token_id_chirho": "017H3",
+			"text_chirho": "אַחַ֖ד",
+			"gloss_chirho": "one",
+			"canonical_sha256_chirho": "609395ec19887e199e75a4f050386dc8ce474c11ba514b5d6e69d68fe6629a48"
+		}
+	]
+}

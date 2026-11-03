@@ -1,0 +1,34 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Jonah",
+	"label_chirho": "Jonah",
+	"language_chirho": "he",
+	"revision_chirho": "3d15126fb1ef74867fc1434be1942e837932691f",
+	"source_sha256_chirho": "1e1afcc3aaba1399d5c884ee106894c6bfca87c8c81fa57783ab75a923eee17d",
+	"chapters_chirho": [
+		{
+			"number_chirho": 1,
+			"verse_count_chirho": 16,
+			"path_chirho": "/content-chirho/jonah-chirho/chapter-01-chirho.json",
+			"sha256_chirho": "91a3f875b2763067b6e08276499d3035f27f752ea2663daafd00d038979c8fa7"
+		},
+		{
+			"number_chirho": 2,
+			"verse_count_chirho": 11,
+			"path_chirho": "/content-chirho/jonah-chirho/chapter-02-chirho.json",
+			"sha256_chirho": "b67a044e500f9269378d1f9e333c8c1b60a4ff4e0a34f820c4bed938acb1de69"
+		},
+		{
+			"number_chirho": 3,
+			"verse_count_chirho": 10,
+			"path_chirho": "/content-chirho/jonah-chirho/chapter-03-chirho.json",
+			"sha256_chirho": "828f8a25fb34d82a8e74abb7561af48ef920ed44e26f1161ab3ae20116ffda8e"
+		},
+		{
+			"number_chirho": 4,
+			"verse_count_chirho": 11,
+			"path_chirho": "/content-chirho/jonah-chirho/chapter-04-chirho.json",
+			"sha256_chirho": "bc5f1ed507dbc8d28b5007a14f5ebbb611f8d546f2c8bc57d2ad9a0e9641e922"
+		}
+	]
+}

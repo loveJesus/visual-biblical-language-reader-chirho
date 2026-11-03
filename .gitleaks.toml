@@ -1,0 +1,14 @@
+# For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
+
+[extend]
+useDefault = true
+
+# These exact fields are independently recomputed public pronunciation SHA-256 cache keys.
+# Preserve every other detector, field and path, including API keys in these same files.
+[[allowlists]]
+description = "Public pronunciation cache hashes in the library and source-bound fixtures"
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''(?:^|/)data-chirho/bible-chirho/library-chirho/audio-missing-chirho\.json$''', '''(?:^|/)tests-chirho/fixtures-chirho/audio-chirho/(?:proverbs-word|whole-bible-words)-chirho\.json$''']
+regexTarget = "line"
+regexes = ['''^\s*"key_chirho": "[a-f0-9]{64}",?\s*$''']

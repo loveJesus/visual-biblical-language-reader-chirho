@@ -1,0 +1,88 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g740-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The loaf represents literal bread/loaves in the listed feeding and meal contexts. The later Bread of Life discourse is outside this initial bridge.",
+	"source_icon_id_chirho": "proverbs-worker-icon-15-chirho",
+	"source_sha256_chirho": "a3591d200cf51e226645a3f14ae92901a78b49bd242714621bcf7d3f91ecf174",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.6.26",
+		"token_id_chirho": "20Tgd",
+		"text_chirho": "לָ֥חֶם",
+		"gloss_chirho": "bread",
+		"canonical_sha256_chirho": "d027749bca8d15c80ad40bc2ed0f3ec0ef1eee7a1f4b7a0c69bebc549689a295"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G740",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "ἄρτος"
+	},
+	"contextual_meaning_chirho": "bread",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.6.5",
+			"token_id_chirho": "John.6.5!20",
+			"text_chirho": "ἄρτους",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "8f46a27d4623425928361300e36ce3bee963fa87145d3315375c20bddb0fac19"
+		},
+		{
+			"verse_id_chirho": "John.6.7",
+			"token_id_chirho": "John.6.7!7",
+			"text_chirho": "ἄρτοι",
+			"gloss_chirho": "of loaves",
+			"canonical_sha256_chirho": "d714019242c777f95719120aabe58aba95bb4ca269eceb7b5c66c2f3e7a035bd"
+		},
+		{
+			"verse_id_chirho": "John.6.9",
+			"token_id_chirho": "John.6.9!7",
+			"text_chirho": "ἄρτους",
+			"gloss_chirho": "loaves",
+			"canonical_sha256_chirho": "c8b9f61c1750f1d5ce6757ea577e6b5eaedb72db4c540a10526b5a6cd87378ba"
+		},
+		{
+			"verse_id_chirho": "John.6.11",
+			"token_id_chirho": "John.6.11!4",
+			"text_chirho": "ἄρτους",
+			"gloss_chirho": "loaves",
+			"canonical_sha256_chirho": "18c58917ddc16f8b75796f5bd5754396584bb8b358b02cb6a2c4d94869b05a16"
+		},
+		{
+			"verse_id_chirho": "John.6.13",
+			"token_id_chirho": "John.6.13!11",
+			"text_chirho": "ἄρτων",
+			"gloss_chirho": "loaves",
+			"canonical_sha256_chirho": "358fd56fd72b118551addc96a646ed15927b8720cd2b85b499bfb00a860f3905"
+		},
+		{
+			"verse_id_chirho": "John.6.23",
+			"token_id_chirho": "John.6.23!12",
+			"text_chirho": "ἄρτον",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "353aa5fd0eec984b32357d75c11f449a287f3c833c5a3fc150aa486ac0a24949"
+		},
+		{
+			"verse_id_chirho": "John.6.26",
+			"token_id_chirho": "John.6.26!22",
+			"text_chirho": "ἄρτων",
+			"gloss_chirho": "loaves",
+			"canonical_sha256_chirho": "582eb80af2720f8038e47a871a32d55613ae7dc314bf264301594fdfaa1ae317"
+		},
+		{
+			"verse_id_chirho": "John.21.9",
+			"token_id_chirho": "John.21.9!14",
+			"text_chirho": "ἄρτον",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "a7d0a330927b40ea598ba683b6d21282296439e8e9d04d2ce11490439d03bab2"
+		},
+		{
+			"verse_id_chirho": "John.21.13",
+			"token_id_chirho": "John.21.13!6",
+			"text_chirho": "ἄρτον",
+			"gloss_chirho": "bread",
+			"canonical_sha256_chirho": "7d28fb7f1422be9a4689d05ea0ba964caa50522df1509589fd56d199d5a5d52f"
+		}
+	]
+}

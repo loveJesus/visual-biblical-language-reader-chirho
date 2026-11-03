@@ -1,0 +1,74 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "g5495-reviewed-bridge-john-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The open hand represents the physical body part in the listed attempts to seize, strikes and visible hands. Possession/security metaphors are not included in this initial bridge.",
+	"source_icon_id_chirho": "proverbs-worker-icon-04-chirho",
+	"source_sha256_chirho": "d3c4916188e081ea793b3663742cf0584124306bbd527aee4a996a760f8d6e25",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.24",
+		"token_id_chirho": "20rTK",
+		"text_chirho": "יָ֝דִ֗י",
+		"gloss_chirho": "my hand",
+		"canonical_sha256_chirho": "e2fbc8eec7b485e5fec51b2503e970081e88056f6f2ec8d707f152d9c39c37fe"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "G5495",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "χείρ"
+	},
+	"contextual_meaning_chirho": "hand",
+	"evidence_refs_chirho": ["nestle1904-morph-chirho", "berean-glosses-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "John.20.20",
+			"token_id_chirho": "John.20.20!7",
+			"text_chirho": "χεῖρας",
+			"gloss_chirho": "hands",
+			"canonical_sha256_chirho": "0964085bc6c2d7c3c5158731ce5438dea9d3a7220ee416e46786dc4bb57ac189"
+		},
+		{
+			"verse_id_chirho": "John.20.25",
+			"token_id_chirho": "John.20.25!19",
+			"text_chirho": "χερσὶν",
+			"gloss_chirho": "hands",
+			"canonical_sha256_chirho": "737f608dc50e986ca1ac2d8668861e83dd61500ddfc15ef1943a75e2f9189d61"
+		},
+		{
+			"verse_id_chirho": "John.20.25",
+			"token_id_chirho": "John.20.25!39",
+			"text_chirho": "χεῖρα",
+			"gloss_chirho": "hand",
+			"canonical_sha256_chirho": "737f608dc50e986ca1ac2d8668861e83dd61500ddfc15ef1943a75e2f9189d61"
+		},
+		{
+			"verse_id_chirho": "John.20.27",
+			"token_id_chirho": "John.20.27!13",
+			"text_chirho": "χεῖράς",
+			"gloss_chirho": "hands",
+			"canonical_sha256_chirho": "ef23cc752183caee667a84bbb33ad966c1dab6a3c9f9d266e00654362e26c10f"
+		},
+		{
+			"verse_id_chirho": "John.20.27",
+			"token_id_chirho": "John.20.27!18",
+			"text_chirho": "χεῖρά",
+			"gloss_chirho": "hand",
+			"canonical_sha256_chirho": "ef23cc752183caee667a84bbb33ad966c1dab6a3c9f9d266e00654362e26c10f"
+		},
+		{
+			"verse_id_chirho": "John.7.30",
+			"token_id_chirho": "John.7.30!11",
+			"text_chirho": "χεῖρα",
+			"gloss_chirho": "hand",
+			"canonical_sha256_chirho": "76496773ad6035dd1b98ce054861a6a8de7d72a1cc99c4850492eea73abb2ae1"
+		},
+		{
+			"verse_id_chirho": "John.7.44",
+			"token_id_chirho": "John.7.44!14",
+			"text_chirho": "χεῖρας",
+			"gloss_chirho": "hands",
+			"canonical_sha256_chirho": "2a369693f4e23dd3661d003f3fb93da6b53a4043280b96251d58cf203ad7f142"
+		}
+	]
+}

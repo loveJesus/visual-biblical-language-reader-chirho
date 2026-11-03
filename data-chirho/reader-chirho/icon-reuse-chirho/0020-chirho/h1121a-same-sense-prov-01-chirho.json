@@ -1,0 +1,137 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h1121a-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The son portrait represents filial relationship in these listed My son addresses. It does not assert the age or historical identity of the addressee.",
+	"source_icon_id_chirho": "proverbs-worker-v2-icon-02-chirho",
+	"source_sha256_chirho": "438b10c30d3534b6178f65e6182e519e7da822d8c6d59294fe313d9869e6dd80",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.8",
+		"token_id_chirho": "20Y3z",
+		"text_chirho": "בְּ֭נִי",
+		"gloss_chirho": "My son",
+		"canonical_sha256_chirho": "d94f8728b594e8ef1338f4cd01085ecc1e998f9243849470ae344934cb82c848"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H1121",
+		"lemma_augment_chirho": "a",
+		"lexical_form_chirho": "בֵּן"
+	},
+	"contextual_meaning_chirho": "son",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.1.10",
+			"token_id_chirho": "20Xw6",
+			"text_chirho": "בְּנִ֡י",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "236bfaea6b220af20c6e41edd03a47d66ec46dd392d609f92c22179e2ec6f558"
+		},
+		{
+			"verse_id_chirho": "Prov.1.15",
+			"token_id_chirho": "20LJh",
+			"text_chirho": "בְּנִ֗י",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "a2c168ca618f3bf0204842c64fffc502bb5531f8198f868d384fb5a9dd2644f3"
+		},
+		{
+			"verse_id_chirho": "Prov.2.1",
+			"token_id_chirho": "20gV8",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "eb21dea8c4421177c53f93dc87eec6d466ab88d09fe1dafcec32ce248ecf592e"
+		},
+		{
+			"verse_id_chirho": "Prov.3.1",
+			"token_id_chirho": "20JMT",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "9cdf73249d8bd25473e02d5cd2d5a4c175856f33eb2259b90c9155434dec4c4f"
+		},
+		{
+			"verse_id_chirho": "Prov.3.11",
+			"token_id_chirho": "20MVq",
+			"text_chirho": "בְּנִ֣י",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "9f14084125cfc4e4687e5a91b0f51495a16e8b5e3196a162483ce118beee2d4e"
+		},
+		{
+			"verse_id_chirho": "Prov.3.21",
+			"token_id_chirho": "20pAL",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "7e838d26a45e7fe73036323727923374500faaae21b11c3ee7e75501c4997c44"
+		},
+		{
+			"verse_id_chirho": "Prov.4.20",
+			"token_id_chirho": "20y1Z",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "a49acb5c54cfc38a1ccf3ba7156e47ff244db4d784f298f7cc40f94139251f89"
+		},
+		{
+			"verse_id_chirho": "Prov.5.1",
+			"token_id_chirho": "20uXm",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "687185a049a9d722525790ca4a68f0098474b93905881e7c60c835ec0be6596e"
+		},
+		{
+			"verse_id_chirho": "Prov.6.1",
+			"token_id_chirho": "20GdR",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "8d66c2562bb9c29bc21969453784f1fe558d59715b0836974b16d6ac0d63bb6c"
+		},
+		{
+			"verse_id_chirho": "Prov.6.20",
+			"token_id_chirho": "20NYp",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "bbff50311e9ba3ef39c7b1a12c22677624f300125b8d9e3d0421b2ffc5b22565"
+		},
+		{
+			"verse_id_chirho": "Prov.7.1",
+			"token_id_chirho": "20sk8",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "a3197a42d49ffc49c2e9c26b61f77c8196ea5c0943456207bbf21607f4bffcbc"
+		},
+		{
+			"verse_id_chirho": "Prov.23.15",
+			"token_id_chirho": "20G2M",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "e37f8dd6b2db820d2906aab722048c910564fbc51961d18dbc16733af7cdf3a5"
+		},
+		{
+			"verse_id_chirho": "Prov.23.26",
+			"token_id_chirho": "20Cts",
+			"text_chirho": "בְנִ֣י",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "0201f362b7f56c2294ff080a2facb288fe5cb37908ed6085cfe2716525c8a865"
+		},
+		{
+			"verse_id_chirho": "Prov.24.13",
+			"token_id_chirho": "20tWF",
+			"text_chirho": "בְּנִ֣י",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "f920194b1649a232b8f5dc63793f8374c830039c5bc980be170628a6d4bb6d7f"
+		},
+		{
+			"verse_id_chirho": "Prov.24.21",
+			"token_id_chirho": "20aga",
+			"text_chirho": "בְּנִ֣י",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "744e03573605d9b5ce21d1e0c6bc8955b7f224fa70acfe6b22ec3cfb90e61b26"
+		},
+		{
+			"verse_id_chirho": "Prov.27.11",
+			"token_id_chirho": "20NoG",
+			"text_chirho": "בְּ֭נִי",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "0777960329553e5a91d777964616e4c55f21534a915b7507f7a76929f95f49e2"
+		}
+	]
+}

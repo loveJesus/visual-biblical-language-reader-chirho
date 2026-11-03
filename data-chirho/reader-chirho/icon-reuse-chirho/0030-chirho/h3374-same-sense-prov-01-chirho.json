@@ -1,0 +1,60 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3374-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "All five listed clauses explicitly say fear of Yahweh. The kneeling figure represents reverence in those clauses, not generic fright or fear of people.",
+	"source_icon_id_chirho": "icon-df239fb10476473c9660c1ceace52cc0-13-chirho",
+	"source_sha256_chirho": "44077fd2f6fd92b98156f4db30e916978c393162f0bc19d52e560118447df1f2",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.7",
+		"token_id_chirho": "20KvS",
+		"text_chirho": "יִרְאַ֣ת",
+		"gloss_chirho": "The fear of",
+		"canonical_sha256_chirho": "e8797351bee9ff6d37d73647a263bdd794f9706c590d2937c88bf9bd7bcf1d92"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3374",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "יִרְאָה"
+	},
+	"contextual_meaning_chirho": "fear or reverence",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.8.13",
+			"token_id_chirho": "20aFY",
+			"text_chirho": "יִֽרְאַ֣ת",
+			"gloss_chirho": "The fear of",
+			"canonical_sha256_chirho": "8a5c44e99e7e626542ac651868655b947e2a104d40c5a0e59dafb464fa4dccc5"
+		},
+		{
+			"verse_id_chirho": "Prov.10.27",
+			"token_id_chirho": "20LxY",
+			"text_chirho": "יִרְאַ֣ת",
+			"gloss_chirho": "The fear of",
+			"canonical_sha256_chirho": "68fbbcfda990258ca0cc7ac5da86f0101c45e1700363b5286872d8e7169a3846"
+		},
+		{
+			"verse_id_chirho": "Prov.14.27",
+			"token_id_chirho": "20WoY",
+			"text_chirho": "יִרְאַ֣ת",
+			"gloss_chirho": "The fear of",
+			"canonical_sha256_chirho": "e50bcb0b3f34c24ba5cab0bb7c106c32e14af91743a21611fb18e396abb8752e"
+		},
+		{
+			"verse_id_chirho": "Prov.15.33",
+			"token_id_chirho": "20gzF",
+			"text_chirho": "יִרְאַ֣ת",
+			"gloss_chirho": "The fear of",
+			"canonical_sha256_chirho": "352436193c6b44bc74092ea82dc6ec8d020cff34d20a5e4b1114f1eb1923b76f"
+		},
+		{
+			"verse_id_chirho": "Prov.19.23",
+			"token_id_chirho": "20xWi",
+			"text_chirho": "יִרְאַ֣ת",
+			"gloss_chirho": "The fear of",
+			"canonical_sha256_chirho": "bbe54d33fdcc38e0d2f0e0cc8661922f31942ace49f117d0d1f5b1bf0b1b666a"
+		}
+	]
+}

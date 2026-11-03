@@ -1,0 +1,1051 @@
+/* For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) */
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+:root {
+	font-family: var(--sans-chirho);
+	color: #293c34;
+	background: #f6f4ed;
+	font-synthesis: none;
+	--ink-chirho: #293c34;
+	--quiet-chirho: #69746b;
+	--line-chirho: #dadfd3;
+	--serif-chirho: Georgia, 'Times New Roman', serif;
+	--sans-chirho: 'Helvetica Neue', Arial, sans-serif;
+	--hebrew-chirho: 'SBL Hebrew', 'Ezra SIL', 'Noto Serif Hebrew', 'Times New Roman', serif;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+button,
+summary,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+button,
+summary {
+	cursor: pointer;
+}
+a {
+	color: inherit;
+	text-underline-offset: 4px;
+}
+button {
+	font: inherit;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+	outline: 2px solid #51785c;
+	outline-offset: 4px;
+}
+[hidden] {
+	display: none !important;
+}
+.page-shell-chirho {
+	max-width: 1384px;
+	padding: 0 52px;
+	margin: auto;
+}
+.site-header-chirho {
+	min-height: 112px;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	border-bottom: 1px solid var(--line-chirho);
+}
+.wordmark-chirho {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	font: 34px var(--serif-chirho);
+	letter-spacing: -1.6px;
+}
+.wordmark-symbol-chirho {
+	color: #9e553d;
+	font: 25px var(--serif-chirho);
+	letter-spacing: 0;
+}
+.wordmark-dot-chirho {
+	color: #9e553d;
+	margin-left: -9px;
+}
+.header-note-chirho {
+	font-size: 12px;
+	color: var(--quiet-chirho);
+	letter-spacing: 0.03em;
+}
+.local-badge-chirho {
+	margin-left: auto;
+	border: 1px solid #d3d9ca;
+	border-radius: 30px;
+	padding: 7px 13px;
+	font-size: 11px;
+	color: #65705c;
+}
+.lesson-heading-chirho {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 46px 0 26px;
+}
+.eyebrow-chirho {
+	margin: 0 0 10px;
+	font-size: 10px;
+	letter-spacing: 0.16em;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #7d6950;
+}
+h1 {
+	font: 40px/1.2 var(--serif-chirho);
+	letter-spacing: -1.3px;
+	margin: 0;
+}
+h2 {
+	font: 29px/1.25 var(--serif-chirho);
+	letter-spacing: -0.7px;
+	margin: 0;
+}
+.passage-title-chirho {
+	font: 40px/1.2 var(--serif-chirho);
+	letter-spacing: -1.3px;
+}
+.lesson-count-chirho {
+	font: 15px var(--serif-chirho);
+}
+.lesson-count-chirho span {
+	color: #b7bcaf;
+	margin: 0 8px;
+}
+.reading-grid-chirho {
+	display: grid;
+	grid-template-columns: 1.08fr 1fr;
+	border: 1px solid #d6ddcd;
+	border-radius: 12px;
+	overflow: hidden;
+	background: #fcfcf7;
+	box-shadow: 0 5px 18px #263a2d04;
+}
+.verse-panel-chirho {
+	padding: 30px 30px 24px;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+.panel-label-chirho {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.13em;
+	color: #697966;
+	margin: 0 0 6px;
+}
+.reader-instruction-chirho {
+	font: 20px/1.4 var(--serif-chirho);
+	color: #72816e;
+	margin: 0;
+}
+.verse-chirho {
+	font: 43px/2.25 var(--hebrew-chirho);
+	text-align: right;
+	padding: 38px 0 26px;
+	overflow-wrap: normal;
+}
+.word-unit-chirho {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	vertical-align: top;
+	padding-top: 13px;
+	padding-bottom: 3px;
+}
+.word-surface-chirho {
+	position: relative;
+	display: inline-block;
+	white-space: nowrap;
+	border-radius: 4px;
+	padding: 0 4px;
+	border-bottom: 3px solid transparent;
+	line-height: 1.5;
+}
+.affix-dot-chirho {
+	font-size: 0.65em;
+	color: #7c877e;
+	padding: 0 1px;
+}
+.word-surface-chirho sup {
+	position: absolute;
+	top: -15px;
+	font:
+		13px/1 Georgia,
+		serif;
+	color: #5b665f;
+	direction: ltr;
+}
+.state-marker-chirho {
+	left: 50%;
+	margin-left: -9px;
+}
+.stem-marker-chirho {
+	left: 2px;
+}
+.conjugation-marker-chirho {
+	right: 2px;
+}
+.word-surface-chirho.pattern-solid-chirho::before,
+.word-surface-chirho.pattern-dotted-chirho::before {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 2px;
+	right: 2px;
+	border-top: 3px solid #dd7b24;
+}
+.word-surface-chirho.pattern-dotted-chirho::before {
+	border-top-style: dotted;
+}
+.sticker-chirho {
+	display: inline-flex;
+	width: 46px;
+	height: 46px;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid;
+	border-radius: 5px;
+	font:
+		17px/1 Arial,
+		sans-serif;
+	color: #9ea69e;
+	margin-top: 0;
+}
+.sticker-chirho.unknown-pos-chirho {
+	border-style: dashed;
+}
+.verse-bottom-chirho {
+	margin-top: auto;
+}
+.small-note-chirho {
+	font-size: 11px;
+	line-height: 1.6;
+	color: var(--quiet-chirho);
+}
+.translation-chirho {
+	border-top: 1px solid #e1e5da;
+	margin-top: 18px;
+	padding-top: 16px;
+}
+.translation-chirho summary {
+	list-style: none;
+	font-size: 12px;
+	font-weight: 500;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.translation-chirho summary::-webkit-details-marker {
+	display: none;
+}
+.translation-chirho[open] summary span {
+	transform: rotate(45deg);
+}
+.translation-chirho div {
+	padding-top: 6px;
+}
+.translation-chirho div p {
+	font: 19px/1.5 var(--serif-chirho);
+}
+small {
+	font-size: 10px;
+	color: var(--quiet-chirho);
+	line-height: 1.6;
+}
+.scene-panel-chirho {
+	margin: 0;
+	background: #efeadd;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+.scene-panel-chirho img {
+	width: 100%;
+	height: 100%;
+	min-height: 340px;
+	object-fit: cover;
+	flex: 1;
+}
+.scene-panel-chirho figcaption {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 5px;
+	padding: 14px 20px;
+	font-size: 10px;
+	color: #6f6c5f;
+	background: #efede3;
+}
+.scene-panel-chirho figcaption > span:last-child {
+	font-size: 9px;
+	margin-left: auto;
+}
+.scene-caption-mark-chirho {
+	font-size: 16px;
+	margin-right: 3px;
+}
+.grammar-section-chirho,
+.words-section-chirho,
+.source-section-chirho {
+	margin-top: 52px;
+}
+.section-heading-chirho {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	gap: 20px;
+	margin-bottom: 23px;
+}
+.section-heading-chirho > p {
+	font-size: 11px;
+	color: var(--quiet-chirho);
+	margin: 0 0 3px;
+}
+.grammar-legend-chirho {
+	margin: 0;
+	border-top: 1px solid var(--line-chirho);
+}
+.legend-row-chirho {
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	border-bottom: 1px solid var(--line-chirho);
+	padding: 13px 0;
+	align-items: start;
+	gap: 14px;
+}
+.legend-row-chirho dt {
+	font-size: 11px;
+	font-weight: 500;
+	padding-top: 6px;
+}
+.legend-row-chirho dd {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+	margin: 0;
+}
+.help-trigger-chirho {
+	border: 1px solid #d9dfd3;
+	background: #fcfcf8;
+	color: #4c5c50;
+	border-radius: 5px;
+	padding: 5px 9px;
+	font-size: 11px;
+	white-space: normal;
+	text-align: left;
+	line-height: 1.45;
+}
+.help-trigger-chirho:hover,
+.help-trigger-chirho[aria-expanded='true'] {
+	border-color: #82957c;
+	box-shadow: 0 1px 3px #3654350d;
+}
+.help-trigger-chirho.gender-masculine-chirho {
+	background: #dff0ff;
+}
+.help-trigger-chirho.gender-feminine-chirho {
+	background: #ffe4ed;
+}
+.help-trigger-chirho.number-plural-chirho {
+	border-bottom: 3px solid #e9c92d;
+}
+.help-trigger-chirho.number-dual-chirho {
+	border-bottom: 3px solid #36a36a;
+}
+.help-trigger-chirho.pos-noun-chirho {
+	border: 2px solid #18847d;
+}
+.help-trigger-chirho.pos-verb-chirho {
+	border: 2px solid #8152b1;
+}
+.help-trigger-chirho.pos-adjective-chirho {
+	border: 2px solid #c57820;
+}
+.help-trigger-chirho.pos-particle-chirho {
+	border: 2px solid #7c8589;
+}
+.help-trigger-chirho.pos-unknown-chirho {
+	border: 2px dashed #7c8589;
+}
+.help-trigger-chirho.pattern-solid-chirho {
+	border-top: 3px solid #dd7b24;
+}
+.help-trigger-chirho.pattern-dotted-chirho {
+	border-top: 3px dotted #dd7b24;
+}
+.help-trigger-chirho.word-help-chirho {
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	color: inherit;
+	font: inherit;
+	line-height: inherit;
+}
+.help-popup-chirho {
+	position: fixed;
+	z-index: 30;
+	color: #edf2e8;
+	background: #293e32;
+	padding: 17px 18px;
+	border-radius: 9px;
+	box-shadow: 0 7px 24px #18291e25;
+	font:
+		12px/1.6 'Helvetica Neue',
+		Arial,
+		sans-serif;
+	text-align: left;
+	direction: ltr;
+	white-space: normal;
+}
+.help-popup-chirho strong,
+.help-popup-chirho > span,
+.help-popup-chirho small {
+	display: block;
+}
+.help-popup-chirho strong {
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+.help-popup-chirho small {
+	margin-top: 10px;
+	font-size: 9px;
+	color: #c2cebb;
+}
+.quiet-note-chirho {
+	font-size: 11px;
+	line-height: 1.7;
+	color: var(--quiet-chirho);
+	max-width: 840px;
+}
+.word-cards-chirho {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 14px;
+}
+.word-card-chirho {
+	background: #fcfcf7;
+	border: 1px solid #dbe1d3;
+	border-radius: 8px;
+	padding: 20px;
+	min-width: 0;
+}
+.word-card-top-chirho {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+}
+.card-hebrew-chirho {
+	font: 30px/1.9 var(--hebrew-chirho);
+	background: var(--gender-chirho);
+	border-radius: 4px;
+	padding: 0 7px;
+}
+.lemma-link-chirho {
+	color: #6a7e61;
+	font-size: 10px;
+	text-decoration: none;
+}
+.root-line-chirho {
+	font-size: 10px;
+	color: #71806c;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 12px 0 4px;
+}
+.root-line-chirho > span {
+	font: 20px/1.8 var(--hebrew-chirho);
+	color: #3e5142;
+}
+.morphology-chirho {
+	font-size: 10px;
+	line-height: 1.7;
+	color: #66715f;
+	margin: 0 0 14px;
+}
+.word-details-chirho {
+	border-top: 1px solid #e4e8dc;
+	padding-top: 13px;
+}
+.word-details-chirho summary {
+	font-size: 10px;
+	color: #50694c;
+}
+.word-details-chirho > div {
+	font-size: 12px;
+	line-height: 1.7;
+	overflow-wrap: anywhere;
+}
+.word-gloss-chirho {
+	font: 22px/1.4 var(--serif-chirho);
+	margin-bottom: 2px;
+}
+.raw-morphology-chirho {
+	font-size: 10px;
+}
+.canonical-details-chirho,
+.sources-details-chirho {
+	border-top: 1px solid var(--line-chirho);
+	padding: 18px 0;
+	font-size: 12px;
+}
+.canonical-chirho {
+	font: 32px/2 var(--hebrew-chirho);
+}
+.source-notes-chirho {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+	font-size: 11px;
+	line-height: 1.8;
+	color: var(--quiet-chirho);
+	margin: 10px 0 24px;
+}
+.sources-details-chirho ul {
+	padding: 15px 0 0 20px;
+}
+.sources-details-chirho li {
+	margin-bottom: 20px;
+	overflow-wrap: anywhere;
+}
+.sources-details-chirho li p {
+	font-size: 11px;
+	margin: 8px 0;
+}
+.site-footer-chirho {
+	margin-top: 40px;
+	padding: 27px 0 35px;
+	border-top: 1px solid var(--line-chirho);
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+.site-footer-chirho > span:first-child {
+	font: 22px var(--serif-chirho);
+}
+.site-footer-chirho > p {
+	margin: 0;
+	font: 12px var(--serif-chirho);
+	color: #78806e;
+}
+.site-footer-chirho > span:last-child {
+	margin-left: auto;
+	font-size: 9px;
+	color: #7c8575;
+}
+.sr-only-chirho {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+.unavailable-chirho {
+	max-width: 700px;
+	padding: 70px 24px;
+	margin: auto;
+}
+@media (max-width: 1000px) {
+	.page-shell-chirho {
+		padding: 0 28px;
+	}
+	.verse-panel-chirho {
+		padding: 24px 22px;
+	}
+	.verse-chirho {
+		font-size: 38px;
+	}
+	.word-cards-chirho {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.legend-row-chirho {
+		grid-template-columns: 150px 1fr;
+	}
+	.scene-panel-chirho figcaption > span:last-child {
+		margin-left: 0;
+	}
+}
+@media (max-width: 640px) {
+	.page-shell-chirho {
+		padding: 0 18px;
+	}
+	.site-header-chirho {
+		min-height: 84px;
+		gap: 12px;
+	}
+	.wordmark-chirho {
+		font-size: 29px;
+	}
+	.header-note-chirho {
+		display: none;
+	}
+	.local-badge-chirho {
+		font-size: 9px;
+		padding: 6px 10px;
+	}
+	.lesson-heading-chirho {
+		margin: 29px 0 21px;
+	}
+	h1 {
+		font-size: 32px;
+	}
+	h2 {
+		font-size: 25px;
+	}
+	.eyebrow-chirho {
+		font-size: 9px;
+	}
+	.reading-grid-chirho {
+		grid-template-columns: 1fr;
+	}
+	.verse-panel-chirho {
+		padding: 23px 20px;
+	}
+	.reader-instruction-chirho {
+		font-size: 18px;
+	}
+	.verse-chirho {
+		font-size: 36px;
+		padding: 28px 0 24px;
+	}
+	.scene-panel-chirho img {
+		min-height: 0;
+		height: auto;
+		aspect-ratio: 3 / 2;
+	}
+	.scene-panel-chirho figcaption {
+		padding: 11px 16px;
+	}
+	.grammar-section-chirho,
+	.words-section-chirho,
+	.source-section-chirho {
+		margin-top: 35px;
+	}
+	.section-heading-chirho {
+		display: block;
+		margin-bottom: 19px;
+	}
+	.section-heading-chirho > p {
+		margin-top: 11px;
+		line-height: 1.5;
+	}
+	.legend-row-chirho {
+		grid-template-columns: 1fr;
+		gap: 8px;
+		padding: 13px 0;
+	}
+	.legend-row-chirho dt {
+		padding: 0;
+	}
+	.help-trigger-chirho {
+		min-height: 36px;
+		padding: 7px 10px;
+	}
+	.word-cards-chirho {
+		grid-template-columns: 1fr;
+	}
+	.source-notes-chirho {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+	.canonical-chirho {
+		font-size: 27px;
+	}
+	.site-footer-chirho {
+		flex-wrap: wrap;
+		gap: 8px 20px;
+	}
+	.site-footer-chirho > p {
+		flex-basis: 100%;
+		order: 2;
+	}
+	.site-footer-chirho > span:last-child {
+		font-size: 8px;
+	}
+}
+
+.root-line-chirho {
+	flex-wrap: wrap;
+}
+.root-line-chirho > .root-status-chirho {
+	font:
+		9px/1.5 'Helvetica Neue',
+		Arial,
+		sans-serif;
+	color: #746952;
+	background: #f1f0e7;
+	border-radius: 4px;
+	padding: 3px 5px;
+}
+.scene-missing-chirho {
+	padding: 50px 30px;
+	min-height: 300px;
+	font: 19px/1.6 var(--serif-chirho);
+	margin: auto;
+}
+
+.gloss-select-field-chirho {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	min-width: 0;
+	max-width: 100%;
+}
+.gloss-select-field-chirho label {
+	font-size: 10px;
+	color: #52664e;
+}
+.gloss-select-field-chirho select {
+	background-color: #fcfcf7;
+	border: 1px solid #ccd5c3;
+	border-radius: 6px;
+	padding: 9px 34px 9px 11px;
+	color: #3e5541;
+	font-size: 11px;
+	min-height: 39px;
+	width: 100%;
+	max-width: 100%;
+}
+.gloss-select-field-chirho small {
+	font-size: 9px;
+}
+@media (max-width: 640px) {
+	.gloss-select-field-chirho {
+		margin-top: 14px;
+	}
+}
+
+/* The transparent bridge makes the hover surface continuous across its visual gap. */
+.help-popup-chirho::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -10px;
+	height: 10px;
+}
+
+.sticker-chirho img {
+	display: block;
+	width: 38px;
+	height: 38px;
+	object-fit: contain;
+}
+
+.word-jump-chirho {
+	color: inherit;
+	text-decoration: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.word-jump-chirho:focus-visible {
+	outline: 3px solid #3a5682;
+	outline-offset: 3px;
+}
+.word-card-chirho {
+	scroll-margin-block: 1rem;
+}
+.word-card-chirho:focus {
+	outline: 3px solid #3a5682;
+	outline-offset: 3px;
+}
+.form-help-chirho {
+	font: 11px/1 sans-serif;
+}
+
+/* Contextual illustrations and their accessible alternatives. */
+.icon-unit-chirho {
+	display: inline-block;
+	line-height: 1;
+}
+.sticker-chirho.double-border-chirho {
+	border-width: 4px;
+	border-style: double;
+	width: 46px;
+	height: 46px;
+}
+.icon-gallery-chirho {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 12px 0;
+}
+.icon-gallery-chirho > span {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 140px;
+	gap: 6px;
+	background: #f7f5ed;
+	border: 2px solid transparent;
+	border-radius: 8px;
+	padding: 6px;
+}
+.icon-selected-meaning-chirho {
+	display: block;
+	margin-top: 10px;
+}
+.icon-sense-label-chirho {
+	color: #2e3c32;
+	font: 13px/1.35 sans-serif;
+	text-align: center;
+}
+.icon-gallery-chirho img {
+	display: block;
+	width: 64px;
+	height: 64px;
+	object-fit: contain;
+}
+.help-trigger-chirho.cue-help-chirho {
+	min-width: 18px;
+	min-height: 20px;
+	padding: 0 2px;
+	border: 0;
+	border-radius: 3px;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	line-height: 1;
+	text-align: center;
+}
+.word-surface-chirho.verb-cues-chirho {
+	min-width: 56px;
+}
+.help-trigger-chirho.cue-help-chirho:hover,
+.help-trigger-chirho.cue-help-chirho[aria-expanded='true'] {
+	background: #e4e9df;
+}
+.help-trigger-chirho.cue-help-chirho:focus-visible {
+	outline: 2px solid #3a5682;
+	outline-offset: 2px;
+}
+.scene-awaiting-chirho {
+	min-height: 280px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 36px;
+	background: radial-gradient(ellipse at center, #f9edce, #e7ebdc);
+	color: #57715d;
+}
+.scene-awaiting-chirho > span {
+	font-size: 50px;
+	color: #ab8d45;
+}
+.scene-awaiting-chirho p {
+	font: 28px/1.4 var(--serif-chirho);
+}
+.scene-awaiting-chirho small {
+	font-size: 11px;
+}
+.site-header-chirho {
+	flex-wrap: wrap;
+}
+
+.audio-controls-chirho {
+	container-type: inline-size;
+	margin: 0 0 20px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #dbe0d4;
+}
+.audio-actions-chirho {
+	display: flex;
+	align-items: flex-end;
+	gap: 14px 24px;
+	flex-wrap: wrap;
+}
+.audio-settings-chirho {
+	display: grid;
+	grid-template-columns: minmax(0, 196px) 128px;
+	align-items: end;
+	gap: 12px;
+	min-width: 0;
+}
+.audio-playback-chirho {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	min-width: 0;
+}
+.speech-button-chirho,
+.speech-stop-chirho,
+.verse-step-chirho {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	min-height: 38px;
+	padding: 8px 12px;
+	border: 1px solid #bac7b5;
+	border-radius: 9px;
+	background: #f1f4ed;
+	color: #34503d;
+	font: 600 12px/1.3 var(--sans-chirho);
+	cursor: pointer;
+}
+.speech-button-chirho:disabled,
+.speech-stop-chirho:disabled,
+.verse-step-chirho:disabled {
+	opacity: 0.55;
+	cursor: default;
+}
+.speech-button-chirho[aria-busy='true'] {
+	background: #dce9dc;
+	border-color: #48704f;
+}
+.speech-button-chirho:focus-visible,
+.speech-stop-chirho:focus-visible,
+.verse-step-chirho:focus-visible,
+.audio-speed-chirho select:focus-visible {
+	outline: 3px solid #425d88;
+	outline-offset: 3px;
+}
+.word-speech-chirho {
+	margin-top: 12px;
+	min-height: 32px;
+	font-weight: 500;
+}
+.verse-transport-chirho {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex: 0 0 auto;
+}
+.verse-transport-chirho .speech-button-chirho {
+	background: #34503d;
+	border-color: #34503d;
+	color: #fff;
+}
+.compact-speech-chirho {
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translate(50%, -50%);
+	z-index: 1;
+	margin: 0;
+	padding: 2px;
+	width: 22px;
+	min-height: 22px;
+	border: 1px solid #bfc3ba;
+	border-radius: 6px;
+	background: #fff;
+	color: #667063;
+}
+.word-pronunciation-chirho {
+	position: relative;
+	display: inline-flex;
+	margin-right: 11px;
+}
+.word-pronunciation-chirho .compact-speech-chirho {
+	margin: 0;
+}
+.word-pronunciation-chirho .word-jump-chirho {
+	display: flex;
+	justify-content: center;
+}
+.compact-speech-chirho svg {
+	width: 14px;
+	height: 14px;
+}
+.word-pronunciation-chirho .conjugation-marker-chirho {
+	right: 14px;
+}
+.word-pronunciation-chirho .greek-cue-right-chirho {
+	margin-right: 12px;
+}
+.compact-speech-chirho:hover {
+	border-color: #bac7b5;
+	background: #f1f4ed;
+}
+
+.audio-speed-chirho {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 5px;
+	min-width: 0;
+	font-size: 11px;
+	color: #62705e;
+}
+.audio-rate-field-chirho:only-child {
+	width: 128px;
+}
+.audio-speed-chirho select {
+	min-height: 38px;
+	padding: 6px 27px 6px 9px;
+	border: 1px solid #bac7b5;
+	border-radius: 9px;
+	background-color: #fafbf7;
+	color: #34503d;
+	font: inherit;
+}
+.audio-controls-chirho > .small-note-chirho {
+	margin: 10px 0 0;
+	line-height: 1.6;
+}
+
+@container (max-width: 380px) {
+	.audio-settings-chirho {
+		grid-template-columns: minmax(0, 1fr) 120px;
+		gap: 10px;
+		width: 100%;
+	}
+	.audio-playback-chirho {
+		width: 100%;
+	}
+	.verse-transport-chirho {
+		flex: 1;
+		min-width: 0;
+	}
+	.verse-transport-chirho > button {
+		flex: 1;
+		min-width: 0;
+		padding-inline: 4px;
+		font-size: 11px;
+		gap: 2px;
+	}
+	.verse-transport-chirho > .speech-button-chirho {
+		flex: 0 0 auto;
+	}
+	.verse-transport-chirho > button svg {
+		width: 14px;
+		flex-shrink: 0;
+	}
+	.audio-playback-chirho > .speech-stop-chirho {
+		padding-inline: 8px;
+		font-size: 11px;
+	}
+	.verse-transport-chirho > .verse-step-chirho {
+		font-size: 0;
+	}
+	.verse-step-chirho > span[aria-hidden='true'] {
+		font-size: 16px;
+	}
+}
+@container (max-width: 300px) {
+	.audio-settings-chirho {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.audio-rate-field-chirho:only-child {
+		width: 100%;
+	}
+}

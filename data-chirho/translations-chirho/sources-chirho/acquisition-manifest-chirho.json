@@ -1,0 +1,77 @@
+{
+	"schema_version_chirho": 1,
+	"retrieved_at_chirho": "2026-10-30",
+	"retrieved_by_chirho": "claude_chirho, VBLREADER_CHIRHO fleet",
+	"method_chirho": "Fetched from raw.githubusercontent.com at the pinned commit and accepted only when size and sha256 match this manifest; vendored unchanged by scripts-chirho/translations-chirho/acquire_spanish_sources_chirho.py --restore. The Proverbs value equals the one recorded in scripts-chirho/glosses-chirho/fetch_prov_26_1_glosses_chirho.py.",
+	"repositories_chirho": [
+		{
+			"id_chirho": "gbt-data-chirho",
+			"url_chirho": "https://github.com/globalbibletools/data",
+			"commit_chirho": "6c511c2a8cc4ab341337f912763592f3ab5da0b1",
+			"exported_at_chirho": "2026-10-26T00:18:09.454Z",
+			"local_dir_chirho": "gbt-data-chirho"
+		}
+	],
+	"files_chirho": [
+		{
+			"id_chirho": "gbt-spanish-prov-chirho",
+			"repository_chirho": "gbt-data-chirho",
+			"upstream_path_chirho": "spa/20-Pro.json",
+			"role_chirho": "data",
+			"title_chirho": "Global Bible Tools Spanish glosses, Proverbs (spa/20-Pro.json)",
+			"bytes_chirho": 771163,
+			"sha256_chirho": "068b3460518772b441cfbb585aef375b55e4c9ad9187a303d735410de3cc798b",
+			"last_changed_commit_chirho": "fe3aa91f49e40ccaa0d669e64f501418e394f740",
+			"file_updated_at_chirho": "2024-12-20T18:28:21Z",
+			"license_chirho": "CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/), dedicated by Global Bible Tools itself. In globalbibletools/platform@5d4041d4, src/ui/study/components/AttributionDialog.tsx gives the glosses of every language except English New Testament the use {type: \"self\", licenseCode: \"cc0_1_0\"}; Spanish is covered for every book. The globalbibletools/data repository carries no LICENSE file; the dedication is GBT's published statement in its platform. Checked 2026-10-27 (spec-chirho/research-chirho/26-10-27-release-license-check-chirho.md).",
+			"attribution_chirho": "Spanish Glosses by Global Bible Tools (https://globalbibletools.com) are available under Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)",
+			"adaptation_chirho": "approved word glosses joined to the corpus words by GBT word id (Hebrew) or guarded word alignment (Greek); kept as given; no sentence translation is made",
+			"note_chirho": "GBT exports a gloss only when its state is APPROVED; how it was approved is not in the export."
+		},
+		{
+			"id_chirho": "gbt-spanish-gen-chirho",
+			"repository_chirho": "gbt-data-chirho",
+			"upstream_path_chirho": "spa/01-Gen.json",
+			"role_chirho": "data",
+			"title_chirho": "Global Bible Tools Spanish glosses, Genesis (spa/01-Gen.json)",
+			"bytes_chirho": 2115346,
+			"sha256_chirho": "5c67e853149d3d85f82f482015648f769a5ab286eabba9b4e179433fe093e70f",
+			"last_changed_commit_chirho": "b96ed1567f033b2bcf5c3a59b90422d65b0e8852",
+			"file_updated_at_chirho": "2026-10-12T00:17:37Z",
+			"license_chirho": "CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/), dedicated by Global Bible Tools itself. In globalbibletools/platform@5d4041d4, src/ui/study/components/AttributionDialog.tsx gives the glosses of every language except English New Testament the use {type: \"self\", licenseCode: \"cc0_1_0\"}; Spanish is covered for every book. The globalbibletools/data repository carries no LICENSE file; the dedication is GBT's published statement in its platform. Checked 2026-10-27 (spec-chirho/research-chirho/26-10-27-release-license-check-chirho.md).",
+			"attribution_chirho": "Spanish Glosses by Global Bible Tools (https://globalbibletools.com) are available under Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)",
+			"adaptation_chirho": "approved word glosses joined to the corpus words by GBT word id (Hebrew) or guarded word alignment (Greek); kept as given; no sentence translation is made",
+			"note_chirho": "GBT exports a gloss only when its state is APPROVED; how it was approved is not in the export."
+		},
+		{
+			"id_chirho": "gbt-spanish-john-chirho",
+			"repository_chirho": "gbt-data-chirho",
+			"upstream_path_chirho": "spa/43-Jhn.json",
+			"role_chirho": "data",
+			"title_chirho": "Global Bible Tools Spanish glosses, John (spa/43-Jhn.json)",
+			"bytes_chirho": 1500876,
+			"sha256_chirho": "82e08839d8a5b5b2382c4dd2219567b7ae999a30ae041e8827f2ee67a3dd42c4",
+			"last_changed_commit_chirho": "84a4276244d488eb2def79fcc9a4be4ea2b87bdd",
+			"file_updated_at_chirho": "2026-07-27T00:17:06Z",
+			"license_chirho": "CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/), dedicated by Global Bible Tools itself. In globalbibletools/platform@5d4041d4, src/ui/study/components/AttributionDialog.tsx gives the glosses of every language except English New Testament the use {type: \"self\", licenseCode: \"cc0_1_0\"}; Spanish is covered for every book. The globalbibletools/data repository carries no LICENSE file; the dedication is GBT's published statement in its platform. Checked 2026-10-27 (spec-chirho/research-chirho/26-10-27-release-license-check-chirho.md).",
+			"attribution_chirho": "Spanish Glosses by Global Bible Tools (https://globalbibletools.com) are available under Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)",
+			"adaptation_chirho": "approved word glosses joined to the corpus words by GBT word id (Hebrew) or guarded word alignment (Greek); kept as given; no sentence translation is made",
+			"note_chirho": "GBT exports a gloss only when its state is APPROVED; how it was approved is not in the export."
+		},
+		{
+			"id_chirho": "gbt-source-words-john-chirho",
+			"repository_chirho": "gbt-data-chirho",
+			"upstream_path_chirho": "hbo+grc/43-Jhn.json",
+			"role_chirho": "data",
+			"title_chirho": "Global Bible Tools source words, John (hbo+grc/43-Jhn.json)",
+			"bytes_chirho": 2678717,
+			"sha256_chirho": "d4fa6b62096790648eaf880a8988726af588254a2af9e6f575b332e77e671970",
+			"last_changed_commit_chirho": "cc4520018c0f66d26dac3e3774248e973223694c",
+			"file_updated_at_chirho": "2024-12-20T17:53:03Z",
+			"license_chirho": "Not displayed: used only to align GBT word ids with the Nestle 1904 words. GBT's attribution does not itemize this source-word file, and the globalbibletools/data repository carries no LICENSE file. Checked 2026-10-27 (spec-chirho/research-chirho/26-10-27-release-license-check-chirho.md).",
+			"attribution_chirho": "Source-word export by Global Bible Tools (https://globalbibletools.com)",
+			"adaptation_chirho": "used only to align GBT word ids with Nestle 1904 words; its text, lemmas and grammar are not shown",
+			"note_chirho": "GBT's Greek is the Berean Greek text on a Nestle 1904 base; it lists 15,727 John words against the Nestle 1904 15,643, so words are aligned, not counted."
+		}
+	]
+}

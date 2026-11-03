@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".statechirho.HinnehApplicationChirho"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules_chirho"
+        android:fullBackupContent="@xml/backup_rules_chirho"
+        android:icon="@mipmap/ic_launcher_chirho"
+        android:label="@string/app_name_chirho"
+        android:localeConfig="@xml/locales_config_chirho"
+        android:networkSecurityConfig="@xml/network_security_config_chirho"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HinnehChirho"
+        tools:targetApi="33">
+        <activity
+            android:name=".MainActivityChirho"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

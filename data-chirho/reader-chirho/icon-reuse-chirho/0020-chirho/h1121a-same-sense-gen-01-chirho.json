@@ -1,0 +1,32 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h1121a-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The son portrait represents filial relationship in these listed My son addresses. It does not assert the age or historical identity of the addressee.",
+	"source_icon_id_chirho": "proverbs-worker-v2-icon-02-chirho",
+	"source_sha256_chirho": "438b10c30d3534b6178f65e6182e519e7da822d8c6d59294fe313d9869e6dd80",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.8",
+		"token_id_chirho": "20Y3z",
+		"text_chirho": "בְּ֭נִי",
+		"gloss_chirho": "My son",
+		"canonical_sha256_chirho": "d94f8728b594e8ef1338f4cd01085ecc1e998f9243849470ae344934cb82c848"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H1121",
+		"lemma_augment_chirho": "a",
+		"lexical_form_chirho": "בֵּן"
+	},
+	"contextual_meaning_chirho": "son",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.27.1",
+			"token_id_chirho": "01iUb",
+			"text_chirho": "בְּנִ֔י",
+			"gloss_chirho": "My son",
+			"canonical_sha256_chirho": "5763f479357338c9ae46b1bdef1598ae6a71adf94bf167ca7716438990015909"
+		}
+	]
+}

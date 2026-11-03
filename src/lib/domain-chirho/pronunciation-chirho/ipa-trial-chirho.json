@@ -1,0 +1,260 @@
+{
+	"schema_version_chirho": 1,
+	"tradition_chirho": "israeli_hebrew",
+	"review_chirho": "draft_awaiting_listener_review",
+	"scope_chirho": "Ten source-bound word examples; this is not an automatic all-corpus phonetic converter. Stress and basic vowels checked against pointed OSHB and the pinned HebrewStrong pronunciations; IPA is app-authored.",
+	"passages_chirho": [
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"canonical_text_chirho": "כַּשֶּׁ֤לֶג ׀ בַּקַּ֗יִץ וְכַמָּטָ֥ר בַּקָּצִ֑יר כֵּ֤ן לֹא־נָאוֶ֖ה לִכְסִ֣יל כָּבֽוֹד׃",
+			"verse_trial_chirho": true
+		},
+		{
+			"lesson_id_chirho": "Prov.1.13",
+			"canonical_text_chirho": "כָּל־ה֣וֹן יָקָ֣ר נִמְצָ֑א נְמַלֵּ֖א בָתֵּ֣ינוּ שָׁלָֽל׃",
+			"verse_trial_chirho": false
+		}
+	],
+	"words_chirho": [
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "20ikj",
+			"text_chirho": "כַּשֶּׁ֤לֶג",
+			"lemma_id_chirho": "H7950",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HRd/Ncmsa",
+			"ipa_chirho": "kaˈʃeleg",
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "Stress the syllable she: ka-SHE-leg. The prefixed ka is part of this spoken word.",
+				"es": "El acento recae en she: ka-SHE-leg. El prefijo ka forma parte de la palabra pronunciada."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H7950",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "20Yxf",
+			"text_chirho": "בַּקַּ֗יִץ",
+			"lemma_id_chirho": "H7019",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HRd/Ncmsa",
+			"ipa_chirho": "baˈkajit͡s",
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "Stress ka: ba-KA-yits. The final ts is one consonant sound.",
+				"es": "El acento recae en ka: ba-KA-yits. La secuencia final ts representa un solo sonido consonántico."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H7019",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "20Jji",
+			"text_chirho": "וְכַמָּטָ֥ר",
+			"lemma_id_chirho": "H4306",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HC/Rd/Ncmsa",
+			"ipa_chirho": "vexamaˈtaʁ",
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "Stress the last syllable: ve-kha-ma-TAR. Here kh represents the sound of the undotted kaf.",
+				"es": "El acento recae en la última sílaba: ve-ja-ma-TAR. La j representa aquí el sonido de kaf sin daguesh."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H4306",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "20vF1",
+			"text_chirho": "בַּקָּצִ֑יר",
+			"lemma_id_chirho": "H7105",
+			"lemma_augment_chirho": "a",
+			"raw_morphology_chirho": "HRd/Ncmsa",
+			"ipa_chirho": "bakaˈt͡siʁ",
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "Stress the last syllable: ba-ka-TSIR. The qamats here is read a in this Israeli Hebrew trial.",
+				"es": "El acento recae en la última sílaba: ba-ka-TSIR. En esta prueba de hebreo israelí, el qamats de esta palabra se lee a."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H7105",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "20baH",
+			"text_chirho": "כֵּ֤ן",
+			"lemma_id_chirho": "H3651",
+			"lemma_augment_chirho": "c",
+			"raw_morphology_chirho": "HTm",
+			"ipa_chirho": "ken",
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "One syllable, with an e vowel.",
+				"es": "Una sílaba, con vocal e."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H3651",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "20DYG",
+			"text_chirho": "לֹא",
+			"lemma_id_chirho": "H3808",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HTn",
+			"ipa_chirho": "lo",
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The final alef has no separate vowel here. Maqqef joins this word to the next one in the source.",
+				"es": "La alef final no tiene una vocal separada aquí. El maqqef une esta palabra con la siguiente en el texto fuente."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H3808",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "20wMm",
+			"text_chirho": "נָאוֶ֖ה",
+			"lemma_id_chirho": "H5000",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HAamsa",
+			"ipa_chirho": "naˈve",
+			"surprising_chirho": true,
+			"explanation_chirho": {
+				"en": "Final vowel e, with final stress: na-VEH. The segol under vav is e; this adjective is not read na-VAH. The IPA uses an Israeli Hebrew reading.",
+				"es": "Vocal final e y acento final: na-VÉ. El segol bajo vav indica e; este adjetivo no se lee na-VÁ. El AFI representa una lectura en hebreo israelí."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H5000",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "206Bv",
+			"text_chirho": "לִכְסִ֣יל",
+			"lemma_id_chirho": "H3684",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HR/Aamsa",
+			"ipa_chirho": "lixˈsil",
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "Stress the last syllable: likh-SIL. The prefixed li belongs to the spoken word; kh is the undotted kaf sound.",
+				"es": "El acento recae en la última sílaba: lij-SIL. El prefijo li pertenece a la palabra pronunciada; la j representa kaf sin daguesh."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H3684",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.26.1",
+			"token_id_chirho": "20GsM",
+			"text_chirho": "כָּבֽוֹד",
+			"lemma_id_chirho": "H3519",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HNcbsa",
+			"ipa_chirho": "kaˈvod",
+			"surprising_chirho": true,
+			"explanation_chirho": {
+				"en": "Read ka-VOD. This qamats is a, unlike the o of qamats qatan in kol. The final stress is on vod.",
+				"es": "Se lee ka-VOD. Este qamats es a, a diferencia de la o del qamats qatan de kol. El acento final recae en vod."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H3519",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.1.13",
+			"token_id_chirho": "20fQr",
+			"text_chirho": "כָּל",
+			"lemma_id_chirho": "H3605",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HNcmsc",
+			"ipa_chirho": "kol",
+			"surprising_chirho": true,
+			"explanation_chirho": {
+				"en": "Read kol, with o. Here the printed qamats is qamats qatan. Maqqef joins kol to the following word, so kol has no independent primary accent in this phrase.",
+				"es": "Se lee kol, con o. Aquí el qamats impreso es qamats qatan. El maqqef une kol con la palabra siguiente, por lo que kol no lleva un acento principal independiente en esta frase."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "OSHB Hebrew Lexicon · H3605",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml"
+				},
+				{
+					"label_chirho": "OSHB accents",
+					"url_chirho": "https://hb.openscriptures.org/HomeFiles/Accents.html"
+				}
+			]
+		}
+	]
+}

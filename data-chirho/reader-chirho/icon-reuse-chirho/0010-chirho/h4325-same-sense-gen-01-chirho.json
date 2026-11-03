@@ -1,0 +1,137 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h4325-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The water drop represents water, including the vehicle of explicitly figurative water expressions. It does not identify a hidden referent or change the surrounding source interpretation.",
+	"source_icon_id_chirho": "proverbs-worker-icon-14-chirho",
+	"source_sha256_chirho": "b6f5824dfbf80c32b716fc07966558a80667248f780c32d3bd59cdf4d36d6d72",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.5.15",
+		"token_id_chirho": "20941",
+		"text_chirho": "מַ֥יִם",
+		"gloss_chirho": "water",
+		"canonical_sha256_chirho": "537fc269a06ac11c3a6d6ca377f1eb48ee81f10f19230ac6d38f210dc0f744de"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H4325",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "מַיִם"
+	},
+	"contextual_meaning_chirho": "water",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.16.7",
+			"token_id_chirho": "01dmq",
+			"text_chirho": "הַמַּ֖יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "59e05804fcc0999ab33b355bd1db531f04089b0d7086cb68eee9c2a073f2ff95"
+		},
+		{
+			"verse_id_chirho": "Gen.18.4",
+			"token_id_chirho": "01am8",
+			"text_chirho": "מַ֔יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "0c97011379abf111d3e2fb25c0b75168fb019c60bca1432d6e617c290bf19602"
+		},
+		{
+			"verse_id_chirho": "Gen.21.14",
+			"token_id_chirho": "015cJ",
+			"text_chirho": "מַ֜יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "77344aa78e0b54fb09a32d3ce6805e64c4e76154555e31107cd96188e1f73ebd"
+		},
+		{
+			"verse_id_chirho": "Gen.21.19",
+			"token_id_chirho": "01bJR",
+			"text_chirho": "מָ֑יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "522bd45d8d9874ee794c6eff7f800f9c1598732bf92ae246035bd079d08cb082"
+		},
+		{
+			"verse_id_chirho": "Gen.21.25",
+			"token_id_chirho": "01Djm",
+			"text_chirho": "הַמַּ֔יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "9c8d1ced8cbe0b42a0434cd48d73859c360a76a591e5fdbe757f791cf5d3cc1a"
+		},
+		{
+			"verse_id_chirho": "Gen.24.11",
+			"token_id_chirho": "01Xpa",
+			"text_chirho": "הַמָּ֑יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "588aa21aeff789452cf22407cd40bf860ed5252ba3a07c778262721d0bf50324"
+		},
+		{
+			"verse_id_chirho": "Gen.24.13",
+			"token_id_chirho": "01RTe",
+			"text_chirho": "הַמָּ֑יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "ecc8f8cd7b6eccb8a8ca1ce6eb2d8f7270c5d94a23ddc5b8bfdd3697eb5a4936"
+		},
+		{
+			"verse_id_chirho": "Gen.24.13",
+			"token_id_chirho": "01UPz",
+			"text_chirho": "מָֽיִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "ecc8f8cd7b6eccb8a8ca1ce6eb2d8f7270c5d94a23ddc5b8bfdd3697eb5a4936"
+		},
+		{
+			"verse_id_chirho": "Gen.24.17",
+			"token_id_chirho": "01Zod",
+			"text_chirho": "מַ֖יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "66f6ae05231391773be8a1434ea614572ff0ed29fa51864ef715666ee42ec917"
+		},
+		{
+			"verse_id_chirho": "Gen.24.43",
+			"token_id_chirho": "01Yuc",
+			"text_chirho": "הַמָּ֑יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "a522e9f859aa79f3ca383c88763a6a685b31872e93f9746245a96969d420b055"
+		},
+		{
+			"verse_id_chirho": "Gen.24.43",
+			"token_id_chirho": "01zt3",
+			"text_chirho": "מַ֖יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "a522e9f859aa79f3ca383c88763a6a685b31872e93f9746245a96969d420b055"
+		},
+		{
+			"verse_id_chirho": "Gen.26.18",
+			"token_id_chirho": "01bNQ",
+			"text_chirho": "הַמַּ֗יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "7f53b09710170539b76f8d3cef412451d5f3e82958957bb63533e109acc847e9"
+		},
+		{
+			"verse_id_chirho": "Gen.26.19",
+			"token_id_chirho": "01oxo",
+			"text_chirho": "מַ֥יִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "b7b94a78c50c0665d20877c08daa8a185008874a87fc90dae18549bae9bfee2a"
+		},
+		{
+			"verse_id_chirho": "Gen.26.32",
+			"token_id_chirho": "01xy3",
+			"text_chirho": "מָֽיִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "4a74b1436a7767af6a18a5651c5879b34db0c1a271746a7ec5f61869a1401c61"
+		},
+		{
+			"verse_id_chirho": "Gen.37.24",
+			"token_id_chirho": "01y9b",
+			"text_chirho": "מָֽיִם",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "2db7573b0dc8e60c77c74127dc45809f196526ef76c672ec6ef3836651b6af18"
+		},
+		{
+			"verse_id_chirho": "Gen.43.24",
+			"token_id_chirho": "012UW",
+			"text_chirho": "מַ֨יִם֙",
+			"gloss_chirho": "water",
+			"canonical_sha256_chirho": "361ce19e382517b22b0c5fd67e44f91054ad20684a26eb7a56ae36d9ec0d7930"
+		}
+	]
+}

@@ -1,0 +1,1075 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h430-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The flame is a symbolic mnemonic for God, not a portrait or a depiction of an event. Each listed source token is glossed God; plural gods and other senses are outside this review.",
+	"source_icon_id_chirho": "icon-6f55aaf24cb24aebbfeb5a4f9db24573-09-chirho",
+	"source_sha256_chirho": "05cd650671ac9026fc3720bab5438d1f4275dd05cb6a951770fc5a18feef3ad2",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.2.5",
+		"token_id_chirho": "20WPn",
+		"text_chirho": "אֱלֹהִ֣ים",
+		"gloss_chirho": "God",
+		"canonical_sha256_chirho": "f0e742474701b290e78920b8409e76293dc407dd3b9531d3f618336b7f7d7536"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H430",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "אֱלֹהִים"
+	},
+	"contextual_meaning_chirho": "God",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.1.1",
+			"token_id_chirho": "01TyA",
+			"text_chirho": "אֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "707c96583d95fb1957b4916673ab36ec2d6cfdc168b97a7f7e2125f4d0f23647"
+		},
+		{
+			"verse_id_chirho": "Gen.1.2",
+			"token_id_chirho": "01x9c",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b98a95e859e0e89df38725b20422e520b2d40e65c4dcce402c920a2c596b53f3"
+		},
+		{
+			"verse_id_chirho": "Gen.1.3",
+			"token_id_chirho": "01JM7",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "15da9f05ea03b1fbc8f4414eca91856d9951bd98efb5de14cc731fd2bab4a044"
+		},
+		{
+			"verse_id_chirho": "Gen.1.4",
+			"token_id_chirho": "01v6U",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b763364452ed7b5b725bb2b2c94e0922fad7105843fb72edde7e46e1ef47327a"
+		},
+		{
+			"verse_id_chirho": "Gen.1.4",
+			"token_id_chirho": "01794",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b763364452ed7b5b725bb2b2c94e0922fad7105843fb72edde7e46e1ef47327a"
+		},
+		{
+			"verse_id_chirho": "Gen.1.5",
+			"token_id_chirho": "01kfX",
+			"text_chirho": "אֱלֹהִ֤ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "8e646115991c68ec7158051cbd53130ac241f7fb80919fe2643d4391f95816f6"
+		},
+		{
+			"verse_id_chirho": "Gen.1.6",
+			"token_id_chirho": "01hh7",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "e12a9eb31bc91566101e8c722decc5ebf09db364313211f10b4d2014a077c642"
+		},
+		{
+			"verse_id_chirho": "Gen.1.7",
+			"token_id_chirho": "01FV9",
+			"text_chirho": "אֱלֹהִים֮",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7d6775d76509ed45c91be466447c45ae56812747d892323d66cfe18afaec87a4"
+		},
+		{
+			"verse_id_chirho": "Gen.1.8",
+			"token_id_chirho": "01fQr",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "fb56a88ff5fd737941d88c6ce05182c4b7f5fa4b987ff54ebd562c97ad2d0738"
+		},
+		{
+			"verse_id_chirho": "Gen.1.9",
+			"token_id_chirho": "01PzC",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "32df9690c1ea4d75965d9864fd192af4cba9fb6acb4b6c578cbb25cc446af103"
+		},
+		{
+			"verse_id_chirho": "Gen.1.10",
+			"token_id_chirho": "01iy2",
+			"text_chirho": "אֱלֹהִ֤ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "41870bc70f712c4c43b31da2461f5ca953dfe56eff6336c5c3f1200771c7fe5e"
+		},
+		{
+			"verse_id_chirho": "Gen.1.10",
+			"token_id_chirho": "01dns",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "41870bc70f712c4c43b31da2461f5ca953dfe56eff6336c5c3f1200771c7fe5e"
+		},
+		{
+			"verse_id_chirho": "Gen.1.11",
+			"token_id_chirho": "01zio",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "924c5b82f0734e26c8821b1b832298c8ad954435df51eca25685c60374fd3b03"
+		},
+		{
+			"verse_id_chirho": "Gen.1.12",
+			"token_id_chirho": "01RmH",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3ea147db44a96762c8f1c18361328c6e048763f5370b03f31d10c13102613027"
+		},
+		{
+			"verse_id_chirho": "Gen.1.14",
+			"token_id_chirho": "01Ap3",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "090bfb1c11866d77db46818a60288cf6327d56bf0a02cef3a5fff9e2711e4d3d"
+		},
+		{
+			"verse_id_chirho": "Gen.1.16",
+			"token_id_chirho": "01XyU",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "817d6787483ae065c1468bc47d07f0eac43becadfaac61a256928c8f93ec2046"
+		},
+		{
+			"verse_id_chirho": "Gen.1.17",
+			"token_id_chirho": "01cn3",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "60fac8317e86eee6695570591290f3fab2f80fa4ae732e5672c1f089c82afd4f"
+		},
+		{
+			"verse_id_chirho": "Gen.1.18",
+			"token_id_chirho": "016qf",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "5174ed20181a5db1f70601cdf7b0efb57bff5f4d4e88314c724448f05f2d357a"
+		},
+		{
+			"verse_id_chirho": "Gen.1.20",
+			"token_id_chirho": "01dAC",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3d938fa8dcd4f783766554c7d5a673ddae02c66b75a0161b952e6202494004e4"
+		},
+		{
+			"verse_id_chirho": "Gen.1.21",
+			"token_id_chirho": "01qry",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "01520c80082a02fcc123367d31c462f61411272125704a447c5a25e51c056963"
+		},
+		{
+			"verse_id_chirho": "Gen.1.21",
+			"token_id_chirho": "01kDm",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "01520c80082a02fcc123367d31c462f61411272125704a447c5a25e51c056963"
+		},
+		{
+			"verse_id_chirho": "Gen.1.22",
+			"token_id_chirho": "01WPn",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "37c4b5db54b2188adcc8129382219c312464ae5b7f46a27e6ea59062c7c31447"
+		},
+		{
+			"verse_id_chirho": "Gen.1.24",
+			"token_id_chirho": "014fv",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3c14b52f426df03946fb9ce093e08091053b0c8d773cef0e42523bca77620f72"
+		},
+		{
+			"verse_id_chirho": "Gen.1.25",
+			"token_id_chirho": "019gS",
+			"text_chirho": "אֱלֹהִים֩",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "adb943138ab2d2de7c6900ab3dc4d48d654d69f9d5e977370c0d68b9b7150bf7"
+		},
+		{
+			"verse_id_chirho": "Gen.1.25",
+			"token_id_chirho": "01YxK",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "adb943138ab2d2de7c6900ab3dc4d48d654d69f9d5e977370c0d68b9b7150bf7"
+		},
+		{
+			"verse_id_chirho": "Gen.1.26",
+			"token_id_chirho": "01azZ",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "51e1585e76b5861b65d4ca1a7d2b19e2955f9226b8806ad36f449a1d5227ccc9"
+		},
+		{
+			"verse_id_chirho": "Gen.1.27",
+			"token_id_chirho": "0179E",
+			"text_chirho": "אֱלֹהִ֤ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "0ab8abadfc52e78227164c9144edaad1d987d2048682d9e1d38adfe711a09425"
+		},
+		{
+			"verse_id_chirho": "Gen.1.27",
+			"token_id_chirho": "01BnR",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "0ab8abadfc52e78227164c9144edaad1d987d2048682d9e1d38adfe711a09425"
+		},
+		{
+			"verse_id_chirho": "Gen.1.28",
+			"token_id_chirho": "01BJv",
+			"text_chirho": "אֱלֹהִים֒",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "00d85747bdfeedb02cd6b310aedd7d27d8537f23d44a4f4af7653842b88deeee"
+		},
+		{
+			"verse_id_chirho": "Gen.1.28",
+			"token_id_chirho": "01mP3",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "00d85747bdfeedb02cd6b310aedd7d27d8537f23d44a4f4af7653842b88deeee"
+		},
+		{
+			"verse_id_chirho": "Gen.1.29",
+			"token_id_chirho": "01bsu",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "777aa685670420186ce84cfa0904263a157f6dd20c5a3501b867dcaa2d168b1d"
+		},
+		{
+			"verse_id_chirho": "Gen.1.31",
+			"token_id_chirho": "01Mxy",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "5bab56fca9cf12337d479e44e2319c5add84e63625e8f3f270172d93c73901a7"
+		},
+		{
+			"verse_id_chirho": "Gen.2.2",
+			"token_id_chirho": "01pXi",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "6b50c784732340c186cb2bdb81830231fadba4fff41eff8edd28e9cfa247e61e"
+		},
+		{
+			"verse_id_chirho": "Gen.2.3",
+			"token_id_chirho": "013iR",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "4adbebc19114ebf5a376605c8b446b08dd2847021242dfc91dc651ccc0a42c1e"
+		},
+		{
+			"verse_id_chirho": "Gen.2.3",
+			"token_id_chirho": "01WDP",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "4adbebc19114ebf5a376605c8b446b08dd2847021242dfc91dc651ccc0a42c1e"
+		},
+		{
+			"verse_id_chirho": "Gen.2.4",
+			"token_id_chirho": "01p7s",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "58516185e101dc76aa976a1a30f7584c0f459c00a9d849a7de18abe6da779645"
+		},
+		{
+			"verse_id_chirho": "Gen.2.5",
+			"token_id_chirho": "01zXi",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "8ffb13e652691705d96b32f9d79f2bab341f5d099f66bae568b57a95a9643136"
+		},
+		{
+			"verse_id_chirho": "Gen.2.7",
+			"token_id_chirho": "01ieN",
+			"text_chirho": "אֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "dfa59f51fd0a71cc43a1229975259c6b597fa9d70dc931199cf3c3e96f10ece8"
+		},
+		{
+			"verse_id_chirho": "Gen.2.8",
+			"token_id_chirho": "01uHZ",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "f1554d25f2824a1e1cd7e533c866397a6f16e720de5e2b2a515725c1065ba0a1"
+		},
+		{
+			"verse_id_chirho": "Gen.2.9",
+			"token_id_chirho": "01BFZ",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "901a5f6e1924743d33cb6ed65bf351103135755446d47ecc3477077f4b1a2825"
+		},
+		{
+			"verse_id_chirho": "Gen.2.15",
+			"token_id_chirho": "019Dq",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "86ff084db3c6524120723e06befe37cd4afd24f5f778558aeca04d104f80936b"
+		},
+		{
+			"verse_id_chirho": "Gen.2.16",
+			"token_id_chirho": "01AwN",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "de31c9e2e7a3fdab60c69ea588c4446a19158798a8681510b76739cf7fa07f46"
+		},
+		{
+			"verse_id_chirho": "Gen.2.18",
+			"token_id_chirho": "01VFM",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "70776c1cf323d5711263d73e8b6ba0e4c207af1ebe79acdb1c5f4037e69fefa5"
+		},
+		{
+			"verse_id_chirho": "Gen.2.19",
+			"token_id_chirho": "01EDP",
+			"text_chirho": "אֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "57a2e6625e4b8324447bd8f15a7f29808917a3b0fc2c130af8a87b1c86c74477"
+		},
+		{
+			"verse_id_chirho": "Gen.2.21",
+			"token_id_chirho": "01asy",
+			"text_chirho": "אֱלֹהִ֧ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "1eb8f821c2110dc87feb3590a3cc73ac97c0cd11d9f6d200a569164ba497267d"
+		},
+		{
+			"verse_id_chirho": "Gen.2.22",
+			"token_id_chirho": "01wQL",
+			"text_chirho": "אֱלֹהִ֧ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "28ea032031fc8aa5505b4f1988092b4b2033ca5bcd3480e3537cc1e9d6b285cf"
+		},
+		{
+			"verse_id_chirho": "Gen.3.1",
+			"token_id_chirho": "017a3",
+			"text_chirho": "אֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "fc7ed667061c78367ea0c2e057962beffd2f7540627b9d8c707f6d6c82ab8258"
+		},
+		{
+			"verse_id_chirho": "Gen.3.1",
+			"token_id_chirho": "01Wp4",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "fc7ed667061c78367ea0c2e057962beffd2f7540627b9d8c707f6d6c82ab8258"
+		},
+		{
+			"verse_id_chirho": "Gen.3.3",
+			"token_id_chirho": "013r3",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "fce0259c0df82ef608b59013ed28573dc4717f35ccefb7f744f83eb48810492d"
+		},
+		{
+			"verse_id_chirho": "Gen.3.5",
+			"token_id_chirho": "01y7z",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "07db05c490912a9f98da33fcd4b49283b51d8e300bf2aae9d0aad28b6444e385"
+		},
+		{
+			"verse_id_chirho": "Gen.3.8",
+			"token_id_chirho": "01KTJ",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "2d22b87f56a3cd5e029989669b3989ad57b8f1791ca77a3db4f06870750ee76a"
+		},
+		{
+			"verse_id_chirho": "Gen.3.8",
+			"token_id_chirho": "01UEH",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "2d22b87f56a3cd5e029989669b3989ad57b8f1791ca77a3db4f06870750ee76a"
+		},
+		{
+			"verse_id_chirho": "Gen.3.9",
+			"token_id_chirho": "01UCE",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "44d6aeecbaaf83a3565f4fc94e1b9a20b3e3dc42792e0dc9ad4610dc4021e22c"
+		},
+		{
+			"verse_id_chirho": "Gen.3.13",
+			"token_id_chirho": "01eis",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "62e239cb3a76d017bd56373adf945358f8da77cbefbdeba94b2c23afbdb11b54"
+		},
+		{
+			"verse_id_chirho": "Gen.3.14",
+			"token_id_chirho": "012st",
+			"text_chirho": "אֱלֹהִ֥ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "1fead61ccef382810201c78ac2bd391ebb54b8f4b4534e44a3a0bad9ae24c6c3"
+		},
+		{
+			"verse_id_chirho": "Gen.3.21",
+			"token_id_chirho": "0176C",
+			"text_chirho": "אֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "5ce902f41c56092454f28e8044c927a685c935c20a22ea4d496674fc576580c6"
+		},
+		{
+			"verse_id_chirho": "Gen.3.22",
+			"token_id_chirho": "01e6Q",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "51c5b22461d47cd5a74e8b26ec1a1bda3006f943857700f017aa186395587052"
+		},
+		{
+			"verse_id_chirho": "Gen.3.23",
+			"token_id_chirho": "016ot",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "262b924179dcbdb8820f05a58ad01e458bccc3d4f59675990db7821ed486a431"
+		},
+		{
+			"verse_id_chirho": "Gen.4.25",
+			"token_id_chirho": "01E1f",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "9c01836991d5742fac8f141364998e7dd802ede05d99113c92a2d4c6fdaf3ebe"
+		},
+		{
+			"verse_id_chirho": "Gen.5.1",
+			"token_id_chirho": "01Dne",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "a8be85ce08c8fba766bf498e54ae60ab6e0b94d82891d2d4e996c05ddb45a042"
+		},
+		{
+			"verse_id_chirho": "Gen.5.1",
+			"token_id_chirho": "01eWV",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "a8be85ce08c8fba766bf498e54ae60ab6e0b94d82891d2d4e996c05ddb45a042"
+		},
+		{
+			"verse_id_chirho": "Gen.5.22",
+			"token_id_chirho": "01AHL",
+			"text_chirho": "הָֽאֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "383944c9afe48a5c6274a354d3cc218bcd3477051326394b33f1f76439afaf83"
+		},
+		{
+			"verse_id_chirho": "Gen.5.24",
+			"token_id_chirho": "01Bo3",
+			"text_chirho": "הָֽאֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "14766195fc22a003c4ebf26350be73988de59aeb16b281f2ee102bd6497ec65f"
+		},
+		{
+			"verse_id_chirho": "Gen.5.24",
+			"token_id_chirho": "01Fu4",
+			"text_chirho": "אֱלֹהִֽים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "14766195fc22a003c4ebf26350be73988de59aeb16b281f2ee102bd6497ec65f"
+		},
+		{
+			"verse_id_chirho": "Gen.6.2",
+			"token_id_chirho": "01T54",
+			"text_chirho": "הָֽאֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "566a7da3e8e2074447524fbd0bc52d722d037d7e5570ca97bc847728963f73ec"
+		},
+		{
+			"verse_id_chirho": "Gen.6.4",
+			"token_id_chirho": "01Bav",
+			"text_chirho": "הָֽאֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "40d3878aef827b9c102cdb0a444b79e5bbcfaf9fb624d70fcb29553ebaa9698d"
+		},
+		{
+			"verse_id_chirho": "Gen.6.9",
+			"token_id_chirho": "01kmu",
+			"text_chirho": "הָֽאֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3fb89224a1cc3d532ec4da395b4d82bca8d3d26c60bbc935102ce93bb3a5f24b"
+		},
+		{
+			"verse_id_chirho": "Gen.6.11",
+			"token_id_chirho": "01mwz",
+			"text_chirho": "הָֽאֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b107f3b111b2fd1766ce1eb9da2ba62f20d6f53a596c588899aa36e390d55c55"
+		},
+		{
+			"verse_id_chirho": "Gen.6.12",
+			"token_id_chirho": "01G3b",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "1fa5bf7ea09a51de2718e24d8ebd2fb1db7e50a366e5f36edc471c7d2a20aa14"
+		},
+		{
+			"verse_id_chirho": "Gen.6.13",
+			"token_id_chirho": "01fdT",
+			"text_chirho": "אֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "51bed8f7813ad490a58cf9ae21ebf87656da49ceb77c8a69d59a7b2e7da4708e"
+		},
+		{
+			"verse_id_chirho": "Gen.6.22",
+			"token_id_chirho": "01kDi",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "8475f6979dfac82bf37a769fa06c278c585f7c78066a75c864808b483db7d961"
+		},
+		{
+			"verse_id_chirho": "Gen.7.9",
+			"token_id_chirho": "01ssX",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "9a5b293d5a5ff352b71b24fc39f17b6e11f11766912fa92afdb2ae36c2ebf8d7"
+		},
+		{
+			"verse_id_chirho": "Gen.7.16",
+			"token_id_chirho": "01Vib",
+			"text_chirho": "אֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "852b698d5b4cf6017dce80a32eb8766efdc5515c90222147d96df483800e748a"
+		},
+		{
+			"verse_id_chirho": "Gen.8.1",
+			"token_id_chirho": "011vK",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "13ff42814d157335f5aecdb28fb9429a77d15367a1533242ca46afce58cc6f63"
+		},
+		{
+			"verse_id_chirho": "Gen.8.1",
+			"token_id_chirho": "017G6",
+			"text_chirho": "אֱלֹהִ֥ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "13ff42814d157335f5aecdb28fb9429a77d15367a1533242ca46afce58cc6f63"
+		},
+		{
+			"verse_id_chirho": "Gen.8.15",
+			"token_id_chirho": "01frz",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "68b76452d9a7b16e8360878749cbaaf6dd012a7a782c6e4ac95e73325129b373"
+		},
+		{
+			"verse_id_chirho": "Gen.9.1",
+			"token_id_chirho": "01NwS",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "4a88bcca1ab8aa597be6d2c1987d084ca5042c9d40075e7157502e2b54924a89"
+		},
+		{
+			"verse_id_chirho": "Gen.9.6",
+			"token_id_chirho": "01Gh2",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "50d75f3c4541cd68561fd4bbfa2cfa150ffcf11e4213395566bc9d24c6575bc7"
+		},
+		{
+			"verse_id_chirho": "Gen.9.8",
+			"token_id_chirho": "019eG",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "269eefcbdbb4fc6962bc5755d194d473311e456fba37cc34c1c18995bcd0bf2d"
+		},
+		{
+			"verse_id_chirho": "Gen.9.12",
+			"token_id_chirho": "01RRT",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "1fe0b484b103e55c9b3017663553e5660da8f506a6cb97c4336b9cc8b577d992"
+		},
+		{
+			"verse_id_chirho": "Gen.9.16",
+			"token_id_chirho": "01czF",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "6ed02defabb435c66eb296996fa067ea2f6428a4254001d2863ba557f2acca09"
+		},
+		{
+			"verse_id_chirho": "Gen.9.17",
+			"token_id_chirho": "01csz",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "5bb7369508d027286dfb53d83a294149c93a1738b260eddd7145e9082a2ee16a"
+		},
+		{
+			"verse_id_chirho": "Gen.9.27",
+			"token_id_chirho": "01AjX",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3d85b3ab489e000cd95780c5f9ecfef0faca2c0965f5cbb5cf78d1eb6e5dadef"
+		},
+		{
+			"verse_id_chirho": "Gen.17.3",
+			"token_id_chirho": "0128Z",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7d167405a2ca3df969e3082cdeed1e3c1f67fbe46b5e677ace904e3681b2ad69"
+		},
+		{
+			"verse_id_chirho": "Gen.17.7",
+			"token_id_chirho": "01vSJ",
+			"text_chirho": "לֵֽאלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "d35644f7d6e35e90202372bafbaac689f3e639e8f2756a7c61aa0b71409c56bc"
+		},
+		{
+			"verse_id_chirho": "Gen.17.8",
+			"token_id_chirho": "01TsQ",
+			"text_chirho": "לֵאלֹהִֽים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "11286a777ea8a10890741b930ac547248dbd5dd29b98e2b9a0ebefd592fc5df1"
+		},
+		{
+			"verse_id_chirho": "Gen.17.9",
+			"token_id_chirho": "01HAP",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "67aad3ffcb835995a4e1448bd702c27efd582665b97834ae4b95d8d01e58c4be"
+		},
+		{
+			"verse_id_chirho": "Gen.17.15",
+			"token_id_chirho": "01wNv",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "977ef862f82b313e829af7128bf34a18fcee698f4b28b45a967b861d2cff6bd7"
+		},
+		{
+			"verse_id_chirho": "Gen.17.18",
+			"token_id_chirho": "01zfg",
+			"text_chirho": "הָֽאֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "48d6308fee2d4d51691cc0893c226a31ccff72804adcf9929ddea017485b296f"
+		},
+		{
+			"verse_id_chirho": "Gen.17.19",
+			"token_id_chirho": "01t82",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "04cd1312812811cf068faf7f3f91c3b74b4104fd0176603708b39aa73161089c"
+		},
+		{
+			"verse_id_chirho": "Gen.17.22",
+			"token_id_chirho": "01jvx",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "e516d63bd46a5e6668acf7a5d5093c9062ae969decf355a58e1312d9a0bce811"
+		},
+		{
+			"verse_id_chirho": "Gen.17.23",
+			"token_id_chirho": "01cws",
+			"text_chirho": "אֱלֹהִֽים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "a36f9acb73ee767a60e14ebc313309ea286606408254e4e258dd19b39d6a2421"
+		},
+		{
+			"verse_id_chirho": "Gen.19.29",
+			"token_id_chirho": "01yym",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "686ecf045ac825d8f3bdffbbd33e62377af04daeff810e13b0535d9d3165ea40"
+		},
+		{
+			"verse_id_chirho": "Gen.19.29",
+			"token_id_chirho": "015KS",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "686ecf045ac825d8f3bdffbbd33e62377af04daeff810e13b0535d9d3165ea40"
+		},
+		{
+			"verse_id_chirho": "Gen.20.3",
+			"token_id_chirho": "01e1Q",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "e8a6e36b4cacdaaff5de9b8d8410fca0db9a121d36319402cbb20bac6570a404"
+		},
+		{
+			"verse_id_chirho": "Gen.20.6",
+			"token_id_chirho": "01J8W",
+			"text_chirho": "הָֽאֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "39d9b625dab47bb6dc7f67b70f07eeee8f834a0980bce7afec3ecf7afce94f23"
+		},
+		{
+			"verse_id_chirho": "Gen.20.11",
+			"token_id_chirho": "01V4B",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "8f7701955c20ce7e872bb8e8d3474e7b5a141d6a6c219c72ceaa3edd57e408cf"
+		},
+		{
+			"verse_id_chirho": "Gen.20.13",
+			"token_id_chirho": "01Wov",
+			"text_chirho": "אֱלֹהִים֮",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "e79d09828c7486d44effa7f28a0579b6589b1bd4aac8cb8bf111a64e5de5b98f"
+		},
+		{
+			"verse_id_chirho": "Gen.20.17",
+			"token_id_chirho": "01Thc",
+			"text_chirho": "הָאֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "24e92f2ea08bdd42ced49ec3d2b7b89e96c1ae9b9b06fc5bd04f705054149b33"
+		},
+		{
+			"verse_id_chirho": "Gen.20.17",
+			"token_id_chirho": "012si",
+			"text_chirho": "אֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "24e92f2ea08bdd42ced49ec3d2b7b89e96c1ae9b9b06fc5bd04f705054149b33"
+		},
+		{
+			"verse_id_chirho": "Gen.21.2",
+			"token_id_chirho": "01eaF",
+			"text_chirho": "אֱלֹהִֽים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "a2784c7e5536768dfeda563384c17d0e94beecb8c7a9ff66981d06d8591ac492"
+		},
+		{
+			"verse_id_chirho": "Gen.21.4",
+			"token_id_chirho": "01kHd",
+			"text_chirho": "אֱלֹהִֽים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7cc7d845fc012afed568b9e4a82c17fb1960ab5ce02be0a70784e624717afb96"
+		},
+		{
+			"verse_id_chirho": "Gen.21.6",
+			"token_id_chirho": "01anA",
+			"text_chirho": "אֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "d2144dd3efa447e84fcb8d488ad147f82155832613a3eb07e60fcfbc08da0f69"
+		},
+		{
+			"verse_id_chirho": "Gen.21.12",
+			"token_id_chirho": "01bkq",
+			"text_chirho": "אֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3b19ddf27388c5ed0e0de3eeef51a1f668bbbfd2045691a4f880336db870b7e5"
+		},
+		{
+			"verse_id_chirho": "Gen.21.17",
+			"token_id_chirho": "01rqP",
+			"text_chirho": "אֱלֹהִים֮",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "64c7f863fdcfb97394271861c7f69e3d468900967894b886d216f320a1461dfc"
+		},
+		{
+			"verse_id_chirho": "Gen.21.17",
+			"token_id_chirho": "01b8z",
+			"text_chirho": "אֱלֹהִ֤ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "64c7f863fdcfb97394271861c7f69e3d468900967894b886d216f320a1461dfc"
+		},
+		{
+			"verse_id_chirho": "Gen.21.17",
+			"token_id_chirho": "01M8R",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "64c7f863fdcfb97394271861c7f69e3d468900967894b886d216f320a1461dfc"
+		},
+		{
+			"verse_id_chirho": "Gen.21.19",
+			"token_id_chirho": "016XT",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "522bd45d8d9874ee794c6eff7f800f9c1598732bf92ae246035bd079d08cb082"
+		},
+		{
+			"verse_id_chirho": "Gen.21.20",
+			"token_id_chirho": "0176d",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "62dee18e0d44a0c8d803bbc29c25ebe473492434724766c71b971218d786a06d"
+		},
+		{
+			"verse_id_chirho": "Gen.22.3",
+			"token_id_chirho": "01E6H",
+			"text_chirho": "הָאֱלֹהִֽים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "2d5671761bbacad530c0c81eaaa210c06f6cfa56ff369779c3137c823ca80750"
+		},
+		{
+			"verse_id_chirho": "Gen.22.8",
+			"token_id_chirho": "01xRA",
+			"text_chirho": "אֱלֹהִ֞ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "1bba293f936d27fc7170a129d6fae0588a49eca7c884105a10269ef91da7f8ec"
+		},
+		{
+			"verse_id_chirho": "Gen.22.9",
+			"token_id_chirho": "01xTt",
+			"text_chirho": "הָאֱלֹהִים֒",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "4c12cba1e17212dbfc05feaf4b13861c88082b1b37c10a1eb5e51d75a1e42df8"
+		},
+		{
+			"verse_id_chirho": "Gen.22.12",
+			"token_id_chirho": "01nfk",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b7edcf855925a2a0cf7e52792d8853892b9db3552711162a566a30fba5bfab29"
+		},
+		{
+			"verse_id_chirho": "Gen.25.11",
+			"token_id_chirho": "01Kqi",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "bb571d08b29d37996fa74fe30438af1304a5a777c25dccbf86b5d1b30474c100"
+		},
+		{
+			"verse_id_chirho": "Gen.27.28",
+			"token_id_chirho": "019G4",
+			"text_chirho": "הָאֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b0388a3efeebfb32df0d248056bee8e884a48ef370dddbcdc7455a69648688f2"
+		},
+		{
+			"verse_id_chirho": "Gen.28.4",
+			"token_id_chirho": "01BuR",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "2a8b83e9a0ed4158de04a911fa89b87c916f248efbc5eb9c382fe25f79875df1"
+		},
+		{
+			"verse_id_chirho": "Gen.28.12",
+			"token_id_chirho": "01bij",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b35ac4be40540ef12a583087bc49f3372f98a5b6ba0c35529db8d3eba0e381b4"
+		},
+		{
+			"verse_id_chirho": "Gen.28.17",
+			"token_id_chirho": "01gzM",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7b9d86b9f66cfc1c97e2b7b55fb62c7f815ac2241bfc17a8ebfbab19224ee824"
+		},
+		{
+			"verse_id_chirho": "Gen.28.20",
+			"token_id_chirho": "01uxY",
+			"text_chirho": "אֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "f60f8ba5f617ebaa3f8a44713d0df294bd1b8bce11dfd7f071d0e4b4e9e0aa72"
+		},
+		{
+			"verse_id_chirho": "Gen.28.21",
+			"token_id_chirho": "01dpR",
+			"text_chirho": "לֵאלֹהִֽים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7e55d4aae79b45f8e8319e59ef4aa1a3bbdfac3248b235bcc71cd19bd942f989"
+		},
+		{
+			"verse_id_chirho": "Gen.28.22",
+			"token_id_chirho": "01hMV",
+			"text_chirho": "אֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "06fe1bdfc5c6b78dd2bb984ba9a7854e3d6f473b5da40edc8c174b9474afba69"
+		},
+		{
+			"verse_id_chirho": "Gen.30.6",
+			"token_id_chirho": "016mj",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "d734a1a93febc3e4f9d84f378bafa9f4707bf8c8eed6e6b693990594b1991c46"
+		},
+		{
+			"verse_id_chirho": "Gen.30.17",
+			"token_id_chirho": "01R5t",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "1be0ecb98216a101de5509b57a011668c05b0cd2919f95950477556c52703e20"
+		},
+		{
+			"verse_id_chirho": "Gen.30.18",
+			"token_id_chirho": "01Bsf",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "20a319d7660f8ca531129bcb905b25cafab608ef43e154b5c0a36870c66c2f7a"
+		},
+		{
+			"verse_id_chirho": "Gen.30.20",
+			"token_id_chirho": "01r3t",
+			"text_chirho": "אֱלֹהִ֥ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "9328ba021e595867e1c9963618ea5eb18df624a3fe51b774ab8a2d4d985fb234"
+		},
+		{
+			"verse_id_chirho": "Gen.30.22",
+			"token_id_chirho": "01X93",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b2e3f5e0664b1435d4429d0cf2d05d8b86cca7ea6b4475ad3d0e0c634aa97908"
+		},
+		{
+			"verse_id_chirho": "Gen.30.22",
+			"token_id_chirho": "01vMj",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b2e3f5e0664b1435d4429d0cf2d05d8b86cca7ea6b4475ad3d0e0c634aa97908"
+		},
+		{
+			"verse_id_chirho": "Gen.30.23",
+			"token_id_chirho": "0141z",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "00b7c1d325744237a5574b4381465969a91c119b1541cb2540c02f2006e42ac9"
+		},
+		{
+			"verse_id_chirho": "Gen.31.7",
+			"token_id_chirho": "01NqA",
+			"text_chirho": "אֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "2d2918e96c1bb47d274e513e0646e7506a32079f331391bbd661479a062b2eae"
+		},
+		{
+			"verse_id_chirho": "Gen.31.9",
+			"token_id_chirho": "01gYW",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "b471fb79beb91ca8a122a94b99f6a19534168b1dfb2c3106f8d473424fac673b"
+		},
+		{
+			"verse_id_chirho": "Gen.31.11",
+			"token_id_chirho": "01QTE",
+			"text_chirho": "הָאֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "eb31a9ebdb3e31910a4377e5a67f55bc3e080a8283b110d361e838e6d15d0210"
+		},
+		{
+			"verse_id_chirho": "Gen.31.16",
+			"token_id_chirho": "01gVg",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "5d1f8f4799425ab35c8207e5df61e60c6807babb7281d5117c60988c9b084a13"
+		},
+		{
+			"verse_id_chirho": "Gen.31.16",
+			"token_id_chirho": "016zX",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "5d1f8f4799425ab35c8207e5df61e60c6807babb7281d5117c60988c9b084a13"
+		},
+		{
+			"verse_id_chirho": "Gen.31.24",
+			"token_id_chirho": "01T22",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "c16816d8a263af4e02ec98fa28cca4190368b5a9d1e6a44976b493da4f7b7192"
+		},
+		{
+			"verse_id_chirho": "Gen.31.42",
+			"token_id_chirho": "014mV",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "05944b914d4f242e2c80f67ea7738818c0035f21efb208885e03ff62c0011599"
+		},
+		{
+			"verse_id_chirho": "Gen.32.2",
+			"token_id_chirho": "012Ny",
+			"text_chirho": "אֱלֹהִֽים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "68c8057afab56b45e24f2dd1c1dce3a2dd8b324c89226d445c93c60e3e8bc6d7"
+		},
+		{
+			"verse_id_chirho": "Gen.32.3",
+			"token_id_chirho": "01HPH",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "7f2da159a8a722043afde5585a79c29b81cbd33172b96c9ecfd93c97eb0232e5"
+		},
+		{
+			"verse_id_chirho": "Gen.32.29",
+			"token_id_chirho": "01QPL",
+			"text_chirho": "אֱלֹהִ֛ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "933ac4a51a71e8f5f8236f11584740fed6bcb9382ee85fe43eca8b7e93c393d9"
+		},
+		{
+			"verse_id_chirho": "Gen.32.31",
+			"token_id_chirho": "01ALi",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "a7a4c2275de91b589190f996c14108bd07507752aa82687d98dce9c36b266783"
+		},
+		{
+			"verse_id_chirho": "Gen.33.5",
+			"token_id_chirho": "01HYe",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3ccfe39c01385e77e06b812aac6db75b24b38a1473ed90cc00e077bb1aafe131"
+		},
+		{
+			"verse_id_chirho": "Gen.33.10",
+			"token_id_chirho": "01TTL",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "e308833509109735b746824d6199c9c2b5e7b2e6292d25824d3b93ba555a839c"
+		},
+		{
+			"verse_id_chirho": "Gen.33.11",
+			"token_id_chirho": "01FtE",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "bdab2439b12d0bf40fe935d1d1eea71b2024145ff97b0cb1aaba22b7b37d746b"
+		},
+		{
+			"verse_id_chirho": "Gen.35.1",
+			"token_id_chirho": "01exb",
+			"text_chirho": "אֱלֹהִים֙",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "dd28b40bd1a059757d3ef8fe5db3565f8f637c1b52bdc6fa609b09eb25eaf304"
+		},
+		{
+			"verse_id_chirho": "Gen.35.5",
+			"token_id_chirho": "01AQ3",
+			"text_chirho": "אֱלֹהִ֗ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "893dba50e457be71a0d491718d37fe68d4ab919ec5112e32b74b977ee4aff0d6"
+		},
+		{
+			"verse_id_chirho": "Gen.35.7",
+			"token_id_chirho": "01s23",
+			"text_chirho": "הָֽאֱלֹהִ֔ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "3af51887280829f45e729889eb06e5095f53a380bd56d9176a64dec66280a6be"
+		},
+		{
+			"verse_id_chirho": "Gen.35.9",
+			"token_id_chirho": "01P7d",
+			"text_chirho": "אֱלֹהִ֤ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "23a36624a4db523b099c8cfd4ebf47f566ea1acaaafc3ad869c090c122c79554"
+		},
+		{
+			"verse_id_chirho": "Gen.35.10",
+			"token_id_chirho": "01ZBs",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "358632e9b431f28fced4e31dbb9193b7f9ef618d74fd965761ae448e4e3783b8"
+		},
+		{
+			"verse_id_chirho": "Gen.35.11",
+			"token_id_chirho": "01C3r",
+			"text_chirho": "אֱלֹהִ֜ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "743602b0ccac6eba604077094e16ddc2efabbfe8f61a29bd4cc8722579476122"
+		},
+		{
+			"verse_id_chirho": "Gen.35.13",
+			"token_id_chirho": "01JhZ",
+			"text_chirho": "אֱלֹהִ֑ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "797aee5eb114e70c82baf2f360d30e8a1c321f392936a5d1e4905ffde8605228"
+		},
+		{
+			"verse_id_chirho": "Gen.35.15",
+			"token_id_chirho": "01L7e",
+			"text_chirho": "אֱלֹהִ֖ים",
+			"gloss_chirho": "God",
+			"canonical_sha256_chirho": "839b80d304c5cf037b8709e9889d59e866e4771bc0e691974d4a06af72cc767a"
+		}
+	]
+}

@@ -1,0 +1,74 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h998-same-sense-prov-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The puzzle pieces represent understanding as comprehension, not a physical puzzle. The listed occurrences preserve that understanding sense.",
+	"source_icon_id_chirho": "icon-1e396358a20743fcaec1369c32ec0883-09-chirho",
+	"source_sha256_chirho": "d07b5940ef5a467710c6589d95b52e27cb897f58f32ce99cc40867cfc85506b2",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.2",
+		"token_id_chirho": "20C5U",
+		"text_chirho": "בִינָֽה",
+		"gloss_chirho": "understanding",
+		"canonical_sha256_chirho": "85a5d535e18a948e0a6c86a87d1654ad21f8d5de3bdc18a7cf577bf2065eefc7"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H998",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "בִּינָה"
+	},
+	"contextual_meaning_chirho": "understanding",
+	"evidence_refs_chirho": ["oshb-prov-chirho", "gbt-english-prov-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Prov.4.1",
+			"token_id_chirho": "20Yu7",
+			"text_chirho": "בִּינָֽה",
+			"gloss_chirho": "understanding",
+			"canonical_sha256_chirho": "196e2ab668f379198418eed7b39c982029e28c215d4edc342d581db69b8437e0"
+		},
+		{
+			"verse_id_chirho": "Prov.4.5",
+			"token_id_chirho": "20F5r",
+			"text_chirho": "בִינָ֑ה",
+			"gloss_chirho": "understanding",
+			"canonical_sha256_chirho": "6ef06babae08b3d369cc85f24ebd859b8270ff0033c2538e364ce6b122e8d7fc"
+		},
+		{
+			"verse_id_chirho": "Prov.4.7",
+			"token_id_chirho": "20RZN",
+			"text_chirho": "בִינָֽה",
+			"gloss_chirho": "understanding",
+			"canonical_sha256_chirho": "c4ecafebc3637568ee90e6ef8fad00c75d8d97d05f8a31d325b3bd60c3a6218a"
+		},
+		{
+			"verse_id_chirho": "Prov.7.4",
+			"token_id_chirho": "205wJ",
+			"text_chirho": "לַבִּינָ֥ה",
+			"gloss_chirho": "understanding",
+			"canonical_sha256_chirho": "e1dc13e2a0eb1c345fa6a14ce5cf3b7ba79a33b055d839f4da2a57eb7ab34e77"
+		},
+		{
+			"verse_id_chirho": "Prov.8.14",
+			"token_id_chirho": "20Eat",
+			"text_chirho": "בִ֝ינָ֗ה",
+			"gloss_chirho": "understanding",
+			"canonical_sha256_chirho": "a60c294d14a53ae1d9271bb7ed4e19db1b68a2d8b05f93efa50285b79cf32c84"
+		},
+		{
+			"verse_id_chirho": "Prov.9.6",
+			"token_id_chirho": "20apQ",
+			"text_chirho": "בִּינָֽה",
+			"gloss_chirho": "understanding",
+			"canonical_sha256_chirho": "5b2e35286a00c64cdd7eb841c25ce750c5222422dcf190b2f49e35832699dfa9"
+		},
+		{
+			"verse_id_chirho": "Prov.16.16",
+			"token_id_chirho": "20eDe",
+			"text_chirho": "בִּ֝ינָ֗ה",
+			"gloss_chirho": "understanding",
+			"canonical_sha256_chirho": "290d492cdab978476577cda4ff613f4737f03f41a82cb802864c2c32c58bd9e7"
+		}
+	]
+}

@@ -1,0 +1,1047 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h3068-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The burning bush is a mnemonic for the explicitly named Yahweh, not a claim that the event occurs in each verse. The listed tokens all preserve this exact divine name and gloss.",
+	"source_icon_id_chirho": "icon-df239fb10476473c9660c1ceace52cc0-14-chirho",
+	"source_sha256_chirho": "b05c3a0402218907faa2e035db07071899da387aef951b7e899ba2839f425681",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.1.7",
+		"token_id_chirho": "20dBc",
+		"text_chirho": "יְ֭הוָה",
+		"gloss_chirho": "Yahweh",
+		"canonical_sha256_chirho": "e8797351bee9ff6d37d73647a263bdd794f9706c590d2937c88bf9bd7bcf1d92"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H3068",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "יְהֹוָה"
+	},
+	"contextual_meaning_chirho": "Yahweh, the divine name",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.2.4",
+			"token_id_chirho": "01gcK",
+			"text_chirho": "יְהוָ֥ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "58516185e101dc76aa976a1a30f7584c0f459c00a9d849a7de18abe6da779645"
+		},
+		{
+			"verse_id_chirho": "Gen.2.5",
+			"token_id_chirho": "01aqT",
+			"text_chirho": "יְהוָ֤ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "8ffb13e652691705d96b32f9d79f2bab341f5d099f66bae568b57a95a9643136"
+		},
+		{
+			"verse_id_chirho": "Gen.2.7",
+			"token_id_chirho": "01pPp",
+			"text_chirho": "יְהוָ֨ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "dfa59f51fd0a71cc43a1229975259c6b597fa9d70dc931199cf3c3e96f10ece8"
+		},
+		{
+			"verse_id_chirho": "Gen.2.8",
+			"token_id_chirho": "015qp",
+			"text_chirho": "יְהוָ֧ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "f1554d25f2824a1e1cd7e533c866397a6f16e720de5e2b2a515725c1065ba0a1"
+		},
+		{
+			"verse_id_chirho": "Gen.2.9",
+			"token_id_chirho": "01HqY",
+			"text_chirho": "יְהוָ֤ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "901a5f6e1924743d33cb6ed65bf351103135755446d47ecc3477077f4b1a2825"
+		},
+		{
+			"verse_id_chirho": "Gen.2.15",
+			"token_id_chirho": "01yHT",
+			"text_chirho": "יְהוָ֥ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "86ff084db3c6524120723e06befe37cd4afd24f5f778558aeca04d104f80936b"
+		},
+		{
+			"verse_id_chirho": "Gen.2.16",
+			"token_id_chirho": "01PfQ",
+			"text_chirho": "יְהוָ֣ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "de31c9e2e7a3fdab60c69ea588c4446a19158798a8681510b76739cf7fa07f46"
+		},
+		{
+			"verse_id_chirho": "Gen.2.18",
+			"token_id_chirho": "01reD",
+			"text_chirho": "יְהוָ֣ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "70776c1cf323d5711263d73e8b6ba0e4c207af1ebe79acdb1c5f4037e69fefa5"
+		},
+		{
+			"verse_id_chirho": "Gen.2.19",
+			"token_id_chirho": "01L6G",
+			"text_chirho": "יְהוָ֨ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "57a2e6625e4b8324447bd8f15a7f29808917a3b0fc2c130af8a87b1c86c74477"
+		},
+		{
+			"verse_id_chirho": "Gen.2.21",
+			"token_id_chirho": "01sQy",
+			"text_chirho": "יְהוָ֨ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "1eb8f821c2110dc87feb3590a3cc73ac97c0cd11d9f6d200a569164ba497267d"
+		},
+		{
+			"verse_id_chirho": "Gen.2.22",
+			"token_id_chirho": "01H3W",
+			"text_chirho": "יְהוָ֨ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "28ea032031fc8aa5505b4f1988092b4b2033ca5bcd3480e3537cc1e9d6b285cf"
+		},
+		{
+			"verse_id_chirho": "Gen.3.1",
+			"token_id_chirho": "01jZZ",
+			"text_chirho": "יְהוָ֣ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "fc7ed667061c78367ea0c2e057962beffd2f7540627b9d8c707f6d6c82ab8258"
+		},
+		{
+			"verse_id_chirho": "Gen.3.8",
+			"token_id_chirho": "01XLB",
+			"text_chirho": "יְהוָ֧ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2d22b87f56a3cd5e029989669b3989ad57b8f1791ca77a3db4f06870750ee76a"
+		},
+		{
+			"verse_id_chirho": "Gen.3.8",
+			"token_id_chirho": "01xek",
+			"text_chirho": "יְהוָ֣ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2d22b87f56a3cd5e029989669b3989ad57b8f1791ca77a3db4f06870750ee76a"
+		},
+		{
+			"verse_id_chirho": "Gen.3.9",
+			"token_id_chirho": "016Hj",
+			"text_chirho": "יְהוָ֥ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "44d6aeecbaaf83a3565f4fc94e1b9a20b3e3dc42792e0dc9ad4610dc4021e22c"
+		},
+		{
+			"verse_id_chirho": "Gen.3.13",
+			"token_id_chirho": "01bmu",
+			"text_chirho": "יְהוָ֧ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "62e239cb3a76d017bd56373adf945358f8da77cbefbdeba94b2c23afbdb11b54"
+		},
+		{
+			"verse_id_chirho": "Gen.3.14",
+			"token_id_chirho": "01QFm",
+			"text_chirho": "יְהֹוָ֨ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "1fead61ccef382810201c78ac2bd391ebb54b8f4b4534e44a3a0bad9ae24c6c3"
+		},
+		{
+			"verse_id_chirho": "Gen.3.21",
+			"token_id_chirho": "01cqw",
+			"text_chirho": "יְהוָ֨ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "5ce902f41c56092454f28e8044c927a685c935c20a22ea4d496674fc576580c6"
+		},
+		{
+			"verse_id_chirho": "Gen.3.22",
+			"token_id_chirho": "01Q98",
+			"text_chirho": "יְהוָ֣ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "51c5b22461d47cd5a74e8b26ec1a1bda3006f943857700f017aa186395587052"
+		},
+		{
+			"verse_id_chirho": "Gen.3.23",
+			"token_id_chirho": "017yo",
+			"text_chirho": "יְהוָ֥ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "262b924179dcbdb8820f05a58ad01e458bccc3d4f59675990db7821ed486a431"
+		},
+		{
+			"verse_id_chirho": "Gen.4.1",
+			"token_id_chirho": "01mY8",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "141c71ce0c9bf2fbcf542b304a2860ea2e30d816fb52d2763a95ad8a97e02df3"
+		},
+		{
+			"verse_id_chirho": "Gen.4.4",
+			"token_id_chirho": "01Vgg",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "7a104c6727629c63d815f789f4dd0442d5d3a2cf8d9e0848b73a41c50de3028c"
+		},
+		{
+			"verse_id_chirho": "Gen.4.6",
+			"token_id_chirho": "01yeG",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "90ba60c49dfc1b5cc334e7d083f7dce7182dead677f29bf0b4edbc7fd6dd483f"
+		},
+		{
+			"verse_id_chirho": "Gen.4.9",
+			"token_id_chirho": "01Hx4",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2ba527920c1b2d52d1cd963be89e9de9e33b5445ab5f7b3dedd0a40e7d1fe03b"
+		},
+		{
+			"verse_id_chirho": "Gen.4.13",
+			"token_id_chirho": "01WRL",
+			"text_chirho": "יְהוָ֑ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "347abd841406af2820e620f6574086662c0d6b791f70f4714f124c85f736e497"
+		},
+		{
+			"verse_id_chirho": "Gen.4.15",
+			"token_id_chirho": "01wCy",
+			"text_chirho": "יְהוָ֗ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "38d5823eceae1deb1e45db33ee5d4239bff5f98eabb72190a039087df81858e0"
+		},
+		{
+			"verse_id_chirho": "Gen.4.15",
+			"token_id_chirho": "01bU4",
+			"text_chirho": "יְהוָ֤ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "38d5823eceae1deb1e45db33ee5d4239bff5f98eabb72190a039087df81858e0"
+		},
+		{
+			"verse_id_chirho": "Gen.4.16",
+			"token_id_chirho": "015wJ",
+			"text_chirho": "יְהוָ֑ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "9d0a25b029b93bebc94010256209e5cbf3ed58eaa498386231d905e6d5215585"
+		},
+		{
+			"verse_id_chirho": "Gen.4.26",
+			"token_id_chirho": "01ikx",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "5cb62eb6aaf89aea46c7ea99ea8feffe0d776d93724cd7f4463587a7aaec1fc3"
+		},
+		{
+			"verse_id_chirho": "Gen.5.29",
+			"token_id_chirho": "0149o",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "0694ca44a7fcee996c00e21e6ae33d8495592110df4c301b9796dc07f2aed179"
+		},
+		{
+			"verse_id_chirho": "Gen.6.3",
+			"token_id_chirho": "01j9W",
+			"text_chirho": "יְהוָ֗ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c6a0bf8323d7135b80d866545f1183c736dbe9409952bc3a501f60da9caab19d"
+		},
+		{
+			"verse_id_chirho": "Gen.6.5",
+			"token_id_chirho": "01q3q",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "e7d54f0037b38f89ee90186354b3b439703a21e548697dae54d2f5658867faf0"
+		},
+		{
+			"verse_id_chirho": "Gen.6.6",
+			"token_id_chirho": "01VLV",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "b039f0a918e7eb00ae2b7c78531facb5773d1a6c9eba48370d5ac0ca6ae21e19"
+		},
+		{
+			"verse_id_chirho": "Gen.6.7",
+			"token_id_chirho": "01Wzj",
+			"text_chirho": "יְהוָ֗ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c192fc9c4b7c43f1e4911cfbfcd5d1d75e4d59db103c38f72007bbe048ac08c1"
+		},
+		{
+			"verse_id_chirho": "Gen.6.8",
+			"token_id_chirho": "01Fc9",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "b5bdc173981ecd5b0129296425fd2a5e885f93ee8adb498e458482433224ec5c"
+		},
+		{
+			"verse_id_chirho": "Gen.7.1",
+			"token_id_chirho": "01vhV",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "5bcc96ee19319f6f7a73c394b92401eaec1e9719d04ab5894e2a8c135eed5561"
+		},
+		{
+			"verse_id_chirho": "Gen.7.5",
+			"token_id_chirho": "01qQN",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "73fad20d5f0f684a5c9a5f702c8ae21845b96df00458dbd9aea3287ab91a3852"
+		},
+		{
+			"verse_id_chirho": "Gen.7.16",
+			"token_id_chirho": "01ZWD",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "852b698d5b4cf6017dce80a32eb8766efdc5515c90222147d96df483800e748a"
+		},
+		{
+			"verse_id_chirho": "Gen.8.21",
+			"token_id_chirho": "01iWk",
+			"text_chirho": "יְהוָה֮",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "7da84f140ee3fc4871818b489e55ed817a4cf3f14007f0498002f092af8aff43"
+		},
+		{
+			"verse_id_chirho": "Gen.8.21",
+			"token_id_chirho": "01NHj",
+			"text_chirho": "יְהוָ֜ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "7da84f140ee3fc4871818b489e55ed817a4cf3f14007f0498002f092af8aff43"
+		},
+		{
+			"verse_id_chirho": "Gen.9.26",
+			"token_id_chirho": "01NPP",
+			"text_chirho": "יְהֹוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "ef3cf92fa7415ff6a02ff7992305201136092b1a1c05eef6d091a7cafb5663d5"
+		},
+		{
+			"verse_id_chirho": "Gen.10.9",
+			"token_id_chirho": "01JqX",
+			"text_chirho": "יְהוָ֑ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "921ffe7a2294a39fcd255f3bfd0718e6abd00a85783cea3f6f69c7bc72574f27"
+		},
+		{
+			"verse_id_chirho": "Gen.10.9",
+			"token_id_chirho": "01dTc",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "921ffe7a2294a39fcd255f3bfd0718e6abd00a85783cea3f6f69c7bc72574f27"
+		},
+		{
+			"verse_id_chirho": "Gen.11.5",
+			"token_id_chirho": "01cem",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "3458c7ce839b2bf412afb7087bf10d80f58c0498a5dafa39b8f4cb0ab597e6e7"
+		},
+		{
+			"verse_id_chirho": "Gen.11.6",
+			"token_id_chirho": "01egd",
+			"text_chirho": "יְהוָ֗ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "116f73e5abc182d17fc6f859b4c63fc652af6a1088bb4f1964eb5a48ac6f234c"
+		},
+		{
+			"verse_id_chirho": "Gen.11.8",
+			"token_id_chirho": "0139a",
+			"text_chirho": "יְהוָ֥ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2185107d45d15897d1d4e3ef363c3650e2bec9c771b842c41b04548181355dca"
+		},
+		{
+			"verse_id_chirho": "Gen.11.9",
+			"token_id_chirho": "01qwh",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "f902682ec3a3446130cfbd8d7a2c28043f2b9e370acc00b8883b6816be2d3640"
+		},
+		{
+			"verse_id_chirho": "Gen.11.9",
+			"token_id_chirho": "01pid",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "f902682ec3a3446130cfbd8d7a2c28043f2b9e370acc00b8883b6816be2d3640"
+		},
+		{
+			"verse_id_chirho": "Gen.12.1",
+			"token_id_chirho": "01mRn",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "4e30f9c9a72df1a238c3299be697fde4dca5bbd486fcad311c3936fe93cbab1c"
+		},
+		{
+			"verse_id_chirho": "Gen.12.4",
+			"token_id_chirho": "01jKo",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "a918f6ac4064cc009f9344007833514160dba225cbd67ecb9a3aae23ddf5b9b4"
+		},
+		{
+			"verse_id_chirho": "Gen.12.7",
+			"token_id_chirho": "01HgW",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "6a1fcb5272856e235234bf66abfdaa50d0424f1020fe0c99a4ccd93fdceba756"
+		},
+		{
+			"verse_id_chirho": "Gen.12.8",
+			"token_id_chirho": "01USD",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "cd7389b8a6f7c4bc36ff22fcbc780d1cac43ae6beb21e93fc051b45f54efa65b"
+		},
+		{
+			"verse_id_chirho": "Gen.12.17",
+			"token_id_chirho": "01CXt",
+			"text_chirho": "יְהוָ֧ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "6add3ba64ffcfaae49e3f33da5f6c9a2ecd94aa2d74446ce8a02bf118b539b23"
+		},
+		{
+			"verse_id_chirho": "Gen.13.4",
+			"token_id_chirho": "01Drk",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "cd91d589627f3a837fc9e69f8ac975c5987c01bbe18c8cfe41f17ea256e8e0d3"
+		},
+		{
+			"verse_id_chirho": "Gen.13.10",
+			"token_id_chirho": "01V4e",
+			"text_chirho": "יְהוָ֗ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "3594aa231d348ee0c893499fff1a570b6a42475325268f04a5e046846c5c9c40"
+		},
+		{
+			"verse_id_chirho": "Gen.13.10",
+			"token_id_chirho": "01udF",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "3594aa231d348ee0c893499fff1a570b6a42475325268f04a5e046846c5c9c40"
+		},
+		{
+			"verse_id_chirho": "Gen.14.22",
+			"token_id_chirho": "01Sw9",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "7a981f67131516ba6455a1ccb404c9a83657f4ddc0c3c92a0774b45533262eb0"
+		},
+		{
+			"verse_id_chirho": "Gen.15.1",
+			"token_id_chirho": "01JnZ",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "a133b21ecf8445810692c80631b56b6725637698257903ca856dfbf699b5b844"
+		},
+		{
+			"verse_id_chirho": "Gen.15.4",
+			"token_id_chirho": "01YWB",
+			"text_chirho": "יְהוָ֤ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2104776a20b8f890a404bfb28411358bba4805be020a7f22391841402dbcc1e5"
+		},
+		{
+			"verse_id_chirho": "Gen.15.7",
+			"token_id_chirho": "01zk3",
+			"text_chirho": "יְהוָ֗ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "5434f30433dfe9b5de89648aef0d46bde1c1c161f35ef7cf10242cfd47f1432a"
+		},
+		{
+			"verse_id_chirho": "Gen.15.18",
+			"token_id_chirho": "013Xt",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "91b9766c8a6d4fbfd7285185b3433573fe7d972def3e8fd98db60c795be15b29"
+		},
+		{
+			"verse_id_chirho": "Gen.16.2",
+			"token_id_chirho": "01t1b",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "0f2709943e636ed96baf4104701c3e203cd103261885bfe15d9ec85cdf996ba2"
+		},
+		{
+			"verse_id_chirho": "Gen.16.5",
+			"token_id_chirho": "01n8U",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "81b5f48a2219954642a4f7693793a7be90f793b912da5627e7ca2dd0cab7df49"
+		},
+		{
+			"verse_id_chirho": "Gen.16.7",
+			"token_id_chirho": "016ev",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "59e05804fcc0999ab33b355bd1db531f04089b0d7086cb68eee9c2a073f2ff95"
+		},
+		{
+			"verse_id_chirho": "Gen.16.9",
+			"token_id_chirho": "015kf",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "78816278035b485fa422f15011c3aa71a1cd5443f7a58ffe104b7f07aa9ca78f"
+		},
+		{
+			"verse_id_chirho": "Gen.16.10",
+			"token_id_chirho": "012KH",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c8ec947c8fce5cf7bc71c7fb177e8e1803ff08fcede00816e99e230befc87774"
+		},
+		{
+			"verse_id_chirho": "Gen.16.11",
+			"token_id_chirho": "01GXn",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "20a0c2c18330f1a34e0fefb2b2ffe6b1c526d56ff42c35e079e398d84f86eee4"
+		},
+		{
+			"verse_id_chirho": "Gen.16.11",
+			"token_id_chirho": "01xun",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "20a0c2c18330f1a34e0fefb2b2ffe6b1c526d56ff42c35e079e398d84f86eee4"
+		},
+		{
+			"verse_id_chirho": "Gen.16.13",
+			"token_id_chirho": "01B3z",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "85665e9747890c925279ea7a383edfd251518538174ddf9a4ca79a895c5f791b"
+		},
+		{
+			"verse_id_chirho": "Gen.17.1",
+			"token_id_chirho": "01mV2",
+			"text_chirho": "יְהוָ֜ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c072b70e51834e97aab49b6dc502002cd7bce1717368c58487ba38701ec96c67"
+		},
+		{
+			"verse_id_chirho": "Gen.18.1",
+			"token_id_chirho": "01Dmt",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "06910309c325d7f21622687e108f9a2645e124572b7d210eaa9b00b1cc70a0d4"
+		},
+		{
+			"verse_id_chirho": "Gen.18.13",
+			"token_id_chirho": "01zba",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "bcca3d49b810d1da6cc780a1b369d9e4e348c440021fa43768c7f3d68e533701"
+		},
+		{
+			"verse_id_chirho": "Gen.18.19",
+			"token_id_chirho": "01dUC",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "26e3eb5b650922b5976d05aba7b267d077c81ab20956db81a8720aa7c072b2a3"
+		},
+		{
+			"verse_id_chirho": "Gen.18.19",
+			"token_id_chirho": "01kni",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "26e3eb5b650922b5976d05aba7b267d077c81ab20956db81a8720aa7c072b2a3"
+		},
+		{
+			"verse_id_chirho": "Gen.18.20",
+			"token_id_chirho": "01zxj",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "548f014036e58a933755750aa2900783af046736a7ff3fe50c5034a3b8ce2900"
+		},
+		{
+			"verse_id_chirho": "Gen.18.22",
+			"token_id_chirho": "01Qb5",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "06faa539a9adbc94aa092dcbdba4d54769724838f2404cb1eb0c8271257f2293"
+		},
+		{
+			"verse_id_chirho": "Gen.18.26",
+			"token_id_chirho": "01CvK",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "09ed6e24874d847cc042556273c6dd282ac7150f2d06396d7d10b765f3b7ee58"
+		},
+		{
+			"verse_id_chirho": "Gen.18.33",
+			"token_id_chirho": "01yJE",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "8901ef82ca130c2650ee83d2804edaa884bd956884be55b1da79aad8558726ae"
+		},
+		{
+			"verse_id_chirho": "Gen.19.13",
+			"token_id_chirho": "01qwE",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "81771be8e1eabd10e1ae300749fb9e3f9f61b01ac0f3dac115956b0a131fc820"
+		},
+		{
+			"verse_id_chirho": "Gen.19.13",
+			"token_id_chirho": "01wr4",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "81771be8e1eabd10e1ae300749fb9e3f9f61b01ac0f3dac115956b0a131fc820"
+		},
+		{
+			"verse_id_chirho": "Gen.19.14",
+			"token_id_chirho": "01hKn",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "292faa73ca9dd363a18367341e3fe3fe2ac867de77c4cd2b07c8864492f8fd3a"
+		},
+		{
+			"verse_id_chirho": "Gen.19.16",
+			"token_id_chirho": "01SiW",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "f8581eb2141cfe1d881fa9e2bab90ace272fefc75e4abf3ae0bde9bb31f39a7b"
+		},
+		{
+			"verse_id_chirho": "Gen.19.24",
+			"token_id_chirho": "01okp",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2a48db633a880960f2cbb4a28128ca1e5f383e7b6132bf2b59b890a9258355de"
+		},
+		{
+			"verse_id_chirho": "Gen.19.27",
+			"token_id_chirho": "01vz1",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "79b3a5d426f08dca886e15fbb54f73d6580be3bebbb786abccbc81bcd85589a7"
+		},
+		{
+			"verse_id_chirho": "Gen.20.18",
+			"token_id_chirho": "01jmo",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "57f9f67dd11691847f4e39ce8ae8df586a3ed9bcdf09f127dc65f8fc3b47003f"
+		},
+		{
+			"verse_id_chirho": "Gen.21.1",
+			"token_id_chirho": "01KtS",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "a1d22daa718de36e66b1611b1ca639d6e64e75cf921f079848c491d72f136b98"
+		},
+		{
+			"verse_id_chirho": "Gen.21.33",
+			"token_id_chirho": "01Sk6",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "1f6c7260299000ac5025b5c144fe232d319fc8d9a2c332ffa77ded20de815012"
+		},
+		{
+			"verse_id_chirho": "Gen.22.11",
+			"token_id_chirho": "01LQ5",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "5a465a871e118f1cf13b732b24b9e40853caffd293f53eadf01ef1a91438d8d5"
+		},
+		{
+			"verse_id_chirho": "Gen.22.14",
+			"token_id_chirho": "01Hio",
+			"text_chirho": "יְהוָ֣ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "e0580ede51f4d3de4c9ff000b057ab8c011ce93ebe8f23e1ee3ef9e3e0ef1a65"
+		},
+		{
+			"verse_id_chirho": "Gen.22.14",
+			"token_id_chirho": "01c89",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "e0580ede51f4d3de4c9ff000b057ab8c011ce93ebe8f23e1ee3ef9e3e0ef1a65"
+		},
+		{
+			"verse_id_chirho": "Gen.22.15",
+			"token_id_chirho": "01bZh",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "7bf354da000a87f17f98ca5937874f01e6396e0ea529358a24f310a7b4a14067"
+		},
+		{
+			"verse_id_chirho": "Gen.22.16",
+			"token_id_chirho": "01Q6h",
+			"text_chirho": "יְהוָ֑ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "ec5c24ceff7ff75531bc0979f72793bbbfa61b5e709fc2dbef9af4d8354978f4"
+		},
+		{
+			"verse_id_chirho": "Gen.24.7",
+			"token_id_chirho": "014cS",
+			"text_chirho": "יְהוָ֣ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "72b593cc607d2e520c9e64b7e752f049dced24518b6dd82272778584a9967beb"
+		},
+		{
+			"verse_id_chirho": "Gen.24.12",
+			"token_id_chirho": "01sGn",
+			"text_chirho": "יְהוָ֗ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "5d19408903643be621879f20ce1bcdd5e9a65381a826bcdc9fcebf8e78a8abe4"
+		},
+		{
+			"verse_id_chirho": "Gen.24.21",
+			"token_id_chirho": "01318",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "757fe4056aa44c98f7c87e1cc18d52fb6113701ff48b090f250d5c215f4ae57a"
+		},
+		{
+			"verse_id_chirho": "Gen.24.26",
+			"token_id_chirho": "01KVq",
+			"text_chirho": "לַֽיהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "d99b630975c08a71133d80a864c35466de4e7f92c01b05e77eda31495301ec23"
+		},
+		{
+			"verse_id_chirho": "Gen.24.27",
+			"token_id_chirho": "01MHW",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2a3fe463d691467d01b7401a9d39594f02d5d462979cad0f51a387a07eab5ca9"
+		},
+		{
+			"verse_id_chirho": "Gen.24.27",
+			"token_id_chirho": "01uHA",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2a3fe463d691467d01b7401a9d39594f02d5d462979cad0f51a387a07eab5ca9"
+		},
+		{
+			"verse_id_chirho": "Gen.24.31",
+			"token_id_chirho": "01gp2",
+			"text_chirho": "יְהוָ֑ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "86186c214ea6aac5c0b9e9ddde524841e0b570c01770e05edf863ac26b371fe9"
+		},
+		{
+			"verse_id_chirho": "Gen.24.35",
+			"token_id_chirho": "01zke",
+			"text_chirho": "וַיהוָ֞ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "7ae8da3fc58ea8b062cf061d6a9c7f41df9636fbec10651fef388829e0b1c97e"
+		},
+		{
+			"verse_id_chirho": "Gen.24.40",
+			"token_id_chirho": "01ACo",
+			"text_chirho": "יְהוָ֞ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "0da1f2d738779ed37df740ad85413df3553a58b2118c42493a8f572ae89c3a18"
+		},
+		{
+			"verse_id_chirho": "Gen.24.42",
+			"token_id_chirho": "01CUw",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "8c5778517dc64889b11a976d5b23f5cf8abafb96959698067eeaaf80628baf6f"
+		},
+		{
+			"verse_id_chirho": "Gen.24.44",
+			"token_id_chirho": "01WSq",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "e8a55fbb832f1c75e917d80d89b222a75af88f05582d8eebb714af10f7e11436"
+		},
+		{
+			"verse_id_chirho": "Gen.24.48",
+			"token_id_chirho": "01iWP",
+			"text_chirho": "לַיהוָ֑ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c2865add0ff45cfe9469c6b32ad9afbee3aae24056e284aa0e516e3d8432e4e5"
+		},
+		{
+			"verse_id_chirho": "Gen.24.48",
+			"token_id_chirho": "017zY",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c2865add0ff45cfe9469c6b32ad9afbee3aae24056e284aa0e516e3d8432e4e5"
+		},
+		{
+			"verse_id_chirho": "Gen.24.51",
+			"token_id_chirho": "01LmD",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "09728a6a14e7b3be6d29dada53659a8e9a42971ab48dfd48fa593afe063e8504"
+		},
+		{
+			"verse_id_chirho": "Gen.24.52",
+			"token_id_chirho": "01ktn",
+			"text_chirho": "לַֽיהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "b61eecaeb1da0832adf029f628dde6c10cc103cbb8c0cbb64780baa3dd342976"
+		},
+		{
+			"verse_id_chirho": "Gen.25.21",
+			"token_id_chirho": "01tBw",
+			"text_chirho": "לַֽיהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "3b8d72937d6119f8aecdda6ba254db370c13b9c11c891ef7b86391f2d40957af"
+		},
+		{
+			"verse_id_chirho": "Gen.25.21",
+			"token_id_chirho": "01g4n",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "3b8d72937d6119f8aecdda6ba254db370c13b9c11c891ef7b86391f2d40957af"
+		},
+		{
+			"verse_id_chirho": "Gen.25.22",
+			"token_id_chirho": "01hkL",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "b660738882a6171af443a90c44b70dec1312cc12b8715ebfb26c28bc3b28a4f9"
+		},
+		{
+			"verse_id_chirho": "Gen.25.23",
+			"token_id_chirho": "01rjG",
+			"text_chirho": "יְהוָ֜ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "d642f064961a73e133401a145d626c8e2697cda0c8d851fda6b1cb6c10b6d3ea"
+		},
+		{
+			"verse_id_chirho": "Gen.26.2",
+			"token_id_chirho": "015s2",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "08ebf9a805786ba6cf8c751e043313991d3d94cd2bbafb894fc8cead7ef25876"
+		},
+		{
+			"verse_id_chirho": "Gen.26.12",
+			"token_id_chirho": "01TbR",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "23a745fd0bda7c30adb6656e9477c721413d649f4c0aa957372655372155f178"
+		},
+		{
+			"verse_id_chirho": "Gen.26.22",
+			"token_id_chirho": "01SQT",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "40c3bab9bcc8a8bf7afc0249a353f83a7ab8b79165f25ecf8a93be2d24646286"
+		},
+		{
+			"verse_id_chirho": "Gen.26.24",
+			"token_id_chirho": "01Am6",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "858f4d5897f277b0f5a3b5a2a960871ec629fcf0fbf2655908a0e1a204dd5039"
+		},
+		{
+			"verse_id_chirho": "Gen.26.25",
+			"token_id_chirho": "01ywz",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "e2203c9870e24d39531374dac0c04379bbc6dd9ed49d27cad86047d7eeb3d1b2"
+		},
+		{
+			"verse_id_chirho": "Gen.26.28",
+			"token_id_chirho": "01CJy",
+			"text_chirho": "יְהוָ֣ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "8986d115a5b519e311d86f77091ad8fecc7ae6ceda07628561e85bc2c7cc62bb"
+		},
+		{
+			"verse_id_chirho": "Gen.26.29",
+			"token_id_chirho": "01CVH",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "a05825a1043c7ccbe9d2a18215db7f1113e285402e2635d4ca4be2b6bffe0daf"
+		},
+		{
+			"verse_id_chirho": "Gen.27.7",
+			"token_id_chirho": "01XSc",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "86839f33a6e8ad6e4900f07796476521f5d01d7ecc8b8e3871304d340d7fd063"
+		},
+		{
+			"verse_id_chirho": "Gen.27.20",
+			"token_id_chirho": "01yN8",
+			"text_chirho": "יְהוָ֥ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2846fea2250ed637923178ac2a57b32a235e4d19de4f349026e8046acbf101d1"
+		},
+		{
+			"verse_id_chirho": "Gen.27.27",
+			"token_id_chirho": "01aVU",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "f9858846182f7f4f5a44c1c26a23a1aca4d4879001923938492cefff708839f5"
+		},
+		{
+			"verse_id_chirho": "Gen.28.13",
+			"token_id_chirho": "01Mha",
+			"text_chirho": "יְהוָ֜ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "ebbda7f7bcb948c88bda5f923daac6acc449cdadb501c7f9ced99afa328e1539"
+		},
+		{
+			"verse_id_chirho": "Gen.28.13",
+			"token_id_chirho": "01EqE",
+			"text_chirho": "יְהוָ֗ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "ebbda7f7bcb948c88bda5f923daac6acc449cdadb501c7f9ced99afa328e1539"
+		},
+		{
+			"verse_id_chirho": "Gen.28.16",
+			"token_id_chirho": "01E6o",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "6143a15af420a810ce8c9ac216e8792f59e6c1e9fcf9d50a11f4bd1dcc3a7e78"
+		},
+		{
+			"verse_id_chirho": "Gen.28.21",
+			"token_id_chirho": "014YR",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "7e55d4aae79b45f8e8319e59ef4aa1a3bbdfac3248b235bcc71cd19bd942f989"
+		},
+		{
+			"verse_id_chirho": "Gen.29.31",
+			"token_id_chirho": "01V8J",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "e1040e9ccb0cedec393c6eadaa143a1b947ff2317a41a10dd5db5b0f301adb11"
+		},
+		{
+			"verse_id_chirho": "Gen.29.32",
+			"token_id_chirho": "01REv",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "681fb113b91c986bc5568856c84e7b0b7f47a34e3b026a2716617305b85c873e"
+		},
+		{
+			"verse_id_chirho": "Gen.29.33",
+			"token_id_chirho": "014pA",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c69623524c347bd551876a2f5611ed37ab5848184afb40cb2fd59c9a8168cee8"
+		},
+		{
+			"verse_id_chirho": "Gen.29.35",
+			"token_id_chirho": "01KTs",
+			"text_chirho": "יְהוָ֔ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "ded01cda9d9135d10fa53dc11eed1d1052825d5ac35afa523c10958d9089c726"
+		},
+		{
+			"verse_id_chirho": "Gen.30.24",
+			"token_id_chirho": "01rqy",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "450c2631e1c59ae766573725b2116e3d84ecd93eea5acf81fb2dfe12efdd45c5"
+		},
+		{
+			"verse_id_chirho": "Gen.30.27",
+			"token_id_chirho": "01jRX",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "7726864ed6ba07b074c2d7ffc64e4457d2afe21c9460e212af91bcfdeb1fbd3c"
+		},
+		{
+			"verse_id_chirho": "Gen.30.30",
+			"token_id_chirho": "01xLQ",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "880a97802fab75baf4c69306f763d5987199aee28db8044a3c86bbd02e11d320"
+		},
+		{
+			"verse_id_chirho": "Gen.31.3",
+			"token_id_chirho": "01xi7",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c137c804918aa71234935a0f23a067b52db5a40a836f52a7ac7b401bc4fd7d18"
+		},
+		{
+			"verse_id_chirho": "Gen.31.49",
+			"token_id_chirho": "01k6Z",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "4ba0626201b8e13979d44c0ada3b4a2aede1e60d61ea370b96fa03057d86d531"
+		},
+		{
+			"verse_id_chirho": "Gen.32.10",
+			"token_id_chirho": "01K5e",
+			"text_chirho": "יְהוָ֞ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "2a7c90ef283eadb120c0971d9be236c2c19959fc57841eecdb947bb659540c2e"
+		},
+		{
+			"verse_id_chirho": "Gen.38.7",
+			"token_id_chirho": "01YBD",
+			"text_chirho": "יְהוָ֑ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "4329306d6853c9628c069baaba6b7985d1380e611c44142b083f095af9721676"
+		},
+		{
+			"verse_id_chirho": "Gen.38.7",
+			"token_id_chirho": "01nXj",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "4329306d6853c9628c069baaba6b7985d1380e611c44142b083f095af9721676"
+		},
+		{
+			"verse_id_chirho": "Gen.38.10",
+			"token_id_chirho": "01MAv",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "a4a2288b08284333c27b266a294902ec71a2a1e32a84e88de06cef56feb89eb2"
+		},
+		{
+			"verse_id_chirho": "Gen.39.2",
+			"token_id_chirho": "01txG",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "3857f6c709b5e8671a5dbcad0a02f01bf2bb00f94d189ccd66527745bb460949"
+		},
+		{
+			"verse_id_chirho": "Gen.39.3",
+			"token_id_chirho": "01ris",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "a265a80c059ebbedc67309861ba7867894f43e682ea8596df4cd7b81f46b6412"
+		},
+		{
+			"verse_id_chirho": "Gen.39.5",
+			"token_id_chirho": "01gER",
+			"text_chirho": "יְהוָ֛ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c3ff42bc88ef3f3cd394a17c44508254184a694d506a7e2fda5e84a73c238b78"
+		},
+		{
+			"verse_id_chirho": "Gen.39.5",
+			"token_id_chirho": "01Rqg",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "c3ff42bc88ef3f3cd394a17c44508254184a694d506a7e2fda5e84a73c238b78"
+		},
+		{
+			"verse_id_chirho": "Gen.39.21",
+			"token_id_chirho": "01WKB",
+			"text_chirho": "יְהוָה֙",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "cfffc475bf1d4a08db9a5607df14bfc2f9e4c51a98f24ec3c01ccc06513fd77a"
+		},
+		{
+			"verse_id_chirho": "Gen.39.23",
+			"token_id_chirho": "01w6B",
+			"text_chirho": "יְהוָ֖ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "a2e03ef3a8159b70ac732c76ba65c46dcd81c484f9ea0d70ecb15ec66307a0c2"
+		},
+		{
+			"verse_id_chirho": "Gen.39.23",
+			"token_id_chirho": "01MFx",
+			"text_chirho": "יְהוָ֥ה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "a2e03ef3a8159b70ac732c76ba65c46dcd81c484f9ea0d70ecb15ec66307a0c2"
+		},
+		{
+			"verse_id_chirho": "Gen.49.18",
+			"token_id_chirho": "01gEg",
+			"text_chirho": "יְהוָֽה",
+			"gloss_chirho": "Yahweh",
+			"canonical_sha256_chirho": "6bf66ffd8a24092590a9ba62624b6d3e034cd89d94689aff550baaca6932a0b9"
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"schema_version_chirho": 1,
+	"verses_chirho": 879,
+	"words_chirho": 15643,
+	"unique_lemmas_chirho": 1022,
+	"pos_chirho": {
+		"adjective": 651,
+		"noun": 2636,
+		"particle": 4004,
+		"unknown": 4713,
+		"verb": 3639
+	},
+	"part_of_speech_chirho": {
+		"adjective": 613,
+		"adverb": 536,
+		"aramaic": 11,
+		"article": 2176,
+		"cond": 111,
+		"conjunction": 1874,
+		"correlative pronoun": 9,
+		"demonstrative pronoun": 323,
+		"hebrew": 61,
+		"indefinite pronoun": 56,
+		"interrogative pronoun": 84,
+		"noun": 2571,
+		"numeral indeclinable": 38,
+		"particle": 465,
+		"personal pronoun": 1708,
+		"possessive pronoun": 51,
+		"preposition": 1018,
+		"proper noun indeclinable": 65,
+		"reciprocal pronoun": 15,
+		"reflexive pronoun": 55,
+		"relative pronoun": 164,
+		"verb": 3639
+	},
+	"formal_parse_differs_chirho": 44,
+	"parenthesized_passages_chirho": [
+		"John 5:3-4",
+		"John 7:53-8:11"
+	],
+	"verses_in_passages_chirho": 14,
+	"gloss_join_chirho": {
+		"glossed": 15642,
+		"greek_mismatch": 1,
+		"unused_entries": 0
+	},
+	"gloss_editor_notes_chirho": [
+		{"verse_id_chirho":"John.8.4","before_token_id_chirho":"John.8.4!8","text_chirho":"I combied two glosses here, since Nestle1904 has only one word instead of 2 in Greek."},
+		{"verse_id_chirho":"John.8.8","before_token_id_chirho":"John.8.8!3","text_chirho":"Nestle1904 has two words here, need to separate them."},
+		{"verse_id_chirho":"John.8.25","before_token_id_chirho":"John.8.25!13","text_chirho":"BIB  combines the following two words into one."},
+		{"verse_id_chirho":"John.14.13","before_token_id_chirho":"John.14.13!2","text_chirho":"BIB combines the next two words into one gloss."}
+	],
+	"gloss_origin_chirho": {
+		"berean_interlinear": 879
+	}
+}

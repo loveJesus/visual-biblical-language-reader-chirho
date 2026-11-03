@@ -1,0 +1,81 @@
+{
+	"schema_version_chirho": 1,
+	"id_chirho": "h8064-same-sense-gen-01-chirho",
+	"reviewed_by_chirho": "gpt_chirho",
+	"sense_review_chirho": "agent_reviewed",
+	"review_note_chirho": "The sky symbol represents the heavens as the above/celestial realm in these listed occurrences. It does not make a cosmological or event claim.",
+	"source_icon_id_chirho": "icon-a98da23931ab4104a28eb4d22e8d69f8-03-chirho",
+	"source_sha256_chirho": "40adcb79ae52e7cc75515d817041e9b493d36927972b41ddc44f2becd4998d37",
+	"source_word_chirho": {
+		"verse_id_chirho": "Prov.3.19",
+		"token_id_chirho": "202UV",
+		"text_chirho": "שָׁ֝מַ֗יִם",
+		"gloss_chirho": "the heavens",
+		"canonical_sha256_chirho": "94af0b4afbb7a8520a9d134dced5bebcb6363d1cc5c8673ca3f8a5ba3a9c5671"
+	},
+	"target_lexeme_chirho": {
+		"lemma_id_chirho": "H8064",
+		"lemma_augment_chirho": null,
+		"lexical_form_chirho": "שָׁמַיִם"
+	},
+	"contextual_meaning_chirho": "the heavens",
+	"evidence_refs_chirho": ["oshb-gen-chirho", "gbt-english-gen-chirho"],
+	"targets_chirho": [
+		{
+			"verse_id_chirho": "Gen.1.1",
+			"token_id_chirho": "01TSc",
+			"text_chirho": "הַשָּׁמַ֖יִם",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "707c96583d95fb1957b4916673ab36ec2d6cfdc168b97a7f7e2125f4d0f23647"
+		},
+		{
+			"verse_id_chirho": "Gen.1.9",
+			"token_id_chirho": "01LJh",
+			"text_chirho": "הַשָּׁמַ֨יִם֙",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "32df9690c1ea4d75965d9864fd192af4cba9fb6acb4b6c578cbb25cc446af103"
+		},
+		{
+			"verse_id_chirho": "Gen.1.14",
+			"token_id_chirho": "01cLk",
+			"text_chirho": "הַשָּׁמַ֔יִם",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "090bfb1c11866d77db46818a60288cf6327d56bf0a02cef3a5fff9e2711e4d3d"
+		},
+		{
+			"verse_id_chirho": "Gen.1.15",
+			"token_id_chirho": "01372",
+			"text_chirho": "הַשָּׁמַ֔יִם",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "a58b4e8a3e5b6dffdb7ed533ac86b6d71c0ab09d1cd031c3c3b2ac0d8eb0485b"
+		},
+		{
+			"verse_id_chirho": "Gen.1.17",
+			"token_id_chirho": "01dJe",
+			"text_chirho": "הַשָּׁמָ֑יִם",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "60fac8317e86eee6695570591290f3fab2f80fa4ae732e5672c1f089c82afd4f"
+		},
+		{
+			"verse_id_chirho": "Gen.2.1",
+			"token_id_chirho": "01GUh",
+			"text_chirho": "הַשָּׁמַ֥יִם",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "d4d0a02b7c92c96be1f5ebd05257949658fab66f7fb40f1c59dab7b81cd803e1"
+		},
+		{
+			"verse_id_chirho": "Gen.2.4",
+			"token_id_chirho": "01VMC",
+			"text_chirho": "הַשָּׁמַ֛יִם",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "58516185e101dc76aa976a1a30f7584c0f459c00a9d849a7de18abe6da779645"
+		},
+		{
+			"verse_id_chirho": "Gen.7.11",
+			"token_id_chirho": "01X9f",
+			"text_chirho": "הַשָּׁמַ֖יִם",
+			"gloss_chirho": "the heavens",
+			"canonical_sha256_chirho": "a0315a9c0973f724f7bcecb10a2066c65d68ccae72d6c932c9a3ab8dec9f75d2"
+		}
+	]
+}
