@@ -9,7 +9,7 @@ import { installWordNavigationChirho } from '../../src/lib/reader-chirho/control
 import { installSpeechChirho } from '../../src/lib/reader-chirho/audio-chirho/speech-controls-chirho';
 import { readArtworkCatalogueChirho } from '../publish-chirho/r2-chirho/catalogue-chirho';
 import { sha256Chirho } from '../publish-chirho/release_rules_chirho';
-import { isSiteHostnameChirho } from '../../src/lib/site-chirho';
+import { isSiteHostnameChirho, SITE_ORIGIN_CHIRHO } from '../../src/lib/site-chirho';
 
 const [outputChirho, originArgumentChirho = 'http://127.0.0.1:5173'] = process.argv.slice(2);
 if (!outputChirho)
@@ -106,7 +106,12 @@ htmlChirho = htmlChirho
 	.replace(/<dialog\b[^>]*>[\s\S]*?<\/dialog>/gi, '')
 	.replace(/<button\b[^>]*class="[^"]*report-artwork-chirho[^"]*"[^>]*>[\s\S]*?<\/button>/gi, '');
 const scriptChirho = `(${installHelpChirho.toString()})(document);(${installMediaChirho.toString()})(document);(${installGlossesChirho.toString()})(document);(${installWordNavigationChirho.toString()})(document);(${installSpeechChirho.toString()})(document);`;
-htmlChirho = htmlChirho.replace('</body>', () => `<script>${scriptChirho}</script></body>`);
+// A saved reader distributes its embedded controls too: retain the code grant and source offer.
+const licenseChirho = `<footer class="snapshot-note-chirho">Hinneh reader code: <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3 or later</a>. <a href="${SITE_ORIGIN_CHIRHO}/sources-chirho/">Corresponding source and source-specific licenses</a>. Hinneh-held media rights: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; retain the passage's credits and review labels.</footer>`;
+htmlChirho = htmlChirho.replace(
+	'</body>',
+	() => `${licenseChirho}<script>${scriptChirho}</script></body>`
+);
 htmlChirho = htmlChirho.replace(
 	'<head>',
 	'<head><meta name="hinneh-snapshot-chirho" content="Frozen local preview; not a PWA">'
