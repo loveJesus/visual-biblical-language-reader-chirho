@@ -22,13 +22,14 @@
 		if (!(
 			'source_language_chirho' in tokenChirho && tokenChirho.source_language_chirho === 'arc'
 		)) {
-			ipaChirho =
-				divineNameReadingChirho(tokenChirho)?.ipa_chirho ??
-				ipaNoteChirho(tokenChirho)?.ipa_chirho ??
-				null;
+			const divineChirho = divineNameReadingChirho(tokenChirho);
+			ipaChirho = divineChirho ? null : (ipaNoteChirho(tokenChirho)?.ipa_chirho ?? null);
 			if (!ipaChirho)
 				try {
-					ipaChirho = wordPhoneticsChirho(spokenChirho).ipa_chirho;
+					// Read the complete prefixed form, not just the bare traditional Name.
+					ipaChirho = wordPhoneticsChirho(
+						divineChirho?.analysis_text_chirho ?? spokenChirho
+					).ipa_chirho;
 				} catch {
 					/* Unresolved stress or vowels stay explicit. */
 				}

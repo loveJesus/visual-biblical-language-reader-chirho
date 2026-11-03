@@ -160,6 +160,18 @@ testChirho(
 			pageChirho.locator('.verse-chirho [data-word-ipa-chirho]').first()
 		).toBeHidden();
 		expectChirho(audioRequestsChirho).toEqual([]);
+		await pageChirho.goto('/?lang_chirho=en#Prov.8.35');
+		await expectChirho(toggleChirho).toBeEnabled();
+		await toggleChirho.check();
+		// With no saved clip supplying IPA, the source-derived reading retains the prefix.
+		await pageChirho
+			.locator('[data-speech-recordings-chirho]')
+			.evaluate((elementChirho) =>
+				elementChirho.setAttribute('data-speech-recordings-chirho', '[]')
+			);
+		await expectChirho(
+			pageChirho.locator('.verse-chirho [data-ipa-token-chirho="20pBm"]')
+		).toHaveText('/meʔadoˈnaj/');
 	}
 );
 
