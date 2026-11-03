@@ -2,6 +2,69 @@
 import { test as testChirho, expect as expectChirho } from '@playwright/test';
 
 testChirho(
+	'public artwork is CC0 while audio and source licenses stay distinct, with the software link in footer navigation',
+	async ({ page: pageChirho }) => {
+		for (const localeChirho of ['en', 'es']) {
+			await pageChirho.goto(`/sources-chirho/?lang_chirho=${localeChirho}`);
+			await expectChirho(pageChirho.locator('html')).toHaveAttribute('lang', localeChirho);
+			await expectChirho(
+				pageChirho.getByRole('link', {
+					name: localeChirho === 'en' ? 'Artwork: CC0 1.0' : 'Ilustraciones: CC0 1.0',
+					exact: true
+				})
+			).toHaveAttribute('href', 'https://creativecommons.org/publicdomain/zero/1.0/');
+			await expectChirho(
+				pageChirho.getByRole('link', {
+					name: localeChirho === 'en' ? 'Recordings: CC BY 4.0' : 'Grabaciones: CC BY 4.0',
+					exact: true
+				})
+			).toHaveAttribute('href', 'https://creativecommons.org/licenses/by/4.0/');
+			await expectChirho(
+				pageChirho
+					.locator('.public-footer-chirho nav')
+					.getByRole('link', { name: /Love Jesus Software/ })
+			).toHaveAttribute('href', 'https://loveJesus.software/');
+			await expectChirho(pageChirho.locator('.public-footer-chirho')).not.toContainText('L.J.');
+			await expectChirho(
+				pageChirho.locator('.public-footer-chirho a[href^="mailto:"]')
+			).toHaveAttribute('href', 'mailto:lovejesus@lovejesus.software');
+		}
+	}
+);
+
+testChirho(
+	'word cards open checked lexicon entries or labelled Hebrew and Greek searches in the chosen language',
+	async ({ page: pageChirho }) => {
+		await pageChirho.goto('/?lang_chirho=en#Prov.26.1');
+		await expectChirho(
+			pageChirho.locator('.word-card-chirho .lemma-link-chirho').filter({ hasText: 'H7105a' })
+		).toHaveAttribute('href', 'https://lexicon-chirho.bible.systems/lemma-chirho/H7105a?lang=eng');
+		await pageChirho.goto('/?lang_chirho=en#Gen.1.1');
+		await expectChirho(
+			pageChirho.locator('.word-card-chirho .lemma-link-chirho').filter({ hasText: /^H430\b/ })
+		).toHaveAttribute(
+			'href',
+			'https://lexicon-chirho.bible.systems/search-chirho?q=H0430&lang=eng'
+		);
+		await pageChirho.goto('/?lang_chirho=es#John.1.1');
+		const linksChirho = pageChirho
+			.locator('.word-card-chirho .lemma-link-chirho')
+			.filter({ hasText: /^G3056\b/ });
+		await expectChirho(linksChirho.first()).toHaveAttribute(
+			'href',
+			'https://lexicon-chirho.bible.systems/search-chirho?q=G3056&lang=spa'
+		);
+		await expectChirho(linksChirho.first()).toContainText('Buscar en el léxico');
+		for (const widthChirho of [320, 390]) {
+			await pageChirho.setViewportSize({ width: widthChirho, height: 900 });
+			expectChirho(
+				await pageChirho.evaluate(() => document.documentElement.scrollWidth <= innerWidth)
+			).toBe(true);
+		}
+	}
+);
+
+testChirho(
 	'the public root explains Hinneh before reading and sends site metadata without JavaScript',
 	async ({ page: pageChirho, request: requestChirho }) => {
 		const responseChirho = await requestChirho.get('/', {

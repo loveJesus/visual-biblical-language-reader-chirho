@@ -5,6 +5,7 @@
 	import PronunciationNoteChirho from './audio-chirho/PronunciationNoteChirho.svelte';
 	import PictureNoteChirho from './PictureNoteChirho.svelte';
 	import SourceNotesChirho from '$lib/bible-chirho/SourceNotesChirho.svelte';
+	import { lexiconLinkChirho } from '$lib/bible-chirho/lexicon-links-chirho';
 	import AudioVerseChirho from './audio-chirho/AudioVerseChirho.svelte';
 	import SpeechButtonChirho from './audio-chirho/SpeechButtonChirho.svelte';
 	import { installSpeechChirho } from './audio-chirho/speech-controls-chirho';
@@ -227,6 +228,11 @@
 			</div>
 			<div class="word-cards-chirho">
 				{#each lessonChirho.tokens_chirho as tokenChirho, indexChirho (tokenChirho.id_chirho)}
+					{@const linkChirho = lexiconLinkChirho(
+						tokenChirho,
+						localeStateChirho.currentChirho,
+						lemmaLinksChirho
+					)}
 					<article
 						class="word-card-chirho"
 						id="word-card-{tokenChirho.id_chirho}-chirho"
@@ -235,13 +241,16 @@
 					>
 						<div class="word-card-top-chirho">
 							<span class="card-hebrew-chirho" dir="rtl" lang="he">{tokenChirho.text_chirho}</span
-							>{#if lemmaLinksChirho[lemmaKeyChirho(tokenChirho)]}<a
+							>{#if linkChirho}<a
 									class="lemma-link-chirho"
-									href={lemmaLinksChirho[lemmaKeyChirho(tokenChirho)]}
+									href={linkChirho.href_chirho}
 									target="_blank"
 									rel="external noreferrer"
-									>{lemmaKeyChirho(tokenChirho)} ↗<span class="sr-only-chirho">
-										{readerTChirho('lemma_open_chirho')}</span
+									>{lemmaKeyChirho(tokenChirho)}{#if linkChirho.kind_chirho === 'search'}
+										· {readerTChirho('lemma_search_chirho')}{/if} ↗<span class="sr-only-chirho">
+										{linkChirho.kind_chirho === 'entry'
+											? readerTChirho('lemma_open_chirho')
+											: ''}</span
 									></a
 								>{:else}<span class="small-note-chirho"
 									>{readerTChirho('lemma_unverified_chirho')}</span

@@ -6,6 +6,7 @@ import { SHARE_IMAGE_PATH_CHIRHO } from '$lib/site-chirho';
 
 export const CONTACT_EMAIL_CHIRHO = 'lovejesus@lovejesus.software';
 export const FREE_MINISTRY_URL_CHIRHO = 'https://sellingjesus.org/';
+export const SOFTWARE_URL_CHIRHO = 'https://loveJesus.software/';
 export const SOURCE_CODE_URL_CHIRHO =
 	'https://github.com/loveJesus/visual-biblical-language-reader-chirho';
 export const SHARE_PATH_CHIRHO = SHARE_IMAGE_PATH_CHIRHO;
@@ -46,7 +47,7 @@ export const SITE_MESSAGES_CHIRHO = defineCatalogueChirho({
 		art_label_chirho: 'Imaginative illustration · AI-assisted',
 		art_open_chirho: 'Read this verse',
 		footer_chirho:
-			'A free Christian project by L.J. (Love Jesus), made to help readers behold Scripture in its original languages.',
+			'A free Christian project to help readers behold Scripture in its original languages.',
 		updated_chirho: 'Updated November 3, 2026',
 		back_chirho: 'Open the reader',
 		contact_note_chirho: 'Questions, corrections or privacy requests',
@@ -88,7 +89,7 @@ export const SITE_MESSAGES_CHIRHO = defineCatalogueChirho({
 		art_label_chirho: 'Ilustración imaginativa · Con ayuda de IA',
 		art_open_chirho: 'Leer este versículo',
 		footer_chirho:
-			'Un proyecto cristiano gratuito de L.J. (Love Jesus), hecho para ayudar a contemplar las Escrituras en sus idiomas originales.',
+			'Un proyecto cristiano gratuito para ayudar a contemplar las Escrituras en sus idiomas originales.',
 		updated_chirho: 'Actualizado el 3 de noviembre de 2026',
 		back_chirho: 'Abrir el lector',
 		contact_note_chirho: 'Preguntas, correcciones o solicitudes de privacidad',
@@ -117,21 +118,30 @@ const PROJECT_LICENSES_CHIRHO: Record<LocaleChirho, InformationSectionChirho> = 
 		title_chirho: 'Free software and shared media',
 		paragraphs_chirho: [
 			'Hinneh’s original application and native-app code is open source under the GNU General Public License, version 3 or any later version. You may study, share and improve it under that license.',
-			'Hinneh-created artwork, branding and the rights we hold in our pronunciation recordings are shared under Creative Commons Attribution 4.0. Credit “Hinneh — L.J. (Love Jesus), https://hinneh.us/”, link the license and indicate changes.',
-			'The Bible texts, source data and adapted grammar help retain their own terms. The media license covers only rights we hold; it does not grant rights to an underlying voice model or another person’s identity. Public-domain material remains public domain.'
+			'Hinneh-created illustrations, word pictures and branding artwork are dedicated to the public domain under CC0 1.0 Universal, to the extent of the rights we hold. You may copy, adapt and share them, including commercially, without permission or required attribution. Credit is welcome, but optional.',
+			'The rights we hold in our pronunciation recordings are shared under Creative Commons Attribution 4.0. Credit “Hinneh — L.J. (Love Jesus), https://hinneh.us/”, link that license and indicate changes when reusing recordings.',
+			'The Bible texts, source data and adapted grammar help retain their own terms. The artwork dedication and recording license cover only rights we hold; they do not grant rights to an underlying voice model or another person’s identity. Public-domain material remains public domain.'
 		],
 		links_chirho: [
 			{ label_chirho: 'Source code on GitHub', href_chirho: SOURCE_CODE_URL_CHIRHO },
 			{ label_chirho: 'GPLv3 or later', href_chirho: 'https://www.gnu.org/licenses/gpl-3.0.html' },
-			{ label_chirho: 'CC BY 4.0', href_chirho: 'https://creativecommons.org/licenses/by/4.0/' }
+			{
+				label_chirho: 'Artwork: CC0 1.0',
+				href_chirho: 'https://creativecommons.org/publicdomain/zero/1.0/'
+			},
+			{
+				label_chirho: 'Recordings: CC BY 4.0',
+				href_chirho: 'https://creativecommons.org/licenses/by/4.0/'
+			}
 		]
 	},
 	es: {
 		title_chirho: 'Software libre y archivos compartidos',
 		paragraphs_chirho: [
 			'El código original de Hinneh y sus aplicaciones nativas es abierto bajo la Licencia Pública General de GNU, versión 3 o cualquier versión posterior. Puedes estudiarlo, compartirlo y mejorarlo conforme a esa licencia.',
-			'Las ilustraciones, la identidad visual y los derechos que poseemos sobre las grabaciones de pronunciación se comparten bajo Creative Commons Atribución 4.0. Acredita «Hinneh — L.J. (Love Jesus), https://hinneh.us/», enlaza la licencia e indica los cambios.',
-			'Los textos bíblicos, datos y ayudas gramaticales adaptadas conservan sus propias condiciones. La licencia de archivos cubre solo nuestros derechos; no concede derechos sobre el modelo de voz ni sobre la identidad de otra persona. El material de dominio público sigue siendo de dominio público.'
+			'Las ilustraciones, imágenes de palabras y obras de identidad visual creadas para Hinneh se dedican al dominio público bajo CC0 1.0 Universal, hasta donde permiten nuestros derechos. Puedes copiarlas, adaptarlas y compartirlas, incluso comercialmente, sin permiso ni atribución obligatoria. Se agradece el crédito, pero es opcional.',
+			'Los derechos que poseemos sobre las grabaciones de pronunciación se comparten bajo Creative Commons Atribución 4.0. Acredita «Hinneh — L.J. (Love Jesus), https://hinneh.us/», enlaza esa licencia e indica los cambios al reutilizar grabaciones.',
+			'Los textos bíblicos, datos y ayudas gramaticales adaptadas conservan sus propias condiciones. La dedicación de las obras y la licencia de grabaciones cubren solo nuestros derechos; no conceden derechos sobre el modelo de voz ni sobre la identidad de otra persona. El material de dominio público sigue siendo de dominio público.'
 		],
 		links_chirho: [
 			{ label_chirho: 'Código fuente en GitHub', href_chirho: SOURCE_CODE_URL_CHIRHO },
@@ -139,7 +149,14 @@ const PROJECT_LICENSES_CHIRHO: Record<LocaleChirho, InformationSectionChirho> = 
 				label_chirho: 'GPLv3 o posterior',
 				href_chirho: 'https://www.gnu.org/licenses/gpl-3.0.html'
 			},
-			{ label_chirho: 'CC BY 4.0', href_chirho: 'https://creativecommons.org/licenses/by/4.0/' }
+			{
+				label_chirho: 'Ilustraciones: CC0 1.0',
+				href_chirho: 'https://creativecommons.org/publicdomain/zero/1.0/'
+			},
+			{
+				label_chirho: 'Grabaciones: CC BY 4.0',
+				href_chirho: 'https://creativecommons.org/licenses/by/4.0/'
+			}
 		]
 	}
 };

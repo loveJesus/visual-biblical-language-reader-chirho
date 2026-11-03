@@ -2,7 +2,7 @@
 
 # Hinneh
 
-Hinneh's original code is licensed under GPL-3.0-or-later. Hinneh-created media and the media rights we hold are shared under CC BY 4.0. Third-party Bible texts, linguistic data, glosses and adapted grammar material retain their own licenses. See LICENSE and LICENSES-chirho/README-chirho.md for the scope and credits.
+Hinneh's original code is licensed under GPL-3.0-or-later. Hinneh-created artwork is dedicated to the public domain under CC0 1.0 Universal, with no attribution required. The rights we hold in pronunciation recordings remain shared under CC BY 4.0. Third-party Bible texts, linguistic data, glosses and adapted grammar material retain their own licenses. See LICENSE and LICENSES-chirho/README-chirho.md for the scope and credits.
 
 Behold the Bible in its original languages at https://hinneh.us/. Hinneh is a free visual reader with all 66 books in its pinned Hebrew/Greek editions, compact grammar cues, word pictures and reusable pronunciation recordings. Proverbs, John and Genesis also have extensive verse illustrations. The interface is English or Spanish. A fresh visit offers an introduction and starts the reader at the Proverbs chapter matching the visitor's local day; explicit passage links take precedence. Media and Spanish-gloss coverage remain incomplete and are identified honestly.
 
@@ -74,7 +74,7 @@ Tests cover source reconstruction, contextual identity, pronunciation/source bin
 
 The native SwiftUI iOS and Kotlin/Compose Android readers are under apps-chirho/. Their READMEs give local build/test commands and the current feature and device limits. Signing and app-store distribution require the developer's own accounts.
 
-Hinneh is offered freely as a Christian ministry. See https://sellingjesus.org/ for the conviction that ministry should be supported rather than sold. For contributions and reuse, preserve source code licenses, upstream attribution and review states. Publishing or funding your own media/generation pipeline is separate from reading the existing site.
+Hinneh is offered freely as a Christian ministry. See https://sellingjesus.org/ for the conviction that ministry should be supported rather than sold. Code and third-party materials follow their stated licenses. Artwork reuse needs no attribution under CC0; source and review notes remain useful context. Publishing or funding your own media/generation pipeline is separate from reading the existing site.
 
 ## Public source cut
 

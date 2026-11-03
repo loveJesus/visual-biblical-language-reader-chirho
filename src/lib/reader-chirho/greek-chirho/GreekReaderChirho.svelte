@@ -1,6 +1,7 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
 	import { installIpaChirho } from '../controls-chirho/ipa-controls-chirho';
+	import { lexiconLinkChirho } from '$lib/bible-chirho/lexicon-links-chirho';
 	import SceneChirho from '$lib/reader-chirho/scene-chirho/SceneChirho.svelte';
 	import PictureNoteChirho from '../PictureNoteChirho.svelte';
 	import AudioVerseChirho from '../audio-chirho/AudioVerseChirho.svelte';
@@ -118,6 +119,7 @@
 			</div>
 			<div class="word-cards-chirho">
 				{#each lessonChirho.tokens_chirho as tokenChirho (tokenChirho.id_chirho)}
+					{@const linkChirho = lexiconLinkChirho(tokenChirho, localeStateChirho.currentChirho)}
 					<article
 						class="word-card-chirho"
 						id="word-card-{tokenChirho.id_chirho}-chirho"
@@ -132,7 +134,13 @@
 					>
 						<div class="word-card-top-chirho">
 							<span class="card-hebrew-chirho" lang="grc" dir="ltr">{tokenChirho.text_chirho}</span
-							><span class="small-note-chirho">{tokenChirho.lemma_id_chirho}</span>
+							>{#if linkChirho}<a
+									class="lemma-link-chirho"
+									href={linkChirho.href_chirho}
+									target="_blank"
+									rel="external noreferrer"
+									>{tokenChirho.lemma_id_chirho} · {readerTChirho('lemma_search_chirho')} ↗</a
+								>{:else}<span class="small-note-chirho">{tokenChirho.lemma_id_chirho}</span>{/if}
 						</div>
 						<SpeechButtonChirho
 							tokenIdChirho={tokenChirho.id_chirho}

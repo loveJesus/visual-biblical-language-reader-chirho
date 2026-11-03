@@ -39,6 +39,51 @@ async function assertVerseChirho(pageChirho: PageChirho, verseChirho: VerseChirh
 }
 
 testChirho(
+	'visitor passage choices reveal the loaded reading card while the fresh home stays at the top',
+	async ({ page: pageChirho }) => {
+		await pageChirho.emulateMedia({ reducedMotion: 'reduce' });
+		await pageChirho.goto('/?lang_chirho=en');
+		await expectChirho(pageChirho.locator('[data-speech-pending-chirho]')).toHaveAttribute(
+			'data-speech-pending-chirho',
+			'false'
+		);
+		expectChirho(await pageChirho.evaluate(() => scrollY)).toBe(0);
+		await expectChirho(pageChirho.locator('[data-online-intro-chirho]')).toBeVisible();
+		for (const widthChirho of [390, 1440]) {
+			await pageChirho.setViewportSize({ width: widthChirho, height: 900 });
+			await pageChirho.getByLabel('Book', { exact: true }).selectOption('John');
+			await expectChirho(
+				pageChirho.getByRole('heading', { name: 'John 1:1', exact: true })
+			).toBeVisible();
+			await expectChirho
+				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
+				.toBeLessThan(40);
+			await pageChirho.getByLabel('Chapter', { exact: true }).selectOption('3');
+			await expectChirho(
+				pageChirho.getByRole('heading', { name: 'John 3:1', exact: true })
+			).toBeVisible();
+			await expectChirho
+				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
+				.toBeLessThan(40);
+			await pageChirho.getByLabel('Verse', { exact: true }).selectOption('16');
+			await expectChirho(
+				pageChirho.getByRole('heading', { name: 'John 3:16', exact: true })
+			).toBeVisible();
+			await expectChirho
+				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
+				.toBeLessThan(40);
+			await pageChirho.getByLabel('Book', { exact: true }).selectOption('Prov');
+			await expectChirho(
+				pageChirho.getByRole('heading', { name: 'Proverbs 1:1', exact: true })
+			).toBeVisible();
+			await expectChirho
+				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
+				.toBeLessThan(40);
+		}
+	}
+);
+
+testChirho(
 	'navigates chapter boundaries and preserves a real sequential verb verse',
 	async ({ page: pageChirho }) => {
 		await pageChirho.goto(`${readerOriginChirho}#Prov.26.1`);

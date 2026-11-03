@@ -6,6 +6,7 @@
 		siteTChirho,
 		CONTACT_EMAIL_CHIRHO,
 		FREE_MINISTRY_URL_CHIRHO,
+		SOFTWARE_URL_CHIRHO,
 		SOURCE_CODE_URL_CHIRHO,
 		type InformationIdChirho
 	} from './site-content-chirho';
@@ -40,6 +41,7 @@
 		<a href={SOURCE_CODE_URL_CHIRHO} rel="external noreferrer"
 			>{siteTChirho('source_code_chirho')} ↗</a
 		>
+		<a href={SOFTWARE_URL_CHIRHO} rel="external noreferrer">Love Jesus Software ↗</a>
 	</nav>
 </footer>
 

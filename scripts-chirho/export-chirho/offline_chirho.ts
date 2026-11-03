@@ -108,7 +108,7 @@ htmlChirho = htmlChirho
 	.replace(/<button\b[^>]*class="[^"]*report-artwork-chirho[^"]*"[^>]*>[\s\S]*?<\/button>/gi, '');
 const scriptChirho = `(${installHelpChirho.toString()})(document);(${installMediaChirho.toString()})(document);(${installGlossesChirho.toString()})(document);(${installWordNavigationChirho.toString()})(document);(${installSpeechChirho.toString()})(document);(${installIpaChirho.toString()})(document);`;
 // A saved reader distributes its embedded controls too: retain the code grant and source offer.
-const licenseChirho = `<footer class="snapshot-note-chirho">Hinneh reader code: <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3 or later</a>. <a href="${SITE_ORIGIN_CHIRHO}/sources-chirho/">Corresponding source and source-specific licenses</a>. Hinneh-held media rights: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; retain the passage's credits and review labels.</footer>`;
+const licenseChirho = `<footer class="snapshot-note-chirho">Hinneh reader code: <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3 or later</a>. <a href="${SITE_ORIGIN_CHIRHO}/sources-chirho/">Corresponding source and source-specific licenses</a>. Hinneh-created artwork: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>, no attribution required. Hinneh-held recording rights: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Passage source credits and review labels describe their own materials.</footer>`;
 htmlChirho = htmlChirho.replace(
 	'</body>',
 	() => `${licenseChirho}<script>${scriptChirho}</script></body>`

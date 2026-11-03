@@ -1,7 +1,7 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
 	import { SvelteMap } from 'svelte/reactivity';
-	import { onMount, untrack, type Snippet } from 'svelte';
+	import { onMount, untrack, tick as tickChirho, type Snippet } from 'svelte';
 	import { browser as browserChirho } from '$app/environment';
 	import { replaceState as replaceStateChirho } from '$app/navigation';
 	import type { LessonChirho } from '$lib/domain-chirho/lesson-chirho';
@@ -209,7 +209,8 @@
 	async function selectChirho(
 		nextChapterChirho: number,
 		nextVerseChirho: number,
-		persistHashChirho = true
+		persistHashChirho = true,
+		revealChirho = false
 	) {
 		void refreshMediaChirho(bookChirho, nextChapterChirho);
 		const selectedBookChirho = bookChirho;
@@ -239,11 +240,23 @@
 		} finally {
 			if (requestIdChirho === requestChirho) loadingChirho = false;
 		}
+		// Visitor passage changes reveal the newly rendered card; an older slow load cannot scroll it.
+		if (revealChirho && requestIdChirho === requestChirho && !errorChirho) {
+			await tickChirho();
+			if (requestIdChirho === requestChirho)
+				document.querySelector('.lesson-heading-chirho')?.scrollIntoView({
+					block: 'start',
+					behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+						? 'instant'
+						: 'smooth'
+				});
+		}
 	}
 	async function changeBookChirho(
 		nextBookChirho: BookChirho,
 		nextChapterChirho = 1,
-		nextVerseChirho = 1
+		nextVerseChirho = 1,
+		revealChirho = false
 	) {
 		const requestIdChirho = ++requestChirho;
 		bookChirho = nextBookChirho;
@@ -263,7 +276,7 @@
 			)
 				throw new Error('Invalid passage.');
 			chaptersChirho = entriesChirho;
-			await selectChirho(nextChapterChirho, nextVerseChirho);
+			await selectChirho(nextChapterChirho, nextVerseChirho, true, revealChirho);
 		} catch {
 			if (requestIdChirho === requestChirho) {
 				loadingChirho = false;
@@ -282,7 +295,7 @@
 			const numbersChirho = verseNumbersChirho(entryChirho);
 			nextVerseChirho = directionChirho < 0 ? numbersChirho.at(-1)! : numbersChirho[0];
 		}
-		void selectChirho(nextChapterChirho, nextVerseChirho);
+		void selectChirho(nextChapterChirho, nextVerseChirho, true, true);
 	}
 </script>
 
@@ -303,7 +316,7 @@
 					aria-label={readerTChirho('book_chirho')}
 					value={bookChirho}
 					onchange={(eventChirho) =>
-						changeBookChirho(eventChirho.currentTarget.value as BookChirho)}
+						changeBookChirho(eventChirho.currentTarget.value as BookChirho, 1, 1, true)}
 				>
 					<optgroup label={readerTChirho('high_quality_books_chirho')}>
 						{#each ['Prov', 'John', 'Gen'] as idChirho (idChirho)}
@@ -334,7 +347,8 @@
 					aria-label={readerTChirho('chapter_chirho')}
 					value={chapterChirho}
 					disabled={!chaptersChirho.length}
-					onchange={(eventChirho) => selectChirho(Number(eventChirho.currentTarget.value), 1)}
+					onchange={(eventChirho) =>
+						selectChirho(Number(eventChirho.currentTarget.value), 1, true, true)}
 					>{#each chaptersChirho as entryChirho (entryChirho.number_chirho)}<option
 							value={entryChirho.number_chirho}>{entryChirho.number_chirho}</option
 						>{/each}</select
@@ -346,7 +360,7 @@
 					value={verseChirho}
 					disabled={!chaptersChirho.length}
 					onchange={(eventChirho) =>
-						selectChirho(chapterChirho, Number(eventChirho.currentTarget.value))}
+						selectChirho(chapterChirho, Number(eventChirho.currentTarget.value), true, true)}
 					>{#each verseChoicesChirho as numberChirho (numberChirho)}<option value={numberChirho}
 							>{numberChirho}</option
 						>{/each}</select

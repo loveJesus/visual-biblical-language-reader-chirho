@@ -68,7 +68,7 @@ flowchart TD
 
 `prepare_public_source_chirho.ts` plans by default and copies only with `--apply-chirho` into a new directory under `build-chirho/public-source-chirho/`. It preserves original source bytes and keeps the exact outgoing path/hash/size manifest outside the candidate Git root. It never deletes an existing target or copies the owner's Git history. The working checkout's progress database and private authoring/provider metadata stay outside the public cut. Generated images and audio remain on the existing delivery service. Missing alignment-only upstream GBT files can be fetched separately for cold import checks; the public application build does not require them.
 
-Original code is GPL-3.0-or-later. Project-held media rights are CC BY 4.0. Third-party source data, adapted unfoldingWord help and voice/model rights retain their own terms. A GitHub visibility flag alone proves neither a clean source cut nor a working clone; record the exact outgoing commit, scan and credential-free build/test evidence, then verify anonymous public reads before releasing the source link.
+Original code is GPL-3.0-or-later. Hinneh-created artwork, including verse illustrations, word pictures and branding art, is dedicated under CC0 1.0 Universal to the extent of project-held rights; attribution is optional. Project-held pronunciation-recording rights remain CC BY 4.0. Third-party source data, adapted unfoldingWord help and voice/model rights retain their own terms. A GitHub visibility flag alone proves neither a clean source cut nor a working clone; record the exact outgoing commit, scan and credential-free build/test evidence, then verify anonymous public reads before releasing the source link.
 
 ## Optional word IPA
 
@@ -86,3 +86,22 @@ flowchart LR
 `WordIpaChirho` prepares small annotations without modifying source text. The established Hebrew parser and stress rules now live in the shared domain; production entry points re-export the same functions. Qere and traditional divine-name reading stay intact. Unsupported stress/vowels and Aramaic remain unavailable. `greekWordIpaChirho` supplies a broad word-level teaching guide for Modern, Modern with Aspirates or the existing Erasmian convention; written accent guides stress, while contextual sandhi and reconstructed ancient pitch are not claimed. Its Erasmian output reproduces the two existing comparison passages. The modern rules include vowel digraphs, diaeresis, nasal clusters, palatal consonants and αυ/ευ voicing. Sources are linked on the public Sources page; HavarotJS's MIT notice is retained in LICENSES-chirho/.
 
 `installIpaChirho` uses the already source-verified word recording's IPA when available and compatible with the selected profile, otherwise the source-derived guide. It persists only a local visibility preference, renders text with textContent, and makes no playback, synthesis or network request. The checkbox remains disabled until the controller is installed, preventing lost clicks before hydration. IPA is marked as an annotation, isolated left to right, and excluded from canonical reconstruction. The controller is serialized into saved pages with the existing controls, preserving offline functionality and license/source notices.
+
+## Passage reveal and outbound lexicon lookup
+
+```mermaid
+flowchart LR
+ choice_chirho[Visitor book chapter or verse choice] --> load_chirho[Load source-verified selected lesson]
+ load_chirho --> current_chirho{Still the latest request}
+ current_chirho -->|yes| render_chirho[Wait for rendered heading then reveal reading card]
+ restore_chirho[Automatic daily restoration] --> keep_chirho[Keep fresh home viewport]
+ token_chirho[Preserved lemma ID and augment] --> known_chirho{Exact checked entry exists}
+ known_chirho -->|yes| entry_chirho[Outbound verified lemma entry]
+ known_chirho -->|no| search_chirho[Labelled Strong-ID search]
+ locale_chirho[English or Spanish interface] --> entry_chirho
+ locale_chirho --> search_chirho
+```
+
+`ReaderShellChirho.selectChirho` reveals the new reading card only for a deliberate passage choice, after Svelte renders and only while that request remains current. Reduced motion uses an immediate scroll. Initial daily restoration does not move the fresh home away from its introduction. The title has a small scroll margin so the card and audio controls remain below it.
+
+`lexiconLinkChirho` uses the existing checked Hebrew entry map throughout the reader and otherwise opens a labelled search at lexicon-chirho.bible.systems. External IDs are padded to four digits; Hebrew augments remain distinct. Search does not certify a unique lexical-form or sense match, especially for Greek forms sharing a Strong number. URLs use a fixed HTTPS origin and exact entry path; malformed identities and arbitrary supplied targets do not become links. Lexicon language is eng or spa, from the local interface preference. No lexicon query, import or synthesis runs on the reader's request path; following the link is a visitor action. Sister-project sources are read-only.
