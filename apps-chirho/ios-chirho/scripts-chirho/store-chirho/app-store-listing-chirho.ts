@@ -38,7 +38,7 @@ async function saveChirho(nameChirho: string, valueChirho: unknown): Promise<voi
 		JSON.stringify(valueChirho, null, 2) + '\n'
 	);
 }
-async function targetChirho(clientChirho: AppleClientChirho) {
+export async function targetChirho(clientChirho: AppleClientChirho) {
 	const appsChirho = rowsChirho(
 		await clientChirho.requestChirho(
 			'GET',
@@ -182,7 +182,7 @@ export function validateUploadOperationChirho(
 		throw new Error('Unexpected credential-bearing upload header.');
 	return urlChirho;
 }
-async function uploadBytesChirho(
+export async function uploadBytesChirho(
 	operationsChirho: UploadOperationChirho[],
 	bytesChirho: Buffer
 ): Promise<void> {
@@ -501,7 +501,12 @@ async function inspectChirho(clientChirho: AppleClientChirho): Promise<void> {
 		})
 	);
 }
-async function attachBuildChirho(clientChirho: AppleClientChirho): Promise<void> {
+async function attachBuildChirho(
+	clientChirho: AppleClientChirho,
+	buildNumberChirho: string
+): Promise<void> {
+	if (!/^[1-9]\d{0,5}$/u.test(buildNumberChirho))
+		throw new Error('Expected an explicit positive build number.');
 	const { appChirho, versionChirho } = await targetChirho(clientChirho);
 	if (versionChirho.attributes?.versionString !== '0.1') throw new Error('Expected version 0.1.');
 	const responseChirho = await clientChirho.requestChirho(
@@ -515,7 +520,7 @@ async function attachBuildChirho(clientChirho: AppleClientChirho): Promise<void>
 				? responseChirho.included?.find((recordChirho) => recordChirho.id === relationshipChirho.id)
 				: null;
 		return (
-			buildChirho.attributes?.version === '1' &&
+			buildChirho.attributes?.version === buildNumberChirho &&
 			buildChirho.attributes?.processingState === 'VALID' &&
 			buildChirho.attributes?.buildAudienceType === 'APP_STORE_ELIGIBLE' &&
 			parentChirho?.attributes?.version === '0.1' &&
@@ -523,7 +528,9 @@ async function attachBuildChirho(clientChirho: AppleClientChirho): Promise<void>
 		);
 	});
 	if (buildsChirho.length !== 1)
-		throw new Error('Expected exactly one valid matching version 0.1 build 1.');
+		throw new Error(
+			'Expected exactly one valid matching version 0.1 build ' + buildNumberChirho + '.'
+		);
 	await clientChirho.requestChirho('PATCH', `/v1/appStoreVersions/${versionChirho.id}`, {
 		data: {
 			type: 'appStoreVersions',
@@ -536,10 +543,13 @@ async function attachBuildChirho(clientChirho: AppleClientChirho): Promise<void>
 		app_id_chirho: appChirho.id,
 		version_id_chirho: versionChirho.id,
 		build_id_chirho: buildsChirho[0].id,
+		build_number_chirho: buildNumberChirho,
 		processing_state_chirho: 'VALID',
 		submitted_chirho: false
 	});
-	console.log('Valid signed build 0.1 (1) attached to the draft; not submitted.');
+	console.log(
+		'Valid signed build 0.1 (' + buildNumberChirho + ') attached to the draft; not submitted.'
+	);
 }
 if (import.meta.main) {
 	const modeChirho = process.argv[2];
@@ -554,6 +564,11 @@ if (import.meta.main) {
 	const clientChirho = await AppleClientChirho.openChirho();
 	if (modeChirho === 'prepare-chirho') await prepareChirho(clientChirho);
 	else if (modeChirho === 'media-chirho') await mediaChirho(clientChirho);
-	else if (modeChirho === 'attach-build-chirho') await attachBuildChirho(clientChirho);
-	else await inspectChirho(clientChirho);
+	else if (modeChirho === 'attach-build-chirho') {
+		const indexChirho = process.argv.indexOf('--build-chirho');
+		await attachBuildChirho(
+			clientChirho,
+			indexChirho < 0 ? '1' : (process.argv[indexChirho + 1] ?? '')
+		);
+	} else await inspectChirho(clientChirho);
 }

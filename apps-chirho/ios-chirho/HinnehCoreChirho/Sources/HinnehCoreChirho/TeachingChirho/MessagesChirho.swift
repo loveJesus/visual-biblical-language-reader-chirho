@@ -112,6 +112,10 @@ public struct MessagesChirho: Sendable {
     public let notApplicableChirho: String
     public let localVerbCodeChirho: String
     public let privacyChirho: String
+    public let privacyPolicyChirho: String
+    public let aboutSupportChirho: String
+    public let sourceCodeChirho: String
+    public let opensBrowserChirho: String
     public let closingNoteChirho: String
 
     public static func forChirho(_ localeChirho: LocaleChirho) -> MessagesChirho {
@@ -237,6 +241,10 @@ public struct MessagesChirho: Sendable {
         notApplicableChirho: "not applicable",
         localVerbCodeChirho: "local verb code",
         privacyChirho: "No accounts · No tracking",
+        privacyPolicyChirho: "Privacy policy",
+        aboutSupportChirho: "About and support",
+        sourceCodeChirho: "Source code",
+        opensBrowserChirho: "Opens in your browser.",
         closingNoteChirho: "A small beginning in the language of Scripture."
     )
 
@@ -333,6 +341,10 @@ public struct MessagesChirho: Sendable {
         notApplicableChirho: "no aplica",
         localVerbCodeChirho: "código verbal local",
         privacyChirho: "Sin cuentas · Sin rastreo",
+        privacyPolicyChirho: "Política de privacidad",
+        aboutSupportChirho: "Acerca de y soporte",
+        sourceCodeChirho: "Código fuente",
+        opensBrowserChirho: "Se abre en el navegador.",
         closingNoteChirho: "Un pequeño comienzo en el idioma de las Escrituras."
     )
 }

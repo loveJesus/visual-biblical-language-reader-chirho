@@ -210,6 +210,7 @@ struct ReaderViewChirho: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(messagesChirho.closingNoteChirho)
             Text(messagesChirho.privacyChirho)
+            PolicyLinksViewChirho(messagesChirho: messagesChirho, localeChirho: modelChirho.localeChirho)
         }
         .font(.footnote)
         .foregroundStyle(PaletteChirho.quietChirho)

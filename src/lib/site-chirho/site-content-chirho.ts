@@ -257,6 +257,7 @@ export const INFORMATION_PAGES_CHIRHO = {
 					title_chirho: 'Hosting and media',
 					paragraphs_chirho: [
 						'Cloudflare delivers the website and media. Loading a page or recording sends normal connection information, including your IP address and the requested URL, to the hosting provider. Cloudflare may process request and security information under its own policies.',
+						'Security-event records can retain IP addresses and requested paths after a request ends. Retention varies by Cloudflare service and plan. These records support security and abuse prevention; Hinneh does not use them for advertising or to build personal reading profiles.',
 						'Playing a saved recording requests an existing media file. It does not send your reading to a speech-generation provider or create a new paid recording. A device-voice fallback, where offered, uses the matching local device voice.'
 					],
 					links_chirho: [
@@ -306,6 +307,7 @@ export const INFORMATION_PAGES_CHIRHO = {
 					title_chirho: 'Alojamiento y archivos',
 					paragraphs_chirho: [
 						'Cloudflare distribuye el sitio y sus archivos. Al cargar una página o grabación se envía al proveedor información normal de conexión, incluida la dirección IP y la URL solicitada. Cloudflare puede procesar información de solicitudes y seguridad según sus políticas.',
+						'Los registros de eventos de seguridad pueden conservar direcciones IP y rutas solicitadas después de finalizar la petición. La conservación varía según el servicio y el plan de Cloudflare. Estos registros sirven para la seguridad y la prevención de abusos; Hinneh no los usa para publicidad ni para crear perfiles personales de lectura.',
 						'Reproducir una grabación guardada solicita un archivo existente. No envía tu lectura a un proveedor de síntesis ni crea una grabación de pago. Cuando se ofrece una voz del dispositivo como alternativa, se usa una voz local del idioma correspondiente.'
 					],
 					links_chirho: [
