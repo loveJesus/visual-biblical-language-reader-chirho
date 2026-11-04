@@ -249,7 +249,8 @@ export const INFORMATION_PAGES_CHIRHO = {
 					title_chirho: 'Reading and preferences',
 					paragraphs_chirho: [
 						'The reader does not require registration. It does not include an advertising or behavioral-analytics SDK.',
-						'Your browser stores choices such as interface language, Greek rendition and illustration preference. These preferences stay in browser storage; clearing this site’s browser data removes them. The selected passage and language may also appear in a shared link.'
+						'Your browser stores choices such as interface language, Greek rendition and illustration preference. These preferences stay in browser storage; clearing this site’s browser data removes them. The selected passage and language may also appear in a shared link.',
+						'The iOS app stores language and pronunciation preferences on your device and restores the last passage locally. Downloaded resources may remain in a bounded device cache, and playback uses temporary verified audio files. These local preferences and files are not uploaded. The app does not record your voice or request new speech generation. Deleting the app removes its local data.'
 					]
 				},
 				{
@@ -297,7 +298,8 @@ export const INFORMATION_PAGES_CHIRHO = {
 					title_chirho: 'Lectura y preferencias',
 					paragraphs_chirho: [
 						'El lector no requiere registro. No incluye un SDK de publicidad ni de análisis del comportamiento.',
-						'Tu navegador guarda opciones como el idioma, la variante griega y la preferencia de ilustraciones. Permanecen en el almacenamiento del navegador; al borrar los datos de este sitio se eliminan. El pasaje y el idioma también pueden aparecer en un enlace compartido.'
+						'Tu navegador guarda opciones como el idioma, la variante griega y la preferencia de ilustraciones. Permanecen en el almacenamiento del navegador; al borrar los datos de este sitio se eliminan. El pasaje y el idioma también pueden aparecer en un enlace compartido.',
+						'La aplicación de iOS guarda en tu dispositivo las preferencias de idioma y pronunciación, y restaura localmente el último pasaje. Los recursos descargados pueden permanecer en una caché limitada; la reproducción usa archivos de audio temporales y verificados. Estas preferencias y archivos locales no se suben al servidor. La aplicación no graba tu voz ni solicita nuevas grabaciones sintetizadas. Al eliminar la aplicación se borran sus datos locales.'
 					]
 				},
 				{

@@ -25,7 +25,7 @@ The shared remote contract is in [../README-chirho.md](../README-chirho.md).
 | `HinnehChirho.xcodeproj` | Small hand-written project using Xcode synchronized folders; scheme `HinnehChirho`                                                                                  |
 | `scripts-chirho/`        | `ios_chirho.sh` (test, build, run, shot) and `export_teaching_chirho.ts`                                                                                            |
 
-The bundle id is `us.hinneh.readerchirho` (local only; no store identity is reserved). The
+The registered bundle id is `us.hinneh.readerchirho`. The
 display name is Hinneh, the minimum is iOS 18.0, and the language mode is Swift 6.
 
 ## Commands
@@ -100,4 +100,6 @@ registry and modules by `scripts-chirho/export_teaching_chirho.ts`.
 
 November 3: GPT independently verified the unsigned build, 25 core tests plus both opt-in live tests, the complete offline corpus check, and all six hosted model/UI cases on iPhone 17e with iOS 26.5. The simulator UI covers the corner speaker independently of Look closer, natural verse playback to its end, next verse, absent-verse recovery and Spanish Greek meanings. Exact Greek byte keys, rendition selection and per-play UUID identity remain covered. The same six cases passed in the lane on iPhone 17 Pro; the lane also reported an iPad visual check. The AppIntents metadata processor emits a tool warning when it finds no AppIntents dependency; compiler warnings are zero.
 
-This is an unsigned simulator reader, not a physical-device or store release. VoiceOver listening and language switching remain unverified. Natural verse recordings play where available; word-clip verse assembly, lexicon links, the reduced-scene chooser, native report controls and universal links are not in v1. Pronunciation and artwork review states are unchanged. GPT owns further integration after the scoped Claude lane was handed off and closed.
+November 4: a signed device Release archive was exported for App Store Connect. Apple validation and upload succeeded, and version 0.1 build 1 processed as VALID and APP_STORE_ELIGIBLE. It is attached to the unreleased draft with manual release selected. The English and Spanish listing has six processed screenshots each for iPhone and iPad, 24 total. Free pricing is saved. This is uploaded preparation, not App Review acceptance or a public store release. See `spec-chirho/workflows-chirho/native-chirho/store-connect-chirho.md` for the operator workflow and remaining account forms.
+
+VoiceOver listening and language switching remain unverified. Natural verse recordings play where available; word-clip verse assembly, lexicon links, the reduced-scene chooser, native report controls and universal links are not in v1. Pronunciation and artwork review states are unchanged. GPT owns further integration after the scoped Claude lane was handed off and closed.
