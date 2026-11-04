@@ -22,6 +22,7 @@ from pathlib import Path
 
 ROOT_CHIRHO = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT_CHIRHO / "scripts-chirho/bible-chirho")]
+from icon_generation_chirho import GeneratorJobChirho, validate_generation_chirho
 from icons_chirho import (
     QUEUE_CHIRHO,
     atomic_chirho,
@@ -39,9 +40,7 @@ sys.path.insert(0, str(ROOT_CHIRHO / "scripts-chirho/art-chirho"))
 LAUNCHER_CHIRHO = importlib.util.module_from_spec(SPEC_CHIRHO)
 SPEC_CHIRHO.loader.exec_module(LAUNCHER_CHIRHO)
 STOP_CHIRHO = False
-STYLE_CHIRHO = (
-    "static/assets-chirho/icons-chirho/proverbs-v1-chirho/0000-chirho/cell-00-chirho.webp"
-)
+STYLE_CHIRHO = "static/assets-chirho/icons-chirho/proverbs-v1-chirho/0000-chirho/cell-00-chirho.webp"
 
 
 def read_chirho(path_chirho):
@@ -90,7 +89,8 @@ def source_chirho(row_chirho):
         key_chirho(token_chirho) != key_chirho(row_chirho)
         or token_chirho["text_chirho"] != example_chirho["text_chirho"]
         or token_chirho["gloss_chirho"] != example_chirho["gloss_chirho"]
-        or token_chirho.get("lemma_assignment_status_chirho") == "source_review_required"
+        or token_chirho.get("lemma_assignment_status_chirho")
+        == "source_review_required"
     ):
         raise ValueError("Prepared source lemma or contextual gloss changed")
     refs_chirho = (
@@ -99,7 +99,9 @@ def source_chirho(row_chirho):
         else [
             source_chirho["id_chirho"]
             for source_chirho in verse_chirho["sources_chirho"]
-            if source_chirho["id_chirho"].startswith(("oshb-", "strong-", "aug-", "lexical-"))
+            if source_chirho["id_chirho"].startswith(
+                ("oshb-", "strong-", "aug-", "lexical-")
+            )
         ]
     )
     return {
@@ -164,6 +166,7 @@ def retire_chirho(attempt_chirho):
             "scripts-chirho/publish-chirho/r2-chirho/retire-artwork-chirho.ts",
             "--archive-chirho",
             "--retire-verified-chirho",
+            f"--scope-chirho={attempt_chirho}",
         ],
         attempt_chirho / "retirement-log-chirho.txt",
         1200,
@@ -192,7 +195,8 @@ def finish_chirho(attempt_chirho):
             ROOT_CHIRHO / "data-chirho/media-chirho/bible-worker-icons-chirho.json"
         )
         by_id_chirho = {
-            row_chirho["id_chirho"]: row_chirho for row_chirho in catalogue_chirho["icons_chirho"]
+            row_chirho["id_chirho"]: row_chirho
+            for row_chirho in catalogue_chirho["icons_chirho"]
         }
         if any(
             by_id_chirho.get(row_chirho["id_chirho"]) != row_chirho
@@ -202,7 +206,9 @@ def finish_chirho(attempt_chirho):
         return read_chirho(attempt_chirho / "archived-chirho.json")["installed_chirho"]
     visual_chirho = read_chirho(attempt_chirho / "visual-review-chirho.json")
     if not positive_visual_chirho(attempt_chirho):
-        raise AtlasLayoutRefusalChirho("Artist did not attest a visually acceptable atlas layout")
+        raise AtlasLayoutRefusalChirho(
+            "Artist did not attest a visually acceptable atlas layout"
+        )
     if not (attempt_chirho / "cuts-chirho/manifest-chirho.json").exists():
         try:
             command_chirho(
@@ -244,8 +250,12 @@ def finish_chirho(attempt_chirho):
             "grid_chirho": [4, 4],
             "created_at_chirho": datetime.now(UTC).isoformat(),
             "prompt_chirho": (attempt_chirho / "prompt-chirho.txt").read_text(),
-            "original_generator_path_chirho": visual_chirho["original_generator_path_chirho"],
-            "original_generator_sha256_chirho": visual_chirho["original_generator_sha256_chirho"],
+            "original_generator_path_chirho": visual_chirho[
+                "original_generator_path_chirho"
+            ],
+            "original_generator_sha256_chirho": visual_chirho[
+                "original_generator_sha256_chirho"
+            ],
             "plan_sha256_chirho": sha_chirho(attempt_chirho / "plan-chirho.json"),
             "art_review_chirho": "pending",
         },
@@ -273,7 +283,7 @@ def finish_chirho(attempt_chirho):
         ],
         attempt_chirho / "shards-log-chirho.txt",
     )
-    # Only one image producer is active in this lane. Archive all exact owned temporary
+    # Only one installer is active in this lane. Archive this attempt's exact temporary
     # raster copies before removal, including the generator original referenced above.
     retire_chirho(attempt_chirho)
     atomic_chirho(
@@ -292,232 +302,341 @@ def stop_chirho(_signal_chirho, _frame_chirho):
     STOP_CHIRHO = True  # Drain the current call and archival chain; do not kill an unknown result.
 
 
-def run_chirho(limit_chirho):
+def run_chirho(limit_chirho, concurrency_chirho=2):
+    """Workflow: whole-bible-chirho.md. Disjoint generators, one serialized installer."""
+    if not 1 <= concurrency_chirho <= 2 or not 1 <= limit_chirho <= 1000:
+        raise ValueError("Concurrency must be 1..2 and sheet attempts 1..1000")
     rows_chirho = candidates_chirho()
     state_path_chirho = QUEUE_CHIRHO / "worker-state-chirho.json"
     state_chirho = (
         read_chirho(state_path_chirho)
         if state_path_chirho.exists()
         else {
-            "schema_version_chirho": 1,
             "held_keys_chirho": [],
             "attempt_count_chirho": 0,
             "active_attempt_chirho": None,
         }
     )
+    active_chirho = state_chirho.get("active_attempts_chirho")
+    if active_chirho is None:
+        active_chirho = (
+            [state_chirho["active_attempt_chirho"]]
+            if state_chirho.get("active_attempt_chirho")
+            else []
+        )
+    if (
+        not isinstance(active_chirho, list)
+        or len(active_chirho) > 2
+        or any(not isinstance(name_chirho, str) for name_chirho in active_chirho)
+        or len(set(active_chirho)) != len(active_chirho)
+    ):
+        raise ValueError("Invalid bounded active-attempt journal")
+    active_chirho = list(active_chirho)
     held_chirho = set(state_chirho["held_keys_chirho"])
-    progress_path_chirho = QUEUE_CHIRHO / "progress-chirho.json"
+    jobs_chirho = {}
+    reserved_chirho = set()
+    installed_chirho = set()
+    completed_chirho = 0
+    scheduled_chirho = 0
+    failed_calls_chirho = state_chirho.get("consecutive_generator_failures_chirho", 0)
+    dispatch_hold_chirho = None
+    shared_error_chirho = None
+
+    def attempt_path_chirho(name_chirho):
+        path_chirho = (QUEUE_CHIRHO / name_chirho).resolve()
+        if (
+            not path_chirho.is_relative_to(QUEUE_CHIRHO.resolve())
+            or path_chirho == QUEUE_CHIRHO.resolve()
+        ):
+            raise ValueError("Active attempt escapes owned queue")
+        return path_chirho
+
+    def plan_keys_chirho(attempt_chirho):
+        return {
+            key_chirho(row_chirho)
+            for row_chirho in read_chirho(attempt_chirho / "plan-chirho.json")[
+                "cells_chirho"
+            ]
+            if not row_chirho.get("padding_chirho")
+        }
+
+    def persist_chirho():
+        state_chirho.update(
+            {
+                "schema_version_chirho": 2,
+                "held_keys_chirho": sorted(held_chirho),
+                "active_attempts_chirho": list(active_chirho),
+                "active_attempt_chirho": active_chirho[0] if active_chirho else None,
+                "consecutive_generator_failures_chirho": failed_calls_chirho,
+            }
+        )
+        atomic_chirho(state_path_chirho, state_chirho)
+
+    def available_chirho():
+        return [
+            row_chirho
+            for row_chirho in rows_chirho
+            if row_chirho["status_chirho"] == "prepared"
+            and key_chirho(row_chirho)
+            not in held_chirho | installed_chirho | reserved_chirho
+        ]
 
     def progress_chirho(status_chirho, **values_chirho):
         atomic_chirho(
-            progress_path_chirho,
+            QUEUE_CHIRHO / "progress-chirho.json",
             {
                 "state_chirho": status_chirho,
                 "at_chirho": datetime.now(UTC).isoformat(),
                 "held_lemmas_chirho": len(held_chirho),
+                "concurrency_chirho": concurrency_chirho,
+                "active_attempts_chirho": list(active_chirho),
+                "attempt_chirho": active_chirho[0] if active_chirho else None,
+                "remaining_chirho": len(available_chirho()),
+                "in_flight_lemmas_chirho": len(reserved_chirho),
+                "scheduled_sheets_chirho": scheduled_chirho,
+                "generated_sheets_chirho": completed_chirho,
                 **values_chirho,
             },
         )
 
-    active_chirho = state_chirho.get("active_attempt_chirho")
-    if active_chirho:
-        attempt_chirho = (QUEUE_CHIRHO / active_chirho).resolve()
-        if not attempt_chirho.is_relative_to(QUEUE_CHIRHO):
-            raise ValueError("Active attempt escapes owned queue")
-        if LAUNCHER_CHIRHO.RECOVERY_CHIRHO.active_chirho(attempt_chirho):
-            progress_chirho(
-                "needs_reconciliation",
-                reason_chirho="Prior generator may still be active; no new dispatch",
-            )
-            return 2
+    def holds_from_installed_chirho(attempt_chirho):
+        for hold_chirho in read_chirho(attempt_chirho / "installed-chirho.json")[
+            "holds_chirho"
+        ]:
+            held_chirho.add(key_chirho(hold_chirho["source_chirho"]))
+
+    # A live prior request blocks recovery dispatch. Never reinterpret it as a fresh attempt.
+    if any(
+        LAUNCHER_CHIRHO.RECOVERY_CHIRHO.active_chirho(attempt_path_chirho(name_chirho))
+        for name_chirho in active_chirho
+    ):
+        progress_chirho(
+            "needs_reconciliation",
+            reason_chirho="Prior generator may still be active; no new dispatch",
+        )
+        return 2
+    for name_chirho in list(active_chirho):
+        attempt_chirho = attempt_path_chirho(name_chirho)
         if (attempt_chirho / "archived-chirho.json").exists() or (
             (attempt_chirho / "keyed-sheet-chirho.webp").exists()
             and (attempt_chirho / "visual-review-chirho.json").exists()
         ):
             try:
-                finish_chirho(attempt_chirho)  # Recover existing bytes; no replacement call.
-                for hold_chirho in read_chirho(attempt_chirho / "installed-chirho.json")[
-                    "holds_chirho"
-                ]:
-                    held_chirho.add(key_chirho(hold_chirho["source_chirho"]))
+                finish_chirho(attempt_chirho)
+                holds_from_installed_chirho(attempt_chirho)
             except AtlasLayoutRefusalChirho as error_chirho:
                 layout_hold_chirho(attempt_chirho, held_chirho, error_chirho)
         else:
-            for cell_chirho in read_chirho(attempt_chirho / "plan-chirho.json")["cells_chirho"]:
-                if not cell_chirho.get("padding_chirho"):
-                    held_chirho.add(key_chirho(cell_chirho))
+            held_chirho.update(plan_keys_chirho(attempt_chirho))
             atomic_chirho(
                 attempt_chirho / "hold-chirho.json",
                 {
-                    "reason_chirho": "Unresolved prior result; retained for owner reconciliation without regeneration"
+                    "reason_chirho": "Unresolved prior result; retained without regeneration",
                 },
             )
-        state_chirho["active_attempt_chirho"] = None
-        state_chirho["held_keys_chirho"] = sorted(held_chirho)
-        atomic_chirho(state_path_chirho, state_chirho)
-
-    completed_chirho = 0
-    failed_calls_chirho = state_chirho.get("consecutive_generator_failures_chirho", 0)
+        active_chirho.remove(name_chirho)
+        persist_chirho()
     if failed_calls_chirho >= 3:
         progress_chirho(
-            "generator_capacity_hold",
-            reason_chirho="Three consecutive unresolved generator failures; owner reconciliation is required",
+            "generator_capacity_hold", reason_chirho="Prior failure cap remains held"
         )
         return 2
-    while not STOP_CHIRHO and completed_chirho < limit_chirho:
-        current_chirho = read_chirho(
-            ROOT_CHIRHO / "data-chirho/media-chirho/bible-worker-icons-chirho.json"
-        )
-        installed_keys_chirho = {
-            key_chirho(row_chirho) for row_chirho in current_chirho["icons_chirho"]
-        }
-        available_chirho = [
-            row_chirho
-            for row_chirho in rows_chirho
-            if row_chirho["status_chirho"] == "prepared"
-            and key_chirho(row_chirho) not in held_chirho | installed_keys_chirho
-        ]
-        if not available_chirho:
-            progress_chirho(
-                "eligible_complete_with_holds",
-                generated_sheets_chirho=completed_chirho,
-                remaining_chirho=0,
-            )
-            return 0
-        chosen_chirho = []
-        for row_chirho in available_chirho[:16]:
-            try:
-                chosen_chirho.append(
-                    {**source_chirho(row_chirho), "cell_chirho": len(chosen_chirho)}
-                )
-            except (ValueError, KeyError, StopIteration) as error_chirho:
-                held_chirho.add(key_chirho(row_chirho))
-                progress_chirho(
-                    "source_item_held",
-                    reason_chirho=str(error_chirho),
-                    lemma_chirho=key_chirho(row_chirho),
-                )
-        if not chosen_chirho:
-            state_chirho["held_keys_chirho"] = sorted(held_chirho)
-            atomic_chirho(state_path_chirho, state_chirho)
-            continue
-        chosen_chirho += [
-            {"cell_chirho": number_chirho, "padding_chirho": True}
-            for number_chirho in range(len(chosen_chirho), 16)
-        ]
-        number_chirho = state_chirho["attempt_count_chirho"]
-        attempt_chirho = (
-            QUEUE_CHIRHO
-            / "attempts-chirho"
-            / f"{number_chirho // 100 * 100:04d}-chirho"
-            / f"{number_chirho // 10 * 10:04d}-chirho"
-            / f"attempt-{uuid.uuid4().hex}-chirho"
-        )
-        attempt_chirho.mkdir(parents=True)
-        atomic_chirho(
-            attempt_chirho / "plan-chirho.json",
-            {"schema_version_chirho": 1, "grid_chirho": [4, 4], "cells_chirho": chosen_chirho},
-        )
-        state_chirho |= {
-            "active_attempt_chirho": str(attempt_chirho.relative_to(QUEUE_CHIRHO)),
-            "attempt_count_chirho": number_chirho + 1,
-            "held_keys_chirho": sorted(held_chirho),
-        }
-        atomic_chirho(state_path_chirho, state_chirho)
-        progress_chirho(
-            "generating",
-            attempt_chirho=state_chirho["active_attempt_chirho"],
-            remaining_chirho=len(available_chirho),
-        )
-        command_chirho(
-            [
-                "bun",
-                "scripts-chirho/publish-chirho/r2-chirho/with-artwork-chirho.ts",
-                STYLE_CHIRHO,
-                "--",
-                "magick",
-                STYLE_CHIRHO,
-                str(attempt_chirho / "style-reference-chirho.webp"),
-            ],
-            attempt_chirho / "style-log-chirho.txt",
-        )
-        try:
-            LAUNCHER_CHIRHO.prompt_chirho = prompt_chirho
-            LAUNCHER_CHIRHO.run_generator_chirho(ROOT_CHIRHO, attempt_chirho)
-        except (ValueError, RuntimeError) as error_chirho:
-            atomic_chirho(
-                attempt_chirho / "hold-chirho.json",
-                {"reason_chirho": str(error_chirho), "at_chirho": datetime.now(UTC).isoformat()},
-            )
-            for row_chirho in chosen_chirho:
-                if not row_chirho.get("padding_chirho"):
-                    held_chirho.add(key_chirho(row_chirho))
-            state_chirho["active_attempt_chirho"] = None
-            state_chirho["held_keys_chirho"] = sorted(held_chirho)
-            failed_calls_chirho += 1
-            state_chirho["consecutive_generator_failures_chirho"] = failed_calls_chirho
-            atomic_chirho(state_path_chirho, state_chirho)
-            if (attempt_chirho / "image-tool-unavailable-chirho.json").exists():
-                progress_chirho(
-                    "image_tool_unavailable",
-                    attempt_chirho=str(attempt_chirho.relative_to(QUEUE_CHIRHO)),
-                )
-                return 2
-            if failed_calls_chirho >= 3:
-                progress_chirho("generator_capacity_hold", reason_chirho=str(error_chirho))
-                return 2
-            progress_chirho("item_held", reason_chirho=str(error_chirho))
-            continue
-        failed_calls_chirho = 0
-        state_chirho["consecutive_generator_failures_chirho"] = 0
-        proposal_chirho = attempt_chirho / "source-review-needed-chirho.json"
-        if proposal_chirho.exists():
-            for row_chirho in chosen_chirho:
-                if not row_chirho.get("padding_chirho"):
-                    held_chirho.add(key_chirho(row_chirho))
-            progress_chirho(
-                "source_items_held", attempt_chirho=str(attempt_chirho.relative_to(QUEUE_CHIRHO))
-            )
-        else:
-            try:
-                result_chirho = finish_chirho(attempt_chirho)
-            except AtlasLayoutRefusalChirho as error_chirho:
-                for row_chirho in chosen_chirho:
-                    if not row_chirho.get("padding_chirho"):
+    current_chirho = read_chirho(
+        ROOT_CHIRHO / "data-chirho/media-chirho/bible-worker-icons-chirho.json"
+    )
+    installed_chirho.update(
+        key_chirho(row_chirho) for row_chirho in current_chirho["icons_chirho"]
+    )
+
+    try:
+        while True:
+            while (
+                not STOP_CHIRHO
+                and dispatch_hold_chirho is None
+                and len(jobs_chirho) < concurrency_chirho
+                and scheduled_chirho < limit_chirho
+            ):
+                eligible_chirho = available_chirho()
+                if not eligible_chirho:
+                    break
+                chosen_chirho = []
+                for row_chirho in eligible_chirho[:16]:
+                    try:
+                        chosen_chirho.append(
+                            {
+                                **source_chirho(row_chirho),
+                                "cell_chirho": len(chosen_chirho),
+                            }
+                        )
+                    except (ValueError, KeyError, StopIteration) as error_chirho:
                         held_chirho.add(key_chirho(row_chirho))
+                        persist_chirho()
+                        progress_chirho(
+                            "source_item_held",
+                            reason_chirho=str(error_chirho),
+                            lemma_chirho=key_chirho(row_chirho),
+                        )
+                if not chosen_chirho:
+                    continue
+                chosen_chirho += [
+                    {"cell_chirho": number_chirho, "padding_chirho": True}
+                    for number_chirho in range(len(chosen_chirho), 16)
+                ]
+                number_chirho = state_chirho["attempt_count_chirho"]
+                attempt_chirho = (
+                    QUEUE_CHIRHO
+                    / "attempts-chirho"
+                    / f"{number_chirho // 100 * 100:04d}-chirho"
+                    / f"{number_chirho // 10 * 10:04d}-chirho"
+                    / f"attempt-{uuid.uuid4().hex}-chirho"
+                )
+                attempt_chirho.mkdir(parents=True)
                 atomic_chirho(
-                    attempt_chirho / "hold-chirho.json",
+                    attempt_chirho / "plan-chirho.json",
                     {
-                        "reason_chirho": str(error_chirho),
-                        "at_chirho": datetime.now(UTC).isoformat(),
+                        "schema_version_chirho": 1,
+                        "grid_chirho": [4, 4],
+                        "cells_chirho": chosen_chirho,
                     },
                 )
-                retire_chirho(attempt_chirho)
-                progress_chirho("layout_items_held", reason_chirho=str(error_chirho))
-            else:
-                completed_chirho += 1
-                for hold_chirho in read_chirho(attempt_chirho / "installed-chirho.json")[
-                    "holds_chirho"
-                ]:
-                    held_chirho.add(key_chirho(hold_chirho["source_chirho"]))
-                progress_chirho(
-                    "installed", **result_chirho, generated_sheets_chirho=completed_chirho
+                name_chirho = str(attempt_chirho.relative_to(QUEUE_CHIRHO))
+                active_chirho.append(name_chirho)
+                reserved_chirho.update(plan_keys_chirho(attempt_chirho))
+                state_chirho["attempt_count_chirho"] = number_chirho + 1
+                persist_chirho()  # Reserve every exact lemma before any child can request an image.
+                scheduled_chirho += 1
+                progress_chirho("generating")
+                command_chirho(
+                    [
+                        "bun",
+                        "scripts-chirho/publish-chirho/r2-chirho/with-artwork-chirho.ts",
+                        STYLE_CHIRHO,
+                        "--",
+                        "magick",
+                        STYLE_CHIRHO,
+                        str(attempt_chirho / "style-reference-chirho.webp"),
+                    ],
+                    attempt_chirho / "style-log-chirho.txt",
                 )
-        state_chirho["active_attempt_chirho"] = None
-        state_chirho["held_keys_chirho"] = sorted(held_chirho)
-        atomic_chirho(state_path_chirho, state_chirho)
-        time.sleep(1)
+                jobs_chirho[name_chirho] = GeneratorJobChirho(
+                    ROOT_CHIRHO,
+                    attempt_chirho,
+                    prompt_chirho(ROOT_CHIRHO, attempt_chirho),
+                    LAUNCHER_CHIRHO.RECOVERY_CHIRHO,
+                )
+            if not jobs_chirho:
+                break
+            progressed_chirho = False
+            for name_chirho, job_chirho in list(jobs_chirho.items()):
+                if not job_chirho.poll_chirho():
+                    continue
+                progressed_chirho = True
+                attempt_chirho = job_chirho.attempt_chirho
+                error_chirho = job_chirho.error_chirho
+                outcome_chirho = "item_held"
+                if error_chirho is None:
+                    try:
+                        validate_generation_chirho(
+                            attempt_chirho, LAUNCHER_CHIRHO.review_proposal_chirho
+                        )
+                    except (ValueError, RuntimeError) as validation_error_chirho:
+                        error_chirho = validation_error_chirho
+                if error_chirho is not None:
+                    held_chirho.update(plan_keys_chirho(attempt_chirho))
+                    atomic_chirho(
+                        attempt_chirho / "hold-chirho.json",
+                        {
+                            "reason_chirho": str(error_chirho),
+                            "at_chirho": datetime.now(UTC).isoformat(),
+                        },
+                    )
+                    failed_calls_chirho += 1
+                    if (attempt_chirho / "image-tool-unavailable-chirho.json").exists():
+                        dispatch_hold_chirho = "image_tool_unavailable"
+                    elif failed_calls_chirho >= 3:
+                        dispatch_hold_chirho = "generator_capacity_hold"
+                else:
+                    if dispatch_hold_chirho is None:
+                        failed_calls_chirho = 0
+                    if (attempt_chirho / "source-review-needed-chirho.json").exists():
+                        held_chirho.update(plan_keys_chirho(attempt_chirho))
+                    else:
+                        progress_chirho(
+                            "installing", installing_attempt_chirho=name_chirho
+                        )
+                        try:
+                            finish_chirho(
+                                attempt_chirho
+                            )  # Sole main-thread installation/archive writer.
+                        except AtlasLayoutRefusalChirho as layout_error_chirho:
+                            layout_hold_chirho(
+                                attempt_chirho, held_chirho, layout_error_chirho
+                            )
+                        else:
+                            completed_chirho += 1
+                            outcome_chirho = "installed"
+                            holds_from_installed_chirho(attempt_chirho)
+                            installed_chirho.update(
+                                plan_keys_chirho(attempt_chirho) - held_chirho
+                            )
+                del jobs_chirho[name_chirho]
+                active_chirho.remove(name_chirho)
+                reserved_chirho.difference_update(plan_keys_chirho(attempt_chirho))
+                persist_chirho()
+                progress_chirho(outcome_chirho)
+                break  # Refill the freed slot before installing another completed sheet.
+            if not progressed_chirho:
+                time.sleep(0.25)
+    except (
+        OSError,
+        subprocess.SubprocessError,
+        ValueError,
+        RuntimeError,
+    ) as error_chirho:
+        shared_error_chirho = str(error_chirho)
+    finally:
+        # A shared installer/storage failure leaves all unfinished plans in the durable journal.
+        # Drain existing children before releasing the coordinator lock; never orphan/replay them.
+        for job_chirho in jobs_chirho.values():
+            try:
+                job_chirho.wait_chirho()
+            except (OSError, ValueError, RuntimeError) as error_chirho:
+                shared_error_chirho = shared_error_chirho or str(error_chirho)
+    if shared_error_chirho is not None:
+        progress_chirho(
+            "shared_source_or_storage_hold", reason_chirho=shared_error_chirho
+        )
+        return 2
+    if dispatch_hold_chirho is not None:
+        progress_chirho(
+            dispatch_hold_chirho,
+            reason_chirho="Generator dispatch is held; in-flight work drained",
+        )
+        return 2
     progress_chirho(
-        "drained" if STOP_CHIRHO else "bounded_pass_finished",
-        generated_sheets_chirho=completed_chirho,
+        "drained"
+        if STOP_CHIRHO
+        else (
+            "bounded_pass_finished"
+            if scheduled_chirho >= limit_chirho
+            else "eligible_complete_with_holds"
+        )
     )
     return 0
 
 
 if __name__ == "__main__":
     parser_chirho = argparse.ArgumentParser(description=__doc__)
-    parser_chirho.add_argument("--sheets-chirho", type=int, default=1000)
+    parser_chirho.add_argument(
+        "--sheets-chirho",
+        type=int,
+        default=1000,
+        help="Maximum new sheet attempts in this pass",
+    )
+    parser_chirho.add_argument("--concurrency-chirho", type=int, default=2)
     args_chirho = parser_chirho.parse_args()
+    if not 1 <= args_chirho.concurrency_chirho <= 2:
+        raise SystemExit("Concurrency must be 1..2")
     if not 1 <= args_chirho.sheets_chirho <= 1000:
         raise SystemExit("Sheet limit must be 1..1000")
     signal.signal(signal.SIGINT, stop_chirho)
@@ -525,7 +644,9 @@ if __name__ == "__main__":
     with (QUEUE_CHIRHO / "worker-chirho.lock").open("a") as lock_chirho:
         fcntl.flock(lock_chirho, fcntl.LOCK_EX | fcntl.LOCK_NB)
         try:
-            raise SystemExit(run_chirho(args_chirho.sheets_chirho))
+            raise SystemExit(
+                run_chirho(args_chirho.sheets_chirho, args_chirho.concurrency_chirho)
+            )
         except (OSError, subprocess.SubprocessError, ValueError) as error_chirho:
             atomic_chirho(
                 QUEUE_CHIRHO / "progress-chirho.json",

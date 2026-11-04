@@ -34,7 +34,10 @@ class IconProducerTestsChirho(unittest.TestCase):
             attempt_chirho = queue_chirho / "attempt-saved-chirho"
             attempt_chirho.mkdir(parents=True)
             (attempt_chirho / "archived-chirho.json").write_text("{}")
-            source_chirho = {"lemma_id_chirho": "G2563", "lexical_form_chirho": "κάλαμος"}
+            source_chirho = {
+                "lemma_id_chirho": "G2563",
+                "lexical_form_chirho": "κάλαμος",
+            }
             (attempt_chirho / "installed-chirho.json").write_text(
                 json.dumps({"holds_chirho": [{"source_chirho": source_chirho}]})
             )
@@ -62,31 +65,68 @@ class IconProducerTestsChirho(unittest.TestCase):
                     "active_chirho",
                     return_value=False,
                 ),
-                patch.object(
-                    worker_chirho.LAUNCHER_CHIRHO, "run_generator_chirho"
-                ) as generator_chirho,
+                patch.object(worker_chirho, "GeneratorJobChirho") as generator_chirho,
             ):
                 self_chirho.assertEqual(worker_chirho.run_chirho(1), 0)
                 generator_chirho.assert_not_called()
-            state_chirho = json.loads((queue_chirho / "worker-state-chirho.json").read_text())
+            state_chirho = json.loads(
+                (queue_chirho / "worker-state-chirho.json").read_text()
+            )
             self_chirho.assertIn(
-                worker_chirho.key_chirho(source_chirho), state_chirho["held_keys_chirho"]
+                worker_chirho.key_chirho(source_chirho),
+                state_chirho["held_keys_chirho"],
             )
             self_chirho.assertEqual(state_chirho["attempt_count_chirho"], 1)
             self_chirho.assertIsNone(state_chirho["active_attempt_chirho"])
 
     def test_full_identity_and_legacy_holds_chirho(self_chirho):
-        rows_chirho = worker_chirho.candidates_chirho()
+        rows_chirho = [
+            {
+                "lemma_id_chirho": "H7105",
+                "lemma_augment_chirho": "a",
+                "status_chirho": "legacy_hold",
+            },
+            {
+                "lemma_id_chirho": "H7105",
+                "lemma_augment_chirho": "b",
+                "status_chirho": "prepared",
+            },
+        ]
+        with tempfile.TemporaryDirectory() as name_chirho:
+            queue_chirho = Path(name_chirho).resolve()
+            (queue_chirho / "candidates-chirho").mkdir()
+            (queue_chirho / "candidates-chirho/test-chirho.json").write_text(
+                json.dumps({"candidates_chirho": rows_chirho})
+            )
+            (queue_chirho / "index-chirho.json").write_text(
+                json.dumps(
+                    {
+                        "candidate_paths_chirho": [
+                            "candidates-chirho/test-chirho.json"
+                        ],
+                        "candidate_count_chirho": len(rows_chirho),
+                    }
+                )
+            )
+            with patch.object(worker_chirho, "QUEUE_CHIRHO", queue_chirho):
+                rows_chirho = worker_chirho.candidates_chirho()
         self_chirho.assertTrue(
-            any(row_chirho["status_chirho"] == "legacy_hold" for row_chirho in rows_chirho)
+            any(
+                row_chirho["status_chirho"] == "legacy_hold"
+                for row_chirho in rows_chirho
+            )
         )
         self_chirho.assertEqual(
             len(rows_chirho),
             len({worker_chirho.key_chirho(row_chirho) for row_chirho in rows_chirho}),
         )
         self_chirho.assertNotEqual(
-            worker_chirho.key_chirho({"lemma_id_chirho": "H7105", "lemma_augment_chirho": "a"}),
-            worker_chirho.key_chirho({"lemma_id_chirho": "H7105", "lemma_augment_chirho": "b"}),
+            worker_chirho.key_chirho(
+                {"lemma_id_chirho": "H7105", "lemma_augment_chirho": "a"}
+            ),
+            worker_chirho.key_chirho(
+                {"lemma_id_chirho": "H7105", "lemma_augment_chirho": "b"}
+            ),
         )
         self_chirho.assertNotEqual(
             worker_chirho.key_chirho(
@@ -98,11 +138,15 @@ class IconProducerTestsChirho(unittest.TestCase):
         )
 
     def test_source_hash_change_refuses_before_generation_chirho(self_chirho):
-        row_chirho = next(
-            row_chirho
-            for row_chirho in worker_chirho.candidates_chirho()
-            if row_chirho["status_chirho"] == "prepared"
-        )
+        row_chirho = {
+            "examples_chirho": [
+                {
+                    "gloss_chirho": "word",
+                    "content_path_chirho": "/content-chirho/proverbs-chirho/chapter-01-chirho.json",
+                    "content_sha256_chirho": "1" * 64,
+                }
+            ]
+        }
         with (
             patch.object(worker_chirho, "sha_chirho", return_value="0" * 64),
             self_chirho.assertRaisesRegex(ValueError, "source chapter changed"),
@@ -125,14 +169,14 @@ class IconProducerTestsChirho(unittest.TestCase):
             with (
                 patch.object(worker_chirho, "QUEUE_CHIRHO", home_chirho),
                 patch.object(worker_chirho, "candidates_chirho", return_value=[]),
-                patch.object(
-                    worker_chirho.LAUNCHER_CHIRHO, "run_generator_chirho"
-                ) as generator_chirho,
+                patch.object(worker_chirho, "GeneratorJobChirho") as generator_chirho,
             ):
                 self_chirho.assertEqual(worker_chirho.run_chirho(1), 2)
                 generator_chirho.assert_not_called()
             self_chirho.assertEqual(
-                json.loads((home_chirho / "progress-chirho.json").read_text())["state_chirho"],
+                json.loads((home_chirho / "progress-chirho.json").read_text())[
+                    "state_chirho"
+                ],
                 "generator_capacity_hold",
             )
 

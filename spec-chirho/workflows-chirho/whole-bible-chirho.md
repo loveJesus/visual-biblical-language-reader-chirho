@@ -52,10 +52,10 @@ Audio bytes are uploaded and read back before use. Public snapshots validate loc
 flowchart TD
   missing_chirho[Missing full-lemma inventory] --> legacy_chirho[Exclude original request retry and source holds]
   legacy_chirho --> source_chirho[Check representative chapter hash word and gloss]
-  source_chirho --> attempt_chirho[Persist one 16-cell attempt before launch]
-  attempt_chirho --> generator_chirho[One built-in image call with checked style and senses]
+  source_chirho --> attempt_chirho[Durably reserve disjoint 16-cell attempts before launch]
+  attempt_chirho --> generator_chirho[At most two independent built-in image jobs]
   generator_chirho --> inspect_chirho[Actual visual inspection and measured cell cuts]
-  inspect_chirho --> install_chirho[Install safe cells with pending art state]
+  inspect_chirho --> install_chirho[One serialized installer for safe pending cells]
   inspect_chirho -->|unsafe cell| item_hold_chirho[Keep that lemma held and continue disjoint work]
   generator_chirho -->|unknown result| result_hold_chirho[Keep original request and output for reconciliation]
   install_chirho --> compress_chirho[Lossy delivery WebP at most 128 pixels]
@@ -66,7 +66,11 @@ flowchart TD
 
 `icons_chirho.py` is the installer; `icon_worker_chirho.py` owns the single whole-canon producer and catalogue writer. Its candidate index retains legacy hold dispositions; Hebrew augments and exact Greek lexical forms stay separate. A general lemma picture is not a contextual sense review of every occurrence and never creates an alternate-sense border. Artist inspection and source review remain distinct from L.J.'s pending artwork approval.
 
-The producer uses the existing bounded GPT launcher and built-in image tool, one 4×4 sheet per attempt. A prior active or unknown request is never blindly repeated. Completed sheets resume through the installer; unresolved attempts retain their identities and their lemmas are held while unrelated candidates continue. Three consecutive generator failures stop dispatch for owner reconciliation. An unavailable image tool stops this lane, with no paid fallback. Storage or archival failure stops new dispatch and retains the current attempt for recovery. A SIGTERM drains the current request and storage chain.
+The producer has one coordinator lock, at most two independent generation processes and one serialized installer/archive/shard writer. `icon_generation_chirho.py` owns each child's process, log, request journal and existing 20-minute timeout; no shared child global is used. `--concurrency-chirho 1|2` selects the bound (default 2), while `--sheets-chirho` caps new attempts including failures. Every exact lemma is reserved in `active_attempts_chirho` before launch. Legacy single-attempt state migrates without changing holds. A completed slot is replenished after installation without waiting for its sibling.
+
+A prior active or unknown request is never blindly repeated. Completed sheets resume through the installer; unresolved attempts retain their identities and their lemmas are held while unrelated candidates continue. Three consecutive generator failures stop dispatch for owner reconciliation, including when a successful sibling later finishes. An unavailable image tool stops this lane, with no paid fallback. Storage or archival failure stops new dispatch, drains both children and retains unfinished plans for recovery. SIGTERM drains both requests and their storage chains; it does not kill an unknown image result. Only an expired per-child timeout kills that child's own process group.
+
+Retirement receives the completed attempt's exact scope. The sole installer also owns the static artwork and delivery-output trees; other generator attempts are excluded. Legacy broad retirement protects every attempt still listed in the coordinator journal. Exact referenced generator originals are archived and hash-verified before deletion. A sibling's style reference, source atlas and inspection composite remain available while it works. These boundaries are covered by coordinator, process-lifecycle and retirement tests. The November 4 live two-sheet proof installed 30 icons and retained two cell holds, with two original image calls, disjoint lemma plans, overlapping child lifetimes and serialized R2 readback/shard refresh. That small run is not a sustained throughput benchmark.
 
 Visual inspection uses an opaque white-composited diagnostic as well as the untouched transparent atlas. Some image viewers display hidden RGB in transparent pixels as colored fringes or stripes; that is not evidence of a visible artifact after normal compositing. Formal cuts still measure the original keyed alpha, with no pixel repair. Two November 2 sheets initially rejected by that preview were re-inspected by the owner and passed all 32 unchanged cell checks. Their original reviews and holds remain; source-bound owner-review records explain the reassessment. A real missing-gutter sheet remains held. This recovery made no replacement image requests and approved no human artwork.
 

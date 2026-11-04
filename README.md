@@ -51,6 +51,14 @@ The wrapper restores exact verified bytes only for the command and removes the u
 
 See `spec-chirho/workflows-chirho/media-delivery-chirho.md`, `art-recovery-chirho.md` and `shared-icons-chirho.md` for publication, retirement and recovery workflows. Do not restart an old uploader that assumes a local raster mirror.
 
+## Reusable icons, word recordings and scenes
+
+The standalone catalogue in `data-chirho/media-library-chirho/` connects full Hebrew/Greek lemma identities to pictures, exact pronunciation identities to reusable word recordings, and verse references to scenes. Every asset has a public content-addressed URL, SHA-256, byte count and review state. Hebrew augments and exact Greek lexical forms stay separate; audio is keyed by pronunciation rather than lemma. A general lemma picture is a memory aid, not a reviewed sense for every occurrence.
+
+Download the media separately from [GitHub Releases](https://github.com/loveJesus/visual-biblical-language-reader-chirho/releases): icons, word audio and verse scenes are independent ZIP archives, alongside a compact catalogue download. This keeps binary revisions out of source clones while preserving a downloadable copy beyond the live site's R2 delivery. Artwork is CC0; project-held recording rights are CC BY 4.0. Upstream and voice/identity rights remain separate. The catalogue README explains exact lookup, source aliases and licenses.
+
+To reproduce the metadata and verified packages, use `scripts-chirho/bible-chirho/export_media_library_chirho.ts` and `package_media_library_chirho.py`. Both default to a dry plan. See `spec-chirho/workflows-chirho/hosting-chirho/public-media-library-chirho.md` for the commands and integrity checks. The production coordinator supports two disjoint generators with one installer and preserves unknown-result, source, retry and funding holds.
+
 ## Offline export
 
 With a local server running, export to a new filename:

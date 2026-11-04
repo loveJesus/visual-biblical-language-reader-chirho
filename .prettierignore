@@ -53,6 +53,8 @@ worker-configuration.d.ts
 
 # Whole-canon pinned inputs and generated source-bound reports.
 /data-chirho/bible-chirho/
+# Deterministic reusable-library shards retain their manifest-bound bytes.
+/data-chirho/media-library-chirho/
 /workspace-chirho/whole-bible-chirho/*.json
 
 # Immutable release snapshots and generated player traces preserve their original proof bytes.

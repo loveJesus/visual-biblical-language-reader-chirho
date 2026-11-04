@@ -4,6 +4,7 @@ import {
 	readdir as readdirChirho,
 	readFile as readFileChirho,
 	lstat as lstatChirho,
+	realpath as realpathChirho,
 	mkdir as mkdirChirho,
 	open as openChirho,
 	unlink as unlinkChirho
@@ -26,9 +27,49 @@ interface ArchivedCopyChirho {
 export async function retireArtworkChirho(
 	rootChirho: string,
 	applyChirho = false,
-	retireChirho = false
+	retireChirho = false,
+	scopesChirho: string[] = []
 ) {
 	rootChirho = resolveChirho(rootChirho);
+	if (scopesChirho.length > 16) throw new Error('Retirement scope exceeds bound');
+	const selectedChirho = scopesChirho.map((scopeChirho) => resolveChirho(rootChirho, scopeChirho));
+	const ownedHomeChirho = joinChirho(rootChirho, 'workspace-chirho/art-chirho/queue-chirho');
+	for (const pathChirho of selectedChirho) {
+		if (
+			!pathChirho.startsWith(ownedHomeChirho + '/') ||
+			!(await lstatChirho(pathChirho)).isDirectory() ||
+			(await realpathChirho(pathChirho)) !== pathChirho
+		)
+			throw new Error('Retirement scope must be an owned attempt directory');
+	}
+	// Legacy broad cleanup must never touch a coordinator's active attempts. Explicit
+	// scopes allow the sole installer to retire just its completed sheet.
+	const statePathChirho = joinChirho(
+		ownedHomeChirho,
+		'bible-icons-chirho/worker-state-chirho.json'
+	);
+	const stateTextChirho = await readFileChirho(statePathChirho, 'utf8').catch(
+		(errorChirho: NodeJS.ErrnoException) => {
+			if (errorChirho.code === 'ENOENT') return '{}';
+			throw errorChirho;
+		}
+	);
+	const stateChirho = JSON.parse(stateTextChirho);
+	const activeChirho: unknown =
+		stateChirho.active_attempts_chirho ??
+		(stateChirho.active_attempt_chirho ? [stateChirho.active_attempt_chirho] : []);
+	if (
+		!Array.isArray(activeChirho) ||
+		activeChirho.length > 2 ||
+		activeChirho.some((pathChirho) => typeof pathChirho !== 'string')
+	)
+		throw new Error('Invalid active artwork journal');
+	const protectedChirho = (activeChirho as string[]).map((pathChirho) => {
+		const resolvedChirho = resolveChirho(ownedHomeChirho, 'bible-icons-chirho', pathChirho);
+		if (!resolvedChirho.startsWith(joinChirho(ownedHomeChirho, 'bible-icons-chirho') + '/'))
+			throw new Error('Active artwork path escapes queue');
+		return resolvedChirho;
+	});
 	const homeChirho = joinChirho(rootChirho, 'workspace-chirho/art-chirho/remote-archive-chirho');
 	await mkdirChirho(homeChirho, { recursive: true });
 	const releaseChirho = await acquireLockChirho(joinChirho(homeChirho, 'archive-chirho.lock'));
@@ -70,6 +111,13 @@ export async function retireArtworkChirho(
 		const pathsChirho = new Set<string>();
 		const metadataChirho: string[] = [];
 		async function walkChirho(folderChirho: string, metadataAllowedChirho = false) {
+			if (
+				!selectedChirho.length &&
+				protectedChirho.some(
+					(pathChirho) => folderChirho === pathChirho || folderChirho.startsWith(pathChirho + '/')
+				)
+			)
+				return;
 			for (const entryChirho of await readdirChirho(folderChirho, { withFileTypes: true }).catch(
 				(errorChirho: NodeJS.ErrnoException) => {
 					if (errorChirho.code === 'ENOENT') return [];
@@ -98,18 +146,26 @@ export async function retireArtworkChirho(
 					throw new Error('Artwork archive scope needs sharding');
 			}
 		}
-		for (const relativeChirho of [
-			'static/assets-chirho',
-			'workspace-chirho/art-chirho',
-			'workspace-chirho/previews-chirho',
-			'build-chirho',
-			'.svelte-kit'
-		])
-			await walkChirho(
-				joinChirho(rootChirho, relativeChirho),
-				relativeChirho === 'workspace-chirho/art-chirho'
-			);
-		await walkChirho(EXTERNAL_CHIRHO);
+		if (selectedChirho.length) {
+			for (const pathChirho of selectedChirho) await walkChirho(pathChirho, true);
+			// These two output trees have the same sole installer owner. Generators may
+			// write only inside their own attempt, never these committed output trees.
+			await walkChirho(joinChirho(rootChirho, 'static/assets-chirho'));
+			await walkChirho(joinChirho(rootChirho, 'build-chirho/delivery-media-chirho'));
+		} else {
+			for (const relativeChirho of [
+				'static/assets-chirho',
+				'workspace-chirho/art-chirho',
+				'workspace-chirho/previews-chirho',
+				'build-chirho',
+				'.svelte-kit'
+			])
+				await walkChirho(
+					joinChirho(rootChirho, relativeChirho),
+					relativeChirho === 'workspace-chirho/art-chirho'
+				);
+			await walkChirho(EXTERNAL_CHIRHO);
+		}
 		// Exact references only. Never remove an unrelated image from the shared generator cache.
 		for (const pathChirho of metadataChirho) {
 			const infoChirho = await lstatChirho(pathChirho);
@@ -248,7 +304,10 @@ if (import.meta.main)
 			await retireArtworkChirho(
 				process.cwd(),
 				process.argv.includes('--archive-chirho'),
-				process.argv.includes('--retire-verified-chirho')
+				process.argv.includes('--retire-verified-chirho'),
+				process.argv
+					.filter((valueChirho) => valueChirho.startsWith('--scope-chirho='))
+					.map((valueChirho) => valueChirho.slice('--scope-chirho='.length))
 			)
 		)
 	);
