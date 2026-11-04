@@ -29,7 +29,7 @@ testChirho(
 			)
 			.toBeGreaterThan(0);
 		await expectChirho(
-			pageChirho.getByRole('button', { name: 'Listen to this verse', exact: true })
+			pageChirho.locator('.verse-chirho .compact-speech-chirho').first()
 		).toBeDisabled();
 		releaseChirho();
 		await expectChirho(

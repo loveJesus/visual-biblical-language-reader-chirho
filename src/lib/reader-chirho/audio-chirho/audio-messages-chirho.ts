@@ -20,9 +20,9 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		assembled_playing_chirho: 'Playing an assembled reading from saved word recordings.',
 		erasmian_chirho: 'Erasmian',
 		slightly_slower_chirho: '12% slower',
-		rendition_unavailable_chirho: 'This pronunciation is not recorded for this passage yet.',
+		rendition_unavailable_chirho: 'This pronunciation is not recorded for this word yet.',
 		rendition_coverage_chirho:
-			'Compare pronunciations in John 1:1–2. Both are AI auditions awaiting pronunciation review.',
+			'Word recordings follow the selected pronunciation. Availability varies by word.',
 		recorded_ready_chirho:
 			'AI voice audition · {name_chirho}. Pronunciation awaits review; other words use the device voice.',
 		recorded_playing_chirho: 'Playing the saved {name_chirho} recording.',
@@ -35,7 +35,7 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		listen_verse_chirho: 'Listen to this verse',
 		pronounce_word_chirho: 'Pronounce {word_chirho}',
 		hear_word_chirho: 'Hear word',
-		navigation_chirho: 'Verse navigation and playback',
+		navigation_chirho: 'Verse navigation',
 		reading_speed_chirho: 'Reading speed',
 		checking_chirho: 'Checking for a local voice on this device.',
 		qere_chirho: 'The spoken reading follows the listed qere where the written form differs.',
@@ -70,9 +70,9 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 			'Reproduciendo una lectura ensamblada con las grabaciones de palabras.',
 		erasmian_chirho: 'Erasmiana',
 		slightly_slower_chirho: '12% más lenta',
-		rendition_unavailable_chirho: 'Esta pronunciación aún no está grabada para este pasaje.',
+		rendition_unavailable_chirho: 'Esta pronunciación aún no está grabada para esta palabra.',
 		rendition_coverage_chirho:
-			'Compara las pronunciaciones en Juan 1:1–2. Ambas son pruebas de voz IA pendientes de revisión.',
+			'Las grabaciones siguen la pronunciación elegida. La disponibilidad varía según la palabra.',
 		recorded_ready_chirho:
 			'Prueba de voz IA · {name_chirho}. Pronunciación pendiente de revisión; otras palabras usan la voz del dispositivo.',
 		recorded_playing_chirho: 'Reproduciendo la grabación guardada de {name_chirho}.',
@@ -85,7 +85,7 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		listen_verse_chirho: 'Escuchar este versículo',
 		pronounce_word_chirho: 'Pronunciar {word_chirho}',
 		hear_word_chirho: 'Oír la palabra',
-		navigation_chirho: 'Navegación y audio del versículo',
+		navigation_chirho: 'Navegación del versículo',
 		reading_speed_chirho: 'Velocidad de lectura',
 		checking_chirho: 'Buscando una voz local en este dispositivo.',
 		qere_chirho:

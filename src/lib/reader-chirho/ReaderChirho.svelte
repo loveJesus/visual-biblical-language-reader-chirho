@@ -51,7 +51,7 @@
 	}: {
 		spanishChirho?: SpanishLayerResultChirho | null;
 		headerChirho?: Snippet;
-		verseNavigationChirho?: Snippet<[Snippet]>;
+		verseNavigationChirho?: Snippet;
 		introVisibleChirho?: boolean;
 		lessonChirho: LessonChirho;
 		iconsChirho: Record<string, ContextualIconChirho>;

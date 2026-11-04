@@ -64,7 +64,7 @@ testChirho(
 					languageChirho
 				);
 				await expectChirho(
-					pageChirho.getByRole('button', { name: 'Escuchar este versículo', exact: true })
+					pageChirho.locator('.verse-chirho .compact-speech-chirho').first()
 				).toBeVisible();
 				const geometryChirho = await pageChirho.evaluate(() => {
 					const transportChirho = document

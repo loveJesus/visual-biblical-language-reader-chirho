@@ -669,7 +669,7 @@ export const READING_AIDS_CHIRHO: Record<LocaleChirho, readonly AidChirho[]> = {
 			kind_chirho: 'sound',
 			title_chirho: 'Sound',
 			body_chirho:
-				'Tap a word’s speaker to hear it pronounced, or play the verse. The saved recordings are AI-generated study aids, still under review.'
+				'Tap a word’s speaker to hear it pronounced. The saved recordings are AI-generated study aids, still under review.'
 		}
 	],
 	es: [
@@ -695,7 +695,7 @@ export const READING_AIDS_CHIRHO: Record<LocaleChirho, readonly AidChirho[]> = {
 			kind_chirho: 'sound',
 			title_chirho: 'Sonido',
 			body_chirho:
-				'Toca el altavoz de una palabra para oír su pronunciación, o reproduce el versículo. Las grabaciones guardadas son ayudas de estudio generadas con IA, todavía en revisión.'
+				'Toca el altavoz de una palabra para oír su pronunciación. Las grabaciones guardadas son ayudas de estudio generadas con IA, todavía en revisión.'
 		}
 	]
 };
@@ -760,7 +760,7 @@ export const ABOUT_GUIDE_CHIRHO: Record<LocaleChirho, AboutGuideChirho> = {
 				kind_chirho: 'sound',
 				title_chirho: 'Hear it spoken',
 				body_chirho:
-					'Tap the small speaker on a word to hear its saved pronunciation, or play the verse. Hebrew is voiced in a modern Israeli pronunciation and Greek in a modern one; Modern with Aspirates and Erasmian renditions are labelled where they have been recorded. The divine name is read in the traditional way, as Adonai, or Elohim where the text indicates it. These AI-generated recordings are study aids still under review, not reconstructions of how the words first sounded.'
+					'Tap the small speaker on a word to hear its saved pronunciation. Hebrew is voiced in a modern Israeli pronunciation and Greek in a modern one; Modern with Aspirates and Erasmian renditions are labelled where they have been recorded. The divine name is read in the traditional way, as Adonai, or Elohim where the text indicates it. These AI-generated recordings are study aids still under review, not reconstructions of how the words first sounded.'
 			},
 			{
 				kind_chirho: 'closer',
@@ -836,7 +836,7 @@ export const ABOUT_GUIDE_CHIRHO: Record<LocaleChirho, AboutGuideChirho> = {
 				kind_chirho: 'sound',
 				title_chirho: 'Escúchalo',
 				body_chirho:
-					'Toca el pequeño altavoz de una palabra para oír su pronunciación guardada, o reproduce el versículo. El hebreo se oye con pronunciación israelí moderna y el griego con pronunciación moderna; las variantes Moderno con aspiradas y Erasmiano se identifican donde hay grabaciones. El nombre divino se lee de forma tradicional, como Adonai, o Elohim cuando el texto lo indica. Estas grabaciones generadas con IA son ayudas de estudio todavía en revisión, no reconstrucciones de cómo sonaban originalmente las palabras.'
+					'Toca el pequeño altavoz de una palabra para oír su pronunciación guardada. El hebreo se oye con pronunciación israelí moderna y el griego con pronunciación moderna; las variantes Moderno con aspiradas y Erasmiano se identifican donde hay grabaciones. El nombre divino se lee de forma tradicional, como Adonai, o Elohim cuando el texto lo indica. Estas grabaciones generadas con IA son ayudas de estudio todavía en revisión, no reconstrucciones de cómo sonaban originalmente las palabras.'
 			},
 			{
 				kind_chirho: 'closer',

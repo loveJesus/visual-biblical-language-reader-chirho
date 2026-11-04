@@ -42,7 +42,7 @@
 		introVisibleChirho?: boolean;
 		lessonChirho: GreekLessonChirho;
 		headerChirho: Snippet;
-		verseNavigationChirho?: Snippet<[Snippet]>;
+		verseNavigationChirho?: Snippet;
 		presentationChirho?: ScenePresentationChirho | null;
 		iconsChirho?: Record<string, ContextualIconChirho>;
 		spanishChirho?: SpanishLayerResultChirho | null;
