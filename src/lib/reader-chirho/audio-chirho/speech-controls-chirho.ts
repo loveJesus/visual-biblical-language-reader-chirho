@@ -344,10 +344,10 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			currentRecordingChirho = audioChirho;
 			const rateChirho =
 				(rootChirho.querySelector('[data-speech-rate-chirho]') as HTMLSelectElement | null)
-					?.value ?? '0.85';
+					?.value ?? '1';
 			audioChirho.playbackRate = ['0.65', '0.85', '0.88', '1'].includes(rateChirho)
 				? Number(rateChirho)
-				: 0.85;
+				: 1;
 			audioChirho.preservesPitch = true;
 			activeButtonChirho = buttonChirho;
 			buttonChirho.setAttribute('aria-busy', 'true');
@@ -381,13 +381,13 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			const requestChirho = ++sequenceChirho;
 			const rateChirho =
 				(rootChirho.querySelector('[data-speech-rate-chirho]') as HTMLSelectElement | null)
-					?.value ?? '0.85';
+					?.value ?? '1';
 			sequenceAudiosChirho = wordsChirho.map((wordChirho) => {
 				const audioChirho = new Audio(wordChirho.clip_chirho.asset_path_chirho);
 				audioChirho.preload = 'auto';
 				audioChirho.playbackRate = ['0.65', '0.85', '0.88', '1'].includes(rateChirho)
 					? Number(rateChirho)
-					: 0.85;
+					: 1;
 				audioChirho.preservesPitch = true;
 				audioChirho.load();
 				return audioChirho;
@@ -441,10 +441,10 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		utteranceChirho.lang = selectedChirho.lang;
 		const rateChirho =
 			(rootChirho.querySelector('[data-speech-rate-chirho]') as unknown as HTMLSelectElement | null)
-				?.value ?? '0.85';
+				?.value ?? '1';
 		utteranceChirho.rate = ['0.65', '0.85', '0.88', '1'].includes(rateChirho)
 			? Number(rateChirho)
-			: 0.85;
+			: 1;
 		activeButtonChirho = buttonChirho;
 		buttonChirho.setAttribute('aria-busy', 'true');
 		for (const stopButtonChirho of rootChirho.querySelectorAll<HTMLButtonElement>(

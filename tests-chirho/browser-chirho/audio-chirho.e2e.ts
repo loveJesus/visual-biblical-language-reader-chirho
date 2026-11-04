@@ -122,7 +122,7 @@ testChirho(
 			localService: true,
 			lang: 'he-IL'
 		});
-		expectChirho(proofChirho.callsChirho[0].rate_chirho).toBe(0.85);
+		expectChirho(proofChirho.callsChirho[0].rate_chirho).toBe(1);
 		expectChirho(proofChirho.callsChirho[0].text_chirho.startsWith('גְּֽדָל')).toBe(true);
 
 		await wordChirho.click();
@@ -191,6 +191,9 @@ testChirho(
 		const selectChirho = pageChirho.getByLabel('Pronunciation', { exact: true });
 		const wordChirho = pageChirho.locator('.greek-verse-chirho .compact-speech-chirho').first();
 		await selectChirho.selectOption('modern');
+		await expectChirho(pageChirho.locator('[data-speech-rate-chirho]')).toHaveValue('1');
+		// Slower playback stays available when the reader explicitly chooses it.
+		await pageChirho.locator('[data-speech-rate-chirho]').selectOption('0.88');
 		await expectChirho(wordChirho).toBeEnabled();
 		await expectChirho
 			.poll(
@@ -517,6 +520,7 @@ testChirho(
 				pageChirho.getByRole('checkbox', { name: 'Show IPA', exact: true })
 			).toBeVisible();
 			await expectChirho(pageChirho.locator('[data-speech-rate-chirho]')).toBeVisible();
+			await expectChirho(pageChirho.locator('[data-speech-rate-chirho]')).toHaveValue('1');
 			await pageChirho.getByRole('button', { name: 'Next verse', exact: true }).click();
 			await expectChirho(pageChirho).toHaveURL(
 				new RegExp(passageChirho.replace(/\./g, '\\.').replace(/1$/, '2') + '$')

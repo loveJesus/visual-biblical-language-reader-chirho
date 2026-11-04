@@ -119,7 +119,7 @@
 		failedChirho = false;
 		const audioChirho = new Audio(clipChirho.asset_path_chirho);
 		currentAudioChirho = audioChirho;
-		audioChirho.playbackRate = greekChirho ? 0.88 : 1;
+		audioChirho.playbackRate = 1;
 		audioChirho.preservesPitch = true;
 		const finishChirho = (errorChirho = false) => {
 			if (currentAudioChirho !== audioChirho) return;

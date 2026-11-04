@@ -17,9 +17,7 @@
 	let recordingsChirho = $state<RecordingChirho[]>([]);
 	let renditionChirho = $state('modern_aspirates');
 	let explicitRenditionChirho = $state(false);
-	let speedChirho = $state(
-		untrack(() => (lessonChirho.language_chirho === 'grc' ? '0.88' : '0.85'))
-	);
+	let speedChirho = $state('1');
 	onMount(() => {
 		try {
 			const storedChirho = localStorage.getItem('hinneh-greek-rendition-chirho');
