@@ -51,34 +51,49 @@ testChirho(
 		await expectChirho(pageChirho.locator('[data-online-intro-chirho]')).toBeVisible();
 		for (const widthChirho of [390, 1440]) {
 			await pageChirho.setViewportSize({ width: widthChirho, height: 900 });
+			await pageChirho.emulateMedia({
+				reducedMotion: widthChirho === 390 ? 'reduce' : 'no-preference'
+			});
 			await pageChirho.getByLabel('Book', { exact: true }).selectOption('John');
 			await expectChirho(
 				pageChirho.getByRole('heading', { name: 'John 1:1', exact: true })
 			).toBeVisible();
 			await expectChirho
-				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
-				.toBeLessThan(96);
+				.poll(async () => {
+					const boxChirho = await pageChirho.locator('.lesson-heading-chirho').boundingBox();
+					return boxChirho !== null && boxChirho.y >= 0 && boxChirho.y < 96;
+				})
+				.toBe(true);
 			await pageChirho.getByLabel('Chapter', { exact: true }).selectOption('3');
 			await expectChirho(
 				pageChirho.getByRole('heading', { name: 'John 3:1', exact: true })
 			).toBeVisible();
 			await expectChirho
-				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
-				.toBeLessThan(96);
+				.poll(async () => {
+					const boxChirho = await pageChirho.locator('.lesson-heading-chirho').boundingBox();
+					return boxChirho !== null && boxChirho.y >= 0 && boxChirho.y < 96;
+				})
+				.toBe(true);
 			await pageChirho.getByLabel('Verse', { exact: true }).selectOption('16');
 			await expectChirho(
 				pageChirho.getByRole('heading', { name: 'John 3:16', exact: true })
 			).toBeVisible();
 			await expectChirho
-				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
-				.toBeLessThan(96);
+				.poll(async () => {
+					const boxChirho = await pageChirho.locator('.lesson-heading-chirho').boundingBox();
+					return boxChirho !== null && boxChirho.y >= 0 && boxChirho.y < 96;
+				})
+				.toBe(true);
 			await pageChirho.getByLabel('Book', { exact: true }).selectOption('Prov');
 			await expectChirho(
 				pageChirho.getByRole('heading', { name: 'Proverbs 1:1', exact: true })
 			).toBeVisible();
 			await expectChirho
-				.poll(async () => (await pageChirho.locator('.lesson-heading-chirho').boundingBox())?.y)
-				.toBeLessThan(96);
+				.poll(async () => {
+					const boxChirho = await pageChirho.locator('.lesson-heading-chirho').boundingBox();
+					return boxChirho !== null && boxChirho.y >= 0 && boxChirho.y < 96;
+				})
+				.toBe(true);
 		}
 	}
 );

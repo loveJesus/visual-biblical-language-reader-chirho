@@ -243,12 +243,12 @@
 		// Visitor passage changes reveal the newly rendered card; an older slow load cannot scroll it.
 		if (revealChirho && requestIdChirho === requestChirho && !errorChirho) {
 			await tickChirho();
+			await new Promise<void>((readyChirho) => window.requestAnimationFrame(() => readyChirho()));
+			await document.fonts.ready;
 			if (requestIdChirho === requestChirho)
 				document.querySelector('.lesson-heading-chirho')?.scrollIntoView({
 					block: 'start',
-					behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-						? 'instant'
-						: 'smooth'
+					behavior: 'instant'
 				});
 		}
 	}
