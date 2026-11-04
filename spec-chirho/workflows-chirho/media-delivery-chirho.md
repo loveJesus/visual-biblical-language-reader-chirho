@@ -32,6 +32,35 @@ The localhost comparison gallery now uses `serve_comparison_chirho.ts`: its 31 w
 
 ## Publication and request costs
 
+### Local Mark placeholder preservation (November 4)
+
+L.J. directly assigned Claude2 all 674 Mark source entries, including Mark 16:99, as local Schnell placeholders and waived post-generation visual inspection for this pass. That waiver does not approve the artwork or relax source, storage or release checks. The generation owner retains its jobs, original output files and timing records. GPT owns archival and later installation.
+
+```mermaid
+flowchart TD
+    local_jobs_chirho[Claude2 local jobs and original source snapshot] --> bound_source_chirho[Compare IDs, references and available glosses with the hash-verified shipped chapter]
+    local_result_chirho[Complete successful JSONL result and original PNG] --> completed_png_chirho[Match job, output path, SHA and decoded 1024 by 768 canvas]
+    bound_source_chirho --> completed_png_chirho
+    completed_png_chirho --> provenance_png_chirho[Private provenance content address: PUT only when missing]
+    provenance_png_chirho --> exact_png_chirho[Full bounded GET, SHA, length and PNG decoding]
+    exact_png_chirho --> mark_receipt_chirho[Fsynced per-verse source/job/output receipt; art remains pending]
+    mark_receipt_chirho --> owner_checkpoint_chirho[Later owner checkpoint: drain the sole icon installer]
+    owner_checkpoint_chirho --> normal_install_chirho[Existing source and lossy delivery WebP pipeline, catalogue and shard writer]
+    normal_install_chirho --> normal_release_chirho[Verify and publish through the existing release gates]
+    normal_release_chirho --> normal_retire_chirho[Scoped retirement after exact archive and hosted proofs]
+    completed_png_chirho -->|failed or uncertain| local_defer_chirho[Retain original evidence; independent complete outputs continue]
+```
+
+`bun scripts-chirho/publish-chirho/local-scenes-chirho/watch-chirho.ts` is a dry, network-free scan. `--apply-chirho --limit-chirho 1` bounds the first real preservation pass. `--apply-chirho --watch-chirho` polls every 30 seconds for at most six hours under one dedicated lock, draining its current upload/readback on SIGTERM. It reads at most 16 bounded chapter plans and result files; a partial JSONL tail is not a completed image. Missing or failed jobs never become new generation requests. The prompt snapshot omits only empty/unavailable `-` glosses; the complete chapter and canonical verse hashes remain exact.
+
+Only completed PNGs enter `provenance-chirho/sha256-chirho/`. The tool does not write production media keys, shared archive receipts, catalogues, delivery mapping or reader shards. Its small receipts and progress live under `build-chirho/local-scenes-chirho/mark-schnell-2026-11-04-chirho/`. Unchanged replay verifies the local binding and reuses the prior exact proof without a request. A PUT whose response is lost is reconciled by GET before another PUT. Nothing is deleted, and no receipt grants visual approval or permission to retire an active file. Shared production installation remains a separate serialized owner checkpoint, using the existing encoder, archival and publisher chain.
+
+The subsequent owner handoff switched Mark 3–16 to Runware Schnell under L.J.'s direction. `variants-chirho.ts` binds Runware jobs to the original source, prompt, seed and fixed model; resumed local plans must contain byte-identical original job lines. The PNG stager has four bounded workers, one coordinator lock and a synchronous per-pass limit reservation. A completed retry of a known 429 refusal is accepted only with its matching requested/error/requested/received/saved journal; this reconciliation never requests a retry.
+
+Deterministic pixel inspection found 114 initial all-black outputs despite successful provider responses. Claude2's separately journaled r2–r4 passes, on L.J.'s direction, retained all failed files and produced the missing nonblack images. The provider-reported total is $0.4410. The internal cause of black outputs is not established by the absence of a returned safety/error field. `repairs-chirho.ts` validates each already-completed repair against its same prompt/seed/model, its exact request journal and a predecessor whose RGB channel maximum is at most 8. It performs no synthesis. Original and repair receipts have distinct names; all 808 files, including 134 black attempts, remain recoverable through their exact private PNG content addresses. The final owner inventory must select 674 verified nonblack files.
+
+`install-plan-chirho.ts` freezes that selection only after PNG preservation. `install_chirho.py` defaults to a read-only plan; `--prepare-chirho` creates pixel-identical lossless source WebPs in the private build cache. `--apply-chirho` takes the same OS lock as the icon coordinator, permits only identical existing scenes plus verified additions, and invokes the existing delivery encoder, full R2 archive/readback and shard refresher. Uniform, invisible and near-black output is withheld by pixel checks, with no vision review. A partial installation requires the explicit `--allow-uniform-holds-chirho` operator flag. The first 560-scene metadata cut and its 114 holds are retained under `first-cut-chirho/`; verified replacements add the missing scenes without erasing those records. Final public delivery remains lossy WebP and artwork remains pending.
+
 ```mermaid
 flowchart TD
     baseline_chirho[Accepted application fingerprint] --> snapshot_chirho[Freeze source and media metadata; omit all artwork rasters]

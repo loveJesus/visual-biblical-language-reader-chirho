@@ -2,7 +2,568 @@
   "schema_version_chirho": 1,
   "book_id_chirho": "Mark",
   "chapter_chirho": 6,
-  "scenes_chirho": [],
+  "scenes_chirho": [
+    {
+      "lesson_id_chirho": "Mark.6.1",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-001-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:1: A dusty road winding up to the hillside village of Nazareth, flat-roofed stone houses among olive groves, a band of disciples in travel cloaks walking toward it, late morning light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "b2ecdf4ebbdf3f490dd6239c892aea5568cc52d3fb52db272a96874f156576ee",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.2",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-002-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:2: Astonished bearded villagers seated on stone benches in a small stone synagogue on the Sabbath, faces turned toward the front just outside the frame, some whispering together, shafts of sunlight.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "9ee84fc06caf908427dd98ff01ddb4ee2b6c9885daf172413b6657dc697c4860",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.3",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-003-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:3: Skeptical villagers with folded arms murmuring outside a carpenter's workshop, a wooden yoke, adze and mallet on the workbench, curled wood shavings on the floor, a few women watching from a doorway, afternoon light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "769d4b5e046ea30d881ac9be311541b10a91e2e274f4b048e49bb6c07052fb29",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.4",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-004-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:4: Relatives and neighbors gathered in a stone courtyard in Nazareth, some turning their shoulders away with cool, doubtful faces, an olive tree and a clay bread oven between them, muted late-day light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "e1e36d6f68de45c0bac43ac9a005830046b493232d81c68c609ebfa68a69ec2a",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.5",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-005-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:5: A single hand reaching in from the frame's edge resting gently on the brow of an elderly sick man on a mat in a quiet stone house, two other patients waiting nearby, soft lamplight.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "7ba690d9e39cb0832b6cd03fffc637e4dd317b6c18c71ef4d9863b8f3dc7e0f2",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.6",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-006-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:6: Wide panorama of green Galilean hills dotted with small stone villages among olive groves and wheat fields, villagers gathered beside a village well listening intently, a dirt road winding onward, golden afternoon light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "c51fc0e31b4061100eb525bff2a527ddfd6737203ff6dcbc95fb89dd936b7888",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.7",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-007-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:7: Twelve disciples setting out in pairs along branching roads from a hilltop at dawn, each pair with walking staffs, sunrise spreading golden light over the Galilean valleys and villages.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "d1e0f4e5763aff9ef85e597744bc52c554d5c641c179793e140d010ade863811",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.8",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-008-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:8: Two disciples traveling light on a stony road, each gripping a single wooden walking staff, simple cloth belts at their waists, rolling green hills ahead under clear morning light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "85b15ed2338bac359582ae6fde0fa31e5a41bdc7d8e432f404759f69b70d89f9",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.9",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-009-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:9: Close-up of dusty feet in laced leather sandals beneath the hem of a single plain wool tunic, two travelers standing ready on a stony path, fallen olive leaves, soft morning light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "55c8ef8221778b5e77473441ac3b2b5d894cbf4ca01e615de741478719f01568",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.10",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-010-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:10: A welcoming village family greeting two dusty travelers at the doorway of a stone house, the host offering a jug of water for their feet, sleeping mats and a lamp ready inside, evening glow.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "6d60477a3e227a30de63ee23d34870d798ec5c4906110619f9cb1b0958c311c5",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.11",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-011-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:11: Two travelers at a town gate at dusk shaking the dust from their sandals, a small cloud of dust drifting in the low sunlight, closed wooden doors and cold faces in the town behind them.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "9f06946e98e31fbc3b9e98238bfe245a40946592d066ce8dccdff7cee88ff8a6",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.12",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-012-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:12: A disciple in a dusty tunic preaching with open hands in a village square, listeners in head cloths bowing their heads, a woman wiping tears, a man kneeling in repentance, bright midday sun.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "2fc6c6bc2d769c0fe40a78b9ddeb78bf48dc3b371fb581b15322b4edd4e4cf23",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.13",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-013-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:13: Close-up of a disciple's hand pouring golden olive oil from a small clay flask onto a sick old man's forehead, his hopeful family gathered around, a calm young man sitting peacefully nearby, warm lamplight.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "6d6af71fb1a212181e07b7afbcecf6c7da216cdc02df9c9859479b0cc24da8ac",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.14",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-014-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:14: King Herod in purple robes and a gold circlet seated on a throne in a marble palace hall, leaning forward troubled as courtiers whisper urgently into his ear, oil lamps flickering.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "a46b6e8f926f88c37a81c394a2b96ee8b3ac5bc3459db4184bb020a2d0b32007",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.15",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-015-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:15: Townspeople debating animatedly in a sunlit marketplace, one white-bearded elder pointing up toward the sky, another stroking his beard in thought, merchants pausing at their stalls of figs and pottery to listen.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "fcc4c9b8dffbda3ec464cd8c0fcaacf182de657df512caca43e56a1457b203af",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.16",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-016-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:16: Close-up of King Herod's pale, fearful face lit by a single flickering oil lamp in a dark palace chamber, his ringed hand gripping the arm of his throne, deep shadows on the marble walls.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "7feb32fd25565c02a25ca4170e4133824da0add88a1211ecc828f6fa95786198",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.17",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-017-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:17: A dim prison doorway in a stone hilltop fortress lit by a single torch, two soldiers with spears standing guard, a heavy iron-banded wooden door and a hanging chain, night sky above the battlements.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "24c6ec6de877c6f7f3b1c690b5b3efd8396d38dba77a4c1f34b1180fb29f5ebe",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.18",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-018-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:18: A bearded prophet in a rough camel-hair cloak standing boldly before King Herod and a jeweled queen in a palace hall, his finger raised in rebuke, the royal couple scowling, guards beside the columns, lamplight.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "9a26f64be422f088e9811650ddbfeb9f4ca51acf7d80f29a0b0d625275bf493f",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.19",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-019-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:19: A proud queen in rich crimson robes and gold jewelry standing at a palace window at dusk, arms folded, glaring toward a distant fortress tower where a single torch glows at the prison door.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "032908741d9cba97ae36fa071f609c984dbe3ac1da3279a8d5dc1fb5b6209918",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.20",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-020-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:20: King Herod seated on a stool in a torchlit prison cell, chin in hand, listening intently with a perplexed frown to a calm bearded prophet in a camel-hair cloak, guards waiting at the door.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "5f903b06952a86fb0233cefd90c0e83d2e41da07dc9d40b2f6a9f1bda34ac274",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.21",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-021-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:21: A grand royal banquet hall glowing with oil lamps, nobles and military commanders reclining on couches around low tables of roast meats, fruit and wine, harp players, King Herod presiding in purple, festive evening.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "0ed2832168cc6b2dbcb62a40a20df15e98b612634710f5d93833f11487ef0ded",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.22",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-022-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:22: A young girl in modest flowing silk robes dancing gracefully at the center of a lamplit banquet hall, King Herod on his couch raising a golden cup in delight, reclining guests applauding, tambourine players.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "50dffddbb656a980ff19eef2a9bdfb5b28f018ffd1c75251a2a2c51418124081",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.23",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-023-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:23: Close-up of King Herod's ringed hand raised in a solemn oath, a jeweled crown on a cushion beside him, a girl in silk robes looking up eagerly, feasting nobles blurred behind, warm lamplight.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "958cda572ef509ecd99c0643e8ab02f0312eb4aab0999f77da9aa943d450ec8a",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.24",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-024-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:24: A girl in silk robes bending close to her stern mother, a queen in crimson who whispers in her ear, in a shadowed side chamber, the bright banquet glimpsed through a parted curtain.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "a749747bf5762eba05efd89a75a549e5083aba022b99dc29d0cc11630ffdcd5b",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.25",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-025-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:25: A girl in silk robes hurrying across the polished floor of the banquet hall toward the king's couch, pointing at an empty silver platter on the table, feasting guests turning to stare, flickering lamps.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "a33413ca18e53d403a01cb1abeb645184718d61fe5592e49d9d64a55b334eca8",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.26",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-026-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:26: Close-up of King Herod's sorrowful face, one hand covering his brow, a golden cup tipped over on the table, rows of watching guests in fine robes behind him, dim lamplight.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "52c51e8ec819f680723a09f94f3b0cd85be191b4af9090ebf0791d780955f326",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.27",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-027-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:27: A palace guard in a bronze helmet carrying a torch down a long dark stone stairway toward a prison doorway, his shadow stretching on the wall, the king watching grimly from an archway above.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "d53b290a4c32135eec05d6a93cee508ec17857d57d454cfecb0e4419c741468b",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.28",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-028-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:28: A covered silver platter held in a girl's hands as she carries it to her mother, a queen in crimson waiting by the curtains, the lamplit banquet hall fallen silent behind them.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "abcfecf405a045afe24ed36c0eec42c79ed159481372f12094fe4ad53564aec5",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.29",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-029-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:29: A small group of grieving disciples in rough cloaks carrying a linen-wrapped body on a wooden bier at dusk toward a rock-cut tomb in a hillside, a large round stone beside the entrance, fading light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "4e76687bfa945a5e6ebeeda1b6ce2bfb11b341a65fb10ced48d3921a934b0743",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.30",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-030-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:30: Twelve weary but joyful disciples gathered in a half circle on a grassy lakeside slope, talking eagerly and gesturing with their hands, faces turned toward someone just outside the frame, fishing boats on the lake behind.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "3d08acd13ec85d4f664dc416392d700d5e3893b51afde75048287251b58aeb17",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.31",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-031-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:31: A busy lakeside village street crowded with people coming and going with baskets and donkeys, tired disciples squeezed among them clutching small loaves, too busy to eat, a quiet green shore glimpsed across the lake.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "03b6b92fc154b909689dff860b2a4c5f0b834e26086034331db5d8476cd6ecc8",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.32",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-032-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:32: A small wooden fishing boat with a patched sail gliding far out across the calm Sea of Galilee toward a quiet grassy shore, tiny rowers at the oars, soft late-morning haze.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "8c72b4da183450a55fffd0230cea73e0906748999ad547996c49461ed703fb15",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.33",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-033-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:33: Crowds of villagers running along a curving lakeshore path from several stone towns, pointing at a distant sailboat on the water, children and elders hurrying, dust rising in bright sun.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "54b2decc16b2730a26b83cba7844a81f6e77999030a47e371c0e786d76fd64b4",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.34",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-034-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:34: A vast crowd of weary villagers gathered on a green hillside by the lake, seen from the shore, attentive faces lifted, a few stray sheep wandering among them, soft warm light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "3c9210617e744f150fab4deed5bde0d675269ae414455fe98c3783b1c660220a",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.35",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-035-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:35: Sunset over a remote grassy hillside by the Sea of Galilee, long shadows across a resting crowd, several concerned disciples walking up together, one pointing at the low orange sun.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "d9bfb4b28e0edde392c99ede8065c754f5f0028d653b7d1291294a4c13bed59e",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.36",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-036-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:36: Over-the-shoulder view of a disciple pointing past the hungry seated crowd toward far-off stone villages on dusky hills, dirt paths winding to them, cooking smoke rising from distant rooftops.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "1d94dd12c36ea85dabac8f1cb75920abd149b3794abda374ad1e130384c351fb",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.37",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-037-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:37: Several astonished disciples exchanging startled glances on the hillside, one spreading his empty palms, another sweeping his arm toward the vast seated crowd, evening light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "3b1c971f0a1d94bb0f3a0f76424daff0a2132e72c02c9e51fd96a270795cdb5e",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.38",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-038-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:38: Close-up of a disciple's weathered hands holding out a small woven basket with five round barley loaves and two small fish, green grass below, warm evening light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "95c85319a9f011d6424f980854fc329a1d6c9829d12851ccd7d9d763a6e3fdb7",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.39",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-039-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:39: Wide view of a lush green hillside where disciples guide families to sit down in groups on the grass, colorful tunics and head cloths, the lake shimmering below, golden evening light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "20cd9360aae13ffcd8dd79bff3d506db9233dde64e4c3f6ea0f50e53e0923cd3",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.40",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-040-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:40: Aerial view of a vast green hillside covered with orderly rectangular groups of seated people like colorful garden beds, some large blocks and some smaller, the Sea of Galilee glittering beyond.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "68eed31cfcb49b83661f4e11244703f09aac4ebfa3007d12c6da2f3b799bc218",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.41",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-041-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:41: A single hand reaching in from the left edge of the frame, raising a broken barley loaf toward light streaming from an opened sky, a basket with two fish below, kneeling disciples holding baskets ready.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "cae2ec60b121a3b0281d6ab69a72bda16c9d1b8811dce3346ee41d0d3969d0e6",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.42",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-042-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:42: Families seated on the green grass happily eating bread and fish, children laughing, an old man smiling contentedly, pieces of loaves passed from hand to hand, warm golden evening light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "3eb925837396a2e4a82ecb40a477526cca54a854a2e1cc56f3f46c2e38f07dca",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.43",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-043-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:43: Twelve woven wicker baskets brimming with broken bread and pieces of fish lined up on the grass at sunset, disciples carrying in the last full baskets, the resting crowd on the hillside behind.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "480a75d864168ec639f31c82027a12ef2949d89f6532390b8501f051c9f3c8e6",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.44",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-044-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:44: Panorama of an immense crowd of five thousand men with their families resting across rolling green hills above the lake in golden dusk, contented faces, the calm water reflecting the sky.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "087bb15e315cacaa88486b88186a46d73dc42fe56385ecd330b6bab25bccaead",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.45",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-045-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:45: Disciples pushing a wooden fishing boat off a pebbled beach at dusk and climbing aboard, oars ready, the crowd slowly dispersing up the hillside, the far shore of Bethsaida faint across the water.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "0fb07e853917f19bbff1cc3171d100d57709ac47d08c4e6cbb68dff63d5c2610",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.46",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-046-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:46: A lonely mountaintop above the Sea of Galilee at twilight, a flat rock beneath an ancient olive tree, a soft beam of light from an opened sky resting on the rock, first stars appearing.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "b630b787e97cf7108785362c33c1815c37251679d2c3d64eb20cf56788593102",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.47",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-047-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:47: A tiny fishing boat far out on the dark Sea of Galilee under a rising moon, seen from a lonely hillside shore, a single olive tree in the foreground, evening wind rippling the water.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "7c01264c669e5285463f104a2794c2d18367180980746f548fcaa3e02369e233",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.48",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-048-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:48: Disciples straining hard at the oars of a small wooden boat on wind-whipped black waves before dawn, spray flying, the sail furled, a soft glow spreading across the waves from the edge of the frame.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "c7456f69f3a1a09dc48bc3c2f59e96fa778c4ef7407d2d683ce8dbd0a4f95540",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.49",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-049-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:49: Terrified disciples in a tossing wooden boat at night pointing and crying out at a pale glow moving across the dark waves at the edge of the picture, wide eyes, wind-torn cloaks.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "183c5b0dbf82b92b1589b1b284c1e15ca6f38a517a730d487927223ec4744d12",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.50",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-050-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:50: Close-up of the disciples' frightened faces in the night boat softening into relief, lit warmly by a glow on the waves just beyond the frame, wind-blown hair, hands loosening on the oars.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "5351c4cd5d2ff6d53445715604c3de955920e5445a9157b7599c1a2df032497c",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.51",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-051-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:51: A small wooden fishing boat resting on a glassy, perfectly calm sea at dawn, the sail hanging still, astonished disciples kneeling inside, a single hand gripping the boat's side from the edge of the frame.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "424d6937da8ada033a60f9cea2df6082544feb0efccd35d3591f1364cf00d2ba",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.52",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-052-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:52: Close-up of a disciple's rough hands turning over a leftover piece of barley bread, a basket of fragments at his feet in the boat, puzzled frowning faces above, grey early light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "1da36a4b7f7c0dc266a1af60b95b5b81638f6780469cc72c910d33a887e22852",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.53",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-053-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:53: A fishing boat being tied to a wooden mooring post on the fertile shore of Gennesaret, green fields and palm trees beyond, disciples hauling the rope, bright morning sun on the lake.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "f3e7370d5b876ce75d479ab3bd9300c25807fe07a8697606b48a31eca58f45bb",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.54",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-054-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:54: Villagers on the Gennesaret shore dropping their baskets and nets, pointing excitedly toward a beached boat, faces lighting up with recognition, a few running off to tell others, morning light.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "e511f7b1accded32bf25277ca10765795ed57d98e57f5fdd2b074b2fd0aa4823",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.55",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-055-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:55: Villagers hurrying along country roads carrying sick friends and relatives on woven mats and stretchers from several hillside villages toward the lakeshore, dust rising in bright sun.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "c0f8e52a82144570e42eaf92c7c6c07751abf07681f3099dad94f4c7ad6c977d",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    },
+    {
+      "lesson_id_chirho": "Mark.6.56",
+      "asset_path_chirho": "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-056-chirho.webp",
+      "alt_chirho": "Draft illustration intended for Mark 6:56: A crowded village marketplace with sick people lying on mats between the stalls, many hands reaching toward the tasseled fringe of a cream cloak at the frame's edge, healed people rising joyfully.",
+      "width_chirho": 1024,
+      "height_chirho": 768,
+      "sha256_chirho": "6866b67c8016add7926072f3cd45e64e56762e123488e96c5e6a969f38e12502",
+      "art_review_chirho": "pending",
+      "reading_note_chirho": "Placeholder illustration. This imaginative study aid has not been reviewed for visual or historical accuracy."
+    }
+  ],
   "icons_chirho": [
     {
       "id_chirho": "attempt-94be929b402842b995317022771155a7-chirho-cell-11-chirho",
@@ -239,6 +800,32 @@
       "context_canonical_text_chirho": "καὶ εἰσελθοῦσα εὐθὺς μετὰ σπουδῆς πρὸς τὸν βασιλέα ᾐτήσατο λέγουσα Θέλω ἵνα ἐξαυτῆς δῷς μοι ἐπὶ πίνακι τὴν κεφαλὴν Ἰωάνου τοῦ Βαπτιστοῦ."
     },
     {
+      "id_chirho": "attempt-567aa18fece24867a31e4a82787c2b8e-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Mark.6.27",
+      "token_id_chirho": "Mark.6.27!6",
+      "lemma_id_chirho": "G4688",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "σπεκουλάτωρ",
+      "sense_id_chirho": "attempt-567aa18fece24867a31e4a82787c2b8e-cell-09-executioner",
+      "contextual_meaning_chirho": "An executioner sent by the king.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-567aa18fece24867a31e4a82787c2b8e-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A hooded figure holding an axe downward.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "97b9315dc1afe81e86f225b266ba72cd34c2eeeaf286f0777cb7f261c76f5f35",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "σπεκουλάτορα",
+      "context_gloss_chirho": "an executioner",
+      "context_canonical_text_chirho": "καὶ εὐθὺς ἀποστείλας ὁ βασιλεὺς σπεκουλάτορα ἐπέταξεν ἐνέγκαι τὴν κεφαλὴν αὐτοῦ."
+    },
+    {
       "id_chirho": "attempt-a50bd77e86904301803e8d0170270014-chirho-cell-05-chirho",
       "lesson_id_chirho": "Mark.6.31",
       "token_id_chirho": "Mark.6.31!26",
@@ -315,6 +902,58 @@
       "context_text_chirho": "ἀποταξάμενος",
       "context_gloss_chirho": "having taken leave of",
       "context_canonical_text_chirho": "καὶ ἀποταξάμενος αὐτοῖς ἀπῆλθεν εἰς τὸ ὄρος προσεύξασθαι."
+    },
+    {
+      "id_chirho": "attempt-aa46ed9ecebf43079192e633674631c3-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Mark.6.53",
+      "token_id_chirho": "Mark.6.53!10",
+      "lemma_id_chirho": "G4358",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "προσορμίζω",
+      "sense_id_chirho": "attempt-aa46ed9ecebf43079192e633674631c3-chirho-cell-07-chirho",
+      "contextual_meaning_chirho": "drew to shore",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-aa46ed9ecebf43079192e633674631c3-chirho/cell-07-chirho.webp",
+      "alt_chirho": "An empty boat touching a shore.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4323543945eceb1d7ebd19b826db2b23d945bd3a66abe92279de99b525eeeb2a",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "προσωρμίσθησαν",
+      "context_gloss_chirho": "drew to shore",
+      "context_canonical_text_chirho": "Καὶ διαπεράσαντες ἐπὶ τὴν γῆν ἦλθον εἰς Γεννησαρὲτ καὶ προσωρμίσθησαν."
+    },
+    {
+      "id_chirho": "attempt-bf01c05106ff4ef98e42ee7143dc065f-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Mark.6.55",
+      "token_id_chirho": "Mark.6.55!1",
+      "lemma_id_chirho": "G4063",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "περιτρέχω",
+      "sense_id_chirho": "attempt-bf01c05106ff4ef98e42ee7143dc065f-cell-14-chirho",
+      "contextual_meaning_chirho": "they ran around",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-bf01c05106ff4ef98e42ee7143dc065f-chirho/cell-14-chirho.webp",
+      "alt_chirho": "An ordinary person running along a short curved path.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6370a8352150f8e04ebedbbf0dcb6db5f8dbc350066195f5d513160c09f5910d",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "περιέδραμον",
+      "context_gloss_chirho": "they ran around",
+      "context_canonical_text_chirho": "περιέδραμον ὅλην τὴν χώραν ἐκείνην καὶ ἤρξαντο ἐπὶ τοῖς κραβάττοις τοὺς κακῶς ἔχοντας περιφέρειν, ὅπου ἤκουον ὅτι ἐστίν."
     },
     {
       "id_chirho": "attempt-41edf9ef036f4c56b5e3eb39d8a787ac-chirho-cell-01-chirho",
@@ -4324,6 +4963,29 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-bf01c05106ff4ef98e42ee7143dc065f-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Mark.6.55",
+      "token_id_chirho": "Mark.6.55!1",
+      "lemma_id_chirho": "G4063",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "περιτρέχω",
+      "sense_id_chirho": "attempt-bf01c05106ff4ef98e42ee7143dc065f-cell-14-chirho",
+      "contextual_meaning_chirho": "they ran around",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-bf01c05106ff4ef98e42ee7143dc065f-chirho/cell-14-chirho.webp",
+      "alt_chirho": "An ordinary person running along a short curved path.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6370a8352150f8e04ebedbbf0dcb6db5f8dbc350066195f5d513160c09f5910d",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "attempt-41edf9ef036f4c56b5e3eb39d8a787ac-chirho-cell-01-chirho",
       "lesson_id_chirho": "Mark.6.55",
       "token_id_chirho": "Mark.6.55!14",
@@ -4761,6 +5423,29 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-aa46ed9ecebf43079192e633674631c3-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Mark.6.53",
+      "token_id_chirho": "Mark.6.53!10",
+      "lemma_id_chirho": "G4358",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "προσορμίζω",
+      "sense_id_chirho": "attempt-aa46ed9ecebf43079192e633674631c3-chirho-cell-07-chirho",
+      "contextual_meaning_chirho": "drew to shore",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-aa46ed9ecebf43079192e633674631c3-chirho/cell-07-chirho.webp",
+      "alt_chirho": "An empty boat touching a shore.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4323543945eceb1d7ebd19b826db2b23d945bd3a66abe92279de99b525eeeb2a",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-226de4fe282d4271a9f4787c492ba497-chirho-14-chirho",
       "lesson_id_chirho": "John.1.21",
       "token_id_chirho": "John.1.21!14",
@@ -4965,6 +5650,29 @@
         "berean-glosses-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-567aa18fece24867a31e4a82787c2b8e-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Mark.6.27",
+      "token_id_chirho": "Mark.6.27!6",
+      "lemma_id_chirho": "G4688",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "σπεκουλάτωρ",
+      "sense_id_chirho": "attempt-567aa18fece24867a31e4a82787c2b8e-cell-09-executioner",
+      "contextual_meaning_chirho": "An executioner sent by the king.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-567aa18fece24867a31e4a82787c2b8e-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A hooded figure holding an axe downward.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "97b9315dc1afe81e86f225b266ba72cd34c2eeeaf286f0777cb7f261c76f5f35",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
