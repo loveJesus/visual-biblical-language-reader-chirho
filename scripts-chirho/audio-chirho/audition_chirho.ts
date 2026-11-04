@@ -1,4 +1,8 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
+import {
+	accountedReceiptCreditsChirho,
+	type AudioSettlementChirho
+} from './production-chirho/credit_accounting_chirho';
 // Workflow: spec-chirho/workflows-chirho/local-reader-chirho.md (cached original-language audio).
 import { bibleBookChirho, isPassageIdChirho } from '../../src/lib/bible-chirho/books-chirho';
 import { createHash as createHashChirho } from 'node:crypto';
@@ -66,6 +70,7 @@ export interface AudioFundingChirho {
 	additional_credits_chirho: number;
 	/** Reservations already charged to this pool outside the plan being checked. */
 	pool_prior_credits_chirho: number;
+	settlement_chirho?: AudioSettlementChirho;
 }
 export interface ReserveOptionsChirho {
 	funding_chirho?: AudioFundingChirho;
@@ -115,16 +120,18 @@ export interface ReceiptChirho {
 	funding_id_chirho?: string;
 	/** The credential's environment variable NAME only, never its value. */
 	funding_key_name_chirho?: string;
+	settlement_id_chirho?: string;
 }
 /** Credits reserved by receipts charged to one funding pool, including unknown requests. */
 export function fundedCreditsChirho(
 	receiptsChirho: readonly ReceiptChirho[],
-	fundingIdChirho: string
+	fundingIdChirho: string,
+	fundingChirho?: AudioFundingChirho
 ): number {
 	return receiptsChirho.reduce(
 		(totalChirho, rowChirho) =>
 			rowChirho.funding_id_chirho === fundingIdChirho
-				? totalChirho + rowChirho.reserved_credits_chirho
+				? totalChirho + accountedReceiptCreditsChirho(rowChirho, fundingChirho)
 				: totalChirho,
 		0
 	);
@@ -323,8 +330,9 @@ export function reserveChirho(
 			!optionsChirho.eligible_chirho(jobChirho)
 		)
 			continue;
-		creditsChirho +=
-			previousChirho?.reserved_credits_chirho ?? [...synthesisTextChirho(jobChirho)].length;
+		creditsChirho += previousChirho
+			? accountedReceiptCreditsChirho(previousChirho, fundingChirho)
+			: [...synthesisTextChirho(jobChirho)].length;
 		if (!previousChirho && fundingChirho)
 			prospectiveChirho += [...synthesisTextChirho(jobChirho)].length;
 	}
@@ -338,7 +346,7 @@ export function reserveChirho(
 		creditsChirho + priorCreditsChirho > ceilingChirho ||
 		(fundingChirho &&
 			fundingChirho.pool_prior_credits_chirho +
-				fundedCreditsChirho(receiptsChirho, fundingChirho.id_chirho) +
+				fundedCreditsChirho(receiptsChirho, fundingChirho.id_chirho, fundingChirho) +
 				prospectiveChirho >
 				fundingChirho.additional_credits_chirho) ||
 		(flowTrialChirho && creditsChirho > CREDIT_LIMIT_CHIRHO) ||
@@ -713,7 +721,8 @@ export async function executeAudioPlanChirho(
 					0,
 					creditsChirho -
 						receiptsChirho.reduce(
-							(totalChirho, rowChirho) => totalChirho + rowChirho.reserved_credits_chirho,
+							(totalChirho, rowChirho) =>
+								totalChirho + accountedReceiptCreditsChirho(rowChirho, fundingChirho),
 							0
 						)
 				)
@@ -725,6 +734,12 @@ export async function executeAudioPlanChirho(
 			throw new Error('Paid speech subscription unavailable; no request');
 		if (fundingChirho && subscriptionChirho.can_extend_character_limit !== false)
 			throw new Error('Funded speech account permits overage; included-only funding refused');
+		if (
+			fundingChirho?.settlement_chirho &&
+			subscriptionChirho.next_character_count_reset_unix !==
+				fundingChirho.settlement_chirho.reset_unix_chirho
+		)
+			throw new Error('Speech billing cycle changed; settlement cannot cross a reset');
 		if (
 			subscriptionChirho.character_limit - subscriptionChirho.character_count <
 			includedNeedChirho + 1000
@@ -817,6 +832,12 @@ export async function executeAudioPlanChirho(
 				reservedSinceBalanceChirho = 0;
 			}
 			if (
+				fundingChirho?.settlement_chirho &&
+				balanceChirho.next_character_count_reset_unix !==
+					fundingChirho.settlement_chirho.reset_unix_chirho
+			)
+				throw new Error('Speech billing cycle changed; no new request');
+			if (
 				balanceChirho.character_limit - balanceChirho.character_count - reservedSinceBalanceChirho <
 					(productionChirho ? [...synthesisTextChirho(jobChirho)].length : ceilingChirho) + 1000 ||
 				balanceChirho.character_count - subscriptionChirho.character_count >
@@ -836,7 +857,10 @@ export async function executeAudioPlanChirho(
 				...(fundingChirho
 					? {
 							funding_id_chirho: fundingChirho.id_chirho,
-							funding_key_name_chirho: fundingChirho.key_name_chirho
+							funding_key_name_chirho: fundingChirho.key_name_chirho,
+							...(fundingChirho.settlement_chirho
+								? { settlement_id_chirho: fundingChirho.settlement_chirho.id_chirho }
+								: {})
 						}
 					: {})
 			};

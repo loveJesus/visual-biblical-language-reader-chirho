@@ -43,3 +43,27 @@ flowchart TD
 ```
 
 `recovery-chirho/scene_briefs_chirho.py` stores reusable explanations under `workspace-chirho/art-chirho/briefs-chirho/<book>/chapter-NN-chirho/`, bound to exact verse text and hash. New built-in scene prompts read the existing explanation and return it verbatim, while keeping their actual alt text and imaginative scene relationship specific to the new image. Historical attempts without the extra field still recover unchanged. Replacing an explanation or changing its source requires an explicit new reviewed version; a generator cannot silently rewrite it. These explanations are agent drafts and never become translations or approved exegesis merely because another image reuses them.
+
+## Restrained completion of known Genesis gaps
+
+L.J.'s November 4 instruction authorizes finishing the 17 known missing Genesis scenes. `recovery-chirho/finish_genesis_chirho.py` stages new source-bound, modest or indirect compositions in its own sharded repair queue. Two generation-only children leave the shared catalogue untouched. Original failed requests, unknown identities and retry limits remain intact. A verified text-capacity failure before any image call can resume its original thread with the same model; a saved output is inspected and recovered before considering another image. A known missing visual detail may receive one separately recorded, targeted edit, retaining the rejected original and its failure evidence.
+
+```mermaid
+flowchart TD
+  direction_chirho[Explicit instruction to complete known Genesis gaps] --> originals_chirho[Preserve original hold identities and exact failure evidence]
+  originals_chirho --> source_chirho[Verify source job, verse bytes and restrained composition]
+  source_chirho --> artists_chirho[Independent bounded generation-only children]
+  artists_chirho --> inspect_chirho[Inspect saved output, truthful note and defining visual details]
+  inspect_chirho --> retain_chirho[Retain unsuitable or unknown output without automatic replay]
+  inspect_chirho --> ready_chirho[Seal scene hash and owner visual suitability; human review pending]
+  ready_chirho --> drain_chirho[Drain sole icon coordinator before shared installation]
+  drain_chirho --> install_chirho[Existing ordered-scene source checks and idempotent installer]
+  install_chirho --> archive_chirho[Compress delivery WebP and verify exact R2 source and delivery readbacks]
+  archive_chirho --> retire_chirho[Archive exact originals and retire only verified temporary rasters]
+  retire_chirho --> resolve_chirho[Bound replacement proof to old failure; resolve availability hold]
+  resolve_chirho --> validate_chirho[Verify every Genesis source verse against its installed scene]
+  validate_chirho --> resume_chirho[Resume sole two-sheet icon producer]
+  resume_chirho --> publish_chirho[Fresh verified release and exact hosted scene checks]
+```
+
+Availability resolution does not erase an original failure or approve the illustration. Scene completion is counted from source membership and verified installed records, separately from icon, pronunciation and human-review holds. An indirect illustration's note names the portion depicted and omitted; it never recasts a grave event as a harmless encounter.

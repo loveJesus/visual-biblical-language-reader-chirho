@@ -34,6 +34,9 @@ import {
 } from './funding_chirho';
 import { extendLibrariesChirho } from '../../bible-chirho/libraries_chirho';
 import { isBibleChapterPathChirho } from '../../../src/lib/bible-chirho/books-chirho';
+import { accountedReceiptCreditsChirho } from './credit_accounting_chirho';
+import { reconcileFundingChirho } from './reconcile_funding_chirho';
+import { lemmaPriorityChirho } from './lemma_priority_chirho';
 
 interface BatchEntryChirho {
 	path_chirho: string;
@@ -95,8 +98,15 @@ async function receiptsChirho(folderChirho: string): Promise<ReceiptChirho[]> {
 		throw errorChirho;
 	}
 }
-const sumReservedChirho = (rowsChirho: readonly ReceiptChirho[]) =>
-	rowsChirho.reduce((totalChirho, rowChirho) => totalChirho + rowChirho.reserved_credits_chirho, 0);
+const sumReservedChirho = (
+	rowsChirho: readonly ReceiptChirho[],
+	fundingChirho?: AudioFundingChirho
+) =>
+	rowsChirho.reduce(
+		(totalChirho, rowChirho) =>
+			totalChirho + accountedReceiptCreditsChirho(rowChirho, fundingChirho),
+		0
+	);
 const receivedChirho = (rowsChirho: readonly ReceiptChirho[]) =>
 	rowsChirho.filter((rowChirho) => rowChirho.state_chirho === 'received').length;
 export async function verifyWordSourcesChirho(
@@ -185,7 +195,9 @@ async function runUnlockedWordsChirho(
 	applyChirho = false,
 	limitChirho = 20000,
 	wholeBibleChirho = false,
-	fundingChirho?: AudioFundingChirho
+	fundingChirho?: AudioFundingChirho,
+	reconcileChirho = false,
+	lemmaFirstChirho = false
 ) {
 	const scopeHomeChirho = wholeBibleChirho ? BIBLE_WORD_HOME_CHIRHO : WORD_HOME_CHIRHO;
 	const homeChirho = joinChirho(rootChirho, scopeHomeChirho),
@@ -276,6 +288,33 @@ async function runUnlockedWordsChirho(
 	}
 	if (keysChirho.size !== indexChirho.word_count_chirho)
 		throw new ProducerHoldChirho('malformed', 'Word inventory count differs');
+	let settlementReportChirho: Record<string, string | number> | undefined;
+	if (reconcileChirho) {
+		if (!fundingChirho)
+			throw new FundingRefusalChirho('Reconciliation requires explicit extra-key funding');
+		const resultChirho = await reconcileFundingChirho(
+			rootChirho,
+			fundingChirho,
+			entriesChirho.map((batchChirho) => ({
+				path_chirho: batchChirho.entry_chirho.path_chirho.replace(
+					/plan-chirho\.json$/u,
+					'receipts-chirho.json'
+				),
+				receipts_chirho: batchChirho.receipts_chirho
+			})),
+			applyChirho
+		);
+		fundingChirho.settlement_chirho = resultChirho.settlement_chirho;
+		settlementReportChirho = resultChirho.report_chirho;
+		const rawPoolChirho = poolChirho;
+		poolChirho = entriesChirho.reduce(
+			(totalChirho, batchChirho) =>
+				totalChirho +
+				fundedCreditsChirho(batchChirho.receipts_chirho, fundingChirho!.id_chirho, fundingChirho),
+			0
+		);
+		priorChirho -= rawPoolChirho - poolChirho;
+	}
 	if (priorChirho > ceilingChirho)
 		throw new ProducerHoldChirho(
 			'funding_exhausted',
@@ -283,6 +322,9 @@ async function runUnlockedWordsChirho(
 		);
 	if (fundingChirho && poolChirho > fundingChirho.additional_credits_chirho)
 		throw new ProducerHoldChirho('malformed', 'Funded reservations exceed their authority');
+	const priorityChirho = lemmaFirstChirho
+		? await lemmaPriorityChirho(rootChirho, entriesChirho)
+		: undefined;
 	const fundingReportChirho = () =>
 		fundingChirho
 			? {
@@ -290,7 +332,14 @@ async function runUnlockedWordsChirho(
 					funding_key_name_chirho: fundingChirho.key_name_chirho,
 					funding_reserved_credits_chirho: poolChirho,
 					funding_limit_credits_chirho: fundingChirho.additional_credits_chirho,
-					selection_chirho: 'israeli-hebrew-ipa-only'
+					selection_chirho: 'israeli-hebrew-ipa-only',
+					...(priorityChirho ? { lemma_priority_chirho: priorityChirho.report_chirho } : {}),
+					...(settlementReportChirho
+						? {
+								settlement_id_chirho: fundingChirho.settlement_chirho?.id_chirho,
+								settlement_chirho: settlementReportChirho
+							}
+						: {})
 				}
 			: {};
 	if (!applyChirho)
@@ -380,7 +429,13 @@ async function runUnlockedWordsChirho(
 		}
 	};
 	try {
-		for (const batchChirho of entriesChirho) {
+		const passesChirho = priorityChirho
+			? [
+					...entriesChirho.map((batchChirho) => ({ batchChirho, seedChirho: true })),
+					...entriesChirho.map((batchChirho) => ({ batchChirho, seedChirho: false }))
+				]
+			: entriesChirho.map((batchChirho) => ({ batchChirho, seedChirho: false }));
+		for (const { batchChirho, seedChirho } of passesChirho) {
 			if (stoppingChirho || requestsChirho >= limitChirho) break;
 			const fsChirho = await statfsChirho(rootChirho);
 			if (fsChirho.bavail * fsChirho.bsize < 2 * 1024 ** 3)
@@ -462,15 +517,17 @@ async function runUnlockedWordsChirho(
 			);
 			receivedCountChirho +=
 				receivedChirho(batchChirho.receipts_chirho) - receivedBeforeReuseChirho;
-			const previousCostChirho = sumReservedChirho(batchChirho.receipts_chirho);
+			const previousCostChirho = sumReservedChirho(batchChirho.receipts_chirho, fundingChirho);
 			const previousPoolChirho = fundingChirho
-				? fundedCreditsChirho(batchChirho.receipts_chirho, fundingChirho.id_chirho)
+				? fundedCreditsChirho(batchChirho.receipts_chirho, fundingChirho.id_chirho, fundingChirho)
 				: 0;
 			const beforeChirho = receivedChirho(batchChirho.receipts_chirho);
 			const jobsChirho = batchChirho.words_chirho.map((rowChirho) => rowChirho.job_chirho);
 			const selectionChirho = fundingChirho
 				? selectFundedRowsChirho(
-						jobsChirho,
+						jobsChirho.filter(
+							(jobChirho) => !seedChirho || priorityChirho!.ids_chirho.has(jobChirho.id_chirho)
+						),
 						batchChirho.receipts_chirho,
 						Math.min(
 							fundingChirho.additional_credits_chirho - poolChirho,
@@ -498,7 +555,7 @@ async function runUnlockedWordsChirho(
 						batch_chirho: batchChirho.entry_chirho.path_chirho,
 						received_words_chirho: receivedCountChirho + receivedChirho(rowsChirho) - beforeChirho,
 						reserved_credits_chirho:
-							priorChirho - previousCostChirho + sumReservedChirho(rowsChirho)
+							priorChirho - previousCostChirho + sumReservedChirho(rowsChirho, fundingChirho)
 					}),
 				rows_chirho: jobsChirho,
 				folder_chirho: batchChirho.folder_chirho,
@@ -522,11 +579,13 @@ async function runUnlockedWordsChirho(
 			});
 			const currentChirho = await receiptsChirho(batchChirho.folder_chirho);
 			requestsChirho += currentChirho.length - batchChirho.receipts_chirho.length;
-			priorChirho += sumReservedChirho(currentChirho) - previousCostChirho;
+			priorChirho += sumReservedChirho(currentChirho, fundingChirho) - previousCostChirho;
 			if (fundingChirho)
 				poolChirho +=
-					fundedCreditsChirho(currentChirho, fundingChirho.id_chirho) - previousPoolChirho;
+					fundedCreditsChirho(currentChirho, fundingChirho.id_chirho, fundingChirho) -
+					previousPoolChirho;
 			receivedCountChirho += receivedChirho(currentChirho) - beforeChirho;
+			batchChirho.receipts_chirho = currentChirho;
 			await publishChirho(batchChirho, currentChirho);
 			await progressChirho('installed', {
 				batch_chirho: batchChirho.entry_chirho.path_chirho,
@@ -575,6 +634,7 @@ async function runUnlockedWordsChirho(
 		return {
 			received_words_chirho: receivedCountChirho,
 			new_requests_chirho: requestsChirho,
+			drained_chirho: stoppingChirho,
 			reserved_credits_chirho: priorChirho,
 			...(fundingChirho
 				? {
@@ -601,39 +661,113 @@ export async function runWordsChirho(
 	applyChirho = false,
 	limitChirho = 20000,
 	wholeBibleChirho = false,
-	extraKeyChirho = false
+	extraKeyChirho = false,
+	reconcileChirho = false,
+	lemmaFirstChirho = false,
+	continueIncludedChirho = false
 ) {
 	if (extraKeyChirho && !wholeBibleChirho)
 		throw new FundingRefusalChirho('Extra-key mode requires --whole-bible-chirho');
+	if (reconcileChirho && !extraKeyChirho)
+		throw new FundingRefusalChirho('Reconciliation requires --extra-key-chirho');
+	if (lemmaFirstChirho && !extraKeyChirho)
+		throw new FundingRefusalChirho('Lemma-first mode requires --extra-key-chirho');
+	if (continueIncludedChirho && (!applyChirho || !reconcileChirho || !lemmaFirstChirho))
+		throw new FundingRefusalChirho(
+			'Included continuation requires apply, reconciliation and lemma-first mode'
+		);
 	// The fixed authority and its named credential are checked before any ledger is read.
 	const fundingChirho = extraKeyChirho ? await readExtraFundingChirho(rootChirho) : undefined;
 	if (!applyChirho)
-		return runUnlockedWordsChirho(rootChirho, false, limitChirho, wholeBibleChirho, fundingChirho);
+		return runUnlockedWordsChirho(
+			rootChirho,
+			false,
+			limitChirho,
+			wholeBibleChirho,
+			fundingChirho,
+			reconcileChirho,
+			lemmaFirstChirho
+		);
 	// Lock before reading either queue's reservations, so a second scope cannot spend a stale balance.
 	await mkdirChirho(joinChirho(rootChirho, 'build-chirho/r2-chirho'), { recursive: true });
 	const releaseChirho = await acquireLockChirho(
 		joinChirho(rootChirho, 'build-chirho/r2-chirho/audio-production-chirho.lock')
 	);
+	let stoppingChirho = false;
+	const stopChirho = () => {
+		stoppingChirho = true;
+	};
+	process.on('SIGINT', stopChirho);
+	process.on('SIGTERM', stopChirho);
+	let totalRequestsChirho = 0;
 	try {
-		return await runUnlockedWordsChirho(
-			rootChirho,
-			true,
-			limitChirho,
-			wholeBibleChirho,
-			fundingChirho
-		);
+		for (let roundChirho = 1; roundChirho <= 16; roundChirho++) {
+			const resultChirho = await runUnlockedWordsChirho(
+				rootChirho,
+				true,
+				limitChirho - totalRequestsChirho,
+				wholeBibleChirho,
+				roundChirho === 1 ? fundingChirho : await readExtraFundingChirho(rootChirho),
+				reconcileChirho,
+				lemmaFirstChirho
+			);
+			if (!('new_requests_chirho' in resultChirho))
+				throw new Error('Applied producer returned a dry result');
+			totalRequestsChirho += resultChirho.new_requests_chirho;
+			if (
+				!continueIncludedChirho ||
+				stoppingChirho ||
+				!continueIncludedRoundChirho(resultChirho, roundChirho, totalRequestsChirho, limitChirho)
+			)
+				return {
+					...resultChirho,
+					new_requests_chirho: totalRequestsChirho,
+					settlement_rounds_chirho: roundChirho
+				};
+		}
+		throw new Error('Included continuation exceeded its fixed round bound');
 	} finally {
+		process.removeListener('SIGINT', stopChirho);
+		process.removeListener('SIGTERM', stopChirho);
 		await releaseChirho();
 	}
+}
+/** Only a productive estimate-limited pass may reconcile again within the same fixed allowance. */
+export function continueIncludedRoundChirho(
+	resultChirho: {
+		new_requests_chirho: number;
+		funding_exhausted_chirho?: boolean;
+		drained_chirho?: boolean;
+	},
+	roundChirho: number,
+	totalRequestsChirho: number,
+	limitChirho: number
+) {
+	return (
+		resultChirho.funding_exhausted_chirho === true &&
+		resultChirho.drained_chirho !== true &&
+		Number.isSafeInteger(resultChirho.new_requests_chirho) &&
+		resultChirho.new_requests_chirho > 0 &&
+		roundChirho >= 1 &&
+		roundChirho < 16 &&
+		totalRequestsChirho > 0 &&
+		totalRequestsChirho < limitChirho
+	);
 }
 if (import.meta.main) {
 	const argumentsChirho = process.argv.slice(2);
 	const limitIndexChirho = argumentsChirho.indexOf('--limit-chirho');
 	for (const [indexChirho, valueChirho] of argumentsChirho.entries())
 		if (
-			!['--apply-chirho', '--limit-chirho', '--whole-bible-chirho', '--extra-key-chirho'].includes(
-				valueChirho
-			) &&
+			![
+				'--apply-chirho',
+				'--limit-chirho',
+				'--whole-bible-chirho',
+				'--extra-key-chirho',
+				'--reconcile-extra-key-chirho',
+				'--lemma-first-chirho',
+				'--continue-included-chirho'
+			].includes(valueChirho) &&
 			argumentsChirho[indexChirho - 1] !== '--limit-chirho'
 		)
 			throw new Error('Unsupported word producer argument');
@@ -644,7 +778,10 @@ if (import.meta.main) {
 				argumentsChirho.includes('--apply-chirho'),
 				limitIndexChirho < 0 ? 20000 : Number(argumentsChirho[limitIndexChirho + 1]),
 				argumentsChirho.includes('--whole-bible-chirho'),
-				argumentsChirho.includes('--extra-key-chirho')
+				argumentsChirho.includes('--extra-key-chirho'),
+				argumentsChirho.includes('--reconcile-extra-key-chirho'),
+				argumentsChirho.includes('--lemma-first-chirho'),
+				argumentsChirho.includes('--continue-included-chirho')
 			)
 		)
 	);
