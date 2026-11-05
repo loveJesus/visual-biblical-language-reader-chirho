@@ -41,6 +41,9 @@ export interface WorkerEnvironmentChirho {
 	HINNEH_MEDIA_CHIRHO: BucketChirho;
 	TURNSTILE_SECRET_KEY_CHIRHO?: string;
 	ARTIFACT_RATE_SECRET_CHIRHO?: string;
+	// Contact relay: the project's own 2SMTP key and the owner's inbox, both kept out of source.
+	TWOSMTP_API_KEY_CHIRHO?: string;
+	CONTACT_DESTINATION_CHIRHO?: string;
 }
 export interface ExecutionChirho {
 	waitUntil(promiseChirho: Promise<unknown>): void;

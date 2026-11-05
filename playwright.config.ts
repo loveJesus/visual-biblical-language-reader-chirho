@@ -8,6 +8,7 @@ import {
 
 export default defineConfig({
 	webServer: {
+		timeout: 180_000,
 		// One polling watcher for the frozen corpus avoids macOS native-watch FD exhaustion.
 		env: { CHOKIDAR_USEPOLLING: 'true', CHOKIDAR_INTERVAL: '10000' },
 		command: `bun run build && bunx wrangler dev .svelte-kit/cloudflare/_worker.js --port ${readerPortChirho} --env-file ./wrangler-bindings-chirho.env`,

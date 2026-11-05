@@ -19,7 +19,8 @@ from PIL import Image
 ROOT_CHIRHO = Path(__file__).resolve().parents[2]
 DELIVERY_CHIRHO = Path("build-chirho/delivery-media-chirho")
 SPEC_CHIRHO = importlib.util.spec_from_file_location(
-    "delivery_shards_chirho", Path(__file__).with_name("refresh_sharded_media_chirho.py")
+    "delivery_shards_chirho",
+    Path(__file__).with_name("refresh_sharded_media_chirho.py"),
 )
 SHARDS_CHIRHO = importlib.util.module_from_spec(SPEC_CHIRHO)
 SPEC_CHIRHO.loader.exec_module(SHARDS_CHIRHO)
@@ -37,7 +38,9 @@ def atomic_json_chirho(path_chirho, document_chirho):
         temp_chirho = Path(file_chirho.name)
         try:
             file_chirho.write(
-                (json.dumps(document_chirho, ensure_ascii=False, indent=2) + "\n").encode()
+                (
+                    json.dumps(document_chirho, ensure_ascii=False, indent=2) + "\n"
+                ).encode()
             )
             file_chirho.flush()
             os.fsync(file_chirho.fileno())
@@ -93,7 +96,9 @@ def source_bytes_chirho(root_chirho, record_chirho):
     path_chirho = (static_chirho / asset_chirho.lstrip("/")).resolve(strict=False)
     if not path_chirho.exists():
         if (
-            SHARDS_CHIRHO.REMOTE_ARTWORK_CHIRHO.source_fact_chirho(root_chirho, record_chirho)
+            SHARDS_CHIRHO.REMOTE_ARTWORK_CHIRHO.source_fact_chirho(
+                root_chirho, record_chirho
+            )
             is None
         ):
             raise ValueError("Missing source has no verified remote copy")
@@ -113,7 +118,8 @@ def source_chirho(root_chirho, record_chirho, kind_chirho):
         if (
             image_chirho.format != "WEBP"
             or getattr(image_chirho, "n_frames", 1) != 1
-            or image_chirho.size != (record_chirho["width_chirho"], record_chirho["height_chirho"])
+            or image_chirho.size
+            != (record_chirho["width_chirho"], record_chirho["height_chirho"])
         ):
             raise ValueError("Source format or dimensions differ from manifest")
         if kind_chirho == "icon" and image_chirho.size != (128, 128):
@@ -143,10 +149,18 @@ def recipe_chirho(kind_chirho, version_chirho):
 
 
 def encode_chirho(
-    root_chirho, output_chirho, kind_chirho, data_chirho, size_chirho, alpha_chirho, version_chirho
+    root_chirho,
+    output_chirho,
+    kind_chirho,
+    data_chirho,
+    size_chirho,
+    alpha_chirho,
+    version_chirho,
 ):
     recipe_value_chirho = recipe_chirho(kind_chirho, version_chirho)
-    with tempfile.TemporaryDirectory(dir=output_chirho, prefix=".encode-chirho-") as temp_chirho:
+    with tempfile.TemporaryDirectory(
+        dir=output_chirho, prefix=".encode-chirho-"
+    ) as temp_chirho:
         folder_chirho = Path(temp_chirho)
         source_path_chirho = folder_chirho / "source-chirho.webp"
         result_path_chirho = folder_chirho / "delivery-chirho.webp"
@@ -170,20 +184,30 @@ def encode_chirho(
         result_chirho = result_path_chirho.read_bytes()
         with Image.open(result_path_chirho) as image_chirho:
             image_chirho.load()
-            if image_chirho.format != "WEBP" or getattr(image_chirho, "n_frames", 1) != 1:
+            if (
+                image_chirho.format != "WEBP"
+                or getattr(image_chirho, "n_frames", 1) != 1
+            ):
                 raise ValueError("Derivative is not a static WebP")
             width_chirho, height_chirho = image_chirho.size
-            if kind_chirho == "scene" and (width_chirho > 1200 or width_chirho > size_chirho[0]):
+            if kind_chirho == "scene" and (
+                width_chirho > 1200 or width_chirho > size_chirho[0]
+            ):
                 raise ValueError("Scene resize exceeds source or width limit")
             if kind_chirho == "icon" and (
                 image_chirho.size != (128, 128)
-                or image_chirho.convert("RGBA").getchannel("A").tobytes() != alpha_chirho
+                or image_chirho.convert("RGBA").getchannel("A").tobytes()
+                != alpha_chirho
             ):
                 raise ValueError("Icon size or alpha changed")
         digest_chirho = sha_chirho(result_chirho)
-        relative_chirho = f"objects-chirho/{digest_chirho[:2]}-chirho/{digest_chirho}-chirho.webp"
+        relative_chirho = (
+            f"objects-chirho/{digest_chirho[:2]}-chirho/{digest_chirho}-chirho.webp"
+        )
         destination_chirho = output_chirho / relative_chirho
-        if not destination_chirho.parent.resolve().is_relative_to(output_chirho.resolve()):
+        if not destination_chirho.parent.resolve().is_relative_to(
+            output_chirho.resolve()
+        ):
             raise ValueError("Delivery shard escapes cache")
         destination_chirho.parent.mkdir(parents=True, exist_ok=True)
         if not destination_chirho.resolve().is_relative_to(output_chirho.resolve()):
@@ -208,7 +232,9 @@ def encode_chirho(
                     os.link(temp_object_chirho, destination_chirho)
                 except FileExistsError:
                     if destination_chirho.read_bytes() != result_chirho:
-                        raise ValueError("Cached derivative differs from reproducible encoding")
+                        raise ValueError(
+                            "Cached derivative differs from reproducible encoding"
+                        )
                 dir_fd_chirho = os.open(destination_chirho.parent, os.O_RDONLY)
                 try:
                     os.fsync(dir_fd_chirho)
@@ -242,12 +268,16 @@ def validate_previous_chirho(output_chirho, previous_chirho, current_chirho):
     ):
         raise ValueError("Invalid cached encoder identity")
     current_encoder_chirho = current_chirho["encoder_chirho"]
-    if encoder_chirho.get("version_chirho") != current_encoder_chirho.get("version_chirho") or (
+    if encoder_chirho.get("version_chirho") != current_encoder_chirho.get(
+        "version_chirho"
+    ) or (
         encoder_chirho.get("executable_sha256_chirho") is not None
         and encoder_chirho.get("executable_sha256_chirho")
         != current_encoder_chirho.get("executable_sha256_chirho")
     ):
-        raise ValueError("Cached encoder version changed; retire the old cache before rebuilding")
+        raise ValueError(
+            "Cached encoder version changed; retire the old cache before rebuilding"
+        )
     by_path_chirho = {
         path_chirho: row_chirho
         for row_chirho in current_chirho["entries_chirho"]
@@ -258,8 +288,26 @@ def validate_previous_chirho(output_chirho, previous_chirho, current_chirho):
         if (
             not isinstance(row_chirho, dict)
             or row_chirho.get("kind_chirho") not in ("scene", "icon")
-            or row_chirho.get("recipe_chirho")
-            != recipe_chirho(row_chirho["kind_chirho"], encoder_chirho["version_chirho"])
+            or (
+                row_chirho.get("recipe_chirho")
+                != recipe_chirho(
+                    row_chirho["kind_chirho"], encoder_chirho["version_chirho"]
+                )
+                and not (
+                    row_chirho["kind_chirho"] == "scene"
+                    and row_chirho.get("recipe_chirho")
+                    == {
+                        "format_chirho": "webp",
+                        "quality_chirho": 45,
+                        "provider_chirho": "runware",
+                        "model_chirho": "runware:100@1",
+                        "operation_chirho": "provider_passthrough",
+                    }
+                    and row_chirho.get("source_sha256_chirho")
+                    == row_chirho.get("delivery_sha256_chirho")
+                    and remote_cached_chirho(output_chirho.parent.parent, row_chirho)
+                )
+            )
             or not isinstance(row_chirho.get("source_paths_chirho"), list)
             or not row_chirho["source_paths_chirho"]
         ):
@@ -268,15 +316,22 @@ def validate_previous_chirho(output_chirho, previous_chirho, current_chirho):
         if (
             not isinstance(source_sha_chirho, str)
             or len(source_sha_chirho) != 64
-            or any(char_chirho not in "0123456789abcdef" for char_chirho in source_sha_chirho)
+            or any(
+                char_chirho not in "0123456789abcdef"
+                for char_chirho in source_sha_chirho
+            )
         ):
             raise ValueError("Invalid cached source checksum")
         digest_chirho = row_chirho["delivery_sha256_chirho"]
-        relative_chirho = f"objects-chirho/{digest_chirho[:2]}-chirho/{digest_chirho}-chirho.webp"
+        relative_chirho = (
+            f"objects-chirho/{digest_chirho[:2]}-chirho/{digest_chirho}-chirho.webp"
+        )
         if (
             not isinstance(digest_chirho, str)
             or len(digest_chirho) != 64
-            or any(char_chirho not in "0123456789abcdef" for char_chirho in digest_chirho)
+            or any(
+                char_chirho not in "0123456789abcdef" for char_chirho in digest_chirho
+            )
             or row_chirho["delivery_path_chirho"] != relative_chirho
         ):
             raise ValueError("Invalid cached object identity")
@@ -285,7 +340,10 @@ def validate_previous_chirho(output_chirho, previous_chirho, current_chirho):
             output_chirho.parent.parent, row_chirho
         ):
             continue
-        if not path_chirho.is_relative_to(output_chirho.resolve()) or not path_chirho.is_file():
+        if (
+            not path_chirho.is_relative_to(output_chirho.resolve())
+            or not path_chirho.is_file()
+        ):
             raise ValueError("Cached object escapes delivery directory")
         data_chirho = path_chirho.read_bytes()
         if (
@@ -298,24 +356,30 @@ def validate_previous_chirho(output_chirho, previous_chirho, current_chirho):
             if (
                 image_chirho.format != "WEBP"
                 or getattr(image_chirho, "n_frames", 1) != 1
-                or image_chirho.size != (row_chirho["width_chirho"], row_chirho["height_chirho"])
+                or image_chirho.size
+                != (row_chirho["width_chirho"], row_chirho["height_chirho"])
             ):
                 raise ValueError("Cached object format or dimensions mismatch")
         for source_path_chirho in row_chirho["source_paths_chirho"]:
-            if source_path_chirho in seen_chirho or not SHARDS_CHIRHO.ASSET_CHIRHO.fullmatch(
-                source_path_chirho
+            if (
+                source_path_chirho in seen_chirho
+                or not SHARDS_CHIRHO.ASSET_CHIRHO.fullmatch(source_path_chirho)
             ):
                 raise ValueError("Duplicate or malformed cached source path")
             seen_chirho.add(source_path_chirho)
             fresh_chirho = by_path_chirho.get(source_path_chirho)
             if fresh_chirho and (
-                row_chirho["source_sha256_chirho"] != fresh_chirho["source_sha256_chirho"]
+                row_chirho["source_sha256_chirho"]
+                != fresh_chirho["source_sha256_chirho"]
                 or row_chirho["kind_chirho"] != fresh_chirho["kind_chirho"]
             ):
-                raise ValueError("Cached source identity conflicts with the current manifest")
+                raise ValueError(
+                    "Cached source identity conflicts with the current manifest"
+                )
             if (
                 fresh_chirho
-                and row_chirho["source_sha256_chirho"] == fresh_chirho["source_sha256_chirho"]
+                and row_chirho["source_sha256_chirho"]
+                == fresh_chirho["source_sha256_chirho"]
                 and row_chirho["recipe_chirho"] == fresh_chirho["recipe_chirho"]
                 and any(
                     row_chirho[field_chirho] != fresh_chirho[field_chirho]
@@ -348,7 +412,9 @@ def prepare_chirho(root_chirho, requested_chirho=None):
         except BlockingIOError as error_chirho:
             raise RuntimeError("Delivery media writer already active") from error_chirho
         name_chirho = (
-            "sample-mapping-chirho.json" if requested_chirho is not None else "mapping-chirho.json"
+            "sample-mapping-chirho.json"
+            if requested_chirho is not None
+            else "mapping-chirho.json"
         )
         previous_path_chirho = output_chirho / name_chirho
         previous_chirho = (
@@ -361,7 +427,9 @@ def prepare_chirho(root_chirho, requested_chirho=None):
             raise FileNotFoundError("cwebp is not installed")
         executable_sha_chirho = sha_chirho(Path(executable_chirho).read_bytes())
         previous_encoder_chirho = (
-            previous_chirho.get("encoder_chirho", {}) if isinstance(previous_chirho, dict) else {}
+            previous_chirho.get("encoder_chirho", {})
+            if isinstance(previous_chirho, dict)
+            else {}
         )
         if previous_encoder_chirho.get(
             "executable_sha256_chirho"
@@ -386,14 +454,24 @@ def prepare_chirho(root_chirho, requested_chirho=None):
                 {"encoder_chirho": encoder_chirho, "entries_chirho": []},
             )
             for row_chirho in previous_chirho["entries_chirho"]:
-                key_chirho = (row_chirho["kind_chirho"], row_chirho["source_sha256_chirho"])
+                key_chirho = (
+                    row_chirho["kind_chirho"],
+                    row_chirho["source_sha256_chirho"],
+                )
                 if key_chirho in cache_chirho:
                     raise ValueError("Duplicate cached source and recipe")
                 cache_chirho[key_chirho] = row_chirho
-        found_chirho = SHARDS_CHIRHO.collect_chirho(root_chirho, include_fallbacks_chirho=True)
-        selected_chirho = set(requested_chirho) if requested_chirho is not None else None
+        found_chirho = SHARDS_CHIRHO.collect_chirho(
+            root_chirho, include_fallbacks_chirho=True
+        )
+        selected_chirho = (
+            set(requested_chirho) if requested_chirho is not None else None
+        )
         declared_chirho = {
-            record_chirho["asset_path_chirho"]: (kind_chirho, record_chirho["sha256_chirho"])
+            record_chirho["asset_path_chirho"]: (
+                kind_chirho,
+                record_chirho["sha256_chirho"],
+            )
             for kind_chirho in ("scene", "icon")
             for _location_chirho, record_chirho in found_chirho[kind_chirho]
         }
@@ -412,19 +490,27 @@ def prepare_chirho(root_chirho, requested_chirho=None):
             for kind_chirho in ("scene", "icon"):
                 for _location_chirho, record_chirho in found_chirho[kind_chirho]:
                     asset_chirho = record_chirho["asset_path_chirho"]
-                    if selected_chirho is not None and asset_chirho not in selected_chirho:
+                    if (
+                        selected_chirho is not None
+                        and asset_chirho not in selected_chirho
+                    ):
                         continue
                     if asset_chirho in verified_chirho:
-                        previous_kind_chirho, previous_record_chirho = verified_chirho[asset_chirho]
+                        previous_kind_chirho, previous_record_chirho = verified_chirho[
+                            asset_chirho
+                        ]
                         if previous_kind_chirho != kind_chirho or any(
-                            previous_record_chirho[field_chirho] != record_chirho[field_chirho]
+                            previous_record_chirho[field_chirho]
+                            != record_chirho[field_chirho]
                             for field_chirho in (
                                 "sha256_chirho",
                                 "width_chirho",
                                 "height_chirho",
                             )
                         ):
-                            raise ValueError("Previously verified asset declaration changed")
+                            raise ValueError(
+                                "Previously verified asset declaration changed"
+                            )
                         continue
                     key_chirho = (kind_chirho, record_chirho["sha256_chirho"])
                     cached_chirho = cache_chirho.get(key_chirho)
@@ -437,8 +523,13 @@ def prepare_chirho(root_chirho, requested_chirho=None):
                         source_bytes_chirho(root_chirho, record_chirho)
                         verified_chirho[asset_chirho] = (kind_chirho, record_chirho)
                         if key_chirho not in groups_chirho:
-                            groups_chirho[key_chirho] = {**cached_chirho, "source_paths_chirho": []}
-                        groups_chirho[key_chirho]["source_paths_chirho"].append(asset_chirho)
+                            groups_chirho[key_chirho] = {
+                                **cached_chirho,
+                                "source_paths_chirho": [],
+                            }
+                        groups_chirho[key_chirho]["source_paths_chirho"].append(
+                            asset_chirho
+                        )
                         continue
                     data_chirho, size_chirho, alpha_chirho = source_chirho(
                         root_chirho, record_chirho, kind_chirho
@@ -455,14 +546,17 @@ def prepare_chirho(root_chirho, requested_chirho=None):
                                 image_chirho.load()
                                 if kind_chirho == "icon" and (
                                     image_chirho.size != (128, 128)
-                                    or image_chirho.convert("RGBA").getchannel("A").tobytes()
+                                    or image_chirho.convert("RGBA")
+                                    .getchannel("A")
+                                    .tobytes()
                                     != alpha_chirho
                                 ):
                                     raise ValueError(
                                         "Cached icon dimensions or alpha differ from source"
                                     )
                                 if kind_chirho == "scene" and (
-                                    image_chirho.width > 1200 or image_chirho.width > size_chirho[0]
+                                    image_chirho.width > 1200
+                                    or image_chirho.width > size_chirho[0]
                                 ):
                                     raise ValueError("Cached scene exceeds width limit")
                             delivery_chirho = {
@@ -492,8 +586,12 @@ def prepare_chirho(root_chirho, requested_chirho=None):
                             "kind_chirho": kind_chirho,
                             **delivery_chirho,
                         }
-                    groups_chirho[key_chirho]["source_paths_chirho"].append(asset_chirho)
-            next_chirho = SHARDS_CHIRHO.collect_chirho(root_chirho, include_fallbacks_chirho=True)
+                    groups_chirho[key_chirho]["source_paths_chirho"].append(
+                        asset_chirho
+                    )
+            next_chirho = SHARDS_CHIRHO.collect_chirho(
+                root_chirho, include_fallbacks_chirho=True
+            )
             if next_chirho == found_chirho:
                 # Hash equality preserves the already decoded size/alpha/format proof. Avoid
                 # decoding every original again, and include appends during this final check.
@@ -514,7 +612,9 @@ def prepare_chirho(root_chirho, requested_chirho=None):
                     for row_chirho in next_chirho[kind_chirho]
                 }
                 if not old_chirho <= new_chirho:
-                    raise ValueError("Media manifest removed or changed a verified record")
+                    raise ValueError(
+                        "Media manifest removed or changed a verified record"
+                    )
             found_chirho = next_chirho
         else:
             raise ValueError("Media manifests did not settle within eight passes")
@@ -526,13 +626,20 @@ def prepare_chirho(root_chirho, requested_chirho=None):
         if selected_chirho is not None and paths_chirho != selected_chirho:
             raise ValueError("Requested asset is not in verified media manifests")
         for group_chirho in groups_chirho.values():
-            group_chirho["source_paths_chirho"] = sorted(set(group_chirho["source_paths_chirho"]))
+            group_chirho["source_paths_chirho"] = sorted(
+                set(group_chirho["source_paths_chirho"])
+            )
         document_chirho = {
             "schema_version_chirho": 1,
             "encoder_chirho": encoder_chirho,
-            "entries_chirho": [groups_chirho[key_chirho] for key_chirho in sorted(groups_chirho)],
+            "entries_chirho": [
+                groups_chirho[key_chirho] for key_chirho in sorted(groups_chirho)
+            ],
         }
-        if SHARDS_CHIRHO.collect_chirho(root_chirho, include_fallbacks_chirho=True) != found_chirho:
+        if (
+            SHARDS_CHIRHO.collect_chirho(root_chirho, include_fallbacks_chirho=True)
+            != found_chirho
+        ):
             raise ValueError("Media manifests changed during preparation")
         if previous_chirho is not None:
             validate_previous_chirho(output_chirho, previous_chirho, document_chirho)

@@ -14,7 +14,8 @@ from PIL import Image, ImageDraw
 
 ROOT_CHIRHO = Path(__file__).resolve().parents[2]
 SPEC_CHIRHO = importlib.util.spec_from_file_location(
-    "delivery_chirho", ROOT_CHIRHO / "scripts-chirho/art-chirho/prepare_delivery_media_chirho.py"
+    "delivery_chirho",
+    ROOT_CHIRHO / "scripts-chirho/art-chirho/prepare_delivery_media_chirho.py",
 )
 MODULE_CHIRHO = importlib.util.module_from_spec(SPEC_CHIRHO)
 SPEC_CHIRHO.loader.exec_module(MODULE_CHIRHO)
@@ -34,7 +35,9 @@ class DeliveryTestsChirho(unittest.TestCase):
         icon_chirho = Image.new("RGBA", (128, 128), (0, 0, 0, 0))
         draw_chirho = ImageDraw.Draw(icon_chirho)
         draw_chirho.ellipse((20, 20, 108, 108), fill=(250, 80, 50, 143))
-        icon_chirho.save(self.assets_chirho / "icon-chirho.webp", lossless=True, exact=True)
+        icon_chirho.save(
+            self.assets_chirho / "icon-chirho.webp", lossless=True, exact=True
+        )
         self.records_chirho = {"scene": [], "icon": []}
         for kind_chirho, size_chirho in (("scene", (1600, 800)), ("icon", (128, 128))):
             path_chirho = self.assets_chirho / f"{kind_chirho}-chirho.webp"
@@ -43,7 +46,9 @@ class DeliveryTestsChirho(unittest.TestCase):
                     ("John", 1, 1),
                     {
                         "asset_path_chirho": f"/assets-chirho/{kind_chirho}-chirho.webp",
-                        "sha256_chirho": hashlib.sha256(path_chirho.read_bytes()).hexdigest(),
+                        "sha256_chirho": hashlib.sha256(
+                            path_chirho.read_bytes()
+                        ).hexdigest(),
                         "width_chirho": size_chirho[0],
                         "height_chirho": size_chirho[1],
                     },
@@ -62,7 +67,8 @@ class DeliveryTestsChirho(unittest.TestCase):
 
     def test_derivatives_are_deterministic_and_sources_unchanged(self):
         originals_chirho = {
-            path_chirho: path_chirho.read_bytes() for path_chirho in self.assets_chirho.iterdir()
+            path_chirho: path_chirho.read_bytes()
+            for path_chirho in self.assets_chirho.iterdir()
         }
         first_chirho = self.prepare_chirho()
         with mock.patch.object(
@@ -79,18 +85,28 @@ class DeliveryTestsChirho(unittest.TestCase):
             [],
         )
         self.assertEqual(
-            {path_chirho: path_chirho.read_bytes() for path_chirho in self.assets_chirho.iterdir()},
+            {
+                path_chirho: path_chirho.read_bytes()
+                for path_chirho in self.assets_chirho.iterdir()
+            },
             originals_chirho,
         )
         by_kind_chirho = {
-            row_chirho["kind_chirho"]: row_chirho for row_chirho in first_chirho["entries_chirho"]
+            row_chirho["kind_chirho"]: row_chirho
+            for row_chirho in first_chirho["entries_chirho"]
         }
         self.assertEqual(
-            (by_kind_chirho["scene"]["width_chirho"], by_kind_chirho["scene"]["height_chirho"]),
+            (
+                by_kind_chirho["scene"]["width_chirho"],
+                by_kind_chirho["scene"]["height_chirho"],
+            ),
             (1200, 600),
         )
         self.assertEqual(
-            (by_kind_chirho["icon"]["width_chirho"], by_kind_chirho["icon"]["height_chirho"]),
+            (
+                by_kind_chirho["icon"]["width_chirho"],
+                by_kind_chirho["icon"]["height_chirho"],
+            ),
             (128, 128),
         )
         self.assertEqual(by_kind_chirho["scene"]["recipe_chirho"]["quality_chirho"], 78)
@@ -116,9 +132,9 @@ class DeliveryTestsChirho(unittest.TestCase):
         output_chirho = self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO
         mapping_chirho = output_chirho / "mapping-chirho.json"
         before_chirho = mapping_chirho.read_bytes()
-        (output_chirho / first_chirho["entries_chirho"][0]["delivery_path_chirho"]).write_bytes(
-            b"tampered"
-        )
+        (
+            output_chirho / first_chirho["entries_chirho"][0]["delivery_path_chirho"]
+        ).write_bytes(b"tampered")
         with self.assertRaises(ValueError):
             self.prepare_chirho()
         self.assertEqual(mapping_chirho.read_bytes(), before_chirho)
@@ -126,7 +142,9 @@ class DeliveryTestsChirho(unittest.TestCase):
     def test_only_new_source_is_encoded(self):
         self.prepare_chirho()
         path_chirho = self.assets_chirho / "new-chirho.webp"
-        Image.new("RGBA", (128, 128), (80, 40, 180, 120)).save(path_chirho, lossless=True)
+        Image.new("RGBA", (128, 128), (80, 40, 180, 120)).save(
+            path_chirho, lossless=True
+        )
         record_chirho = {
             "asset_path_chirho": "/assets-chirho/new-chirho.webp",
             "sha256_chirho": hashlib.sha256(path_chirho.read_bytes()).hexdigest(),
@@ -148,16 +166,58 @@ class DeliveryTestsChirho(unittest.TestCase):
 
     def test_tampered_recipe_refuses(self):
         self.prepare_chirho()
-        path_chirho = self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        path_chirho = (
+            self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        )
         mapping_chirho = json.loads(path_chirho.read_text())
         mapping_chirho["entries_chirho"][0]["recipe_chirho"]["quality_chirho"] = 1
         path_chirho.write_text(json.dumps(mapping_chirho))
         with self.assertRaises(ValueError):
             self.prepare_chirho()
 
+    def test_provider_passthrough_requires_exact_remote_proof_chirho(self):
+        first_chirho = self.prepare_chirho()
+        row_chirho = next(
+            row_chirho
+            for row_chirho in first_chirho["entries_chirho"]
+            if row_chirho["kind_chirho"] == "scene"
+        )
+        row_chirho["recipe_chirho"] = {
+            "format_chirho": "webp",
+            "quality_chirho": 45,
+            "provider_chirho": "runware",
+            "model_chirho": "runware:100@1",
+            "operation_chirho": "provider_passthrough",
+        }
+        row_chirho["source_sha256_chirho"] = row_chirho["delivery_sha256_chirho"]
+        output_chirho = self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO
+        (output_chirho / row_chirho["delivery_path_chirho"]).unlink()
+        with (
+            mock.patch.object(
+                MODULE_CHIRHO, "remote_cached_chirho", return_value=False
+            ),
+            self.assertRaisesRegex(ValueError, "recipe"),
+        ):
+            MODULE_CHIRHO.validate_previous_chirho(
+                output_chirho, first_chirho, first_chirho
+            )
+        with mock.patch.object(
+            MODULE_CHIRHO, "remote_cached_chirho", return_value=True
+        ):
+            MODULE_CHIRHO.validate_previous_chirho(
+                output_chirho, first_chirho, first_chirho
+            )
+            row_chirho["recipe_chirho"]["quality_chirho"] = 44
+            with self.assertRaisesRegex(ValueError, "recipe"):
+                MODULE_CHIRHO.validate_previous_chirho(
+                    output_chirho, first_chirho, first_chirho
+                )
+
     def test_changed_encoder_requires_explicit_cache_retirement(self):
         self.prepare_chirho()
-        path_chirho = self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        path_chirho = (
+            self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        )
         mapping_chirho = json.loads(path_chirho.read_text())
         mapping_chirho["encoder_chirho"]["executable_sha256_chirho"] = "0" * 64
         path_chirho.write_text(json.dumps(mapping_chirho))
@@ -177,7 +237,9 @@ class DeliveryTestsChirho(unittest.TestCase):
 
     def test_path_escape_is_rejected(self):
         outside_chirho = self.root_chirho / "outside-chirho.webp"
-        outside_chirho.write_bytes((self.assets_chirho / "icon-chirho.webp").read_bytes())
+        outside_chirho.write_bytes(
+            (self.assets_chirho / "icon-chirho.webp").read_bytes()
+        )
         (self.assets_chirho / "icon-chirho.webp").unlink()
         (self.assets_chirho / "icon-chirho.webp").symlink_to(outside_chirho)
         with self.assertRaises(ValueError):
@@ -209,7 +271,9 @@ class DeliveryTestsChirho(unittest.TestCase):
 
     def test_failed_manifest_does_not_replace_last_good_mapping(self):
         self.prepare_chirho()
-        path_chirho = self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        path_chirho = (
+            self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        )
         before_chirho = path_chirho.read_bytes()
         self.records_chirho["scene"][0][1]["sha256_chirho"] = "0" * 64
         with self.assertRaises(ValueError):
@@ -232,7 +296,9 @@ class DeliveryTestsChirho(unittest.TestCase):
 
     def test_changed_source_identity_in_cached_mapping_refuses(self):
         self.prepare_chirho()
-        path_chirho = self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        path_chirho = (
+            self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        )
         mapping_chirho = json.loads(path_chirho.read_text())
         mapping_chirho["entries_chirho"][0]["source_sha256_chirho"] = "0" * 64
         path_chirho.write_text(json.dumps(mapping_chirho))
@@ -278,7 +344,9 @@ class DeliveryTestsChirho(unittest.TestCase):
         (media_chirho / "test-chirho.json").write_text(
             json.dumps(document_chirho, ensure_ascii=False)
         )
-        with mock.patch.object(MODULE_CHIRHO.SHARDS_CHIRHO, "collect_chirho", wraps=COLLECT_CHIRHO):
+        with mock.patch.object(
+            MODULE_CHIRHO.SHARDS_CHIRHO, "collect_chirho", wraps=COLLECT_CHIRHO
+        ):
             output_chirho = self.prepare_chirho()
         self.assertEqual(len(output_chirho["entries_chirho"]), 2)
 
@@ -304,19 +372,28 @@ class DeliveryTestsChirho(unittest.TestCase):
         manifest_chirho.write_text(
             json.dumps({"schema_version_chirho": 1, "scenes_chirho": [fallback_chirho]})
         )
-        with mock.patch.object(MODULE_CHIRHO.SHARDS_CHIRHO, "collect_chirho", wraps=COLLECT_CHIRHO):
+        with mock.patch.object(
+            MODULE_CHIRHO.SHARDS_CHIRHO, "collect_chirho", wraps=COLLECT_CHIRHO
+        ):
             first_chirho = self.prepare_chirho()
             primary_path_chirho = self.assets_chirho / "primary-chirho.webp"
-            Image.new("RGB", (1600, 800), (220, 120, 70)).save(primary_path_chirho, lossless=True)
+            Image.new("RGB", (1600, 800), (220, 120, 70)).save(
+                primary_path_chirho, lossless=True
+            )
             primary_chirho = {
                 **fallback_chirho,
                 "fallback_chirho": False,
                 "asset_path_chirho": "/assets-chirho/primary-chirho.webp",
-                "sha256_chirho": hashlib.sha256(primary_path_chirho.read_bytes()).hexdigest(),
+                "sha256_chirho": hashlib.sha256(
+                    primary_path_chirho.read_bytes()
+                ).hexdigest(),
             }
             manifest_chirho.write_text(
                 json.dumps(
-                    {"schema_version_chirho": 1, "scenes_chirho": [fallback_chirho, primary_chirho]}
+                    {
+                        "schema_version_chirho": 1,
+                        "scenes_chirho": [fallback_chirho, primary_chirho],
+                    }
                 )
             )
             second_chirho = self.prepare_chirho()
@@ -330,12 +407,15 @@ class DeliveryTestsChirho(unittest.TestCase):
         public_chirho = COLLECT_CHIRHO(self.root_chirho)
         self.assertEqual(len(public_chirho["scene"]), 1)
         self.assertEqual(
-            public_chirho["scene"][0][1]["asset_path_chirho"], primary_chirho["asset_path_chirho"]
+            public_chirho["scene"][0][1]["asset_path_chirho"],
+            primary_chirho["asset_path_chirho"],
         )
 
     def test_unlisted_request_is_refused(self):
         with self.assertRaises(ValueError):
-            MODULE_CHIRHO.prepare_chirho(self.root_chirho, ["/assets-chirho/unknown-chirho.webp"])
+            MODULE_CHIRHO.prepare_chirho(
+                self.root_chirho, ["/assets-chirho/unknown-chirho.webp"]
+            )
 
     def test_manifest_change_during_encoding_refuses_mapping_commit(self):
         changed_chirho = {
@@ -351,7 +431,9 @@ class DeliveryTestsChirho(unittest.TestCase):
             self.assertRaises(ValueError),
         ):
             self.prepare_chirho()
-        path_chirho = self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        path_chirho = (
+            self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        )
         self.assertFalse(path_chirho.exists())
 
     def test_append_only_manifest_growth_is_included(self):
@@ -364,7 +446,8 @@ class DeliveryTestsChirho(unittest.TestCase):
         }
         grown_chirho = {
             "scene": list(self.records_chirho["scene"]),
-            "icon": list(self.records_chirho["icon"]) + [(("John", 1, 2), alias_record_chirho)],
+            "icon": list(self.records_chirho["icon"])
+            + [(("John", 1, 2), alias_record_chirho)],
         }
         with mock.patch.object(
             MODULE_CHIRHO.SHARDS_CHIRHO,
@@ -405,7 +488,9 @@ class DeliveryTestsChirho(unittest.TestCase):
             self.assertRaises(ValueError),
         ):
             self.prepare_chirho()
-        path_chirho = self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        path_chirho = (
+            self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+        )
         self.assertFalse(path_chirho.exists())
 
     def test_append_during_final_source_verification_is_caught_up(self):
@@ -443,7 +528,9 @@ class DeliveryTestsChirho(unittest.TestCase):
             for row_chirho in result_chirho["entries_chirho"]
             if row_chirho["kind_chirho"] == "icon"
         )
-        self.assertIn("/assets-chirho/alias-chirho.webp", icon_chirho["source_paths_chirho"])
+        self.assertIn(
+            "/assets-chirho/alias-chirho.webp", icon_chirho["source_paths_chirho"]
+        )
 
     def test_source_bytes_changed_after_encoding_refuse_commit(self):
         encode_chirho = MODULE_CHIRHO.encode_chirho
@@ -451,16 +538,22 @@ class DeliveryTestsChirho(unittest.TestCase):
         def mutate_chirho(*arguments_chirho):
             result_chirho = encode_chirho(*arguments_chirho)
             if arguments_chirho[2] == "icon":
-                (self.assets_chirho / "scene-chirho.webp").write_bytes(b"changed original")
+                (self.assets_chirho / "scene-chirho.webp").write_bytes(
+                    b"changed original"
+                )
             return result_chirho
 
         with (
-            mock.patch.object(MODULE_CHIRHO, "encode_chirho", side_effect=mutate_chirho),
+            mock.patch.object(
+                MODULE_CHIRHO, "encode_chirho", side_effect=mutate_chirho
+            ),
             self.assertRaisesRegex(ValueError, "Source checksum mismatch"),
         ):
             self.prepare_chirho()
         self.assertFalse(
-            (self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json").exists()
+            (
+                self.root_chirho / MODULE_CHIRHO.DELIVERY_CHIRHO / "mapping-chirho.json"
+            ).exists()
         )
 
 

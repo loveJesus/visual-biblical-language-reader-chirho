@@ -30,6 +30,31 @@ flowchart TD
 
 The localhost comparison gallery now uses `serve_comparison_chirho.ts`: its 31 whitelisted trial WebPs stream from private R2 without a disk cache. It binds only 127.0.0.1 and exposes neither original files nor other bucket keys.
 
+## Exact provider WebP passthrough (November 4)
+
+The remaining 62-book run is owned by Claude2 under L.J.'s direct instruction. Its 27,155 planned scenes exclude Genesis, Proverbs, John and Mark. The provider returns 1024 by 768 lossy WebP at quality 45; those exact bytes are both the preserved original and public delivery. Root's delivery lane makes no generation call, changes no retry or spend allowance, and performs no vision review. Source and artwork review states remain distinct.
+
+```mermaid
+flowchart TD
+    immutable_chirho[Hash-verified source chapter, gloss snapshot and immutable job] --> journal_chirho[Exact requested, received and saved provider journal]
+    journal_chirho --> provider_decode_chirho[Match output hash, seed, dimensions and nonblank pixel extrema]
+    provider_decode_chirho --> preserve_provider_chirho[GET existing content address; PUT only on 404; full exact readback]
+    preserve_provider_chirho --> provider_receipt_chirho[Fsynced bounded per-job receipt]
+    provider_receipt_chirho --> completed_book_chirho[Exact producer completion marker and all verse proofs]
+    completed_book_chirho --> serialized_chirho[Shared OS installer lock and artwork catalogue lock]
+    serialized_chirho --> passthrough_chirho[Source equals delivery: no encode and no static raster copy]
+    passthrough_chirho --> publish_book_chirho[Normal shards, frozen release gates and periodic public deployment]
+    publish_book_chirho --> hosted_provider_chirho[Exact hosted summary, every chapter and every selected WebP]
+    hosted_provider_chirho --> recovery_provider_chirho[Fsync bounded chapter recovery map before unlinking exact completed originals]
+    journal_chirho -->|source or request uncertainty| provider_hold_chirho[Keep that book held; preserve independent proven outputs]
+```
+
+`bun scripts-chirho/publish-chirho/local-scenes-chirho/provider-chirho/worker-chirho.ts` defaults to read-only, network-free planning. `--book-chirho Exod --limit-chirho 1 --apply-chirho` is a bounded preservation probe. `--watch-chirho --apply-chirho` runs one coordinator for at most six hours with six bounded archival requests, drains on SIGTERM, serializes completed-book installation, and waits for public delivery before retirement. A storage failure drains requests and stops new archival work. An unknown provider result is never resent by this tool. Missing optional append records remain pending; immutable plan drift holds its book.
+
+Per-job bindings and installed/retired stamps live under `build-chirho/provider-scenes-2026-11-04-chirho/`. A finite authoring manifest is `data-chirho/media-chirho/bible-runware-scenes-chirho.json`; normal public chapters remain hash-bound and bounded. The common artwork catalogue writer is shared with the existing encoder archive path. A provider passthrough cache row is accepted only for the fixed recipe, identical source/delivery hashes and exact verified remote facts. Normal cwebp recipes and encoder checks remain unchanged.
+
+Recovery aliases are sharded by book and chapter under `workspace-chirho/art-chirho/remote-archive-chirho/provider-copies-chirho/`, avoiding growth of the older 56 MB alias journal. Each row contains the exact original path, private R2 object key, SHA-256, length and dimensions. A deliberate recovery can GET that key, verify SHA/length, and restore only the named absent file. These new maps are separate from the legacy `with-artwork-chirho.ts` journal. No timer, marker or percentage grants visual acceptance.
+
 ## Publication and request costs
 
 ### Local Mark placeholder preservation (November 4)

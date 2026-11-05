@@ -6,65 +6,18 @@ import type {
 	ExecutionChirho,
 	DependenciesChirho
 } from './types-chirho';
+import {
+	consumeRateChirho,
+	jsonChirho,
+	readBodyChirho,
+	requestRefusalChirho,
+	verifyChallengeChirho
+} from './intake-chirho';
 export const FLAG_ACTION_CHIRHO = 'image_artifact_chirho';
 const REASONS_CHIRHO = new Set(['anatomy', 'unreadable_detail', 'other_visual_artifact']);
 // Allow the provider's full 2048-character token plus bounded image/verse metadata.
 const MAX_BODY_CHIRHO = 4096;
 const RATE_CHIRHO = 20;
-const jsonChirho = (bodyChirho: Record<string, unknown>, statusChirho = 200) =>
-	new Response(JSON.stringify(bodyChirho), {
-		status: statusChirho,
-		headers: {
-			'Content-Type': 'application/json',
-			'Cache-Control': 'no-store',
-			'X-Content-Type-Options': 'nosniff'
-		}
-	});
-async function readBodyChirho(requestChirho: Request) {
-	if (Number(requestChirho.headers.get('content-length')) > MAX_BODY_CHIRHO)
-		throw new Error('oversized');
-	const readerChirho = requestChirho.body?.getReader();
-	if (!readerChirho) throw new Error('missing');
-	let totalChirho = 0;
-	const chunksChirho: Uint8Array[] = [];
-	for (;;) {
-		const resultChirho = await readerChirho.read();
-		if (resultChirho.done) break;
-		totalChirho += resultChirho.value.length;
-		if (totalChirho > MAX_BODY_CHIRHO) {
-			await readerChirho.cancel();
-			throw new Error('oversized');
-		}
-		chunksChirho.push(resultChirho.value);
-	}
-	const bytesChirho = new Uint8Array(totalChirho);
-	let offsetChirho = 0;
-	for (const chunkChirho of chunksChirho) {
-		bytesChirho.set(chunkChirho, offsetChirho);
-		offsetChirho += chunkChirho.length;
-	}
-	return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytesChirho));
-}
-async function rateKeyChirho(ipChirho: string, secretChirho: string, nowChirho: number) {
-	const keyChirho = await crypto.subtle.importKey(
-		'raw',
-		new TextEncoder().encode(secretChirho),
-		{ name: 'HMAC', hash: 'SHA-256' },
-		false,
-		['sign']
-	);
-	const digestChirho = new Uint8Array(
-		await crypto.subtle.sign(
-			'HMAC',
-			keyChirho,
-			new TextEncoder().encode(`${Math.floor(nowChirho / 3600000)}\0${ipChirho}`)
-		)
-	);
-	return new Request(
-		'https://hinneh.bible.systems/internal-artifact-rate-chirho/' +
-			[...digestChirho].map((byteChirho) => byteChirho.toString(16).padStart(2, '0')).join('')
-	);
-}
 export async function flagResponseChirho(
 	requestChirho: Request,
 	catalogueChirho: MediaCatalogueChirho,
@@ -72,19 +25,18 @@ export async function flagResponseChirho(
 	contextChirho: ExecutionChirho,
 	dependenciesChirho: DependenciesChirho
 ) {
-	if (requestChirho.method !== 'POST') return jsonChirho({ error_chirho: 'method' }, 405);
+	const refusalChirho = requestRefusalChirho(
+		requestChirho,
+		catalogueChirho.hostnames_chirho ?? [catalogueChirho.hostname_chirho]
+	);
+	if (refusalChirho) return refusalChirho;
 	const expectedHostnameChirho = new URL(requestChirho.url).hostname;
-	const hostnamesChirho = catalogueChirho.hostnames_chirho ?? [catalogueChirho.hostname_chirho];
-	if (
-		!hostnamesChirho.includes(expectedHostnameChirho) ||
-		requestChirho.headers.get('origin') !== `https://${expectedHostnameChirho}`
-	)
-		return jsonChirho({ error_chirho: 'origin' }, 403);
-	if (requestChirho.headers.get('content-type')?.split(';')[0].trim() !== 'application/json')
-		return jsonChirho({ error_chirho: 'content_type' }, 415);
 	let inputChirho;
 	try {
-		inputChirho = await readBodyChirho(requestChirho);
+		inputChirho = (await readBodyChirho(requestChirho, MAX_BODY_CHIRHO)) as Record<
+			string,
+			unknown
+		> | null;
 	} catch {
 		return jsonChirho({ error_chirho: 'invalid_body' }, 400);
 	}
@@ -103,6 +55,7 @@ export async function flagResponseChirho(
 		typeof inputChirho.verse_id_chirho !== 'string' ||
 		!Object.hasOwn(catalogueChirho.verses_chirho, inputChirho.verse_id_chirho) ||
 		catalogueChirho.verses_chirho[inputChirho.verse_id_chirho] !== true ||
+		typeof inputChirho.reason_chirho !== 'string' ||
 		!REASONS_CHIRHO.has(inputChirho.reason_chirho) ||
 		typeof inputChirho.turnstile_token_chirho !== 'string' ||
 		!inputChirho.turnstile_token_chirho ||
@@ -132,45 +85,27 @@ export async function flagResponseChirho(
 	try {
 		const ipChirho = requestChirho.headers.get('cf-connecting-ip');
 		if (!ipChirho) return jsonChirho({ error_chirho: 'temporarily_unavailable' }, 503);
-		const rateChirho = await rateKeyChirho(
-			ipChirho,
-			environmentChirho.ARTIFACT_RATE_SECRET_CHIRHO,
-			dependenciesChirho.now_chirho()
-		);
-		const priorChirho = await dependenciesChirho.cache_chirho.match(rateChirho);
-		const countChirho = priorChirho ? Number(await priorChirho.text()) : 0;
-		if (!Number.isInteger(countChirho) || countChirho >= RATE_CHIRHO)
-			return jsonChirho({ error_chirho: 'rate_limited' }, 429);
-		await dependenciesChirho.cache_chirho.put(
-			rateChirho,
-			new Response(String(countChirho + 1), { headers: { 'Cache-Control': 'max-age=3600' } })
-		);
-		stageChirho = 'challenge';
-		const verificationResponseChirho = await dependenciesChirho.fetch_chirho(
-			'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-			{
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					secret: environmentChirho.TURNSTILE_SECRET_KEY_CHIRHO,
-					response: inputChirho.turnstile_token_chirho
-				}),
-				signal: AbortSignal.timeout(10000)
-			}
-		);
-		if (!verificationResponseChirho.ok)
-			return jsonChirho({ error_chirho: 'challenge_unavailable' }, 503);
-		const verificationChirho = (await verificationResponseChirho.json()) as {
-			success?: unknown;
-			hostname?: unknown;
-			action?: unknown;
-		};
 		if (
-			verificationChirho.success !== true ||
-			verificationChirho.hostname !== expectedHostnameChirho ||
-			verificationChirho.action !== FLAG_ACTION_CHIRHO
+			!(await consumeRateChirho(
+				'internal-artifact-rate-chirho',
+				ipChirho,
+				environmentChirho.ARTIFACT_RATE_SECRET_CHIRHO,
+				RATE_CHIRHO,
+				dependenciesChirho
+			))
 		)
-			return jsonChirho({ error_chirho: 'challenge_failed' }, 400);
+			return jsonChirho({ error_chirho: 'rate_limited' }, 429);
+		stageChirho = 'challenge';
+		const challengeChirho = await verifyChallengeChirho(
+			inputChirho.turnstile_token_chirho,
+			environmentChirho.TURNSTILE_SECRET_KEY_CHIRHO,
+			expectedHostnameChirho,
+			FLAG_ACTION_CHIRHO,
+			dependenciesChirho
+		);
+		if (challengeChirho === 'unavailable')
+			return jsonChirho({ error_chirho: 'challenge_unavailable' }, 503);
+		if (challengeChirho === 'failed') return jsonChirho({ error_chirho: 'challenge_failed' }, 400);
 		const queuedKeyChirho = new Request(
 			`https://hinneh.bible.systems/internal-artifact-queued-chirho/${factChirho.sha256_chirho}`
 		);

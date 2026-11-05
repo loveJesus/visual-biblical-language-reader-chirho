@@ -4,7 +4,6 @@ import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
 import type { LocaleChirho } from '$lib/i18n-chirho/locale-chirho';
 import { SHARE_IMAGE_PATH_CHIRHO } from '$lib/site-chirho';
 
-export const CONTACT_EMAIL_CHIRHO = 'lovejesus@lovejesus.software';
 export const FREE_MINISTRY_URL_CHIRHO = 'https://sellingjesus.org/';
 export const SOFTWARE_URL_CHIRHO = 'https://loveJesus.software/';
 export const SOURCE_CODE_URL_CHIRHO =
@@ -48,9 +47,10 @@ export const SITE_MESSAGES_CHIRHO = defineCatalogueChirho({
 		art_open_chirho: 'Read this verse',
 		footer_chirho:
 			'A free Christian project to help readers behold Scripture in its original languages.',
-		updated_chirho: 'Updated November 3, 2026',
+		updated_chirho: 'Updated November 4, 2026',
 		back_chirho: 'Open the reader',
 		contact_note_chirho: 'Questions, corrections or privacy requests',
+		contact_link_chirho: 'Send a message',
 		skip_chirho: 'Skip to content'
 	},
 	es: {
@@ -90,9 +90,10 @@ export const SITE_MESSAGES_CHIRHO = defineCatalogueChirho({
 		art_open_chirho: 'Leer este versículo',
 		footer_chirho:
 			'Un proyecto cristiano gratuito para ayudar a contemplar las Escrituras en sus idiomas originales.',
-		updated_chirho: 'Actualizado el 3 de noviembre de 2026',
+		updated_chirho: 'Actualizado el 4 de noviembre de 2026',
 		back_chirho: 'Abrir el lector',
 		contact_note_chirho: 'Preguntas, correcciones o solicitudes de privacidad',
+		contact_link_chirho: 'Enviar un mensaje',
 		skip_chirho: 'Saltar al contenido'
 	}
 });
@@ -242,7 +243,7 @@ export const INFORMATION_PAGES_CHIRHO = {
 		en: {
 			title_chirho: 'Privacy',
 			description_chirho:
-				'How Hinneh handles reading preferences, web requests and illustration reports.',
+				'How Hinneh handles reading preferences, web requests, illustration reports and contact messages.',
 			lead_chirho: 'Read without an account. Keep the information we ask for small.',
 			sections_chirho: [
 				{
@@ -281,10 +282,17 @@ export const INFORMATION_PAGES_CHIRHO = {
 					]
 				},
 				{
+					title_chirho: 'Contact messages',
+					paragraphs_chirho: [
+						'The contact form sends your message, your email address and, if you give it, your name to L.J. by email so he can reply. The website does not keep a copy. The message passes through our own mail service and stays in L.J.’s mailbox until he deletes it.',
+						'Cloudflare Turnstile checks the form before a message is sent, and the same kind of temporary rate-limit key used for illustration reports limits repeated attempts. Your email address is used only to answer you. It is not published, sold or added to a mailing list.'
+					]
+				},
+				{
 					title_chirho: 'External links and questions',
 					paragraphs_chirho: [
 						'Lexicon pages, source projects and other linked sites have their own privacy practices. Following a link opens that service; it is not part of Hinneh’s local reading preferences.',
-						'For privacy questions or requests, contact L.J. using the email below. Please do not include sensitive personal information in an illustration report.'
+						'For privacy questions or requests, write to L.J. through the contact page. Please do not include sensitive personal information in an illustration report or message.'
 					]
 				}
 			]
@@ -292,7 +300,7 @@ export const INFORMATION_PAGES_CHIRHO = {
 		es: {
 			title_chirho: 'Privacidad',
 			description_chirho:
-				'Cómo gestiona Hinneh las preferencias, las solicitudes web y los informes de ilustraciones.',
+				'Cómo gestiona Hinneh las preferencias, las solicitudes web, los informes de ilustraciones y los mensajes de contacto.',
 			lead_chirho: 'Lee sin una cuenta. Pedimos la menor información posible.',
 			sections_chirho: [
 				{
@@ -331,10 +339,17 @@ export const INFORMATION_PAGES_CHIRHO = {
 					]
 				},
 				{
+					title_chirho: 'Mensajes de contacto',
+					paragraphs_chirho: [
+						'El formulario de contacto envía tu mensaje, tu correo electrónico y, si lo indicas, tu nombre a L.J. por correo para que pueda responderte. El sitio no guarda una copia. El mensaje pasa por nuestro propio servicio de correo y permanece en el buzón de L.J. hasta que lo elimine.',
+						'Cloudflare Turnstile verifica el formulario antes de enviar el mensaje, y una clave temporal de límite como la de los informes de ilustraciones limita los intentos repetidos. Tu correo se usa solo para responderte. No se publica, no se vende ni se añade a una lista de correo.'
+					]
+				},
+				{
 					title_chirho: 'Enlaces externos y consultas',
 					paragraphs_chirho: [
 						'Los léxicos, proyectos de fuentes y demás sitios enlazados tienen sus propias prácticas de privacidad. Al seguir un enlace accedes a ese servicio.',
-						'Para consultas o solicitudes de privacidad, escribe a L.J. mediante el correo que aparece abajo. No incluyas información personal sensible en un informe de ilustración.'
+						'Para consultas o solicitudes de privacidad, escribe a L.J. desde la página de contacto. No incluyas información personal sensible en un informe de ilustración ni en un mensaje.'
 					]
 				}
 			]
@@ -352,7 +367,7 @@ export const INFORMATION_PAGES_CHIRHO = {
 					title_chirho: 'Using the reader',
 					paragraphs_chirho: [
 						'You may use Hinneh to read and study Scripture. No account or purchase is required for the current reader.',
-						'Use the service responsibly. Do not disrupt it, bypass access controls or rate limits, submit abusive or automated reports, or attempt to access private data.'
+						'Use the service responsibly. Do not disrupt it, bypass access controls or rate limits, send abusive or automated reports or messages, or attempt to access private data.'
 					]
 				},
 				{
@@ -388,7 +403,7 @@ export const INFORMATION_PAGES_CHIRHO = {
 					title_chirho: 'Uso del lector',
 					paragraphs_chirho: [
 						'Puedes utilizar Hinneh para leer y estudiar las Escrituras. El lector actual no requiere cuenta ni compra.',
-						'Usa el servicio de forma responsable. No lo interrumpas, eludas controles o límites, envíes informes abusivos o automáticos ni intentes acceder a datos privados.'
+						'Usa el servicio de forma responsable. No lo interrumpas, eludas controles o límites, envíes informes o mensajes abusivos o automáticos ni intentes acceder a datos privados.'
 					]
 				},
 				{
@@ -603,6 +618,24 @@ export const INFORMATION_PAGES_CHIRHO = {
 					]
 				}
 			]
+		}
+	},
+	// The page body is the contact form; it has no numbered sections or table of contents.
+	'contact-chirho': {
+		en: {
+			title_chirho: 'Contact',
+			description_chirho: 'Send Hinneh a question, correction or privacy request.',
+			lead_chirho:
+				'Questions, corrections and privacy requests are welcome. Your message goes straight to L.J.',
+			sections_chirho: []
+		},
+		es: {
+			title_chirho: 'Contacto',
+			description_chirho:
+				'Envía a Hinneh una pregunta, una corrección o una solicitud de privacidad.',
+			lead_chirho:
+				'Las preguntas, correcciones y solicitudes de privacidad son bienvenidas. Tu mensaje llega directamente a L.J.',
+			sections_chirho: []
 		}
 	}
 } satisfies Record<string, PageLocalesChirho>;

@@ -8,7 +8,9 @@ import type {
 } from './types-chirho';
 import { artworkResponseChirho } from './artwork-chirho';
 import { flagResponseChirho } from './flags-chirho';
+import { contactResponseChirho } from './contact-chirho';
 import { isSiteHostnameChirho } from '../../src/lib/site-chirho';
+import { CONTACT_PATH_CHIRHO } from '../../src/lib/site-chirho/contact-chirho/contact-contract-chirho';
 export function createArtworkWorkerChirho(
 	catalogueChirho: MediaCatalogueChirho,
 	overrideChirho?: Partial<DependenciesChirho>
@@ -82,6 +84,13 @@ export function createArtworkWorkerChirho(
 					catalogueChirho,
 					environmentChirho,
 					contextChirho,
+					dependenciesChirho
+				);
+			if (pathChirho === CONTACT_PATH_CHIRHO)
+				return contactResponseChirho(
+					requestChirho,
+					catalogueChirho,
+					environmentChirho,
 					dependenciesChirho
 				);
 			if (pathChirho.startsWith('/api-chirho/')) return new Response(null, { status: 404 });

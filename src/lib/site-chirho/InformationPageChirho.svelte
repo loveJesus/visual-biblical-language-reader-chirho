@@ -6,10 +6,10 @@
 	import AidSpecimenChirho from './AidSpecimenChirho.svelte';
 	import HomeExperienceChirho from './HomeExperienceChirho.svelte';
 	import PageMetaChirho from './PageMetaChirho.svelte';
+	import ContactFormChirho from './contact-chirho/ContactFormChirho.svelte';
 	import previewChirho from '../../../data-chirho/reader-chirho/home-preview-chirho.json';
 	import {
 		ABOUT_GUIDE_CHIRHO,
-		CONTACT_EMAIL_CHIRHO,
 		HINNEH_HEBREW_CHIRHO,
 		INFORMATION_PAGES_CHIRHO,
 		SCRIPTURE_QUOTES_CHIRHO,
@@ -26,6 +26,8 @@
 	const guideChirho = $derived(
 		idChirho === 'about-chirho' ? ABOUT_GUIDE_CHIRHO[localeStateChirho.currentChirho] : null
 	);
+	// Contact replaces the published address with a challenged form (no numbered sections).
+	const contactPageChirho = $derived(idChirho === 'contact-chirho');
 	// About's cover reuses the exact published John 1:1 scene and keeps its review state visible.
 	const coverChirho =
 		previewChirho.excerpts_chirho.find((excerptChirho) => excerptChirho.id_chirho === 'John.1.1') ??
@@ -152,8 +154,11 @@
 		</section>
 	{/if}
 
-	<div class="page-shell-chirho info-body-chirho" class:info-body-guided-chirho={guideChirho}>
-		{#if !guideChirho}
+	<div
+		class="page-shell-chirho info-body-chirho"
+		class:info-body-guided-chirho={guideChirho || contactPageChirho}
+	>
+		{#if !guideChirho && !contactPageChirho}
 			<nav class="info-toc-chirho" aria-labelledby="toc-title-chirho">
 				<p id="toc-title-chirho">{siteTChirho('toc_chirho')}</p>
 				<ol>
@@ -165,6 +170,7 @@
 			</nav>
 		{/if}
 		<div class="info-sections-chirho">
+			{#if contactPageChirho}<ContactFormChirho />{/if}
 			{#each copyChirho.sections_chirho as sectionChirho, indexChirho (sectionChirho.title_chirho)}<section
 					id={sectionIdChirho(indexChirho)}
 				>
@@ -190,10 +196,12 @@
 					href={resolveChirho(`/sources-chirho/?lang_chirho=${localeStateChirho.currentChirho}`)}
 					>{guideChirho.sources_link_chirho} <span aria-hidden="true">→</span></a
 				>{/if}
-			<aside class="info-contact-chirho">
-				<p>{siteTChirho('contact_note_chirho')}</p>
-				<a href={`mailto:${CONTACT_EMAIL_CHIRHO}`}>{CONTACT_EMAIL_CHIRHO}</a>
-			</aside>
+			{#if !contactPageChirho}<aside class="info-contact-chirho">
+					<p>{siteTChirho('contact_note_chirho')}</p>
+					<a href={resolveChirho(`/contact-chirho/?lang_chirho=${localeStateChirho.currentChirho}`)}
+						>{siteTChirho('contact_link_chirho')} <span aria-hidden="true">→</span></a
+					>
+				</aside>{/if}
 			<a
 				class="return-reader-chirho"
 				href={resolveChirho(`/?lang_chirho=${localeStateChirho.currentChirho}#reader-chirho`)}

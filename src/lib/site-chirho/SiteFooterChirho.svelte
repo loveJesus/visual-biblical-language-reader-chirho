@@ -4,7 +4,6 @@
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
 	import {
 		siteTChirho,
-		CONTACT_EMAIL_CHIRHO,
 		FREE_MINISTRY_URL_CHIRHO,
 		SOFTWARE_URL_CHIRHO,
 		SOURCE_CODE_URL_CHIRHO,
@@ -12,12 +11,13 @@
 	} from './site-content-chirho';
 	const linksChirho: readonly [
 		InformationIdChirho,
-		'about_chirho' | 'sources_chirho' | 'privacy_chirho' | 'terms_chirho'
+		'about_chirho' | 'sources_chirho' | 'privacy_chirho' | 'terms_chirho' | 'contact_chirho'
 	][] = [
 		['about-chirho', 'about_chirho'],
 		['sources-chirho', 'sources_chirho'],
 		['privacy-chirho', 'privacy_chirho'],
-		['terms-chirho', 'terms_chirho']
+		['terms-chirho', 'terms_chirho'],
+		['contact-chirho', 'contact_chirho']
 	];
 </script>
 
@@ -37,7 +37,6 @@
 				href={resolveChirho(`/${pathChirho}/?lang_chirho=${localeStateChirho.currentChirho}`)}
 				>{siteTChirho(labelChirho)}</a
 			>{/each}
-		<a href={`mailto:${CONTACT_EMAIL_CHIRHO}`}>{siteTChirho('contact_chirho')}</a>
 		<a href={SOURCE_CODE_URL_CHIRHO} rel="external noreferrer"
 			>{siteTChirho('source_code_chirho')} ↗</a
 		>

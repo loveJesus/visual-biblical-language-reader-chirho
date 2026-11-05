@@ -48,11 +48,13 @@ function loadChirho(): Promise<TurnstileChirho> {
 export async function challengeChirho(
 	elementChirho: HTMLElement,
 	localeChirho: string,
-	receiveChirho: (tokenChirho: string) => void
+	receiveChirho: (tokenChirho: string) => void,
+	// Each form has its own action; the Worker refuses a token issued for a different form.
+	actionChirho: string = configurationChirho.action_chirho
 ) {
 	return (await loadChirho()).render(elementChirho, {
 		sitekey: configurationChirho.sitekey_chirho,
-		action: configurationChirho.action_chirho,
+		action: actionChirho,
 		language: localeChirho,
 		size: elementChirho.clientWidth < 300 ? 'compact' : 'flexible',
 		callback: receiveChirho,

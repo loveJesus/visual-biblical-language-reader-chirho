@@ -16,7 +16,7 @@ import {
 } from '../release_rules_chirho';
 import { readWebpChirho } from '../webp_chirho';
 import { acquireLockChirho } from '../r2_upload_watch_chirho';
-import { writeChirho } from '../../audio-chirho/audition_chirho';
+import { writeArtworkCatalogueChirho } from './catalogue-write-chirho';
 import { readArtworkCatalogueChirho } from './catalogue-chirho';
 import { digestChirho, objectRequestChirho } from './object-store-chirho';
 
@@ -303,59 +303,7 @@ export async function archiveArtworkChirho(rootChirho: string, applyChirho = fal
 			})
 		);
 		if (failureChirho) throw failureChirho;
-		const shardsChirho = new Map<string, ArtworkEntryChirho[]>();
-		for (const entryChirho of entriesChirho) {
-			const prefixChirho = entryChirho.source_chirho.sha256_chirho.slice(0, 2);
-			const rowsChirho = shardsChirho.get(prefixChirho) ?? [];
-			rowsChirho.push(entryChirho);
-			shardsChirho.set(prefixChirho, rowsChirho);
-		}
-		const shardIndexChirho = [];
-		for (const [prefixChirho, rowsChirho] of [...shardsChirho].sort()) {
-			rowsChirho.sort((leftChirho, rightChirho) =>
-				(leftChirho.kind_chirho + leftChirho.source_chirho.sha256_chirho).localeCompare(
-					rightChirho.kind_chirho + rightChirho.source_chirho.sha256_chirho
-				)
-			);
-			const bytesChirho =
-				JSON.stringify({ schema_version_chirho: 1, entries_chirho: rowsChirho }, null, 2) + '\n';
-			if (Buffer.byteLength(bytesChirho) > 2 * 1024 ** 2)
-				throw new Error('Artwork shard needs cold retirement');
-			const pathChirho = `objects-chirho/${prefixChirho}-chirho.json`;
-			if (
-				(await readFileChirho(
-					joinChirho(rootChirho, ARTWORK_HOME_CHIRHO, pathChirho),
-					'utf8'
-				).catch(() => '')) !== bytesChirho
-			)
-				await writeChirho(joinChirho(rootChirho, ARTWORK_HOME_CHIRHO, pathChirho), bytesChirho);
-			shardIndexChirho.push({
-				path_chirho: pathChirho,
-				sha256_chirho: digestChirho(bytesChirho),
-				entries_chirho: rowsChirho.length
-			});
-		}
-		const indexChirho = {
-			schema_version_chirho: 1,
-			bucket_chirho: 'hinneh-media-chirho',
-			verified_at_chirho: entriesChirho.reduce(
-				(latestChirho, entryChirho) =>
-					[
-						latestChirho,
-						entryChirho.source_chirho.verified_at_chirho,
-						entryChirho.delivery_chirho.verified_at_chirho
-					]
-						.sort()
-						.at(-1)!,
-				''
-			),
-			entry_count_chirho: entriesChirho.length,
-			shards_chirho: shardIndexChirho
-		};
-		const indexTextChirho = JSON.stringify(indexChirho, null, 2) + '\n';
-		const indexPathChirho = joinChirho(rootChirho, ARTWORK_HOME_CHIRHO, 'index-chirho.json');
-		if ((await readFileChirho(indexPathChirho, 'utf8').catch(() => '')) !== indexTextChirho)
-			await writeChirho(indexPathChirho, indexTextChirho);
+		await writeArtworkCatalogueChirho(rootChirho, entriesChirho);
 		return {
 			source_groups_chirho: entriesChirho.length,
 			remote_objects_verified_chirho: proofsChirho.size,

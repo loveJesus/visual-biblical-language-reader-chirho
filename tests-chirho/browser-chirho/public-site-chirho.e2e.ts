@@ -26,8 +26,13 @@ testChirho(
 			).toHaveAttribute('href', 'https://loveJesus.software/');
 			await expectChirho(pageChirho.locator('.public-footer-chirho')).not.toContainText('L.J.');
 			await expectChirho(
-				pageChirho.locator('.public-footer-chirho a[href^="mailto:"]')
-			).toHaveAttribute('href', 'mailto:lovejesus@lovejesus.software');
+				pageChirho
+					.locator('.public-footer-chirho nav')
+					.getByRole('link', { name: localeChirho === 'en' ? 'Contact' : 'Contacto', exact: true })
+			).toHaveAttribute('href', `/contact-chirho/?lang_chirho=${localeChirho}`);
+			// The owner's address is never published; visitors write through the challenged form.
+			await expectChirho(pageChirho.locator('a[href^="mailto:"]')).toHaveCount(0);
+			expectChirho(await pageChirho.content()).not.toMatch(/[\w.+-]+@[\w-]+\.software/u);
 		}
 	}
 );
@@ -170,7 +175,7 @@ testChirho(
 			).toBe(true);
 			await pageChirho.reload();
 			await expectChirho(pageChirho.locator('html')).toHaveAttribute('lang', 'es');
-			await expectChirho(pageChirho.locator('footer a[href^="mailto:"]')).toBeVisible();
+			await expectChirho(pageChirho.locator('footer a[href^="/contact-chirho/"]')).toBeVisible();
 		}
 		await pageChirho.locator('footer a[href^="/about-chirho"]').click();
 		await expectChirho(pageChirho.locator('article h1')).toBeVisible();
