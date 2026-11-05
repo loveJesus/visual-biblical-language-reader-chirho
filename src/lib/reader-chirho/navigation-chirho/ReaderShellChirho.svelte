@@ -1,5 +1,6 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { SvelteMap } from 'svelte/reactivity';
 	import { onMount, untrack, tick as tickChirho } from 'svelte';
 	import { browser as browserChirho } from '$app/environment';
@@ -405,7 +406,7 @@
 			</p>{/if}
 	</nav>
 {/snippet}
-{#snippet verseNavigationChirho()}
+{#snippet verseNavigationChirho(playbackChirho: Snippet)}
 	<button
 		type="button"
 		class="verse-step-chirho"
@@ -414,6 +415,7 @@
 		onclick={() => moveChirho(-1)}
 		><span aria-hidden="true">←</span> {readerTChirho('previous_chirho')}</button
 	>
+	{@render playbackChirho()}
 	<button
 		type="button"
 		class="verse-step-chirho"

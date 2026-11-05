@@ -25,3 +25,36 @@ export function spokenVerseChirho(lessonChirho: {
 	}
 	return textChirho + lessonChirho.canonical_text_chirho.slice(cursorChirho);
 }
+
+/** Workflow: reusable-word-audio-chirho.md. Join saved words using source punctuation only. */
+export function wordPlaybackPlanChirho(lessonChirho: {
+	canonical_text_chirho: string;
+	tokens_chirho: (SpokenTokenChirho & {
+		id_chirho: string;
+		start_chirho: number;
+		end_chirho: number;
+	})[];
+}) {
+	return lessonChirho.tokens_chirho.map((tokenChirho, indexChirho) => {
+		const gapChirho = lessonChirho.canonical_text_chirho.slice(
+			tokenChirho.end_chirho,
+			lessonChirho.tokens_chirho[indexChirho + 1]?.start_chirho
+		);
+		return {
+			token_id_chirho: tokenChirho.id_chirho,
+			text_chirho: spokenWordChirho(tokenChirho),
+			pause_after_chirho:
+				indexChirho === lessonChirho.tokens_chirho.length - 1
+					? 0
+					: gapChirho.includes('־')
+						? 20
+						: /[׃.!?;\u037e]/u.test(gapChirho)
+							? 350
+							: tokenChirho.text_chirho.includes('\u0591')
+								? 200
+								: /[׀,·\u0387]/u.test(gapChirho)
+									? 130
+									: 60
+		};
+	});
+}

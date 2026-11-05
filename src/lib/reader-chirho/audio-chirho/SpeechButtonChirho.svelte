@@ -8,7 +8,8 @@
 		tokenIdChirho,
 		wordChirho = false,
 		compactChirho = false,
-		unavailableChirho = false
+		unavailableChirho = false,
+		savedOnlyChirho = false
 	}: {
 		textChirho: string;
 		languageChirho: 'he' | 'grc';
@@ -16,6 +17,7 @@
 		wordChirho?: boolean;
 		compactChirho?: boolean;
 		unavailableChirho?: boolean;
+		savedOnlyChirho?: boolean;
 	} = $props();
 </script>
 
@@ -28,6 +30,7 @@
 	data-speech-token-chirho={tokenIdChirho}
 	data-speech-language-chirho={languageChirho}
 	data-speech-unavailable-chirho={unavailableChirho ? 'true' : undefined}
+	data-speech-saved-only-chirho={savedOnlyChirho ? 'true' : undefined}
 	data-annotation-chirho
 	aria-label={wordChirho
 		? audioTChirho('pronounce_word_chirho', { word_chirho: textChirho })
@@ -50,5 +53,5 @@
 				: 'M11 4 6 8H3v8h3l5 4V4Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14'}
 		/></svg
 	>
-	{#if !compactChirho}{audioTChirho(wordChirho ? 'hear_word_chirho' : 'play_chirho')}{/if}
+	{#if !compactChirho}{audioTChirho(wordChirho ? 'hear_word_chirho' : 'play_verse_chirho')}{/if}
 </button>

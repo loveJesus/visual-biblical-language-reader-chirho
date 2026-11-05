@@ -156,3 +156,146 @@ testChirho('late events from a replaced word cannot cancel the next word or its 
 	expectChirho(secondChirho.paused).toBe(true);
 	expectChirho(buttonsChirho[1].hasAttribute('aria-busy')).toBe(false);
 });
+
+async function setupVerseChirho(naturalChirho = false) {
+	const deviceChirho = {
+		getVoices: () => [{ lang: 'he-IL', name: 'Local Hebrew', localService: true, default: true }],
+		cancel: viChirho.fn(),
+		speak: viChirho.fn(),
+		addEventListener: viChirho.fn(),
+		removeEventListener: viChirho.fn()
+	};
+	viChirho.stubGlobal('speechSynthesis', deviceChirho);
+	viChirho.stubGlobal(
+		'SpeechSynthesisUtterance',
+		class {
+			constructor(public text: string) {}
+		}
+	);
+	const wordButtonsChirho = setupChirho(true);
+	const rootChirho = wordButtonsChirho[0].parentElement!;
+	const buttonChirho = document.createElement('button');
+	buttonChirho.dataset.pronounceChirho = 'first second';
+	buttonChirho.dataset.speechLanguageChirho = 'he';
+	buttonChirho.dataset.speechSavedOnlyChirho = 'true';
+	rootChirho.insertBefore(buttonChirho, rootChirho.firstChild);
+	const hostChirho = rootChirho.querySelector('[data-speech-recordings-chirho]')!;
+	hostChirho.setAttribute(
+		'data-speech-words-chirho',
+		JSON.stringify(
+			['first', 'second'].map((nameChirho) => ({
+				token_id_chirho: nameChirho + '-chirho',
+				text_chirho: nameChirho,
+				pause_after_chirho: 60
+			}))
+		)
+	);
+	if (naturalChirho) {
+		const clipsChirho = JSON.parse(hostChirho.getAttribute('data-speech-recordings-chirho')!);
+		clipsChirho.push({
+			text_chirho: 'first second',
+			token_id_chirho: null,
+			language_chirho: 'he',
+			asset_path_chirho: '/audio-chirho/sha256-chirho/' + '3'.repeat(64) + '-chirho.mp3',
+			voice_name_chirho: 'Verse',
+			bytes_chirho: 100
+		});
+		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+	}
+	await viChirho.advanceTimersByTimeAsync(0);
+	return { buttonChirho, hostChirho, rootChirho, wordButtonsChirho, deviceChirho };
+}
+
+testChirho('a recorded verse takes priority over its saved word sequence', async () => {
+	const { buttonChirho } = await setupVerseChirho(true);
+	buttonChirho.click();
+	expectChirho(ControlledAudioChirho.instancesChirho).toHaveLength(1);
+	expectChirho(ControlledAudioChirho.instancesChirho[0].src).toContain('3'.repeat(64));
+	expectChirho(ControlledAudioChirho.instancesChirho[0].playbackRate).toBe(1);
+	ControlledAudioChirho.instancesChirho[0].onended?.();
+	expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
+});
+
+testChirho(
+	'an assembled verse plays every saved word in order and completes at the final word',
+	async () => {
+		const { buttonChirho } = await setupVerseChirho();
+		buttonChirho.click();
+		const [firstChirho, secondChirho] = ControlledAudioChirho.instancesChirho;
+		expectChirho(firstChirho.paused).toBe(false);
+		expectChirho(secondChirho.paused).toBe(true);
+		firstChirho.onended?.();
+		await viChirho.advanceTimersByTimeAsync(60);
+		expectChirho(secondChirho.paused).toBe(false);
+		secondChirho.onended?.();
+		expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
+	}
+);
+
+testChirho(
+	'missing or different word text refuses a full verse without borrowing device speech',
+	async () => {
+		const { buttonChirho, hostChirho, wordButtonsChirho, deviceChirho } = await setupVerseChirho();
+		const clipsChirho = JSON.parse(hostChirho.getAttribute('data-speech-recordings-chirho')!);
+		clipsChirho[1].text_chirho = 'different';
+		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+		await viChirho.advanceTimersByTimeAsync(0);
+		expectChirho(buttonChirho.disabled).toBe(true);
+		expectChirho(wordButtonsChirho[0].disabled).toBe(false);
+		buttonChirho.click();
+		expectChirho(ControlledAudioChirho.instancesChirho).toHaveLength(0);
+		expectChirho(deviceChirho.speak).not.toHaveBeenCalled();
+	}
+);
+
+testChirho(
+	'Stop cancels a saved-word verse and a late first-word ending cannot resume it',
+	async () => {
+		const { buttonChirho, rootChirho } = await setupVerseChirho();
+		buttonChirho.click();
+		const [firstChirho, secondChirho] = ControlledAudioChirho.instancesChirho;
+		const lateChirho = firstChirho.onended;
+		rootChirho.querySelector<HTMLButtonElement>('[data-speech-stop-chirho]')!.click();
+		lateChirho?.();
+		await viChirho.advanceTimersByTimeAsync(3000);
+		expectChirho(secondChirho.paused).toBe(true);
+		expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
+	}
+);
+
+testChirho(
+	'an aspirated Greek verse can combine aspirated rough words with compatible modern non-rough words',
+	async () => {
+		const { buttonChirho, hostChirho, rootChirho } = await setupVerseChirho();
+		buttonChirho.dataset.speechLanguageChirho = 'grc';
+		buttonChirho.dataset.pronounceChirho = 'ὁ λόγος';
+		const selectChirho = document.createElement('select');
+		selectChirho.dataset.greekRenditionChirho = '';
+		selectChirho.innerHTML = '<option value="modern_aspirates">Modern with Aspirates</option>';
+		rootChirho.insertBefore(selectChirho, rootChirho.firstChild);
+		const clipsChirho = JSON.parse(hostChirho.getAttribute('data-speech-recordings-chirho')!);
+		for (const [indexChirho, clipChirho] of clipsChirho.entries()) {
+			clipChirho.text_chirho = indexChirho === 0 ? 'ὁ' : 'λόγος';
+			clipChirho.language_chirho = 'el';
+			clipChirho.pronunciation_chirho =
+				indexChirho === 0 ? 'modern_greek_aspirates' : 'modern_greek';
+		}
+		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+		hostChirho.setAttribute(
+			'data-speech-words-chirho',
+			JSON.stringify(
+				clipsChirho.map((clipChirho: { token_id_chirho: string; text_chirho: string }) => ({
+					token_id_chirho: clipChirho.token_id_chirho,
+					text_chirho: clipChirho.text_chirho,
+					pause_after_chirho: 60
+				}))
+			)
+		);
+		await viChirho.advanceTimersByTimeAsync(0);
+		expectChirho(buttonChirho.disabled).toBe(false);
+		clipsChirho[0].pronunciation_chirho = 'modern_greek';
+		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+		await viChirho.advanceTimersByTimeAsync(0);
+		expectChirho(buttonChirho.disabled).toBe(true);
+	}
+);

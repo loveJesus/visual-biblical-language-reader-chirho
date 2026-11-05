@@ -17,6 +17,14 @@ export function wordPhoneticsChirho(sourceChirho: string, overrideChirho?: numbe
 	const syllablesChirho = wordsChirho[0].syllables;
 	let indexChirho = overrideChirho;
 	if (indexChirho === undefined) {
+		// Munach followed by zaqef qatan has primary stress at zaqef, not two primaries.
+		// Unicode L2/25-242, p.3: https://www.unicode.org/L2/L2025/25242-hebrew-accents.pdf
+		const accentsChirho = (analysisChirho.match(/[\u0591-\u05af]/gu) ?? []).join('');
+		if (accentsChirho === '\u05a3\u0594') {
+			indexChirho = syllablesChirho.findIndex((rowChirho) => rowChirho.text.includes('\u0594'));
+			if (indexChirho < 0) throw new Error('Primary zaqef syllable is unresolved');
+			return hebrewPhoneticsChirho(analysisChirho, indexChirho);
+		}
 		const candidatesChirho = syllablesChirho.flatMap((rowChirho, numberChirho) =>
 			DIRECT_ACCENTS_CHIRHO.test(rowChirho.text) ? [numberChirho] : []
 		);

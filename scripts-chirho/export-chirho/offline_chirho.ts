@@ -45,6 +45,11 @@ htmlChirho = htmlChirho
 	.replace(/<footer\b[^>]*data-online-site-chirho[^>]*>[\s\S]*?<\/footer>/gi, '')
 	.replace(/<section\b[^>]*data-online-intro-chirho[^>]*>[\s\S]*?<\/section>/gi, '');
 htmlChirho = htmlChirho.replaceAll('href="/"', 'href="#main-chirho"');
+// Word-card study notes remain reachable online from a saved local file.
+htmlChirho = htmlChirho.replace(
+	/href="((?:\.\/|\/)about-chirho\/[^"]*)"/gu,
+	(_matchChirho, pathChirho: string) => `href="${new URL(pathChirho, SITE_ORIGIN_CHIRHO).href}"`
+);
 htmlChirho = htmlChirho.replace(
 	/<nav\b[^>]*data-online-navigation-chirho[^>]*>[\s\S]*?<\/nav>/gi,
 	'<p class="snapshot-note-chirho">Saved passage · offline reading</p>'

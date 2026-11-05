@@ -60,7 +60,6 @@
 				>
 			</p>
 			<p>{noteChirho.explanation_chirho[localeStateChirho.currentChirho]}</p>
-			<small>{audioTChirho('ipa_draft_chirho')}</small>
 			<p class="pronunciation-sources-chirho">
 				{#each noteChirho.sources_chirho as sourceChirho (sourceChirho.url_chirho)}<a
 						href={sourceChirho.url_chirho}

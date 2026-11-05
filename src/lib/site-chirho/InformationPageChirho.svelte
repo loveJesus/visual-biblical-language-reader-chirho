@@ -1,5 +1,6 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import { STUDY_AIDS_SECTION_CHIRHO } from '$lib/bible-chirho/study-aids-chirho';
 	import { resolve as resolveChirho } from '$app/paths';
 	import { referenceChirho } from '$lib/i18n-chirho/labels-chirho';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
@@ -143,7 +144,11 @@
 			</div>
 		</section>
 
-		<section class="about-facts-chirho" aria-labelledby="facts-title-chirho">
+		<section
+			class="about-facts-chirho"
+			id={STUDY_AIDS_SECTION_CHIRHO}
+			aria-labelledby="facts-title-chirho"
+		>
 			<div class="page-shell-chirho">
 				<h2 id="facts-title-chirho">{guideChirho.facts_title_chirho}</h2>
 				<ul>

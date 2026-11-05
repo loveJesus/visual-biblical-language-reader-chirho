@@ -1,5 +1,7 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import StudyAidLinkChirho from '$lib/bible-chirho/StudyAidLinkChirho.svelte';
+	import { specificSourceNoteChirho } from '$lib/bible-chirho/study-aids-chirho';
 	import { installIpaChirho } from '../controls-chirho/ipa-controls-chirho';
 	import { lexiconLinkChirho } from '$lib/bible-chirho/lexicon-links-chirho';
 	import SceneChirho from '$lib/reader-chirho/scene-chirho/SceneChirho.svelte';
@@ -42,7 +44,7 @@
 		introVisibleChirho?: boolean;
 		lessonChirho: GreekLessonChirho;
 		headerChirho: Snippet;
-		verseNavigationChirho?: Snippet;
+		verseNavigationChirho?: Snippet<[Snippet]>;
 		presentationChirho?: ScenePresentationChirho | null;
 		iconsChirho?: Record<string, ContextualIconChirho>;
 		spanishChirho?: SpanishLayerResultChirho | null;
@@ -179,7 +181,7 @@
 									</p>{:else}<p class="word-gloss-chirho" lang="en">
 										{tokenChirho.gloss_chirho}
 									</p>{/if}
-								<small>{readerTChirho('berean_gloss_note_chirho')}</small>
+								<small class="gloss-source-chirho">Berean</small>
 								<p>
 									{readerTChirho('lexical_form_chirho')}
 									<span lang="grc">{tokenChirho.lexical_form_chirho}</span> · {tokenChirho.lemma_id_chirho}
@@ -188,8 +190,8 @@
 									{readerTChirho('source_morphology_chirho')}
 									<code>{tokenChirho.raw_morphology_chirho}</code>
 								</p>
-								{#if tokenChirho.source_note_chirho}<p class="quiet-note-chirho" lang="en">
-										{tokenChirho.source_note_chirho}
+								{#if specificSourceNoteChirho(tokenChirho)}<p class="quiet-note-chirho" lang="en">
+										{specificSourceNoteChirho(tokenChirho)}
 									</p>{/if}
 								{#each lessonChirho.source_notes_chirho ?? [] as noteChirho, indexChirho (indexChirho)}
 									{#if noteChirho.kind_chirho === 'gloss_editor_note' && noteChirho.before_token_id_chirho === tokenChirho.id_chirho}<p
@@ -201,6 +203,7 @@
 								{/each}
 							</div>
 						</details>
+						<StudyAidLinkChirho />
 					</article>{/each}
 			</div>
 		</section>

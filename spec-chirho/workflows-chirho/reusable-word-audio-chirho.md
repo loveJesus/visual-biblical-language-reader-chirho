@@ -62,7 +62,23 @@ The audio archiver uses at most four concurrent objects and five attempts for ne
 Other refusals and wrong readback bytes are retained without a trusted receipt. This retry
 applies only to identical content-addressed R2 PUT/GET, never a synthesis POST.
 
-The client loads only its selected chapter, checks source/recording hashes and keeps a four-chapter cache. Natural verse clips take priority. An assembled verse requires all its source words in order, at most 150 words and 8 MB; partial word sequences are not presented as complete verse readings. Measured quiet is skipped between assembled words without changing MP3s. Individual word speakers instead play the complete original file through native `ended`; they do not seek to a joining offset or pause at the measured joining-window endpoint. This preserves the entire pronunciation and lets the browser finish its slowed, pitch-preserved output. Gaps use maqqef (20 ms), ordinary joins (60 ms), atnach (200 ms) and verse punctuation (350 ms). Stop, navigation and pronunciation changes cancel the current clip and future timers. Rate changes preserve pitch. Missing renditions remain explicit or use a clearly labelled matching local-device voice.
+The client loads only its selected chapter, checks source/recording hashes and keeps a four-chapter cache. Play verse prefers saved full-verse recordings, including the connected Hebrew IPA rendition. Otherwise it requires all source words in order, at most 150 words and 8 MB; partial sequences are not presented as complete verse readings. Whole-verse playback uses saved recordings only, and is disabled when any required word or chosen rendition is unavailable. Only individual word speakers may use a matching local-device voice. The small localized Under development label sits beside Play verse; general review explanations live on About.
+
+Measured quiet is skipped between assembled words without changing MP3s. Individual word speakers instead play the complete original file through native `ended`; they do not seek to a joining offset or pause at the measured joining-window endpoint. This preserves the entire pronunciation and lets the browser finish its slowed, pitch-preserved output. `wordPlaybackPlanChirho` preserves source order and qere, and sets maqqef (20 ms), ordinary joins (60 ms), comma/paseq (130 ms), atnach (200 ms) and verse punctuation (350 ms). The final word needs no trailing timer. Stop, navigation and pronunciation changes cancel the current clip and future timers. Rate changes preserve pitch. Greek sequence compatibility is checked per clip: plain Modern clips may supply words without a rough breathing under Modern with Aspirates, while every rough-breathing word still needs its aspirated recording. Erasmian borrows no Modern clip.
+
+```mermaid
+flowchart TD
+    verse_button_chirho[Play verse at Normal by default] --> full_recording_chirho{Matching verified full recording}
+    full_recording_chirho -->|yes| saved_verse_chirho[Play saved natural or connected IPA rendition]
+    full_recording_chirho -->|no| word_plan_chirho[Exact qere-aware source words and punctuation joins]
+    word_plan_chirho --> complete_chirho{Every word has a compatible saved clip}
+    complete_chirho -->|yes| bounded_sequence_chirho[Play bounded ordered sequence with measured joining windows]
+    complete_chirho -->|no| unavailable_verse_chirho[Disable verse playback without device substitution]
+    saved_verse_chirho --> cancellation_chirho[Stop and navigation retire active playback]
+    bounded_sequence_chirho --> cancellation_chirho
+```
+
+The narrow Munach–Zaqef Qatan stress case accepts exactly U+05A3 followed by U+0594 with no other cantillation accent, and assigns primary stress to the syllable carrying Zaqef, following [Unicode L2/25-242, printed page 3](https://www.unicode.org/L2/L2025/25242-hebrew-accents.pdf). Other conflicting or unmarked stress remains deferred. The November 5 source-bound continuation appends new plans without rewriting original plans, source holds or receipts. Existing exact pronunciation keys reuse their received audio. Small new batches retain the unchanged 1,000-credit subscription safety margin, included-only funding authority and no-POST-retry rule.
 
 The self-contained speech controller owns one trim timer and cleanup function per active clip.
 The deadline rechecks the media clock before pausing; buffering, seeking and paused playback

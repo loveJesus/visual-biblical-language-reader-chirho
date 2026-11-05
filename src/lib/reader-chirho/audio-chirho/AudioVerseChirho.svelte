@@ -1,5 +1,10 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import SpeechButtonChirho from './SpeechButtonChirho.svelte';
+	import {
+		spokenVerseChirho,
+		wordPlaybackPlanChirho
+	} from '$lib/domain-chirho/pronunciation-chirho';
 	import type { LessonChirho } from '$lib/domain-chirho/lesson-chirho';
 	import type { GreekLessonChirho } from '$lib/domain-chirho/greek-chirho';
 	import type { Snippet } from 'svelte';
@@ -12,7 +17,7 @@
 		verseNavigationChirho
 	}: {
 		lessonChirho: LessonChirho | GreekLessonChirho;
-		verseNavigationChirho?: Snippet;
+		verseNavigationChirho?: Snippet<[Snippet]>;
 	} = $props();
 	let recordingsChirho = $state<RecordingChirho[]>([]);
 	let renditionChirho = $state('modern_aspirates');
@@ -83,6 +88,20 @@
 			: 'Aramaic pronunciation is being prepared.'}
 	</p>
 {/if}
+{#snippet playbackChirho()}
+	<span class="verse-play-chirho">
+		<SpeechButtonChirho
+			textChirho={spokenVerseChirho(lessonChirho)}
+			languageChirho={lessonChirho.language_chirho}
+			savedOnlyChirho
+			unavailableChirho={lessonChirho.tokens_chirho.some(
+				(tokenChirho) =>
+					'source_language_chirho' in tokenChirho && tokenChirho.source_language_chirho === 'arc'
+			)}
+		/>
+		<small class="verse-development-chirho">{audioTChirho('under_development_chirho')}</small></span
+	>
+{/snippet}
 {#snippet ipaToggleChirho()}
 	<label class="ipa-toggle-chirho"
 		><input type="checkbox" data-show-ipa-chirho disabled />{audioTChirho('show_ipa_chirho')}</label
@@ -92,9 +111,8 @@
 <div
 	class="audio-controls-chirho"
 	data-audio-controls-chirho
-	data-speech-recordings-chirho={JSON.stringify(
-		recordingsChirho.filter((clipChirho) => clipChirho.token_id_chirho !== null)
-	)}
+	data-speech-recordings-chirho={JSON.stringify(recordingsChirho)}
+	data-speech-words-chirho={JSON.stringify(wordPlaybackPlanChirho(lessonChirho))}
 	data-annotation-chirho
 	lang={localeStateChirho.currentChirho}
 	data-speech-messages-chirho={JSON.stringify(
@@ -140,7 +158,9 @@
 				role="group"
 				aria-label={audioTChirho('navigation_chirho')}
 			>
-				{#if verseNavigationChirho}{@render verseNavigationChirho()}{/if}
+				{#if verseNavigationChirho}{@render verseNavigationChirho(
+						playbackChirho
+					)}{:else}{@render playbackChirho()}{/if}
 			</div>
 			<button type="button" class="speech-stop-chirho" data-speech-stop-chirho disabled
 				>{audioTChirho('stop_chirho')}</button
@@ -163,6 +183,30 @@
 </div>
 
 <style>
+	.verse-play-chirho {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		position: relative;
+	}
+	@container (max-width: 420px) {
+		.verse-development-chirho {
+			position: absolute;
+			top: calc(100% + 3px);
+			left: 50%;
+			transform: translateX(-50%);
+			white-space: nowrap;
+		}
+		.audio-playback-chirho {
+			margin-bottom: 15px;
+		}
+	}
+	.verse-development-chirho {
+		color: #64715e;
+		font-size: 11px;
+		line-height: 1.3;
+		max-width: 7rem;
+	}
 	.ipa-toggle-chirho {
 		display: inline-flex;
 		align-items: center;

@@ -17,6 +17,7 @@ import {
 import { divineNameReadingChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/divine-name-chirho';
 
 import { wordPhoneticsChirho } from '../../../scripts-chirho/audio-chirho/production-chirho/word_phonetics_chirho';
+import accentFixtureChirho from '../../fixtures-chirho/audio-chirho/munach-zaqef-chirho.json';
 
 const wordChirho: AudioJobChirho = {
 	id_chirho: 'word-one-chirho',
@@ -38,6 +39,17 @@ afterEach(async () => {
 });
 
 describe('reusable pronunciation library', () => {
+	it('uses the primary zaqef in the exact munach-zaqef pair, including non-final stress', () => {
+		for (const rowChirho of accentFixtureChirho.cases_chirho) {
+			expect(wordPhoneticsChirho(rowChirho.spoken_text_chirho).ipa_chirho).toBe(
+				rowChirho.candidate_ipa_chirho
+			);
+			expect(() => wordPhoneticsChirho(rowChirho.spoken_text_chirho + '\u05a3')).toThrow(
+				/Conflicting/
+			);
+		}
+	});
+
 	it('locates stress from the source, including paired poetic marks, and withholds an unmarked guess', () => {
 		expect(wordPhoneticsChirho('מֶ֝֗לֶךְ').ipa_chirho).toBe('ˈmelex');
 		expect(wordPhoneticsChirho('מֶ֥לֶךְ').ipa_chirho).toBe('ˈmelex');

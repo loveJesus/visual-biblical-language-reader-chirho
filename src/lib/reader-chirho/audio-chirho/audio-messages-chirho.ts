@@ -9,9 +9,11 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		ipa_guide_chirho: 'IPA guide · Draft; — marks an unresolved reading.',
 		pronunciation_note_chirho: 'Pronunciation note',
 		ipa_draft_chirho: 'Israeli Hebrew · IPA draft, awaiting pronunciation review.',
-		recorded_ipa_ready_chirho:
-			'AI voice audition · IPA · {name_chirho}. Pronunciation awaits review.',
+		recorded_ipa_ready_chirho: 'Saved IPA recording · {name_chirho}.',
 		play_chirho: 'Play',
+		play_verse_chirho: 'Play verse',
+		under_development_chirho: 'Under development',
+		verse_unavailable_chirho: 'Full-verse audio is not available yet.',
 		rendition_chirho: 'Pronunciation',
 		modern_aspirates_chirho: 'Modern with Aspirates',
 		modern_choice_chirho: 'Modern Greek',
@@ -23,8 +25,7 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		rendition_unavailable_chirho: 'This pronunciation is not recorded for this word yet.',
 		rendition_coverage_chirho:
 			'Word recordings follow the selected pronunciation. Availability varies by word.',
-		recorded_ready_chirho:
-			'AI voice audition · {name_chirho}. Pronunciation awaits review; other words use the device voice.',
+		recorded_ready_chirho: 'Saved recording · {name_chirho}.',
 		recorded_playing_chirho: 'Playing the saved {name_chirho} recording.',
 		recorded_failed_chirho: 'The recording could not be played. Please try again.',
 		stop_chirho: 'Stop',
@@ -37,7 +38,7 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		hear_word_chirho: 'Hear word',
 		navigation_chirho: 'Verse navigation',
 		reading_speed_chirho: 'Reading speed',
-		checking_chirho: 'Checking for a local voice on this device.',
+		checking_chirho: 'Loading recordings.',
 		qere_chirho: 'The spoken reading follows the listed qere where the written form differs.',
 		javascript_chirho: 'Enable JavaScript to hear the original text.',
 		unavailable_chirho: 'Audio playback is unavailable in this browser.',
@@ -58,9 +59,11 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		ipa_guide_chirho: 'Guía AFI · Borrador; — indica una lectura sin resolver.',
 		pronunciation_note_chirho: 'Nota de pronunciación',
 		ipa_draft_chirho: 'Hebreo israelí · AFI provisional, pendiente de revisión de pronunciación.',
-		recorded_ipa_ready_chirho:
-			'Prueba de voz IA · AFI · {name_chirho}. Pronunciación pendiente de revisión.',
+		recorded_ipa_ready_chirho: 'Grabación AFI guardada · {name_chirho}.',
 		play_chirho: 'Reproducir',
+		play_verse_chirho: 'Oír versículo',
+		under_development_chirho: 'En desarrollo',
+		verse_unavailable_chirho: 'El audio de este versículo aún no está disponible.',
 		rendition_chirho: 'Pronunciación',
 		modern_aspirates_chirho: 'Moderna con aspiración',
 		modern_choice_chirho: 'Griega moderna',
@@ -73,8 +76,7 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		rendition_unavailable_chirho: 'Esta pronunciación aún no está grabada para esta palabra.',
 		rendition_coverage_chirho:
 			'Las grabaciones siguen la pronunciación elegida. La disponibilidad varía según la palabra.',
-		recorded_ready_chirho:
-			'Prueba de voz IA · {name_chirho}. Pronunciación pendiente de revisión; otras palabras usan la voz del dispositivo.',
+		recorded_ready_chirho: 'Grabación guardada · {name_chirho}.',
 		recorded_playing_chirho: 'Reproduciendo la grabación guardada de {name_chirho}.',
 		recorded_failed_chirho: 'No se pudo reproducir la grabación. Inténtalo de nuevo.',
 		stop_chirho: 'Detener',
@@ -87,7 +89,7 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 		hear_word_chirho: 'Oír la palabra',
 		navigation_chirho: 'Navegación del versículo',
 		reading_speed_chirho: 'Velocidad de lectura',
-		checking_chirho: 'Buscando una voz local en este dispositivo.',
+		checking_chirho: 'Cargando grabaciones.',
 		qere_chirho:
 			'La lectura en voz alta sigue el qere indicado cuando difiere de la forma escrita.',
 		javascript_chirho: 'Activa JavaScript para escuchar el texto original.',

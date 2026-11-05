@@ -4,7 +4,8 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync as readFileSyncChirho } from 'node:fs';
 import {
 	spokenVerseChirho,
-	spokenWordChirho
+	spokenWordChirho,
+	wordPlaybackPlanChirho
 } from '../../../src/lib/domain-chirho/pronunciation-chirho';
 
 describe('original-language spoken text', () => {
@@ -47,4 +48,22 @@ describe('original-language spoken text', () => {
 		for (const lessonChirho of chapterChirho.verses_chirho)
 			expect(spokenVerseChirho(lessonChirho)).toBe(lessonChirho.canonical_text_chirho);
 	});
+});
+
+it('assembles exact qere-aware words with short source-punctuation joins and no final delay', () => {
+	const lessonChirho = JSON.parse(
+		readFileSyncChirho('data-chirho/lessons-chirho/proverbs-26-1-chirho.json', 'utf8')
+	);
+	const beforeChirho = JSON.stringify(lessonChirho);
+	const planChirho = wordPlaybackPlanChirho(lessonChirho);
+	expect(planChirho.map((rowChirho) => rowChirho.token_id_chirho)).toEqual(
+		lessonChirho.tokens_chirho.map((rowChirho: { id_chirho: string }) => rowChirho.id_chirho)
+	);
+	expect(planChirho.map((rowChirho) => rowChirho.text_chirho)).toEqual(
+		lessonChirho.tokens_chirho.map(spokenWordChirho)
+	);
+	expect(planChirho[0].pause_after_chirho).toBe(130);
+	expect(planChirho.some((rowChirho) => rowChirho.pause_after_chirho === 20)).toBe(true);
+	expect(planChirho.at(-1)?.pause_after_chirho).toBe(0);
+	expect(JSON.stringify(lessonChirho)).toBe(beforeChirho);
 });

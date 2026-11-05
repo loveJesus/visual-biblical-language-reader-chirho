@@ -1,5 +1,7 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import StudyAidLinkChirho from '$lib/bible-chirho/StudyAidLinkChirho.svelte';
+	import { specificSourceNoteChirho } from '$lib/bible-chirho/study-aids-chirho';
 	import { installIpaChirho } from './controls-chirho/ipa-controls-chirho';
 	import SceneChirho from '$lib/reader-chirho/scene-chirho/SceneChirho.svelte';
 	import PronunciationNoteChirho from './audio-chirho/PronunciationNoteChirho.svelte';
@@ -51,7 +53,7 @@
 	}: {
 		spanishChirho?: SpanishLayerResultChirho | null;
 		headerChirho?: Snippet;
-		verseNavigationChirho?: Snippet;
+		verseNavigationChirho?: Snippet<[Snippet]>;
 		introVisibleChirho?: boolean;
 		lessonChirho: LessonChirho;
 		iconsChirho: Record<string, ContextualIconChirho>;
@@ -269,17 +271,17 @@
 							unavailableChirho={tokenChirho.source_language_chirho === 'arc'}
 							wordChirho
 						/>
-						<p class="root-line-chirho">
-							<span class="root-status-chirho"
-								>{tokenChirho.root_status_chirho === 'not_applicable'
-									? readerTChirho('root_not_applicable_chirho')
-									: tokenChirho.root_status_chirho === 'traditional'
-										? readerTChirho('root_traditional_chirho')
-										: readerTChirho('root_unresolved_chirho')}</span
-							>
-							{readerTChirho('root_relationship_chirho')}
-							<span dir="rtl" lang="he">{tokenChirho.root_text_chirho ?? '—'}</span>
-						</p>
+						{#if tokenChirho.root_text_chirho}<p class="root-line-chirho">
+								<span class="root-status-chirho"
+									>{tokenChirho.root_status_chirho === 'not_applicable'
+										? readerTChirho('root_not_applicable_chirho')
+										: tokenChirho.root_status_chirho === 'traditional'
+											? readerTChirho('root_traditional_chirho')
+											: readerTChirho('root_unresolved_chirho')}</span
+								>
+								{readerTChirho('root_relationship_chirho')}
+								<span dir="rtl" lang="he">{tokenChirho.root_text_chirho ?? '—'}</span>
+							</p>{/if}
 						<p class="morphology-chirho">
 							{morphologyLabelLocalizedChirho(tokenChirho, localeStateChirho.currentChirho)}
 						</p>
@@ -294,13 +296,13 @@
 									<p class="word-gloss-chirho" lang="en">
 										{tokenChirho.gloss_chirho ?? readerTChirho('gloss_unavailable_chirho')}
 									</p>
-									<small
+									<small class="gloss-source-chirho"
 										>{(tokenChirho.gloss_origin_chirho ?? lessonChirho.gloss_origin_chirho) ===
 										'gbt_approved'
-											? readerTChirho('origin_gbt_chirho')
+											? 'GBT'
 											: tokenChirho.gloss_chirho
-												? readerTChirho('origin_app_chirho')
-												: readerTChirho('origin_unavailable_chirho')}</small
+												? 'Hinneh'
+												: ''}</small
 									>
 								</div>
 								{#each languagesChirho as languageChirho (languageChirho.id_chirho)}<div
@@ -314,11 +316,7 @@
 										>
 											{languageChirho.words_chirho[indexChirho].gloss_chirho}
 										</p>
-										<small
-											>{readerTChirho('language_approved_chirho', {
-												label_chirho: languageChirho.label_chirho
-											})}</small
-										>
+										<small class="gloss-source-chirho">GBT</small>
 									</div>{/each}
 								<div data-gloss-language-chirho="es-gbt-chirho" hidden>
 									<SpanishWordGlossChirho {spanishChirho} tokenIdChirho={tokenChirho.id_chirho} />
@@ -337,13 +335,18 @@
 											>{readerTChirho('qere_note_chirho')}</small
 										>
 									</div>{/if}
-								<p lang="en">{tokenChirho.root_note_chirho}</p>
-								<p lang="en">{tokenChirho.source_note_chirho}</p>
+								{#if tokenChirho.root_text_chirho}<p lang="en">
+										{tokenChirho.root_note_chirho}
+									</p>{/if}
+								{#if specificSourceNoteChirho(tokenChirho)}<p lang="en">
+										{specificSourceNoteChirho(tokenChirho)}
+									</p>{/if}
 								<p class="raw-morphology-chirho">
 									OSHB: <code>{tokenChirho.raw_morphology_chirho}</code>
 								</p>
 							</div>
 						</details>
+						<StudyAidLinkChirho />
 					</article>
 				{/each}
 			</div>

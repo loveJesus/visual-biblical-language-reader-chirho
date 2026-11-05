@@ -408,9 +408,15 @@ testChirho(
 		pageChirho.on('request', (requestChirho) => requestsChirho.push(requestChirho.url()));
 		for (const passageChirho of ['Prov.26.1', 'John.1.1']) {
 			await pageChirho.goto(`${readerOriginChirho}?lang_chirho=es#${passageChirho}`);
-			await expectChirho(pageChirho.locator('[data-audio-status-chirho]')).toContainText(
-				'Prueba de voz IA'
-			);
+			await expectChirho(
+				pageChirho.getByRole('heading', {
+					name: passageChirho.startsWith('John') ? 'Juan 1:1' : 'Proverbios 26:1',
+					exact: true
+				})
+			).toBeVisible();
+			await expectChirho(
+				pageChirho.locator('[data-speech-saved-only-chirho="true"]')
+			).toBeEnabled();
 			await pageChirho.evaluate(() =>
 				(
 					window as unknown as {
@@ -485,10 +491,16 @@ testChirho(
 );
 
 testChirho(
-	'the reader exposes only word audio while keeping passage navigation and pronunciation controls',
+	'the reader exposes saved-only verse audio alongside word speakers and passage controls',
 	async ({ page: pageChirho }) => {
 		for (const passageChirho of ['Prov.26.1', 'John.1.1']) {
 			await pageChirho.goto(`${readerOriginChirho}?lang_chirho=en#${passageChirho}`);
+			await expectChirho(
+				pageChirho.getByRole('heading', {
+					name: passageChirho.startsWith('John') ? 'John 1:1' : 'Proverbs 26:1',
+					exact: true
+				})
+			).toBeVisible();
 			await expectChirho(pageChirho.locator('[data-speech-recordings-chirho]')).toBeVisible();
 			await expectChirho
 				.poll(
@@ -502,15 +514,15 @@ testChirho(
 				.toBeGreaterThan(0);
 			await expectChirho(
 				pageChirho.locator('[data-pronounce-chirho]:not(.word-speech-chirho)')
-			).toHaveCount(0);
+			).toHaveCount(1);
 			const clipsChirho = JSON.parse(
 				(await pageChirho
 					.locator('[data-speech-recordings-chirho]')
 					.getAttribute('data-speech-recordings-chirho')) ?? '[]'
 			);
 			expectChirho(
-				clipsChirho.every(
-					(rowChirho: { token_id_chirho: string | null }) => rowChirho.token_id_chirho !== null
+				clipsChirho.some(
+					(rowChirho: { token_id_chirho: string | null }) => rowChirho.token_id_chirho === null
 				)
 			).toBe(true);
 			await expectChirho(
@@ -527,7 +539,7 @@ testChirho(
 			);
 			await expectChirho(
 				pageChirho.locator('[data-pronounce-chirho]:not(.word-speech-chirho)')
-			).toHaveCount(0);
+			).toHaveCount(1);
 		}
 	}
 );

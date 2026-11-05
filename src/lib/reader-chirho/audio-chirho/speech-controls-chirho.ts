@@ -59,6 +59,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			?.value;
 	}
 	function mayUseDeviceChirho(buttonChirho: HTMLButtonElement) {
+		if (buttonChirho.dataset.speechSavedOnlyChirho === 'true') return false;
 		const renditionChirho = greekRenditionChirho();
 		return (
 			languageChirho(buttonChirho) === 'he' ||
@@ -104,7 +105,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 						? clipChirho.pronunciation_chirho === 'erasmian_greek'
 						: clipChirho.pronunciation_chirho === 'modern_greek_aspirates' ||
 							(clipChirho.pronunciation_chirho === 'modern_greek' &&
-								mayUseDeviceChirho(buttonChirho)))) &&
+								!clipChirho.text_chirho.normalize('NFD').includes('\u0314')))) &&
 			clipChirho.language_chirho === (languageChirho(buttonChirho) === 'he' ? 'he' : 'el') &&
 			/^\/audio-chirho\/sha256-chirho\/[a-f0-9]{64}-chirho\.mp3$/u.test(
 				clipChirho.asset_path_chirho
@@ -135,6 +136,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			if (rawChirho.length > 16384) return null;
 			const wordsChirho = JSON.parse(rawChirho) as {
 				token_id_chirho: string;
+				text_chirho: string;
 				pause_after_chirho: number;
 			}[];
 			if (!Array.isArray(wordsChirho) || wordsChirho.length < 1 || wordsChirho.length > 150)
@@ -146,6 +148,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 				const clipChirho = availableChirho.find(
 					(rowChirho) =>
 						rowChirho.token_id_chirho === wordChirho.token_id_chirho &&
+						rowChirho.text_chirho === wordChirho.text_chirho &&
 						compatibleChirho(rowChirho, buttonChirho)
 				);
 				if (
@@ -253,6 +256,8 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			);
 		if (buttonChirho && wordSequenceChirho(buttonChirho))
 			return messageChirho('assembled_ready_chirho');
+		if (buttonChirho?.dataset.speechSavedOnlyChirho === 'true')
+			return messageChirho('verse_unavailable_chirho');
 		if (buttonChirho && !mayUseDeviceChirho(buttonChirho))
 			return messageChirho('rendition_unavailable_chirho');
 		const selectedChirho = voiceChirho(langChirho);

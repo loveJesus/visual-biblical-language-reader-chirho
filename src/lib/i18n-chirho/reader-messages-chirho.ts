@@ -8,6 +8,7 @@ import { defineCatalogueChirho, translateChirho } from './translate-chirho';
 export const readerCatalogueChirho = defineCatalogueChirho({
 	en: {
 		nav_label_chirho: 'Choose a passage',
+		about_study_aids_chirho: 'About meanings & study aids',
 		book_chirho: 'Book',
 		high_quality_books_chirho: 'High-quality illustrations',
 		other_books_chirho: 'More books',
@@ -154,6 +155,7 @@ export const readerCatalogueChirho = defineCatalogueChirho({
 	},
 	es: {
 		nav_label_chirho: 'Elegir un pasaje',
+		about_study_aids_chirho: 'Acerca de los significados y las ayudas de estudio',
 		book_chirho: 'Libro',
 		high_quality_books_chirho: 'Ilustraciones de alta calidad',
 		other_books_chirho: 'Más libros',

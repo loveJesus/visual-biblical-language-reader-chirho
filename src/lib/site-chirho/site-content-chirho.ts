@@ -816,17 +816,27 @@ export const ABOUT_GUIDE_CHIRHO: Record<LocaleChirho, AboutGuideChirho> = {
 			{
 				title_chirho: 'Helps still growing',
 				body_chirho:
-					'Most words already have a picture and a saved recording, and more are added over time. Verse scenes cover Proverbs, John and Genesis; Spanish word meanings cover some books so far. Anything missing is shown as missing.'
+					'Most words already have a picture and a saved recording, and more are added over time. Verse illustrations now accompany all 66 books, with many initial drafts still being refined. Spanish word meanings cover some books so far. Anything missing is shown as missing.'
 			},
 			{
 				title_chirho: 'AI-assisted, clearly labelled',
 				body_chirho:
-					'Pictures, scenes and recordings are made with AI assistance and can contain mistakes. Their review states are shown, and “Report image issue” sends an illustration for review.'
+					'Pictures, scenes and recordings are made with AI assistance and can contain mistakes. These study aids are still being reviewed. A general word picture is a memory aid for a lemma; another use of that word may call for a different picture. Use “Report image issue” to point out an illustration that needs attention.'
 			},
 			{
 				title_chirho: 'Meanings with their sources',
 				body_chirho:
-					'Word meanings name their source and approval state. Hinneh does not blend unreviewed machine text into an unmarked translation.'
+					'The short source labels distinguish GBT meanings approved in Global Bible Tools, Hinneh-authored learning glosses, and Berean Interlinear glosses. Spanish meanings use the approved GBT layer where available. These are word glosses in the original word order, rather than a sentence translation.'
+			},
+			{
+				title_chirho: 'Roots and grammatical analysis',
+				body_chirho:
+					'Many words do not yet have a reviewed root relationship. Lemmas and morphology follow their attributed Hebrew or Greek source; grammatical descriptions are derived from those codes. A lemma, a root and a word picture serve different purposes. Notes about a particular reading or source difficulty stay beside the word.'
+			},
+			{
+				title_chirho: 'Pronunciation and verse playback',
+				body_chirho:
+					'The IPA is a draft guide to the chosen pronunciation, with stress and reading questions checked against the source. Recordings are AI-generated pronunciation aids awaiting review. Play verse uses a saved full-verse rendition where available, otherwise a complete sequence of saved word clips. Assembled readings may sound less natural; verses with missing clips remain unavailable while the library grows. An individual word may use a matching local device voice when its recording is missing; whole-verse playback uses saved recordings only.'
 			}
 		],
 		sources_link_chirho: 'Sources and credits'
@@ -892,17 +902,27 @@ export const ABOUT_GUIDE_CHIRHO: Record<LocaleChirho, AboutGuideChirho> = {
 			{
 				title_chirho: 'Ayudas que siguen creciendo',
 				body_chirho:
-					'La mayoría de las palabras ya tienen imagen y grabación guardada, y se añaden más con el tiempo. Las escenas de versículos cubren Proverbios, Juan y Génesis; los significados en español cubren por ahora algunos libros. Lo que falta se indica claramente.'
+					'La mayoría de las palabras ya tienen imagen y grabación guardada, y se añaden más con el tiempo. Los 66 libros ya tienen ilustraciones de sus versículos; muchos borradores iniciales siguen mejorándose. Los significados en español cubren por ahora algunos libros. Lo que falta se indica claramente.'
 			},
 			{
 				title_chirho: 'Con ayuda de IA, bien identificado',
 				body_chirho:
-					'Las imágenes, escenas y grabaciones se hacen con ayuda de IA y pueden contener errores. Se muestran sus estados de revisión, y «Informar de un problema» envía una ilustración a revisión.'
+					'Las imágenes, escenas y grabaciones se hacen con ayuda de IA y pueden contener errores. Estas ayudas de estudio siguen en revisión. La imagen general de una palabra sirve como ayuda de memoria para su lema; otro uso de esa palabra puede necesitar una imagen diferente. «Informar de un problema» permite señalar una ilustración que necesita atención.'
 			},
 			{
 				title_chirho: 'Significados con su fuente',
 				body_chirho:
-					'Los significados indican su fuente y su estado de aprobación. Hinneh no mezcla texto automático sin revisar en una traducción sin identificar.'
+					'Las etiquetas breves distinguen los significados GBT aprobados en Global Bible Tools, las glosas de aprendizaje de Hinneh y las glosas del Interlineal Berean. Los significados en español usan la capa GBT aprobada cuando está disponible. Son glosas en el orden de las palabras originales, no una traducción de la oración.'
+			},
+			{
+				title_chirho: 'Raíces y análisis gramatical',
+				body_chirho:
+					'Muchas palabras aún no tienen una relación de raíz revisada. Los lemas y la morfología siguen la fuente hebrea o griega citada; las descripciones gramaticales se derivan de esos códigos. Un lema, una raíz y la imagen de una palabra cumplen funciones distintas. Las notas sobre una lectura concreta o una dificultad de la fuente permanecen junto a la palabra.'
+			},
+			{
+				title_chirho: 'Pronunciación y audio del versículo',
+				body_chirho:
+					'El AFI es una guía provisional de la pronunciación elegida, con el acento y las dudas de lectura contrastados con la fuente. Las grabaciones son ayudas de pronunciación generadas con IA y pendientes de revisión. Oír versículo usa una grabación completa cuando está disponible; en otro caso, une una secuencia completa de grabaciones de palabras. Estas lecturas pueden sonar menos naturales; los versículos con grabaciones faltantes siguen sin audio mientras crece la biblioteca. Una palabra individual puede usar una voz local del dispositivo si falta su grabación; el audio del versículo completo usa solo grabaciones guardadas.'
 			}
 		],
 		sources_link_chirho: 'Fuentes y créditos'

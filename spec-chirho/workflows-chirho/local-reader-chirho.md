@@ -167,6 +167,20 @@ flowchart TD
 
 For mixed-sheet recovery, exact-context deferrals and independent worker alerts, see [art recovery](./art-recovery-chirho.md). Deferred cases never acquire an icon or count as completed semantic review.
 
+### Study-aid explanations
+
+The About page's localized `study-aids-chirho` section explains meaning sources, code-derived morphology, unassigned roots, contextual pictures, IPA and recording review. Each Hebrew/Greek word card links directly to it through `StudyAidLinkChirho`. `specificSourceNoteChirho` hides only known generic importer boilerplate; explicit source-review flags and unknown or word-specific notes remain in the card. Actual meanings, morphology, available root relationships, qere, pronunciation cautions, source codes and required license credits stay accessible.
+
+```mermaid
+flowchart TD
+    detail_source_chirho[Source-bound word detail] --> specific_note_chirho{Specific caution or source-review flag}
+    specific_note_chirho -->|yes| retain_note_chirho[Retain caution beside the affected word]
+    specific_note_chirho -->|generic process| about_notes_chirho[Explain once in bilingual About section]
+    detail_source_chirho --> compact_source_chirho[Meaning and compact source badge]
+    compact_source_chirho --> about_link_chirho[Small About meanings and study aids link]
+    about_link_chirho --> about_notes_chirho
+```
+
 ### Source-bound chapter pronunciation trials
 
 The October 30 chapter trial is limited to Proverbs 26 (28 verses) and John 1 (51 verses). Hebrew is an Israeli pronunciation draft prepared offline with HavarotJS 0.25.5, qere, source accents and 26 exact stress reviews for prepositive or duplicate poetic marks. Analysis copies may be sequenced by the library; canonical source text and matching keys remain code-point exact. Final qamats plus silent yod-vav is analysed across intervening marks. This is a bounded draft, not an all-Bible certified phonetic engine. John uses its exact accented Greek and the licensed native Modern Greek voice, without blanket IPA replacement.

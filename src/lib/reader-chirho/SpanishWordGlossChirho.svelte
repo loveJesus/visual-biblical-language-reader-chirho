@@ -15,7 +15,7 @@
 
 <!-- One word's approved Spanish gloss, or the honest reason there is none; never a guess. -->
 {#if glossChirho}<p class="word-gloss-chirho" lang="es">{glossChirho}</p>
-	<small>{readerTChirho('spanish_gloss_approved_chirho')}</small>
+	<small class="gloss-source-chirho">GBT</small>
 {:else}<p class="word-gloss-chirho">
 		{layerChirho
 			? readerTChirho('spanish_gloss_missing_chirho')

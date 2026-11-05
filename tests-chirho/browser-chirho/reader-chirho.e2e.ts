@@ -250,7 +250,7 @@ testChirho(
 			await expectChirho(groupChirho.locator('.word-gloss-chirho')).toHaveText(
 				languageChirho.words_chirho[0].gloss_chirho
 			);
-			await expectChirho(groupChirho).toContainText('Approved in Global Bible Tools export');
+			await expectChirho(groupChirho.locator('.gloss-source-chirho')).toBeVisible();
 			await expectChirho(groupChirho.locator('.word-gloss-chirho')).toHaveAttribute(
 				'dir',
 				languageChirho.direction_chirho

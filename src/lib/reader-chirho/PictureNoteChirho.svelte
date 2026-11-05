@@ -11,7 +11,6 @@
 	<p class="quiet-note-chirho lemma-picture-note-chirho">
 		{readerTChirho('general_picture_chirho')}
 		<span lang="en">{iconChirho.contextual_meaning_chirho}</span>.
-		<span>{readerTChirho('general_picture_caveat_chirho')}</span>
 	</p>
 {/if}
 
