@@ -24,6 +24,7 @@
 	import { fetchChapterMediaChirho } from './media-client-chirho';
 	import { readerTChirho, type ReaderKeyChirho } from '$lib/i18n-chirho/reader-messages-chirho';
 	import { bookNameChirho } from '$lib/i18n-chirho/labels-chirho';
+	import { siteTChirho } from '$lib/site-chirho/site-content-chirho';
 	import {
 		createSpanishGlossClientChirho,
 		type SpanishLayerResultChirho
@@ -308,7 +309,7 @@
 		aria-label={readerTChirho('nav_label_chirho')}
 	>
 		<h2 class="reader-entry-chirho">
-			{localeStateChirho.currentChirho === 'es' ? 'Úsalo aquí' : 'Use it here'}
+			{siteTChirho('start_chirho')}
 		</h2>
 		<div class="fields-chirho">
 			<label

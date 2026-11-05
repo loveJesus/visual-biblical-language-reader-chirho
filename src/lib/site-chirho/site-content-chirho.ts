@@ -31,7 +31,7 @@ export const SITE_MESSAGES_CHIRHO = defineCatalogueChirho({
 		heading_rest_chirho: 'the Bible in the original languages.',
 		introduction_chirho:
 			'The Word of God, set fully before you in Hebrew and Greek. Colors and small symbols show how each word works; pictures and sound help its meaning come clear as you read.',
-		start_chirho: 'Use it here',
+		start_chirho: 'Use it online here',
 		free_chirho: 'Free to use. Freely given.',
 		free_reason_chirho: 'Why freely given? · Selling Jesus',
 		source_code_chirho: 'Open source · GPLv3 or later',
@@ -74,7 +74,7 @@ export const SITE_MESSAGES_CHIRHO = defineCatalogueChirho({
 		heading_rest_chirho: 'la Biblia en sus idiomas originales.',
 		introduction_chirho:
 			'La Palabra de Dios, plenamente delante de ti en hebreo y griego. Colores y pequeños símbolos muestran cómo funciona cada palabra; imágenes y sonido ayudan a que su sentido se aclare mientras lees.',
-		start_chirho: 'Úsalo aquí',
+		start_chirho: 'Úsalo en línea aquí',
 		free_chirho: 'De uso gratuito. Dado gratuitamente.',
 		free_reason_chirho: '¿Por qué dar gratuitamente? · Selling Jesus',
 		source_code_chirho: 'Código abierto · GPLv3 o posterior',
