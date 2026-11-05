@@ -6,6 +6,8 @@
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
 	import AidSpecimenChirho from './AidSpecimenChirho.svelte';
 	import HomeExperienceChirho from './HomeExperienceChirho.svelte';
+	import AppDownloadsChirho from './apps-chirho/AppDownloadsChirho.svelte';
+	import { LEARNING_ANCHOR_CHIRHO, learningTChirho } from './learning-chirho/learning-paths-chirho';
 	import {
 		HINNEH_HEBREW_CHIRHO,
 		READING_AIDS_CHIRHO,
@@ -45,6 +47,14 @@
 				>
 			</div>
 			<p class="intro-scope-chirho">{siteTChirho('scope_chirho')}</p>
+			<AppDownloadsChirho compactChirho />
+			<p class="intro-learning-chirho">
+				<a
+					href={resolveChirho(
+						`/about-chirho/?lang_chirho=${localeStateChirho.currentChirho}#${LEARNING_ANCHOR_CHIRHO}`
+					)}>{learningTChirho('home_chirho')} <span aria-hidden="true">→</span></a
+				>
+			</p>
 		</div>
 		<div class="intro-preview-chirho"><HomeExperienceChirho /></div>
 	</div>
@@ -171,13 +181,21 @@
 		color: var(--copper-chirho);
 	}
 	.intro-scope-chirho {
-		margin: 26px 0 0;
+		margin: 26px 0 14px;
 		font-size: 13px;
 		line-height: 1.6;
 		color: #66685a;
 	}
 	.intro-preview-chirho {
 		min-width: 0;
+	}
+	.intro-learning-chirho {
+		margin: 16px 0 0;
+		font: 14px/1.65 var(--sans-chirho);
+	}
+	.intro-learning-chirho a {
+		color: #3d5045;
+		text-underline-offset: 4px;
 	}
 	.intro-aids-chirho {
 		padding: clamp(52px, 7vw, 92px) 0 clamp(56px, 7vw, 96px);

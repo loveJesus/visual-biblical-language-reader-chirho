@@ -70,6 +70,21 @@ flowchart TD
 
 Original code is GPL-3.0-or-later. Hinneh-created artwork, including verse illustrations, word pictures and branding art, is dedicated under CC0 1.0 Universal to the extent of project-held rights; attribution is optional. Project-held pronunciation-recording rights remain CC BY 4.0. Third-party source data, adapted unfoldingWord help and voice/model rights retain their own terms. A GitHub visibility flag alone proves neither a clean source cut nor a working clone; record the exact outgoing commit, scan and credential-free build/test evidence, then verify anonymous public reads before releasing the source link.
 
+## Native downloads and learning paths
+
+```mermaid
+flowchart LR
+  stores_chirho[Shared verified listing URLs] --> available_chirho{Public listing available}
+  available_chirho -->|no| placeholder_chirho[Store name and Coming soon without a link]
+  available_chirho -->|yes| download_chirho[Same position becomes the real download link]
+  placeholder_chirho --> positions_chirho[Home About and footer]
+  download_chirho --> positions_chirho
+  home_chirho[Home and footer learning links] --> about_chirho[About learning paths]
+  about_chirho --> visitor_chirho[Visitor selects official website or YouTube channel]
+```
+
+`AppDownloadsChirho` uses one store registry, with absent URLs until the actual public listings are live. It keeps the permanent download positions and does not offer a fake button, draft listing or signup. `LearningPathsChirho` links to the official Lingua Deo Gloria, Aleph with Beth and Alpha with Angela sites and their own linked YouTube channels. The section is bilingual; the courses remain external ministries. No video embed, remote font, automatic third-party request or synthesis is added. Following a course link is the visitor's action. The home intro stays section-free inside its outer section so the existing offline export removes it completely.
+
 ## Optional word IPA
 
 ```mermaid

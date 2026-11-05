@@ -2,6 +2,8 @@
 <script lang="ts">
 	import { resolve as resolveChirho } from '$app/paths';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
+	import AppDownloadsChirho from './apps-chirho/AppDownloadsChirho.svelte';
+	import { LEARNING_ANCHOR_CHIRHO, learningTChirho } from './learning-chirho/learning-paths-chirho';
 	import {
 		siteTChirho,
 		FREE_MINISTRY_URL_CHIRHO,
@@ -41,6 +43,12 @@
 			>{siteTChirho('source_code_chirho')} ↗</a
 		>
 		<a href={SOFTWARE_URL_CHIRHO} rel="external noreferrer">Love Jesus Software ↗</a>
+		<a
+			href={resolveChirho(
+				`/about-chirho/?lang_chirho=${localeStateChirho.currentChirho}#${LEARNING_ANCHOR_CHIRHO}`
+			)}>{learningTChirho('link_chirho')}</a
+		>
+		<AppDownloadsChirho compactChirho />
 	</nav>
 </footer>
 

@@ -177,8 +177,56 @@ testChirho(
 			await expectChirho(pageChirho.locator('html')).toHaveAttribute('lang', 'es');
 			await expectChirho(pageChirho.locator('footer a[href^="/contact-chirho/"]')).toBeVisible();
 		}
-		await pageChirho.locator('footer a[href^="/about-chirho"]').click();
+		await pageChirho.locator('footer a[href^="/about-chirho"]').first().click();
 		await expectChirho(pageChirho.locator('article h1')).toBeVisible();
+	}
+);
+
+testChirho(
+	'permanent app download positions stay honest and learning paths open the verified external resources',
+	async ({ page: pageChirho }) => {
+		const thirdPartyRequestsChirho: string[] = [];
+		pageChirho.on('request', (requestChirho) => {
+			if (
+				/https:\/\/(?:www\.)?(?:youtube\.com|linguadeogloria\.org|freehebrew\.online|freegreek\.online)\//u.test(
+					requestChirho.url()
+				)
+			)
+				thirdPartyRequestsChirho.push(requestChirho.url());
+		});
+		for (const localeChirho of ['en', 'es']) {
+			await pageChirho.goto(`/?lang_chirho=${localeChirho}`);
+			await expectChirho(pageChirho.locator('html')).toHaveAttribute('lang', localeChirho);
+			await expectChirho(
+				pageChirho.locator('[data-online-intro-chirho] .pending-chirho')
+			).toHaveCount(2);
+			await expectChirho(pageChirho.locator('footer .pending-chirho')).toHaveCount(2);
+			await expectChirho(pageChirho.locator('.app-downloads-chirho a')).toHaveCount(0);
+			await pageChirho.locator('.intro-learning-chirho a').click();
+			await expectChirho(pageChirho.locator('#learning-paths-chirho')).toBeVisible();
+			expectChirho(new URL(pageChirho.url()).hash).toBe('#learning-paths-chirho');
+			await expectChirho(pageChirho.locator('#apps-chirho .pending-chirho')).toHaveCount(2);
+			await expectChirho(pageChirho.locator('#apps-chirho')).toContainText(
+				localeChirho === 'en' ? 'Coming soon' : 'Próximamente'
+			);
+			const learningChirho = pageChirho.locator('#learning-paths-chirho');
+			for (const hrefChirho of [
+				'https://www.linguadeogloria.org/',
+				'https://www.youtube.com/@LinguaDeoGloria',
+				'https://freehebrew.online/',
+				'https://www.youtube.com/channel/UCkKmeTinUEU27syZPKrzWQQ',
+				'https://freegreek.online/',
+				'https://www.youtube.com/channel/UCe0ilqwSO8XVnCw4m3UYC1Q'
+			])
+				await expectChirho(learningChirho.locator(`a[href="${hrefChirho}"]`)).toHaveCount(1);
+			for (const widthChirho of [320, 390, 1440]) {
+				await pageChirho.setViewportSize({ width: widthChirho, height: 920 });
+				expectChirho(
+					await pageChirho.evaluate(() => document.documentElement.scrollWidth <= innerWidth)
+				).toBe(true);
+			}
+		}
+		expectChirho(thirdPartyRequestsChirho).toEqual([]);
 	}
 );
 

@@ -7,6 +7,8 @@
 	import HomeExperienceChirho from './HomeExperienceChirho.svelte';
 	import PageMetaChirho from './PageMetaChirho.svelte';
 	import ContactFormChirho from './contact-chirho/ContactFormChirho.svelte';
+	import AppDownloadsChirho from './apps-chirho/AppDownloadsChirho.svelte';
+	import LearningPathsChirho from './learning-chirho/LearningPathsChirho.svelte';
 	import previewChirho from '../../../data-chirho/reader-chirho/home-preview-chirho.json';
 	import {
 		ABOUT_GUIDE_CHIRHO,
@@ -152,6 +154,10 @@
 				</ul>
 			</div>
 		</section>
+		<div class="page-shell-chirho about-apps-chirho">
+			<AppDownloadsChirho idChirho="apps-chirho" />
+			<LearningPathsChirho />
+		</div>
 	{/if}
 
 	<div
@@ -212,6 +218,9 @@
 </article>
 
 <style>
+	.about-apps-chirho {
+		margin-top: 36px;
+	}
 	.information-page-chirho {
 		--forest-chirho: #1d3a2c;
 		--copper-chirho: #a2552f;
