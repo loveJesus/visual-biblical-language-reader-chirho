@@ -6,7 +6,7 @@
 flowchart TD
   authority_chirho[L.J. authorizes the shared Apple key and Hinneh preparation] --> inspect_chirho[Read the exact bundle, app and editable iOS draft]
   key_chirho[Private home key plus selected shared environment names] --> inspect_chirho
-  inspect_chirho --> metadata_chirho[Save EN and ES listing, manual release and categories]
+  inspect_chirho --> metadata_chirho[Save EN and ES listing and preserve the current release choice]
   assets_chirho[Verified native captures, RGB compositions and SHA manifest] --> reserve_chirho[Reuse exact image references or reserve one upload]
   metadata_chirho --> reserve_chirho
   reserve_chirho --> upload_chirho[PUT verified byte ranges only to Apple storage]
@@ -26,7 +26,11 @@ flowchart TD
   attach_chirho --> draft_chirho
   forms_chirho --> draft_chirho
   free_chirho --> draft_chirho
-  draft_chirho --> owner_chirho[Owner reviews the complete listing before a separate submission decision]
+  draft_chirho --> owner_chirho[L.J. authorizes submission of the complete listing]
+  owner_chirho --> ready_chirho[Apple Add for Review validates the exact version and build]
+  ready_chirho --> submit_chirho[Submit the same review item once]
+  submit_chirho --> submitted_chirho[Read UI receipt and API submission state before any repeat]
+  submitted_chirho --> apple_chirho[Apple decides approval; saved release choice controls launch]
 ```
 
 The narrow operator client and listing commands live under `apps-chirho/ios-chirho/scripts-chirho/store-chirho/`. The client reads only the named Apple entries from `~/.env-chirho`, loads the P-256 key into memory, and signs short-lived API tokens. Credentials, upload authorization URLs and private review contacts never belong in source, public metadata or progress reports. This administrative credential is shared storage, not a Hinneh runtime secret; it must never be deployed to the website.
@@ -44,6 +48,12 @@ The November 4 security probe found a retained Cloudflare security event with a 
 On November 4, app 6830790082 holds draft version 0.1 with build 1 attached, English and Spanish metadata, 24 processed screenshots, free pricing, and the 175 currently listed territories selected without automatic future-territory opt-in or pre-orders. This remains an unsubmitted draft with manual release. The private review-contact phone, privacy-label questionnaire, and content-rights/regional compliance forms must be completed from accurate owner and data-handling evidence before submission. No legal agreement was accepted and no paid contract was enabled by this workflow.
 
 The later November 4 readback supersedes that initial checkpoint: corrected build 2 is VALID, APP_STORE_ELIGIBLE and attached; the private review contact and technical notes are complete; third-party content rights are declared. The two EN/ES creative images have four active Header/Search Results placements. All 24 screenshot identities/order and 175 free prices are verified. Initial selected availability is 174 regions, excluding China mainland without its required religious-content permit. The latest draft is still PREPARE_FOR_SUBMISSION but now shows AFTER_APPROVAL rather than MANUAL; preserve the saved choice and make its launch consequence clear to the owner. App Privacy publication and DSA status remain unverified owner forms. No review submission or public release is performed by these tools.
+
+On November 5, L.J. authorized completion of App Privacy and putting Hinneh into Apple review, and requested Spanish alongside English. The authenticated UI published Other Diagnostic Data for App Functionality, linked to the user and not used for tracking. The existing account non-trader selection and active DSA row were inspected without any declaration change, public contact entry or new agreement acceptance. The separate contact-verification banner was not treated as permission to publish private contact information.
+
+English and Spanish names, subtitles, descriptions, keywords, promotional text, policy/support URLs and 24 active screenshot placements were read back. A narrow two-description PATCH updated scene coverage to all 66 books, preserving AFTER_APPROVAL. Its initial malformed localization path returned a definite HTTP422 without a valid target; the operator was corrected, then both actual localization ids and saved descriptions were verified. Free prices remain zero in all 175 territories; selected availability remains 174 with China mainland excluded.
+
+Apple accepted Add for Review, then Submit for Review returned “1 Item Submitted.” Review submission 0fe2204e-0487-4932-93fe-4760d20a5d78 was submitted at 2026-11-05T16:19:15.742Z. Both the UI and public API show WAITING_FOR_REVIEW for app 6830790082, iOS version 0.1, with existing build 2 (de6e79da-d400-404f-8459-df147befee06). The saved AFTER_APPROVAL setting remains. This is submission, not Apple approval or a public listing. No binary was rebuilt or uploaded again. November 5 proof is private under workspace-chirho/native-apps-chirho/app-store-creative-chirho/2026-11-05-chirho/checks-chirho/.
 
 Private, dated API receipts and final verification belong under `workspace-chirho/native-apps-chirho/app-store-connect-chirho/2026-11-04-chirho/`. Signed archives, exports and upload logs stay under ignored `build-chirho/ios-distribution-chirho/`. The website privacy explanation is published separately through the sole existing publisher; store uploads never start another artwork writer or publisher.
 
