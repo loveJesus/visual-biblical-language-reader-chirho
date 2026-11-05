@@ -19,7 +19,12 @@ class GeneratorJobChirho:
     """Own one request and child; ordinary shutdown drains instead of killing it."""
 
     def __init__(
-        self_chirho, root_chirho, attempt_chirho, prompt_chirho, recovery_chirho
+        self_chirho,
+        root_chirho,
+        attempt_chirho,
+        prompt_chirho,
+        recovery_chirho,
+        model_chirho="gpt-6.1-terra",
     ):
         self_chirho.attempt_chirho = attempt_chirho
         self_chirho.recovery_chirho = recovery_chirho
@@ -40,7 +45,7 @@ class GeneratorJobChirho:
                     "codex",
                     "exec",
                     "-m",
-                    "gpt-6.1-terra",
+                    model_chirho,
                     "-c",
                     "daybreak=false",
                     "-s",

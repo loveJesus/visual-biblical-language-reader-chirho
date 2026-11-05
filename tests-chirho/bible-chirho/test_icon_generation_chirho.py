@@ -79,6 +79,33 @@ class GeneratorLifecycleTestsChirho(unittest.TestCase):
             )
         spawn_chirho.assert_not_called()
 
+    def test_explicit_pipeline_model_does_not_change_legacy_default_or_fallback_chirho(
+        self_chirho,
+    ):
+        child_chirho = Mock(pid=505)
+        child_chirho.poll.return_value = 0
+        with patch.object(
+            generation_chirho.subprocess, "Popen", return_value=child_chirho
+        ) as spawn_chirho:
+            legacy_chirho = generation_chirho.GeneratorJobChirho(
+                self_chirho.root_chirho,
+                self_chirho.attempt_chirho("legacy-chirho"),
+                "prompt",
+                self_chirho.recovery_chirho,
+            )
+            self_chirho.assertEqual(spawn_chirho.call_args.args[0][3], "gpt-6.1-terra")
+            legacy_chirho.wait_chirho()
+            configured_chirho = generation_chirho.GeneratorJobChirho(
+                self_chirho.root_chirho,
+                self_chirho.attempt_chirho("configured-chirho"),
+                "prompt",
+                self_chirho.recovery_chirho,
+                model_chirho="gpt-6.1-sol",
+            )
+            self_chirho.assertEqual(spawn_chirho.call_args.args[0][3], "gpt-6.1-sol")
+            configured_chirho.wait_chirho()
+            self_chirho.assertEqual(spawn_chirho.call_count, 2)
+
     def test_pid_journal_failure_drains_owned_child_chirho(self_chirho):
         child_chirho = Mock(pid=303)
         self_chirho.recovery_chirho.request_chirho.side_effect = [

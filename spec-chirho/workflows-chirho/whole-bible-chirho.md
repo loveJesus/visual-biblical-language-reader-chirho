@@ -48,6 +48,37 @@ Audio bytes are uploaded and read back before use. Public snapshots validate loc
 
 ## Missing lemma pictures
 
+The current `icon_pipeline_chirho/run_chirho.py` separates the production queues. L.J.'s November 5 priority is at least one recognizable general picture per exact lemma identity, with more senses later. A useful general mnemonic does not have to depict every occurrence precisely. Its label and source notes must remain honest, and Hebrew augments/Greek lexical forms are still distinct identities.
+
+```mermaid
+flowchart LR
+  missing_chirho[Unpictured lemma identities] --> ready_chirho[Durable FIFO with exact reservations]
+  ready_chirho --> produce_chirho[Up to two generation-only processes]
+  produce_chirho --> saved_chirho[Original atlas and source reviews saved]
+  saved_chirho --> check_queue_chirho[Bounded queue of up to eight uninstalled sheets]
+  check_queue_chirho --> checker_chirho[Independent checker process]
+  checker_chirho --> safe_chirho[Single installer and exact R2 preservation]
+  safe_chirho --> published_chirho[Normal incremental publication]
+  checker_chirho --> failed_chirho[Only confirmed failed cells]
+  failed_chirho --> budget_chirho{Lifetime attempts remain}
+  budget_chirho -->|yes| tail_chirho[Linked replacement at end of FIFO]
+  tail_chirho --> ready_chirho
+  budget_chirho -->|no| hold_chirho[Keep bounded failure evidence]
+  produce_chirho --> unknown_chirho[Unknown outcome retained for reconciliation]
+```
+
+`queue_chirho.py` uses SQLite WAL/FULL transactions to reserve each lemma once, order work, and record immutable attempt events. The parent seals its plan hash before a child can request an image. The producer never installs and the checker never generates. The supervisor and both stages retain the original coordinator and installer locks, so no second worker/catalogue writer is introduced. The existing built-in image tool, pending human review state, exact source bindings and R2-before-retirement policy remain. There is no paid provider fallback.
+
+Known visual/layout failures return only the unsuccessful lemma identities to the FIFO tail. Up to three lifetime image-attempt reservations are allowed per lemma, counting known original attempts; the overall sheet bound remains 1,000 and pending local sheets are capped at eight, with a 15 GiB disk floor. A proven pre-image source stop releases only its current unused image reservation; it does not erase old attempts. A concern about one target never withholds fifteen unrelated lemmas. Unsupported source identities and unknown original results stay separate. A malformed review is preserved remotely and held while unrelated sheets continue; an archive/storage failure drains generation and keeps the existing image for recovery rather than rendering it again.
+
+`seed_chirho.py` records hashes of the old state, candidate index, actual media summaries and imported dispositions. Existing pictured lemmas are skipped. Historical records are not rewritten: returned failures obtain linked replacement attempts under the direct November 5 instruction, while legacy, missing-source and unknown outcomes remain held. A definitive Codex `model_not_found` rejection with zero image calls can be reconciled as an unsent reservation, retaining the raw failure and proof; it never supplies permission for a fallback model. The new pipeline's launcher model is an explicit choice using the configured global default when there is no project override. A rejected configuration is reported rather than silently changing models.
+
+The default command is a read-only plan. `--mode-chirho seed --apply-chirho` creates the source-bound queue; `--mode-chirho run --apply-chirho --sheets-chirho N` runs the independent stages within the fixed bound; `--mode-chirho status` reads actual queue state. Progress timestamps come from recorded state transitions, not polling timers. SIGTERM drains calls and leaves pending originals resumable. A restart rechecks the same saved image or completes its installation, and never reissues an unknown request.
+
+### Earlier coupled worker
+
+The following describes the retained earlier worker and the provenance of its historical attempts. It must not run alongside the new pipeline.
+
 ```mermaid
 flowchart TD
   missing_chirho[Missing full-lemma inventory] --> legacy_chirho[Exclude original request retry and source holds]
