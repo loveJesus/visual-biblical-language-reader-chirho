@@ -15,6 +15,14 @@ import time
 from pathlib import Path
 
 
+def codex_executable_chirho():
+    """Use the managed CLI in both login shells and background tmux processes."""
+    path_chirho = (Path.home() / ".local/bin/codex").resolve(strict=True)
+    if not path_chirho.is_file() or not os.access(path_chirho, os.X_OK):
+        raise OSError("The managed Codex executable is unavailable")
+    return str(path_chirho)
+
+
 class GeneratorJobChirho:
     """Own one request and child; ordinary shutdown drains instead of killing it."""
 
@@ -26,6 +34,7 @@ class GeneratorJobChirho:
         recovery_chirho,
         model_chirho="gpt-6.1-terra",
     ):
+        executable_chirho = codex_executable_chirho()
         self_chirho.attempt_chirho = attempt_chirho
         self_chirho.recovery_chirho = recovery_chirho
         self_chirho.error_chirho = None
@@ -42,7 +51,7 @@ class GeneratorJobChirho:
         try:
             self_chirho.child_chirho = subprocess.Popen(
                 [
-                    "codex",
+                    executable_chirho,
                     "exec",
                     "-m",
                     model_chirho,

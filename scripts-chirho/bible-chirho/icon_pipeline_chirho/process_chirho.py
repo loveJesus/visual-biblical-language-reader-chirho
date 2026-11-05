@@ -10,6 +10,8 @@ import subprocess
 import time
 from pathlib import Path
 
+from icon_generation_chirho import codex_executable_chirho
+
 # The new pipeline uses L.J.'s configured global default (no project override exists).
 # This is an explicit launcher choice, never an automatic model/provider fallback.
 MODEL_CHIRHO = "gpt-6.1-sol"
@@ -104,6 +106,7 @@ class CheckJobChirho:
     def __init__(
         self_chirho, root_chirho, attempt_chirho, prompt_chirho, number_chirho
     ):
+        executable_chirho = codex_executable_chirho()
         self_chirho.started_chirho = time.monotonic()
         self_chirho.path_chirho = attempt_chirho
         self_chirho.log_chirho = (
@@ -111,7 +114,7 @@ class CheckJobChirho:
         ).open("x")
         self_chirho.child_chirho = subprocess.Popen(
             [
-                "codex",
+                executable_chirho,
                 "exec",
                 "-m",
                 MODEL_CHIRHO,

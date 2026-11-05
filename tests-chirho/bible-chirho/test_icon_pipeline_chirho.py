@@ -11,9 +11,10 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 ROOT_CHIRHO = Path(__file__).resolve().parents[2]
-sys.path.insert(
-    0, str(ROOT_CHIRHO / "scripts-chirho/bible-chirho/icon_pipeline_chirho")
-)
+sys.path[:0] = [
+    str(ROOT_CHIRHO / "scripts-chirho/bible-chirho/icon_pipeline_chirho"),
+    str(ROOT_CHIRHO / "scripts-chirho/bible-chirho"),
+]
 import process_chirho
 import runtime_chirho
 from queue_chirho import MAX_ATTEMPTS_CHIRHO, MAX_BACKLOG_CHIRHO, QueueChirho
