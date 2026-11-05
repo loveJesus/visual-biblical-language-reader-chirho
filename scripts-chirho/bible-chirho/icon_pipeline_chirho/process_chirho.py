@@ -1,6 +1,7 @@
 # For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 """A checker owns no image request. Workflow: whole-bible-chirho.md."""
 
+import base64
 import hashlib
 import json
 import os
@@ -58,7 +59,7 @@ def confirmed_model_refusal_chirho(attempt_chirho):
     }
 
 
-def image_calls_chirho(attempt_chirho, log_name_chirho="codex-chirho.jsonl"):
+def generation_rollout_chirho(attempt_chirho, log_name_chirho="codex-chirho.jsonl"):
     events_chirho = [
         json.loads(line_chirho)
         for line_chirho in (attempt_chirho / log_name_chirho).read_text().splitlines()
@@ -81,8 +82,23 @@ def image_calls_chirho(attempt_chirho, log_name_chirho="codex-chirho.jsonl"):
     )
     if len(paths_chirho) != 1:
         raise ValueError("Original image-call evidence unavailable")
+    return paths_chirho[0]
+
+
+def image_call_chirho(payload_chirho):
+    content_chirho = str(payload_chirho.get("arguments", "")) + str(
+        payload_chirho.get("input", "")
+    )
+    return "image_gen" in payload_chirho.get("name", "") or (
+        "tools.image_gen__imagegen(" in content_chirho
+    )
+
+
+def image_calls_chirho(attempt_chirho, log_name_chirho="codex-chirho.jsonl"):
     count_chirho = 0
-    with paths_chirho[0].open() as file_chirho:
+    with generation_rollout_chirho(
+        attempt_chirho, log_name_chirho
+    ).open() as file_chirho:
         for line_chirho in file_chirho:
             row_chirho = json.loads(line_chirho)
             payload_chirho = row_chirho.get("payload", {})
@@ -90,16 +106,94 @@ def image_calls_chirho(attempt_chirho, log_name_chirho="codex-chirho.jsonl"):
                 "type"
             ) not in ("function_call", "custom_tool_call"):
                 continue
-            name_chirho = payload_chirho.get("name", "")
-            content_chirho = str(payload_chirho.get("arguments", "")) + str(
-                payload_chirho.get("input", "")
-            )
-            if (
-                "image_gen" in name_chirho
-                or "tools.image_gen__imagegen(" in content_chirho
-            ):
+            if image_call_chirho(payload_chirho):
                 count_chirho += 1
     return count_chirho
+
+
+def returned_original_chirho(attempt_chirho, original_chirho, expected_sha_chirho):
+    """Bind an external Codex original to the original call's returned path and image."""
+    original_chirho = original_chirho.resolve(strict=True)
+    trusted_chirho = (Path.home() / ".codex/generated_images").resolve()
+    if not original_chirho.is_relative_to(trusted_chirho):
+        raise ValueError("Original lies outside the trusted generator directory")
+    relative_chirho = original_chirho.relative_to(trusted_chirho)
+    if len(relative_chirho.parts) != 2 or not re.fullmatch(
+        r"[a-f0-9-]{36}/exec-[a-f0-9-]{36}\.png", relative_chirho.as_posix()
+    ):
+        raise ValueError("Original generator path shape differs")
+    if original_chirho.stat().st_size > 25 * 1024**2 or (
+        hashlib.sha256(original_chirho.read_bytes()).hexdigest() != expected_sha_chirho
+    ):
+        raise ValueError("Original bytes differ from saved generation evidence")
+    rollout_chirho = generation_rollout_chirho(attempt_chirho)
+    calls_chirho, returned_chirho, images_chirho = set(), [], []
+    with rollout_chirho.open() as file_chirho:
+        for line_chirho in file_chirho:
+            if len(line_chirho) > 40 * 1024**2:
+                raise ValueError("Original tool evidence is oversized")
+            row_chirho = json.loads(line_chirho)
+            payload_chirho = row_chirho.get("payload", {})
+            if row_chirho.get("type") != "response_item":
+                continue
+            if payload_chirho.get("type") in ("function_call", "custom_tool_call"):
+                if image_call_chirho(payload_chirho):
+                    calls_chirho.add(payload_chirho.get("call_id"))
+                continue
+            if (
+                payload_chirho.get("type")
+                not in ("function_call_output", "custom_tool_call_output")
+                or payload_chirho.get("call_id") not in calls_chirho
+            ):
+                continue
+            output_chirho = payload_chirho.get("output")
+            if not isinstance(output_chirho, list):
+                continue
+            for item_chirho in output_chirho:
+                if item_chirho.get("type") == "input_text":
+                    try:
+                        detail_chirho = json.loads(item_chirho.get("text", ""))
+                    except (ValueError, TypeError):
+                        continue
+                    if not isinstance(detail_chirho, dict):
+                        continue
+                    hint_chirho = detail_chirho.get(
+                        "output_hint_chirho", detail_chirho.get("output_hint")
+                    )
+                    if isinstance(hint_chirho, str) and (
+                        f" as {original_chirho} by default." in hint_chirho
+                    ):
+                        returned_chirho.append(payload_chirho["call_id"])
+                if item_chirho.get("type") == "input_image":
+                    url_chirho = item_chirho.get("image_url", "")
+                    if not isinstance(url_chirho, str) or not url_chirho.startswith(
+                        "data:image/png;base64,"
+                    ):
+                        raise ValueError("Original tool image format differs")
+                    images_chirho.append(
+                        hashlib.sha256(
+                            base64.b64decode(
+                                url_chirho.partition(",")[2], validate=True
+                            )
+                        ).hexdigest()
+                    )
+    if images_chirho and images_chirho != [expected_sha_chirho]:
+        raise ValueError("Original differs from the returned PNG bytes")
+    if (
+        len(calls_chirho) != 1
+        or None in calls_chirho
+        or len(returned_chirho) > 1
+        or not (images_chirho or returned_chirho)
+    ):
+        raise ValueError("Exact original-call returned evidence is unavailable")
+    return {
+        "binding_chirho": "returned_png" if images_chirho else "returned_path",
+        "call_id_chirho": next(iter(calls_chirho)),
+        "rollout_sha256_chirho": hashlib.sha256(
+            rollout_chirho.read_bytes()
+        ).hexdigest(),
+        "original_sha256_chirho": expected_sha_chirho,
+    }
 
 
 class CheckJobChirho:

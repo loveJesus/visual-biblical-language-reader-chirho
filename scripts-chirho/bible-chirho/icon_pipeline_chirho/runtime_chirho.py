@@ -9,7 +9,12 @@ import subprocess
 import time
 from pathlib import Path
 
-from process_chirho import MODEL_CHIRHO, CheckJobChirho, image_calls_chirho
+from process_chirho import (
+    MODEL_CHIRHO,
+    CheckJobChirho,
+    image_calls_chirho,
+    returned_original_chirho,
+)
 from prompts_chirho import checking_prompt_chirho, generation_prompt_chirho
 
 
@@ -88,11 +93,16 @@ def verify_generated_chirho(worker_chirho, attempt_chirho, queue_chirho, id_chir
     )
     original_chirho = Path(metadata_chirho["original_generator_path_chirho"]).resolve()
     if (
-        not original_chirho.is_relative_to(attempt_chirho.resolve())
-        or worker_chirho.sha_chirho(original_chirho)
+        worker_chirho.sha_chirho(original_chirho)
         != metadata_chirho["original_generator_sha256_chirho"]
     ):
         raise ValueError("Original image differs from returned evidence")
+    if not original_chirho.is_relative_to(attempt_chirho.resolve()):
+        returned_original_chirho(
+            attempt_chirho,
+            original_chirho,
+            metadata_chirho["original_generator_sha256_chirho"],
+        )
     if (
         worker_chirho.sha_chirho(attempt_chirho / "keyed-sheet-chirho.webp")
         != metadata_chirho["sheet_sha256_chirho"]

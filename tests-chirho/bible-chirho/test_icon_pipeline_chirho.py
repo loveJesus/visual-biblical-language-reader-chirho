@@ -1,6 +1,8 @@
 # For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 """Durable concurrency/retry/recovery behavior; no image or provider requests."""
 
+import base64
+import hashlib
 import json
 import multiprocessing
 import sys
@@ -471,6 +473,204 @@ class IconPipelineTestsChirho(unittest.TestCase):
         )
         with self_chirho.assertRaises(ValueError):
             self_chirho.queue_chirho.reconcile_unsent_chirho(id_chirho, proof_chirho)
+
+
+class OriginalReturnTestsChirho(unittest.TestCase):
+    def setUp(self_chirho):
+        self_chirho.temporary_chirho = tempfile.TemporaryDirectory()
+        self_chirho.addCleanup(self_chirho.temporary_chirho.cleanup)
+        self_chirho.home_chirho = Path(self_chirho.temporary_chirho.name)
+        self_chirho.attempt_chirho = self_chirho.home_chirho / "attempt-chirho"
+        self_chirho.attempt_chirho.mkdir()
+        self_chirho.thread_chirho = "00000000-0000-0000-0000-000000000001"
+        self_chirho.original_chirho = self_chirho.home_chirho / (
+            ".codex/generated_images/"
+            + self_chirho.thread_chirho
+            + "/exec-00000000-0000-0000-0000-000000000002.png"
+        )
+        self_chirho.original_chirho.parent.mkdir(parents=True)
+        self_chirho.bytes_chirho = b"exact original image bytes"
+        self_chirho.original_chirho.write_bytes(self_chirho.bytes_chirho)
+        self_chirho.original_chirho = self_chirho.original_chirho.resolve()
+        self_chirho.sha_chirho = hashlib.sha256(self_chirho.bytes_chirho).hexdigest()
+        (self_chirho.attempt_chirho / "codex-chirho.jsonl").write_text(
+            json.dumps(
+                {"type": "thread.started", "thread_id": self_chirho.thread_chirho}
+            )
+            + "\n"
+        )
+        self_chirho.rollout_chirho = self_chirho.home_chirho / (
+            ".codex/sessions/2026/11/05/rollout-test-"
+            + self_chirho.thread_chirho
+            + ".jsonl"
+        )
+        self_chirho.rollout_chirho.parent.mkdir(parents=True)
+        patch_chirho = patch.object(
+            process_chirho.Path, "home", return_value=self_chirho.home_chirho
+        )
+        patch_chirho.start()
+        self_chirho.addCleanup(patch_chirho.stop)
+
+    def evidence_chirho(
+        self_chirho,
+        inline_chirho=True,
+        hint_chirho=True,
+        result_id_chirho="call-chirho",
+        extra_chirho=False,
+    ):
+        output_chirho = []
+        if hint_chirho:
+            output_chirho.append(
+                {
+                    "type": "input_text",
+                    "text": json.dumps(
+                        {
+                            "output_hint_chirho": f"Generated images are saved as {self_chirho.original_chirho} by default."
+                        }
+                    ),
+                }
+            )
+        if inline_chirho:
+            output_chirho.append(
+                {
+                    "type": "input_image",
+                    "image_url": "data:image/png;base64,"
+                    + base64.b64encode(self_chirho.bytes_chirho).decode(),
+                }
+            )
+        rows_chirho = [
+            {
+                "type": "response_item",
+                "payload": {
+                    "type": "function_call",
+                    "name": "exec",
+                    "call_id": "call-chirho",
+                    "arguments": "await tools.image_gen__imagegen({})",
+                },
+            },
+            {
+                "type": "response_item",
+                "payload": {
+                    "type": "function_call_output",
+                    "call_id": result_id_chirho,
+                    "output": output_chirho,
+                },
+            },
+        ]
+        if extra_chirho:
+            rows_chirho.append(
+                {
+                    "type": "response_item",
+                    "payload": {
+                        "type": "custom_tool_call",
+                        "name": "exec",
+                        "call_id": "other-call-chirho",
+                        "input": "await tools.image_gen__imagegen({})",
+                    },
+                }
+            )
+        self_chirho.rollout_chirho.write_text(
+            "\n".join(json.dumps(row_chirho) for row_chirho in rows_chirho)
+        )
+
+    def verify_chirho(self_chirho, sha_chirho=None):
+        return process_chirho.returned_original_chirho(
+            self_chirho.attempt_chirho,
+            self_chirho.original_chirho,
+            sha_chirho or self_chirho.sha_chirho,
+        )
+
+    def test_exact_returned_image_or_original_path_is_bound_chirho(self_chirho):
+        for inline_chirho, hint_chirho, binding_chirho in [
+            (True, True, "returned_png"),
+            (True, False, "returned_png"),
+            (False, True, "returned_path"),
+        ]:
+            with self_chirho.subTest(
+                inline_chirho=inline_chirho, hint_chirho=hint_chirho
+            ):
+                self_chirho.evidence_chirho(inline_chirho, hint_chirho)
+                self_chirho.assertEqual(
+                    self_chirho.verify_chirho()["binding_chirho"], binding_chirho
+                )
+
+    def test_changed_original_and_changed_metadata_do_not_borrow_returned_png_chirho(
+        self_chirho,
+    ):
+        self_chirho.evidence_chirho()
+        self_chirho.original_chirho.write_bytes(b"different image")
+        for sha_chirho in [
+            self_chirho.sha_chirho,
+            hashlib.sha256(b"different image").hexdigest(),
+        ]:
+            with (
+                self_chirho.subTest(sha_chirho=sha_chirho),
+                self_chirho.assertRaises(ValueError),
+            ):
+                self_chirho.verify_chirho(sha_chirho)
+
+    def test_missing_wrong_call_and_multiple_calls_remain_held_chirho(self_chirho):
+        for options_chirho in [
+            {"inline_chirho": False, "hint_chirho": False},
+            {"result_id_chirho": "unrelated-chirho"},
+            {"extra_chirho": True},
+        ]:
+            with self_chirho.subTest(options_chirho=options_chirho):
+                self_chirho.evidence_chirho(**options_chirho)
+                with self_chirho.assertRaises(ValueError):
+                    self_chirho.verify_chirho()
+
+    def test_symlink_escape_refuses_even_with_matching_saved_bytes_chirho(self_chirho):
+        self_chirho.evidence_chirho()
+        outside_chirho = self_chirho.home_chirho / "outside-chirho.png"
+        outside_chirho.write_bytes(self_chirho.bytes_chirho)
+        self_chirho.original_chirho.unlink()
+        self_chirho.original_chirho.symlink_to(outside_chirho)
+        with self_chirho.assertRaises(ValueError):
+            self_chirho.verify_chirho()
+
+    def test_runtime_uses_return_binding_for_external_original_chirho(self_chirho):
+        self_chirho.evidence_chirho()
+        plan_chirho = self_chirho.attempt_chirho / "plan-chirho.json"
+        plan_chirho.write_text("{}")
+        atlas_chirho = self_chirho.attempt_chirho / "keyed-sheet-chirho.webp"
+        atlas_chirho.write_bytes(b"validated atlas bytes")
+        metadata_chirho = {
+            "original_generator_path_chirho": str(self_chirho.original_chirho),
+            "original_generator_sha256_chirho": self_chirho.sha_chirho,
+            "sheet_sha256_chirho": hashlib.sha256(
+                atlas_chirho.read_bytes()
+            ).hexdigest(),
+        }
+        (self_chirho.attempt_chirho / "generation-chirho.json").write_text(
+            json.dumps(metadata_chirho)
+        )
+        queue_chirho = QueueChirho(self_chirho.home_chirho / "queue-chirho.sqlite")
+        self_chirho.addCleanup(queue_chirho.db_chirho.close)
+        queue_chirho.event_chirho(
+            "job-chirho",
+            "planned",
+            {
+                "plan_sha256_chirho": hashlib.sha256(
+                    plan_chirho.read_bytes()
+                ).hexdigest()
+            },
+        )
+        worker_chirho = SimpleNamespace(
+            sha_chirho=lambda path_chirho: hashlib.sha256(
+                path_chirho.read_bytes()
+            ).hexdigest(),
+            read_chirho=lambda path_chirho: json.loads(path_chirho.read_text()),
+            validate_generation_chirho=lambda *_arguments_chirho: None,
+        )
+        runtime_chirho.verify_generated_chirho(
+            worker_chirho, self_chirho.attempt_chirho, queue_chirho, "job-chirho"
+        )
+        self_chirho.evidence_chirho(result_id_chirho="unrelated-chirho")
+        with self_chirho.assertRaises(ValueError):
+            runtime_chirho.verify_generated_chirho(
+                worker_chirho, self_chirho.attempt_chirho, queue_chirho, "job-chirho"
+            )
 
 
 if __name__ == "__main__":

@@ -55,7 +55,8 @@ flowchart LR
   missing_chirho[Unpictured lemma identities] --> ready_chirho[Durable FIFO with exact reservations]
   ready_chirho --> produce_chirho[Up to two generation-only processes]
   produce_chirho --> saved_chirho[Original atlas and source reviews saved]
-  saved_chirho --> check_queue_chirho[Bounded queue of up to eight uninstalled sheets]
+  saved_chirho --> original_binding_chirho[Verify original hash and exact original tool return]
+  original_binding_chirho --> check_queue_chirho[Bounded queue of up to eight uninstalled sheets]
   check_queue_chirho --> checker_chirho[Independent checker process]
   checker_chirho --> safe_chirho[Single installer and exact R2 preservation]
   safe_chirho --> published_chirho[Normal incremental publication]
@@ -118,3 +119,5 @@ The November 2 catch-up recovered an already generated 14-icon batch for Acts 24
 A declared image may briefly precede its completed R2 proof while the sole producer runs the archive chain. The publisher treats missing or mismatched exact proof as a typed release refusal: watch mode keeps the deployed site unchanged and retries at most every five minutes. It never publishes unverified bytes or treats an upload attempt as a receipt. Unknown errors remain owner-reconciliation events.
 
 Artwork snapshots freeze the authoring manifest bytes before the R2 proof index and its checked shard bytes. The directory walk uses those frozen bytes and excludes later-added manifests/proof files. A new producer batch therefore waits for the next release instead of entering an older proof snapshot. Source path, hash, size and review checks still run against the frozen release inputs; a genuinely unfinished upload remains a refusal. No pending record becomes verified through snapshotting.
+
+External originals in Codex's normal `~/.codex/generated_images/` directory are accepted only with one original generation call and its saved result binding. Returned inline PNG bytes must hash identically; a path-only result must name the exact trusted original. Missing/multiple/unrelated results, changed files and symlink escapes remain refused. Original metadata and tool evidence are immutable. Owner reconciliation moves only proven saved-result path holds to checking, retaining prior events and every attempt counter; it never requests another image.
