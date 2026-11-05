@@ -3,7 +3,37 @@
   "book_id_chirho": "Zech",
   "chapter_chirho": 5,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-e799ca54136d4c0895e7a87268b8fe94-chirho-cell-01-chirho",
+      "lesson_id_chirho": "Zech.5.11",
+      "token_id_chirho": "38pbV",
+      "lemma_id_chirho": "H4369",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְכֻנָה",
+      "sense_id_chirho": "attempt-e799ca54136d4c0895e7a87268b8fe94-cell-1-chirho",
+      "contextual_meaning_chirho": "a base on which the basket is set",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e799ca54136d4c0895e7a87268b8fe94-chirho/cell-01-chirho.webp",
+      "alt_chirho": "A woven basket resting on a low stone base.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d3b386a8426a988212050b0e65ad7d797cf8b9f926a84812238da7832dd733c4",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-zech-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מְכֻנָתָֽהּ",
+      "context_gloss_chirho": "its base",
+      "context_canonical_text_chirho": "וַיֹּ֣אמֶר אֵלַ֔י לִבְנֽוֹת־לָ֥הֿ בַ֖יִת בְּאֶ֣רֶץ שִׁנְעָ֑ר וְהוּכַ֛ן וְהֻנִּ֥יחָה שָּׁ֖ם עַל־מְכֻנָתָֽהּ׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-icon-09-chirho",
@@ -607,6 +637,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-fc7a0f458eb141729c089aec56817c5b-chirho-cell-13-chirho",
+      "lesson_id_chirho": "Ps.40.8",
+      "token_id_chirho": "19hQZ",
+      "lemma_id_chirho": "H4039",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְגִלָּה",
+      "sense_id_chirho": "attempt-fc7a0f458eb141729c089aec56817c5b-cell-13-chirho",
+      "contextual_meaning_chirho": "A scroll.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-fc7a0f458eb141729c089aec56817c5b-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A rolled scroll.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "403b484afa5703f24661f34e4b7708a1d49e6226717ce9e9d611b620aca4c3b7",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-86077356846045ef8b804dc19795563a-11-chirho",
       "lesson_id_chirho": "Prov.4.19",
       "token_id_chirho": "20KGj",
@@ -677,6 +733,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-e799ca54136d4c0895e7a87268b8fe94-chirho-cell-01-chirho",
+      "lesson_id_chirho": "Zech.5.11",
+      "token_id_chirho": "38pbV",
+      "lemma_id_chirho": "H4369",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְכֻנָה",
+      "sense_id_chirho": "attempt-e799ca54136d4c0895e7a87268b8fe94-cell-1-chirho",
+      "contextual_meaning_chirho": "a base on which the basket is set",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e799ca54136d4c0895e7a87268b8fe94-chirho/cell-01-chirho.webp",
+      "alt_chirho": "A woven basket resting on a low stone base.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d3b386a8426a988212050b0e65ad7d797cf8b9f926a84812238da7832dd733c4",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-zech-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1097,6 +1179,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Deut.20.9",
+      "token_id_chirho": "05Fee",
+      "lemma_id_chirho": "H6635",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "צָבָא",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "the armies",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A shield with two crossed spears fastened behind it.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8f6918008528b4a408efba07382b275120911cf0603da002bfc7de20d7b55502",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

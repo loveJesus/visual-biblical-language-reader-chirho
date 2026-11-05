@@ -3,7 +3,95 @@
   "book_id_chirho": "Deut",
   "chapter_chirho": 20,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-1860dea732d7409e8f6d995cd3e1bef1-chirho-cell-04-chirho",
+      "lesson_id_chirho": "Deut.20.3",
+      "token_id_chirho": "0525M",
+      "lemma_id_chirho": "H2648",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חָפַז",
+      "sense_id_chirho": "attempt-1860dea732d7409e8f6d995cd3e1bef1-cell-04-chirho",
+      "contextual_meaning_chirho": "Trembling, which Israel is told not to do",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1860dea732d7409e8f6d995cd3e1bef1-chirho/cell-04-chirho.webp",
+      "alt_chirho": "A worried person clutching a shield.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "65f8906eb17701483e9303a0d73963bb217de49cc27a24ab12ddf48cbc724657",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "תַּחְפְּז֛וּ",
+      "context_gloss_chirho": "do tremble",
+      "context_canonical_text_chirho": "וְאָמַ֤ר אֲלֵהֶם֙ שְׁמַ֣ע יִשְׂרָאֵ֔ל אַתֶּ֨ם קְרֵבִ֥ים הַיּ֛וֹם לַמִּלְחָמָ֖ה עַל־אֹיְבֵיכֶ֑ם אַל־יֵרַ֣ךְ לְבַבְכֶ֗ם אַל־תִּֽירְא֧וּ וְאַֽל־תַּחְפְּז֛וּ וְאַל־תַּֽעַרְצ֖וּ מִפְּנֵיהֶֽם׃"
+    },
+    {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Deut.20.9",
+      "token_id_chirho": "05Fee",
+      "lemma_id_chirho": "H6635",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "צָבָא",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "the armies",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A shield with two crossed spears fastened behind it.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8f6918008528b4a408efba07382b275120911cf0603da002bfc7de20d7b55502",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "צְבָא֖וֹת",
+      "context_gloss_chirho": "the armies",
+      "context_canonical_text_chirho": "וְהָיָ֛ה כְּכַלֹּ֥ת הַשֹּׁטְרִ֖ים לְדַבֵּ֣ר אֶל־הָעָ֑ם וּפָֽקְד֛וּ שָׂרֵ֥י צְבָא֖וֹת בְּרֹ֥אשׁ הָעָֽם׃"
+    },
+    {
+      "id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Deut.20.12",
+      "token_id_chirho": "05j2Z",
+      "lemma_id_chirho": "H6696",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "צוּר",
+      "sense_id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-cell-15-chirho",
+      "contextual_meaning_chirho": "to besiege",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-00c1394f409648f28583b04f3259e7fd-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A ladder leaning against a fortified city wall.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "98cf81cdd9155200df90e9f45a30de7d219e14c1ed4088513d8d78e90ff1d36f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "וְצַרְתָּ֖",
+      "context_gloss_chirho": "then you shall besiege",
+      "context_canonical_text_chirho": "וְאִם־לֹ֤א תַשְׁלִים֙ עִמָּ֔ךְ וְעָשְׂתָ֥ה עִמְּךָ֖ מִלְחָמָ֑ה וְצַרְתָּ֖ עָלֶֽיהָּ׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-icon-09-chirho",
@@ -101,6 +189,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-1fdf0064f2c646d0b05bc01519ce5cb0-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Deut.19.5",
+      "token_id_chirho": "05XMJ",
+      "lemma_id_chirho": "H1631",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "גַּרְזֶן",
+      "sense_id_chirho": "attempt-1fdf0064f2c646d0b05bc01519ce5cb0-chirho-cell-05-chirho",
+      "contextual_meaning_chirho": "ax",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1fdf0064f2c646d0b05bc01519ce5cb0-chirho/cell-05-chirho.webp",
+      "alt_chirho": "A wood-handled ax with its head attached.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "403664904d80b0095096b18f6d055669ca9de4b99ba6106d4bf52eb121eed4b6",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -226,6 +340,58 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-4264fe01fc2948d9b5faf0c717ee2a15-chirho-cell-12-chirho",
+      "lesson_id_chirho": "Exod.23.17",
+      "token_id_chirho": "02K8G",
+      "lemma_id_chirho": "H2138",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זָכוּר",
+      "sense_id_chirho": "attempt-4264fe01fc2948d9b5faf0c717ee2a15-cell-12-chirho",
+      "contextual_meaning_chirho": "your males",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-4264fe01fc2948d9b5faf0c717ee2a15-chirho/cell-12-chirho.webp",
+      "alt_chirho": "An ordinary robed man.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d68da06c4f29665b8b88fec0f4ac5362500ad2c4b1e2af2109bda976c218f189",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-827f5704b6fa4062bf549dc24d04c21c-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Exod.1.8",
+      "token_id_chirho": "02hh7",
+      "lemma_id_chirho": "H2319",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חָדָשׁ",
+      "sense_id_chirho": "attempt-827f5704b6fa4062bf549dc24d04c21c-cell-11-chirho",
+      "contextual_meaning_chirho": "new",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-827f5704b6fa4062bf549dc24d04c21c-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A small crown resting on a fresh green leaf.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "bb40506bc246e47410644bbc30c2aaf710e8ac293d2ecd02e758da3f4c9cae53",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -377,6 +543,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-1860dea732d7409e8f6d995cd3e1bef1-chirho-cell-04-chirho",
+      "lesson_id_chirho": "Deut.20.3",
+      "token_id_chirho": "0525M",
+      "lemma_id_chirho": "H2648",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חָפַז",
+      "sense_id_chirho": "attempt-1860dea732d7409e8f6d995cd3e1bef1-cell-04-chirho",
+      "contextual_meaning_chirho": "Trembling, which Israel is told not to do",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1860dea732d7409e8f6d995cd3e1bef1-chirho/cell-04-chirho.webp",
+      "alt_chirho": "A worried person clutching a shield.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "65f8906eb17701483e9303a0d73963bb217de49cc27a24ab12ddf48cbc724657",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "proverbs-worker-v3-icon-06-chirho",
       "lesson_id_chirho": "Prov.5.4",
       "token_id_chirho": "20rVJ",
@@ -399,6 +591,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "L.J. requested local icon production on 2026-10-27. Contextual gloss and OSHB lemma checked against pinned sources; artwork remains pending his review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Exod.22.19",
+      "token_id_chirho": "02yCU",
+      "lemma_id_chirho": "H2763",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "חָרַם",
+      "sense_id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-00-chirho",
+      "contextual_meaning_chirho": "to be utterly destroyed",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-258793f5e9b94043a5eac53042790162-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A deeply cracked clay pot, still in one piece.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b11bb95e67753e67fe51cd63bff5740c0f73c94947f2d4cbaa99feaa112818e7",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1399,6 +1617,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-fc7a0f458eb141729c089aec56817c5b-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Exod.16.21",
+      "token_id_chirho": "023mF",
+      "lemma_id_chirho": "H4549",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מָסַס",
+      "sense_id_chirho": "attempt-fc7a0f458eb141729c089aec56817c5b-cell-15-chirho",
+      "contextual_meaning_chirho": "It melted.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-fc7a0f458eb141729c089aec56817c5b-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A pale mound melting into a puddle.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "efbb02217ee9cc7212f8581467f9d65738074f413d4ed4f7296e6b19820cfa26",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-86077356846045ef8b804dc19795563a-04-chirho",
       "lesson_id_chirho": "Prov.2.20",
       "token_id_chirho": "20AXb",
@@ -1958,6 +2202,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-1661e66ac7e94c2392619f6302d65a04-chirho-cell-13-chirho",
+      "lesson_id_chirho": "Deut.1.29",
+      "token_id_chirho": "05HoD",
+      "lemma_id_chirho": "H6206",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עָרַץ",
+      "sense_id_chirho": "attempt-1661e66ac7e94c2392619f6302d65a04-cell-13-chirho",
+      "contextual_meaning_chirho": "be terrified",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1661e66ac7e94c2392619f6302d65a04-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A frightened person recoiling.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b08fdbbccf24520b3c41a50fadd1800fb4d271797353a1feb06bd8fcc6c936f3",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-58b2ae8fae914431902f17554bbcbb9d-12-chirho",
       "lesson_id_chirho": "Prov.2.14",
       "token_id_chirho": "20k1L",
@@ -2131,6 +2401,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Deut.20.9",
+      "token_id_chirho": "05Fee",
+      "lemma_id_chirho": "H6635",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "צָבָא",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "the armies",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A shield with two crossed spears fastened behind it.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8f6918008528b4a408efba07382b275120911cf0603da002bfc7de20d7b55502",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-41d4f4b9a41d41f8a7340b1433dff18d-chirho-01-chirho",
       "lesson_id_chirho": "Gen.2.16",
       "token_id_chirho": "01RFe",
@@ -2153,6 +2449,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Deut.20.12",
+      "token_id_chirho": "05j2Z",
+      "lemma_id_chirho": "H6696",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "צוּר",
+      "sense_id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-cell-15-chirho",
+      "contextual_meaning_chirho": "to besiege",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-00c1394f409648f28583b04f3259e7fd-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A ladder leaning against a fortified city wall.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "98cf81cdd9155200df90e9f45a30de7d219e14c1ed4088513d8d78e90ff1d36f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -2202,6 +2524,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-4727bd823097471f91e4a9d02cb58f7d-chirho-cell-13-chirho",
+      "lesson_id_chirho": "Num.17.28",
+      "token_id_chirho": "04iH4",
+      "lemma_id_chirho": "H7131",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "קָרֵב",
+      "sense_id_chirho": "attempt-4727bd823097471f91e4a9d02cb58f7d-cell-13-chirho",
+      "contextual_meaning_chirho": "Near",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-4727bd823097471f91e4a9d02cb58f7d-chirho/cell-13-chirho.webp",
+      "alt_chirho": "Two stones touching side by side.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "5afc4ae390fb946821ef2590648923e0de1c23173f5a9ebdb71a4db6fec274b3",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -2447,6 +2795,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-39cc8fc482674f6782dd1d8752a33c1b-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Exod.22.15",
+      "token_id_chirho": "02HwJ",
+      "lemma_id_chirho": "H781",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אָרַשׂ",
+      "sense_id_chirho": "attempt-39cc8fc482674f6782dd1d8752a33c1b-chirho-cell-05-chirho",
+      "contextual_meaning_chirho": "betrothed; the verse speaks of a woman not betrothed",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-39cc8fc482674f6782dd1d8752a33c1b-chirho/cell-05-chirho.webp",
+      "alt_chirho": "Two linked rings as a symbol of betrothal.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a2c624f31049dcdaf900daf2f9e0a098e5a60cb1c6879e7d4c579411f443e4c9",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

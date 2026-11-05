@@ -3,7 +3,37 @@
   "book_id_chirho": "Isa",
   "chapter_chirho": 39,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-3f46cad9771045618abcd0029806fabd-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Isa.39.1",
+      "token_id_chirho": "23Xsp",
+      "lemma_id_chirho": "H4757",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְרֹאדַךְ בַּלְאָדָן",
+      "sense_id_chirho": "attempt-3f46cad9771045618abcd0029806fabd-chirho-cell-07-merodach-baladan-chirho",
+      "contextual_meaning_chirho": "Merodach-baladan, the king of Babylon in this verse.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3f46cad9771045618abcd0029806fabd-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A closed parchment scroll tied with ribbon.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "cb722eedbfd0f37248033cceaa92f0cb8cb5e9c3d8aa155bded50bc1a8587381",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מְרֹדַ֣ךְ",
+      "context_gloss_chirho": "from Merodach-baladan",
+      "context_canonical_text_chirho": "בָּעֵ֣ת הַהִ֡וא שָׁלַ֡ח מְרֹדַ֣ךְ בַּ֠לְאֲדָן בֶּֽן־בַּלְאֲדָ֧ן מֶֽלֶךְ־בָּבֶ֛ל סְפָרִ֥ים וּמִנְחָ֖ה אֶל־חִזְקִיָּ֑הוּ וַיִּשְׁמַ֕ע כִּ֥י חָלָ֖ה וַֽיֶּחֱזָֽק׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-v2-icon-00-chirho",
@@ -78,6 +108,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "L.J. requested local icon production on 2026-10-27. Contextual gloss and OSHB lemma checked against pinned sources; artwork remains pending his review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Exod.25.6",
+      "token_id_chirho": "02zi5",
+      "lemma_id_chirho": "H1314",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "בֶּשֶׂם",
+      "sense_id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-cell-11-chirho",
+      "contextual_meaning_chirho": "Spices",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A bowl filled with ground spices.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d1c209602c741f4c38cc88729bb4497aa765a3ad193e7996d48446d4cc700792",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -496,6 +552,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-f3bd9046d8ab4da8ba3b002129e9668f-chirho-cell-02-chirho",
+      "lesson_id_chirho": "2Kgs.19.2",
+      "token_id_chirho": "12yDn",
+      "lemma_id_chirho": "H3470",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "יְשַׁעְיָה",
+      "sense_id_chirho": "attempt-f3bd9046d8ab4da8ba3b002129e9668f-cell-02-chirho",
+      "contextual_meaning_chirho": "Isaiah",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f3bd9046d8ab4da8ba3b002129e9668f-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A tied, unmarked scroll representing Isaiah the prophet.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "eb4ade9b6ff584c9d67739764e5d069a48027f84726f49e1a378f06b65a6f62c",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -918,6 +1000,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-3f46cad9771045618abcd0029806fabd-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Isa.39.1",
+      "token_id_chirho": "23Xsp",
+      "lemma_id_chirho": "H4757",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְרֹאדַךְ בַּלְאָדָן",
+      "sense_id_chirho": "attempt-3f46cad9771045618abcd0029806fabd-chirho-cell-07-merodach-baladan-chirho",
+      "contextual_meaning_chirho": "Merodach-baladan, the king of Babylon in this verse.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3f46cad9771045618abcd0029806fabd-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A closed parchment scroll tied with ribbon.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "cb722eedbfd0f37248033cceaa92f0cb8cb5e9c3d8aa155bded50bc1a8587381",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-2768f4e374df4686849652d18ecf5018-chirho-01-chirho",
       "lesson_id_chirho": "Gen.20.7",
       "token_id_chirho": "01UMk",
@@ -1138,6 +1246,58 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Deut.20.9",
+      "token_id_chirho": "05Fee",
+      "lemma_id_chirho": "H6635",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "צָבָא",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "the armies",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A shield with two crossed spears fastened behind it.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8f6918008528b4a408efba07382b275120911cf0603da002bfc7de20d7b55502",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-3ff726ec39274d78a0e387fe4188d965-chirho-cell-12-chirho",
+      "lesson_id_chirho": "2Kgs.20.17",
+      "token_id_chirho": "12EZY",
+      "lemma_id_chirho": "H686",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אָצַר",
+      "sense_id_chirho": "attempt-3ff726ec39274d78a0e387fe4188d965-cell-12",
+      "contextual_meaning_chirho": "have accumulated",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3ff726ec39274d78a0e387fe4188d965-chirho/cell-12-chirho.webp",
+      "alt_chirho": "A chest filled with possessions, a mnemonic for accumulated goods.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6246c20e67a60c0317f92290b03c8b0d683fc2c6183dad31105fb6ddb13dcc10",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

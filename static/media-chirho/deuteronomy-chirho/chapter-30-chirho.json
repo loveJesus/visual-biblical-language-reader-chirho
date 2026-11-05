@@ -3,7 +3,37 @@
   "book_id_chirho": "Deut",
   "chapter_chirho": 30,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Deut.30.3",
+      "token_id_chirho": "05vw5",
+      "lemma_id_chirho": "H7622",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שְׁבוּת",
+      "sense_id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-cell-07-chirho",
+      "contextual_meaning_chirho": "Captivity, from which the people are brought back",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho/cell-07-chirho.webp",
+      "alt_chirho": "An open hinged metal shackle.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6c8635b70f81817d5ee0e2d741640a45e610d212877e74a53b7d17b5ff9a9162",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "שְׁבוּתְךָ֖",
+      "context_gloss_chirho": "you from captivity",
+      "context_canonical_text_chirho": "וְשָׁ֨ב יְהוָ֧ה אֱלֹהֶ֛יךָ אֶת־שְׁבוּתְךָ֖ וְרִחֲמֶ֑ךָ וְשָׁ֗ב וְקִבֶּצְךָ֙ מִכָּל־הָ֣עַמִּ֔ים אֲשֶׁ֧ר הֱפִֽיצְךָ֛ יְהוָ֥ה אֱלֹהֶ֖יךָ שָֽׁמָּה׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-v2-icon-00-chirho",
@@ -2203,6 +2233,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Deut.30.3",
+      "token_id_chirho": "05vw5",
+      "lemma_id_chirho": "H7622",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שְׁבוּת",
+      "sense_id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-cell-07-chirho",
+      "contextual_meaning_chirho": "Captivity, from which the people are brought back",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho/cell-07-chirho.webp",
+      "alt_chirho": "An open hinged metal shackle.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6c8635b70f81817d5ee0e2d741640a45e610d212877e74a53b7d17b5ff9a9162",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

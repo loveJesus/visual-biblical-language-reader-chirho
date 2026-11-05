@@ -3,7 +3,95 @@
   "book_id_chirho": "Ps",
   "chapter_chirho": 50,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-19e9b4ee49ef4085b98e1a031da252b4-chirho-cell-08-chirho",
+      "lesson_id_chirho": "Ps.50.2",
+      "token_id_chirho": "192Jq",
+      "lemma_id_chirho": "H4359",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִכְלָל",
+      "sense_id_chirho": "attempt-19e9b4ee49ef4085b98e1a031da252b4-cell-8",
+      "contextual_meaning_chirho": "perfection of beauty",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-19e9b4ee49ef4085b98e1a031da252b4-chirho/cell-08-chirho.webp",
+      "alt_chirho": "A flower as a mnemonic for the perfection of beauty.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "971cbc10785937957795ca4c0a91155a3c6dec1640740f1844c87baa41510a10",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מִכְלַל",
+      "context_gloss_chirho": "the perfection of",
+      "context_canonical_text_chirho": "מִצִּיּ֥וֹן מִכְלַל־יֹ֗פִי אֱלֹהִ֥ים הוֹפִֽיעַ׃"
+    },
+    {
+      "id_chirho": "attempt-afc26b25d7d349dea4ae8acd5d850dcd-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Ps.50.9",
+      "token_id_chirho": "19J2d",
+      "lemma_id_chirho": "H4356",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִכְלָאָה",
+      "sense_id_chirho": "attempt-afc26b25d7d349dea4ae8acd5d850dcd-cell-02-chirho",
+      "contextual_meaning_chirho": "livestock folds",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-afc26b25d7d349dea4ae8acd5d850dcd-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A goat within a small stone livestock fold.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "23d71110b61ecd6393e9c61ab5473a2976ea756ad0113b7d8697b733940bbc65",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מִ֝מִּכְלְאֹתֶ֗יךָ",
+      "context_gloss_chirho": "out of your folds",
+      "context_canonical_text_chirho": "לֹא־אֶקַּ֣ח מִבֵּיתְךָ֣ פָ֑ר מִ֝מִּכְלְאֹתֶ֗יךָ עַתּוּדִֽים׃"
+    },
+    {
+      "id_chirho": "attempt-3ec3f278a4404f2894183ee7a896e8c7-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Ps.50.11",
+      "token_id_chirho": "19M7V",
+      "lemma_id_chirho": "H2123",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "זִיז",
+      "sense_id_chirho": "attempt-3ec3f278a4404f2894183ee7a896e8c7-cell-09-chirho",
+      "contextual_meaning_chirho": "wild beasts",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3ec3f278a4404f2894183ee7a896e8c7-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A gazelle standing calmly.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "561bfdc9ae2fe126c7b64ee6d66c6e8a6e5374b3f2df7a2ff72f33dc84fc2ac9",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "וְזִ֥יז",
+      "context_gloss_chirho": "and the wild beasts of",
+      "context_canonical_text_chirho": "יָ֭דַעְתִּי כָּל־ע֣וֹף הָרִ֑ים וְזִ֥יז שָׂ֝דַ֗י עִמָּדִֽי׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-icon-09-chirho",
@@ -231,6 +319,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho-cell-12-chirho",
+      "lesson_id_chirho": "Num.33.56",
+      "token_id_chirho": "04rBA",
+      "lemma_id_chirho": "H1819",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "דָּמָה",
+      "sense_id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-cell-12-chirho",
+      "contextual_meaning_chirho": "Thought to do",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho/cell-12-chirho.webp",
+      "alt_chirho": "An ordinary person resting a hand on their chin in thought.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "c8aa37e3e7f73fbcd8ea7014b76ae7b5bc831d4e22244e08873cdc04250a64b5",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "proverbs-worker-icon-06-chirho",
       "lesson_id_chirho": "Prov.26.13",
       "token_id_chirho": "20Wom",
@@ -331,6 +445,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-86dfa7043d6045e58ce08a3ac23b8862-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Num.23.7",
+      "token_id_chirho": "04YbF",
+      "lemma_id_chirho": "H2042",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "הָרָר",
+      "sense_id_chirho": "attempt-86dfa7043d6045e58ce08a3ac23b8862-cell-14-chirho",
+      "contextual_meaning_chirho": "Mountains",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-86dfa7043d6045e58ce08a3ac23b8862-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A connected range of mountain peaks.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4772344159c691a67afab0bdcc50d94606c688443831f18e8e64a8677b60234e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-e7ed94ee158542caa2317e8b9063a70c-00-chirho",
       "lesson_id_chirho": "Prov.6.3",
       "token_id_chirho": "20Ci2",
@@ -378,6 +518,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-3ec3f278a4404f2894183ee7a896e8c7-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Ps.50.11",
+      "token_id_chirho": "19M7V",
+      "lemma_id_chirho": "H2123",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "זִיז",
+      "sense_id_chirho": "attempt-3ec3f278a4404f2894183ee7a896e8c7-cell-09-chirho",
+      "contextual_meaning_chirho": "wild beasts",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3ec3f278a4404f2894183ee7a896e8c7-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A gazelle standing calmly.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "561bfdc9ae2fe126c7b64ee6d66c6e8a6e5374b3f2df7a2ff72f33dc84fc2ac9",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -696,6 +862,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-827f5704b6fa4062bf549dc24d04c21c-chirho-cell-04-chirho",
+      "lesson_id_chirho": "Deut.19.5",
+      "token_id_chirho": "05AHo",
+      "lemma_id_chirho": "H3293",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "יַעַר",
+      "sense_id_chirho": "attempt-827f5704b6fa4062bf549dc24d04c21c-cell-04-chirho",
+      "contextual_meaning_chirho": "woods",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-827f5704b6fa4062bf549dc24d04c21c-chirho/cell-04-chirho.webp",
+      "alt_chirho": "A small grove of trees on a shared patch of ground.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "c3894a163874af72705e1f1db1b87177b94f8f1ec4e6c39077b0d75ccadb19ae",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-2674b04506254e1986248f3a8a58ef79-01-chirho",
       "lesson_id_chirho": "Prov.6.25",
       "token_id_chirho": "207tY",
@@ -722,6 +914,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-b572e9afe6b24e5e8f18a513b3b41c60-chirho-cell-13-chirho",
+      "lesson_id_chirho": "Deut.33.2",
+      "token_id_chirho": "057E1",
+      "lemma_id_chirho": "H3313",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָפַע",
+      "sense_id_chirho": "attempt-b572e9afe6b24e5e8f18a513b3b41c60-chirho-cell-13-chirho",
+      "contextual_meaning_chirho": "shining forth",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-b572e9afe6b24e5e8f18a513b3b41c60-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A sun emerging behind a mountain.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3973421da377901a99cb770cd556770fcb4ae844dba784cdcff5d82af0d7be93",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-f4ef03511def464489963987e50b4ae4-06-chirho",
       "lesson_id_chirho": "Prov.3.29",
       "token_id_chirho": "20aSi",
@@ -745,6 +963,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-10-chirho",
+      "lesson_id_chirho": "2Sam.22.3",
+      "token_id_chirho": "10G7D",
+      "lemma_id_chirho": "H3468",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יֶשַׁע",
+      "sense_id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-10-chirho",
+      "contextual_meaning_chirho": "My salvation",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f51b81c986224f1bb36cbc1625ec9163-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A shield, a protective mnemonic for salvation.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "e83112a6352e5c3b861d2ab472fc39e74943634ae2fc31029043591de516a23e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1241,6 +1485,58 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-afc26b25d7d349dea4ae8acd5d850dcd-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Ps.50.9",
+      "token_id_chirho": "19J2d",
+      "lemma_id_chirho": "H4356",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִכְלָאָה",
+      "sense_id_chirho": "attempt-afc26b25d7d349dea4ae8acd5d850dcd-cell-02-chirho",
+      "contextual_meaning_chirho": "livestock folds",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-afc26b25d7d349dea4ae8acd5d850dcd-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A goat within a small stone livestock fold.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "23d71110b61ecd6393e9c61ab5473a2976ea756ad0113b7d8697b733940bbc65",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-19e9b4ee49ef4085b98e1a031da252b4-chirho-cell-08-chirho",
+      "lesson_id_chirho": "Ps.50.2",
+      "token_id_chirho": "192Jq",
+      "lemma_id_chirho": "H4359",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִכְלָל",
+      "sense_id_chirho": "attempt-19e9b4ee49ef4085b98e1a031da252b4-cell-8",
+      "contextual_meaning_chirho": "perfection of beauty",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-19e9b4ee49ef4085b98e1a031da252b4-chirho/cell-08-chirho.webp",
+      "alt_chirho": "A flower as a mnemonic for the perfection of beauty.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "971cbc10785937957795ca4c0a91155a3c6dec1640740f1844c87baa41510a10",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-545818c8400543b992e6d7ff13d692cb-chirho-10-chirho",
       "lesson_id_chirho": "Gen.48.19",
       "token_id_chirho": "01vRd",
@@ -1263,6 +1559,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-a7810ec17d2044fc806bbdc5943e411b-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Judg.5.22",
+      "token_id_chirho": "07Bbn",
+      "lemma_id_chirho": "H47",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אַבִּיר",
+      "sense_id_chirho": "attempt-a7810ec17d2044fc806bbdc5943e411b-cell-06-chirho",
+      "contextual_meaning_chirho": "his mighty steeds",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-a7810ec17d2044fc806bbdc5943e411b-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A horse galloping.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "5b8ed18779443aeba8700aad0c508607e36973f995afa91e6beb9a2d4b3c2ae2",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-judg-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1733,6 +2055,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-1deaa3e054934ba6a96aab64b33c088d-chirho-cell-06-chirho",
+      "lesson_id_chirho": "2Sam.23.1",
+      "token_id_chirho": "10BkJ",
+      "lemma_id_chirho": "H5920",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עַל",
+      "sense_id_chirho": "attempt-1deaa3e054934ba6a96aab64b33c088d-chirho-cell-06-chirho",
+      "contextual_meaning_chirho": "on high, describing where the man was raised",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1deaa3e054934ba6a96aab64b33c088d-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A steep high hill.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "c89dcba951a45a792b64712acfc490da55af61fa06b0a23e57f8f9b2f2681da6",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-cfcf2303a4dd40ef81532aa57a9a796d-14-chirho",
       "lesson_id_chirho": "Prov.1.27",
       "token_id_chirho": "20PGK",
@@ -2125,6 +2473,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-3ff726ec39274d78a0e387fe4188d965-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Num.25.3",
+      "token_id_chirho": "047Qi",
+      "lemma_id_chirho": "H6775",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "צָמַד",
+      "sense_id_chirho": "attempt-3ff726ec39274d78a0e387fe4188d965-cell-07",
+      "contextual_meaning_chirho": "joined",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3ff726ec39274d78a0e387fe4188d965-chirho/cell-07-chirho.webp",
+      "alt_chirho": "Two connected interlocking links, a metaphor for joining.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "ef251bdc2a81ca17a8348098ec9a322e32d06a9e70c37dcdce64f569ba6d3231",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -2644,6 +3018,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Lev.7.12",
+      "token_id_chirho": "03Aw1",
+      "lemma_id_chirho": "H8426",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "תּוֹדָה",
+      "sense_id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-cell-11-chirho",
+      "contextual_meaning_chirho": "a thanksgiving offering",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-00c1394f409648f28583b04f3259e7fd-chirho/cell-11-chirho.webp",
+      "alt_chirho": "Two hands presenting a round cake.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "ce082026e910fa7b56668525a34515e20ba5f34646dcb88a01ca2594fad88ce7",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

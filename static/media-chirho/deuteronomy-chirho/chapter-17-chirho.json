@@ -3,7 +3,37 @@
   "book_id_chirho": "Deut",
   "chapter_chirho": 17,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-452c4ddc803a4308bd2ffe8126996435-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Deut.17.12",
+      "token_id_chirho": "059UV",
+      "lemma_id_chirho": "H7451",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "רַע",
+      "sense_id_chirho": "attempt-452c4ddc803a4308bd2ffe8126996435-cell-11-chirho",
+      "contextual_meaning_chirho": "The evil.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-452c4ddc803a4308bd2ffe8126996435-chirho/cell-11-chirho.webp",
+      "alt_chirho": "An intact clay pot with a crack, a mnemonic for evil.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8c76a9eb9858511df30d3b9131b6768b0e89e94a783e9df3df0ee2b7d0c32e6a",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "הָרָ֖ע",
+      "context_gloss_chirho": "the evil",
+      "context_canonical_text_chirho": "וְהָאִ֞ישׁ אֲשֶׁר־יַעֲשֶׂ֣ה בְזָד֗וֹן לְבִלְתִּ֨י שְׁמֹ֤עַ אֶל־הַכֹּהֵן֙ הָעֹמֵ֞ד לְשָׁ֤רֶת שָׁם֙ אֶת־יְהוָ֣ה אֱלֹהֶ֔יךָ א֖וֹ אֶל־הַשֹּׁפֵ֑ט וּמֵת֙ הָאִ֣ישׁ הַה֔וּא וּבִֽעַרְתָּ֥ הָרָ֖ע מִיִּשְׂרָאֵֽל׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-attempt-ed1fdcdd784e4792b3f6e26ec4412daa-chirho-06-chirho",
@@ -53,6 +83,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "L.J. requested local icon production on 2026-10-27. Contextual gloss and OSHB lemma checked against pinned sources; artwork remains pending his review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-55e3abe268124033b9d891cd1a8c98ff-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Exod.3.2",
+      "token_id_chirho": "02w6U",
+      "lemma_id_chirho": "H1197",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "בָּעַר",
+      "sense_id_chirho": "attempt-55e3abe268124033b9d891cd1a8c98ff-chirho-cell-07-chirho",
+      "contextual_meaning_chirho": "was burning",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-55e3abe268124033b9d891cd1a8c98ff-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A green bush with flames among its branches.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d9113d11ea97ef14c86d77fc0a3520192781face39d25c06dabbfe38def9cd51",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1237,6 +1293,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Exod.4.14",
+      "token_id_chirho": "022B3",
+      "lemma_id_chirho": "H3881",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "לֵוִיִּי",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-14-chirho",
+      "contextual_meaning_chirho": "the Levite, referring to Aaron in this verse",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A plainly dressed traveler.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "487faf93bc07a1d82375034f915e57fa4ebc421f470809476657283a5c3434e8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -2460,6 +2542,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-452c4ddc803a4308bd2ffe8126996435-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Deut.17.12",
+      "token_id_chirho": "059UV",
+      "lemma_id_chirho": "H7451",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "רַע",
+      "sense_id_chirho": "attempt-452c4ddc803a4308bd2ffe8126996435-cell-11-chirho",
+      "contextual_meaning_chirho": "The evil.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-452c4ddc803a4308bd2ffe8126996435-chirho/cell-11-chirho.webp",
+      "alt_chirho": "An intact clay pot with a crack, a mnemonic for evil.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8c76a9eb9858511df30d3b9131b6768b0e89e94a783e9df3df0ee2b7d0c32e6a",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

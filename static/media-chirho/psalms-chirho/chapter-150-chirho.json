@@ -3,7 +3,37 @@
   "book_id_chirho": "Ps",
   "chapter_chirho": 150,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-975128ed8b244a42bc92384ca3e34470-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Ps.150.3",
+      "token_id_chirho": "195Y4",
+      "lemma_id_chirho": "H8629",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "תֵּקַע",
+      "sense_id_chirho": "attempt-975128ed8b244a42bc92384ca3e34470-cell-02-sound-of-trumpet",
+      "contextual_meaning_chirho": "sound of trumpet",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-975128ed8b244a42bc92384ca3e34470-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A trumpet as a mnemonic for its sound.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "cd9f65bd5efca2426bb6f63eecf2caa6fdde3cc7985e8d08200094c4889f4cfb",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "בְּתֵ֣קַע",
+      "context_gloss_chirho": "with the sound of",
+      "context_canonical_text_chirho": "הַֽ֭לְלוּהוּ בְּתֵ֣קַע שׁוֹפָ֑ר הַֽ֝לְל֗וּהוּ בְּנֵ֣בֶל וְכִנּֽוֹר׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-34e7ac3b5a66499d9d4830a77476e65a-13-chirho",
@@ -31,6 +61,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-53722d586dde491ba3fb27e99d5fdce1-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Num.14.19",
+      "token_id_chirho": "04p4s",
+      "lemma_id_chirho": "H1433",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "גֹּדֶל",
+      "sense_id_chirho": "attempt-53722d586dde491ba3fb27e99d5fdce1-chirho-cell-07-chirho",
+      "contextual_meaning_chirho": "Greatness, in the expression concerning mercy",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-53722d586dde491ba3fb27e99d5fdce1-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A large heart, a mnemonic for the greatness of mercy.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "25f16dc17c19870c0dc89c62ff48fe804013c491b4af228a6b6ff8ef6fab96d8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-19b3a2f040414016b281498cf0ba5001-02-chirho",
       "lesson_id_chirho": "Prov.12.8",
       "token_id_chirho": "20wXN",
@@ -52,6 +108,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Exod.15.2",
+      "token_id_chirho": "02nLr",
+      "lemma_id_chirho": "H3050",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָהּ",
+      "sense_id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-07-chirho",
+      "contextual_meaning_chirho": "Yah",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-258793f5e9b94043a5eac53042790162-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A small lyre as a symbol of song and praise.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7875bdb4d53b314febe5f0149b62d725f8fa403dd4f6e5358bbfae0c2eb4e9f5",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -131,6 +213,58 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-71666f8d9b064cf682852a0304f0f2a4-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Ps.45.9",
+      "token_id_chirho": "19jkP",
+      "lemma_id_chirho": "H4482",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מֵן",
+      "sense_id_chirho": "attempt-71666f8d9b064cf682852a0304f0f2a4-chirho-cell-00-chirho",
+      "contextual_meaning_chirho": "by which",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-71666f8d9b064cf682852a0304f0f2a4-chirho/cell-00-chirho.webp",
+      "alt_chirho": "Two interlocking gold-colored chain links.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4ec122e83b3dc03be38f6cd19ca301652dde8ab46cd655bc6203e07c495f18e7",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho-cell-15-chirho",
+      "lesson_id_chirho": "1Sam.10.5",
+      "token_id_chirho": "09JBd",
+      "lemma_id_chirho": "H5035",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "נֶבֶל",
+      "sense_id_chirho": "attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "A stringed instrument",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A small wooden stringed instrument.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8321cd39946edbf43bbbda3468d3f6f23657b8b1ad3b7f1bc7080d4e960395b7",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-a93053f42c4c427dbe4da85156ee11e1-05-chirho",
       "lesson_id_chirho": "Prov.20.27",
       "token_id_chirho": "20Tdr",
@@ -199,6 +333,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-a613b36386a34a1fbd1c71b89a4e4720-chirho-cell-14-chirho",
+      "lesson_id_chirho": "2Sam.6.5",
+      "token_id_chirho": "10zyy",
+      "lemma_id_chirho": "H6767",
+      "lemma_augment_chirho": "d",
+      "lexical_form_chirho": "צְלָצַל",
+      "sense_id_chirho": "attempt-a613b36386a34a1fbd1c71b89a4e4720-cell-14-chirho",
+      "contextual_meaning_chirho": "cymbals",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-a613b36386a34a1fbd1c71b89a4e4720-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A pair of touching cymbals.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "89136d62776df74207439ce3de9a750bd3118b2206032e6b306a543009c56375",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -297,6 +457,58 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-975128ed8b244a42bc92384ca3e34470-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Ps.150.3",
+      "token_id_chirho": "195Y4",
+      "lemma_id_chirho": "H8629",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "תֵּקַע",
+      "sense_id_chirho": "attempt-975128ed8b244a42bc92384ca3e34470-cell-02-sound-of-trumpet",
+      "contextual_meaning_chirho": "sound of trumpet",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-975128ed8b244a42bc92384ca3e34470-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A trumpet as a mnemonic for its sound.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "cd9f65bd5efca2426bb6f63eecf2caa6fdde3cc7985e8d08200094c4889f4cfb",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Lev.23.24",
+      "token_id_chirho": "03yM6",
+      "lemma_id_chirho": "H8643",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "תְּרוּעָה",
+      "sense_id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "Blowing of trumpets",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f51b81c986224f1bb36cbc1625ec9163-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A curved horn, a mnemonic for the blowing of trumpets.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "993fce06cc2cbb34c7f3aa59e5f58c3416053ab7e978ef2bac54b6f5edf431b0",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     }
   ]

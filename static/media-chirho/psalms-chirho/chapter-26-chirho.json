@@ -3,7 +3,37 @@
   "book_id_chirho": "Ps",
   "chapter_chirho": 26,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-20ceddfe16944b229dc688260ee42ec8-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Ps.26.12",
+      "token_id_chirho": "19FLe",
+      "lemma_id_chirho": "H4721",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מַקְהֵל",
+      "sense_id_chirho": "attempt-20ceddfe16944b229dc688260ee42ec8-cell-14-chirho",
+      "contextual_meaning_chirho": "congregations or assemblies",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-20ceddfe16944b229dc688260ee42ec8-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A small group of people standing together.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "340b54802b13851089c913771f26b6135ca56b67a3eed7aee71381cdadb33fbb",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "בְּ֝מַקְהֵלִ֗ים",
+      "context_gloss_chirho": "in the congregations",
+      "context_canonical_text_chirho": "רַ֭גְלִי עָֽמְדָ֣ה בְמִישׁ֑וֹר בְּ֝מַקְהֵלִ֗ים אֲבָרֵ֥ךְ יְהוָֽה׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-icon-09-chirho",
@@ -642,6 +672,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-e3fe3ec3a900425fb6811bfff689980a-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Deut.3.10",
+      "token_id_chirho": "05Mef",
+      "lemma_id_chirho": "H4334",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִישׁוֹר",
+      "sense_id_chirho": "attempt-e3fe3ec3a900425fb6811bfff689980a-chirho-cell-02",
+      "contextual_meaning_chirho": "the plain",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e3fe3ec3a900425fb6811bfff689980a-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A small level patch of grassy plain.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f78088ff403bdcb2eb3cf45dae0ec69b96e5ce5b839a6fbee7a5aee75c384e27",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-48ecc67d82104a6599bbc8085781fe5d-06-chirho",
       "lesson_id_chirho": "Prov.1.13",
       "token_id_chirho": "20xdF",
@@ -662,6 +718,58 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-a7810ec17d2044fc806bbdc5943e411b-chirho-cell-04-chirho",
+      "lesson_id_chirho": "Deut.26.15",
+      "token_id_chirho": "05Rxp",
+      "lemma_id_chirho": "H4583",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מָעוֹן",
+      "sense_id_chirho": "attempt-a7810ec17d2044fc806bbdc5943e411b-cell-04-chirho",
+      "contextual_meaning_chirho": "holy habitation in heaven",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-a7810ec17d2044fc806bbdc5943e411b-chirho/cell-04-chirho.webp",
+      "alt_chirho": "An empty small home resting on a cloud.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "1a7195beca10310f10f755985b6e1357e04bf5514aa7abfd7236c8381259ab8f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-20ceddfe16944b229dc688260ee42ec8-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Ps.26.12",
+      "token_id_chirho": "19FLe",
+      "lemma_id_chirho": "H4721",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מַקְהֵל",
+      "sense_id_chirho": "attempt-20ceddfe16944b229dc688260ee42ec8-cell-14-chirho",
+      "contextual_meaning_chirho": "congregations or assemblies",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-20ceddfe16944b229dc688260ee42ec8-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A small group of people standing together.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "340b54802b13851089c913771f26b6135ca56b67a3eed7aee71381cdadb33fbb",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1007,6 +1115,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Exod.13.13",
+      "token_id_chirho": "026oJ",
+      "lemma_id_chirho": "H6299",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "פָּדָה",
+      "sense_id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-cell-09-redeem-chirho",
+      "contextual_meaning_chirho": "redeem, in the instruction concerning a firstborn donkey and a lamb",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A lamb as a reminder of redemption.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "80f2a2b7269725eaae4f75998659950883b61c86068790884c05cf8ac1cabbd6",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-c874986b63964364ac1e25fa7757a4cf-09-chirho",
       "lesson_id_chirho": "Prov.30.18",
       "token_id_chirho": "209Qh",
@@ -1345,6 +1479,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Lev.7.12",
+      "token_id_chirho": "03Aw1",
+      "lemma_id_chirho": "H8426",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "תּוֹדָה",
+      "sense_id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-cell-11-chirho",
+      "contextual_meaning_chirho": "a thanksgiving offering",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-00c1394f409648f28583b04f3259e7fd-chirho/cell-11-chirho.webp",
+      "alt_chirho": "Two hands presenting a round cake.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "ce082026e910fa7b56668525a34515e20ba5f34646dcb88a01ca2594fad88ce7",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

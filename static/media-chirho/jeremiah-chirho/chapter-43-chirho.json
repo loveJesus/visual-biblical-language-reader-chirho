@@ -3,7 +3,66 @@
   "book_id_chirho": "Jer",
   "chapter_chirho": 43,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-e799ca54136d4c0895e7a87268b8fe94-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Jer.43.9",
+      "token_id_chirho": "245Yb",
+      "lemma_id_chirho": "H4423",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מֶלֶט",
+      "sense_id_chirho": "attempt-e799ca54136d4c0895e7a87268b8fe94-cell-14-chirho",
+      "contextual_meaning_chirho": "clay in which stones are to be hidden",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e799ca54136d4c0895e7a87268b8fe94-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A stone partly embedded in clay.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f9bf59638882323b151fa797c5d758e57f3726d5302e56171f8f93245cd3d3d9",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-jer-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "בַּמֶּ֨לֶט֙",
+      "context_gloss_chirho": "in the clay",
+      "context_canonical_text_chirho": "קַ֣ח בְּיָדְךָ֞ אֲבָנִ֣ים גְּדֹל֗וֹת וּטְמַנְתָּ֤ם בַּמֶּ֨לֶט֙ בַּמַּלְבֵּ֔ן אֲשֶׁ֛ר בְּפֶ֥תַח בֵּית־פַּרְעֹ֖ה בְּתַחְפַּנְחֵ֑ס לְעֵינֵ֖י אֲנָשִׁ֥ים יְהוּדִֽים׃"
+    },
+    {
+      "id_chirho": "attempt-8f833fcec40e4f06815996bee1e237a5-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Jer.43.10",
+      "token_id_chirho": "24yxi",
+      "lemma_id_chirho": "H8237",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שַׁפְרוּר",
+      "sense_id_chirho": "attempt-8f833fcec40e4f06815996bee1e237a5-cell-6",
+      "contextual_meaning_chirho": "royal pavilion",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-8f833fcec40e4f06815996bee1e237a5-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A royal pavilion tent.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "9e5ffb36d099748807b1dea635a3cfa6db71aefa6630c415580fe6c77cc324a0",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-jer-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "שפרורו",
+      "context_gloss_chirho": "his royal pavilion",
+      "context_canonical_text_chirho": "וְאָמַרְתָּ֣ אֲלֵיהֶ֡ם כֹּֽה־אָמַר֩ יְהוָ֨ה צְבָא֜וֹת אֱלֹהֵ֣י יִשְׂרָאֵ֗ל הִנְנִ֤י שֹׁלֵ֨חַ֙ וְ֠לָקַחְתִּי אֶת־נְבוּכַדְרֶאצַּ֤ר מֶֽלֶךְ־בָּבֶל֙ עַבְדִּ֔י וְשַׂמְתִּ֣י כִסְא֔וֹ מִמַּ֛עַל לָאֲבָנִ֥ים הָאֵ֖לֶּה אֲשֶׁ֣ר טָמָ֑נְתִּי וְנָטָ֥ה אֶת־שפרורו עֲלֵיהֶֽם׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-icon-09-chirho",
@@ -28,6 +87,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "L.J. requested local icon production on 2026-10-27. Contextual gloss and OSHB lemma checked against pinned sources; artwork remains pending his review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-9d931d4aae914d14864dd7d0081c405f-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Josh.15.10",
+      "token_id_chirho": "061Qt",
+      "lemma_id_chirho": "H1053",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "בֵּית שֶׁמֶשׁ",
+      "sense_id_chirho": "attempt-9d931d4aae914d14864dd7d0081c405f-chirho-cell-02-chirho",
+      "contextual_meaning_chirho": "Beth Shemesh, a place on the border",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-9d931d4aae914d14864dd7d0081c405f-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A small generic town as a marker for Beth Shemesh.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "033e34bb02120a3740ce351c9450136fec2d85825fe3fdff4389c1031b9d142b",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -446,6 +531,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-defc017ca0794a8faaafa77638c67421-chirho-cell-15-chirho",
+      "lesson_id_chirho": "2Kgs.22.12",
+      "token_id_chirho": "12uxY",
+      "lemma_id_chirho": "H296",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אֲחִיקָם",
+      "sense_id_chirho": "attempt-defc017ca0794a8faaafa77638c67421-cell-15",
+      "contextual_meaning_chirho": "Ahikam, son of Shaphan",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-defc017ca0794a8faaafa77638c67421-chirho/cell-15-chirho.webp",
+      "alt_chirho": "Generic adult man representing Ahikam.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3ea9b9f370bfeaff5e4241259753483b4996c57de314934d6163f16c4be7bb1f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "proverbs-worker-icon-04-chirho",
       "lesson_id_chirho": "Prov.1.24",
       "token_id_chirho": "20rTK",
@@ -495,6 +606,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-55e3abe268124033b9d891cd1a8c98ff-chirho-cell-15-chirho",
+      "lesson_id_chirho": "2Kgs.16.6",
+      "token_id_chirho": "12Ash",
+      "lemma_id_chirho": "H3064",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יְהוּדִי",
+      "sense_id_chirho": "attempt-55e3abe268124033b9d891cd1a8c98ff-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "the Jews",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-55e3abe268124033b9d891cd1a8c98ff-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A traveler carrying a bundle.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f37468be3af4e59feb51b57523fda4b92482b2fc5d977bfa90a713303c010240",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-df239fb10476473c9660c1ceace52cc0-14-chirho",
       "lesson_id_chirho": "Prov.1.7",
       "token_id_chirho": "20dBc",
@@ -540,6 +677,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-4d15d6cb4d8d42a8bfc9b62732ad4e54-chirho-cell-03-chirho",
+      "lesson_id_chirho": "Josh.8.8",
+      "token_id_chirho": "06Pv1",
+      "lemma_id_chirho": "H3341",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָצַת",
+      "sense_id_chirho": "attempt-4d15d6cb4d8d42a8bfc9b62732ad4e54-chirho-cell-03-chirho",
+      "contextual_meaning_chirho": "Setting a city on fire.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-4d15d6cb4d8d42a8bfc9b62732ad4e54-chirho/cell-03-chirho.webp",
+      "alt_chirho": "A lit hand torch.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6d6ef6de8ed9992935f62b2b74eda0542d2df39da46c46052b8c79d5a15042a2",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -939,6 +1102,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-e799ca54136d4c0895e7a87268b8fe94-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Jer.43.9",
+      "token_id_chirho": "245Yb",
+      "lemma_id_chirho": "H4423",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מֶלֶט",
+      "sense_id_chirho": "attempt-e799ca54136d4c0895e7a87268b8fe94-cell-14-chirho",
+      "contextual_meaning_chirho": "clay in which stones are to be hidden",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e799ca54136d4c0895e7a87268b8fe94-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A stone partly embedded in clay.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f9bf59638882323b151fa797c5d758e57f3726d5302e56171f8f93245cd3d3d9",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-jer-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "proverbs-worker-v2-icon-03-chirho",
       "lesson_id_chirho": "Prov.1.1",
       "token_id_chirho": "20TSc",
@@ -1063,6 +1252,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho-cell-07-chirho",
+      "lesson_id_chirho": "2Kgs.24.1",
+      "token_id_chirho": "122wC",
+      "lemma_id_chirho": "H5019",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "נְבוּכַדְנֶאצַּר",
+      "sense_id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-cell-07-nebuchadnezzar-chirho",
+      "contextual_meaning_chirho": "Nebuchadnezzar, king of Babylon",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A crowned man in a robe.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7f0df1d785a249fcf7eaf32b67b2dde7c6d4d9f55a747fc567527fe85c1f4a39",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-2768f4e374df4686849652d18ecf5018-chirho-01-chirho",
       "lesson_id_chirho": "Gen.20.7",
       "token_id_chirho": "01UMk",
@@ -1183,6 +1398,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-5b1a07f6d1c447b0ba346116affe9cf3-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Jer.32.12",
+      "token_id_chirho": "241sG",
+      "lemma_id_chirho": "H5374",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "נֵרִיָּה",
+      "sense_id_chirho": "attempt-5b1a07f6d1c447b0ba346116affe9cf3-cell-10-chirho",
+      "contextual_meaning_chirho": "Neriah, Baruch’s father",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-5b1a07f6d1c447b0ba346116affe9cf3-chirho/cell-10-chirho.webp",
+      "alt_chirho": "An imagined man’s portrait as a mnemonic for Neriah.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3312481d8beb256155d0c6ec8ff0408503855f97bce3d20b2d56ecb90b5bc584",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-jer-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-1e396358a20743fcaec1369c32ec0883-15-chirho",
       "lesson_id_chirho": "Prov.1.4",
       "token_id_chirho": "2029t",
@@ -1203,6 +1444,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-7cbe1420b96f4416adbbdf1c327708af-chirho-cell-08-chirho",
+      "lesson_id_chirho": "Deut.13.7",
+      "token_id_chirho": "05URX",
+      "lemma_id_chirho": "H5496",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "סוּת",
+      "sense_id_chirho": "attempt-7cbe1420b96f4416adbbdf1c327708af-cell-08-chirho",
+      "contextual_meaning_chirho": "enticing someone",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-7cbe1420b96f4416adbbdf1c327708af-chirho/cell-08-chirho.webp",
+      "alt_chirho": "A person beckoning with one hand.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7ee81b7df08ad4d86e1b34823386656911cea3391518274e9572aba4aff1f678",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1275,6 +1542,58 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-15-chirho",
+      "lesson_id_chirho": "1Kgs.4.2",
+      "token_id_chirho": "11wJN",
+      "lemma_id_chirho": "H5838",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עֲזַרְיָה",
+      "sense_id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "Azariah",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-258793f5e9b94043a5eac53042790162-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A simple portrait of a man as a mnemonic for Azariah.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "46995b21df51ec6f44da07fa33c81be9f0b4d91ba766598520e60bfedf3da5fa",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-1661e66ac7e94c2392619f6302d65a04-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Lev.13.45",
+      "token_id_chirho": "03Zqk",
+      "lemma_id_chirho": "H5844",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "עָטָה",
+      "sense_id_chirho": "attempt-1661e66ac7e94c2392619f6302d65a04-cell-09-chirho",
+      "contextual_meaning_chirho": "cover",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1661e66ac7e94c2392619f6302d65a04-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A person with a cloth covering the lower face.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "03f7253f7de6dc1ee1d8e13afda9e749dc537fd56073fec90f5f064fdc98dabe",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1403,6 +1722,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Deut.20.9",
+      "token_id_chirho": "05Fee",
+      "lemma_id_chirho": "H6635",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "צָבָא",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "the armies",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A shield with two crossed spears fastened behind it.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8f6918008528b4a408efba07382b275120911cf0603da002bfc7de20d7b55502",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-d467b6d1d1cc4452856afe7b4781cd78-15-chirho",
       "lesson_id_chirho": "Prov.11.1",
       "token_id_chirho": "203KB",
@@ -1450,6 +1795,58 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-53722d586dde491ba3fb27e99d5fdce1-chirho-cell-00-chirho",
+      "lesson_id_chirho": "2Kgs.25.23",
+      "token_id_chirho": "12tgR",
+      "lemma_id_chirho": "H7143",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "קָרֵחַ",
+      "sense_id_chirho": "attempt-53722d586dde491ba3fb27e99d5fdce1-chirho-cell-00-chirho",
+      "contextual_meaning_chirho": "Kareah, a personal name",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-53722d586dde491ba3fb27e99d5fdce1-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A generic robed man, a mnemonic for Kareah, Johanan’s father.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "09aa60f512eed96fb7758b2819b056943d5f69a51ed7bf7b14012ec017b1b9f0",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho-cell-04-chirho",
+      "lesson_id_chirho": "2Kgs.25.8",
+      "token_id_chirho": "12fXL",
+      "lemma_id_chirho": "H7227",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "רַב",
+      "sense_id_chirho": "attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho-cell-04-chirho",
+      "contextual_meaning_chirho": "Captain of the guard",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho/cell-04-chirho.webp",
+      "alt_chirho": "A guard holding a round shield.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "1653aa8257b6ab4772ec38e0bc65facf54e8671eac26d198fc2ed6d8fd120999",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-f50cb8a302c1451b9955286b41434b18-14-chirho",
       "lesson_id_chirho": "Prov.10.21",
       "token_id_chirho": "20sX9",
@@ -1470,6 +1867,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-45980fba9eaf4e188a45df8f6266fd9b-chirho-cell-04-chirho",
+      "lesson_id_chirho": "Exod.12.29",
+      "token_id_chirho": "029HW",
+      "lemma_id_chirho": "H7628",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "שְׁבִי",
+      "sense_id_chirho": "attempt-45980fba9eaf4e188a45df8f6266fd9b-cell-04",
+      "contextual_meaning_chirho": "captive",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-45980fba9eaf4e188a45df8f6266fd9b-chirho/cell-04-chirho.webp",
+      "alt_chirho": "A person behind prison bars.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f36718811037dcd6ae7279d00e2823c3d0b3b66ab5a4c17b9b082150343d8142",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1719,6 +2142,58 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho-cell-08-chirho",
+      "lesson_id_chirho": "2Kgs.22.3",
+      "token_id_chirho": "12EeP",
+      "lemma_id_chirho": "H8227",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "שָׁפָן",
+      "sense_id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-cell-08-chirho",
+      "contextual_meaning_chirho": "Shaphan, the scribe sent by King Josiah",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho/cell-08-chirho.webp",
+      "alt_chirho": "A blank parchment scroll with a writing reed resting across it.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "913bd965977b6a851642003a4e87f88c79948ea662b19442578bd544ab3f4c18",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-8f833fcec40e4f06815996bee1e237a5-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Jer.43.10",
+      "token_id_chirho": "24yxi",
+      "lemma_id_chirho": "H8237",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שַׁפְרוּר",
+      "sense_id_chirho": "attempt-8f833fcec40e4f06815996bee1e237a5-cell-6",
+      "contextual_meaning_chirho": "royal pavilion",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-8f833fcec40e4f06815996bee1e237a5-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A royal pavilion tent.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "9e5ffb36d099748807b1dea635a3cfa6db71aefa6630c415580fe6c77cc324a0",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-jer-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-6d5ab2e79151442888ac753680a0af3b-05-chirho",
       "lesson_id_chirho": "Prov.6.17",
       "token_id_chirho": "20Sho",
@@ -1841,6 +2316,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-a98c412e317d450a957578ee688b1eb7-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Jer.2.16",
+      "token_id_chirho": "24gcK",
+      "lemma_id_chirho": "H8471",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "תַּחְפַּנְחֵס",
+      "sense_id_chirho": "attempt-a98c412e317d450a957578ee688b1eb7-cell-10",
+      "contextual_meaning_chirho": "Tahpanhes",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-a98c412e317d450a957578ee688b1eb7-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A small arched town gate representing Tahpanhes.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "5de6318cd46e7dfbd4f5d3532965c3ef5c9665048fc496950a24a295db54b71e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-jer-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

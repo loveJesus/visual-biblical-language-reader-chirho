@@ -3,7 +3,37 @@
   "book_id_chirho": "Ps",
   "chapter_chirho": 81,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-4264fe01fc2948d9b5faf0c717ee2a15-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Ps.81.3",
+      "token_id_chirho": "19gmT",
+      "lemma_id_chirho": "H2172",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זִמְרָה",
+      "sense_id_chirho": "attempt-4264fe01fc2948d9b5faf0c717ee2a15-cell-15-chirho",
+      "contextual_meaning_chirho": "a song",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-4264fe01fc2948d9b5faf0c717ee2a15-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A person singing while holding a small harp.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "60d45d30ba7a67a9d91d21ab8f396e6a805b3eeb712f7fb90aa560665fffb136",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "זִ֭מְרָה",
+      "context_gloss_chirho": "a song",
+      "context_canonical_text_chirho": "שְֽׂאוּ־זִ֭מְרָה וּתְנוּ־תֹ֑ף כִּנּ֖וֹר נָעִ֣ים עִם־נָֽבֶל׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-54034e6ea21341cb8d6bcfede5faabfa-08-chirho",
@@ -51,6 +81,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "L.J. requested local icon production on 2026-10-27. Contextual gloss and OSHB lemma checked against pinned sources; artwork remains pending his review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-98aa5b0e750f4fabbae050314aea22b1-chirho-cell-09-chirho",
+      "lesson_id_chirho": "1Sam.2.14",
+      "token_id_chirho": "09Qsx",
+      "lemma_id_chirho": "H1731",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "דּוּד",
+      "sense_id_chirho": "attempt-98aa5b0e750f4fabbae050314aea22b1-cell-09-chirho",
+      "contextual_meaning_chirho": "kettle",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-98aa5b0e750f4fabbae050314aea22b1-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A round cooking kettle with attached handles.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "2bafe1bd6dd1378fc94ac27960bb01ab210399d78a7b373063139cbb1c324ff8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -176,6 +232,58 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-4264fe01fc2948d9b5faf0c717ee2a15-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Ps.81.3",
+      "token_id_chirho": "19gmT",
+      "lemma_id_chirho": "H2172",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זִמְרָה",
+      "sense_id_chirho": "attempt-4264fe01fc2948d9b5faf0c717ee2a15-cell-15-chirho",
+      "contextual_meaning_chirho": "a song",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-4264fe01fc2948d9b5faf0c717ee2a15-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A person singing while holding a small harp.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "60d45d30ba7a67a9d91d21ab8f396e6a805b3eeb712f7fb90aa560665fffb136",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Exod.10.9",
+      "token_id_chirho": "02D2c",
+      "lemma_id_chirho": "H2282",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חַג",
+      "sense_id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-cell-00-feast-chirho",
+      "contextual_meaning_chirho": "a feast for the LORD",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A round braided loaf as a symbol of a feast.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a9fdd63bd8ffb0106e06f08322a3e86c5a26d5e8af3ed01c49745fb50e2aaee9",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -567,6 +675,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Lev.26.41",
+      "token_id_chirho": "03Ja4",
+      "lemma_id_chirho": "H3665",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "כָּנַע",
+      "sense_id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-11-chirho",
+      "contextual_meaning_chirho": "Are humbled",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f51b81c986224f1bb36cbc1625ec9163-chirho/cell-11-chirho.webp",
+      "alt_chirho": "An ordinary person bowing, a mnemonic for being humbled.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "2494fde71893862dc56bb8392845d240a9be5bf607a6f1c778c0d5486a53fa03",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-fe071b6b8dee4549b3e6eab7c8813998-03-chirho",
       "lesson_id_chirho": "Prov.7.20",
       "token_id_chirho": "20KCy",
@@ -886,6 +1020,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho-cell-01-chirho",
+      "lesson_id_chirho": "Exod.17.7",
+      "token_id_chirho": "02XQ4",
+      "lemma_id_chirho": "H4809",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְרִיבָה",
+      "sense_id_chirho": "attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho-cell-01-chirho",
+      "contextual_meaning_chirho": "Meribah, a named place",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho/cell-01-chirho.webp",
+      "alt_chirho": "A small rocky mound.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b0bc35460ef32601a12d875b8d1a2f7fa3d41d3eb84b7e41f3c4d4a2ad04fff2",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-1e396358a20743fcaec1369c32ec0883-13-chirho",
       "lesson_id_chirho": "Prov.1.3",
       "token_id_chirho": "20x9c",
@@ -906,6 +1066,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho-cell-15-chirho",
+      "lesson_id_chirho": "1Sam.10.5",
+      "token_id_chirho": "09JBd",
+      "lemma_id_chirho": "H5035",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "נֶבֶל",
+      "sense_id_chirho": "attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "A stringed instrument",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-ea6b4b5c04694db886b7d70a2d75402f-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A small wooden stringed instrument.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8321cd39946edbf43bbbda3468d3f6f23657b8b1ad3b7f1bc7080d4e960395b7",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1080,6 +1266,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho-cell-08-chirho",
+      "lesson_id_chirho": "Exod.16.34",
+      "token_id_chirho": "02MzP",
+      "lemma_id_chirho": "H5715",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עֵדוּת",
+      "sense_id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-cell-08-testimony-chirho",
+      "contextual_meaning_chirho": "the Testimony before which Aaron placed what was kept",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho/cell-08-chirho.webp",
+      "alt_chirho": "Two overlapping blank tablets as a symbol of the Testimony.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a10c1eb5a9ea07327f494abb513ece718b9953fed1dcf299d27bc570f46a2d71",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1473,6 +1685,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-45980fba9eaf4e188a45df8f6266fd9b-chirho-cell-12-chirho",
+      "lesson_id_chirho": "Num.10.7",
+      "token_id_chirho": "04yTL",
+      "lemma_id_chirho": "H7321",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "רוּעַ",
+      "sense_id_chirho": "attempt-45980fba9eaf4e188a45df8f6266fd9b-cell-12",
+      "contextual_meaning_chirho": "sound the advance",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-45980fba9eaf4e188a45df8f6266fd9b-chirho/cell-12-chirho.webp",
+      "alt_chirho": "A straight trumpet as a mnemonic for a sounded signal.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b5594c0b92481287157ed9137eba5b3b92ee732a2c7887447395fa84cad83c32",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-3a2f9f005cb7461e9044af5c1b1a94a5-03-chirho",
       "lesson_id_chirho": "Prov.18.16",
       "token_id_chirho": "20b31",
@@ -1517,6 +1755,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-28b08c32fe434d2396a97afd597112cb-chirho-cell-01-chirho",
+      "lesson_id_chirho": "Job.26.14",
+      "token_id_chirho": "18R3h",
+      "lemma_id_chirho": "H7482",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "רַעַם",
+      "sense_id_chirho": "attempt-28b08c32fe434d2396a97afd597112cb-chirho-cell-01-chirho",
+      "contextual_meaning_chirho": "thunder",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-28b08c32fe434d2396a97afd597112cb-chirho/cell-01-chirho.webp",
+      "alt_chirho": "A thundercloud with a lightning bolt.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "e71c625801d4812a1ec5db9ec10c2f687f1b056328ae9fe9963c963c5207c008",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-job-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1759,6 +2023,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-514d4fb67d4c4261a8189ae630e2315c-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Deut.29.18",
+      "token_id_chirho": "05KfG",
+      "lemma_id_chirho": "H8307",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שְׁרִירוּת",
+      "sense_id_chirho": "attempt-514d4fb67d4c4261a8189ae630e2315c-chirho-cell-11-chirho",
+      "contextual_meaning_chirho": "the dictates of my heart",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-514d4fb67d4c4261a8189ae630e2315c-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A heart-shaped compass, a mnemonic for following the heart’s dictates.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3cd70b098a0d7ccc46f8864d89eac8e7b3e087aa1346ddd0f8dc6e296662568e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

@@ -3,7 +3,60 @@
   "book_id_chirho": "Heb",
   "chapter_chirho": 8,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-a43b8701477f4c998d83868c3e10541a-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Heb.8.2",
+      "token_id_chirho": "Heb.8.2!10",
+      "lemma_id_chirho": "G4078",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "πήγνυμι",
+      "sense_id_chirho": "attempt-a43b8701477f4c998d83868c3e10541a-cell-05-chirho",
+      "contextual_meaning_chirho": "has pitched",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-a43b8701477f4c998d83868c3e10541a-chirho/cell-05-chirho.webp",
+      "alt_chirho": "A small tent with a central supporting pole.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "aded9d3c93892e91556103ef9b29cf72d68e10147864abecb7120f798f1cf6c2",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "ἔπηξεν",
+      "context_gloss_chirho": "has pitched",
+      "context_canonical_text_chirho": "τῶν ἁγίων λειτουργὸς καὶ τῆς σκηνῆς τῆς ἀληθινῆς, ἣν ἔπηξεν ὁ Κύριος, οὐκ ἄνθρωπος."
+    },
+    {
+      "id_chirho": "attempt-8fdb661c551b4537962cf52ae339a498-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Heb.8.13",
+      "token_id_chirho": "Heb.8.13!14",
+      "lemma_id_chirho": "G854",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "ἀφανισμός",
+      "sense_id_chirho": "attempt-8fdb661c551b4537962cf52ae339a498-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "vanishing",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-8fdb661c551b4537962cf52ae339a498-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A short melting candle.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b5ad65ed1eb4ab9a6ebfa11352de0287af8df89c07725882e9c0ee7e97df5b99",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "ἀφανισμοῦ",
+      "context_gloss_chirho": "vanishing",
+      "context_canonical_text_chirho": "ἐν τῷ λέγειν Καινὴν πεπαλαίωκεν τὴν πρώτην· τὸ δὲ παλαιούμενον καὶ γηράσκον ἐγγὺς ἀφανισμοῦ."
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-attempt-8328164e25ef4c44a523a9f85c395e9d-chirho-00-chirho",
@@ -2099,6 +2152,29 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-a43b8701477f4c998d83868c3e10541a-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Heb.8.2",
+      "token_id_chirho": "Heb.8.2!10",
+      "lemma_id_chirho": "G4078",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "πήγνυμι",
+      "sense_id_chirho": "attempt-a43b8701477f4c998d83868c3e10541a-cell-05-chirho",
+      "contextual_meaning_chirho": "has pitched",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-a43b8701477f4c998d83868c3e10541a-chirho/cell-05-chirho.webp",
+      "alt_chirho": "A small tent with a central supporting pole.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "aded9d3c93892e91556103ef9b29cf72d68e10147864abecb7120f798f1cf6c2",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-508c4c7ad781444083b21998a96894b0-chirho-03-chirho",
       "lesson_id_chirho": "John.2.5",
       "token_id_chirho": "John.2.5!12",
@@ -2579,6 +2655,29 @@
         "berean-glosses-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-8fdb661c551b4537962cf52ae339a498-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Heb.8.13",
+      "token_id_chirho": "Heb.8.13!14",
+      "lemma_id_chirho": "G854",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "ἀφανισμός",
+      "sense_id_chirho": "attempt-8fdb661c551b4537962cf52ae339a498-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "vanishing",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-8fdb661c551b4537962cf52ae339a498-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A short melting candle.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b5ad65ed1eb4ab9a6ebfa11352de0287af8df89c07725882e9c0ee7e97df5b99",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

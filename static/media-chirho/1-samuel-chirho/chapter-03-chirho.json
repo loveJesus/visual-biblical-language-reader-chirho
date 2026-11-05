@@ -3,7 +3,66 @@
   "book_id_chirho": "1Sam",
   "chapter_chirho": 3,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-41031d0dde9040e5971b418523c6768c-chirho-cell-13-chirho",
+      "lesson_id_chirho": "1Sam.3.11",
+      "token_id_chirho": "09QHV",
+      "lemma_id_chirho": "H6750",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "צָלַל",
+      "sense_id_chirho": "attempt-41031d0dde9040e5971b418523c6768c-chirho-cell-13-chirho",
+      "contextual_meaning_chirho": "tingle",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-41031d0dde9040e5971b418523c6768c-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A person touching an ear.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d6f272dd1ceb1d5a8811671f9274200a8838a64c0e044ddeadec376ef0b236ba",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "תְּצִלֶּ֖ינָה",
+      "context_gloss_chirho": "will tingle",
+      "context_canonical_text_chirho": "וַיֹּ֤אמֶר יְהוָה֙ אֶל־שְׁמוּאֵ֔ל הִנֵּ֧ה אָנֹכִ֛י עֹשֶׂ֥ה דָבָ֖ר בְּיִשְׂרָאֵ֑ל אֲשֶׁר֙ כָּל־שֹׁ֣מְע֔וֹ תְּצִלֶּ֖ינָה שְׁתֵּ֥י אָזְנָֽיו׃"
+    },
+    {
+      "id_chirho": "attempt-b1be538884a944eb91ff51157a1980eb-chirho-cell-10-chirho",
+      "lesson_id_chirho": "1Sam.3.13",
+      "token_id_chirho": "09omx",
+      "lemma_id_chirho": "H3543",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "כָּהָה",
+      "sense_id_chirho": "attempt-b1be538884a944eb91ff51157a1980eb-cell-10-chirho",
+      "contextual_meaning_chirho": "restrain",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-b1be538884a944eb91ff51157a1980eb-chirho/cell-10-chirho.webp",
+      "alt_chirho": "One hand holding another wrist.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3d80363d68a153c3d02d2d445513bace79638e77522277c2fb1baf1ba76d5df6",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "כִהָ֖ה",
+      "context_gloss_chirho": "he did restrain",
+      "context_canonical_text_chirho": "וְהִגַּ֣דְתִּי ל֔וֹ כִּֽי־שֹׁפֵ֥ט אֲנִ֛י אֶת־בֵּית֖וֹ עַד־עוֹלָ֑ם בַּעֲוֺ֣ן אֲשֶׁר־יָדַ֗ע כִּֽי־מְקַֽלְלִ֤ים לָהֶם֙ בָּנָ֔יו וְלֹ֥א כִהָ֖ה בָּֽם׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-icon-09-chirho",
@@ -760,6 +819,58 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-b1be538884a944eb91ff51157a1980eb-chirho-cell-10-chirho",
+      "lesson_id_chirho": "1Sam.3.13",
+      "token_id_chirho": "09omx",
+      "lemma_id_chirho": "H3543",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "כָּהָה",
+      "sense_id_chirho": "attempt-b1be538884a944eb91ff51157a1980eb-cell-10-chirho",
+      "contextual_meaning_chirho": "restrain",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-b1be538884a944eb91ff51157a1980eb-chirho/cell-10-chirho.webp",
+      "alt_chirho": "One hand holding another wrist.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3d80363d68a153c3d02d2d445513bace79638e77522277c2fb1baf1ba76d5df6",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-daef67040620467dada9ca9affda70db-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Lev.13.6",
+      "token_id_chirho": "03Rvo",
+      "lemma_id_chirho": "H3544",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "כֵּהֶה",
+      "sense_id_chirho": "attempt-daef67040620467dada9ca9affda70db-cell-02",
+      "contextual_meaning_chirho": "has faded",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-daef67040620467dada9ca9affda70db-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A leaf fading from ochre to pale cream.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4c7f4b1c0ebf8c50be3930f7824d78e1e9fc07a9511b352ccc0983cbb80c812a",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1551,6 +1662,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-chirho-cell-01-chirho",
+      "lesson_id_chirho": "1Sam.1.3",
+      "token_id_chirho": "09uLf",
+      "lemma_id_chirho": "H5941",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עֵלִי",
+      "sense_id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-cell-01-chirho",
+      "contextual_meaning_chirho": "Eli, father of Hophni and Phinehas",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-00c1394f409648f28583b04f3259e7fd-chirho/cell-01-chirho.webp",
+      "alt_chirho": "An ordinary man wearing a scarf.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8aee55d10af9ab8d3e8b5902aee0cc5ce0e93e6590433ecbf1b4d2e25fb2f234",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-47f8d69cd9b8431bb031a6f64ac3fb3b-04-chirho",
       "lesson_id_chirho": "Prov.24.32",
       "token_id_chirho": "20vXa",
@@ -1721,6 +1858,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-41031d0dde9040e5971b418523c6768c-chirho-cell-13-chirho",
+      "lesson_id_chirho": "1Sam.3.11",
+      "token_id_chirho": "09QHV",
+      "lemma_id_chirho": "H6750",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "צָלַל",
+      "sense_id_chirho": "attempt-41031d0dde9040e5971b418523c6768c-chirho-cell-13-chirho",
+      "contextual_meaning_chirho": "tingle",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-41031d0dde9040e5971b418523c6768c-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A person touching an ear.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d6f272dd1ceb1d5a8811671f9274200a8838a64c0e044ddeadec376ef0b236ba",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

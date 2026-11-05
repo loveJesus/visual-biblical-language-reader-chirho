@@ -3,7 +3,37 @@
   "book_id_chirho": "Jonah",
   "chapter_chirho": 3,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-b45c39dbfa4248b7bcd9f5e8d24b2fd0-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Jonah.3.2",
+      "token_id_chirho": "32zkA",
+      "lemma_id_chirho": "H7150",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "קְרִיאָה",
+      "sense_id_chirho": "attempt-b45c39dbfa4248b7bcd9f5e8d24b2fd0-cell-06",
+      "contextual_meaning_chirho": "message",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-b45c39dbfa4248b7bcd9f5e8d24b2fd0-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A rolled scroll representing a message.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3c9cc62b09a3d6ce4e7f35543a69ff694ee4ce8debdc827eeee0fc15700978ee",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-jonah-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "הַקְּרִיאָ֔ה",
+      "context_gloss_chirho": "the message",
+      "context_canonical_text_chirho": "ק֛וּם לֵ֥ךְ אֶל־נִֽינְוֵ֖ה הָעִ֣יר הַגְּדוֹלָ֑ה וִּקְרָ֤א אֵלֶ֨יהָ֙ אֶת־הַקְּרִיאָ֔ה אֲשֶׁ֥ר אָנֹכִ֖י דֹּבֵ֥ר אֵלֶֽיךָ׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-46cee3348975438a9f24f7ab877af3ff-15-chirho",
@@ -301,6 +331,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-b8fb0b83b60c4b34ba3f535d3838d082-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Exod.15.7",
+      "token_id_chirho": "02jg4",
+      "lemma_id_chirho": "H2740",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חָרוֹן",
+      "sense_id_chirho": "attempt-b8fb0b83b60c4b34ba3f535d3838d082-chirho-cell-00-chirho",
+      "contextual_meaning_chirho": "wrath that consumes like stubble",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-b8fb0b83b60c4b34ba3f535d3838d082-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A small bundle of stubble burning with connected flames.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "e6901a67b4347e7261177857b8d36d207dae0ca18366d2772084a9be8cfcd828",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-95bde403c3a4420d9aea3bc414ad2f6e-15-chirho",
       "lesson_id_chirho": "Prov.31.18",
       "token_id_chirho": "20Pxa",
@@ -417,6 +473,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-9274b6a9296c401aadad5f39785bf727-chirho-cell-09-chirho",
+      "lesson_id_chirho": "2Kgs.14.25",
+      "token_id_chirho": "12Zvg",
+      "lemma_id_chirho": "H3124",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יוֹנָה",
+      "sense_id_chirho": "attempt-9274b6a9296c401aadad5f39785bf727-chirho-cell-09-chirho",
+      "contextual_meaning_chirho": "Jonah",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-9274b6a9296c401aadad5f39785bf727-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A standing messenger holding a rolled scroll.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "e77ed39eb61ed9daa2445ef8b0fa97090e2114d16147ab7f14011a27a9c2d580",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -663,6 +745,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-c33da6470b0741b99dffa284ef3b0fd8-chirho-cell-03-chirho",
+      "lesson_id_chirho": "Neh.2.6",
+      "token_id_chirho": "16JZq",
+      "lemma_id_chirho": "H4109",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מַהֲלָךְ",
+      "sense_id_chirho": "c33da6470b0741b99dffa284ef3b0fd8-cell-03-chirho",
+      "contextual_meaning_chirho": "journey",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-c33da6470b0741b99dffa284ef3b0fd8-chirho/cell-03-chirho.webp",
+      "alt_chirho": "A leather sandal, a mnemonic for a journey.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4b109f788b4afb46be5b37f1265415c2c2f6bc9b9823ceff5a10a069e6923546",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-neh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1209,6 +1317,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-cf51616d2e324498b4ba4d7592a03459-chirho-cell-02-chirho",
+      "lesson_id_chirho": "2Sam.12.16",
+      "token_id_chirho": "10EAv",
+      "lemma_id_chirho": "H6685",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "צוֹם",
+      "sense_id_chirho": "attempt-cf51616d2e324498b4ba4d7592a03459-cell-02-chirho",
+      "contextual_meaning_chirho": "fasting",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cf51616d2e324498b4ba4d7592a03459-chirho/cell-02-chirho.webp",
+      "alt_chirho": "An empty bowl, symbolizing fasting.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "1bc1084c7475eb73f5cb59b9e2c200e658a1f2a87b8eafe70f9272638c2a9d49",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-7596244a7dc44f80828d75683d574f63-07-chirho",
       "lesson_id_chirho": "Prov.6.9",
       "token_id_chirho": "20tvR",
@@ -1303,6 +1437,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-b45c39dbfa4248b7bcd9f5e8d24b2fd0-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Jonah.3.2",
+      "token_id_chirho": "32zkA",
+      "lemma_id_chirho": "H7150",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "קְרִיאָה",
+      "sense_id_chirho": "attempt-b45c39dbfa4248b7bcd9f5e8d24b2fd0-cell-06",
+      "contextual_meaning_chirho": "message",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-b45c39dbfa4248b7bcd9f5e8d24b2fd0-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A rolled scroll representing a message.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3c9cc62b09a3d6ce4e7f35543a69ff694ee4ce8debdc827eeee0fc15700978ee",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-jonah-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

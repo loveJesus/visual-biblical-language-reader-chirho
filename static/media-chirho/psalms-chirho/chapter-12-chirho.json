@@ -3,7 +3,37 @@
   "book_id_chirho": "Ps",
   "chapter_chirho": 12,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-230a00cf60ed45a3b175214d2cbc1b25-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Ps.12.9",
+      "token_id_chirho": "19Tgd",
+      "lemma_id_chirho": "H2149",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זֻלּוּת",
+      "sense_id_chirho": "attempt-230a00cf60ed45a3b175214d2cbc1b25-cell-2",
+      "contextual_meaning_chirho": "vileness",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-230a00cf60ed45a3b175214d2cbc1b25-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A stained stone as a mnemonic for vileness.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "e888441c2f80a9956318eceb70fcb32d54f5c7456230ea260e482ed9269b85f0",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "זֻ֝לּ֗וּת",
+      "context_gloss_chirho": "Vileness",
+      "context_canonical_text_chirho": "סָבִ֗יב רְשָׁעִ֥ים יִתְהַלָּכ֑וּן כְּרֻ֥ם זֻ֝לּ֗וּת לִבְנֵ֥י אָדָֽם׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-v2-icon-02-chirho",
@@ -103,6 +133,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-de0162fed5d240cc8a9ef3dcf15490f1-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Ps.7.10",
+      "token_id_chirho": "19GXq",
+      "lemma_id_chirho": "H1584",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "גָּמַר",
+      "sense_id_chirho": "attempt-de0162fed5d240cc8a9ef3dcf15490f1-cell-06-chirho",
+      "contextual_meaning_chirho": "come to an end",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-de0162fed5d240cc8a9ef3dcf15490f1-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A short unlit candle as a mnemonic for an ending.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "3c8ed01a18d9de330373b0232e214ff2dac0692eaa697effde8eeba75283daa8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-58b2ae8fae914431902f17554bbcbb9d-06-chirho",
       "lesson_id_chirho": "Prov.2.12",
       "token_id_chirho": "20aSJ",
@@ -196,6 +252,84 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-96d933b480754d1eb8d25f573203d8d8-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Exod.15.13",
+      "token_id_chirho": "02FP9",
+      "lemma_id_chirho": "H2098",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זוּ",
+      "sense_id_chirho": "attempt-96d933b480754d1eb8d25f573203d8d8-cell-10-chirho",
+      "contextual_meaning_chirho": "Whom, linking the people with the following description",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-96d933b480754d1eb8d25f573203d8d8-chirho/cell-10-chirho.webp",
+      "alt_chirho": "Two simple interlocking rings.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a6bcb7f3d1ab50794731c2f122fe89e2070b0cd147ad884614ed450b0a71b833",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-230a00cf60ed45a3b175214d2cbc1b25-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Ps.12.9",
+      "token_id_chirho": "19Tgd",
+      "lemma_id_chirho": "H2149",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זֻלּוּת",
+      "sense_id_chirho": "attempt-230a00cf60ed45a3b175214d2cbc1b25-cell-2",
+      "contextual_meaning_chirho": "vileness",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-230a00cf60ed45a3b175214d2cbc1b25-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A stained stone as a mnemonic for vileness.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "e888441c2f80a9956318eceb70fcb32d54f5c7456230ea260e482ed9269b85f0",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-98aa5b0e750f4fabbae050314aea22b1-chirho-cell-15-chirho",
+      "lesson_id_chirho": "1Chr.28.18",
+      "token_id_chirho": "13PN6",
+      "lemma_id_chirho": "H2212",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זָקַק",
+      "sense_id_chirho": "attempt-98aa5b0e750f4fabbae050314aea22b1-cell-15-chirho",
+      "contextual_meaning_chirho": "refined gold",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-98aa5b0e750f4fabbae050314aea22b1-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A small crucible containing a piece of gold.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4c6f2b4ef6fd767545cd0bb1c54f19ea3684852a922e1fe66d79ca3bc5aa316a",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1chr-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -342,6 +476,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-10-chirho",
+      "lesson_id_chirho": "2Sam.22.3",
+      "token_id_chirho": "10G7D",
+      "lemma_id_chirho": "H3468",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יֶשַׁע",
+      "sense_id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-10-chirho",
+      "contextual_meaning_chirho": "My salvation",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f51b81c986224f1bb36cbc1625ec9163-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A shield, a protective mnemonic for salvation.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "e83112a6352e5c3b861d2ab472fc39e74943634ae2fc31029043591de516a23e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1057,6 +1217,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-f9999036eb5c410399c314059518074b-chirho-cell-08-chirho",
+      "lesson_id_chirho": "1Chr.15.21",
+      "token_id_chirho": "13JQg",
+      "lemma_id_chirho": "H8067",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שְׁמִינִית",
+      "sense_id_chirho": "attempt-f9999036eb5c410399c314059518074b-chirho-cell-08-chirho",
+      "contextual_meaning_chirho": "Sheminith in a musical setting",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f9999036eb5c410399c314059518074b-chirho/cell-08-chirho.webp",
+      "alt_chirho": "A harp as a mnemonic for the musical context of Sheminith.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "c31dbfd502803edacf31582a6c6d82ef8d89ebe7edc5f79d199aacc8e2a4b704",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1chr-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

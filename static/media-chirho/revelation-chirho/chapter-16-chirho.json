@@ -3,7 +3,34 @@
   "book_id_chirho": "Rev",
   "chapter_chirho": 16,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-3e19005b5e634e58bed1213db787b09c-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Rev.16.13",
+      "token_id_chirho": "Rev.16.13!24",
+      "lemma_id_chirho": "G944",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "βάτραχος",
+      "sense_id_chirho": "attempt-3e19005b5e634e58bed1213db787b09c-chirho-cell-02-chirho",
+      "contextual_meaning_chirho": "frogs",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3e19005b5e634e58bed1213db787b09c-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A green frog.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "86dfa6ea2d8d5a783f645501561d973dffa20fadcfddb31e236bd9df6903fcef",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "βάτραχοι",
+      "context_gloss_chirho": "frogs",
+      "context_canonical_text_chirho": "Καὶ εἶδον ἐκ τοῦ στόματος τοῦ δράκοντος καὶ ἐκ τοῦ στόματος τοῦ θηρίου καὶ ἐκ τοῦ στόματος τοῦ ψευδοπροφήτου πνεύματα τρία ἀκάθαρτα ὡς βάτραχοι·"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-attempt-19ab5368a2aa45a0aa0b16783d512504-chirho-08-chirho",
@@ -3039,6 +3066,29 @@
         "berean-glosses-chirho"
       ],
       "display_authority_chirho": "An AI agent checked this word's meaning before reusing the illustration. Artwork review is recorded separately.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-3e19005b5e634e58bed1213db787b09c-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Rev.16.13",
+      "token_id_chirho": "Rev.16.13!24",
+      "lemma_id_chirho": "G944",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "βάτραχος",
+      "sense_id_chirho": "attempt-3e19005b5e634e58bed1213db787b09c-chirho-cell-02-chirho",
+      "contextual_meaning_chirho": "frogs",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3e19005b5e634e58bed1213db787b09c-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A green frog.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "86dfa6ea2d8d5a783f645501561d973dffa20fadcfddb31e236bd9df6903fcef",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

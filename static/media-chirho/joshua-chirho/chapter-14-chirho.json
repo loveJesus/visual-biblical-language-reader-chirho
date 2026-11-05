@@ -3,7 +3,37 @@
   "book_id_chirho": "Josh",
   "chapter_chirho": 14,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-55520091fa3244d28e8ae3e834e03db9-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Josh.14.8",
+      "token_id_chirho": "0631M",
+      "lemma_id_chirho": "H4529",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מָסָה",
+      "sense_id_chirho": "attempt-55520091fa3244d28e8ae3e834e03db9-cell-11-chirho",
+      "contextual_meaning_chirho": "Made melt, used of the people's heart.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-55520091fa3244d28e8ae3e834e03db9-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A red heart shape with one softening, drooping edge.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "c029d8899cc4cc885225a8f4afc3ef082da58cb92bd43b3586a46c8e432ece7e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "הִמְסִ֖יו",
+      "context_gloss_chirho": "made melt",
+      "context_canonical_text_chirho": "וְאַחַי֙ אֲשֶׁ֣ר עָל֣וּ עִמִּ֔י הִמְסִ֖יו אֶת־לֵ֣ב הָעָ֑ם וְאָנֹכִ֣י מִלֵּ֔אתִי אַחֲרֵ֖י יְהוָ֥ה אֱלֹהָֽי׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-v2-icon-00-chirho",
@@ -175,6 +205,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-9d931d4aae914d14864dd7d0081c405f-chirho-cell-13-chirho",
+      "lesson_id_chirho": "Deut.11.30",
+      "token_id_chirho": "05vUR",
+      "lemma_id_chirho": "H1537",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "גִּלְגָּל",
+      "sense_id_chirho": "attempt-9d931d4aae914d14864dd7d0081c405f-chirho-cell-13-chirho",
+      "contextual_meaning_chirho": "Gilgal, a place",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-9d931d4aae914d14864dd7d0081c405f-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A rooted oak as a nearby-landmark mnemonic for Gilgal.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f45fd10e1a8250dcb400c6d37372aeb6256e3b0508dbd3f80a0107caaaeabca5",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1070,6 +1126,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-f3bd9046d8ab4da8ba3b002129e9668f-chirho-cell-03-chirho",
+      "lesson_id_chirho": "Num.13.6",
+      "token_id_chirho": "0474j",
+      "lemma_id_chirho": "H3612",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "כָּלֵב",
+      "sense_id_chirho": "attempt-f3bd9046d8ab4da8ba3b002129e9668f-cell-03-chirho",
+      "contextual_meaning_chirho": "Caleb",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f3bd9046d8ab4da8ba3b002129e9668f-chirho/cell-03-chirho.webp",
+      "alt_chirho": "An ordinary person representing Caleb.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "aa85da1eb1bcb9845a03d17b96fe7c89f5485ccdc677396cb3c1ecbed742b8ad",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "prov-icon-04-chirho",
       "lesson_id_chirho": "Prov.26.1",
       "token_id_chirho": "20baH",
@@ -1214,6 +1296,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Exod.4.14",
+      "token_id_chirho": "022B3",
+      "lemma_id_chirho": "H3881",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "לֵוִיִּי",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-14-chirho",
+      "contextual_meaning_chirho": "the Levite, referring to Aaron in this verse",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A plainly dressed traveler.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "487faf93bc07a1d82375034f915e57fa4ebc421f470809476657283a5c3434e8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1411,6 +1519,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-55520091fa3244d28e8ae3e834e03db9-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Josh.14.8",
+      "token_id_chirho": "0631M",
+      "lemma_id_chirho": "H4529",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מָסָה",
+      "sense_id_chirho": "attempt-55520091fa3244d28e8ae3e834e03db9-cell-11-chirho",
+      "contextual_meaning_chirho": "Made melt, used of the people's heart.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-55520091fa3244d28e8ae3e834e03db9-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A red heart shape with one softening, drooping edge.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "c029d8899cc4cc885225a8f4afc3ef082da58cb92bd43b3586a46c8e432ece7e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-552533bec5fd41de876b9952d995de61-chirho-13-chirho",
       "lesson_id_chirho": "Gen.4.20",
       "token_id_chirho": "015hr",
@@ -1436,6 +1570,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Exod.2.10",
+      "token_id_chirho": "02pAw",
+      "lemma_id_chirho": "H4872",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מֹשֶׁה",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-10-chirho",
+      "contextual_meaning_chirho": "Moses, the child named in the verse",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A child in a simple tunic.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "1880c2f77491478e8fe7d6bbe82aa55aa00cb3782f8108991b9dcc2de52e7e76",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-2768f4e374df4686849652d18ecf5018-chirho-05-chirho",
       "lesson_id_chirho": "Gen.18.23",
       "token_id_chirho": "01tTy",
@@ -1458,6 +1618,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho-cell-03-chirho",
+      "lesson_id_chirho": "Exod.33.11",
+      "token_id_chirho": "02PHn",
+      "lemma_id_chirho": "H5126",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "נוּן",
+      "sense_id_chirho": "attempt-e73afc8f62904eedb3ca309cc0c4d503-cell-03-chirho",
+      "contextual_meaning_chirho": "Nun, named as Joshua’s father",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e73afc8f62904eedb3ca309cc0c4d503-chirho/cell-03-chirho.webp",
+      "alt_chirho": "A portrait of an ordinary man in a simple robe.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "260aaf318fd35f14326a6b0b09dc42d0c1090e3665b19b886b4b87f3227e54a6",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1877,6 +2063,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-1e293fc449f640779f4092e4f000675c-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Deut.1.28",
+      "token_id_chirho": "05MRA",
+      "lemma_id_chirho": "H6062",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עֲנָקִי",
+      "sense_id_chirho": "attempt-1e293fc449f640779f4092e4f000675c-cell-2-chirho",
+      "contextual_meaning_chirho": "sons of Anak",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1e293fc449f640779f4092e4f000675c-chirho/cell-02-chirho.webp",
+      "alt_chirho": "An imagined tall man standing beside a small city gate.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "55bc6bdd3917e9a8d43271d674b152a37d396710ece3eee6ff419801bc36906f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

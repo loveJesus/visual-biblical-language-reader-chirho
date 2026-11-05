@@ -3,7 +3,34 @@
   "book_id_chirho": "1Thess",
   "chapter_chirho": 3,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-93fd100b9d824b478da50850751abda2-chirho-cell-13-chirho",
+      "lesson_id_chirho": "1Thess.3.3",
+      "token_id_chirho": "1Thess.3.3!3",
+      "lemma_id_chirho": "G4525",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "σαίνω",
+      "sense_id_chirho": "attempt-93fd100b9d824b478da50850751abda2-chirho-cell-13-chirho",
+      "contextual_meaning_chirho": "Be moved, in the phrase about tribulations.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-93fd100b9d824b478da50850751abda2-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A rooted sapling leaning to one side.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b3c5be2451c1af7eb393e86fca8a5cf2e16a995ed9142da2be5870dcdcc1ae1c",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "σαίνεσθαι",
+      "context_gloss_chirho": "be moved",
+      "context_canonical_text_chirho": "τὸ μηδένα σαίνεσθαι ἐν ταῖς θλίψεσιν ταύταις. αὐτοὶ γὰρ οἴδατε ὅτι εἰς τοῦτο κείμεθα·"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-attempt-8328164e25ef4c44a523a9f85c395e9d-chirho-00-chirho",
@@ -1682,6 +1709,29 @@
         "berean-glosses-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-93fd100b9d824b478da50850751abda2-chirho-cell-13-chirho",
+      "lesson_id_chirho": "1Thess.3.3",
+      "token_id_chirho": "1Thess.3.3!3",
+      "lemma_id_chirho": "G4525",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "σαίνω",
+      "sense_id_chirho": "attempt-93fd100b9d824b478da50850751abda2-chirho-cell-13-chirho",
+      "contextual_meaning_chirho": "Be moved, in the phrase about tribulations.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-93fd100b9d824b478da50850751abda2-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A rooted sapling leaning to one side.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b3c5be2451c1af7eb393e86fca8a5cf2e16a995ed9142da2be5870dcdcc1ae1c",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "nestle1904-morph-chirho",
+        "berean-glosses-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

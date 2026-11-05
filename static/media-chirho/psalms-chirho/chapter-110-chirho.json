@@ -3,7 +3,66 @@
   "book_id_chirho": "Ps",
   "chapter_chirho": 110,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-cf0863d95e8e4492830f88b6a6674418-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Ps.110.3",
+      "token_id_chirho": "19GGJ",
+      "lemma_id_chirho": "H4891",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִשְׁחָר",
+      "sense_id_chirho": "attempt-cf0863d95e8e4492830f88b6a6674418-cell-2-chirho",
+      "contextual_meaning_chirho": "morning",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cf0863d95e8e4492830f88b6a6674418-chirho/cell-02-chirho.webp",
+      "alt_chirho": "The sun rising behind a hill.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "cb806346d9eec359cfb04fd085a4458f9fc968531371aab25bc3eaf19ef36dc8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מִשְׁחָ֑ר",
+      "context_gloss_chirho": "the morning",
+      "context_canonical_text_chirho": "עַמְּךָ֣ נְדָבֹת֮ בְּי֪וֹם חֵ֫ילֶ֥ךָ בְּֽהַדְרֵי־קֹ֭דֶשׁ מֵרֶ֣חֶם מִשְׁחָ֑ר לְ֝ךָ֗ טַ֣ל יַלְדֻתֶֽיךָ׃"
+    },
+    {
+      "id_chirho": "attempt-d7958659383a438999b6dcd676ae6a05-chirho-cell-12-chirho",
+      "lesson_id_chirho": "Ps.110.3",
+      "token_id_chirho": "19fNV",
+      "lemma_id_chirho": "H3208",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יַלְדוּת",
+      "sense_id_chirho": "attempt-d7958659383a438999b6dcd676ae6a05-chirho-cell-12-chirho",
+      "contextual_meaning_chirho": "your youth",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d7958659383a438999b6dcd676ae6a05-chirho/cell-12-chirho.webp",
+      "alt_chirho": "A young green sprout with a dew drop on its leaf.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "94c6ba35152fa5cec869305d2f88b29cbc92b031587fee3ba85cefd021e96042",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "יַלְדֻתֶֽיךָ",
+      "context_gloss_chirho": "Your youth",
+      "context_canonical_text_chirho": "עַמְּךָ֣ נְדָבֹת֮ בְּי֪וֹם חֵ֫ילֶ֥ךָ בְּֽהַדְרֵי־קֹ֭דֶשׁ מֵרֶ֣חֶם מִשְׁחָ֑ר לְ֝ךָ֗ טַ֣ל יַלְדֻתֶֽיךָ׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-7dfbdde993174def8474996feee3bb92-08-chirho",
@@ -76,6 +135,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-de0162fed5d240cc8a9ef3dcf15490f1-chirho-cell-13-chirho",
+      "lesson_id_chirho": "Job.5.8",
+      "token_id_chirho": "18eHZ",
+      "lemma_id_chirho": "H1700",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "דִּבְרָה",
+      "sense_id_chirho": "attempt-de0162fed5d240cc8a9ef3dcf15490f1-cell-13-chirho",
+      "contextual_meaning_chirho": "my cause",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-de0162fed5d240cc8a9ef3dcf15490f1-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A blank rolled scroll representing a cause.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7ef51031f5b22714544b1fbef7abf8d70b9a07e5c9eb1290065615f92bcb4c12",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-job-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -271,6 +356,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-d7958659383a438999b6dcd676ae6a05-chirho-cell-12-chirho",
+      "lesson_id_chirho": "Ps.110.3",
+      "token_id_chirho": "19fNV",
+      "lemma_id_chirho": "H3208",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יַלְדוּת",
+      "sense_id_chirho": "attempt-d7958659383a438999b6dcd676ae6a05-chirho-cell-12-chirho",
+      "contextual_meaning_chirho": "your youth",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d7958659383a438999b6dcd676ae6a05-chirho/cell-12-chirho.webp",
+      "alt_chirho": "A young green sprout with a dew drop on its leaf.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "94c6ba35152fa5cec869305d2f88b29cbc92b031587fee3ba85cefd021e96042",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-ff4530b51c9047d3861e5b6c86d33c9a-10-chirho",
       "lesson_id_chirho": "Prov.3.16",
       "token_id_chirho": "20PU6",
@@ -415,6 +526,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-9ecc69b8fc444b79bd58b2aa10774a87-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Num.24.8",
+      "token_id_chirho": "04STG",
+      "lemma_id_chirho": "H4272",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מָחַץ",
+      "sense_id_chirho": "attempt-9ecc69b8fc444b79bd58b2aa10774a87-cell-11-chirho",
+      "contextual_meaning_chirho": "To pierce with arrows.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-9ecc69b8fc444b79bd58b2aa10774a87-chirho/cell-11-chirho.webp",
+      "alt_chirho": "An arrow embedded in a wooden target.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4ef7cc06c004917d9fdaac408c2653cb48062745b8a14862184006bab220c2ac",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-545818c8400543b992e6d7ff13d692cb-chirho-00-chirho",
       "lesson_id_chirho": "Gen.38.18",
       "token_id_chirho": "01jKF",
@@ -510,6 +647,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-cf0863d95e8e4492830f88b6a6674418-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Ps.110.3",
+      "token_id_chirho": "19GGJ",
+      "lemma_id_chirho": "H4891",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִשְׁחָר",
+      "sense_id_chirho": "attempt-cf0863d95e8e4492830f88b6a6674418-cell-2-chirho",
+      "contextual_meaning_chirho": "morning",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cf0863d95e8e4492830f88b6a6674418-chirho/cell-02-chirho.webp",
+      "alt_chirho": "The sun rising behind a hill.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "cb806346d9eec359cfb04fd085a4458f9fc968531371aab25bc3eaf19ef36dc8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

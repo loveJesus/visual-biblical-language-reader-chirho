@@ -3,7 +3,66 @@
   "book_id_chirho": "Isa",
   "chapter_chirho": 56,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-58cd57470be245ca8b63e5fedd1cd251-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Isa.56.10",
+      "token_id_chirho": "23Ynr",
+      "lemma_id_chirho": "H5024",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "נָבַח",
+      "sense_id_chirho": "attempt-58cd57470be245ca8b63e5fedd1cd251-cell-11-chirho",
+      "contextual_meaning_chirho": "Bark",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-58cd57470be245ca8b63e5fedd1cd251-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A dog with its mouth open.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "042cdbcb638382a997ce39c19182efa97320c662442f9335ed5242180e2cd0ef",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "לִנְבֹּ֑חַ",
+      "context_gloss_chirho": "bark",
+      "context_canonical_text_chirho": "צפו עִוְרִ֤ים כֻּלָּם֙ לֹ֣א יָדָ֔עוּ כֻּלָּם֙ כְּלָבִ֣ים אִלְּמִ֔ים לֹ֥א יוּכְל֖וּ לִנְבֹּ֑חַ הֹזִים֙ שֹֽׁכְבִ֔ים אֹהֲבֵ֖י לָנֽוּם׃"
+    },
+    {
+      "id_chirho": "attempt-c27bf776a2ad46f7a0a3f2e0b480c2b6-chirho-cell-08-chirho",
+      "lesson_id_chirho": "Isa.56.10",
+      "token_id_chirho": "23hEE",
+      "lemma_id_chirho": "H1957",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "הָזָה",
+      "sense_id_chirho": "attempt-c27bf776a2ad46f7a0a3f2e0b480c2b6-chirho-cell-08",
+      "contextual_meaning_chirho": "Sleeping, in a comparison involving watchmen and dogs",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-c27bf776a2ad46f7a0a3f2e0b480c2b6-chirho/cell-08-chirho.webp",
+      "alt_chirho": "A curled-up sleeping dog.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6f4201cb5b3cf034571c1cae0bc9cc3c1b0b3f34b7b0fab1d79715b33cbad88e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "הֹזִים֙",
+      "context_gloss_chirho": "Sleeping",
+      "context_canonical_text_chirho": "צפו עִוְרִ֤ים כֻּלָּם֙ לֹ֣א יָדָ֔עוּ כֻּלָּם֙ כְּלָבִ֣ים אִלְּמִ֔ים לֹ֥א יוּכְל֖וּ לִנְבֹּ֑חַ הֹזִים֙ שֹֽׁכְבִ֔ים אֹהֲבֵ֖י לָנֽוּם׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-icon-09-chirho",
@@ -297,6 +356,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "L.J. requested local icon production on 2026-10-27. Contextual gloss and OSHB lemma checked against pinned sources; artwork remains pending his review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-c27bf776a2ad46f7a0a3f2e0b480c2b6-chirho-cell-08-chirho",
+      "lesson_id_chirho": "Isa.56.10",
+      "token_id_chirho": "23hEE",
+      "lemma_id_chirho": "H1957",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "הָזָה",
+      "sense_id_chirho": "attempt-c27bf776a2ad46f7a0a3f2e0b480c2b6-chirho-cell-08",
+      "contextual_meaning_chirho": "Sleeping, in a comparison involving watchmen and dogs",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-c27bf776a2ad46f7a0a3f2e0b480c2b6-chirho/cell-08-chirho.webp",
+      "alt_chirho": "A curled-up sleeping dog.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6f4201cb5b3cf034571c1cae0bc9cc3c1b0b3f34b7b0fab1d79715b33cbad88e",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -624,6 +709,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-1860dea732d7409e8f6d995cd3e1bef1-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Num.6.3",
+      "token_id_chirho": "041i2",
+      "lemma_id_chirho": "H3002",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָבֵשׁ",
+      "sense_id_chirho": "attempt-1860dea732d7409e8f6d995cd3e1bef1-cell-09-chirho",
+      "contextual_meaning_chirho": "Dried grapes or raisins",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1860dea732d7409e8f6d995cd3e1bef1-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A cluster of shriveled grapes on a stem.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f4ba2efe46b8742afcf970a33e7d215531460a8a518ead11682e8ae4c9cb3c99",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "proverbs-worker-icon-04-chirho",
       "lesson_id_chirho": "Prov.1.24",
       "token_id_chirho": "20rTK",
@@ -766,6 +877,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-827f5704b6fa4062bf549dc24d04c21c-chirho-cell-04-chirho",
+      "lesson_id_chirho": "Deut.19.5",
+      "token_id_chirho": "05AHo",
+      "lemma_id_chirho": "H3293",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "יַעַר",
+      "sense_id_chirho": "attempt-827f5704b6fa4062bf549dc24d04c21c-cell-04-chirho",
+      "contextual_meaning_chirho": "woods",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-827f5704b6fa4062bf549dc24d04c21c-chirho/cell-04-chirho.webp",
+      "alt_chirho": "A small grove of trees on a shared patch of ground.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "c3894a163874af72705e1f1db1b87177b94f8f1ec4e6c39077b0d75ccadb19ae",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1188,6 +1325,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho-cell-03-chirho",
+      "lesson_id_chirho": "Exod.4.11",
+      "token_id_chirho": "02gv9",
+      "lemma_id_chirho": "H483",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אִלֵּם",
+      "sense_id_chirho": "attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho-cell-03-chirho",
+      "contextual_meaning_chirho": "A person who is mute",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho/cell-03-chirho.webp",
+      "alt_chirho": "A person with closed lips.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "0ebb4f629b174a0cbf368db9fe8b502b8dd6c62986560c8d3ac0b781943e4223",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-1e396358a20743fcaec1369c32ec0883-13-chirho",
       "lesson_id_chirho": "Prov.1.3",
       "token_id_chirho": "20x9c",
@@ -1231,6 +1394,58 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-58cd57470be245ca8b63e5fedd1cd251-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Isa.56.10",
+      "token_id_chirho": "23Ynr",
+      "lemma_id_chirho": "H5024",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "נָבַח",
+      "sense_id_chirho": "attempt-58cd57470be245ca8b63e5fedd1cd251-cell-11-chirho",
+      "contextual_meaning_chirho": "Bark",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-58cd57470be245ca8b63e5fedd1cd251-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A dog with its mouth open.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "042cdbcb638382a997ce39c19182efa97320c662442f9335ed5242180e2cd0ef",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho-cell-12-chirho",
+      "lesson_id_chirho": "Ps.76.6",
+      "token_id_chirho": "1974y",
+      "lemma_id_chirho": "H5123",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "נוּם",
+      "sense_id_chirho": "attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho-cell-12-chirho",
+      "contextual_meaning_chirho": "To sleep",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-4dd201a9893d408e90b7641dce2c5f5b-chirho/cell-12-chirho.webp",
+      "alt_chirho": "A person sleeping under a blanket.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "72baebab83fe124ad3f2e4642ef1697c9c3b19b52ea8ea63d2f8d276f5d960d4",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1882,6 +2097,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-28b08c32fe434d2396a97afd597112cb-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Isa.23.18",
+      "token_id_chirho": "23ApD",
+      "lemma_id_chirho": "H7654",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שׇׂבְעָה",
+      "sense_id_chirho": "attempt-28b08c32fe434d2396a97afd597112cb-chirho-cell-10-chirho",
+      "contextual_meaning_chirho": "sufficiently",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-28b08c32fe434d2396a97afd597112cb-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A bowl with bread representing enough food.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "316ce789b64a195bdfd3470ebf61dee1d5d05604707b007947af97f15a0a8723",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

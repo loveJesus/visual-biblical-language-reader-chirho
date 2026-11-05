@@ -3,7 +3,37 @@
   "book_id_chirho": "Ps",
   "chapter_chirho": 116,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-8ef697d995b54955b23dc4b781f8e100-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Ps.116.3",
+      "token_id_chirho": "19w6B",
+      "lemma_id_chirho": "H4712",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מֵצַר",
+      "sense_id_chirho": "attempt-8ef697d995b54955b23dc4b781f8e100-chirho-cell-00",
+      "contextual_meaning_chirho": "pangs or distress",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-8ef697d995b54955b23dc4b781f8e100-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A heart encircled by a tightening rope.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7197fc46d0d70b047c3d681507658a8dfbba64d4e26a105da72fc5fd205e05f2",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "וּמְצָרֵ֣י",
+      "context_gloss_chirho": "and the pangs of",
+      "context_canonical_text_chirho": "אֲפָפ֤וּנִי ׀ חֶבְלֵי־מָ֗וֶת וּמְצָרֵ֣י שְׁא֣וֹל מְצָא֑וּנִי צָרָ֖ה וְיָג֣וֹן אֶמְצָֽא׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-icon-09-chirho",
@@ -154,6 +184,84 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-7bf5ccd93b86413aa36317871a629e82-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Ps.56.14",
+      "token_id_chirho": "19Y2L",
+      "lemma_id_chirho": "H1762",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "דְּחִי",
+      "sense_id_chirho": "attempt-7bf5ccd93b86413aa36317871a629e82-cell-00-chirho",
+      "contextual_meaning_chirho": "falling or stumbling",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-7bf5ccd93b86413aa36317871a629e82-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A sandaled foot tipping on a small stone.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d49e66b2ec5d9fb33b9b3ad3060e191fd16c08c2016578ddf48e8b656bc13314",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-ffa7143e7aac4b2e93ccf2b44ed58e80-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Judg.6.6",
+      "token_id_chirho": "07vE1",
+      "lemma_id_chirho": "H1809",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "דָּלַל",
+      "sense_id_chirho": "attempt-ffa7143e7aac4b2e93ccf2b44ed58e80-chirho-cell-09-chirho",
+      "contextual_meaning_chirho": "become impoverished",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-ffa7143e7aac4b2e93ccf2b44ed58e80-chirho/cell-09-chirho.webp",
+      "alt_chirho": "An empty bowl representing impoverishment.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "fb0a21335ab275de33e75161380cc47e222fd5376c60763bd1e9c2136090db47",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-judg-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-954839d345db4953b8aff7648f5ce568-chirho-cell-12-chirho",
+      "lesson_id_chirho": "2Kgs.20.5",
+      "token_id_chirho": "12Ykn",
+      "lemma_id_chirho": "H1832",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "דִּמְעָה",
+      "sense_id_chirho": "attempt-954839d345db4953b8aff7648f5ce568-chirho-cell-12-chirho",
+      "contextual_meaning_chirho": "Hezekiah’s tears",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-954839d345db4953b8aff7648f5ce568-chirho/cell-12-chirho.webp",
+      "alt_chirho": "A face with a tear on the cheek.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7d5697be4469850bf8f631f15fce9b32bd29dde2c6a886c7cf15014b7fb6aef0",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2kgs-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -327,6 +435,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-257b2106a0a049289150066a328095ca-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Exod.22.26",
+      "token_id_chirho": "02Mwj",
+      "lemma_id_chirho": "H2587",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חַנּוּן",
+      "sense_id_chirho": "attempt-257b2106a0a049289150066a328095ca-cell-05-chirho",
+      "contextual_meaning_chirho": "gracious",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-257b2106a0a049289150066a328095ca-chirho/cell-05-chirho.webp",
+      "alt_chirho": "A human hand offering a folded cloak, a mnemonic for gracious care.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "04c80fd6ca8c7128f70b611e7de284f2afee15b3d45daca7b0799c34ee03a9f4",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-86077356846045ef8b804dc19795563a-01-chirho",
       "lesson_id_chirho": "Prov.2.8",
       "token_id_chirho": "20jyT",
@@ -352,6 +486,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-1860dea732d7409e8f6d995cd3e1bef1-chirho-cell-04-chirho",
+      "lesson_id_chirho": "Deut.20.3",
+      "token_id_chirho": "0525M",
+      "lemma_id_chirho": "H2648",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חָפַז",
+      "sense_id_chirho": "attempt-1860dea732d7409e8f6d995cd3e1bef1-cell-04-chirho",
+      "contextual_meaning_chirho": "Trembling, which Israel is told not to do",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-1860dea732d7409e8f6d995cd3e1bef1-chirho/cell-04-chirho.webp",
+      "alt_chirho": "A worried person clutching a shield.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "65f8906eb17701483e9303a0d73963bb217de49cc27a24ab12ddf48cbc724657",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-9c56720b8c9a431db121848c01f8192d-chirho-12-chirho",
       "lesson_id_chirho": "Gen.42.38",
       "token_id_chirho": "01AEB",
@@ -374,6 +534,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Exod.15.2",
+      "token_id_chirho": "02nLr",
+      "lemma_id_chirho": "H3050",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָהּ",
+      "sense_id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-07-chirho",
+      "contextual_meaning_chirho": "Yah",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-258793f5e9b94043a5eac53042790162-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A small lyre as a symbol of song and praise.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7875bdb4d53b314febe5f0149b62d725f8fa403dd4f6e5358bbfae0c2eb4e9f5",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -445,6 +631,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Josh.10.1",
+      "token_id_chirho": "06YgF",
+      "lemma_id_chirho": "H3389",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יְרוּשָׁלִַ͏ם",
+      "sense_id_chirho": "attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho-cell-11-chirho",
+      "contextual_meaning_chirho": "Jerusalem, the city named in the verse",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-cb8cd5637b664fe9b2ee0b225a8491de-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A small walled city with a gate.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "72fd4bbef3ab5768e9f385edb47faa71e285339e80b283c17f52fc30e8c7feeb",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -620,6 +832,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-ed57d33fd4f24ee3b752cc2efff8a7ce-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Job.39.5",
+      "token_id_chirho": "18RJK",
+      "lemma_id_chirho": "H4147",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מוֹסֵר",
+      "sense_id_chirho": "attempt-ed57d33fd4f24ee3b752cc2efff8a7ce-chirho-cell-00",
+      "contextual_meaning_chirho": "bonds or restraints",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-ed57d33fd4f24ee3b752cc2efff8a7ce-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A loose coil of rope representing bonds.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "50cc62b92cddef665aea3642204ae5548d00001e455d51657512040dfc000754",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-job-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-5af11d72042a49048fab4cee6c063937-10-chirho",
       "lesson_id_chirho": "Prov.2.18",
       "token_id_chirho": "20WFU",
@@ -764,6 +1002,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-8ef697d995b54955b23dc4b781f8e100-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Ps.116.3",
+      "token_id_chirho": "19w6B",
+      "lemma_id_chirho": "H4712",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מֵצַר",
+      "sense_id_chirho": "attempt-8ef697d995b54955b23dc4b781f8e100-chirho-cell-00",
+      "contextual_meaning_chirho": "pangs or distress",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-8ef697d995b54955b23dc4b781f8e100-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A heart encircled by a tightening rope.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7197fc46d0d70b047c3d681507658a8dfbba64d4e26a105da72fc5fd205e05f2",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1207,6 +1471,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-3ff726ec39274d78a0e387fe4188d965-chirho-cell-02-chirho",
+      "lesson_id_chirho": "2Sam.22.5",
+      "token_id_chirho": "10xb7",
+      "lemma_id_chirho": "H661",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אָפַף",
+      "sense_id_chirho": "attempt-3ff726ec39274d78a0e387fe4188d965-cell-02",
+      "contextual_meaning_chirho": "surrounded",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-3ff726ec39274d78a0e387fe4188d965-chirho/cell-02-chirho.webp",
+      "alt_chirho": "Waves curling around a rock, a metaphor for being surrounded.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "ba832cafec05a558821019129a13373a07d85f06d65552d620ad906781db8096",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-df239fb10476473c9660c1ceace52cc0-00-chirho",
       "lesson_id_chirho": "Prov.1.4",
       "token_id_chirho": "20KZG",
@@ -1542,6 +1832,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Lev.7.12",
+      "token_id_chirho": "03Aw1",
+      "lemma_id_chirho": "H8426",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "תּוֹדָה",
+      "sense_id_chirho": "attempt-00c1394f409648f28583b04f3259e7fd-cell-11-chirho",
+      "contextual_meaning_chirho": "a thanksgiving offering",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-00c1394f409648f28583b04f3259e7fd-chirho/cell-11-chirho.webp",
+      "alt_chirho": "Two hands presenting a round cake.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "ce082026e910fa7b56668525a34515e20ba5f34646dcb88a01ca2594fad88ce7",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

@@ -3,7 +3,37 @@
   "book_id_chirho": "Eccl",
   "chapter_chirho": 11,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-b805760a7e4e4156956f6a634be84d34-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Eccl.11.10",
+      "token_id_chirho": "21174",
+      "lemma_id_chirho": "H7839",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שַׁחֲרוּת",
+      "sense_id_chirho": "attempt-b805760a7e4e4156956f6a634be84d34-cell-06-chirho",
+      "contextual_meaning_chirho": "youth",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-b805760a7e4e4156956f6a634be84d34-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A young person standing.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "15eeddbd95e82e33498cb8b8becc27664b04029b00ab23360b0e05f166b68fd3",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-eccl-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "וְהַֽשַּׁחֲר֖וּת",
+      "context_gloss_chirho": "and youth",
+      "context_canonical_text_chirho": "וְהָסֵ֥ר כַּ֨עַס֙ מִלִּבֶּ֔ךָ וְהַעֲבֵ֥ר רָעָ֖ה מִבְּשָׂרֶ֑ךָ כִּֽי־הַיַּלְד֥וּת וְהַֽשַּׁחֲר֖וּת הָֽבֶל׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "icon-46cee3348975438a9f24f7ab877af3ff-15-chirho",
@@ -152,6 +182,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-e2d9978ae7794e35a21b0fae498422a1-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Deut.33.23",
+      "token_id_chirho": "05rVy",
+      "lemma_id_chirho": "H1864",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "דָּרוֹם",
+      "sense_id_chirho": "attempt-e2d9978ae7794e35a21b0fae498422a1-chirho-cell-06-chirho",
+      "contextual_meaning_chirho": "south",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-e2d9978ae7794e35a21b0fae498422a1-chirho/cell-06-chirho.webp",
+      "alt_chirho": "An unlettered compass with its needle pointing downward.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d45cef1d246887570f101ceb02946959f27867887b7f116d72abd47927653e99",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -622,6 +678,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-d7958659383a438999b6dcd676ae6a05-chirho-cell-12-chirho",
+      "lesson_id_chirho": "Ps.110.3",
+      "token_id_chirho": "19fNV",
+      "lemma_id_chirho": "H3208",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יַלְדוּת",
+      "sense_id_chirho": "attempt-d7958659383a438999b6dcd676ae6a05-chirho-cell-12-chirho",
+      "contextual_meaning_chirho": "your youth",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d7958659383a438999b6dcd676ae6a05-chirho/cell-12-chirho.webp",
+      "alt_chirho": "A young green sprout with a dew drop on its leaf.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "94c6ba35152fa5cec869305d2f88b29cbc92b031587fee3ba85cefd021e96042",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-47f8d69cd9b8431bb031a6f64ac3fb3b-13-chirho",
       "lesson_id_chirho": "Prov.31.4",
       "token_id_chirho": "20nHM",
@@ -698,6 +780,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-03-chirho",
+      "lesson_id_chirho": "Exod.12.11",
+      "token_id_chirho": "02Xw7",
+      "lemma_id_chirho": "H3602",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "כָּכָה",
+      "sense_id_chirho": "attempt-f51b81c986224f1bb36cbc1625ec9163-chirho-cell-03-chirho",
+      "contextual_meaning_chirho": "Thus; in this manner",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f51b81c986224f1bb36cbc1625ec9163-chirho/cell-03-chirho.webp",
+      "alt_chirho": "A tied belt, a context-based mnemonic for thus or in this manner.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "6085ccd5679105154118b3a3afaf6931f1e19acf203c5bf1327357faa50b6264",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-32691a3b309843a2abfd0a5ff8b70dca-00-chirho",
       "lesson_id_chirho": "Prov.1.13",
       "token_id_chirho": "20fQr",
@@ -770,6 +878,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-ecf6260178074a1a801352095fc66338-chirho-cell-13-chirho",
+      "lesson_id_chirho": "Esth.8.5",
+      "token_id_chirho": "17UWF",
+      "lemma_id_chirho": "H3787",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "כָּשֵׁר",
+      "sense_id_chirho": "attempt-ecf6260178074a1a801352095fc66338-chirho-cell-13-chirho",
+      "contextual_meaning_chirho": "Seeming right or fitting",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-ecf6260178074a1a801352095fc66338-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A small balanced scale.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d30bf5fb4d8a2bdee8833f2f1a4c99cf94b0da94966473c7011a41ea31e945c1",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-esth-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1723,6 +1857,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-b805760a7e4e4156956f6a634be84d34-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Eccl.11.10",
+      "token_id_chirho": "21174",
+      "lemma_id_chirho": "H7839",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שַׁחֲרוּת",
+      "sense_id_chirho": "attempt-b805760a7e4e4156956f6a634be84d34-cell-06-chirho",
+      "contextual_meaning_chirho": "youth",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-b805760a7e4e4156956f6a634be84d34-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A young person standing.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "15eeddbd95e82e33498cb8b8becc27664b04029b00ab23360b0e05f166b68fd3",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-eccl-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {

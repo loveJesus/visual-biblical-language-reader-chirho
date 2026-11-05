@@ -3,7 +3,66 @@
   "book_id_chirho": "Josh",
   "chapter_chirho": 5,
   "scenes_chirho": [],
-  "icons_chirho": [],
+  "icons_chirho": [
+    {
+      "id_chirho": "attempt-06e40cad0a1f4cdf941c6ac2596f45d2-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Josh.5.2",
+      "token_id_chirho": "06eWV",
+      "lemma_id_chirho": "H4135",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "מוּל",
+      "sense_id_chirho": "attempt-06e40cad0a1f4cdf941c6ac2596f45d2-cell-14-chirho",
+      "contextual_meaning_chirho": "circumcise",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-06e40cad0a1f4cdf941c6ac2596f45d2-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A single flint knife.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "827731f093992ae64ba7b93b365f86aee9caa9a91cb858021b5d8c4f8f53dc16",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מֹ֥ל",
+      "context_gloss_chirho": "circumcise",
+      "context_canonical_text_chirho": "בָּעֵ֣ת הַהִ֗יא אָמַ֤ר יְהוָה֙ אֶל־יְהוֹשֻׁ֔עַ עֲשֵׂ֥ה לְךָ֖ חַֽרְב֣וֹת צֻרִ֑ים וְשׁ֛וּב מֹ֥ל אֶת־בְּנֵֽי־יִשְׂרָאֵ֖ל שֵׁנִֽית׃"
+    },
+    {
+      "id_chirho": "attempt-d66c0b973c3c435eabd922eeb5c71e6b-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Josh.5.11",
+      "token_id_chirho": "06rNM",
+      "lemma_id_chirho": "H5669",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עָבוּר",
+      "sense_id_chirho": "attempt-d66c0b973c3c435eabd922eeb5c71e6b-cell-10-chirho",
+      "contextual_meaning_chirho": "produce of the land",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d66c0b973c3c435eabd922eeb5c71e6b-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A tied sheaf of grain.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a03d6ff94ebd975a74070473ae2d0f3f90b26b2fcd041e45ffffabe4b9cfad24",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מֵעֲב֥וּר",
+      "context_gloss_chirho": "of the produce of",
+      "context_canonical_text_chirho": "וַיֹּ֨אכְל֜וּ מֵעֲב֥וּר הָאָ֛רֶץ מִמָּֽחֳרַ֥ת הַפֶּ֖סַח מַצּ֣וֹת וְקָל֑וּי בְּעֶ֖צֶם הַיּ֥וֹם הַזֶּֽה׃"
+    }
+  ],
   "lemma_icons_chirho": [
     {
       "id_chirho": "proverbs-worker-v2-icon-00-chirho",
@@ -152,6 +211,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-9d931d4aae914d14864dd7d0081c405f-chirho-cell-13-chirho",
+      "lesson_id_chirho": "Deut.11.30",
+      "token_id_chirho": "05vUR",
+      "lemma_id_chirho": "H1537",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "גִּלְגָּל",
+      "sense_id_chirho": "attempt-9d931d4aae914d14864dd7d0081c405f-chirho-cell-13-chirho",
+      "contextual_meaning_chirho": "Gilgal, a place",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-9d931d4aae914d14864dd7d0081c405f-chirho/cell-13-chirho.webp",
+      "alt_chirho": "A rooted oak as a nearby-landmark mnemonic for Gilgal.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f45fd10e1a8250dcb400c6d37372aeb6256e3b0508dbd3f80a0107caaaeabca5",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-deut-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -671,6 +756,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-f1d60df5ae164d9ea12693d410b5fa51-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Exod.1.22",
+      "token_id_chirho": "02ecS",
+      "lemma_id_chirho": "H3209",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יִלּוֹד",
+      "sense_id_chirho": "attempt-f1d60df5ae164d9ea12693d410b5fa51-cell-09-chirho",
+      "contextual_meaning_chirho": "one who is born",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-f1d60df5ae164d9ea12693d410b5fa51-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A swaddled newborn",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4cea62509c5a4501cef151cae617cc54a7f824f56646f96c6370a83cb7207ee6",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-54034e6ea21341cb8d6bcfede5faabfa-10-chirho",
       "lesson_id_chirho": "Prov.1.11",
       "token_id_chirho": "20CyH",
@@ -766,6 +877,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-827f5704b6fa4062bf549dc24d04c21c-chirho-cell-01-chirho",
+      "lesson_id_chirho": "Num.22.1",
+      "token_id_chirho": "042ju",
+      "lemma_id_chirho": "H3405",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יְרִיחוֹ",
+      "sense_id_chirho": "attempt-827f5704b6fa4062bf549dc24d04c21c-cell-01-chirho",
+      "contextual_meaning_chirho": "Jericho",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-827f5704b6fa4062bf549dc24d04c21c-chirho/cell-01-chirho.webp",
+      "alt_chirho": "A small town beside a river, a mnemonic for Jericho.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "1e49136fa0a6d2a0ddc9022531de3dcba5dcb07a3b7c88b6662f57a6972c87a1",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1139,6 +1276,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-06e40cad0a1f4cdf941c6ac2596f45d2-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Josh.5.2",
+      "token_id_chirho": "06eWV",
+      "lemma_id_chirho": "H4135",
+      "lemma_augment_chirho": "b",
+      "lexical_form_chirho": "מוּל",
+      "sense_id_chirho": "attempt-06e40cad0a1f4cdf941c6ac2596f45d2-cell-14-chirho",
+      "contextual_meaning_chirho": "circumcise",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-06e40cad0a1f4cdf941c6ac2596f45d2-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A single flint knife.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "827731f093992ae64ba7b93b365f86aee9caa9a91cb858021b5d8c4f8f53dc16",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-b42158ab7c2e4a5094b3d226cbd41c27-03-chirho",
       "lesson_id_chirho": "Prov.5.23",
       "token_id_chirho": "20pbV",
@@ -1285,6 +1448,58 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "L.J. requested local icon production on 2026-10-27. Contextual gloss and OSHB lemma checked against pinned sources; artwork remains pending his review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-ea9d626b34d4415b8de364ed4dd452d0-chirho-cell-02-chirho",
+      "lesson_id_chirho": "Exod.16.31",
+      "token_id_chirho": "02feu",
+      "lemma_id_chirho": "H4478",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "מָן",
+      "sense_id_chirho": "attempt-ea9d626b34d4415b8de364ed4dd452d0-cell-02-manna-chirho",
+      "contextual_meaning_chirho": "manna",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-ea9d626b34d4415b8de364ed4dd452d0-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A bowl filled with small white seedlike grains.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "2f3dd542f7ca28ee6c0c2e3adf29c69a1c503771586b2c3b422d6094c503503d",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-fc7a0f458eb141729c089aec56817c5b-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Exod.16.21",
+      "token_id_chirho": "023mF",
+      "lemma_id_chirho": "H4549",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מָסַס",
+      "sense_id_chirho": "attempt-fc7a0f458eb141729c089aec56817c5b-cell-15-chirho",
+      "contextual_meaning_chirho": "It melted.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-fc7a0f458eb141729c089aec56817c5b-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A pale mound melting into a puddle.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "efbb02217ee9cc7212f8581467f9d65738074f413d4ed4f7296e6b19820cfa26",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1549,6 +1764,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-d66c0b973c3c435eabd922eeb5c71e6b-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Josh.5.11",
+      "token_id_chirho": "06rNM",
+      "lemma_id_chirho": "H5669",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עָבוּר",
+      "sense_id_chirho": "attempt-d66c0b973c3c435eabd922eeb5c71e6b-cell-10-chirho",
+      "contextual_meaning_chirho": "produce of the land",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d66c0b973c3c435eabd922eeb5c71e6b-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A tied sheaf of grain.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a03d6ff94ebd975a74070473ae2d0f3f90b26b2fcd041e45ffffabe4b9cfad24",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-josh-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -1853,6 +2094,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Num.22.1",
+      "token_id_chirho": "04z8R",
+      "lemma_id_chirho": "H6160",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "עֲרָבָה",
+      "sense_id_chirho": "attempt-d252bdc76ac8409bb8a3368d3d47b111-cell-05-plains-chirho",
+      "contextual_meaning_chirho": "the plains of Moab where the Israelites camped",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-d252bdc76ac8409bb8a3368d3d47b111-chirho/cell-05-chirho.webp",
+      "alt_chirho": "A tent on a flat patch of land.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "dfdea4964bdb100484c99049edb9ae8df371ca50df1d2665e7f670c7228404ad",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-58b2ae8fae914431902f17554bbcbb9d-12-chirho",
       "lesson_id_chirho": "Prov.2.14",
       "token_id_chirho": "20k1L",
@@ -1975,6 +2242,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Exod.12.11",
+      "token_id_chirho": "02kJL",
+      "lemma_id_chirho": "H6453",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "פֶּסַח",
+      "sense_id_chirho": "attempt-258793f5e9b94043a5eac53042790162-chirho-cell-10-chirho",
+      "contextual_meaning_chirho": "Passover",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-258793f5e9b94043a5eac53042790162-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A single leather sandal with its straps.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "bac9eb4d9b9b46cd3a316850ed8b4a23eaefb613536857c51e9fe64dbcf02291",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -2119,6 +2412,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-eb34b92242cb47949f156c9a2113ba88-chirho-cell-08-chirho",
+      "lesson_id_chirho": "Lev.2.14",
+      "token_id_chirho": "03JUf",
+      "lemma_id_chirho": "H7033",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "קָלָה",
+      "sense_id_chirho": "attempt-eb34b92242cb47949f156c9a2113ba88-cell-08-chirho",
+      "contextual_meaning_chirho": "roasted",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-eb34b92242cb47949f156c9a2113ba88-chirho/cell-08-chirho.webp",
+      "alt_chirho": "Grain roasting in a pan over a fire.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "f191efcd7950c859a18093a579faed00fb68a4ed60bbedcf4ab23c45b1ae4aff",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
@@ -2336,6 +2655,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-ec11b0105d504bf5b2b176c18a6d7a72-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Num.22.23",
+      "token_id_chirho": "04M6y",
+      "lemma_id_chirho": "H8025",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שָׁלַף",
+      "sense_id_chirho": "attempt-ec11b0105d504bf5b2b176c18a6d7a72-cell-05-chirho",
+      "contextual_meaning_chirho": "drawn",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-ec11b0105d504bf5b2b176c18a6d7a72-chirho/cell-05-chirho.webp",
+      "alt_chirho": "An unsheathed sword.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "75ea563551ec3cd54310000b3e5dda2bba5ed7139f254f616eaac8c26076a607",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-num-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     },
     {
