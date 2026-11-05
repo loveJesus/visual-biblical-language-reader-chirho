@@ -24,6 +24,7 @@ export const readerCatalogueChirho = defineCatalogueChirho({
 		previous_verse_chirho: 'Previous verse',
 		previous_chirho: 'Previous',
 		next_verse_chirho: 'Next verse',
+		back_to_verse_chirho: 'Back to verse',
 		next_chirho: 'Next',
 		meta_hebrew_chirho:
 			'Read Biblical Hebrew with a scene, compact grammar cues and meanings you can reveal when you are ready.',
@@ -169,6 +170,7 @@ export const readerCatalogueChirho = defineCatalogueChirho({
 		previous_verse_chirho: 'Versículo anterior',
 		previous_chirho: 'Anterior',
 		next_verse_chirho: 'Versículo siguiente',
+		back_to_verse_chirho: 'Volver al versículo',
 		next_chirho: 'Siguiente',
 		meta_hebrew_chirho:
 			'Lea hebreo bíblico con una escena, indicaciones gramaticales breves y significados que puede mostrar cuando esté listo.',

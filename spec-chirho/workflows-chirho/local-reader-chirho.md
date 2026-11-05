@@ -23,6 +23,8 @@ flowchart TD
     recordings_chirho --> cancel_chirho
     speech_chirho --> cancel_chirho[Cancel on another playback, stop or passage change]
     word_jump_chirho --> card_chirho[Scroll to and focus its own expanded Look closer card]
+    card_chirho --> return_chirho[Back to verse returns focus to the same source word without changing passage]
+    return_chirho --> word_jump_chirho
     reader_chirho --> export_chirho[Exclusive-create self-contained offline snapshot]
     export_chirho --> offline_chirho[Open with network disabled and inspect]
 ```

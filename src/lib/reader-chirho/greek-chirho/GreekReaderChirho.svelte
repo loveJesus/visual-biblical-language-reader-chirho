@@ -132,6 +132,12 @@
 									? '#ecefe9'
 									: 'transparent'}
 					>
+						<a
+							class="back-to-verse-chirho"
+							href="#verse-word-{tokenChirho.id_chirho}-chirho"
+							data-word-jump-chirho="verse-word-{tokenChirho.id_chirho}-chirho"
+							><span aria-hidden="true">↑</span> {readerTChirho('back_to_verse_chirho')}</a
+						>
 						<div class="word-card-top-chirho">
 							<span class="card-hebrew-chirho" lang="grc" dir="ltr">{tokenChirho.text_chirho}</span
 							>{#if linkChirho}<a

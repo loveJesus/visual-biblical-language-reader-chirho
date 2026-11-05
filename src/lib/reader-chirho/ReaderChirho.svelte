@@ -239,6 +239,12 @@
 						tabindex="-1"
 						style:--gender-chirho={cuesChirho(tokenChirho).background_chirho}
 					>
+						<a
+							class="back-to-verse-chirho"
+							href="#verse-word-{tokenChirho.id_chirho}-chirho"
+							data-word-jump-chirho="verse-word-{tokenChirho.id_chirho}-chirho"
+							><span aria-hidden="true">↑</span> {readerTChirho('back_to_verse_chirho')}</a
+						>
 						<div class="word-card-top-chirho">
 							<span class="card-hebrew-chirho" dir="rtl" lang="he">{tokenChirho.text_chirho}</span
 							>{#if linkChirho}<a

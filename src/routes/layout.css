@@ -444,6 +444,17 @@ small {
 	padding: 20px;
 	min-width: 0;
 }
+.back-to-verse-chirho {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 44px;
+	margin-block: -8px 4px;
+	color: #355443;
+	font-size: 14px;
+	font-weight: 600;
+	text-underline-offset: 3px;
+}
 .word-card-top-chirho {
 	display: flex;
 	flex-wrap: wrap;
