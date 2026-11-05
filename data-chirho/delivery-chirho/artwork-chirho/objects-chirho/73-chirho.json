@@ -1670,6 +1670,99 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-008-chirho/ps-008-008-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/730179d2d3a50052a100d9e8c37062ac4d0c1ee16ca37972a39e588233ab01ea.webp",
+        "sha256_chirho": "730179d2d3a50052a100d9e8c37062ac4d0c1ee16ca37972a39e588233ab01ea",
+        "bytes_chirho": 40946,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:35:06.973Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/730179d2d3a50052a100d9e8c37062ac4d0c1ee16ca37972a39e588233ab01ea.webp",
+        "sha256_chirho": "730179d2d3a50052a100d9e8c37062ac4d0c1ee16ca37972a39e588233ab01ea",
+        "bytes_chirho": 40946,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:35:06.973Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/acts-chirho/chapter-009-chirho/acts-009-011-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73044bfe619461e3abf2cea9f456c8351ef5e23ba2d5bc18cfb062645db4612f.webp",
+        "sha256_chirho": "73044bfe619461e3abf2cea9f456c8351ef5e23ba2d5bc18cfb062645db4612f",
+        "bytes_chirho": 65200,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:15:11.319Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73044bfe619461e3abf2cea9f456c8351ef5e23ba2d5bc18cfb062645db4612f.webp",
+        "sha256_chirho": "73044bfe619461e3abf2cea9f456c8351ef5e23ba2d5bc18cfb062645db4612f",
+        "bytes_chirho": 65200,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:15:11.319Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-068-chirho/ps-068-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/730801f30fd3dba8369d0c9d757d4df85b99b72ac39558ec3374b96ca4fc2992.webp",
+        "sha256_chirho": "730801f30fd3dba8369d0c9d757d4df85b99b72ac39558ec3374b96ca4fc2992",
+        "bytes_chirho": 50028,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:37.145Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/730801f30fd3dba8369d0c9d757d4df85b99b72ac39558ec3374b96ca4fc2992.webp",
+        "sha256_chirho": "730801f30fd3dba8369d0c9d757d4df85b99b72ac39558ec3374b96ca4fc2992",
+        "bytes_chirho": 50028,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:37.145Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/proverbs-worker-v1-chirho/chapter-11-chirho/prov-11-028-chirho.webp"
       ],
       "source_chirho": {
@@ -1699,6 +1792,37 @@
         "exact_chirho": false,
         "metadata_chirho": "none",
         "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/2-chronicles-chirho/chapter-024-chirho/2chr-024-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/730bcce6ca418f21bf688cb3af11b7b75a70311e6b6c222fa9a725e16bdc12ff.webp",
+        "sha256_chirho": "730bcce6ca418f21bf688cb3af11b7b75a70311e6b6c222fa9a725e16bdc12ff",
+        "bytes_chirho": 41650,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:27:04.116Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/730bcce6ca418f21bf688cb3af11b7b75a70311e6b6c222fa9a725e16bdc12ff.webp",
+        "sha256_chirho": "730bcce6ca418f21bf688cb3af11b7b75a70311e6b6c222fa9a725e16bdc12ff",
+        "bytes_chirho": 41650,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:27:04.116Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
       }
     },
     {
@@ -1738,6 +1862,130 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/nehemiah-chirho/chapter-001-chirho/neh-001-004-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73153b8d942ad646474d396227466693ef7f3d4af343e93eb5b6e6946179cf54.webp",
+        "sha256_chirho": "73153b8d942ad646474d396227466693ef7f3d4af343e93eb5b6e6946179cf54",
+        "bytes_chirho": 35296,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:28:53.633Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73153b8d942ad646474d396227466693ef7f3d4af343e93eb5b6e6946179cf54.webp",
+        "sha256_chirho": "73153b8d942ad646474d396227466693ef7f3d4af343e93eb5b6e6946179cf54",
+        "bytes_chirho": 35296,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:28:53.633Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-kings-chirho/chapter-016-chirho/1kgs-016-014-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7316c15f43ad4bf4d6938c73c81a75a82414679696c20b71a7a727966c5b9cbb.webp",
+        "sha256_chirho": "7316c15f43ad4bf4d6938c73c81a75a82414679696c20b71a7a727966c5b9cbb",
+        "bytes_chirho": 60066,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:21:41.064Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7316c15f43ad4bf4d6938c73c81a75a82414679696c20b71a7a727966c5b9cbb.webp",
+        "sha256_chirho": "7316c15f43ad4bf4d6938c73c81a75a82414679696c20b71a7a727966c5b9cbb",
+        "bytes_chirho": 60066,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:21:41.064Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-111-chirho/ps-111-009-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73178e62000ad690a1936f0ffdd2a2a5a6776ca7705ba11c992172b1cd0cd0da.webp",
+        "sha256_chirho": "73178e62000ad690a1936f0ffdd2a2a5a6776ca7705ba11c992172b1cd0cd0da",
+        "bytes_chirho": 50490,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:38:07.424Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73178e62000ad690a1936f0ffdd2a2a5a6776ca7705ba11c992172b1cd0cd0da.webp",
+        "sha256_chirho": "73178e62000ad690a1936f0ffdd2a2a5a6776ca7705ba11c992172b1cd0cd0da",
+        "bytes_chirho": 50490,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:38:07.424Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/job-chirho/chapter-017-chirho/job-017-013-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7317b65485e99099f0b5ab895a17d68adc52a10bb5826eecff1e8261ccc0c9fe.webp",
+        "sha256_chirho": "7317b65485e99099f0b5ab895a17d68adc52a10bb5826eecff1e8261ccc0c9fe",
+        "bytes_chirho": 35426,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:31:24.876Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7317b65485e99099f0b5ab895a17d68adc52a10bb5826eecff1e8261ccc0c9fe.webp",
+        "sha256_chirho": "7317b65485e99099f0b5ab895a17d68adc52a10bb5826eecff1e8261ccc0c9fe",
+        "bytes_chirho": 35426,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:31:24.876Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/john-ordered-v1-chirho/chapter-14-chirho/john-14-026-chirho.webp"
       ],
       "source_chirho": {
@@ -1772,6 +2020,99 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/titus-chirho/chapter-002-chirho/titus-002-013-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/731cc6ea3203c3a319b08ebbade8657902c61ccbc641627eb3d875a50958630a.webp",
+        "sha256_chirho": "731cc6ea3203c3a319b08ebbade8657902c61ccbc641627eb3d875a50958630a",
+        "bytes_chirho": 33728,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:32:13.375Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/731cc6ea3203c3a319b08ebbade8657902c61ccbc641627eb3d875a50958630a.webp",
+        "sha256_chirho": "731cc6ea3203c3a319b08ebbade8657902c61ccbc641627eb3d875a50958630a",
+        "bytes_chirho": 33728,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:32:13.375Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/2-samuel-chirho/chapter-011-chirho/2sam-011-007-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/731fac984dfa54440c64131622152102a7a40b290610fb72c6f0fbb3330a625f.webp",
+        "sha256_chirho": "731fac984dfa54440c64131622152102a7a40b290610fb72c6f0fbb3330a625f",
+        "bytes_chirho": 64298,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:19:25.643Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/731fac984dfa54440c64131622152102a7a40b290610fb72c6f0fbb3330a625f.webp",
+        "sha256_chirho": "731fac984dfa54440c64131622152102a7a40b290610fb72c6f0fbb3330a625f",
+        "bytes_chirho": 64298,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:19:25.643Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/isaiah-chirho/chapter-053-chirho/isa-053-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7320ad312596ba4cf293218e9231ab97514ea18aa97f92cec8d97dc1fca3d946.webp",
+        "sha256_chirho": "7320ad312596ba4cf293218e9231ab97514ea18aa97f92cec8d97dc1fca3d946",
+        "bytes_chirho": 55346,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:43:44.092Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7320ad312596ba4cf293218e9231ab97514ea18aa97f92cec8d97dc1fca3d946.webp",
+        "sha256_chirho": "7320ad312596ba4cf293218e9231ab97514ea18aa97f92cec8d97dc1fca3d946",
+        "bytes_chirho": 55346,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:43:44.092Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/exodus-chirho/chapter-028-chirho/exod-028-003-chirho.webp"
       ],
       "source_chirho": {
@@ -1791,6 +2132,99 @@
         "height_chirho": 768,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-05T03:02:42.416Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/job-chirho/chapter-036-chirho/job-036-017-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/732345d43cb967461bbfb1a8900bf38cc335b99b1aa053a264e1b942bf08ab09.webp",
+        "sha256_chirho": "732345d43cb967461bbfb1a8900bf38cc335b99b1aa053a264e1b942bf08ab09",
+        "bytes_chirho": 31004,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:32:17.414Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/732345d43cb967461bbfb1a8900bf38cc335b99b1aa053a264e1b942bf08ab09.webp",
+        "sha256_chirho": "732345d43cb967461bbfb1a8900bf38cc335b99b1aa053a264e1b942bf08ab09",
+        "bytes_chirho": 31004,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:32:17.414Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/matthew-chirho/chapter-020-chirho/matt-020-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7323cb1de8c960c255b3e8df7ec4784c54c8161103c0fddc2a82a378e2de2fbd.webp",
+        "sha256_chirho": "7323cb1de8c960c255b3e8df7ec4784c54c8161103c0fddc2a82a378e2de2fbd",
+        "bytes_chirho": 76024,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:09:36.808Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7323cb1de8c960c255b3e8df7ec4784c54c8161103c0fddc2a82a378e2de2fbd.webp",
+        "sha256_chirho": "7323cb1de8c960c255b3e8df7ec4784c54c8161103c0fddc2a82a378e2de2fbd",
+        "bytes_chirho": 76024,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:09:36.808Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-samuel-chirho/chapter-013-chirho/1sam-013-018-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7328fbd126d96d8cf77ffa872123c3543b928acea3c72832a49e94cea8a8584d.webp",
+        "sha256_chirho": "7328fbd126d96d8cf77ffa872123c3543b928acea3c72832a49e94cea8a8584d",
+        "bytes_chirho": 81686,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:17:41.772Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7328fbd126d96d8cf77ffa872123c3543b928acea3c72832a49e94cea8a8584d.webp",
+        "sha256_chirho": "7328fbd126d96d8cf77ffa872123c3543b928acea3c72832a49e94cea8a8584d",
+        "bytes_chirho": 81686,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:17:41.772Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -1832,6 +2266,37 @@
         "exact_chirho": false,
         "metadata_chirho": "none",
         "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-070-chirho/ps-070-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/732cca626344c5909367cdedb61903bf9e09bdd8a2c0d7cd3b518f8c8a1d223f.webp",
+        "sha256_chirho": "732cca626344c5909367cdedb61903bf9e09bdd8a2c0d7cd3b518f8c8a1d223f",
+        "bytes_chirho": 53288,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:44.260Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/732cca626344c5909367cdedb61903bf9e09bdd8a2c0d7cd3b518f8c8a1d223f.webp",
+        "sha256_chirho": "732cca626344c5909367cdedb61903bf9e09bdd8a2c0d7cd3b518f8c8a1d223f",
+        "bytes_chirho": 53288,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:44.260Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
       }
     },
     {
@@ -1902,6 +2367,37 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-samuel-chirho/chapter-014-chirho/1sam-014-018-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7337db39de56ff2529c088c32c9e949adfa87dd1f815f592bb2fec0075a5d656.webp",
+        "sha256_chirho": "7337db39de56ff2529c088c32c9e949adfa87dd1f815f592bb2fec0075a5d656",
+        "bytes_chirho": 37664,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:17:44.331Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7337db39de56ff2529c088c32c9e949adfa87dd1f815f592bb2fec0075a5d656.webp",
+        "sha256_chirho": "7337db39de56ff2529c088c32c9e949adfa87dd1f815f592bb2fec0075a5d656",
+        "bytes_chirho": 37664,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:17:44.331Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/leviticus-chirho/chapter-021-chirho/lev-021-003-chirho.webp"
       ],
       "source_chirho": {
@@ -1921,6 +2417,37 @@
         "height_chirho": 768,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-05T03:06:25.641Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-106-chirho/ps-106-017-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/733bbe8192b238fdeff05fdeca80ea99fa5672ba2d9ea7103eb53450b2a2e83a.webp",
+        "sha256_chirho": "733bbe8192b238fdeff05fdeca80ea99fa5672ba2d9ea7103eb53450b2a2e83a",
+        "bytes_chirho": 57604,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:37:54.189Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/733bbe8192b238fdeff05fdeca80ea99fa5672ba2d9ea7103eb53450b2a2e83a.webp",
+        "sha256_chirho": "733bbe8192b238fdeff05fdeca80ea99fa5672ba2d9ea7103eb53450b2a2e83a",
+        "bytes_chirho": 57604,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:37:54.189Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -1967,6 +2494,99 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/2-chronicles-chirho/chapter-034-chirho/2chr-034-011-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7342d7dbccb7371f7434b5d51d4dc7178d608b25c1b0c6dde359e64adbe3dbd5.webp",
+        "sha256_chirho": "7342d7dbccb7371f7434b5d51d4dc7178d608b25c1b0c6dde359e64adbe3dbd5",
+        "bytes_chirho": 61400,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:27:33.121Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7342d7dbccb7371f7434b5d51d4dc7178d608b25c1b0c6dde359e64adbe3dbd5.webp",
+        "sha256_chirho": "7342d7dbccb7371f7434b5d51d4dc7178d608b25c1b0c6dde359e64adbe3dbd5",
+        "bytes_chirho": 61400,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:27:33.121Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/luke-chirho/chapter-009-chirho/luke-009-012-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/734c16a3d05f9dd0da2db7577e4f261a4b55340e68faf850cff21a5fab79b606.webp",
+        "sha256_chirho": "734c16a3d05f9dd0da2db7577e4f261a4b55340e68faf850cff21a5fab79b606",
+        "bytes_chirho": 44496,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:11:28.081Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/734c16a3d05f9dd0da2db7577e4f261a4b55340e68faf850cff21a5fab79b606.webp",
+        "sha256_chirho": "734c16a3d05f9dd0da2db7577e4f261a4b55340e68faf850cff21a5fab79b606",
+        "bytes_chirho": 44496,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:11:28.081Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ezekiel-chirho/chapter-011-chirho/ezek-011-005-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/734c543c06a7893f762446a63c2d9bd7c17348d51913f59640883608ff8451a3.webp",
+        "sha256_chirho": "734c543c06a7893f762446a63c2d9bd7c17348d51913f59640883608ff8451a3",
+        "bytes_chirho": 36424,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:59:03.594Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/734c543c06a7893f762446a63c2d9bd7c17348d51913f59640883608ff8451a3.webp",
+        "sha256_chirho": "734c543c06a7893f762446a63c2d9bd7c17348d51913f59640883608ff8451a3",
+        "bytes_chirho": 36424,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:59:03.594Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/genesis-ordered-v1-chirho/chapter-12-chirho/genesis-12-006-chirho.webp"
       ],
       "source_chirho": {
@@ -1996,6 +2616,37 @@
         "exact_chirho": false,
         "metadata_chirho": "none",
         "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-107-chirho/ps-107-008-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/734d57e8a039c7d19f95495b18c20df7248d4ddfb68d8fb991dcd5e2da9edf96.webp",
+        "sha256_chirho": "734d57e8a039c7d19f95495b18c20df7248d4ddfb68d8fb991dcd5e2da9edf96",
+        "bytes_chirho": 95710,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:37:57.803Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/734d57e8a039c7d19f95495b18c20df7248d4ddfb68d8fb991dcd5e2da9edf96.webp",
+        "sha256_chirho": "734d57e8a039c7d19f95495b18c20df7248d4ddfb68d8fb991dcd5e2da9edf96",
+        "bytes_chirho": 95710,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:37:57.803Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
       }
     },
     {
@@ -2103,6 +2754,37 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/isaiah-chirho/chapter-042-chirho/isa-042-007-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73590f1a84715070c780f3a58ecf8f75056757c7a3b622021c97599d3907a1c0.webp",
+        "sha256_chirho": "73590f1a84715070c780f3a58ecf8f75056757c7a3b622021c97599d3907a1c0",
+        "bytes_chirho": 68870,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:42:46.588Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73590f1a84715070c780f3a58ecf8f75056757c7a3b622021c97599d3907a1c0.webp",
+        "sha256_chirho": "73590f1a84715070c780f3a58ecf8f75056757c7a3b622021c97599d3907a1c0",
+        "bytes_chirho": 68870,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:42:46.588Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/proverbs-worker-v1-chirho/chapter-16-chirho/prov-16-023-chirho.webp"
       ],
       "source_chirho": {
@@ -2137,6 +2819,68 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/2-chronicles-chirho/chapter-004-chirho/2chr-004-013-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/735a969b1f4cb8ac7fa836bde225431e8be7935cc3f5bb0da4bcd66592e503e3.webp",
+        "sha256_chirho": "735a969b1f4cb8ac7fa836bde225431e8be7935cc3f5bb0da4bcd66592e503e3",
+        "bytes_chirho": 58728,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:26:18.170Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/735a969b1f4cb8ac7fa836bde225431e8be7935cc3f5bb0da4bcd66592e503e3.webp",
+        "sha256_chirho": "735a969b1f4cb8ac7fa836bde225431e8be7935cc3f5bb0da4bcd66592e503e3",
+        "bytes_chirho": 58728,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:26:18.170Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/romans-chirho/chapter-009-chirho/rom-009-019-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7364b681b5eb4f32df3a017428b5b561f6a458340f8db7464e73a1b3f4aec458.webp",
+        "sha256_chirho": "7364b681b5eb4f32df3a017428b5b561f6a458340f8db7464e73a1b3f4aec458",
+        "bytes_chirho": 25332,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:17:11.634Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7364b681b5eb4f32df3a017428b5b561f6a458340f8db7464e73a1b3f4aec458.webp",
+        "sha256_chirho": "7364b681b5eb4f32df3a017428b5b561f6a458340f8db7464e73a1b3f4aec458",
+        "bytes_chirho": 25332,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:17:11.634Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/exodus-chirho/chapter-006-chirho/exod-006-026-chirho.webp"
       ],
       "source_chirho": {
@@ -2156,6 +2900,37 @@
         "height_chirho": 768,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-05T03:00:43.329Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/nehemiah-chirho/chapter-010-chirho/neh-010-040-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7365c22530b8e75d6300af840e06a54461a2b213d4d7012a22b43af333e9bb09.webp",
+        "sha256_chirho": "7365c22530b8e75d6300af840e06a54461a2b213d4d7012a22b43af333e9bb09",
+        "bytes_chirho": 39944,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:29:25.480Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7365c22530b8e75d6300af840e06a54461a2b213d4d7012a22b43af333e9bb09.webp",
+        "sha256_chirho": "7365c22530b8e75d6300af840e06a54461a2b213d4d7012a22b43af333e9bb09",
+        "bytes_chirho": 39944,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:29:25.480Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -2295,6 +3070,130 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/luke-chirho/chapter-002-chirho/luke-002-021-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/736726e65c952e0adea7edf0e10b44c5aa9b6914e9a523e6b61679b00f82d7a4.webp",
+        "sha256_chirho": "736726e65c952e0adea7edf0e10b44c5aa9b6914e9a523e6b61679b00f82d7a4",
+        "bytes_chirho": 56908,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:10:54.586Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/736726e65c952e0adea7edf0e10b44c5aa9b6914e9a523e6b61679b00f82d7a4.webp",
+        "sha256_chirho": "736726e65c952e0adea7edf0e10b44c5aa9b6914e9a523e6b61679b00f82d7a4",
+        "bytes_chirho": 56908,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:10:54.586Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/2-kings-chirho/chapter-023-chirho/2kgs-023-034-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/736db8b2ba315293fc2b9f31fbe2c9be9fc7a34f75783adb9d1973b848510357.webp",
+        "sha256_chirho": "736db8b2ba315293fc2b9f31fbe2c9be9fc7a34f75783adb9d1973b848510357",
+        "bytes_chirho": 63086,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:23:41.019Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/736db8b2ba315293fc2b9f31fbe2c9be9fc7a34f75783adb9d1973b848510357.webp",
+        "sha256_chirho": "736db8b2ba315293fc2b9f31fbe2c9be9fc7a34f75783adb9d1973b848510357",
+        "bytes_chirho": 63086,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:23:41.019Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/hosea-chirho/chapter-002-chirho/hos-002-007-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/736e3bb32535ce25277d8972976c3f5dad98083cab6ab1adc3aac7391e3b545b.webp",
+        "sha256_chirho": "736e3bb32535ce25277d8972976c3f5dad98083cab6ab1adc3aac7391e3b545b",
+        "bytes_chirho": 54914,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:02:23.517Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/736e3bb32535ce25277d8972976c3f5dad98083cab6ab1adc3aac7391e3b545b.webp",
+        "sha256_chirho": "736e3bb32535ce25277d8972976c3f5dad98083cab6ab1adc3aac7391e3b545b",
+        "bytes_chirho": 54914,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:02:23.517Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/acts-chirho/chapter-012-chirho/acts-012-016-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/736eece99898c7654c155afdbcd225adc3b60c6df3b54914788da6e61928fc33.webp",
+        "sha256_chirho": "736eece99898c7654c155afdbcd225adc3b60c6df3b54914788da6e61928fc33",
+        "bytes_chirho": 144458,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:15:23.965Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/736eece99898c7654c155afdbcd225adc3b60c6df3b54914788da6e61928fc33.webp",
+        "sha256_chirho": "736eece99898c7654c155afdbcd225adc3b60c6df3b54914788da6e61928fc33",
+        "bytes_chirho": 144458,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:15:23.965Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/exodus-chirho/chapter-020-chirho/exod-020-023-chirho.webp"
       ],
       "source_chirho": {
@@ -2326,6 +3225,285 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-150-chirho/ps-150-005-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73704e51355e34f442e006bd242a3ea55305b735a4cd1957a16fe5527b492f0c.webp",
+        "sha256_chirho": "73704e51355e34f442e006bd242a3ea55305b735a4cd1957a16fe5527b492f0c",
+        "bytes_chirho": 62762,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:39:07.798Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73704e51355e34f442e006bd242a3ea55305b735a4cd1957a16fe5527b492f0c.webp",
+        "sha256_chirho": "73704e51355e34f442e006bd242a3ea55305b735a4cd1957a16fe5527b492f0c",
+        "bytes_chirho": 62762,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:39:07.798Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/job-chirho/chapter-038-chirho/job-038-038-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/737199a06566d32d254ba20ae5fa4373ac798420974599e2509c4ca48917bdc2.webp",
+        "sha256_chirho": "737199a06566d32d254ba20ae5fa4373ac798420974599e2509c4ca48917bdc2",
+        "bytes_chirho": 72328,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:32:26.259Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/737199a06566d32d254ba20ae5fa4373ac798420974599e2509c4ca48917bdc2.webp",
+        "sha256_chirho": "737199a06566d32d254ba20ae5fa4373ac798420974599e2509c4ca48917bdc2",
+        "bytes_chirho": 72328,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:32:26.259Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-130-chirho/ps-130-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/737479e120f1d6216cac200931eff564e11fb1fd645d5b926e482fb3549ecec2.webp",
+        "sha256_chirho": "737479e120f1d6216cac200931eff564e11fb1fd645d5b926e482fb3549ecec2",
+        "bytes_chirho": 28106,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:38:41.602Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/737479e120f1d6216cac200931eff564e11fb1fd645d5b926e482fb3549ecec2.webp",
+        "sha256_chirho": "737479e120f1d6216cac200931eff564e11fb1fd645d5b926e482fb3549ecec2",
+        "bytes_chirho": 28106,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:38:41.602Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/jeremiah-chirho/chapter-052-chirho/jer-052-013-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7374eeb0f42775d7f15a468635ade1c38f6414aaffbc386902e331a1e72b07da.webp",
+        "sha256_chirho": "7374eeb0f42775d7f15a468635ade1c38f6414aaffbc386902e331a1e72b07da",
+        "bytes_chirho": 57440,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:57:40.862Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7374eeb0f42775d7f15a468635ade1c38f6414aaffbc386902e331a1e72b07da.webp",
+        "sha256_chirho": "7374eeb0f42775d7f15a468635ade1c38f6414aaffbc386902e331a1e72b07da",
+        "bytes_chirho": 57440,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:57:40.862Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/2-timothy-chirho/chapter-002-chirho/2tim-002-025-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7374f09ea81f8aa07150b07ce71e6bd9a547a589ef3599283ad89725ad6455d5.webp",
+        "sha256_chirho": "7374f09ea81f8aa07150b07ce71e6bd9a547a589ef3599283ad89725ad6455d5",
+        "bytes_chirho": 46436,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:31:45.454Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7374f09ea81f8aa07150b07ce71e6bd9a547a589ef3599283ad89725ad6455d5.webp",
+        "sha256_chirho": "7374f09ea81f8aa07150b07ce71e6bd9a547a589ef3599283ad89725ad6455d5",
+        "bytes_chirho": 46436,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:31:45.454Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-009-chirho/ps-009-020-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73777b3f782cf8f8f6733977f63a0b0102c52894a7b1df1b880bdb3edc72768e.webp",
+        "sha256_chirho": "73777b3f782cf8f8f6733977f63a0b0102c52894a7b1df1b880bdb3edc72768e",
+        "bytes_chirho": 38788,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:35:09.234Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73777b3f782cf8f8f6733977f63a0b0102c52894a7b1df1b880bdb3edc72768e.webp",
+        "sha256_chirho": "73777b3f782cf8f8f6733977f63a0b0102c52894a7b1df1b880bdb3edc72768e",
+        "bytes_chirho": 38788,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:35:09.234Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/matthew-chirho/chapter-021-chirho/matt-021-006-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/737b20739b60bb2272a4575dca606c813f66dd8651b2027cf2131b45266ddede.webp",
+        "sha256_chirho": "737b20739b60bb2272a4575dca606c813f66dd8651b2027cf2131b45266ddede",
+        "bytes_chirho": 81182,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:09:40.647Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/737b20739b60bb2272a4575dca606c813f66dd8651b2027cf2131b45266ddede.webp",
+        "sha256_chirho": "737b20739b60bb2272a4575dca606c813f66dd8651b2027cf2131b45266ddede",
+        "bytes_chirho": 81182,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:09:40.647Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/hebrews-chirho/chapter-013-chirho/heb-013-004-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73815c140e211f5dbd6360a9eb9a55fa54f90977fb79ff0a2b92362147a2183c.webp",
+        "sha256_chirho": "73815c140e211f5dbd6360a9eb9a55fa54f90977fb79ff0a2b92362147a2183c",
+        "bytes_chirho": 85254,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:33:30.251Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73815c140e211f5dbd6360a9eb9a55fa54f90977fb79ff0a2b92362147a2183c.webp",
+        "sha256_chirho": "73815c140e211f5dbd6360a9eb9a55fa54f90977fb79ff0a2b92362147a2183c",
+        "bytes_chirho": 85254,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:33:30.251Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/hebrews-chirho/chapter-008-chirho/heb-008-002-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7381cf71388d96abec8c03c210e35e01ce7a31d18520ed9f1e9931ed7548ff7a.webp",
+        "sha256_chirho": "7381cf71388d96abec8c03c210e35e01ce7a31d18520ed9f1e9931ed7548ff7a",
+        "bytes_chirho": 30294,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:33:14.758Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7381cf71388d96abec8c03c210e35e01ce7a31d18520ed9f1e9931ed7548ff7a.webp",
+        "sha256_chirho": "7381cf71388d96abec8c03c210e35e01ce7a31d18520ed9f1e9931ed7548ff7a",
+        "bytes_chirho": 30294,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:33:14.758Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/deuteronomy-chirho/chapter-008-chirho/deut-008-014-chirho.webp"
       ],
       "source_chirho": {
@@ -2345,6 +3523,68 @@
         "height_chirho": 768,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-05T03:11:54.418Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/luke-chirho/chapter-014-chirho/luke-014-018-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73857f91422eeea05d311d030786330fe0af03d75ad7a6e8221413964c9c5cc5.webp",
+        "sha256_chirho": "73857f91422eeea05d311d030786330fe0af03d75ad7a6e8221413964c9c5cc5",
+        "bytes_chirho": 26154,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:11:54.739Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73857f91422eeea05d311d030786330fe0af03d75ad7a6e8221413964c9c5cc5.webp",
+        "sha256_chirho": "73857f91422eeea05d311d030786330fe0af03d75ad7a6e8221413964c9c5cc5",
+        "bytes_chirho": 26154,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:11:54.739Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/romans-chirho/chapter-006-chirho/rom-006-012-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/738a2565eb1b95028fc872e37dc5803cf2d3daaecb7c4f7021beeda3a6759ef8.webp",
+        "sha256_chirho": "738a2565eb1b95028fc872e37dc5803cf2d3daaecb7c4f7021beeda3a6759ef8",
+        "bytes_chirho": 44356,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:17:01.535Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/738a2565eb1b95028fc872e37dc5803cf2d3daaecb7c4f7021beeda3a6759ef8.webp",
+        "sha256_chirho": "738a2565eb1b95028fc872e37dc5803cf2d3daaecb7c4f7021beeda3a6759ef8",
+        "bytes_chirho": 44356,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:17:01.535Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -2391,6 +3631,161 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-054-chirho/ps-054-003-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/738d38697e9bf0f7bd8891e7153e2fead95bd56a0d6613d844bac351660af2c6.webp",
+        "sha256_chirho": "738d38697e9bf0f7bd8891e7153e2fead95bd56a0d6613d844bac351660af2c6",
+        "bytes_chirho": 25312,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:18.708Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/738d38697e9bf0f7bd8891e7153e2fead95bd56a0d6613d844bac351660af2c6.webp",
+        "sha256_chirho": "738d38697e9bf0f7bd8891e7153e2fead95bd56a0d6613d844bac351660af2c6",
+        "bytes_chirho": 25312,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:18.708Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/jeremiah-chirho/chapter-038-chirho/jer-038-014-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/738d4731a13e7fee44fca6beb3f60bed3384ca7df3d6e036a2913f7b6abc823b.webp",
+        "sha256_chirho": "738d4731a13e7fee44fca6beb3f60bed3384ca7df3d6e036a2913f7b6abc823b",
+        "bytes_chirho": 33028,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:57:01.043Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/738d4731a13e7fee44fca6beb3f60bed3384ca7df3d6e036a2913f7b6abc823b.webp",
+        "sha256_chirho": "738d4731a13e7fee44fca6beb3f60bed3384ca7df3d6e036a2913f7b6abc823b",
+        "bytes_chirho": 33028,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:57:01.043Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-corinthians-chirho/chapter-011-chirho/1cor-011-012-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/738e606c516d2a294cc1bd70a75c6c245af9b25ac17e8e5dbb5c856806070dff.webp",
+        "sha256_chirho": "738e606c516d2a294cc1bd70a75c6c245af9b25ac17e8e5dbb5c856806070dff",
+        "bytes_chirho": 40198,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:18:20.009Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/738e606c516d2a294cc1bd70a75c6c245af9b25ac17e8e5dbb5c856806070dff.webp",
+        "sha256_chirho": "738e606c516d2a294cc1bd70a75c6c245af9b25ac17e8e5dbb5c856806070dff",
+        "bytes_chirho": 40198,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:18:20.009Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/romans-chirho/chapter-006-chirho/rom-006-007-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7392ab60cfb75e4fa4aec26f99fc35716e2bf29eb9bddcef9a9fc191303933a7.webp",
+        "sha256_chirho": "7392ab60cfb75e4fa4aec26f99fc35716e2bf29eb9bddcef9a9fc191303933a7",
+        "bytes_chirho": 44476,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:17:01.165Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7392ab60cfb75e4fa4aec26f99fc35716e2bf29eb9bddcef9a9fc191303933a7.webp",
+        "sha256_chirho": "7392ab60cfb75e4fa4aec26f99fc35716e2bf29eb9bddcef9a9fc191303933a7",
+        "bytes_chirho": 44476,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:17:01.165Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/isaiah-chirho/chapter-002-chirho/isa-002-021-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7393f3b09d33cc21fbf0aea20a0fbd5e954c1d0ba696345b287b869dd475d328.webp",
+        "sha256_chirho": "7393f3b09d33cc21fbf0aea20a0fbd5e954c1d0ba696345b287b869dd475d328",
+        "bytes_chirho": 58010,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:39:43.565Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7393f3b09d33cc21fbf0aea20a0fbd5e954c1d0ba696345b287b869dd475d328.webp",
+        "sha256_chirho": "7393f3b09d33cc21fbf0aea20a0fbd5e954c1d0ba696345b287b869dd475d328",
+        "bytes_chirho": 58010,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:39:43.565Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/deuteronomy-chirho/chapter-001-chirho/deut-001-045-chirho.webp"
       ],
       "source_chirho": {
@@ -2410,6 +3805,161 @@
         "height_chirho": 768,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-05T03:11:29.630Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-chronicles-chirho/chapter-003-chirho/1chr-003-014-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/739e00afa209150274ca99fbec10ed12984de849730d06080e97246d88236a64.webp",
+        "sha256_chirho": "739e00afa209150274ca99fbec10ed12984de849730d06080e97246d88236a64",
+        "bytes_chirho": 52080,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:24:21.160Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/739e00afa209150274ca99fbec10ed12984de849730d06080e97246d88236a64.webp",
+        "sha256_chirho": "739e00afa209150274ca99fbec10ed12984de849730d06080e97246d88236a64",
+        "bytes_chirho": 52080,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:24:21.160Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/luke-chirho/chapter-002-chirho/luke-002-002-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/739e3506a0f4230f94742ac8d0c92e9ea003bc51957470960479a76807e16389.webp",
+        "sha256_chirho": "739e3506a0f4230f94742ac8d0c92e9ea003bc51957470960479a76807e16389",
+        "bytes_chirho": 65854,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:10:52.564Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/739e3506a0f4230f94742ac8d0c92e9ea003bc51957470960479a76807e16389.webp",
+        "sha256_chirho": "739e3506a0f4230f94742ac8d0c92e9ea003bc51957470960479a76807e16389",
+        "bytes_chirho": 65854,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:10:52.564Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/esther-chirho/chapter-008-chirho/esth-008-002-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/739e41ab78dd4625cd27fc42f04a0c1b7d6fc6034692689bcc80ce1a75bf8199.webp",
+        "sha256_chirho": "739e41ab78dd4625cd27fc42f04a0c1b7d6fc6034692689bcc80ce1a75bf8199",
+        "bytes_chirho": 42814,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:30:12.493Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/739e41ab78dd4625cd27fc42f04a0c1b7d6fc6034692689bcc80ce1a75bf8199.webp",
+        "sha256_chirho": "739e41ab78dd4625cd27fc42f04a0c1b7d6fc6034692689bcc80ce1a75bf8199",
+        "bytes_chirho": 42814,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:30:12.493Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-thessalonians-chirho/chapter-005-chirho/1thess-005-004-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73a318a2d3015d730dc4648f57e99a296b0a4da34d3e0b931070dde2caa407ec.webp",
+        "sha256_chirho": "73a318a2d3015d730dc4648f57e99a296b0a4da34d3e0b931070dde2caa407ec",
+        "bytes_chirho": 31882,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:30:17.280Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73a318a2d3015d730dc4648f57e99a296b0a4da34d3e0b931070dde2caa407ec.webp",
+        "sha256_chirho": "73a318a2d3015d730dc4648f57e99a296b0a4da34d3e0b931070dde2caa407ec",
+        "bytes_chirho": 31882,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:30:17.280Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-samuel-chirho/chapter-024-chirho/1sam-024-021-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73a3dca4d2b31a5d9e9663eee742cec1533a3a696b187c787539ab66e086297d.webp",
+        "sha256_chirho": "73a3dca4d2b31a5d9e9663eee742cec1533a3a696b187c787539ab66e086297d",
+        "bytes_chirho": 40714,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:18:19.843Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73a3dca4d2b31a5d9e9663eee742cec1533a3a696b187c787539ab66e086297d.webp",
+        "sha256_chirho": "73a3dca4d2b31a5d9e9663eee742cec1533a3a696b187c787539ab66e086297d",
+        "bytes_chirho": 40714,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:18:19.843Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -2456,6 +4006,37 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ephesians-chirho/chapter-006-chirho/eph-006-010-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73a7106d4ecfb8978d757e25a0bf3381445fe437d9461ae49cfc480157a462ad.webp",
+        "sha256_chirho": "73a7106d4ecfb8978d757e25a0bf3381445fe437d9461ae49cfc480157a462ad",
+        "bytes_chirho": 25386,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:20:40.537Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73a7106d4ecfb8978d757e25a0bf3381445fe437d9461ae49cfc480157a462ad.webp",
+        "sha256_chirho": "73a7106d4ecfb8978d757e25a0bf3381445fe437d9461ae49cfc480157a462ad",
+        "bytes_chirho": 25386,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:20:40.537Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/deuteronomy-chirho/chapter-001-chirho/deut-001-046-chirho.webp"
       ],
       "source_chirho": {
@@ -2475,6 +4056,68 @@
         "height_chirho": 768,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-05T03:11:30.111Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/amos-chirho/chapter-006-chirho/amos-006-004-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73aa14a029b892bfe146d7dfb58083cac6595c8ba9a0418786dc9e6854cf8e1c.webp",
+        "sha256_chirho": "73aa14a029b892bfe146d7dfb58083cac6595c8ba9a0418786dc9e6854cf8e1c",
+        "bytes_chirho": 83402,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:03:44.834Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73aa14a029b892bfe146d7dfb58083cac6595c8ba9a0418786dc9e6854cf8e1c.webp",
+        "sha256_chirho": "73aa14a029b892bfe146d7dfb58083cac6595c8ba9a0418786dc9e6854cf8e1c",
+        "bytes_chirho": 83402,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:03:44.834Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/isaiah-chirho/chapter-045-chirho/isa-045-007-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73acd989152be71383e11c29e8ee1819c381004f55f71538eebf01b5abd8b332.webp",
+        "sha256_chirho": "73acd989152be71383e11c29e8ee1819c381004f55f71538eebf01b5abd8b332",
+        "bytes_chirho": 67352,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:42:55.767Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73acd989152be71383e11c29e8ee1819c381004f55f71538eebf01b5abd8b332.webp",
+        "sha256_chirho": "73acd989152be71383e11c29e8ee1819c381004f55f71538eebf01b5abd8b332",
+        "bytes_chirho": 67352,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:42:55.767Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -2518,6 +4161,68 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/2-timothy-chirho/chapter-002-chirho/2tim-002-011-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b0ccd73588da2a6db9efca931c5fdce48797cdfb7ffb966bdaa9783be1b12e.webp",
+        "sha256_chirho": "73b0ccd73588da2a6db9efca931c5fdce48797cdfb7ffb966bdaa9783be1b12e",
+        "bytes_chirho": 58936,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:31:43.790Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b0ccd73588da2a6db9efca931c5fdce48797cdfb7ffb966bdaa9783be1b12e.webp",
+        "sha256_chirho": "73b0ccd73588da2a6db9efca931c5fdce48797cdfb7ffb966bdaa9783be1b12e",
+        "bytes_chirho": 58936,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:31:43.790Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/luke-chirho/chapter-003-chirho/luke-003-027-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b11407de72a3d80045065fd829643258378b7b48bbf7aff7d3a0c742e35f50.webp",
+        "sha256_chirho": "73b11407de72a3d80045065fd829643258378b7b48bbf7aff7d3a0c742e35f50",
+        "bytes_chirho": 92850,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:11:00.798Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b11407de72a3d80045065fd829643258378b7b48bbf7aff7d3a0c742e35f50.webp",
+        "sha256_chirho": "73b11407de72a3d80045065fd829643258378b7b48bbf7aff7d3a0c742e35f50",
+        "bytes_chirho": 92850,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:11:00.798Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/proverbs-worker-v1-chirho/chapter-31-chirho/prov-31-006-chirho.webp"
       ],
       "source_chirho": {
@@ -2547,6 +4252,68 @@
         "exact_chirho": false,
         "metadata_chirho": "none",
         "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/luke-chirho/chapter-022-chirho/luke-022-058-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b442116391d7e399f0e75977e9bf9059c5d917b4088b8ba3ad07f586093c22.webp",
+        "sha256_chirho": "73b442116391d7e399f0e75977e9bf9059c5d917b4088b8ba3ad07f586093c22",
+        "bytes_chirho": 53514,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:12:30.858Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b442116391d7e399f0e75977e9bf9059c5d917b4088b8ba3ad07f586093c22.webp",
+        "sha256_chirho": "73b442116391d7e399f0e75977e9bf9059c5d917b4088b8ba3ad07f586093c22",
+        "bytes_chirho": 53514,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:12:30.858Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/malachi-chirho/chapter-002-chirho/mal-002-004-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b464ff405e0a1e0c2668ef36f42c0b02179acc5945c70d5fefcfe6d6611ee3.webp",
+        "sha256_chirho": "73b464ff405e0a1e0c2668ef36f42c0b02179acc5945c70d5fefcfe6d6611ee3",
+        "bytes_chirho": 26860,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:08:02.824Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b464ff405e0a1e0c2668ef36f42c0b02179acc5945c70d5fefcfe6d6611ee3.webp",
+        "sha256_chirho": "73b464ff405e0a1e0c2668ef36f42c0b02179acc5945c70d5fefcfe6d6611ee3",
+        "bytes_chirho": 26860,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:08:02.824Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
       }
     },
     {
@@ -2617,6 +4384,409 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-046-chirho/ps-046-007-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b9b721a8a304c0ae1a06f025ac97a4f06b2b144661f828ae5f87f91444730f.webp",
+        "sha256_chirho": "73b9b721a8a304c0ae1a06f025ac97a4f06b2b144661f828ae5f87f91444730f",
+        "bytes_chirho": 48488,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:07.932Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b9b721a8a304c0ae1a06f025ac97a4f06b2b144661f828ae5f87f91444730f.webp",
+        "sha256_chirho": "73b9b721a8a304c0ae1a06f025ac97a4f06b2b144661f828ae5f87f91444730f",
+        "bytes_chirho": 48488,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:07.932Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/matthew-chirho/chapter-026-chirho/matt-026-055-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b9c2ee84a4a2b49ac170f092d0cf3b965b2c096ba202e310b0c8077dbdbeb8.webp",
+        "sha256_chirho": "73b9c2ee84a4a2b49ac170f092d0cf3b965b2c096ba202e310b0c8077dbdbeb8",
+        "bytes_chirho": 117012,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:10:09.651Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73b9c2ee84a4a2b49ac170f092d0cf3b965b2c096ba202e310b0c8077dbdbeb8.webp",
+        "sha256_chirho": "73b9c2ee84a4a2b49ac170f092d0cf3b965b2c096ba202e310b0c8077dbdbeb8",
+        "bytes_chirho": 117012,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:10:09.651Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/2-chronicles-chirho/chapter-034-chirho/2chr-034-010-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bb0d618deb4f8d9b9bfc4d42225adb50e65bb5079d8344a8aac322837e5cb8.webp",
+        "sha256_chirho": "73bb0d618deb4f8d9b9bfc4d42225adb50e65bb5079d8344a8aac322837e5cb8",
+        "bytes_chirho": 55828,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:27:33.078Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bb0d618deb4f8d9b9bfc4d42225adb50e65bb5079d8344a8aac322837e5cb8.webp",
+        "sha256_chirho": "73bb0d618deb4f8d9b9bfc4d42225adb50e65bb5079d8344a8aac322837e5cb8",
+        "bytes_chirho": 55828,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:27:33.078Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-141-chirho/ps-141-008-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bbd50d61caaae48dd38c7a6070cadb5ac4ad6ac43dc170e892fefcf2218539.webp",
+        "sha256_chirho": "73bbd50d61caaae48dd38c7a6070cadb5ac4ad6ac43dc170e892fefcf2218539",
+        "bytes_chirho": 46526,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:38:56.004Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bbd50d61caaae48dd38c7a6070cadb5ac4ad6ac43dc170e892fefcf2218539.webp",
+        "sha256_chirho": "73bbd50d61caaae48dd38c7a6070cadb5ac4ad6ac43dc170e892fefcf2218539",
+        "bytes_chirho": 46526,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:38:56.004Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/daniel-chirho/chapter-002-chirho/dan-002-007-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bc01b8e7f2b62b75b45baab2e7163a015cccf67d7cfd2abae11bd87ffd9f7e.webp",
+        "sha256_chirho": "73bc01b8e7f2b62b75b45baab2e7163a015cccf67d7cfd2abae11bd87ffd9f7e",
+        "bytes_chirho": 82586,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:01:24.795Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bc01b8e7f2b62b75b45baab2e7163a015cccf67d7cfd2abae11bd87ffd9f7e.webp",
+        "sha256_chirho": "73bc01b8e7f2b62b75b45baab2e7163a015cccf67d7cfd2abae11bd87ffd9f7e",
+        "bytes_chirho": 82586,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:01:24.795Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/isaiah-chirho/chapter-011-chirho/isa-011-015-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bc596628a289a9c2f47916e510e2dd090f7e0befe7fd3ce29970b90b488bfb.webp",
+        "sha256_chirho": "73bc596628a289a9c2f47916e510e2dd090f7e0befe7fd3ce29970b90b488bfb",
+        "bytes_chirho": 34586,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:40:04.800Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bc596628a289a9c2f47916e510e2dd090f7e0befe7fd3ce29970b90b488bfb.webp",
+        "sha256_chirho": "73bc596628a289a9c2f47916e510e2dd090f7e0befe7fd3ce29970b90b488bfb",
+        "bytes_chirho": 34586,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:40:04.800Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/nehemiah-chirho/chapter-010-chirho/neh-010-027-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bc778e981f9599e6cd0a8609dff4b18612c497cd06206bb5404a259924ecaf.webp",
+        "sha256_chirho": "73bc778e981f9599e6cd0a8609dff4b18612c497cd06206bb5404a259924ecaf",
+        "bytes_chirho": 74068,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:29:24.097Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bc778e981f9599e6cd0a8609dff4b18612c497cd06206bb5404a259924ecaf.webp",
+        "sha256_chirho": "73bc778e981f9599e6cd0a8609dff4b18612c497cd06206bb5404a259924ecaf",
+        "bytes_chirho": 74068,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:29:24.097Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-kings-chirho/chapter-022-chirho/1kgs-022-020-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bdab317dd36a3c4bdecd4396625ba1371fd81f0dab0758306320d5e7e47fa2.webp",
+        "sha256_chirho": "73bdab317dd36a3c4bdecd4396625ba1371fd81f0dab0758306320d5e7e47fa2",
+        "bytes_chirho": 34488,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:22:04.784Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73bdab317dd36a3c4bdecd4396625ba1371fd81f0dab0758306320d5e7e47fa2.webp",
+        "sha256_chirho": "73bdab317dd36a3c4bdecd4396625ba1371fd81f0dab0758306320d5e7e47fa2",
+        "bytes_chirho": 34488,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:22:04.784Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/matthew-chirho/chapter-017-chirho/matt-017-025-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c298b9b14d285085c43fd5cc49d9cea3f53df226ed0a4033b1ddb5896342ea.webp",
+        "sha256_chirho": "73c298b9b14d285085c43fd5cc49d9cea3f53df226ed0a4033b1ddb5896342ea",
+        "bytes_chirho": 73288,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:09:29.758Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c298b9b14d285085c43fd5cc49d9cea3f53df226ed0a4033b1ddb5896342ea.webp",
+        "sha256_chirho": "73c298b9b14d285085c43fd5cc49d9cea3f53df226ed0a4033b1ddb5896342ea",
+        "bytes_chirho": 73288,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:09:29.758Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-chronicles-chirho/chapter-008-chirho/1chr-008-032-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c404ec6457b6ca8ea4f232f5239b1d0eceef9ebacde93f57c23dac5bf426c5.webp",
+        "sha256_chirho": "73c404ec6457b6ca8ea4f232f5239b1d0eceef9ebacde93f57c23dac5bf426c5",
+        "bytes_chirho": 92126,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:24:47.110Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c404ec6457b6ca8ea4f232f5239b1d0eceef9ebacde93f57c23dac5bf426c5.webp",
+        "sha256_chirho": "73c404ec6457b6ca8ea4f232f5239b1d0eceef9ebacde93f57c23dac5bf426c5",
+        "bytes_chirho": 92126,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:24:47.110Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/galatians-chirho/chapter-005-chirho/gal-005-022-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c544815f8418ba4938e05acb2a04ea6ef4235fe4a6ceb43308eaf9aa7913e9.webp",
+        "sha256_chirho": "73c544815f8418ba4938e05acb2a04ea6ef4235fe4a6ceb43308eaf9aa7913e9",
+        "bytes_chirho": 107822,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:20:02.539Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c544815f8418ba4938e05acb2a04ea6ef4235fe4a6ceb43308eaf9aa7913e9.webp",
+        "sha256_chirho": "73c544815f8418ba4938e05acb2a04ea6ef4235fe4a6ceb43308eaf9aa7913e9",
+        "bytes_chirho": 107822,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:20:02.539Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ezekiel-chirho/chapter-018-chirho/ezek-018-014-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c85caa0cfb7383ec6977ff1d84e3fe8c87cfe1c679b3386a42cb1c0e2e2bca.webp",
+        "sha256_chirho": "73c85caa0cfb7383ec6977ff1d84e3fe8c87cfe1c679b3386a42cb1c0e2e2bca",
+        "bytes_chirho": 96912,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:59:25.140Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c85caa0cfb7383ec6977ff1d84e3fe8c87cfe1c679b3386a42cb1c0e2e2bca.webp",
+        "sha256_chirho": "73c85caa0cfb7383ec6977ff1d84e3fe8c87cfe1c679b3386a42cb1c0e2e2bca",
+        "bytes_chirho": 96912,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:59:25.140Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/matthew-chirho/chapter-014-chirho/matt-014-035-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c8fc60a4c19a2324198959730f7c994d3a9835f0d0c42e12170d78d44ab570.webp",
+        "sha256_chirho": "73c8fc60a4c19a2324198959730f7c994d3a9835f0d0c42e12170d78d44ab570",
+        "bytes_chirho": 61532,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:09:20.209Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73c8fc60a4c19a2324198959730f7c994d3a9835f0d0c42e12170d78d44ab570.webp",
+        "sha256_chirho": "73c8fc60a4c19a2324198959730f7c994d3a9835f0d0c42e12170d78d44ab570",
+        "bytes_chirho": 61532,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:09:20.209Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/john-ordered-v1-chirho/chapter-18-chirho/john-18-018-chirho.webp"
       ],
       "source_chirho": {
@@ -2646,6 +4816,99 @@
         "exact_chirho": false,
         "metadata_chirho": "none",
         "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/jeremiah-chirho/chapter-002-chirho/jer-002-028-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73cd7b8756123ecc16fa91def644a2384f89cb6002dcc8baa8855e8cfc9cc386.webp",
+        "sha256_chirho": "73cd7b8756123ecc16fa91def644a2384f89cb6002dcc8baa8855e8cfc9cc386",
+        "bytes_chirho": 65508,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:44:16.783Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73cd7b8756123ecc16fa91def644a2384f89cb6002dcc8baa8855e8cfc9cc386.webp",
+        "sha256_chirho": "73cd7b8756123ecc16fa91def644a2384f89cb6002dcc8baa8855e8cfc9cc386",
+        "bytes_chirho": 65508,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:44:16.783Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-101-chirho/ps-101-006-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73cd8a6b6e4ead28a49089572c9ea5d6b065b9cde46e86d3c19d9d52022a2359.webp",
+        "sha256_chirho": "73cd8a6b6e4ead28a49089572c9ea5d6b065b9cde46e86d3c19d9d52022a2359",
+        "bytes_chirho": 50218,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:37:39.474Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73cd8a6b6e4ead28a49089572c9ea5d6b065b9cde46e86d3c19d9d52022a2359.webp",
+        "sha256_chirho": "73cd8a6b6e4ead28a49089572c9ea5d6b065b9cde46e86d3c19d9d52022a2359",
+        "bytes_chirho": 50218,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:37:39.474Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ecclesiastes-chirho/chapter-004-chirho/eccl-004-014-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73cde1e0be3aff8b9a67153d8727c5ad55a7a947c8df02bb39d0f487a937c3d3.webp",
+        "sha256_chirho": "73cde1e0be3aff8b9a67153d8727c5ad55a7a947c8df02bb39d0f487a937c3d3",
+        "bytes_chirho": 63102,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:37:55.553Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73cde1e0be3aff8b9a67153d8727c5ad55a7a947c8df02bb39d0f487a937c3d3.webp",
+        "sha256_chirho": "73cde1e0be3aff8b9a67153d8727c5ad55a7a947c8df02bb39d0f487a937c3d3",
+        "bytes_chirho": 63102,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:37:55.553Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
       }
     },
     {
@@ -2719,6 +4982,37 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/jeremiah-chirho/chapter-038-chirho/jer-038-009-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73d0751fa8fe70c20da8e3b0aa9ccce84a02bbb96dfd44c33921569aa7a8b3f5.webp",
+        "sha256_chirho": "73d0751fa8fe70c20da8e3b0aa9ccce84a02bbb96dfd44c33921569aa7a8b3f5",
+        "bytes_chirho": 50062,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:57:00.502Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73d0751fa8fe70c20da8e3b0aa9ccce84a02bbb96dfd44c33921569aa7a8b3f5.webp",
+        "sha256_chirho": "73d0751fa8fe70c20da8e3b0aa9ccce84a02bbb96dfd44c33921569aa7a8b3f5",
+        "bytes_chirho": 50062,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:57:00.502Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/john-ordered-v1-chirho/chapter-06-chirho/john-06-057-chirho.webp"
       ],
       "source_chirho": {
@@ -2753,6 +5047,254 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-048-chirho/ps-048-012-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73d2527d5af995df091a898a40e8f233d27f3beb0ef667861b5a5f741b68df29.webp",
+        "sha256_chirho": "73d2527d5af995df091a898a40e8f233d27f3beb0ef667861b5a5f741b68df29",
+        "bytes_chirho": 65100,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:10.533Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73d2527d5af995df091a898a40e8f233d27f3beb0ef667861b5a5f741b68df29.webp",
+        "sha256_chirho": "73d2527d5af995df091a898a40e8f233d27f3beb0ef667861b5a5f741b68df29",
+        "bytes_chirho": 65100,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:10.533Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-chronicles-chirho/chapter-002-chirho/1chr-002-026-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73d34774bd7c96982a33cd0e6be91e7530116bf61b977f2211b274dc6416e837.webp",
+        "sha256_chirho": "73d34774bd7c96982a33cd0e6be91e7530116bf61b977f2211b274dc6416e837",
+        "bytes_chirho": 78040,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:24:16.141Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73d34774bd7c96982a33cd0e6be91e7530116bf61b977f2211b274dc6416e837.webp",
+        "sha256_chirho": "73d34774bd7c96982a33cd0e6be91e7530116bf61b977f2211b274dc6416e837",
+        "bytes_chirho": 78040,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:24:16.141Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/isaiah-chirho/chapter-066-chirho/isa-066-017-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73d86ff919d9172a6f51e437f165d89bd3eb8d60259dc1a49b82023afc368924.webp",
+        "sha256_chirho": "73d86ff919d9172a6f51e437f165d89bd3eb8d60259dc1a49b82023afc368924",
+        "bytes_chirho": 90370,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:44:58.770Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73d86ff919d9172a6f51e437f165d89bd3eb8d60259dc1a49b82023afc368924.webp",
+        "sha256_chirho": "73d86ff919d9172a6f51e437f165d89bd3eb8d60259dc1a49b82023afc368924",
+        "bytes_chirho": 90370,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:44:58.770Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/jeremiah-chirho/chapter-006-chirho/jer-006-006-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73da5a9caf91af06bb20ad2c645ec13b89c1afcee4bc653b656aef3ef8f91f35.webp",
+        "sha256_chirho": "73da5a9caf91af06bb20ad2c645ec13b89c1afcee4bc653b656aef3ef8f91f35",
+        "bytes_chirho": 89032,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:45:23.665Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73da5a9caf91af06bb20ad2c645ec13b89c1afcee4bc653b656aef3ef8f91f35.webp",
+        "sha256_chirho": "73da5a9caf91af06bb20ad2c645ec13b89c1afcee4bc653b656aef3ef8f91f35",
+        "bytes_chirho": 89032,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:45:23.665Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-074-chirho/ps-074-019-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73dd125ae90ce912b16013215f10e2f4b46c5ee6ffb0657cc82b1e6bd15f3f32.webp",
+        "sha256_chirho": "73dd125ae90ce912b16013215f10e2f4b46c5ee6ffb0657cc82b1e6bd15f3f32",
+        "bytes_chirho": 41614,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:53.787Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73dd125ae90ce912b16013215f10e2f4b46c5ee6ffb0657cc82b1e6bd15f3f32.webp",
+        "sha256_chirho": "73dd125ae90ce912b16013215f10e2f4b46c5ee6ffb0657cc82b1e6bd15f3f32",
+        "bytes_chirho": 41614,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:36:53.787Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-136-chirho/ps-136-008-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73e0fadcff507abc519c69f1b8ce5d0defe307381850d4250460910557948010.webp",
+        "sha256_chirho": "73e0fadcff507abc519c69f1b8ce5d0defe307381850d4250460910557948010",
+        "bytes_chirho": 26036,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:38:47.839Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73e0fadcff507abc519c69f1b8ce5d0defe307381850d4250460910557948010.webp",
+        "sha256_chirho": "73e0fadcff507abc519c69f1b8ce5d0defe307381850d4250460910557948010",
+        "bytes_chirho": 26036,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:38:47.839Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-samuel-chirho/chapter-023-chirho/1sam-023-026-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73e1e0f7192e1040fb3b90ac925f742416670d404a0647ba9b96313898543df7.webp",
+        "sha256_chirho": "73e1e0f7192e1040fb3b90ac925f742416670d404a0647ba9b96313898543df7",
+        "bytes_chirho": 64460,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:18:17.451Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73e1e0f7192e1040fb3b90ac925f742416670d404a0647ba9b96313898543df7.webp",
+        "sha256_chirho": "73e1e0f7192e1040fb3b90ac925f742416670d404a0647ba9b96313898543df7",
+        "bytes_chirho": 64460,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:18:17.451Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/matthew-chirho/chapter-010-chirho/matt-010-020-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73e27ab1e0a7c1497a006cc434e60beddd9321c2c2c62e44dc6208d0e3d267a8.webp",
+        "sha256_chirho": "73e27ab1e0a7c1497a006cc434e60beddd9321c2c2c62e44dc6208d0e3d267a8",
+        "bytes_chirho": 48156,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:08:59.456Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73e27ab1e0a7c1497a006cc434e60beddd9321c2c2c62e44dc6208d0e3d267a8.webp",
+        "sha256_chirho": "73e27ab1e0a7c1497a006cc434e60beddd9321c2c2c62e44dc6208d0e3d267a8",
+        "bytes_chirho": 48156,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:08:59.456Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/genesis-ordered-v1-chirho/chapter-35-chirho/genesis-35-005-chirho.webp"
       ],
       "source_chirho": {
@@ -2782,6 +5324,68 @@
         "exact_chirho": false,
         "metadata_chirho": "none",
         "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/job-chirho/chapter-008-chirho/job-008-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73e68837428bc31f30a1e56c463fb1ed5bc1c554d92fceb0953db3b818d5cc54.webp",
+        "sha256_chirho": "73e68837428bc31f30a1e56c463fb1ed5bc1c554d92fceb0953db3b818d5cc54",
+        "bytes_chirho": 54656,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:30:57.460Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73e68837428bc31f30a1e56c463fb1ed5bc1c554d92fceb0953db3b818d5cc54.webp",
+        "sha256_chirho": "73e68837428bc31f30a1e56c463fb1ed5bc1c554d92fceb0953db3b818d5cc54",
+        "bytes_chirho": 54656,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:30:57.460Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-corinthians-chirho/chapter-011-chirho/1cor-011-033-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73ececf21d40a2261ec37ac226f263760f47d3ff8a6a3e44f1f62a6281153988.webp",
+        "sha256_chirho": "73ececf21d40a2261ec37ac226f263760f47d3ff8a6a3e44f1f62a6281153988",
+        "bytes_chirho": 38024,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:18:22.015Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73ececf21d40a2261ec37ac226f263760f47d3ff8a6a3e44f1f62a6281153988.webp",
+        "sha256_chirho": "73ececf21d40a2261ec37ac226f263760f47d3ff8a6a3e44f1f62a6281153988",
+        "bytes_chirho": 38024,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T04:18:22.015Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
       }
     },
     {
@@ -2850,6 +5454,68 @@
         "exact_chirho": false,
         "metadata_chirho": "none",
         "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/jeremiah-chirho/chapter-033-chirho/jer-033-024-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73fbc22a43a374cd784d5bd89b7a84856d51cd895622774b6cdf964f0c4f0848.webp",
+        "sha256_chirho": "73fbc22a43a374cd784d5bd89b7a84856d51cd895622774b6cdf964f0c4f0848",
+        "bytes_chirho": 78240,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:56:49.528Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73fbc22a43a374cd784d5bd89b7a84856d51cd895622774b6cdf964f0c4f0848.webp",
+        "sha256_chirho": "73fbc22a43a374cd784d5bd89b7a84856d51cd895622774b6cdf964f0c4f0848",
+        "bytes_chirho": 78240,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:56:49.528Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/jeremiah-chirho/chapter-019-chirho/jer-019-002-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73ffb9dfd7c44b6dd263f8a9efcb0ac92bf09abf8c2892d61282f1ea1dabd2a1.webp",
+        "sha256_chirho": "73ffb9dfd7c44b6dd263f8a9efcb0ac92bf09abf8c2892d61282f1ea1dabd2a1",
+        "bytes_chirho": 76636,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:46:32.384Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/73ffb9dfd7c44b6dd263f8a9efcb0ac92bf09abf8c2892d61282f1ea1dabd2a1.webp",
+        "sha256_chirho": "73ffb9dfd7c44b6dd263f8a9efcb0ac92bf09abf8c2892d61282f1ea1dabd2a1",
+        "bytes_chirho": 76636,
+        "width_chirho": 1024,
+        "height_chirho": 768,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T03:46:32.384Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 45,
+        "provider_chirho": "runware",
+        "model_chirho": "runware:100@1",
+        "operation_chirho": "provider_passthrough"
       }
     }
   ]

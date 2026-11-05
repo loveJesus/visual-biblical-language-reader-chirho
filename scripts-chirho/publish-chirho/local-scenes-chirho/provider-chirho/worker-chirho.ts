@@ -228,7 +228,13 @@ export async function runChirho(rootChirho: string, argumentsChirho: string[]) {
 					? 'stopped'
 					: statusChirho.source_holds_chirho.length
 						? 'source_held'
-						: 'waiting_for_generation';
+						: statusChirho.retirement_holds_chirho.length
+							? 'retirement_held'
+							: statusChirho.retired_books_chirho.length === booksChirho.length
+								? 'complete'
+								: statusChirho.installed_books_chirho.length === booksChirho.length
+									? 'waiting_for_publication'
+									: 'waiting_for_generation';
 			} catch (errorChirho) {
 				statusChirho.state_chirho = 'storage_or_install_held';
 				console.error(String(errorChirho));

@@ -101,7 +101,9 @@ export async function readOwnedChirho(
 		statChirho.size > maximumChirho ||
 		(await realpathChirho(pathChirho)) !== resolveChirho(pathChirho)
 	)
-		throw new Error('Owned record is oversized, linked or not regular');
+		throw new Error(
+			`Owned record is oversized, linked or not regular: ${relativeChirho} (${statChirho.size} bytes; limit ${maximumChirho})`
+		);
 	const bytesChirho = await readFileChirho(pathChirho);
 	if (bytesChirho.length > maximumChirho) throw new Error('Owned record grew beyond its bound');
 	return bytesChirho;
@@ -284,7 +286,7 @@ export async function loadBookChirho(rootChirho: string, bookChirho: BibleBookCh
 		const sourceBytesChirho = (await readOwnedChirho(
 			rootChirho,
 			'static' + entryChirho.path_chirho,
-			2 * 1024 ** 2
+			4 * 1024 ** 2 // Same chapter ceiling as the reader and audio release validator; Psalm 119 exceeds 2 MiB.
 		))!;
 		if (digestChirho(sourceBytesChirho) !== entryChirho.sha256_chirho)
 			throw new Error('Source chapter drift');

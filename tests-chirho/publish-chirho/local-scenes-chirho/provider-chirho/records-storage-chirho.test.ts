@@ -31,7 +31,10 @@ import {
 	mergeScenesChirho,
 	sceneForChirho
 } from '../../../../scripts-chirho/publish-chirho/local-scenes-chirho/provider-chirho/install-chirho';
-import { poolChirho } from '../../../../scripts-chirho/publish-chirho/local-scenes-chirho/provider-chirho/worker-chirho';
+import {
+	poolChirho,
+	runChirho
+} from '../../../../scripts-chirho/publish-chirho/local-scenes-chirho/provider-chirho/worker-chirho';
 import { writeArtworkCatalogueChirho } from '../../../../scripts-chirho/publish-chirho/r2-chirho/catalogue-write-chirho';
 import { readArtworkCatalogueChirho } from '../../../../scripts-chirho/publish-chirho/r2-chirho/catalogue-chirho';
 import { MANIFEST_CHIRHO } from '../../../../scripts-chirho/publish-chirho/local-scenes-chirho/provider-chirho/records-chirho';
@@ -242,6 +245,32 @@ describe('exact provider scene source and storage', () => {
 			}
 		).trim();
 		expect(requestHashChirho(jobChirho, taskChirho)).toBe(expectedChirho);
+	});
+	it('accepts a hash-bound source chapter above 2 MiB but refuses above the reader ceiling', async () => {
+		const valueChirho = await fixtureChirho();
+		const sourcePathChirho = joinChirho(
+			valueChirho.rootChirho,
+			'static' + valueChirho.contentPathChirho
+		);
+		const sourceChirho = JSON.parse(await readFileChirho(sourcePathChirho, 'utf8'));
+		const manifestPathChirho = 'static/content-chirho/philemon-chirho/manifest-chirho.json';
+		const manifestChirho = JSON.parse(
+			await readFileChirho(joinChirho(valueChirho.rootChirho, manifestPathChirho), 'utf8')
+		);
+		sourceChirho.padding_chirho = 'x'.repeat(2 * 1024 ** 2);
+		await valueChirho.putChirho('static' + valueChirho.contentPathChirho, sourceChirho);
+		manifestChirho.chapters_chirho[0].sha256_chirho = digestChirho(
+			await readFileChirho(sourcePathChirho)
+		);
+		await valueChirho.putChirho(manifestPathChirho, manifestChirho);
+		expect(
+			(await loadBookChirho(valueChirho.rootChirho, bookChirho)).completed_chirho
+		).toHaveLength(1);
+		sourceChirho.padding_chirho = 'x'.repeat(4 * 1024 ** 2);
+		await valueChirho.putChirho('static' + valueChirho.contentPathChirho, sourceChirho);
+		await expect(loadBookChirho(valueChirho.rootChirho, bookChirho)).rejects.toThrow(
+			'Owned record is oversized'
+		);
 	});
 	it('refuses source drift and a changed gloss snapshot', async () => {
 		const valueChirho = await fixtureChirho();
@@ -680,5 +709,19 @@ describe('provider publication and failure recovery', () => {
 				})
 			).state_chirho
 		).toBe('already_retired');
+		await runChirho(valueChirho.rootChirho, [
+			'--book-chirho',
+			'Phlm',
+			'--watch-chirho',
+			'--apply-chirho'
+		]);
+		const progressChirho = JSON.parse(
+			await readFileChirho(
+				joinChirho(valueChirho.rootChirho, STAGE_CHIRHO, 'progress-chirho.json'),
+				'utf8'
+			)
+		);
+		expect(progressChirho.state_chirho).toBe('complete');
+		expect(progressChirho.retired_books_chirho).toEqual(['Phlm']);
 	});
 });
