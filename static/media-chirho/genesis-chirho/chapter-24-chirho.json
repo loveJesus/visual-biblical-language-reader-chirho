@@ -883,6 +883,35 @@
       "context_canonical_text_chirho": "יְהוָ֣ה ׀ אֱלֹהֵ֣י הַשָּׁמַ֗יִם אֲשֶׁ֨ר לְקָחַ֜נִי מִבֵּ֣ית אָבִי֮ וּמֵאֶ֣רֶץ מֽוֹלַדְתִּי֒ וַאֲשֶׁ֨ר דִּבֶּר־לִ֜י וַאֲשֶׁ֤ר נִֽשְׁבַּֽע־לִי֙ לֵאמֹ֔ר לְזַ֨רְעֲךָ֔ אֶתֵּ֖ן אֶת־הָאָ֣רֶץ הַזֹּ֑את ה֗וּא יִשְׁלַ֤ח מַלְאָכוֹ֙ לְפָנֶ֔יךָ וְלָקַחְתָּ֥ אִשָּׁ֛ה לִבְנִ֖י מִשָּֽׁם׃"
     },
     {
+      "id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Gen.24.8",
+      "token_id_chirho": "017yH",
+      "lemma_id_chirho": "H7621",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שְׁבוּעָה",
+      "sense_id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-07-oath-chirho",
+      "contextual_meaning_chirho": "An oath or sworn promise, as in the verified Gen.24.8 token glossed 'from oath'.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho/cell-07-chirho.webp",
+      "alt_chirho": "Two hands clasped firmly in a handshake.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d73bbb04ab2c68889a861f475324a89cea84f8d070bd40d9f3fc77262052785f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מִשְּׁבֻעָתִ֖י",
+      "context_gloss_chirho": "from oath",
+      "context_canonical_text_chirho": "וְאִם־לֹ֨א תֹאבֶ֤ה הָֽאִשָּׁה֙ לָלֶ֣כֶת אַחֲרֶ֔יךָ וְנִקִּ֕יתָ מִשְּׁבֻעָתִ֖י זֹ֑את רַ֣ק אֶת־בְּנִ֔י לֹ֥א תָשֵׁ֖ב שָֽׁמָּה׃"
+    },
+    {
       "id_chirho": "reuse-5c1b85bebdbf159ca55203db9bc60ea5-chirho",
       "lesson_id_chirho": "Gen.24.8",
       "token_id_chirho": "01P68",
@@ -1418,6 +1447,35 @@
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
       "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-b3f7d62437ad49f6bdb2b2dc3dd5451f-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Gen.24.22",
+      "token_id_chirho": "017xb",
+      "lemma_id_chirho": "H4948",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִשְׁקָל",
+      "sense_id_chirho": "attempt-pipeline-b3f7d62437ad49f6bdb2b2dc3dd5451f-chirho-cell-0-weight-chirho",
+      "contextual_meaning_chirho": "Weight or weighing; Genesis 24:22 uses this noun for the measured weight of jewelry.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-b3f7d62437ad49f6bdb2b2dc3dd5451f-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A small bronze balance scale with two hanging pans.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "734b9b93a1e03ea6d82ff22ac0ddb1762033606ee30045290c723dfbe9eaaba1",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true,
+      "context_text_chirho": "מִשְׁקָל֑וֹ",
+      "context_gloss_chirho": "weighing",
+      "context_canonical_text_chirho": "וַיְהִ֗י כַּאֲשֶׁ֨ר כִּלּ֤וּ הַגְּמַלִּים֙ לִשְׁתּ֔וֹת וַיִּקַּ֤ח הָאִישׁ֙ נֶ֣זֶם זָהָ֔ב בֶּ֖קַע מִשְׁקָל֑וֹ וּשְׁנֵ֤י צְמִידִים֙ עַל־יָדֶ֔יהָ עֲשָׂרָ֥ה זָהָ֖ב מִשְׁקָלָֽם׃"
     },
     {
       "id_chirho": "icon-attempt-ed1fdcdd784e4792b3f6e26ec4412daa-chirho-15-chirho",
@@ -2297,6 +2355,35 @@
       "context_canonical_text_chirho": "וַיְהִ֕י כַּאֲשֶׁ֥ר שָׁמַ֛ע עֶ֥בֶד אַבְרָהָ֖ם אֶת־דִּבְרֵיהֶ֑ם וַיִּשְׁתַּ֥חוּ אַ֖רְצָה לַֽיהוָֽה׃"
     },
     {
+      "id_chirho": "attempt-pipeline-24b864bd1b34421b8a6bd91300ca728c-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Gen.24.53",
+      "token_id_chirho": "017rf",
+      "lemma_id_chirho": "H4030",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִגְדָּנָה",
+      "sense_id_chirho": "attempt-pipeline-24b864bd1b34421b8a6bd91300ca728c-chirho-cell-00-general-chirho",
+      "contextual_meaning_chirho": "Precious things; valuable gifts.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-24b864bd1b34421b8a6bd91300ca728c-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A jewel-set treasure casket.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8f65ab06b79764d67518112d1bebdd4339965a019d49d4f1ed206080444d50c1",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true,
+      "context_text_chirho": "וּמִ֨גְדָּנֹ֔ת",
+      "context_gloss_chirho": "and precious things",
+      "context_canonical_text_chirho": "וַיּוֹצֵ֨א הָעֶ֜בֶד כְּלֵי־כֶ֨סֶף וּכְלֵ֤י זָהָב֙ וּבְגָדִ֔ים וַיִּתֵּ֖ן לְרִבְקָ֑ה וּמִ֨גְדָּנֹ֔ת נָתַ֥ן לְאָחִ֖יהָ וּלְאִמָּֽהּ׃"
+    },
+    {
       "id_chirho": "icon-attempt-75bcf646e112499ca12f9a6cdcce478d-chirho-12-chirho",
       "lesson_id_chirho": "Gen.24.55",
       "token_id_chirho": "01nRk",
@@ -2345,6 +2432,35 @@
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
       "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-3157f453cd774fb0ad0cb9c3ba726c7d-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Gen.24.63",
+      "token_id_chirho": "01KFR",
+      "lemma_id_chirho": "H7742",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שׂוּחַ",
+      "sense_id_chirho": "attempt-pipeline-3157f453cd774fb0ad0cb9c3ba726c7d-chirho-cell-7-general-chirho",
+      "contextual_meaning_chirho": "meditate, muse pensively",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-3157f453cd774fb0ad0cb9c3ba726c7d-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A seated person resting their chin on a hand.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "0d5b4b588715669c6f66f7e458e1c757d04b3b19ecba5312e04c238e1393e2a1",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true,
+      "context_text_chirho": "לָשׂ֥וּחַ",
+      "context_gloss_chirho": "to meditate",
+      "context_canonical_text_chirho": "וַיֵּצֵ֥א יִצְחָ֛ק לָשׂ֥וּחַ בַּשָּׂדֶ֖ה לִפְנ֣וֹת עָ֑רֶב וַיִּשָּׂ֤א עֵינָיו֙ וַיַּ֔רְא וְהִנֵּ֥ה גְמַלִּ֖ים בָּאִֽים׃"
     },
     {
       "id_chirho": "icon-attempt-47d6a2d9228447e6817a5482d9abcd4b-chirho-15-chirho",
@@ -2693,6 +2809,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-2ad5eee12f29491081eaca5d41abbfc0-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Gen.12.2",
+      "token_id_chirho": "0156w",
+      "lemma_id_chirho": "H1431",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "גָּדַל",
+      "sense_id_chirho": "attempt-pipeline-2ad5eee12f29491081eaca5d41abbfc0-chirho-cell-00-make-great-chirho",
+      "contextual_meaning_chirho": "Make great or enlarge: in Genesis 12:2 the speaker will make Abram's name great.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-2ad5eee12f29491081eaca5d41abbfc0-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A flourishing green sapling with a thickening trunk and connected roots, suggesting growth.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "911e663da6939ae5b94a86b168953b7c3c6207d3fa3cd3f5793b2225417de046",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -3749,6 +3891,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-03-chirho",
+      "lesson_id_chirho": "Gen.21.7",
+      "token_id_chirho": "01mHQ",
+      "lemma_id_chirho": "H3243",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָנַק",
+      "sense_id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-03-nurse-chirho",
+      "contextual_meaning_chirho": "To nurse or suckle; the verified Gen.21.7 Hiphil form refers to Sarah nursing children.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho/cell-03-chirho.webp",
+      "alt_chirho": "A fully draped mother nursing a swaddled infant beneath a modest shawl.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "0eec3e9f05016e59983b785ae73a5bf51feb5a40c5f2b678f7a4f8035dd60854",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-8c664d976cbf47578c4ad982d69e5c83-02-chirho",
       "lesson_id_chirho": "Prov.7.15",
       "token_id_chirho": "20mvJ",
@@ -4316,6 +4484,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-11-chirho",
+      "lesson_id_chirho": "Gen.1.31",
+      "token_id_chirho": "01dPK",
+      "lemma_id_chirho": "H3966",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְאֹד",
+      "sense_id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-11-chirho",
+      "contextual_meaning_chirho": "Very; an intensifier modifying good in Genesis 1:31.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho/cell-11-chirho.webp",
+      "alt_chirho": "A bulging sack filled to the brim with a high mound of grain.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "621e4e8e3d036c04abae72cdb432a1a465a16e6519194ed257ff9b21ae8183b8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-81b565b320874053817803e8954ef5ee-10-chirho",
       "lesson_id_chirho": "Prov.1.31",
       "token_id_chirho": "206qf",
@@ -4337,6 +4531,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-24b864bd1b34421b8a6bd91300ca728c-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Gen.24.53",
+      "token_id_chirho": "017rf",
+      "lemma_id_chirho": "H4030",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִגְדָּנָה",
+      "sense_id_chirho": "attempt-pipeline-24b864bd1b34421b8a6bd91300ca728c-chirho-cell-00-general-chirho",
+      "contextual_meaning_chirho": "Precious things; valuable gifts.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-24b864bd1b34421b8a6bd91300ca728c-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A jewel-set treasure casket.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8f65ab06b79764d67518112d1bebdd4339965a019d49d4f1ed206080444d50c1",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -4775,6 +4995,58 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-10-chirho",
+      "lesson_id_chirho": "Gen.8.19",
+      "token_id_chirho": "01Lzv",
+      "lemma_id_chirho": "H4940",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִשְׁפָּחָה",
+      "sense_id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-10-chirho",
+      "contextual_meaning_chirho": "Families or kindred groups; animal families in Genesis 8:19.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho/cell-10-chirho.webp",
+      "alt_chirho": "A ewe and two lambs nestled closely together in one touching group.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "89b6f951e890b3d9be559aa2678547b0efaaa25c85d7be53b9fcd20210c55591",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-b3f7d62437ad49f6bdb2b2dc3dd5451f-chirho-cell-00-chirho",
+      "lesson_id_chirho": "Gen.24.22",
+      "token_id_chirho": "017xb",
+      "lemma_id_chirho": "H4948",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מִשְׁקָל",
+      "sense_id_chirho": "attempt-pipeline-b3f7d62437ad49f6bdb2b2dc3dd5451f-chirho-cell-0-weight-chirho",
+      "contextual_meaning_chirho": "Weight or weighing; Genesis 24:22 uses this noun for the measured weight of jewelry.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-b3f7d62437ad49f6bdb2b2dc3dd5451f-chirho/cell-00-chirho.webp",
+      "alt_chirho": "A small bronze balance scale with two hanging pans.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "734b9b93a1e03ea6d82ff22ac0ddb1762033606ee30045290c723dfbe9eaaba1",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -6301,6 +6573,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Gen.22.23",
+      "token_id_chirho": "0158v",
+      "lemma_id_chirho": "H7259",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "רִבְקָה",
+      "sense_id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-06-rebekah-chirho",
+      "contextual_meaning_chirho": "Rebekah, the personal name identified in the verified Gen.22.23 token.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho/cell-06-chirho.webp",
+      "alt_chirho": "An illustrative Rebekah in a headscarf holding a terracotta jar at her shoulder.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "2c1ea4abc93cb40f148d0302eeafd5a2574ac2d971fe7eb95982aee06bb1fcd8",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "proverbs-worker-icon-05-chirho",
       "lesson_id_chirho": "Prov.1.15",
       "token_id_chirho": "20KvD",
@@ -6524,6 +6822,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Gen.24.8",
+      "token_id_chirho": "017yH",
+      "lemma_id_chirho": "H7621",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שְׁבוּעָה",
+      "sense_id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-07-oath-chirho",
+      "contextual_meaning_chirho": "An oath or sworn promise, as in the verified Gen.24.8 token glossed 'from oath'.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho/cell-07-chirho.webp",
+      "alt_chirho": "Two hands clasped firmly in a handshake.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d73bbb04ab2c68889a861f475324a89cea84f8d070bd40d9f3fc77262052785f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-attempt-0cef092ef20c45a5932e5783b421d27c-chirho-04-chirho",
       "lesson_id_chirho": "Gen.24.10",
       "token_id_chirho": "01wVu",
@@ -6546,6 +6870,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Gen.21.23",
+      "token_id_chirho": "01qYw",
+      "lemma_id_chirho": "H7650",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שָׁבַע",
+      "sense_id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-14-chirho",
+      "contextual_meaning_chirho": "Swear an oath; the request made in Genesis 21:23.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho/cell-14-chirho.webp",
+      "alt_chirho": "An ordinary raised open hand with the palm facing forward.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a7929be1b5a6fa09fbbbca339d066c439a389dd064ddc20f73a7ebca1d0e0111",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -6593,6 +6943,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-3157f453cd774fb0ad0cb9c3ba726c7d-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Gen.24.63",
+      "token_id_chirho": "01KFR",
+      "lemma_id_chirho": "H7742",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שׂוּחַ",
+      "sense_id_chirho": "attempt-pipeline-3157f453cd774fb0ad0cb9c3ba726c7d-chirho-cell-7-general-chirho",
+      "contextual_meaning_chirho": "meditate, muse pensively",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-3157f453cd774fb0ad0cb9c3ba726c7d-chirho/cell-07-chirho.webp",
+      "alt_chirho": "A seated person resting their chin on a hand.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "0d5b4b588715669c6f66f7e458e1c757d04b3b19ecba5312e04c238e1393e2a1",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {

@@ -121,3 +121,27 @@ A declared image may briefly precede its completed R2 proof while the sole produ
 Artwork snapshots freeze the authoring manifest bytes before the R2 proof index and its checked shard bytes. The directory walk uses those frozen bytes and excludes later-added manifests/proof files. A new producer batch therefore waits for the next release instead of entering an older proof snapshot. Source path, hash, size and review checks still run against the frozen release inputs; a genuinely unfinished upload remains a refusal. No pending record becomes verified through snapshotting.
 
 External originals in Codex's normal `~/.codex/generated_images/` directory are accepted only with one original generation call and its saved result binding. Returned inline PNG bytes must hash identically; a path-only result must name the exact trusted original. Missing/multiple/unrelated results, changed files and symlink escapes remain refused. Original metadata and tool evidence are immutable. Owner reconciliation moves only proven saved-result path holds to checking, retaining prior events and every attempt counter; it never requests another image.
+
+## Source-backed general pictures for missing glosses
+
+```mermaid
+flowchart LR
+  token_chirho[Exact token and chapter binding] --> gloss_chirho{Source gloss present?}
+  gloss_chirho -->|yes| contextual_chirho[Existing contextual evidence]
+  gloss_chirho -->|no| lexical_chirho[Hash-verified AugIndex and LexicalIndex]
+  lexical_chirho --> identity_chirho{Exact Strong and augment entry?}
+  identity_chirho -->|no| held_chirho[Retain source hold]
+  identity_chirho -->|yes| mnemonic_chirho[General lexical meaning; verse gloss stays null]
+  mnemonic_chirho --> plan_chirho[Durable source plan and independent checker]
+  contextual_chirho --> plan_chirho
+  plan_chirho --> verify_chirho[Installer re-derives exact dictionary binding]
+  verify_chirho --> archive_chirho[Preserve and serve verified artwork]
+```
+
+`icon_lexicon_chirho.py` verifies the pinned dictionary bytes and resolves the full augmented identity through the existing importer. A missing or mismatched entry remains unavailable. `source_chirho` retains the exact source occurrence, including its null gloss, and adds separate lexical meaning evidence. The producer may create a general mnemonic from that definition; it does not become an approved contextual translation. The installer refuses altered meaning evidence and retains its dictionary provenance in the artwork record. Existing approved-gloss plans retain their original shape.
+
+### Named known-failure exception
+
+L.J. authorized at most one additional attempt for each of the seven exhausted, known-failed identities on November 6. `grant_known_failure_chirho` requires an exhausted held lemma whose completed job explicitly rejected it after an actual request, with no uncertain outcome. An additive table binds each of at most seven grants to the saved authority SHA and a lifetime maximum of four. The original three-attempt default, counters, seed, raw requests and unknown outcomes remain intact. Generation and settlement consult only the named exception for that key; failure of the fourth attempt holds it again. Source-review recovery is separately bound to exact current tokens and pinned lexical evidence.
+
+Dictionary-backed pictures with an explicitly null source gloss are kept separate from contextual selections. The delivery sanitizer accepts that null only with documented lexical evidence and complete source pins. The lemma library rechecks the source word's exact identity, text and explicit null gloss, then strips the contextual pins for the ordinary general-default format. Contextual icon arrays omit those lexical-only records, so existing web and native consumers retain their original wire contract. The source catalogue and archived evidence retain the unavailable gloss honestly. A partial pin set, changed source word or undocumented null still refuses.

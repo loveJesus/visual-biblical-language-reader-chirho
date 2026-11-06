@@ -1,0 +1,188 @@
+{
+	"schema_version_chirho": 1,
+	"words_chirho": [
+		{
+			"lesson_id_chirho": "Isa.38.14",
+			"token_id_chirho": "235zx",
+			"text_chirho": "עָֽשְׁקָה",
+			"lemma_id_chirho": "H6234",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HNcfsa",
+			"ipa_chirho": "ʔoʃˈka",
+			"spoken_reading_chirho": "עָֽשְׁקָה",
+			"qere_binding_chirho": null,
+			"surprising_chirho": true,
+			"explanation_chirho": {
+				"en": "The first qamats is short o despite the meteg, and the sheva is silent. The final syllable carries the stress.",
+				"es": "El primer qamats suena como o breve pese al meteg, y el sheva es silencioso. La última sílaba lleva el acento."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L37318"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://yausha.com.br/wp-content/uploads/2024/02/The-Hebrew-and-Aramaic-lexicon-of-the-Old-Testament-study-edition-volume-1.pdf#page=2034"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 3",
+					"url_chirho": "https://biblehub.com/bdb/6234.htm"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H6234\",null]",
+				"lemma_id_chirho": "H6234",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Isa.38.14",
+				"token_id_chirho": "235zx",
+				"source_text_chirho": "עָֽשְׁקָה",
+				"spoken_source_chirho": "עָֽשְׁקָה",
+				"proposed_reading_chirho": "עָֽשְׁקָה",
+				"raw_morphology_chirho": "HNcfsa",
+				"chapter_path_chirho": "static/content-chirho/isaiah-chirho/chapter-38-chirho.json",
+				"chapter_sha256_chirho": "36010e2feb65fd9a03431510bc81278952cb52ec39b9ecbbc45130f61c3c31e9",
+				"canonical_sha256_chirho": "70f72a381ebf19fbffce0a1c04910cf0d269c11446f8d3343e2631b5617f4fde",
+				"stress_index_chirho": 1,
+				"ipa_chirho": "ʔoʃˈka",
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "עׇשְׁ",
+						"ipa_chirho": "ʔoʃ",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": true
+					},
+					{
+						"analysis_text_chirho": "קָה",
+						"ipa_chirho": "ka",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"evidence_kind_chirho": "exact_reviewed_inflection_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L37318",
+						"detail_chirho": "Exact same nominal headword עׇשְׁקָה, pron osh-kaw', xlit oshqah: two syllables, short o, final kah stress. No inflection is transferred."
+					},
+					{
+						"url_chirho": "https://yausha.com.br/wp-content/uploads/2024/02/The-Hebrew-and-Aramaic-lexicon-of-the-Old-Testament-study-edition-volume-1.pdf#page=2034",
+						"detail_chirho": "HALOT entry7398, physical PDF page2034: explicitly pronounced o- for this Isaiah38:14 feminine noun and specifically discusses its meteg. Independently confirms lexical short o despite source meteg. PDF SHA256 7ba7a1346bef2ef0e8829650b2ebbf86b2ffb3e48b5a2e98f78a8b42bc86c964;18446799 bytes."
+					},
+					{
+						"url_chirho": "https://biblehub.com/bdb/6234.htm",
+						"detail_chirho": "BDB quotes the actual Isaiah38:14 feminine noun with meteg. This lexical pronunciation review follows exact Strong osh-kaw and HALOT o-, rather than generalizing meteg behavior."
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"analysis_copy_chirho": "עׇשְׁקָה",
+				"profile_reason_chirho": "Analysis-only exact lexical two-syllable osh-kaw profile: U+05C7 and omitted meteg prevent the parser from forcing long-a/vocal-sheva. Original pointed/meteg source is retained verbatim. Strong supplies both complete syllabification and stress; HALOT independently confirms o-",
+				"raw_lemma_chirho": "6234",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"source_unchanged_chirho": true,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 37318,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Isa.xml",
+				"raw_xml_sha256_chirho": "0807678de609bdef284bed5400b94ddab570d101b593c7f59ae1939015572fa2"
+			}
+		},
+		{
+			"lesson_id_chirho": "Prov.28.23",
+			"token_id_chirho": "20hDB",
+			"text_chirho": "אַ֭חֲרַי",
+			"lemma_id_chirho": "H310",
+			"lemma_augment_chirho": "b",
+			"raw_morphology_chirho": "HR",
+			"ipa_chirho": "ʔaxaˈʁaj",
+			"spoken_reading_chirho": "אַ֭חֲרַי",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "This reading follows Gesenius/Tregelles's analysis of this exact form as a suffixed preposition, matching the source parse. BDB discusses a different interpretation of its meaning. The written text is preserved.",
+				"es": "Esta lectura sigue el análisis de esta forma como preposición con sufijo en Gesenius/Tregelles, de acuerdo con el análisis de la fuente. BDB propone otra interpretación de su significado. Se conserva el texto escrito."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bible-teka.com/strong/hebrew/310/dict/gesenius/"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/103.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 3",
+					"url_chirho": "https://biblehub.com/bdb/310.htm"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H310\",\"b\"]",
+				"lemma_id_chirho": "H310",
+				"lemma_augment_chirho": "b",
+				"verse_chirho": "Prov.28.23",
+				"token_id_chirho": "20hDB",
+				"source_text_chirho": "אַ֭חֲרַי",
+				"spoken_source_chirho": "אַ֭חֲרַי",
+				"proposed_reading_chirho": "אַ֭חֲרַי",
+				"raw_morphology_chirho": "HR",
+				"chapter_path_chirho": "static/content-chirho/proverbs-chirho/chapter-28-chirho.json",
+				"chapter_sha256_chirho": "776a214ba978eda07d7b6b7c5c04b70d93d19c72c0b45b6faa64eb2eba3cbe93",
+				"canonical_sha256_chirho": "fe580b1c3ccbf301fa1b7f9597b5aa3787ef369465eae8ee4db30e25e7a07805",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "ʔaxaˈʁaj",
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "אַ֭",
+						"ipa_chirho": "ʔa",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "חֲ",
+						"ipa_chirho": "xa",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "רַי",
+						"ipa_chirho": "ʁaj",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"evidence_kind_chirho": "exact_reviewed_inflection_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bible-teka.com/strong/hebrew/310/dict/gesenius/",
+						"detail_chirho": "Gesenius/Tregelles actual H310 entry explicitly quotes Proverbs28:23 and analyzes אַחֲרַי as following me (my precepts), i.e. the suffixed preposition, matching source HR. This is exact-verse support, not transfer from a differently inflected occurrence."
+					},
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/103.html",
+						"detail_chirho": "GKC103o,p: this preposition takes plural nominal suffixes; GKC91g,h gives tonic 1cs -ay. The selected exact documented reading stresses final ray. BDB's alternative adjective/abnormal-adverb interpretation remains a semantic caveat; the debate is not claimed resolved."
+					},
+					{
+						"url_chirho": "https://biblehub.com/bdb/310.htm",
+						"detail_chirho": "BDB final paragraph records competing analyses for Proverbs28:23. These are retained as a caveat alongside the explicitly selected Gesenius reading; no source morphology or text is changed."
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "310 b",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"source_unchanged_chirho": true,
+				"semantic_caveat_chirho": "Exact Gesenius/Tregelles preposition reading selected, compatible with source HR. BDB also records doubtful adjective/abnormal-adverb analyses. Semantic debate is retained, not resolved.",
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Prov.xml",
+				"raw_xml_sha256_chirho": "964f99c00239b53b854c4686c99490c8d1ac7664784a30afdfc23781a3abb161",
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 1847
+			}
+		}
+	]
+}

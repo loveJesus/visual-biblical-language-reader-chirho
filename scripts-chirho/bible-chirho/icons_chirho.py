@@ -16,10 +16,13 @@ import shutil
 import tempfile
 from pathlib import Path
 
+from icon_lexicon_chirho import validate_lexical_chirho
 from PIL import Image
 
 ROOT_CHIRHO = Path(__file__).resolve().parents[2]
-QUEUE_CHIRHO = ROOT_CHIRHO / "workspace-chirho/art-chirho/queue-chirho/bible-icons-chirho"
+QUEUE_CHIRHO = (
+    ROOT_CHIRHO / "workspace-chirho/art-chirho/queue-chirho/bible-icons-chirho"
+)
 
 
 def sha_chirho(path_chirho):
@@ -28,9 +31,13 @@ def sha_chirho(path_chirho):
 
 def atomic_chirho(path_chirho, value_chirho):
     path_chirho.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(dir=path_chirho.parent, delete=False) as file_chirho:
+    with tempfile.NamedTemporaryFile(
+        dir=path_chirho.parent, delete=False
+    ) as file_chirho:
         temporary_chirho = Path(file_chirho.name)
-        file_chirho.write((json.dumps(value_chirho, ensure_ascii=False, indent=2) + "\n").encode())
+        file_chirho.write(
+            (json.dumps(value_chirho, ensure_ascii=False, indent=2) + "\n").encode()
+        )
         file_chirho.flush()
         os.fsync(file_chirho.fileno())
     os.replace(temporary_chirho, path_chirho)
@@ -48,8 +55,10 @@ def positive_visual_chirho(attempt_chirho):
     return (
         owner_chirho.get("inspected_chirho") is True
         and owner_chirho.get("visual_pass_chirho") is True
-        and owner_chirho.get("prior_visual_sha256_chirho") == sha_chirho(visual_path_chirho)
-        and owner_chirho.get("sheet_sha256_chirho") == visual_chirho.get("sheet_sha256_chirho")
+        and owner_chirho.get("prior_visual_sha256_chirho")
+        == sha_chirho(visual_path_chirho)
+        and owner_chirho.get("sheet_sha256_chirho")
+        == visual_chirho.get("sheet_sha256_chirho")
     )
 
 
@@ -85,7 +94,9 @@ def install_chirho(attempt_chirho):
         QUEUE_CHIRHO.resolve()
     ) or not attempt_chirho.name.startswith("attempt-"):
         raise ValueError("Atlas attempt is outside its owned queue")
-    read_chirho = lambda name_chirho: json.loads((attempt_chirho / name_chirho).read_bytes())
+    read_chirho = lambda name_chirho: json.loads(
+        (attempt_chirho / name_chirho).read_bytes()
+    )
     plan_chirho = read_chirho("plan-chirho.json")
     reviews_chirho = read_chirho("reviews-chirho.json")
     visual_chirho = read_chirho("visual-review-chirho.json")
@@ -106,7 +117,9 @@ def install_chirho(attempt_chirho):
         or len(cuts_chirho["cells_chirho"]) != 16
     ):
         raise ValueError("Expected sixteen planned and measured cells")
-    catalogue_path_chirho = ROOT_CHIRHO / "data-chirho/media-chirho/bible-worker-icons-chirho.json"
+    catalogue_path_chirho = (
+        ROOT_CHIRHO / "data-chirho/media-chirho/bible-worker-icons-chirho.json"
+    )
     catalogue_chirho = (
         json.loads(catalogue_path_chirho.read_bytes())
         if catalogue_path_chirho.exists()
@@ -116,7 +129,12 @@ def install_chirho(attempt_chirho):
     held_chirho = []
     visual_rejected_chirho = rejected_cells_chirho(attempt_chirho)
     for number_chirho, (planned_chirho, reviewed_chirho, cut_chirho) in enumerate(
-        zip(plan_chirho["cells_chirho"], reviews_chirho, cuts_chirho["cells_chirho"], strict=True)
+        zip(
+            plan_chirho["cells_chirho"],
+            reviews_chirho,
+            cuts_chirho["cells_chirho"],
+            strict=True,
+        )
     ):
         if planned_chirho.get("padding_chirho") is True:
             if reviewed_chirho.get("padding_chirho") is not True:
@@ -132,6 +150,7 @@ def install_chirho(attempt_chirho):
         ):
             if planned_chirho[field_chirho] != reviewed_chirho[field_chirho]:
                 raise ValueError("Reviewed cell differs from its source plan")
+        validate_lexical_chirho(ROOT_CHIRHO, planned_chirho, reviewed_chirho)
         if (
             reviewed_chirho["cell_chirho"] != number_chirho
             or cut_chirho["cell_chirho"] != number_chirho
@@ -162,11 +181,16 @@ def install_chirho(attempt_chirho):
             continue
         occurrence_chirho = planned_chirho["occurrence_chirho"]
         chapter_path_chirho = (
-            ROOT_CHIRHO / "static" / occurrence_chirho["content_path_chirho"].lstrip("/")
+            ROOT_CHIRHO
+            / "static"
+            / occurrence_chirho["content_path_chirho"].lstrip("/")
         ).resolve()
         if (
-            not chapter_path_chirho.is_relative_to(ROOT_CHIRHO / "static/content-chirho")
-            or sha_chirho(chapter_path_chirho) != occurrence_chirho["content_sha256_chirho"]
+            not chapter_path_chirho.is_relative_to(
+                ROOT_CHIRHO / "static/content-chirho"
+            )
+            or sha_chirho(chapter_path_chirho)
+            != occurrence_chirho["content_sha256_chirho"]
         ):
             raise ValueError("Icon source chapter changed")
         chapter_chirho = json.loads(chapter_path_chirho.read_bytes())
@@ -191,11 +215,15 @@ def install_chirho(attempt_chirho):
             )
             or token_chirho["text_chirho"] != occurrence_chirho["text_chirho"]
             or token_chirho["gloss_chirho"] != occurrence_chirho["gloss_chirho"]
-            or hashlib.sha256(verse_chirho["canonical_text_chirho"].encode()).hexdigest()
+            or hashlib.sha256(
+                verse_chirho["canonical_text_chirho"].encode()
+            ).hexdigest()
             != planned_chirho["canonical_sha256_chirho"]
         ):
             raise ValueError("Icon word identity or contextual evidence changed")
-        icon_chirho = (attempt_chirho / "cuts-chirho" / cut_chirho["icon_path_chirho"]).resolve()
+        icon_chirho = (
+            attempt_chirho / "cuts-chirho" / cut_chirho["icon_path_chirho"]
+        ).resolve()
         if (
             not icon_chirho.is_relative_to(attempt_chirho)
             or sha_chirho(icon_chirho) != cut_chirho["icon_sha256_chirho"]
@@ -207,7 +235,9 @@ def install_chirho(attempt_chirho):
         asset_chirho = f"/assets-chirho/icons-chirho/bible-v1-chirho/{attempt_chirho.name}/cell-{number_chirho:02d}-chirho.webp"
         target_chirho = ROOT_CHIRHO / "static" / asset_chirho.lstrip("/")
         target_chirho.parent.mkdir(parents=True, exist_ok=True)
-        if target_chirho.exists() and sha_chirho(target_chirho) != sha_chirho(icon_chirho):
+        if target_chirho.exists() and sha_chirho(target_chirho) != sha_chirho(
+            icon_chirho
+        ):
             raise ValueError("Installed icon would be overwritten")
         if not target_chirho.exists():
             shutil.copyfile(icon_chirho, target_chirho)
@@ -239,6 +269,15 @@ def install_chirho(attempt_chirho):
                 "context_text_chirho": token_chirho["text_chirho"],
                 "context_gloss_chirho": token_chirho["gloss_chirho"],
                 "context_canonical_text_chirho": verse_chirho["canonical_text_chirho"],
+                **(
+                    {
+                        "meaning_evidence_chirho": planned_chirho[
+                            "meaning_evidence_chirho"
+                        ]
+                    }
+                    if "meaning_evidence_chirho" in planned_chirho
+                    else {}
+                ),
             }
         )
     for record_chirho in records_chirho:
@@ -267,7 +306,9 @@ def install_chirho(attempt_chirho):
             "records_chirho": records_chirho,
             "holds_chirho": held_chirho,
             "plan_sha256_chirho": sha_chirho(attempt_chirho / "plan-chirho.json"),
-            "visual_review_sha256_chirho": sha_chirho(attempt_chirho / "visual-review-chirho.json"),
+            "visual_review_sha256_chirho": sha_chirho(
+                attempt_chirho / "visual-review-chirho.json"
+            ),
         },
     )
     return {"installed_chirho": len(records_chirho), "held_chirho": len(held_chirho)}

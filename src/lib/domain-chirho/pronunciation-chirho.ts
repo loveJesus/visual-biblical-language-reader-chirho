@@ -1,6 +1,12 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 
-interface SpokenTokenChirho {
+import {
+	readingReviewChirho,
+	reviewedPlaybackTokensChirho,
+	type ReadingTokenChirho
+} from './pronunciation-chirho/hebrew-chirho/reading-continuation-chirho';
+
+interface SpokenTokenChirho extends ReadingTokenChirho {
 	text_chirho: string;
 	qere_chirho?: { text_chirho: string }[];
 }
@@ -9,7 +15,7 @@ interface SpokenTokenChirho {
 export function spokenWordChirho(tokenChirho: SpokenTokenChirho): string {
 	return tokenChirho.qere_chirho?.length
 		? tokenChirho.qere_chirho.map((readingChirho) => readingChirho.text_chirho).join(' ')
-		: tokenChirho.text_chirho;
+		: (readingReviewChirho(tokenChirho)?.spoken_reading_chirho ?? tokenChirho.text_chirho);
 }
 
 export function spokenVerseChirho(lessonChirho: {
@@ -18,9 +24,12 @@ export function spokenVerseChirho(lessonChirho: {
 }): string {
 	let cursorChirho = 0;
 	let textChirho = '';
-	for (const tokenChirho of lessonChirho.tokens_chirho) {
+	for (const tokenChirho of reviewedPlaybackTokensChirho(
+		lessonChirho.canonical_text_chirho,
+		lessonChirho.tokens_chirho
+	)) {
 		textChirho += lessonChirho.canonical_text_chirho.slice(cursorChirho, tokenChirho.start_chirho);
-		textChirho += spokenWordChirho(tokenChirho);
+		textChirho += tokenChirho.spoken_text_chirho;
 		cursorChirho = tokenChirho.end_chirho;
 	}
 	return textChirho + lessonChirho.canonical_text_chirho.slice(cursorChirho);
@@ -35,16 +44,21 @@ export function wordPlaybackPlanChirho(lessonChirho: {
 		end_chirho: number;
 	})[];
 }) {
-	return lessonChirho.tokens_chirho.map((tokenChirho, indexChirho) => {
+	const tokensChirho = reviewedPlaybackTokensChirho(
+		lessonChirho.canonical_text_chirho,
+		lessonChirho.tokens_chirho
+	);
+	return tokensChirho.map((rowChirho, indexChirho) => {
+		const tokenChirho = rowChirho.token_chirho;
 		const gapChirho = lessonChirho.canonical_text_chirho.slice(
-			tokenChirho.end_chirho,
-			lessonChirho.tokens_chirho[indexChirho + 1]?.start_chirho
+			rowChirho.end_chirho,
+			tokensChirho[indexChirho + 1]?.start_chirho
 		);
 		return {
 			token_id_chirho: tokenChirho.id_chirho,
-			text_chirho: spokenWordChirho(tokenChirho),
+			text_chirho: rowChirho.spoken_text_chirho,
 			pause_after_chirho:
-				indexChirho === lessonChirho.tokens_chirho.length - 1
+				indexChirho === tokensChirho.length - 1
 					? 0
 					: gapChirho.includes('־')
 						? 20

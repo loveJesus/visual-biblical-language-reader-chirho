@@ -2,6 +2,7 @@
 // Workflow: local-reader-chirho.md. Trial IPA is an additive, exact-source-bound pronunciation layer.
 import trialChirho from './ipa-trial-chirho.json';
 import readingsChirho from './hebrew-chirho/reading-reviews-chirho.json';
+import { readingReviewChirho } from './hebrew-chirho/reading-continuation-chirho';
 
 export interface IpaNoteChirho {
 	lesson_id_chirho: string;
@@ -31,6 +32,8 @@ const notesChirho = new Map<string, IpaNoteChirho>(
 );
 
 export function ipaNoteChirho(tokenChirho: IpaTokenChirho): IpaNoteChirho | null {
+	const reviewedChirho = readingReviewChirho(tokenChirho);
+	if (reviewedChirho) return reviewedChirho;
 	const noteChirho = notesChirho.get(tokenChirho.id_chirho);
 	return noteChirho &&
 		noteChirho.text_chirho === tokenChirho.text_chirho &&

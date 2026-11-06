@@ -23,6 +23,7 @@ from pathlib import Path
 ROOT_CHIRHO = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT_CHIRHO / "scripts-chirho/bible-chirho")]
 from icon_generation_chirho import GeneratorJobChirho, validate_generation_chirho
+from icon_lexicon_chirho import lexical_meaning_chirho
 from icons_chirho import (
     QUEUE_CHIRHO,
     atomic_chirho,
@@ -61,11 +62,24 @@ def key_chirho(row_chirho):
 
 
 def source_chirho(row_chirho):
+    guidance_chirho = row_chirho.get("mnemonic_subject_chirho")
+    if guidance_chirho is not None and (
+        not isinstance(guidance_chirho, str) or not 1 <= len(guidance_chirho) <= 600
+    ):
+        raise ValueError("Invalid reviewed mnemonic direction")
     example_chirho = next(
-        example_chirho
-        for example_chirho in row_chirho["examples_chirho"]
-        if example_chirho.get("gloss_chirho") and example_chirho["gloss_chirho"] != "-"
+        (
+            example_chirho
+            for example_chirho in row_chirho["examples_chirho"]
+            if example_chirho.get("gloss_chirho")
+            and example_chirho["gloss_chirho"] != "-"
+        ),
+        None,
     )
+    meaning_chirho = {}
+    if example_chirho is None:
+        meaning_chirho = lexical_meaning_chirho(ROOT_CHIRHO, row_chirho)
+        example_chirho = row_chirho["examples_chirho"][0]
     path_chirho = (
         ROOT_CHIRHO / "static" / example_chirho["content_path_chirho"].lstrip("/")
     ).resolve()
@@ -113,6 +127,8 @@ def source_chirho(row_chirho):
             verse_chirho["canonical_text_chirho"].encode()
         ).hexdigest(),
         "evidence_refs_chirho": refs_chirho,
+        **meaning_chirho,
+        **({"mnemonic_subject_chirho": guidance_chirho} if guidance_chirho else {}),
     }
 
 

@@ -32,16 +32,31 @@ class LemmaLibraryTestChirho(unittest.TestCase):
         asset_chirho.write_bytes(webp_chirho(128, 128))
         self.words_chirho = {
             "Prov": [
-                {"id_chirho": "20aaa", "lemma_id_chirho": "H4148", "lemma_augment_chirho": None},
-                {"id_chirho": "20bbb", "lemma_id_chirho": "H4148", "lemma_augment_chirho": None},
+                {
+                    "id_chirho": "20aaa",
+                    "lemma_id_chirho": "H4148",
+                    "lemma_augment_chirho": None,
+                },
+                {
+                    "id_chirho": "20bbb",
+                    "lemma_id_chirho": "H4148",
+                    "lemma_augment_chirho": None,
+                },
             ],
             "Gen": [
-                {"id_chirho": "01aaa", "lemma_id_chirho": "H4148", "lemma_augment_chirho": None}
+                {
+                    "id_chirho": "01aaa",
+                    "lemma_id_chirho": "H4148",
+                    "lemma_augment_chirho": None,
+                }
             ],
         }
         self.write_chirho(
             "config-chirho/lemma-icon-library-chirho.json",
-            {"schema_version_chirho": 1, "source_manifests_chirho": ["library-icons-chirho.json"]},
+            {
+                "schema_version_chirho": 1,
+                "source_manifests_chirho": ["library-icons-chirho.json"],
+            },
         )
         self.sources_chirho = [self.source_chirho]
         self.sync_chirho()
@@ -58,14 +73,19 @@ class LemmaLibraryTestChirho(unittest.TestCase):
         )
         for book_chirho, tokens_chirho in self.words_chirho.items():
             folder_chirho = MODULE_CHIRHO.BOOKS_CHIRHO[book_chirho][0]
-            name_chirho = f"static/content-chirho/{folder_chirho}/chapter-01-chirho.json"
+            name_chirho = (
+                f"static/content-chirho/{folder_chirho}/chapter-01-chirho.json"
+            )
             self.write_chirho(
                 name_chirho,
                 {
                     "book_id_chirho": book_chirho,
                     "chapter_chirho": 1,
                     "verses_chirho": [
-                        {"id_chirho": f"{book_chirho}.1.1", "tokens_chirho": tokens_chirho}
+                        {
+                            "id_chirho": f"{book_chirho}.1.1",
+                            "tokens_chirho": tokens_chirho,
+                        }
                     ],
                 },
             )
@@ -91,7 +111,8 @@ class LemmaLibraryTestChirho(unittest.TestCase):
         MODULE_CHIRHO.refresh_chirho(self.root_chirho)
         chapter_chirho = json.loads(
             (
-                self.root_chirho / "static/media-chirho/genesis-chirho/chapter-01-chirho.json"
+                self.root_chirho
+                / "static/media-chirho/genesis-chirho/chapter-01-chirho.json"
             ).read_text()
         )
         self.assertEqual(len(chapter_chirho["lemma_icons_chirho"]), 1)
@@ -100,7 +121,9 @@ class LemmaLibraryTestChirho(unittest.TestCase):
         self.assertEqual(default_chirho["lesson_id_chirho"], "Prov.1.1")
         self.assertEqual(default_chirho["art_review_chirho"], "pending")
         self.assertNotIn("source_gloss_chirho", default_chirho)
-        self.assertEqual(len(list((self.root_chirho / "static/assets-chirho").rglob("*.webp"))), 1)
+        self.assertEqual(
+            len(list((self.root_chirho / "static/assets-chirho").rglob("*.webp"))), 1
+        )
 
     def test_augments_and_exact_greek_forms_are_not_merged_chirho(self):
         self.words_chirho["Gen"][0]["lemma_augment_chirho"] = "a"
@@ -111,7 +134,11 @@ class LemmaLibraryTestChirho(unittest.TestCase):
                 "lemma_id_chirho": "G3056",
                 "lexical_form_chirho": form_chirho,
             },
-            {"id_chirho": "John.1.1!2", "lemma_id_chirho": "G3056", "lexical_form_chirho": "λόγος"},
+            {
+                "id_chirho": "John.1.1!2",
+                "lemma_id_chirho": "G3056",
+                "lexical_form_chirho": "λόγος",
+            },
         ]
         self.sources_chirho.append(
             {
@@ -124,7 +151,9 @@ class LemmaLibraryTestChirho(unittest.TestCase):
             }
         )
         self.sync_chirho()
-        library_chirho, chapters_chirho = MODULE_CHIRHO.lemma_library_chirho(self.root_chirho)
+        library_chirho, chapters_chirho = MODULE_CHIRHO.lemma_library_chirho(
+            self.root_chirho
+        )
         self.assertFalse(chapters_chirho[("Gen", 1)].intersection(library_chirho))
         self.assertIn(("G3056", None, form_chirho), library_chirho)
         self.assertNotIn(("G3056", None, "λόγος"), library_chirho)
@@ -140,18 +169,25 @@ class LemmaLibraryTestChirho(unittest.TestCase):
             }
         )
         self.sync_chirho()
-        library_chirho, _chapters_chirho = MODULE_CHIRHO.lemma_library_chirho(self.root_chirho)
-        self.assertEqual(library_chirho[("H4148", None, None)]["id_chirho"], "instruction-chirho")
+        library_chirho, _chapters_chirho = MODULE_CHIRHO.lemma_library_chirho(
+            self.root_chirho
+        )
+        self.assertEqual(
+            library_chirho[("H4148", None, None)]["id_chirho"], "instruction-chirho"
+        )
 
     def test_changed_source_identity_preserves_last_good_shards_chirho(self):
         MODULE_CHIRHO.refresh_chirho(self.root_chirho)
         path_chirho = (
-            self.root_chirho / "static/media-chirho/proverbs-chirho/chapter-01-chirho.json"
+            self.root_chirho
+            / "static/media-chirho/proverbs-chirho/chapter-01-chirho.json"
         )
         before_chirho = path_chirho.read_bytes()
         self.source_chirho["lemma_id_chirho"] = "H1"
         self.sync_chirho()
-        with self.assertRaisesRegex(MODULE_CHIRHO.RefusalChirho, "source word identity"):
+        with self.assertRaisesRegex(
+            MODULE_CHIRHO.RefusalChirho, "source word identity"
+        ):
             MODULE_CHIRHO.refresh_chirho(self.root_chirho)
         self.assertEqual(path_chirho.read_bytes(), before_chirho)
 
@@ -162,7 +198,8 @@ class LemmaLibraryTestChirho(unittest.TestCase):
             MODULE_CHIRHO.lemma_library_chirho(self.root_chirho)
         path_chirho.write_bytes(webp_chirho(128, 128))
         chapter_chirho = (
-            self.root_chirho / "static/content-chirho/proverbs-chirho/chapter-01-chirho.json"
+            self.root_chirho
+            / "static/content-chirho/proverbs-chirho/chapter-01-chirho.json"
         )
         chapter_chirho.write_text(chapter_chirho.read_text() + " ")
         with self.assertRaisesRegex(MODULE_CHIRHO.RefusalChirho, "corpus bytes"):
@@ -176,5 +213,53 @@ class LemmaLibraryTestChirho(unittest.TestCase):
                 "source_manifests_chirho": ["../../outside-icons-chirho.json"],
             },
         )
+        with self.assertRaises(MODULE_CHIRHO.RefusalChirho):
+            MODULE_CHIRHO.lemma_library_chirho(self.root_chirho)
+
+    def test_unavailable_gloss_supports_only_a_verified_general_picture_chirho(self):
+        self.source_chirho.update(
+            context_text_chirho="מוּסָר",
+            context_gloss_chirho=None,
+            context_canonical_text_chirho="מוּסָר",
+            meaning_evidence_chirho={"kind_chirho": "pinned_lexical_definition"},
+        )
+        self.words_chirho["Prov"][0].update(text_chirho="מוּסָר", gloss_chirho=None)
+        self.sync_chirho()
+        MODULE_CHIRHO.refresh_chirho(self.root_chirho)
+        for folder_chirho in ("proverbs-chirho", "genesis-chirho"):
+            chapter_chirho = json.loads(
+                (
+                    self.root_chirho
+                    / "static/media-chirho"
+                    / folder_chirho
+                    / "chapter-01-chirho.json"
+                ).read_bytes()
+            )
+            self.assertEqual(chapter_chirho["icons_chirho"], [])
+            self.assertEqual(len(chapter_chirho["lemma_icons_chirho"]), 1)
+            default_chirho = chapter_chirho["lemma_icons_chirho"][0]
+            self.assertEqual(default_chirho["asset_path_chirho"], self.asset_chirho)
+            self.assertNotIn("context_gloss_chirho", default_chirho)
+        self.words_chirho["Prov"][0]["gloss_chirho"] = "changed"
+        self.sync_chirho()
+        with self.assertRaisesRegex(MODULE_CHIRHO.RefusalChirho, "source changed"):
+            MODULE_CHIRHO.lemma_library_chirho(self.root_chirho)
+
+    def test_null_gloss_without_lexical_evidence_and_partial_pins_stay_refused_chirho(
+        self,
+    ):
+        self.source_chirho.update(
+            context_text_chirho="מוּסָר",
+            context_gloss_chirho=None,
+            context_canonical_text_chirho="מוּסָר",
+        )
+        self.sync_chirho()
+        with self.assertRaises(MODULE_CHIRHO.RefusalChirho):
+            MODULE_CHIRHO.lemma_library_chirho(self.root_chirho)
+        self.source_chirho["meaning_evidence_chirho"] = {
+            "kind_chirho": "pinned_lexical_definition"
+        }
+        del self.source_chirho["context_canonical_text_chirho"]
+        self.sync_chirho()
         with self.assertRaises(MODULE_CHIRHO.RefusalChirho):
             MODULE_CHIRHO.lemma_library_chirho(self.root_chirho)

@@ -3,6 +3,10 @@ import {
 	accountedReceiptCreditsChirho,
 	type AudioSettlementChirho
 } from './production-chirho/credit_accounting_chirho';
+import {
+	readCompletionGuardChirho,
+	completionBalanceAllowsChirho
+} from './production-chirho/completion_guard_chirho';
 // Workflow: spec-chirho/workflows-chirho/local-reader-chirho.md (cached original-language audio).
 import { bibleBookChirho, isPassageIdChirho } from '../../src/lib/bible-chirho/books-chirho';
 import { createHash as createHashChirho } from 'node:crypto';
@@ -545,6 +549,7 @@ export async function executeAudioPlanChirho(
 		verify_source_chirho: () => Promise<void>;
 		on_receipt_chirho?: (receiptsChirho: ReceiptChirho[]) => Promise<void>;
 		should_stop_chirho?: () => boolean;
+		completion_authority_sha256_chirho?: string;
 	} & ReserveOptionsChirho
 ) {
 	const rowsChirho = planChirho.rows_chirho;
@@ -555,6 +560,8 @@ export async function executeAudioPlanChirho(
 	const stylesTrialChirho = planChirho.mode_chirho === 'john_styles_trial';
 	const chapterTrialChirho = planChirho.mode_chirho !== 'audition';
 	const fundingChirho = planChirho.funding_chirho;
+	if (planChirho.completion_authority_sha256_chirho && !productionChirho)
+		throw new Error('Completion exception is only for source-bound word production');
 	const ceilingChirho = productionChirho
 		? (fundingChirho?.maximum_total_credits_chirho ?? AUDIO_PRODUCTION_CEILING_CHIRHO)
 		: chapterTrialChirho
@@ -563,6 +570,14 @@ export async function executeAudioPlanChirho(
 	const selectiveChirho = Boolean(fundingChirho || planChirho.eligible_chirho);
 	const requestableChirho = (jobChirho: AudioJobChirho) =>
 		!planChirho.eligible_chirho || planChirho.eligible_chirho(jobChirho);
+	const completionChirho = planChirho.completion_authority_sha256_chirho
+		? await readCompletionGuardChirho(
+				rootChirho,
+				planChirho.completion_authority_sha256_chirho,
+				rowsChirho.filter(requestableChirho).map(cacheKeyChirho),
+				fundingChirho
+			)
+		: null;
 	const requestLimitChirho = productionChirho
 		? 200
 		: stylesTrialChirho
@@ -742,7 +757,8 @@ export async function executeAudioPlanChirho(
 			throw new Error('Speech billing cycle changed; settlement cannot cross a reset');
 		if (
 			subscriptionChirho.character_limit - subscriptionChirho.character_count <
-			includedNeedChirho + 1000
+				includedNeedChirho + (completionChirho?.minimum_balance_chirho ?? 1000) ||
+			!completionBalanceAllowsChirho(completionChirho, subscriptionChirho, 0, includedNeedChirho)
 		)
 			throw new AudioBudgetErrorChirho(
 				'quota',
@@ -839,7 +855,14 @@ export async function executeAudioPlanChirho(
 				throw new Error('Speech billing cycle changed; no new request');
 			if (
 				balanceChirho.character_limit - balanceChirho.character_count - reservedSinceBalanceChirho <
-					(productionChirho ? [...synthesisTextChirho(jobChirho)].length : ceilingChirho) + 1000 ||
+					(productionChirho ? [...synthesisTextChirho(jobChirho)].length : ceilingChirho) +
+						(completionChirho?.minimum_balance_chirho ?? 1000) ||
+				!completionBalanceAllowsChirho(
+					completionChirho,
+					balanceChirho,
+					reservedSinceBalanceChirho,
+					productionChirho ? [...synthesisTextChirho(jobChirho)].length : ceilingChirho
+				) ||
 				balanceChirho.character_count - subscriptionChirho.character_count >
 					(fundingChirho?.additional_credits_chirho ?? ceilingChirho)
 			)

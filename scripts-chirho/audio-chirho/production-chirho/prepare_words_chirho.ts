@@ -5,6 +5,7 @@ import { join as joinChirho, resolve as resolveChirho } from 'node:path';
 import { wordPhoneticsChirho } from './word_phonetics_chirho';
 import { qerePhoneticsChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/word-phonetics-chirho';
 import { ipaNoteChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/ipa-trial-chirho';
+import { readingReviewChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/reading-continuation-chirho';
 import reviewsChirho from '../chapter-chirho/stress_reviews_chirho.json';
 import knownChirho from '../../../data-chirho/audio-chirho/proverbs-26-phonetics-chirho.json';
 import { cacheKeyChirho, sha256Chirho, writeChirho, type AudioJobChirho } from '../audition_chirho';
@@ -143,7 +144,8 @@ export async function prepareWordsChirho(rootChirho: string, wholeBibleChirho = 
 					if (
 						'written_reading_chirho' in tokenChirho &&
 						tokenChirho.written_reading_chirho === 'ketiv' &&
-						!('qere_chirho' in tokenChirho && tokenChirho.qere_chirho?.length)
+						!('qere_chirho' in tokenChirho && tokenChirho.qere_chirho?.length) &&
+						!readingReviewChirho(tokenChirho)
 					)
 						throw new Error('Written ketiv has no unambiguous attached qere reading.');
 					let ipaChirho: string | undefined,

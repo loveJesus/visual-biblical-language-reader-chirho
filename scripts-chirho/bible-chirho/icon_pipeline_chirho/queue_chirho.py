@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
 import uuid
 from contextlib import contextmanager
@@ -47,6 +48,11 @@ class QueueChirho:
                 action_chirho TEXT NOT NULL, at_chirho TEXT NOT NULL, detail_chirho TEXT NOT NULL
             );
             CREATE TABLE IF NOT EXISTS metadata_chirho (key_chirho TEXT PRIMARY KEY, value_chirho TEXT NOT NULL);
+            CREATE TABLE IF NOT EXISTS attempt_exceptions_chirho (
+                key_chirho TEXT PRIMARY KEY REFERENCES lemmas_chirho(key_chirho),
+                maximum_attempts_chirho INTEGER NOT NULL CHECK(maximum_attempts_chirho=4),
+                authority_sha256_chirho TEXT NOT NULL
+            );
         """)
 
     @contextmanager
@@ -143,7 +149,7 @@ class QueueChirho:
             if sum(states_chirho.values()) >= sheet_limit_chirho:
                 return None
             rows_chirho = self_chirho.db_chirho.execute(
-                "SELECT * FROM lemmas_chirho WHERE state_chirho='queued' AND attempts_chirho<? ORDER BY rank_chirho LIMIT 16",
+                "SELECT l.* FROM lemmas_chirho l LEFT JOIN attempt_exceptions_chirho e USING(key_chirho) WHERE l.state_chirho='queued' AND l.attempts_chirho<coalesce(e.maximum_attempts_chirho,?) ORDER BY l.rank_chirho LIMIT 16",
                 (MAX_ATTEMPTS_CHIRHO,),
             ).fetchall()
             if not rows_chirho:
@@ -168,6 +174,66 @@ class QueueChirho:
             return id_chirho, [
                 json.loads(row_chirho["payload_chirho"]) for row_chirho in rows_chirho
             ]
+
+    def grant_known_failure_chirho(self_chirho, key_chirho, authority_sha256_chirho):
+        """One extra attempt for a named known failure; old counters never decrease."""
+        if not re.fullmatch(r"[a-f0-9]{64}", authority_sha256_chirho):
+            raise ValueError("Exact separately recorded authority required")
+        with self_chirho.transaction_chirho():
+            row_chirho = self_chirho.db_chirho.execute(
+                "SELECT * FROM lemmas_chirho WHERE key_chirho=?", (key_chirho,)
+            ).fetchone()
+            if (
+                not row_chirho
+                or row_chirho["state_chirho"] != "held"
+                or row_chirho["attempts_chirho"] != MAX_ATTEMPTS_CHIRHO
+            ):
+                raise ValueError("Only an exhausted held lemma is eligible")
+            job_chirho = self_chirho.db_chirho.execute(
+                "SELECT * FROM jobs_chirho WHERE id_chirho=?",
+                (row_chirho["job_chirho"],),
+            ).fetchone()
+            result_chirho = (
+                json.loads(job_chirho["result_chirho"]) if job_chirho else None
+            )
+            if (
+                not job_chirho
+                or job_chirho["state_chirho"] != "done"
+                or not result_chirho
+                or key_chirho not in result_chirho.get("rejected_chirho", [])
+                or result_chirho.get("uncertain_chirho")
+                or result_chirho.get("request_made_chirho") is not True
+            ):
+                raise ValueError(
+                    "Known returned failure required; unknown outcomes cannot receive an exception"
+                )
+            if (
+                self_chirho.db_chirho.execute(
+                    "SELECT count(*) FROM attempt_exceptions_chirho"
+                ).fetchone()[0]
+                >= 7
+            ):
+                raise ValueError("Seven named exception bound reached")
+            self_chirho.db_chirho.execute(
+                "INSERT INTO attempt_exceptions_chirho VALUES(?,4,?)",
+                (key_chirho, authority_sha256_chirho),
+            )
+            rank_chirho = self_chirho.db_chirho.execute(
+                "SELECT max(rank_chirho)+1 FROM lemmas_chirho"
+            ).fetchone()[0]
+            self_chirho.db_chirho.execute(
+                "UPDATE lemmas_chirho SET state_chirho='queued',rank_chirho=?,reason_chirho='Separately authorized one-attempt known-failure exception; original attempts retained' WHERE key_chirho=?",
+                (rank_chirho, key_chirho),
+            )
+            self_chirho.event_chirho(
+                row_chirho["job_chirho"],
+                "known_failure_exception",
+                {
+                    "key_chirho": key_chirho,
+                    "maximum_attempts_chirho": 4,
+                    "authority_sha256_chirho": authority_sha256_chirho,
+                },
+            )
 
     def transition_chirho(
         self_chirho, id_chirho, expected_chirho, state_chirho, detail_chirho=None
@@ -252,9 +318,12 @@ class QueueChirho:
                 attempts_chirho = row_chirho["attempts_chirho"] - (
                     0 if request_made_chirho else 1
                 )
-                if (
-                    key_chirho in rejected_chirho
-                    and attempts_chirho < MAX_ATTEMPTS_CHIRHO
+                exception_chirho = self_chirho.db_chirho.execute(
+                    "SELECT maximum_attempts_chirho FROM attempt_exceptions_chirho WHERE key_chirho=?",
+                    (key_chirho,),
+                ).fetchone()
+                if key_chirho in rejected_chirho and attempts_chirho < (
+                    exception_chirho[0] if exception_chirho else MAX_ATTEMPTS_CHIRHO
                 ):
                     state_chirho = "queued"
                 rank_chirho += 1

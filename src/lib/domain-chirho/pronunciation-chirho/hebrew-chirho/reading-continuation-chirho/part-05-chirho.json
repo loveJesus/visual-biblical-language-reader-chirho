@@ -1,0 +1,1225 @@
+{
+	"schema_version_chirho": 1,
+	"words_chirho": [
+		{
+			"lesson_id_chirho": "Esth.1.10",
+			"token_id_chirho": "17Cof",
+			"text_chirho": "לִ֠מְהוּמָן",
+			"lemma_id_chirho": "H4104",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HR/Np",
+			"ipa_chirho": "limhuˈman",
+			"spoken_reading_chirho": "לִ֠מְהוּמָן",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L24554"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H4104\",null]",
+				"lemma_id_chirho": "H4104",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Esth.1.10",
+				"token_id_chirho": "17Cof",
+				"source_text_chirho": "לִ֠מְהוּמָן",
+				"spoken_source_chirho": "לִ֠מְהוּמָן",
+				"proposed_reading_chirho": "לִ֠מְהוּמָן",
+				"raw_morphology_chirho": "HR/Np",
+				"chapter_path_chirho": "static/content-chirho/esther-chirho/chapter-01-chirho.json",
+				"chapter_sha256_chirho": "69ae6996462e752c05ed8b8f326bb1ff458fc65a5972e48d08416370bda2631f",
+				"canonical_sha256_chirho": "48af885776cdac584793f99f7178dfc82e697deb8badffd7e521e6b743836f52",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "limhuˈman",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L24554",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "מְהוּמָן",
+								"pronunciation_chirho": "meh-hoo-mawn'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "לִ֠מְ",
+						"ipa_chirho": "lim",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "הוּ",
+						"ipa_chirho": "hu",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "מָן",
+						"ipa_chirho": "man",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "l/4104",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 24554,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Esth.xml",
+				"raw_xml_sha256_chirho": "f9b5b8adaf504dcac409bb6a27c9328967f47eeb4e920070cd53ef5301299019"
+			}
+		},
+		{
+			"lesson_id_chirho": "Job.6.10",
+			"token_id_chirho": "182Dp",
+			"text_chirho": "בְ֭חִילָה",
+			"lemma_id_chirho": "H2427",
+			"lemma_augment_chirho": "b",
+			"raw_morphology_chirho": "HR/Ncfsa",
+			"ipa_chirho": "vexiˈla",
+			"spoken_reading_chirho": "בְ֭חִילָה",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L14513"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H2427\",\"b\"]",
+				"lemma_id_chirho": "H2427",
+				"lemma_augment_chirho": "b",
+				"verse_chirho": "Job.6.10",
+				"token_id_chirho": "182Dp",
+				"source_text_chirho": "בְ֭חִילָה",
+				"spoken_source_chirho": "בְ֭חִילָה",
+				"proposed_reading_chirho": "בְ֭חִילָה",
+				"raw_morphology_chirho": "HR/Ncfsa",
+				"chapter_path_chirho": "static/content-chirho/job-chirho/chapter-06-chirho.json",
+				"chapter_sha256_chirho": "ebeebca3e0360fc35f81ef5e309062c9eb1b97f661436ae275f4f9109625a210",
+				"canonical_sha256_chirho": "8597ed93f25ac44418146baf18ce694f57e0de0fc6ba16d1c4d8c2f6b137adf9",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "vexiˈla",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L14513",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "חִיל",
+								"pronunciation_chirho": "kheel"
+							},
+							{
+								"headword_chirho": "חִילָה",
+								"pronunciation_chirho": "khee-law'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "בְ֭",
+						"ipa_chirho": "ve",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "חִי",
+						"ipa_chirho": "xi",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "לָה",
+						"ipa_chirho": "la",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "b/2427 b",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 14513,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Job.xml",
+				"raw_xml_sha256_chirho": "7db3311184122f37a8fd52f3c7c0c4a6d2da7b77ee82f4fdb26bcba9171d297f"
+			}
+		},
+		{
+			"lesson_id_chirho": "Job.7.4",
+			"token_id_chirho": "18u6Y",
+			"text_chirho": "וּמִדַּד",
+			"lemma_id_chirho": "H4059",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HC/Vpq3ms",
+			"ipa_chirho": "umiˈdad",
+			"spoken_reading_chirho": "וּמִדַּד",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L24291"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H4059\",null]",
+				"lemma_id_chirho": "H4059",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Job.7.4",
+				"token_id_chirho": "18u6Y",
+				"source_text_chirho": "וּמִדַּד",
+				"spoken_source_chirho": "וּמִדַּד",
+				"proposed_reading_chirho": "וּמִדַּד",
+				"raw_morphology_chirho": "HC/Vpq3ms",
+				"chapter_path_chirho": "static/content-chirho/job-chirho/chapter-07-chirho.json",
+				"chapter_sha256_chirho": "7ba740271cf8f8c883ba168046279191a25a60a8de5d67e292135a94820f7085",
+				"canonical_sha256_chirho": "ec442464edd42f443ca122947c33e19ab21bfff14b33f774cf62d7f2bafce805",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "umiˈdad",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L24291",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "מִדַּד",
+								"pronunciation_chirho": "mid-dad'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "וּ",
+						"ipa_chirho": "u",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "מִ",
+						"ipa_chirho": "mi",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "דַּד",
+						"ipa_chirho": "dad",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "c/4059",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 24291,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Job.xml",
+				"raw_xml_sha256_chirho": "7db3311184122f37a8fd52f3c7c0c4a6d2da7b77ee82f4fdb26bcba9171d297f"
+			}
+		},
+		{
+			"lesson_id_chirho": "Job.28.18",
+			"token_id_chirho": "18zPh",
+			"text_chirho": "וְ֭גָבִישׁ",
+			"lemma_id_chirho": "H1378",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HC/Ncmsa",
+			"ipa_chirho": "veɡaˈviʃ",
+			"spoken_reading_chirho": "וְ֭גָבִישׁ",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L8237"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H1378\",null]",
+				"lemma_id_chirho": "H1378",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Job.28.18",
+				"token_id_chirho": "18zPh",
+				"source_text_chirho": "וְ֭גָבִישׁ",
+				"spoken_source_chirho": "וְ֭גָבִישׁ",
+				"proposed_reading_chirho": "וְ֭גָבִישׁ",
+				"raw_morphology_chirho": "HC/Ncmsa",
+				"chapter_path_chirho": "static/content-chirho/job-chirho/chapter-28-chirho.json",
+				"chapter_sha256_chirho": "9088c1906f1f91c9ee8dadcbd967ae4a67884fdb2091ce9d8e030a9a90f44568",
+				"canonical_sha256_chirho": "c5eee0cf05e3a025b053252cd0f1cc7092eeb36c92fa09c9ca6468fd1633c77d",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "veɡaˈviʃ",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L8237",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "גָּבִישׁ",
+								"pronunciation_chirho": "gaw-beesh'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "וְ֭",
+						"ipa_chirho": "ve",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "גָ",
+						"ipa_chirho": "ɡa",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "בִישׁ",
+						"ipa_chirho": "viʃ",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "c/1378",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 8237,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Job.xml",
+				"raw_xml_sha256_chirho": "7db3311184122f37a8fd52f3c7c0c4a6d2da7b77ee82f4fdb26bcba9171d297f"
+			}
+		},
+		{
+			"lesson_id_chirho": "Job.34.8",
+			"token_id_chirho": "18LLu",
+			"text_chirho": "לְ֭חֶבְרָה",
+			"lemma_id_chirho": "H2274",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HR/Ncfsa",
+			"ipa_chirho": "lexevˈʁa",
+			"spoken_reading_chirho": "לְ֭חֶבְרָה",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L13595"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H2274\",null]",
+				"lemma_id_chirho": "H2274",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Job.34.8",
+				"token_id_chirho": "18LLu",
+				"source_text_chirho": "לְ֭חֶבְרָה",
+				"spoken_source_chirho": "לְ֭חֶבְרָה",
+				"proposed_reading_chirho": "לְ֭חֶבְרָה",
+				"raw_morphology_chirho": "HR/Ncfsa",
+				"chapter_path_chirho": "static/content-chirho/job-chirho/chapter-34-chirho.json",
+				"chapter_sha256_chirho": "cfa35fd6a95d397f45256bdc5918f3ed23d3abbd624df257e6811cf5da269669",
+				"canonical_sha256_chirho": "ce1d80126ac405ef9c03a5016fa71e236373a5fb8a3c516122a6d5dfbed061fd",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "lexevˈʁa",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L13595",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "חֶבְרָה",
+								"pronunciation_chirho": "kheb-raw'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "לְ֭",
+						"ipa_chirho": "le",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "חֶבְ",
+						"ipa_chirho": "xev",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "רָה",
+						"ipa_chirho": "ʁa",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "l/2274",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 13595,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Job.xml",
+				"raw_xml_sha256_chirho": "7db3311184122f37a8fd52f3c7c0c4a6d2da7b77ee82f4fdb26bcba9171d297f"
+			}
+		},
+		{
+			"lesson_id_chirho": "Ps.80.16",
+			"token_id_chirho": "1983T",
+			"text_chirho": "וְ֭כַנָּה",
+			"lemma_id_chirho": "H3657",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HC/Ncfsa",
+			"ipa_chirho": "vexaˈna",
+			"spoken_reading_chirho": "וְ֭כַנָּה",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L21892"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H3657\",null]",
+				"lemma_id_chirho": "H3657",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Ps.80.16",
+				"token_id_chirho": "1983T",
+				"source_text_chirho": "וְ֭כַנָּה",
+				"spoken_source_chirho": "וְ֭כַנָּה",
+				"proposed_reading_chirho": "וְ֭כַנָּה",
+				"raw_morphology_chirho": "HC/Ncfsa",
+				"chapter_path_chirho": "static/content-chirho/psalms-chirho/chapter-80-chirho.json",
+				"chapter_sha256_chirho": "a36672abdaccd393e365a893df68c2a1da94189cf647ed76e24de8efe4a18015",
+				"canonical_sha256_chirho": "3b76ec28250fc235528fbae80f83b9e5dda4965c25660461c74a402fef564ce7",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "vexaˈna",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L21892",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "כַּנָּה",
+								"pronunciation_chirho": "kaw-naw'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "וְ֭",
+						"ipa_chirho": "ve",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "כַ",
+						"ipa_chirho": "xa",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "נָּה",
+						"ipa_chirho": "na",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "c/3657",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 21892,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Ps.xml",
+				"raw_xml_sha256_chirho": "fe55eef316a65fb0f46d833d526ca2fd722e86ff7339f1a39f0c5b7f9062ced2"
+			}
+		},
+		{
+			"lesson_id_chirho": "Ps.84.7",
+			"token_id_chirho": "196RB",
+			"text_chirho": "הַ֭בָּכָא",
+			"lemma_id_chirho": "H1056",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HTd/Ncmsa",
+			"ipa_chirho": "habaˈxa",
+			"spoken_reading_chirho": "הַ֭בָּכָא",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L6306"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H1056\",null]",
+				"lemma_id_chirho": "H1056",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Ps.84.7",
+				"token_id_chirho": "196RB",
+				"source_text_chirho": "הַ֭בָּכָא",
+				"spoken_source_chirho": "הַ֭בָּכָא",
+				"proposed_reading_chirho": "הַ֭בָּכָא",
+				"raw_morphology_chirho": "HTd/Ncmsa",
+				"chapter_path_chirho": "static/content-chirho/psalms-chirho/chapter-84-chirho.json",
+				"chapter_sha256_chirho": "18da7518de7b3b02267013218f1c62bbedfacc017a30afb109d2b89999fb31de",
+				"canonical_sha256_chirho": "83d52d2349678ee2695de65a1ff5a760a3e7f38ee5e8a78c596e0bcf4738127f",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "habaˈxa",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L6306",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "בָּכָא",
+								"pronunciation_chirho": "baw-kaw'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "הַ֭",
+						"ipa_chirho": "ha",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "בָּ",
+						"ipa_chirho": "ba",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "כָא",
+						"ipa_chirho": "xa",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "d/1056",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 6306,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Ps.xml",
+				"raw_xml_sha256_chirho": "fe55eef316a65fb0f46d833d526ca2fd722e86ff7339f1a39f0c5b7f9062ced2"
+			}
+		},
+		{
+			"lesson_id_chirho": "Isa.32.2",
+			"token_id_chirho": "23xhV",
+			"text_chirho": "כְּמַֽחֲבֵא",
+			"lemma_id_chirho": "H4224",
+			"lemma_augment_chirho": "a",
+			"raw_morphology_chirho": "HR/Ncmsc",
+			"ipa_chirho": "kemaxaˈve",
+			"spoken_reading_chirho": "כְּמַֽחֲבֵא",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L25274"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H4224\",\"a\"]",
+				"lemma_id_chirho": "H4224",
+				"lemma_augment_chirho": "a",
+				"verse_chirho": "Isa.32.2",
+				"token_id_chirho": "23xhV",
+				"source_text_chirho": "כְּמַֽחֲבֵא",
+				"spoken_source_chirho": "כְּמַֽחֲבֵא",
+				"proposed_reading_chirho": "כְּמַֽחֲבֵא",
+				"raw_morphology_chirho": "HR/Ncmsc",
+				"chapter_path_chirho": "static/content-chirho/isaiah-chirho/chapter-32-chirho.json",
+				"chapter_sha256_chirho": "228904e2b757cdc5c1ba048afcb2b59e23293bf2d4493a84dc3c3dbacfabd346",
+				"canonical_sha256_chirho": "85c53b1830e839c1d3e307b8c5088b38da69815ab70f82ae1ab8adc6a84f094d",
+				"stress_index_chirho": 3,
+				"ipa_chirho": "kemaxaˈve",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L25274",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "מַחֲבֵא",
+								"pronunciation_chirho": "makh-ab-ay'"
+							},
+							{
+								"headword_chirho": "מַחֲבֹא",
+								"pronunciation_chirho": "makhab-o'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "כְּ",
+						"ipa_chirho": "ke",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "מַֽ",
+						"ipa_chirho": "ma",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "חֲ",
+						"ipa_chirho": "xa",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "בֵא",
+						"ipa_chirho": "ve",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "k/4224 a",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 25274,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Isa.xml",
+				"raw_xml_sha256_chirho": "0807678de609bdef284bed5400b94ddab570d101b593c7f59ae1939015572fa2"
+			}
+		},
+		{
+			"lesson_id_chirho": "Prov.27.20",
+			"token_id_chirho": "20H7t",
+			"text_chirho": "ואבדה",
+			"lemma_id_chirho": "H10",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HC/Ncmsc",
+			"ipa_chirho": "vaʔavaˈdo",
+			"spoken_reading_chirho": "וַ֭אֲבַדּוֹ",
+			"qere_binding_chirho": [
+				{
+					"id_chirho": "20mvX",
+					"text_chirho": "וַ֭אֲבַדּוֹ",
+					"lemma_id_chirho": "H10",
+					"lemma_augment_chirho": null,
+					"raw_morphology_chirho": "HC/Ncmsc"
+				}
+			],
+			"surprising_chirho": true,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L56"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H10\",null]",
+				"lemma_id_chirho": "H10",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Prov.27.20",
+				"token_id_chirho": "20H7t",
+				"source_text_chirho": "ואבדה",
+				"spoken_source_chirho": "וַ֭אֲבַדּוֹ",
+				"proposed_reading_chirho": "וַ֭אֲבַדּוֹ",
+				"raw_morphology_chirho": "HC/Ncmsc",
+				"chapter_path_chirho": "static/content-chirho/proverbs-chirho/chapter-27-chirho.json",
+				"chapter_sha256_chirho": "72ebd09a04003d0bcaa5b7cd3dbae6be7cb0036775d399459f516aa6e783b627",
+				"canonical_sha256_chirho": "8a6f62d8bbdced64350c424659d3769bb9fa63ce53a8ef41517869684f25595e",
+				"stress_index_chirho": 3,
+				"ipa_chirho": "vaʔavaˈdo",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L56",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "אֲבַדֹּה",
+								"pronunciation_chirho": "ab-ad-do'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "וַ֭",
+						"ipa_chirho": "va",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "אֲ",
+						"ipa_chirho": "ʔa",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "בַ",
+						"ipa_chirho": "va",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "דֹּו",
+						"ipa_chirho": "do",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "c/10",
+				"qere_chirho": [
+					{
+						"id_chirho": "20mvX",
+						"text_chirho": "וַ֭אֲבַדּוֹ",
+						"segments_chirho": ["וַ֭", "אֲבַדּוֹ"],
+						"raw_morphology_chirho": "HC/Ncmsc",
+						"raw_lemma_chirho": "c/10",
+						"lemma_id_chirho": "H10",
+						"lemma_augment_chirho": null,
+						"lexical_form_chirho": "אֲבַדֹּה",
+						"pos_chirho": "noun",
+						"gender_chirho": "masculine",
+						"number_chirho": "singular",
+						"state_chirho": "construct",
+						"gloss_chirho": "and Destruction of",
+						"analysis_chirho": "Conjunction + noun, common, masculine, singular, construct"
+					}
+				],
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 56,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Prov.xml",
+				"raw_xml_sha256_chirho": "964f99c00239b53b854c4686c99490c8d1ac7664784a30afdfc23781a3abb161"
+			}
+		},
+		{
+			"lesson_id_chirho": "Ps.42.5",
+			"token_id_chirho": "19B7n",
+			"text_chirho": "בַּסָּךְ֮",
+			"lemma_id_chirho": "H5519",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HRd/Ncmsa",
+			"ipa_chirho": "baˈsax",
+			"spoken_reading_chirho": "בַּסָּךְ֮",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The added prefix is unstressed; the stem keeps its dictionary stress.",
+				"es": "El prefijo añadido no lleva acento; la base conserva el acento del diccionario."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L33040"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H5519\",null]",
+				"lemma_id_chirho": "H5519",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Ps.42.5",
+				"token_id_chirho": "19B7n",
+				"source_text_chirho": "בַּסָּךְ֮",
+				"spoken_source_chirho": "בַּסָּךְ֮",
+				"proposed_reading_chirho": "בַּסָּךְ֮",
+				"raw_morphology_chirho": "HRd/Ncmsa",
+				"chapter_path_chirho": "static/content-chirho/psalms-chirho/chapter-42-chirho.json",
+				"chapter_sha256_chirho": "ebe6f780cd77a24f14fc69263570258981a060c795b823d97385ebf7018d1bd8",
+				"canonical_sha256_chirho": "46fbbc0b5ba329f2094ae5545b5480e58470ac9f7b27828f8dac57278bd3c975",
+				"stress_index_chirho": 1,
+				"ipa_chirho": "baˈsax",
+				"evidence_kind_chirho": "lexical_prefix_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/102.html",
+						"detail_chirho": "Same Strong lexeme and explicitly accented stem nucleus; source conjunction/preposition/article is a proclitic (GKC102/104/35). Prefix coalescence or consonantal dagesh/mappiq does not replace an inflection. Source points supply phonemes."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L33040",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "סָךְ",
+								"pronunciation_chirho": "sawk"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "בַּ",
+						"ipa_chirho": "ba",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "סָּךְ֮",
+						"ipa_chirho": "sax",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "b/5519",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 33040,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Ps.xml",
+				"raw_xml_sha256_chirho": "fe55eef316a65fb0f46d833d526ca2fd722e86ff7339f1a39f0c5b7f9062ced2"
+			}
+		},
+		{
+			"lesson_id_chirho": "1Chr.26.7",
+			"token_id_chirho": "13jPg",
+			"text_chirho": "עָ֠תְנִי",
+			"lemma_id_chirho": "H6273",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HNp",
+			"ipa_chirho": "ʔotˈni",
+			"spoken_reading_chirho": "עָ֠תְנִי",
+			"qere_binding_chirho": null,
+			"surprising_chirho": true,
+			"explanation_chirho": {
+				"en": "The first qamats is short o (qamats qatan); the final syllable carries the stress.",
+				"es": "El primer qamats suena como o breve (qamats qatán); la última sílaba lleva el acento."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/21.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L37551"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 3",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/9.html"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H6273\",null]",
+				"lemma_id_chirho": "H6273",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "1Chr.26.7",
+				"token_id_chirho": "13jPg",
+				"source_text_chirho": "עָ֠תְנִי",
+				"spoken_source_chirho": "עָ֠תְנִי",
+				"proposed_reading_chirho": "עָ֠תְנִי",
+				"raw_morphology_chirho": "HNp",
+				"chapter_path_chirho": "static/content-chirho/1-chronicles-chirho/chapter-26-chirho.json",
+				"chapter_sha256_chirho": "fe7d182c556d755610a9de1877205ce374ae663b39cfca2d75a4c82f965b6054",
+				"canonical_sha256_chirho": "5d134b9fb515dd3dca30c27ff496a21b0dfb0ae578f9ea90f962b1ca267a105f",
+				"stress_index_chirho": 1,
+				"ipa_chirho": "ʔotˈni",
+				"evidence_kind_chirho": "lexical_variant_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/21.html",
+						"detail_chirho": "Same-lexeme explicit dictionary stress aligns the same full-vowel nucleus. Difference is consonantal dagesh, final silent sheva or qamats-qatan encoding, not another inflection (GKC21/9/10)."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L37551",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "עׇתְנִי",
+								"pronunciation_chirho": "oth-nee'"
+							}
+						]
+					},
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/9.html",
+						"detail_chirho": "GKC9u: untoned closed syllable has short o; exact Strong H6273 explicitly encodes qamats-qatan in this same name."
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "עׇ֠תְ",
+						"ipa_chirho": "ʔot",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": true
+					},
+					{
+						"analysis_text_chirho": "נִי",
+						"ipa_chirho": "ni",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"analysis_copy_chirho": "עׇ֠תְנִי",
+				"profile_reason_chirho": "Analysis-only qamats-qatan from exact pinned headword עׇתְנִי, oth-nee; source telisha remains prepositive.",
+				"raw_lemma_chirho": "6273",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 37551,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/1Chr.xml",
+				"raw_xml_sha256_chirho": "8b59992b6607c6ca0fc423813be8cc244f011c1da32bc8485c0c0f581a897ed4"
+			}
+		},
+		{
+			"lesson_id_chirho": "2Kgs.15.10",
+			"token_id_chirho": "125WT",
+			"text_chirho": "קָֽבָלְ",
+			"lemma_id_chirho": "H6905",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HNcmsc",
+			"ipa_chirho": "kaˈval",
+			"spoken_reading_chirho": "קָֽבָלְ",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The stress falls on syllable 2 in this form, following the cited pronunciation evidence.",
+				"es": "El acento recae en la sílaba 2 de esta forma, de acuerdo con la pronunciación citada."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/21.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L41343"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H6905\",null]",
+				"lemma_id_chirho": "H6905",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "2Kgs.15.10",
+				"token_id_chirho": "125WT",
+				"source_text_chirho": "קָֽבָלְ",
+				"spoken_source_chirho": "קָֽבָלְ",
+				"proposed_reading_chirho": "קָֽבָלְ",
+				"raw_morphology_chirho": "HNcmsc",
+				"chapter_path_chirho": "static/content-chirho/2-kings-chirho/chapter-15-chirho.json",
+				"chapter_sha256_chirho": "5e9ba6f13e18c10ab7f7c3abba4b9c044362f7243995258647f4d45916dc2721",
+				"canonical_sha256_chirho": "635a2f5879f45c18d7ce31bca07e04dcd1810bbd026734d5dedf892fc35dcfd4",
+				"stress_index_chirho": 1,
+				"ipa_chirho": "kaˈval",
+				"evidence_kind_chirho": "lexical_variant_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/21.html",
+						"detail_chirho": "Same-lexeme explicit dictionary stress aligns the same full-vowel nucleus. Difference is consonantal dagesh, final silent sheva or qamats-qatan encoding, not another inflection (GKC21/9/10)."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L41343",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "קָבָל",
+								"pronunciation_chirho": "kaw-bawl'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "קָֽ",
+						"ipa_chirho": "ka",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "בָלְ",
+						"ipa_chirho": "val",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "6905",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 41343,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/2Kgs.xml",
+				"raw_xml_sha256_chirho": "056db5393beaef0a1159d9bcaac7dfd865df9bab2eb240ea90e9fa3f0c0e7449"
+			}
+		},
+		{
+			"lesson_id_chirho": "Job.40.15",
+			"token_id_chirho": "18zkp",
+			"text_chirho": "בְ֭הֵמוֹת",
+			"lemma_id_chirho": "H930",
+			"lemma_augment_chirho": null,
+			"raw_morphology_chirho": "HNcmsa",
+			"ipa_chirho": "veheˈmot",
+			"spoken_reading_chirho": "בְ֭הֵמוֹת",
+			"qere_binding_chirho": null,
+			"surprising_chirho": false,
+			"explanation_chirho": {
+				"en": "The stress falls on syllable 3 in this form, following the cited pronunciation evidence.",
+				"es": "El acento recae en la sílaba 3 de esta forma, de acuerdo con la pronunciación citada."
+			},
+			"sources_chirho": [
+				{
+					"label_chirho": "Pronunciation evidence 1",
+					"url_chirho": "https://bohuslav.me/gesenius/gesenius/21.html"
+				},
+				{
+					"label_chirho": "Pronunciation evidence 2",
+					"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L5549"
+				}
+			],
+			"written_group_chirho": null,
+			"canonical_text_chirho": null,
+			"evidence_chirho": {
+				"lemma_key_chirho": "[\"H930\",null]",
+				"lemma_id_chirho": "H930",
+				"lemma_augment_chirho": null,
+				"verse_chirho": "Job.40.15",
+				"token_id_chirho": "18zkp",
+				"source_text_chirho": "בְ֭הֵמוֹת",
+				"spoken_source_chirho": "בְ֭הֵמוֹת",
+				"proposed_reading_chirho": "בְ֭הֵמוֹת",
+				"raw_morphology_chirho": "HNcmsa",
+				"chapter_path_chirho": "static/content-chirho/job-chirho/chapter-40-chirho.json",
+				"chapter_sha256_chirho": "e8ce672f0ba7f7d969070d6d68eb7678668dc135e29da3c056eaf128f5ea8d56",
+				"canonical_sha256_chirho": "de69e06de5d5d0f650fbbb3a7e97416b98a382ac3d32e848893860cd027e5bf9",
+				"stress_index_chirho": 2,
+				"ipa_chirho": "veheˈmot",
+				"evidence_kind_chirho": "lexical_variant_chirho",
+				"citations_chirho": [
+					{
+						"url_chirho": "https://bohuslav.me/gesenius/gesenius/21.html",
+						"detail_chirho": "Same-lexeme explicit dictionary stress aligns the same full-vowel nucleus. Difference is consonantal dagesh, final silent sheva or qamats-qatan encoding, not another inflection (GKC21/9/10)."
+					},
+					{
+						"url_chirho": "https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/HebrewStrong.xml#L5549",
+						"detail_chirho": "Pinned same-identity lexical entry; source inflection is retained.",
+						"dictionary_words_chirho": [
+							{
+								"headword_chirho": "בְּהֵמוֹת",
+								"pronunciation_chirho": "be-hay-mohth'"
+							}
+						]
+					}
+				],
+				"source_unchanged_chirho": true,
+				"syllables_chirho": [
+					{
+						"analysis_text_chirho": "בְ֭",
+						"ipa_chirho": "ve",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "הֵ",
+						"ipa_chirho": "he",
+						"stressed_chirho": false,
+						"qamats_qatan_chirho": false
+					},
+					{
+						"analysis_text_chirho": "מֹות",
+						"ipa_chirho": "mot",
+						"stressed_chirho": true,
+						"qamats_qatan_chirho": false
+					}
+				],
+				"status_chirho": "supported_chirho",
+				"raw_lemma_chirho": "930",
+				"qere_chirho": null,
+				"written_reading_chirho": null,
+				"dictionary_path_chirho": "data-chirho/sources-chirho/hebrew-lexicon-chirho/HebrewStrong.xml",
+				"dictionary_sha256_chirho": "a628f4f89f8bdaf2483fd3faf1abc8653cc6717758dfc9f24beb7571d9bdd0c4",
+				"dictionary_entry_line_chirho": 5549,
+				"source_url_chirho": "https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/wlc/Job.xml",
+				"raw_xml_sha256_chirho": "7db3311184122f37a8fd52f3c7c0c4a6d2da7b77ee82f4fdb26bcba9171d297f"
+			}
+		}
+	]
+}

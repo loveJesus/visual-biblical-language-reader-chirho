@@ -106,3 +106,30 @@ The initial word library uses native Modern Greek. The saved Modern with Aspirat
 The preview snapshot freezes the published audio manifest and its hash-matching chapter files before copying assets. It copies only MP3s reachable from that frozen catalogue. Incoming, received-but-unpublished MP3s stay intact on the Mac and are excluded from this snapshot and its media fingerprint. A mixed-generation catalogue refuses; a declared clip with missing, wrong or unarchived bytes still fails the ordinary publisher and R2 gates. This avoids shipping incomplete batches while keeping the producer independent of periodic releases.
 
 The website and saved offline reader start at Normal (1x) for both Hebrew and Greek, including the home/About word preview. This follows L.J.'s November 3 report that intermittent Safari breakup stopped at Normal and his instruction to start there. Slower choices remain explicit and pitch-preserved; this is a default-speed change, not a claim that Safari's slow-playback processing is repaired. Original recordings, synthesis identities and provider settings are unchanged.
+
+## Exact source-bound pronunciation completion
+
+```mermaid
+flowchart LR
+ research_chirho[Primary lexical and grammar evidence] --> binding_chirho[Exact token, qere, chapter and verse bindings]
+ binding_chirho --> notes_chirho[Bounded pronunciation-review shards]
+ notes_chirho --> qere_chirho{Written-word group?}
+ qere_chirho -->|yes| group_chirho[Word taps share the read form; verse consumes it once]
+ qere_chirho -->|no| word_chirho[Exact reviewed word IPA]
+ group_chirho --> keys_chirho[Existing voice, model and settings cache key]
+ word_chirho --> keys_chirho
+ keys_chirho --> reuse_chirho{Received or only prepared?}
+ reuse_chirho -->|received| bind_chirho[Reuse the exact saved MP3]
+ reuse_chirho -->|prepared, never requested| original_chirho[Keep the original request plan]
+ reuse_chirho -->|new key| append_chirho[Append an immutable small batch]
+ original_chirho --> funding_chirho[Original global ledger, fixed pool and included-credit checks]
+ append_chirho --> funding_chirho
+ funding_chirho --> request_chirho[Journal before one provider request; no POST retry]
+ request_chirho --> archive_chirho[Decode, verify private R2, bind catalogue]
+ bind_chirho --> archive_chirho
+ archive_chirho --> publish_chirho[Publish verified word recordings]
+```
+
+`reading-continuation-chirho.ts` validates exact text, lemma, augment, morphology and attached-qere identities. Source spelling and spans stay unchanged. The grouped qere requires its complete consecutive written group and exact canonical verse before verse playback can consume it once. Its shared reading can be played from either source word. Verse-final punctuation remains in the source gap rather than the word recording. Analysis-only vowel or syllable copies remain explicit in each cited note. No default stress guess is added to the phonetics parser.
+
+The optional completion guard is inactive without an exact approved authority fingerprint. It reads only the fixed private authority and its hash-bound prepared pronunciation list. It can lower the included-credit reserve to 200 for at most 104 named keys, with at most 800 additional account credits in the same billing cycle. The default reserve stays 1,000, and the 131,000 extra pool and 401,000 total ceiling do not change. Unknown request reservations remain fully counted. A wrong key, missing/changed approval, larger allowance, changed billing cycle or account-spend bound refuses before synthesis. The implementation is prepared; this paragraph does not constitute human approval or claim that the exception has run.

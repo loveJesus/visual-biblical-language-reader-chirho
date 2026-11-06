@@ -312,6 +312,35 @@
       "context_text_chirho": "לַגַּד֙",
       "context_gloss_chirho": "for Gad",
       "context_canonical_text_chirho": "וְאַתֶּם֙ עֹזְבֵ֣י יְהוָ֔ה הַשְּׁכֵחִ֖ים אֶת־הַ֣ר קָדְשִׁ֑י הַֽעֹרְכִ֤ים לַגַּד֙ שֻׁלְחָ֔ן וְהַֽמְמַלְאִ֖ים לַמְנִ֥י מִמְסָֽךְ׃"
+    },
+    {
+      "id_chirho": "attempt-pipeline-6f528433e3a44a30a36c665d25368a4e-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Isa.65.11",
+      "token_id_chirho": "23yuh",
+      "lemma_id_chirho": "H4507",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְנִי",
+      "sense_id_chirho": "attempt-pipeline-6f528433e3a44a30a36c665d25368a4e-chirho-cell-05-meni-offering-chirho",
+      "contextual_meaning_chirho": "Meni, the named recipient for whom a drink offering is furnished in Isaiah 65:11.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-6f528433e3a44a30a36c665d25368a4e-chirho/cell-05-chirho.webp",
+      "alt_chirho": "A small ancient offering cup containing dark red liquid.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "363fa86eaa36646aab8f95e743bb4b450aa5461ae3c1aa6a06f5d952280dc095",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true,
+      "context_text_chirho": "לַמְנִ֥י",
+      "context_gloss_chirho": "for Meni",
+      "context_canonical_text_chirho": "וְאַתֶּם֙ עֹזְבֵ֣י יְהוָ֔ה הַשְּׁכֵחִ֖ים אֶת־הַ֣ר קָדְשִׁ֑י הַֽעֹרְכִ֤ים לַגַּד֙ שֻׁלְחָ֔ן וְהַֽמְמַלְאִ֖ים לַמְנִ֥י מִמְסָֽךְ׃"
     }
   ],
   "lemma_icons_chirho": [
@@ -1042,6 +1071,58 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-3a4f635463a14f87a73cb9eca283f888-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Gen.49.27",
+      "token_id_chirho": "01iFC",
+      "lemma_id_chirho": "H2061",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זְאֵב",
+      "sense_id_chirho": "attempt-pipeline-3a4f635463a14f87a73cb9eca283f888-chirho-cell-09-general-chirho",
+      "contextual_meaning_chirho": "Wolf",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-3a4f635463a14f87a73cb9eca283f888-chirho/cell-09-chirho.webp",
+      "alt_chirho": "Wolf.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4931cfe647197f67dd5cd9537f15d7a6befb771deff91276eb411275b64a974f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-15-chirho",
+      "lesson_id_chirho": "Gen.31.54",
+      "token_id_chirho": "015wt",
+      "lemma_id_chirho": "H2076",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זָבַח",
+      "sense_id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-15-chirho",
+      "contextual_meaning_chirho": "Offer a sacrifice; Jacob's sacrificial action in Genesis 31:54.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho/cell-15-chirho.webp",
+      "alt_chirho": "A small stone altar topped by a brown portion of sacrificial meat, without blood or flame.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "5e666077d7fb13253a3d21e033ab49a811394102f6ced933b168b3b6dd80d886",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-95bde403c3a4420d9aea3bc414ad2f6e-04-chirho",
       "lesson_id_chirho": "Prov.31.7",
       "token_id_chirho": "20zfi",
@@ -1576,6 +1657,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Gen.15.2",
+      "token_id_chirho": "01hRC",
+      "lemma_id_chirho": "H3069",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יְהֹוִה",
+      "sense_id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-9-chirho",
+      "contextual_meaning_chirho": "Yahweh; the divine proper name in Abram's address in Genesis 15:2.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A living green bush with small flames among its branches, with no figure.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a42f1d2bfd9cdc6450e8a7da96fdf734c5052ef4700479bdee48db41a298708d",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-703f97e81c704ca8af5a6f0f0bb06ec9-02-chirho",
       "lesson_id_chirho": "Prov.7.22",
       "token_id_chirho": "201Mn",
@@ -1724,6 +1831,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-2ad5eee12f29491081eaca5d41abbfc0-chirho-cell-09-chirho",
+      "lesson_id_chirho": "Gen.2.15",
+      "token_id_chirho": "01vdQ",
+      "lemma_id_chirho": "H3240",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יָנַח",
+      "sense_id_chirho": "attempt-pipeline-2ad5eee12f29491081eaca5d41abbfc0-chirho-cell-09-place-chirho",
+      "contextual_meaning_chirho": "To put or place: putting the man in the garden in Genesis 2:15.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-2ad5eee12f29491081eaca5d41abbfc0-chirho/cell-09-chirho.webp",
+      "alt_chirho": "A human hand touching and setting down a small clay jar.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "b05e876de63f8f7a3edf498fd57e9ecf0914aad6e25cf2a182801efdc1d6fa2f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-cfcf2303a4dd40ef81532aa57a9a796d-10-chirho",
       "lesson_id_chirho": "Prov.1.24",
       "token_id_chirho": "20LFW",
@@ -1747,6 +1880,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-08-chirho",
+      "lesson_id_chirho": "Gen.25.26",
+      "token_id_chirho": "01DcB",
+      "lemma_id_chirho": "H3290",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יַעֲקֹב",
+      "sense_id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-8-chirho",
+      "contextual_meaning_chirho": "Jacob; the personal name given in Genesis 25:26.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho/cell-08-chirho.webp",
+      "alt_chirho": "A tiny hand gently gripping the heel of a bare infant foot.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4f7963cbef0bdb218a47227079a08fbf026bd757805601f2a490fbf9b21ff9be",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -2564,6 +2723,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-6f528433e3a44a30a36c665d25368a4e-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Isa.65.11",
+      "token_id_chirho": "23yuh",
+      "lemma_id_chirho": "H4507",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "מְנִי",
+      "sense_id_chirho": "attempt-pipeline-6f528433e3a44a30a36c665d25368a4e-chirho-cell-05-meni-offering-chirho",
+      "contextual_meaning_chirho": "Meni, the named recipient for whom a drink offering is furnished in Isaiah 65:11.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-6f528433e3a44a30a36c665d25368a4e-chirho/cell-05-chirho.webp",
+      "alt_chirho": "A small ancient offering cup containing dark red liquid.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "363fa86eaa36646aab8f95e743bb4b450aa5461ae3c1aa6a06f5d952280dc095",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-isa-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -3436,6 +3621,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-ff45e5c8277d4064af3ee63f1449d82b-chirho-cell-05-chirho",
+      "lesson_id_chirho": "Lev.7.18",
+      "token_id_chirho": "03qQN",
+      "lemma_id_chirho": "H6292",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "פִּגּוּל",
+      "sense_id_chirho": "attempt-pipeline-ff45e5c8277d4064af3ee63f1449d82b-chirho-cell-05-chirho",
+      "contextual_meaning_chirho": "Unacceptable or abominable sacrificial flesh, in the third-day eating prohibition of Leviticus 7:18.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-ff45e5c8277d4064af3ee63f1449d82b-chirho/cell-05-chirho.webp",
+      "alt_chirho": "A small piece of stale cooked meat, a memory aid for unacceptable sacrificial flesh.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "07cd685ac1961cf0b7b0ec539be596025fce6a887467ce1185dc47ccaf6e4dc5",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-lev-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-4005af235f3b4013b19b7388bf434478-12-chirho",
       "lesson_id_chirho": "Prov.11.22",
       "token_id_chirho": "20gVx",
@@ -3623,6 +3834,32 @@
       "art_review_chirho": "pending",
       "evidence_refs_chirho": [
         "oshb-job-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-09ebb64153fa41eb9bbaa8f80cc06dbf-chirho-cell-06-chirho",
+      "lesson_id_chirho": "Exod.17.3",
+      "token_id_chirho": "02BKA",
+      "lemma_id_chirho": "H6770",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "צָמֵא",
+      "sense_id_chirho": "attempt-pipeline-09ebb64153fa41eb9bbaa8f80cc06dbf-chirho-cell-06-chirho",
+      "contextual_meaning_chirho": "To thirst; the supplied gloss for H6770 in Exodus 17:3 is and thirsted, with water named in the verse.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-09ebb64153fa41eb9bbaa8f80cc06dbf-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A thirsty person lifting an empty cup toward the mouth.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "4bf5eba9fad1b1c9eecb4c39dceece2e86e6ebe5c4db428920455e044296b886",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
         "oshb-morphology-codes-chirho",
         "strong-chirho",
         "aug-index-chirho",
@@ -4145,6 +4382,58 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-07-chirho",
+      "lesson_id_chirho": "Gen.24.8",
+      "token_id_chirho": "017yH",
+      "lemma_id_chirho": "H7621",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שְׁבוּעָה",
+      "sense_id_chirho": "attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho-cell-07-oath-chirho",
+      "contextual_meaning_chirho": "An oath or sworn promise, as in the verified Gen.24.8 token glossed 'from oath'.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-b73175e92af14fd29e312b2f4a20ff74-chirho/cell-07-chirho.webp",
+      "alt_chirho": "Two hands clasped firmly in a handshake.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "d73bbb04ab2c68889a861f475324a89cea84f8d070bd40d9f3fc77262052785f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Gen.21.23",
+      "token_id_chirho": "01qYw",
+      "lemma_id_chirho": "H7650",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שָׁבַע",
+      "sense_id_chirho": "attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho-cell-14-chirho",
+      "contextual_meaning_chirho": "Swear an oath; the request made in Genesis 21:23.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-a7e04e4eafa24be59f82179233c2bb1a-chirho/cell-14-chirho.webp",
+      "alt_chirho": "An ordinary raised open hand with the palm facing forward.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a7929be1b5a6fa09fbbbca339d066c439a389dd064ddc20f73a7ebca1d0e0111",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-a53fe0179630470caedf28a1307dc74f-02-chirho",
       "lesson_id_chirho": "Prov.15.4",
       "token_id_chirho": "20JGi",
@@ -4291,6 +4580,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-f898ed544582408cb09860fdf74e69c2-chirho-cell-14-chirho",
+      "lesson_id_chirho": "Ps.9.18",
+      "token_id_chirho": "19oCH",
+      "lemma_id_chirho": "H7913",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שָׁכֵחַ",
+      "sense_id_chirho": "attempt-pipeline-f898ed544582408cb09860fdf74e69c2-chirho-cell-14-forgetful-chirho",
+      "contextual_meaning_chirho": "Forgetful or forgetting, supported by H7913 in the supplied Psalms 9:18, also marked as Psalms 9:17 in the source.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-f898ed544582408cb09860fdf74e69c2-chirho/cell-14-chirho.webp",
+      "alt_chirho": "A puzzled person scratching the back of the head, a mnemonic for forgetfulness.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "8674c725d4f83700c00cd225622a8567f436bc4614df1685f28982a31d0aea7f",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-ps-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
