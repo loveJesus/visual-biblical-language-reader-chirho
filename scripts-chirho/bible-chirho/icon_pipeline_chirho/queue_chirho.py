@@ -53,6 +53,13 @@ class QueueChirho:
                 maximum_attempts_chirho INTEGER NOT NULL CHECK(maximum_attempts_chirho=4),
                 authority_sha256_chirho TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS replacement_grants_chirho (
+                key_chirho TEXT PRIMARY KEY REFERENCES lemmas_chirho(key_chirho),
+                maximum_attempts_chirho INTEGER NOT NULL CHECK(maximum_attempts_chirho=2),
+                authority_sha256_chirho TEXT NOT NULL,
+                original_attempt_chirho TEXT NOT NULL,
+                original_plan_sha256_chirho TEXT NOT NULL
+            );
         """)
 
     @contextmanager
@@ -149,7 +156,7 @@ class QueueChirho:
             if sum(states_chirho.values()) >= sheet_limit_chirho:
                 return None
             rows_chirho = self_chirho.db_chirho.execute(
-                "SELECT l.* FROM lemmas_chirho l LEFT JOIN attempt_exceptions_chirho e USING(key_chirho) WHERE l.state_chirho='queued' AND l.attempts_chirho<coalesce(e.maximum_attempts_chirho,?) ORDER BY l.rank_chirho LIMIT 16",
+                "SELECT l.* FROM lemmas_chirho l LEFT JOIN attempt_exceptions_chirho e USING(key_chirho) LEFT JOIN replacement_grants_chirho r USING(key_chirho) WHERE l.state_chirho='queued' AND l.attempts_chirho<coalesce(r.maximum_attempts_chirho,e.maximum_attempts_chirho,?) ORDER BY l.rank_chirho LIMIT 16",
                 (MAX_ATTEMPTS_CHIRHO,),
             ).fetchall()
             if not rows_chirho:
@@ -174,6 +181,78 @@ class QueueChirho:
             return id_chirho, [
                 json.loads(row_chirho["payload_chirho"]) for row_chirho in rows_chirho
             ]
+
+    def grant_unknown_replacement_chirho(
+        self_chirho,
+        keys_chirho,
+        authority_sha256_chirho,
+        original_attempt_chirho,
+        original_plan_sha256_chirho,
+    ):
+        """One separately authorized atlas; old unknown requests remain immutable."""
+        if (
+            len(keys_chirho) != 16
+            or len(set(keys_chirho)) != 16
+            or not re.fullmatch(r"[a-f0-9]{64}", authority_sha256_chirho)
+            or not re.fullmatch(r"[a-f0-9]{64}", original_plan_sha256_chirho)
+            or not isinstance(original_attempt_chirho, str)
+            or not original_attempt_chirho.startswith("attempts-chirho/")
+            or ".." in original_attempt_chirho
+        ):
+            raise ValueError("Exact sixteen-key replacement authority required")
+        with self_chirho.transaction_chirho():
+            if self_chirho.db_chirho.execute(
+                "SELECT count(*) FROM replacement_grants_chirho"
+            ).fetchone()[0]:
+                raise ValueError(
+                    "The separate replacement allowance is already reserved"
+                )
+            for key_chirho in keys_chirho:
+                row_chirho = self_chirho.db_chirho.execute(
+                    "SELECT * FROM lemmas_chirho WHERE key_chirho=?", (key_chirho,)
+                ).fetchone()
+                expected_origin_chirho = [
+                    {
+                        "attempt_chirho": original_attempt_chirho,
+                        "plan_sha256_chirho": original_plan_sha256_chirho,
+                        "disposition_chirho": "unknown",
+                    }
+                ]
+                if (
+                    not row_chirho
+                    or row_chirho["state_chirho"] != "held"
+                    or row_chirho["attempts_chirho"] != 1
+                    or row_chirho["reason_chirho"]
+                    != "Historical request outcome unknown; never automatically regenerate"
+                    or json.loads(row_chirho["origin_chirho"]) != expected_origin_chirho
+                ):
+                    raise ValueError(
+                        "Replacement must retain the exact original unknown"
+                    )
+                self_chirho.db_chirho.execute(
+                    "INSERT INTO replacement_grants_chirho VALUES(?,2,?,?,?)",
+                    (
+                        key_chirho,
+                        authority_sha256_chirho,
+                        original_attempt_chirho,
+                        original_plan_sha256_chirho,
+                    ),
+                )
+                self_chirho.db_chirho.execute(
+                    "UPDATE lemmas_chirho SET state_chirho='queued',reason_chirho='One separate owner-authorized replacement; old unknown result retained' WHERE key_chirho=?",
+                    (key_chirho,),
+                )
+            self_chirho.event_chirho(
+                None,
+                "separate_replacement_authorized",
+                {
+                    "keys_chirho": sorted(keys_chirho),
+                    "authority_sha256_chirho": authority_sha256_chirho,
+                    "maximum_new_image_calls_chirho": 1,
+                    "original_attempt_chirho": original_attempt_chirho,
+                    "original_plan_sha256_chirho": original_plan_sha256_chirho,
+                },
+            )
 
     def grant_known_failure_chirho(self_chirho, key_chirho, authority_sha256_chirho):
         """One extra attempt for a named known failure; old counters never decrease."""
@@ -319,8 +398,8 @@ class QueueChirho:
                     0 if request_made_chirho else 1
                 )
                 exception_chirho = self_chirho.db_chirho.execute(
-                    "SELECT maximum_attempts_chirho FROM attempt_exceptions_chirho WHERE key_chirho=?",
-                    (key_chirho,),
+                    "SELECT maximum_attempts_chirho FROM replacement_grants_chirho WHERE key_chirho=? UNION ALL SELECT maximum_attempts_chirho FROM attempt_exceptions_chirho WHERE key_chirho=? LIMIT 1",
+                    (key_chirho, key_chirho),
                 ).fetchone()
                 if key_chirho in rejected_chirho and attempts_chirho < (
                     exception_chirho[0] if exception_chirho else MAX_ATTEMPTS_CHIRHO

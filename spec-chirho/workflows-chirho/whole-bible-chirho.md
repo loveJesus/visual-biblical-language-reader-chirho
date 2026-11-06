@@ -145,3 +145,17 @@ flowchart LR
 L.J. authorized at most one additional attempt for each of the seven exhausted, known-failed identities on November 6. `grant_known_failure_chirho` requires an exhausted held lemma whose completed job explicitly rejected it after an actual request, with no uncertain outcome. An additive table binds each of at most seven grants to the saved authority SHA and a lifetime maximum of four. The original three-attempt default, counters, seed, raw requests and unknown outcomes remain intact. Generation and settlement consult only the named exception for that key; failure of the fourth attempt holds it again. Source-review recovery is separately bound to exact current tokens and pinned lexical evidence.
 
 Dictionary-backed pictures with an explicitly null source gloss are kept separate from contextual selections. The delivery sanitizer accepts that null only with documented lexical evidence and complete source pins. The lemma library rechecks the source word's exact identity, text and explicit null gloss, then strips the contextual pins for the ordinary general-default format. Contextual icon arrays omit those lexical-only records, so existing web and native consumers retain their original wire contract. The source catalogue and archived evidence retain the unavailable gloss honestly. A partial pin set, changed source word or undocumented null still refuses.
+
+### Separate replacement for unresolved original outcomes
+
+L.J.'s direct November 6 approval permits one separate 16-cell atlas for the exact remaining unknown identities. `grant_unknown_replacement_chirho` requires all sixteen held rows, their original unknown disposition, lifetime count one, the original attempt and plan hash, and a recorded approval fingerprint. It creates one additive grant and queues only those keys. Original request history, origins, old held job and counters remain unchanged. Each key has a lifetime maximum of two under this grant: the unknown original plus the one new replacement. Generation and settlement both enforce that maximum, so a failed replacement is held without an automatic third request. This is availability recovery with a separately authorized image, not resolution or repetition of the original unknown request.
+
+```mermaid
+flowchart LR
+  unknown_history_chirho[Preserve original unknown request and plan] --> approval_chirho[Exact sixteen-key owner approval]
+  approval_chirho --> replacement_grant_chirho[Add one separate replacement allowance]
+  replacement_grant_chirho --> one_atlas_chirho[Reserve one new sixteen-cell atlas]
+  one_atlas_chirho --> independent_check_chirho[Independent check and normal serialized installer]
+  independent_check_chirho -->|accepted| archive_delivery_chirho[Verify R2 and publish lemma defaults]
+  independent_check_chirho -->|failed or uncertain| replacement_hold_chirho[Hold without automatic replacement retry]
+```
