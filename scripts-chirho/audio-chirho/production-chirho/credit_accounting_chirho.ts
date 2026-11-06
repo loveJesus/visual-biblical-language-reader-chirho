@@ -37,15 +37,24 @@ export function receiptFingerprintChirho(receiptChirho: object): string {
 /** Accounting allocations are aggregate conservative charges, never claimed per-request bills. */
 export function accountedReceiptCreditsChirho(
 	receiptChirho: AccountableReceiptChirho,
-	fundingChirho?: { id_chirho: string; settlement_chirho?: AudioSettlementChirho }
+	fundingChirho?: {
+		id_chirho: string;
+		settlement_chirho?: AudioSettlementChirho;
+		prior_settlements_chirho?: ReadonlyMap<string, AudioSettlementChirho>;
+	}
 ): number {
-	const settledChirho = fundingChirho?.settlement_chirho?.receipt_charges_chirho.get(
+	const ownChirho = fundingChirho?.settlement_chirho?.receipt_charges_chirho.get(
 		receiptIdentityChirho(receiptChirho)
 	);
+	const priorChirho = receiptChirho.funding_id_chirho
+		? fundingChirho?.prior_settlements_chirho?.get(receiptChirho.funding_id_chirho)
+		: undefined;
+	const settledChirho =
+		ownChirho ?? priorChirho?.receipt_charges_chirho.get(receiptIdentityChirho(receiptChirho));
 	if (!settledChirho) return receiptChirho.reserved_credits_chirho;
 	if (
 		receiptChirho.state_chirho !== 'received' ||
-		receiptChirho.funding_id_chirho !== fundingChirho?.id_chirho ||
+		(ownChirho && receiptChirho.funding_id_chirho !== fundingChirho?.id_chirho) ||
 		receiptFingerprintChirho(receiptChirho) !== settledChirho.receipt_sha256_chirho ||
 		!Number.isSafeInteger(settledChirho.accounted_credits_chirho) ||
 		settledChirho.accounted_credits_chirho < 0 ||

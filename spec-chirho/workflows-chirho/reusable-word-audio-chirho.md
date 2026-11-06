@@ -135,3 +135,22 @@ flowchart LR
 The optional completion guard is inactive without an exact approved authority fingerprint. It reads only the fixed private authority and its hash-bound prepared pronunciation list. It can lower the included-credit reserve to 200 for at most 104 named keys, with at most 800 additional account credits in the same billing cycle. The default reserve stays 1,000, and the 131,000 extra pool and 401,000 total ceiling do not change. Unknown request reservations remain fully counted. A wrong key, missing/changed approval, larger allowance, changed billing cycle or account-spend bound refuses before synthesis. The implementation is prepared; this paragraph does not constitute human approval or claim that the exception has run.
 
 L.J.'s subsequent direct reply, "yes finish those icons and hebrew ipa", approves that exact completion pass. Its private authority binds the initial 104 missing cache keys and the original account baseline, so the eight requests made before the approval still count toward the 800-credit limit. The remaining 96 requests retain the same voice, model and included-only extra key. Received keys are repaired or reused rather than requested again. The private completion driver backs off only a rate-limited subscription GET, at most twice for 30 seconds, and spaces production rounds by 15 seconds; synthesis POSTs are never retried. The completed catalogue and account readback, rather than an active process or a stale progress label, establish the result.
+
+## Separate account for prepared inflections
+
+L.J. then supplied another account to finish the remaining prepared Hebrew forms. `production-chirho/inflections-chirho/run_chirho.ts` selects exactly the frozen 3,343 pending keys (42,483 raw input units), without rewriting their 594 original plans or index. Its private authority pins the source snapshot, original receipt cut, index, prior funding authority, a distinct provider-account identity and the new billing cycle. `ELEVENLABS_API_KEY_INFLECTIONS_CHIRHO` is its only synthesis key; no primary or extra-key fallback exists. The account's initial included balance is 131,000, overages are disabled, and the normal 1,000-credit reserve remains. The narrator, speech model and cache identity stay unchanged. The same licensed narrator is imported once into the new account's voice library before synthesis; this is separate from the production executor's existing voice-change refusal.
+
+The entire 42,483-unit pass is conservatively reserved before parallel dispatch. Each disjoint batch carries that full reservation minus its own approved words, so three batches cannot borrow each other's allowance or reserve beyond the fixed pass. The new maximum global envelope is 443,483, comprising the prior unchanged 401,000 plus only this 42,483-unit allocation. Sealed earlier-account charges retain their original funding identities and exact receipt fingerprints through `prior_settlements_chirho`. Unsettled or unknown receipts keep their full raw reservation. No old pool, receipt, counter or unknown request is reset or reassigned.
+
+Three network batches may run concurrently under the one original producer lock, while one installer serializes MP3 inspection, R2 readback and catalogue updates. A first single request verifies the new account end to end. Received keys repair their publication without another synthesis request; requested/unknown keys are never posted again. A metadata GET may back off within its bound, while synthesis POSTs have no automatic retry. Actual batch/install events form the progress journal. Stop drains in-flight requests and the installer; source or provider failures remain recorded. A final library refresh publishes only received, verified material.
+
+```mermaid
+flowchart LR
+  frozen_forms_chirho[Exact prepared Hebrew keys and original ledger] --> distinct_account_chirho[Bound distinct account and included billing cycle]
+  distinct_account_chirho --> reserve_pass_chirho[Reserve the entire fixed pass]
+  reserve_pass_chirho --> first_recording_chirho[One real recording and archive proof]
+  first_recording_chirho --> disjoint_batches_chirho[At most three disjoint speech batches]
+  disjoint_batches_chirho --> one_installer_chirho[One serialized decoder and R2 installer]
+  disjoint_batches_chirho -->|unknown| no_repost_chirho[Preserve original receipt without retry]
+  one_installer_chirho --> library_refresh_chirho[Refresh verified libraries and normal release]
+```

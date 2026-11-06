@@ -75,6 +75,9 @@ export interface AudioFundingChirho {
 	/** Reservations already charged to this pool outside the plan being checked. */
 	pool_prior_credits_chirho: number;
 	settlement_chirho?: AudioSettlementChirho;
+	/** Verified earlier pools retain their own receipt identities and accounting cuts. */
+	prior_settlements_chirho?: ReadonlyMap<string, AudioSettlementChirho>;
+	billing_cycle_reset_chirho?: number;
 }
 export interface ReserveOptionsChirho {
 	funding_chirho?: AudioFundingChirho;
@@ -93,7 +96,13 @@ function validFundingChirho(fundingChirho: AudioFundingChirho) {
 			fundingChirho.pool_prior_credits_chirho
 		].every((valueChirho) => Number.isSafeInteger(valueChirho) && valueChirho >= 0) &&
 		fundingChirho.maximum_total_credits_chirho > AUDIO_PRODUCTION_CEILING_CHIRHO &&
-		fundingChirho.pool_prior_credits_chirho <= fundingChirho.additional_credits_chirho
+		fundingChirho.pool_prior_credits_chirho <= fundingChirho.additional_credits_chirho &&
+		(fundingChirho.billing_cycle_reset_chirho === undefined ||
+			(Number.isSafeInteger(fundingChirho.billing_cycle_reset_chirho) &&
+				fundingChirho.billing_cycle_reset_chirho > 0 &&
+				(!fundingChirho.settlement_chirho ||
+					fundingChirho.settlement_chirho.reset_unix_chirho ===
+						fundingChirho.billing_cycle_reset_chirho)))
 	);
 }
 type LanguageChirho = keyof typeof VOICES_CHIRHO;
@@ -750,9 +759,11 @@ export async function executeAudioPlanChirho(
 		if (fundingChirho && subscriptionChirho.can_extend_character_limit !== false)
 			throw new Error('Funded speech account permits overage; included-only funding refused');
 		if (
-			fundingChirho?.settlement_chirho &&
+			(fundingChirho?.billing_cycle_reset_chirho ??
+				fundingChirho?.settlement_chirho?.reset_unix_chirho) &&
 			subscriptionChirho.next_character_count_reset_unix !==
-				fundingChirho.settlement_chirho.reset_unix_chirho
+				(fundingChirho?.billing_cycle_reset_chirho ??
+					fundingChirho?.settlement_chirho?.reset_unix_chirho)
 		)
 			throw new Error('Speech billing cycle changed; settlement cannot cross a reset');
 		if (
@@ -848,11 +859,15 @@ export async function executeAudioPlanChirho(
 				reservedSinceBalanceChirho = 0;
 			}
 			if (
-				fundingChirho?.settlement_chirho &&
+				(fundingChirho?.billing_cycle_reset_chirho ??
+					fundingChirho?.settlement_chirho?.reset_unix_chirho) &&
 				balanceChirho.next_character_count_reset_unix !==
-					fundingChirho.settlement_chirho.reset_unix_chirho
+					(fundingChirho?.billing_cycle_reset_chirho ??
+						fundingChirho?.settlement_chirho?.reset_unix_chirho)
 			)
 				throw new Error('Speech billing cycle changed; no new request');
+			if (fundingChirho && balanceChirho.can_extend_character_limit !== false)
+				throw new Error('Funded speech account permits overage; no new request');
 			if (
 				balanceChirho.character_limit - balanceChirho.character_count - reservedSinceBalanceChirho <
 					(productionChirho ? [...synthesisTextChirho(jobChirho)].length : ceilingChirho) +
