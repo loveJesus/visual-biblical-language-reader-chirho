@@ -19,14 +19,14 @@ export const APP_STORES_CHIRHO: readonly {
 		id_chirho: 'google-chirho',
 		name_chirho: 'Google Play',
 		platform_chirho: 'Android',
-		url_chirho: null
+		url_chirho: 'https://play.google.com/store/apps/details?id=us.hinneh.readerchirho'
 	}
 ];
 const DOWNLOAD_MESSAGES_CHIRHO = defineCatalogueChirho({
 	en: {
 		title_chirho: 'Read on your phone or tablet',
 		body_chirho:
-			'Native apps for iPhone, iPad and Android are on their way. You can use the reader in your browser today.',
+			'Get the native Android app on Google Play. iPhone and iPad are coming soon. You can also read in your browser.',
 		group_chirho: 'Hinneh apps',
 		soon_chirho: 'Coming soon',
 		download_chirho: 'Download'
@@ -34,7 +34,7 @@ const DOWNLOAD_MESSAGES_CHIRHO = defineCatalogueChirho({
 	es: {
 		title_chirho: 'Lee en tu teléfono o tableta',
 		body_chirho:
-			'Las aplicaciones nativas para iPhone, iPad y Android están en camino. Ya puedes usar el lector en tu navegador.',
+			'Descarga la aplicación nativa de Android en Google Play. iPhone y iPad, próximamente. También puedes leer en tu navegador.',
 		group_chirho: 'Aplicaciones de Hinneh',
 		soon_chirho: 'Próximamente',
 		download_chirho: 'Descargar'

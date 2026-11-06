@@ -199,13 +199,19 @@ testChirho(
 			await expectChirho(pageChirho.locator('html')).toHaveAttribute('lang', localeChirho);
 			await expectChirho(
 				pageChirho.locator('[data-online-intro-chirho] .pending-chirho')
-			).toHaveCount(2);
-			await expectChirho(pageChirho.locator('footer .pending-chirho')).toHaveCount(2);
-			await expectChirho(pageChirho.locator('.app-downloads-chirho a')).toHaveCount(0);
+			).toHaveCount(1);
+			await expectChirho(pageChirho.locator('footer .pending-chirho')).toHaveCount(1);
+			const downloadsChirho = pageChirho.locator('.app-downloads-chirho a');
+			await expectChirho(downloadsChirho.first()).toBeVisible();
+			for (const linkChirho of await downloadsChirho.all())
+				await expectChirho(linkChirho).toHaveAttribute(
+					'href',
+					'https://play.google.com/store/apps/details?id=us.hinneh.readerchirho'
+				);
 			await pageChirho.locator('.intro-learning-chirho a').click();
 			await expectChirho(pageChirho.locator('#learning-paths-chirho')).toBeVisible();
 			expectChirho(new URL(pageChirho.url()).hash).toBe('#learning-paths-chirho');
-			await expectChirho(pageChirho.locator('#apps-chirho .pending-chirho')).toHaveCount(2);
+			await expectChirho(pageChirho.locator('#apps-chirho .pending-chirho')).toHaveCount(1);
 			await expectChirho(pageChirho.locator('#apps-chirho')).toContainText(
 				localeChirho === 'en' ? 'Coming soon' : 'Próximamente'
 			);
