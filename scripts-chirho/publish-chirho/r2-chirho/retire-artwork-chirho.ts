@@ -298,16 +298,35 @@ export async function retireArtworkChirho(
 		await releaseChirho();
 	}
 }
-if (import.meta.main)
+export function retirementOptionsChirho(argumentsChirho: string[]) {
+	const scopesChirho: string[] = [];
+	let applyChirho = false;
+	let retireChirho = false;
+	for (const argumentChirho of argumentsChirho) {
+		if (argumentChirho === '--archive-chirho') applyChirho = true;
+		else if (argumentChirho === '--retire-verified-chirho') retireChirho = true;
+		else if (argumentChirho.startsWith('--scope-chirho=')) {
+			const scopeChirho = argumentChirho.slice('--scope-chirho='.length);
+			if (!scopeChirho.trim()) throw new Error('Retirement scope is empty');
+			scopesChirho.push(scopeChirho);
+		} else throw new Error('Unsupported retirement argument: ' + argumentChirho);
+	}
+	if (retireChirho && !applyChirho)
+		throw new Error('Retirement requires --archive-chirho and verified readback');
+	if (scopesChirho.length > 16 || new Set(scopesChirho).size !== scopesChirho.length)
+		throw new Error('Retirement scopes exceed their bound or repeat');
+	return { applyChirho, retireChirho, scopesChirho };
+}
+if (import.meta.main) {
+	const optionsChirho = retirementOptionsChirho(process.argv.slice(2));
 	console.log(
 		JSON.stringify(
 			await retireArtworkChirho(
 				process.cwd(),
-				process.argv.includes('--archive-chirho'),
-				process.argv.includes('--retire-verified-chirho'),
-				process.argv
-					.filter((valueChirho) => valueChirho.startsWith('--scope-chirho='))
-					.map((valueChirho) => valueChirho.slice('--scope-chirho='.length))
+				optionsChirho.applyChirho,
+				optionsChirho.retireChirho,
+				optionsChirho.scopesChirho
 			)
 		)
 	);
+}

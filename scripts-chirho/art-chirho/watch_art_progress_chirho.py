@@ -22,6 +22,10 @@ TARGETS_CHIRHO = {
     "lemma-icons-chirho": ("lemma-worker-chirho/progress-chirho.json", 1500),
     "book-order-chirho": ("ordered-scenes-chirho/status-chirho.json", 1800),
     "bible-icons-chirho": ("bible-icons-chirho/progress-chirho.json", 1500),
+    "high-quality-scenes-chirho": (
+        "high-quality-scenes-chirho/progress-chirho.json",
+        1800,
+    ),
 }
 STOP_CHIRHO = threading.Event()
 OWNER_RECOVERY_SECONDS_CHIRHO = 1800
@@ -53,6 +57,7 @@ def incidents_chirho(root_chirho, now_chirho):
                 "generator_capacity_hold",
                 "image_tool_unavailable",
                 "eligible_complete_with_holds",
+                "bounded_checkpoint_with_holds",
             )
             stalled_chirho = (
                 state_chirho in ("generating", "completed", "completed_verse", "retrying")
@@ -93,6 +98,7 @@ def incidents_chirho(root_chirho, now_chirho):
                 "generator_capacity_hold",
                 "image_tool_unavailable",
                 "eligible_complete_with_holds",
+                "bounded_checkpoint_with_holds",
                 "unreadable",
                 "generating",
                 "completed",
