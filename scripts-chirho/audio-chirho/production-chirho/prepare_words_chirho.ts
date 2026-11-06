@@ -3,6 +3,8 @@
 import { readFile as readFileChirho, mkdir as mkdirChirho } from 'node:fs/promises';
 import { join as joinChirho, resolve as resolveChirho } from 'node:path';
 import { wordPhoneticsChirho } from './word_phonetics_chirho';
+import { qerePhoneticsChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/word-phonetics-chirho';
+import { ipaNoteChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/ipa-trial-chirho';
 import reviewsChirho from '../chapter-chirho/stress_reviews_chirho.json';
 import knownChirho from '../../../data-chirho/audio-chirho/proverbs-26-phonetics-chirho.json';
 import { cacheKeyChirho, sha256Chirho, writeChirho, type AudioJobChirho } from '../audition_chirho';
@@ -154,7 +156,11 @@ export async function prepareWordsChirho(rootChirho: string, wholeBibleChirho = 
 					if (bibleBookChirho(chapterChirho.book_chirho).language_chirho === 'he') {
 						const hebrewChirho = tokenChirho as TokenChirho;
 						const knownWordChirho = knownWordsChirho.get(tokenChirho.id_chirho);
-						if (
+						const reviewedChirho = ipaNoteChirho(hebrewChirho);
+						if (reviewedChirho) {
+							ipaChirho = reviewedChirho.ipa_chirho;
+							analysisNoteChirho = reviewedChirho.explanation_chirho.en;
+						} else if (
 							knownWordChirho &&
 							knownWordChirho.text_chirho === tokenChirho.text_chirho &&
 							knownWordChirho.spoken_text_chirho === textChirho &&
@@ -166,6 +172,12 @@ export async function prepareWordsChirho(rootChirho: string, wholeBibleChirho = 
 						} else {
 							const divineChirho = divineNameReadingChirho(hebrewChirho);
 							let readingChirho = divineChirho?.analysis_text_chirho ?? textChirho;
+							const multiwordQereChirho =
+								!!hebrewChirho.qere_chirho?.length && /\s/u.test(textChirho);
+							const parseChirho = (overrideChirho?: number) =>
+								multiwordQereChirho
+									? qerePhoneticsChirho(readingChirho)
+									: wordPhoneticsChirho(readingChirho, overrideChirho);
 							if (
 								verseChirho.tokens_chirho.at(-1) === tokenChirho &&
 								verseChirho.canonical_text_chirho.slice(hebrewChirho.end_chirho).includes('׃')
@@ -181,7 +193,7 @@ export async function prepareWordsChirho(rootChirho: string, wholeBibleChirho = 
 								: 'Source accent and pointed-form analysis; pending listener review.';
 							if (overrideChirho === undefined) {
 								try {
-									wordPhoneticsChirho(readingChirho);
+									parseChirho();
 								} catch {
 									const candidatesChirho = stressesChirho.get(
 										formKeyChirho(hebrewChirho, textChirho)
@@ -196,7 +208,7 @@ export async function prepareWordsChirho(rootChirho: string, wholeBibleChirho = 
 								}
 							}
 
-							ipaChirho = wordPhoneticsChirho(readingChirho, overrideChirho).ipa_chirho;
+							ipaChirho = parseChirho(overrideChirho).ipa_chirho;
 						}
 					}
 					const inputChirho = productionWordRecipeChirho(textChirho, recipeChirho, ipaChirho);

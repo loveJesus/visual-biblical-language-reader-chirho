@@ -1,6 +1,6 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 // Workflow: reusable-word-audio-chirho.md. Source accents, never the parser's fallback stress.
-import { Text as TextChirho } from 'havarotjs';
+import { hebrewAnalysisWordsChirho } from './source-analysis-chirho';
 import { hebrewPhoneticsChirho } from './hebrew-phonetics-chirho';
 
 // Positional helpers and pre/postpositive marks cannot independently locate primary stress.
@@ -9,18 +9,15 @@ const DIRECT_ACCENTS_CHIRHO =
 	/[\u0591\u0593-\u0597\u059b\u059c\u059e\u059f\u05a1-\u05a8\u05aa\u05ac]/u;
 export function wordPhoneticsChirho(sourceChirho: string, overrideChirho?: number) {
 	const analysisChirho = sourceChirho.replace(/[־׀]/gu, '');
-	const wordsChirho = new TextChirho(analysisChirho, {
-		strict: true,
-		longVowels: false
-	}).words.filter((wordChirho) => !wordChirho.isNotHebrew);
+	const wordsChirho = hebrewAnalysisWordsChirho(analysisChirho);
 	if (wordsChirho.length !== 1) throw new Error('A word-library entry needs one reading');
 	const syllablesChirho = wordsChirho[0].syllables;
 	let indexChirho = overrideChirho;
 	if (indexChirho === undefined) {
-		// Munach followed by zaqef qatan has primary stress at zaqef, not two primaries.
-		// Unicode L2/25-242, p.3: https://www.unicode.org/L2/L2025/25242-hebrew-accents.pdf
+		// Munach/metiga followed by zaqef qatan has primary stress at zaqef.
+		// Unicode L2/25-242, pp.3,25: https://www.unicode.org/L2/L2025/25242-hebrew-accents.pdf
 		const accentsChirho = (analysisChirho.match(/[\u0591-\u05af]/gu) ?? []).join('');
-		if (accentsChirho === '\u05a3\u0594') {
+		if (accentsChirho === '\u05a3\u0594' || accentsChirho === '\u05a8\u0594') {
 			indexChirho = syllablesChirho.findIndex((rowChirho) => rowChirho.text.includes('\u0594'));
 			if (indexChirho < 0) throw new Error('Primary zaqef syllable is unresolved');
 			return hebrewPhoneticsChirho(analysisChirho, indexChirho);
@@ -41,4 +38,17 @@ export function wordPhoneticsChirho(sourceChirho: string, overrideChirho?: numbe
 		} else throw new Error('Non-positional or absent accent needs checked stress evidence');
 	}
 	return hebrewPhoneticsChirho(analysisChirho, indexChirho);
+}
+
+/** An explicitly attached qere can replace one written token with several read words. */
+export function qerePhoneticsChirho(sourceChirho: string) {
+	const partsChirho = sourceChirho.trim().split(/\s+/u);
+	if (partsChirho.length < 2 || partsChirho.length > 4)
+		throw new Error('A multiword qere needs two to four explicit readings');
+	const readingsChirho = partsChirho.map((partChirho) => wordPhoneticsChirho(partChirho));
+	return {
+		source_chirho: sourceChirho,
+		ipa_chirho: readingsChirho.map((readingChirho) => readingChirho.ipa_chirho).join(' '),
+		words_chirho: readingsChirho.flatMap((readingChirho) => readingChirho.words_chirho)
+	};
 }

@@ -266,6 +266,64 @@
   ],
   "icons_chirho": [
     {
+      "id_chirho": "attempt-pipeline-f3ca97ed29b34d598be9d258dffe185c-chirho-cell-08-chirho",
+      "lesson_id_chirho": "2Sam.20.1",
+      "token_id_chirho": "10Amk",
+      "lemma_id_chirho": "H1075",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "בִּכְרִי",
+      "sense_id_chirho": "attempt-pipeline-f3ca97ed29b34d598be9d258dffe185c-chirho-cell-8-general-chirho",
+      "contextual_meaning_chirho": "Bichri, the person named as Sheba's father (2 Samuel 20:1).",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-f3ca97ed29b34d598be9d258dffe185c-chirho/cell-08-chirho.webp",
+      "alt_chirho": "An imagined older bearded father in a beige headcloth and burgundy robe.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "1164927e216d84490566d670f1bcf2af24f25e985443807defaba3e2a9df6d70",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true,
+      "context_text_chirho": "בִּכְרִ֖י",
+      "context_gloss_chirho": "Bichri",
+      "context_canonical_text_chirho": "וְשָׁ֨ם נִקְרָ֜א אִ֣ישׁ בְּלִיַּ֗עַל וּשְׁמ֛וֹ שֶׁ֥בַע בֶּן־בִּכְרִ֖י אִ֣ישׁ יְמִינִ֑י וַיִּתְקַ֣ע בַּשֹּׁפָ֗ר וַ֠יֹּאמֶר אֵֽין־לָ֨נוּ חֵ֜לֶק בְּדָוִ֗ד וְלֹ֤א נַֽחֲלָה־לָ֨נוּ֙ בְּבֶן־יִשַׁ֔י אִ֥ישׁ לְאֹהָלָ֖יו יִשְׂרָאֵֽל׃"
+    },
+    {
+      "id_chirho": "attempt-pipeline-37f92463ca7a4e5a9eb407131371141b-chirho-cell-06-chirho",
+      "lesson_id_chirho": "2Sam.20.1",
+      "token_id_chirho": "10nbe",
+      "lemma_id_chirho": "H7652",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "שֶׁבַע",
+      "sense_id_chirho": "attempt-pipeline-37f92463ca7a4e5a9eb407131371141b-chirho-cell-6-sheba-chirho",
+      "contextual_meaning_chirho": "Sheba son of Bichri, the named Benjamite who blows a trumpet in 2 Samuel 20:1.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-37f92463ca7a4e5a9eb407131371141b-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A man blowing a curved ram's horn, symbolizing Sheba son of Bichri.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "90e8b844784959b3ebe7a0442a87cfda7216cf40ace776db57508620a4b0473d",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true,
+      "context_text_chirho": "שֶׁ֥בַע",
+      "context_gloss_chirho": "Sheba",
+      "context_canonical_text_chirho": "וְשָׁ֨ם נִקְרָ֜א אִ֣ישׁ בְּלִיַּ֗עַל וּשְׁמ֛וֹ שֶׁ֥בַע בֶּן־בִּכְרִ֖י אִ֣ישׁ יְמִינִ֑י וַיִּתְקַ֣ע בַּשֹּׁפָ֗ר וַ֠יֹּאמֶר אֵֽין־לָ֨נוּ חֵ֜לֶק בְּדָוִ֗ד וְלֹ֤א נַֽחֲלָה־לָ֨נוּ֙ בְּבֶן־יִשַׁ֔י אִ֥ישׁ לְאֹהָלָ֖יו יִשְׂרָאֵֽל׃"
+    },
+    {
       "id_chirho": "attempt-f46eff5dc3ae4817b18753f3bfe60b9b-chirho-cell-13-chirho",
       "lesson_id_chirho": "2Sam.20.13",
       "token_id_chirho": "10pVF",
@@ -321,6 +379,35 @@
       "selected_chirho": true,
       "context_text_chirho": "הַבֵּרִ֑ים",
       "context_gloss_chirho": "the Berites",
+      "context_canonical_text_chirho": "וַֽיַּעֲבֹ֞ר בְּכָל־שִׁבְטֵ֣י יִשְׂרָאֵ֗ל אָבֵ֛לָה וּבֵ֥ית מַעֲכָ֖ה וְכָל־הַבֵּרִ֑ים ויקלהו וַיָּבֹ֖אוּ אַף־אַחֲרָֽיו׃"
+    },
+    {
+      "id_chirho": "attempt-pipeline-1852411088f6484bbfabfa7c9e2d9775-chirho-cell-05-chirho",
+      "lesson_id_chirho": "2Sam.20.14",
+      "token_id_chirho": "10gsU",
+      "lemma_id_chirho": "H1038",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "בֵּית מַעֲכָה",
+      "sense_id_chirho": "attempt-pipeline-1852411088f6484bbfabfa7c9e2d9775-chirho-cell-05-chirho",
+      "contextual_meaning_chirho": "Beth Maachah, the named place reached in the journey of 2 Samuel 20:14 (token 10gsU).",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-1852411088f6484bbfabfa7c9e2d9775-chirho/cell-05-chirho.webp",
+      "alt_chirho": "Small stone gateway attached to a rounded side tower.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a7445d3915c65c0a3acbf53f619ee3ae6fda3a9b1b34f51c79c22236126dcd22",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true,
+      "context_text_chirho": "וּבֵ֥ית",
+      "context_gloss_chirho": "and Beth Maachah",
       "context_canonical_text_chirho": "וַֽיַּעֲבֹ֞ר בְּכָל־שִׁבְטֵ֣י יִשְׂרָאֵ֗ל אָבֵ֛לָה וּבֵ֥ית מַעֲכָ֖ה וְכָל־הַבֵּרִ֑ים ויקלהו וַיָּבֹ֖אוּ אַף־אַחֲרָֽיו׃"
     },
     {
@@ -525,6 +612,58 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-1852411088f6484bbfabfa7c9e2d9775-chirho-cell-05-chirho",
+      "lesson_id_chirho": "2Sam.20.14",
+      "token_id_chirho": "10gsU",
+      "lemma_id_chirho": "H1038",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "בֵּית מַעֲכָה",
+      "sense_id_chirho": "attempt-pipeline-1852411088f6484bbfabfa7c9e2d9775-chirho-cell-05-chirho",
+      "contextual_meaning_chirho": "Beth Maachah, the named place reached in the journey of 2 Samuel 20:14 (token 10gsU).",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-1852411088f6484bbfabfa7c9e2d9775-chirho/cell-05-chirho.webp",
+      "alt_chirho": "Small stone gateway attached to a rounded side tower.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "a7445d3915c65c0a3acbf53f619ee3ae6fda3a9b1b34f51c79c22236126dcd22",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-f3ca97ed29b34d598be9d258dffe185c-chirho-cell-08-chirho",
+      "lesson_id_chirho": "2Sam.20.1",
+      "token_id_chirho": "10Amk",
+      "lemma_id_chirho": "H1075",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "בִּכְרִי",
+      "sense_id_chirho": "attempt-pipeline-f3ca97ed29b34d598be9d258dffe185c-chirho-cell-8-general-chirho",
+      "contextual_meaning_chirho": "Bichri, the person named as Sheba's father (2 Samuel 20:1).",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-f3ca97ed29b34d598be9d258dffe185c-chirho/cell-08-chirho.webp",
+      "alt_chirho": "An imagined older bearded father in a beige headcloth and burgundy robe.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "1164927e216d84490566d670f1bcf2af24f25e985443807defaba3e2a9df6d70",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-7596244a7dc44f80828d75683d574f63-11-chirho",
       "lesson_id_chirho": "Prov.6.12",
       "token_id_chirho": "20ESM",
@@ -618,6 +757,32 @@
         "strong-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-995c2141cddd4869991c85545b708416-chirho-cell-03-chirho",
+      "lesson_id_chirho": "2Sam.8.18",
+      "token_id_chirho": "10FHp",
+      "lemma_id_chirho": "H1141",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "בְּנָיָה",
+      "sense_id_chirho": "attempt-pipeline-995c2141cddd4869991c85545b708416-chirho-cell-03-chirho",
+      "contextual_meaning_chirho": "Benaiah, a personal name; 2 Samuel 8:18 names Benaiah son of Jehoiada in connection with the Cherethites and Pelethites.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-995c2141cddd4869991c85545b708416-chirho/cell-03-chirho.webp",
+      "alt_chirho": "Imagined ancient guard captain holding a round bronze shield.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "460ee4bebd905f538c96123ac80263990b5bef0e2a7771eecb53602c1ca77729",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -1189,6 +1354,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-1726fd2279734f27b1a5bc45f28dfe21-chirho-cell-01-chirho",
+      "lesson_id_chirho": "Exod.2.23",
+      "token_id_chirho": "02yP1",
+      "lemma_id_chirho": "H2199",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "זָעַק",
+      "sense_id_chirho": "attempt-pipeline-1726fd2279734f27b1a5bc45f28dfe21-chirho-cell-01-cry-out-chirho",
+      "contextual_meaning_chirho": "To cry out, as the Israelites cry out because of bondage in Exodus 2:23.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-1726fd2279734f27b1a5bc45f28dfe21-chirho/cell-01-chirho.webp",
+      "alt_chirho": "Ancient man crying out with his hand cupped beside his open mouth.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "17f83e371360488d02275145cfb17df900db3c333cc7c321bf8d58fe2328cec5",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "attempt-9274b6a9296c401aadad5f39785bf727-chirho-cell-07-chirho",
       "lesson_id_chirho": "Lev.13.29",
       "token_id_chirho": "03pSF",
@@ -1285,6 +1476,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-eb8bd4fa2a4d488ab9ebc7ef84d958ca-chirho-cell-02-chirho",
+      "lesson_id_chirho": "2Sam.8.9",
+      "token_id_chirho": "10T9N",
+      "lemma_id_chirho": "H2426",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "חֵיל",
+      "sense_id_chirho": "attempt-pipeline-eb8bd4fa2a4d488ab9ebc7ef84d958ca-chirho-cell-02-army-chirho",
+      "contextual_meaning_chirho": "Army or military force, the army of Hadadezer in 2 Samuel 8:9, token 10T9N, retaining the supplied H2426 identity.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-eb8bd4fa2a4d488ab9ebc7ef84d958ca-chirho/cell-02-chirho.webp",
+      "alt_chirho": "A round ancient shield with two short spears strapped behind it.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "bbdec2e2a982b085aebd9f57b5c789cb99d095b9b90f647411b59bf2f00df7d9",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -1707,6 +1924,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-bc1360696c7c4a48af17eee681f015df-chirho-cell-00-chirho",
+      "lesson_id_chirho": "1Sam.26.6",
+      "token_id_chirho": "09aQ6",
+      "lemma_id_chirho": "H3097",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "יוֹאָב",
+      "sense_id_chirho": "attempt-pipeline-bc1360696c7c4a48af17eee681f015df-chirho-cell-00-general-chirho",
+      "contextual_meaning_chirho": "Joab, the man named as Abishai's brother in 1 Samuel 26:6.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-bc1360696c7c4a48af17eee681f015df-chirho/cell-00-chirho.webp",
+      "alt_chirho": "Stylized bearded man in an ochre tunic holding a small round shield.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "67d03d1375ef0e67daea356cc6540d2e42b32ee87cf36b080755a7656566c5fb",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -2823,6 +3066,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-5dafc99527e347849462a99ad1834a37-chirho-cell-13-chirho",
+      "lesson_id_chirho": "1Sam.26.6",
+      "token_id_chirho": "09CNf",
+      "lemma_id_chirho": "H52",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אֲבִישַׁי",
+      "sense_id_chirho": "attempt-pipeline-5dafc99527e347849462a99ad1834a37-chirho-cell-13-general-chirho",
+      "contextual_meaning_chirho": "Abishai, the named man who volunteers to accompany David to Saul's camp in 1 Samuel 26:6.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-5dafc99527e347849462a99ad1834a37-chirho/cell-13-chirho.webp",
+      "alt_chirho": "An imagined ancient traveler raising one hand while holding a walking staff.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "98e422bc07ae8f1d8258e681ef75b1c502fc518d653d87d016369050cb6e2051",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-1sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-ce717f94ac7549cb824b534e325232f1-15-chirho",
       "lesson_id_chirho": "Prov.17.10",
       "token_id_chirho": "20Hq3",
@@ -2868,6 +3137,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "L.J. requested local icon production on 2026-10-27. Contextual gloss and OSHB lemma checked against pinned sources; artwork remains pending his review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-bc1360696c7c4a48af17eee681f015df-chirho-cell-08-chirho",
+      "lesson_id_chirho": "2Sam.3.3",
+      "token_id_chirho": "10drK",
+      "lemma_id_chirho": "H53",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "אֲבִישָׁלוֹם",
+      "sense_id_chirho": "attempt-pipeline-bc1360696c7c4a48af17eee681f015df-chirho-cell-08-general-chirho",
+      "contextual_meaning_chirho": "Absalom, the named son of Maacah in 2 Samuel 3:3.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-bc1360696c7c4a48af17eee681f015df-chirho/cell-08-chirho.webp",
+      "alt_chirho": "Stylized young man with shoulder-length dark hair and a burgundy robe.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "0dede39177b93c7aee3c8ad28979b2268fa42aad26e27ca501f993b462517174",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {
@@ -3691,6 +3986,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-1e1ef876fa1d40bf96d3ad41b24a5a30-chirho-cell-01-chirho",
+      "lesson_id_chirho": "2Sam.8.18",
+      "token_id_chirho": "10tnE",
+      "lemma_id_chirho": "H6432",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "פְּלֵתִי",
+      "sense_id_chirho": "attempt-pipeline-1e1ef876fa1d40bf96d3ad41b24a5a30-chirho-cell-01-pelethite-guard-chirho",
+      "contextual_meaning_chirho": "The Pelethites, members of the royal guard named in 2 Samuel 8:18.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-1e1ef876fa1d40bf96d3ad41b24a5a30-chirho/cell-01-chirho.webp",
+      "alt_chirho": "A plain round leather shield representing the Pelethite guard.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "9074da454f9010c064937540960783d195d7e380039f3f421268870bd4ed40de",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-86077356846045ef8b804dc19795563a-12-chirho",
       "lesson_id_chirho": "Prov.5.6",
       "token_id_chirho": "20fZA",
@@ -4110,6 +4431,32 @@
       "selected_chirho": true
     },
     {
+      "id_chirho": "attempt-pipeline-37f92463ca7a4e5a9eb407131371141b-chirho-cell-06-chirho",
+      "lesson_id_chirho": "2Sam.20.1",
+      "token_id_chirho": "10nbe",
+      "lemma_id_chirho": "H7652",
+      "lemma_augment_chirho": "a",
+      "lexical_form_chirho": "שֶׁבַע",
+      "sense_id_chirho": "attempt-pipeline-37f92463ca7a4e5a9eb407131371141b-chirho-cell-6-sheba-chirho",
+      "contextual_meaning_chirho": "Sheba son of Bichri, the named Benjamite who blows a trumpet in 2 Samuel 20:1.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-37f92463ca7a4e5a9eb407131371141b-chirho/cell-06-chirho.webp",
+      "alt_chirho": "A man blowing a curved ram's horn, symbolizing Sheba son of Bichri.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "90e8b844784959b3ebe7a0442a87cfda7216cf40ace776db57508620a4b0473d",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-2sam-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
+      "selected_chirho": true
+    },
+    {
       "id_chirho": "icon-c653aa21732b4108ab904253d6d6f6e0-13-chirho",
       "lesson_id_chirho": "Prov.23.10",
       "token_id_chirho": "20jRy",
@@ -4179,6 +4526,32 @@
         "lexical-index-chirho"
       ],
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
+      "selected_chirho": true
+    },
+    {
+      "id_chirho": "attempt-pipeline-1726fd2279734f27b1a5bc45f28dfe21-chirho-cell-04-chirho",
+      "lesson_id_chirho": "Exod.19.16",
+      "token_id_chirho": "02QBy",
+      "lemma_id_chirho": "H7782",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "שׁוֹפָר",
+      "sense_id_chirho": "attempt-pipeline-1726fd2279734f27b1a5bc45f28dfe21-chirho-cell-04-shofar-chirho",
+      "contextual_meaning_chirho": "A horn trumpet, whose sound is mentioned in Exodus 19:16.",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-1726fd2279734f27b1a5bc45f28dfe21-chirho/cell-04-chirho.webp",
+      "alt_chirho": "Single curved tan ram-horn trumpet with a wide opening.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "7f3a4ce257d3a89342e9f8ad04ba149bfd1d173ade5548c45b195fcf00dcd032",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-exod-chirho",
+        "oshb-morphology-codes-chirho",
+        "strong-chirho",
+        "aug-index-chirho",
+        "lexical-index-chirho"
+      ],
+      "display_authority_chirho": "General lemma memory aid; other occurrences and senses have not received contextual review.",
       "selected_chirho": true
     },
     {

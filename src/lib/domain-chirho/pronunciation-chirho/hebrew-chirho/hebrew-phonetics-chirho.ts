@@ -1,6 +1,6 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 // Workflow: local-reader-chirho.md. Offline draft analysis only; canonical text is never rewritten.
-import { Text as TextChirho } from 'havarotjs';
+import { hebrewAnalysisWordsChirho } from './source-analysis-chirho';
 import type { Syllable as SyllableChirho } from 'havarotjs/syllable';
 
 const CONSONANTS_CHIRHO: Record<string, string> = {
@@ -99,8 +99,7 @@ export function hebrewPhoneticsChirho(sourceChirho: string, stressOverrideChirho
 	if (!sourceChirho || !/[\u05b0-\u05bc\u05c7]/u.test(sourceChirho))
 		throw new Error('Unpointed or empty reading needs an explicit pronunciation review');
 	// Havarot sequences an analysis copy. Retain sourceChirho verbatim as the binding identity.
-	const analysisChirho = new TextChirho(sourceChirho, { strict: true, longVowels: false });
-	const wordsChirho = analysisChirho.words.filter((wordChirho) => !wordChirho.isNotHebrew);
+	const wordsChirho = hebrewAnalysisWordsChirho(sourceChirho);
 	const outputChirho = wordsChirho.map((wordChirho) => {
 		if (wordChirho.hasDivineName) throw new Error('Divine-name reading needs an explicit profile');
 		const syllablesChirho = wordChirho.syllables;

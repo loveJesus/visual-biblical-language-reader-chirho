@@ -2,11 +2,14 @@
 
 # Reusable original-language word recordings
 
-L.J. prioritizes reusable word clips, retaining the existing natural verse readings. The initial production input is the current pinned Proverbs, John and Genesis corpus. Whole-Bible source expansion is subsequent work. One synthesis identity includes the actual spoken input, language, licensed voice, model and settings; lemma or Strong number alone cannot identify an inflected pronunciation. The same clip is referenced from matching source-bound occurrences. Canonical Hebrew, Greek and lemma keys remain unchanged.
+L.J. prioritizes reusable word clips, retaining the existing natural verse readings. Production covers the pinned whole-Bible corpus; the original Proverbs, John and Genesis plans remain immutable. One synthesis identity includes the actual spoken input, language, licensed voice, model and settings; lemma or Strong number alone cannot identify an inflected pronunciation. The same clip is referenced from matching source-bound occurrences. Canonical Hebrew, Greek and lemma keys remain unchanged.
 
 ```mermaid
 flowchart TD
   source_chirho[Verify chapter manifest and exact source bytes] --> analysis_chirho[Qere, Hebrew IPA and source stress or Modern Greek]
+  analysis_chirho --> source_reading_chirho[Exact spelling analysis and source-bound lexical stress review]
+  source_reading_chirho --> identity_chirho
+  source_reading_chirho --> holds_chirho
   analysis_chirho --> holds_chirho[Withhold uncertain pronunciation per occurrence]
   analysis_chirho --> identity_chirho[Deduplicate exact pronunciation plus voice and settings]
   identity_chirho --> cache_chirho[Adopt matching historical word clips without another request]
@@ -79,6 +82,10 @@ flowchart TD
 ```
 
 The narrow Munach–Zaqef Qatan stress case accepts exactly U+05A3 followed by U+0594 with no other cantillation accent, and assigns primary stress to the syllable carrying Zaqef, following [Unicode L2/25-242, printed page 3](https://www.unicode.org/L2/L2025/25242-hebrew-accents.pdf). Other conflicting or unmarked stress remains deferred. The November 5 source-bound continuation appends new plans without rewriting original plans, source holds or receipts. Existing exact pronunciation keys reuse their received audio. Small new batches retain the unchanged 1,000-credit subscription safety margin, included-only funding authority and no-POST-retry rule.
+
+The same narrow treatment accepts exactly Metiga U+05A8 followed by Zaqef Qatan U+0594 (the same source, printed pages 3 and 25). It never chooses the last accent arbitrarily. `reading-reviews-chirho.json` adds finite exact-token readings with chapter/canonical hashes and the pinned OSHB dictionary evidence. Explicit headword stress transfers only to that identical pointed headword, lemma/augment and morphology. Changed prefixes, vowels, inflections, lemma assignments and attached qere do not inherit a review. This layer feeds both preparation and the optional displayed IPA; it does not expand the old Proverbs 26 verse-audition authority.
+
+`source-analysis-chirho.ts` keeps source text untouched while recognizing Issachar's silent second sin and the exact quiescent-aleph spelling of Belshazzar. A failed meteg/vowel-letter syllabification can use the library's long-vowel path while retaining its vocal-sheva-after-meteg policy. Previously valid analyses retain the original path. `qerePhoneticsChirho` accepts two to four explicitly attached read words only when every part resolves independently; ordinary word-library analysis still requires one word. Unpointed or unattached readings stay held. Reviewed words remain pronunciation aids awaiting listening review.
 
 The self-contained speech controller owns one trim timer and cleanup function per active clip.
 The deadline rechecks the media clock before pausing; buffering, seeking and paused playback

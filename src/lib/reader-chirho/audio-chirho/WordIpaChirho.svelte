@@ -5,7 +5,10 @@
 	import { spokenWordChirho } from '$lib/domain-chirho/pronunciation-chirho';
 	import { divineNameReadingChirho } from '$lib/domain-chirho/pronunciation-chirho/divine-name-chirho';
 	import { ipaNoteChirho } from '$lib/domain-chirho/pronunciation-chirho/ipa-trial-chirho';
-	import { wordPhoneticsChirho } from '$lib/domain-chirho/pronunciation-chirho/hebrew-chirho/word-phonetics-chirho';
+	import {
+		wordPhoneticsChirho,
+		qerePhoneticsChirho
+	} from '$lib/domain-chirho/pronunciation-chirho/hebrew-chirho/word-phonetics-chirho';
 	import { greekWordIpaChirho } from '$lib/domain-chirho/pronunciation-chirho/greek-ipa-chirho';
 	let {
 		tokenChirho,
@@ -27,7 +30,13 @@
 			if (!ipaChirho)
 				try {
 					// Read the complete prefixed form, not just the bare traditional Name.
-					ipaChirho = wordPhoneticsChirho(
+					const phoneticsChirho =
+						'qere_chirho' in tokenChirho &&
+						tokenChirho.qere_chirho?.length &&
+						/\s/u.test(spokenChirho)
+							? qerePhoneticsChirho
+							: wordPhoneticsChirho;
+					ipaChirho = phoneticsChirho(
 						divineChirho?.analysis_text_chirho ?? spokenChirho
 					).ipa_chirho;
 				} catch {

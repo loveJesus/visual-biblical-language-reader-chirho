@@ -1,6 +1,7 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 // Workflow: local-reader-chirho.md. Trial IPA is an additive, exact-source-bound pronunciation layer.
 import trialChirho from './ipa-trial-chirho.json';
+import readingsChirho from './hebrew-chirho/reading-reviews-chirho.json';
 
 export interface IpaNoteChirho {
 	lesson_id_chirho: string;
@@ -23,7 +24,10 @@ interface IpaTokenChirho {
 	qere_chirho?: { text_chirho: string }[];
 }
 const notesChirho = new Map<string, IpaNoteChirho>(
-	trialChirho.words_chirho.map((rowChirho) => [rowChirho.token_id_chirho, rowChirho])
+	[...trialChirho.words_chirho, ...readingsChirho.words_chirho].map((rowChirho) => [
+		rowChirho.token_id_chirho,
+		rowChirho
+	])
 );
 
 export function ipaNoteChirho(tokenChirho: IpaTokenChirho): IpaNoteChirho | null {
