@@ -2959,6 +2959,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/psalms-chirho/chapter-038-chirho/ps-038-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/45549a359d5b7c8250a4076f17ce97febbd3a75e22ccb8fe6f5c10ed058384ff.webp",
+        "sha256_chirho": "45549a359d5b7c8250a4076f17ce97febbd3a75e22ccb8fe6f5c10ed058384ff",
+        "bytes_chirho": 2335572,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T11:00:41.982Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/65785d3f0a722b72fbe749f79a3db7cf3cbe0ca5f730fca9d78fb9d7fb921d58.webp",
+        "sha256_chirho": "65785d3f0a722b72fbe749f79a3db7cf3cbe0ca5f730fca9d78fb9d7fb921d58",
+        "bytes_chirho": 170426,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T11:00:43.017Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/john-ordered-v1-chirho/chapter-12-chirho/john-12-021-chirho.webp"
       ],
       "source_chirho": {

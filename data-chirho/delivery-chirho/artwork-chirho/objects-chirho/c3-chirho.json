@@ -2574,6 +2574,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/psalms-chirho/chapter-034-chirho/ps-034-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/c32308cc922593c5aa3873e702ed912f0a1049fe947d92661820479e46830122.webp",
+        "sha256_chirho": "c32308cc922593c5aa3873e702ed912f0a1049fe947d92661820479e46830122",
+        "bytes_chirho": 2473632,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T10:54:19.997Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7d0bfd98a38a3a3c14504a432f427694c9fe48404a1dc34105690cfe5cd2934a.webp",
+        "sha256_chirho": "7d0bfd98a38a3a3c14504a432f427694c9fe48404a1dc34105690cfe5cd2934a",
+        "bytes_chirho": 220066,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T10:54:20.983Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ezekiel-chirho/chapter-018-chirho/ezek-018-018-chirho.webp"
       ],
       "source_chirho": {

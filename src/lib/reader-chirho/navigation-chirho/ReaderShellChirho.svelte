@@ -23,6 +23,7 @@
 	import { openingPassageChirho } from './opening-passage-chirho';
 	import type { ChapterEntryChirho } from './corpus-client-chirho';
 	import { fetchChapterMediaChirho, videosByLessonChirho } from './media-client-chirho';
+	import { verseSwipeChirho } from './verse-swipe-chirho';
 	import { readerTChirho, type ReaderKeyChirho } from '$lib/i18n-chirho/reader-messages-chirho';
 	import { bookNameChirho } from '$lib/i18n-chirho/labels-chirho';
 	import { siteTChirho } from '$lib/site-chirho/site-content-chirho';
@@ -289,6 +290,13 @@
 			}
 		}
 	}
+	// The one rule for stepping, shared by the Previous/Next buttons and the reader swipe.
+	function canMoveChirho(nextChirho: boolean): boolean {
+		if (loadingChirho || !chaptersChirho.length) return false;
+		return nextChirho
+			? !(chapterChirho === chaptersChirho.length && verseChirho === verseCountChirho)
+			: !(chapterChirho === 1 && verseChirho === 1);
+	}
 	function moveChirho(directionChirho: number) {
 		let nextChapterChirho = chapterChirho;
 		const indexChirho = verseChoicesChirho.indexOf(verseChirho);
@@ -414,7 +422,7 @@
 		type="button"
 		class="verse-step-chirho"
 		aria-label={readerTChirho('previous_verse_chirho')}
-		disabled={loadingChirho || !chaptersChirho.length || (chapterChirho === 1 && verseChirho === 1)}
+		disabled={!canMoveChirho(false)}
 		onclick={() => moveChirho(-1)}
 		><span aria-hidden="true">←</span> {readerTChirho('previous_chirho')}</button
 	>
@@ -423,14 +431,18 @@
 		type="button"
 		class="verse-step-chirho"
 		aria-label={readerTChirho('next_verse_chirho')}
-		disabled={loadingChirho ||
-			!chaptersChirho.length ||
-			(chapterChirho === chaptersChirho.length && verseChirho === verseCountChirho)}
+		disabled={!canMoveChirho(true)}
 		onclick={() => moveChirho(1)}
 		>{readerTChirho('next_chirho')} <span aria-hidden="true">→</span></button
 	>
 {/snippet}
-<div data-speech-pending-chirho={!restoredChirho || loadingChirho}>
+<div
+	data-speech-pending-chirho={!restoredChirho || loadingChirho}
+	use:verseSwipeChirho={{
+		canStepChirho: canMoveChirho,
+		onStepChirho: (nextChirho) => moveChirho(nextChirho ? 1 : -1)
+	}}
+>
 	{#if bibleBookChirho(bookChirho).language_chirho === 'grc' && greekLessonChirho}
 		<GreekReaderChirho
 			{introVisibleChirho}

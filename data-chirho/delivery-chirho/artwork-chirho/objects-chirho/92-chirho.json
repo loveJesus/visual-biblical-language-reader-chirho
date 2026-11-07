@@ -5282,6 +5282,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/psalms-chirho/chapter-033-chirho/ps-033-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/92b2fb095f72db9997f03c733ae7bf03bf1eb4932a95d682de9009c18ef84422.webp",
+        "sha256_chirho": "92b2fb095f72db9997f03c733ae7bf03bf1eb4932a95d682de9009c18ef84422",
+        "bytes_chirho": 2588810,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T10:55:56.719Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/4a92ec6dcde11d457b4b4bf6ba9ba7e174b3283cb52a68b74e860efd3fb8123b.webp",
+        "sha256_chirho": "4a92ec6dcde11d457b4b4bf6ba9ba7e174b3283cb52a68b74e860efd3fb8123b",
+        "bytes_chirho": 245960,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T10:55:57.742Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/exodus-chirho/chapter-012-chirho/exod-012-005-chirho.webp"
       ],
       "source_chirho": {
