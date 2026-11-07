@@ -14,6 +14,7 @@ import {
 	RefusalChirho,
 	sha256Chirho
 } from '../../scripts-chirho/publish-chirho/release_rules_chirho';
+import { sitemapXmlChirho } from '../../src/lib/site-chirho/library-chirho';
 import {
 	PNG_BYTES_CHIRHO,
 	baseProjectChirho,
@@ -387,6 +388,25 @@ describe('release builder boundary', () => {
 		});
 		const { manifest_chirho: manifestChirho } = await buildChirho(projectChirho);
 		expect(manifestChirho.release_kind_chirho).toBe('publishable');
+	});
+
+	it('publishes a verified sitemap.xml and refuses a tampered sitemap', async () => {
+		const validProjectChirho = await makeProjectChirho((fixtureChirho) => {
+			fixtureChirho.adapter_chirho.set('sitemap.xml', sitemapXmlChirho());
+		});
+		const { manifest_chirho: manifestChirho } = await buildChirho(validProjectChirho);
+		expect(
+			manifestChirho.files_chirho.some((fileChirho) => fileChirho.path_chirho === '/sitemap.xml')
+		).toBe(true);
+		const invalidProjectChirho = await makeProjectChirho((fixtureChirho) => {
+			fixtureChirho.adapter_chirho.set(
+				'sitemap.xml',
+				'<urlset><url><loc>https://evil.example/</loc></url></urlset>'
+			);
+		});
+		expect(await refusalChirho(buildChirho(invalidProjectChirho))).toMatch(
+			/Sitemap differs from the public route registry/
+		);
 	});
 
 	it.each(casesChirho)(

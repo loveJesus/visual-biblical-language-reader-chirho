@@ -5,6 +5,13 @@ export const LEGACY_HOSTNAME_CHIRHO = 'hinneh.bible.systems';
 export const SITE_HOSTNAMES_CHIRHO = [SITE_HOSTNAME_CHIRHO, LEGACY_HOSTNAME_CHIRHO] as const;
 export const SITE_ORIGIN_CHIRHO = `https://${SITE_HOSTNAME_CHIRHO}`;
 export const SHARE_IMAGE_PATH_CHIRHO = '/assets-chirho/site-chirho/hinneh-share-v1-chirho.jpg';
+export const INFORMATION_PAGE_IDS_CHIRHO = [
+	'about-chirho',
+	'privacy-chirho',
+	'terms-chirho',
+	'sources-chirho',
+	'contact-chirho'
+] as const;
 export function isSiteHostnameChirho(
 	valueChirho: unknown
 ): valueChirho is (typeof SITE_HOSTNAMES_CHIRHO)[number] {

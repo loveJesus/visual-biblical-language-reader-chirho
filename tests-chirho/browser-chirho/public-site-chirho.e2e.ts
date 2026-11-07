@@ -80,10 +80,38 @@ testChirho(
 		const titleChirho = /<title>([^<]+)<\/title>/.exec(htmlChirho)![1];
 		expectChirho(titleChirho).toContain('Hinneh');
 		expectChirho(titleChirho).not.toContain('26:1');
-		for (const nameChirho of ['title', 'description', 'url', 'image'])
+		for (const nameChirho of ['title', 'description', 'url', 'image', 'locale'])
 			expectChirho(htmlChirho).toMatch(new RegExp(`property="og:${nameChirho}" content="[^"]+"`));
 		expectChirho(htmlChirho).toContain(
 			'https://hinneh.us/assets-chirho/site-chirho/hinneh-share-v1-chirho.jpg'
+		);
+		expectChirho(htmlChirho).toContain(
+			'rel="alternate" hreflang="en" href="https://hinneh.us/?lang_chirho=en"'
+		);
+		expectChirho(htmlChirho).toContain(
+			'rel="alternate" hreflang="es" href="https://hinneh.us/?lang_chirho=es"'
+		);
+		expectChirho(htmlChirho).toContain(
+			'rel="alternate" hreflang="x-default" href="https://hinneh.us/"'
+		);
+		const ldJsonMatchChirho =
+			/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/.exec(htmlChirho);
+		expectChirho(ldJsonMatchChirho).not.toBeNull();
+		const ldJsonChirho = JSON.parse(ldJsonMatchChirho![1]);
+		expectChirho(ldJsonChirho['@context']).toBe('https://schema.org');
+		expectChirho(
+			ldJsonChirho['@graph'].map((itemChirho: { '@type': string }) => itemChirho['@type'])
+		).toEqual(['WebSite', 'SoftwareApplication']);
+		const sitemapResponseChirho = await requestChirho.get('/sitemap.xml');
+		expectChirho(sitemapResponseChirho.status()).toBe(200);
+		expectChirho(sitemapResponseChirho.headers()['content-type']).toContain('application/xml');
+		expectChirho(await sitemapResponseChirho.text()).toContain(
+			'<loc>https://hinneh.us/about-chirho/</loc>'
+		);
+		const robotsResponseChirho = await requestChirho.get('/robots.txt');
+		expectChirho(robotsResponseChirho.status()).toBe(200);
+		expectChirho(await robotsResponseChirho.text()).toContain(
+			'Sitemap: https://hinneh.us/sitemap.xml'
 		);
 		await pageChirho.clock.setFixedTime(new Date('2026-11-03T12:00:00Z'));
 		await pageChirho.goto('/');

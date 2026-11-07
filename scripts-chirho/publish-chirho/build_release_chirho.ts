@@ -16,7 +16,12 @@ import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { verifyGlossesChirho } from './gloss_rules_chirho';
 import { verifyAudioChirho } from './audio_rules_chirho';
-import { LIBRARY_PATH_CHIRHO, verifyLibraryChirho } from '../../src/lib/site-chirho/library-chirho';
+import {
+	LIBRARY_PATH_CHIRHO,
+	SITEMAP_PATH_CHIRHO,
+	verifyLibraryChirho,
+	verifySitemapChirho
+} from '../../src/lib/site-chirho/library-chirho';
 import {
 	r2ModeChirho,
 	remoteMediaChirho,
@@ -225,6 +230,11 @@ export async function buildReleaseChirho(optionsChirho: BuildOptionsChirho): Pro
 		!verifyLibraryChirho(publicChirho.get(LIBRARY_PATH_CHIRHO))
 	)
 		reasonsChirho.push('Native book bootstrap differs from the public book registry');
+	if (
+		publicChirho.has(SITEMAP_PATH_CHIRHO) &&
+		!verifySitemapChirho(publicChirho.get(SITEMAP_PATH_CHIRHO))
+	)
+		reasonsChirho.push('Sitemap differs from the public route registry');
 	verifyGlossesChirho(publicChirho, reasonsChirho);
 	verifyAudioChirho(
 		publicChirho,

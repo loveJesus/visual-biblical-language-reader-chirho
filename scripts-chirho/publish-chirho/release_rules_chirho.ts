@@ -132,6 +132,7 @@ export function classifyPathChirho(pathChirho: string): FileAreaChirho | string 
 	if (segmentsChirho[0] === 'assets-chirho' && extensionChirho === 'webp') return 'media';
 	if (
 		pathChirho === 'robots.txt' ||
+		pathChirho === 'sitemap.xml' ||
 		pathChirho === 'library-chirho/books-chirho.json' ||
 		pathChirho === 'media-index-chirho.json' ||
 		isGlossPathChirho(pathChirho) ||

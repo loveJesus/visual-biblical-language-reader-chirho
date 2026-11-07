@@ -51,7 +51,9 @@ export const SITE_MESSAGES_CHIRHO = defineCatalogueChirho({
 		back_chirho: 'Open the reader',
 		contact_note_chirho: 'Questions, corrections or privacy requests',
 		contact_link_chirho: 'Send a message',
-		skip_chirho: 'Skip to content'
+		skip_chirho: 'Skip to content',
+		share_alt_chirho:
+			'Hinneh: read the Bible in Hebrew and Greek, with word pictures, grammar and pronunciation.'
 	},
 	es: {
 		title_chirho: 'Hinneh · He aquí la Biblia en hebreo y griego',
@@ -94,7 +96,9 @@ export const SITE_MESSAGES_CHIRHO = defineCatalogueChirho({
 		back_chirho: 'Abrir el lector',
 		contact_note_chirho: 'Preguntas, correcciones o solicitudes de privacidad',
 		contact_link_chirho: 'Enviar un mensaje',
-		skip_chirho: 'Saltar al contenido'
+		skip_chirho: 'Saltar al contenido',
+		share_alt_chirho:
+			'Hinneh: lee la Biblia en hebreo y griego, con imágenes de palabras, gramática y pronunciación.'
 	}
 });
 export function siteTChirho(keyChirho: keyof typeof SITE_MESSAGES_CHIRHO.en) {

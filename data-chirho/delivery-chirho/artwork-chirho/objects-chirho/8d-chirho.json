@@ -4,6 +4,74 @@
     {
       "kind_chirho": "icon",
       "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-fe7a556033b94322b6d38d7cc8390863-chirho/cell-11-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8d0039fdc1009dcf72d66a08b229ceb5df25a5949070c955f99672479686237e.webp",
+        "sha256_chirho": "8d0039fdc1009dcf72d66a08b229ceb5df25a5949070c955f99672479686237e",
+        "bytes_chirho": 14776,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T00:35:50.009Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/0f8426803fa306863ed520056abeb9632a1b6bb4de3054d441c45f846cb41fd6.webp",
+        "sha256_chirho": "0f8426803fa306863ed520056abeb9632a1b6bb4de3054d441c45f846cb41fd6",
+        "bytes_chirho": 4850,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T00:35:51.216Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-df6eedd45bdc438da9e4cd0372eeef17-chirho/cell-02-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8d072da83a65ed3e60a1d4ee0368434041627f033d62ca910fdc144aada6530d.webp",
+        "sha256_chirho": "8d072da83a65ed3e60a1d4ee0368434041627f033d62ca910fdc144aada6530d",
+        "bytes_chirho": 11244,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-05T18:34:31.123Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/e9b4ce916e02f461d77797bbc680ffec91a9f5c63135a76972aa3a670ac75901.webp",
+        "sha256_chirho": "e9b4ce916e02f461d77797bbc680ffec91a9f5c63135a76972aa3a670ac75901",
+        "bytes_chirho": 4726,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T18:34:32.194Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
         "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-15a339a88e6a494baa512d62052d9cad-chirho/cell-15-chirho.webp"
       ],
       "source_chirho": {
@@ -125,6 +193,40 @@
         "height_chirho": 128,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-04T23:49:53.332Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-29ca7c52b9cc45228d6d0e9d5ef0e42f-chirho/cell-05-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8d16dc86bff96955d98fc1337e600424f75a319510477fce8154515a96a91156.webp",
+        "sha256_chirho": "8d16dc86bff96955d98fc1337e600424f75a319510477fce8154515a96a91156",
+        "bytes_chirho": 20762,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T00:54:53.559Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/a9ac6ed776a0007bca4076009ca45721732901716a209cfb8746ef930b98b436.webp",
+        "sha256_chirho": "a9ac6ed776a0007bca4076009ca45721732901716a209cfb8746ef930b98b436",
+        "bytes_chirho": 6610,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T00:54:54.615Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -363,6 +465,40 @@
         "height_chirho": 128,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-01T19:03:47.645Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-9f38f18ee47947bc99444cc4f8893265-chirho/cell-10-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8d50c8084b5c879b406cefa205cda2fbe61dd45eb12ab9b627576052bcd34815.webp",
+        "sha256_chirho": "8d50c8084b5c879b406cefa205cda2fbe61dd45eb12ab9b627576052bcd34815",
+        "bytes_chirho": 18008,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T04:39:44.412Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/e5f7ca03b92eb175b409fdd290557b8656453fb299273e56f222a3c6750877ff.webp",
+        "sha256_chirho": "e5f7ca03b92eb175b409fdd290557b8656453fb299273e56f222a3c6750877ff",
+        "bytes_chirho": 5748,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T04:39:45.386Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -635,6 +771,40 @@
         "height_chirho": 128,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-05T00:50:59.058Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-8e6ab661befb4bd6aa0a2c774fcb97cb-chirho/cell-00-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8d7d715712aa13cdc476fdcbf8e13b9c63520fcf820a27d4313972b98a79151f.webp",
+        "sha256_chirho": "8d7d715712aa13cdc476fdcbf8e13b9c63520fcf820a27d4313972b98a79151f",
+        "bytes_chirho": 11750,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T04:28:11.435Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/3148016328eb4c3765852f6c632eb9a58829b8d9f098a9fb12a13212ff5ca669.webp",
+        "sha256_chirho": "3148016328eb4c3765852f6c632eb9a58829b8d9f098a9fb12a13212ff5ca669",
+        "bytes_chirho": 3792,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T04:28:12.332Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -1058,6 +1228,40 @@
     {
       "kind_chirho": "icon",
       "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-85e263c3a3e54ace9d3ca9fe9825de67-chirho/cell-00-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8dac3ebd7ce21e6ba23b0b2821ba83f9f1bd350f2992a78a587a3884353c04fc.webp",
+        "sha256_chirho": "8dac3ebd7ce21e6ba23b0b2821ba83f9f1bd350f2992a78a587a3884353c04fc",
+        "bytes_chirho": 14406,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T00:39:15.994Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/5616e0e1708c6140a7755177668cc9dba0c38676656406b80bf2004e67d2f76f.webp",
+        "sha256_chirho": "5616e0e1708c6140a7755177668cc9dba0c38676656406b80bf2004e67d2f76f",
+        "bytes_chirho": 4630,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T00:39:17.127Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
         "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-514d4fb67d4c4261a8189ae630e2315c-chirho/cell-14-chirho.webp"
       ],
       "source_chirho": {
@@ -1262,6 +1466,40 @@
     {
       "kind_chirho": "icon",
       "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-539e11f98c294426bb8d55c0fb9d184c-chirho/cell-03-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8dd8b4bb51962b1a9ad6d25457c9b5eaffb84db3ba86c8ef14ed4417bfdcea00.webp",
+        "sha256_chirho": "8dd8b4bb51962b1a9ad6d25457c9b5eaffb84db3ba86c8ef14ed4417bfdcea00",
+        "bytes_chirho": 17988,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T00:14:30.581Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/07a951b4ff15fd9f209bdeaec30b81311292e5911ff5aaed41178f2561bbc7d9.webp",
+        "sha256_chirho": "07a951b4ff15fd9f209bdeaec30b81311292e5911ff5aaed41178f2561bbc7d9",
+        "bytes_chirho": 5324,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T00:14:31.695Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
         "/assets-chirho/icons-chirho/john-worker-v1-chirho/attempt-efad4b20aff34f0289735a6f44e4ba40-chirho/0010-chirho/cell-14-chirho.webp"
       ],
       "source_chirho": {
@@ -1281,6 +1519,40 @@
         "height_chirho": 128,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-01T19:04:02.678Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-b71acf5559b048569c8925180fd1e634-chirho/cell-15-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8de442c61acd4f9219545b744628f4b2e815d149111b85dde98c2a681defc337.webp",
+        "sha256_chirho": "8de442c61acd4f9219545b744628f4b2e815d149111b85dde98c2a681defc337",
+        "bytes_chirho": 9320,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-05T23:02:19.479Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/9fd44b9b2b63bbcfa1cd8576921785bb79abf9f734a99178c149bec267337b8e.webp",
+        "sha256_chirho": "9fd44b9b2b63bbcfa1cd8576921785bb79abf9f734a99178c149bec267337b8e",
+        "bytes_chirho": 3232,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-05T23:02:20.505Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
@@ -1398,6 +1670,40 @@
     {
       "kind_chirho": "icon",
       "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-4d8bf4e4daae4c2daa1d73c23dd0683e-chirho/cell-13-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8df663a7715ba4a03c05e9da480ab2eac460d84960aa860805b8c4b27e10561c.webp",
+        "sha256_chirho": "8df663a7715ba4a03c05e9da480ab2eac460d84960aa860805b8c4b27e10561c",
+        "bytes_chirho": 10596,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T04:13:03.192Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/597cba6cef7f46d1dd4dcad69f9dbddc331980e9896ce41858501a373fdc7432.webp",
+        "sha256_chirho": "597cba6cef7f46d1dd4dcad69f9dbddc331980e9896ce41858501a373fdc7432",
+        "bytes_chirho": 3886,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T04:13:04.090Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
         "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-13498f3fa8eb4a2e9de64ec963bf7594-chirho/cell-02-chirho.webp"
       ],
       "source_chirho": {
@@ -1485,6 +1791,74 @@
         "height_chirho": 128,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-04T03:42:34.487Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-06cc76e845fa4114a5326b63f7015931-chirho/cell-01-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8dff077b065a829a7b585b5503f159081f60e64d87822a64abbbd3f4d137576e.webp",
+        "sha256_chirho": "8dff077b065a829a7b585b5503f159081f60e64d87822a64abbbd3f4d137576e",
+        "bytes_chirho": 17412,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T01:03:33.441Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/cea013bbf56746123c1625172db47d5aaa5178f345501e3127a5092ef5610c23.webp",
+        "sha256_chirho": "cea013bbf56746123c1625172db47d5aaa5178f345501e3127a5092ef5610c23",
+        "bytes_chirho": 5344,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T01:03:34.715Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 80,
+        "method_chirho": 6,
+        "max_width_chirho": null,
+        "alpha_quality_chirho": 100,
+        "exact_chirho": true,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "icon",
+      "source_paths_chirho": [
+        "/assets-chirho/icons-chirho/bible-v1-chirho/attempt-pipeline-551278c34784477880721e6c9f1a3567-chirho/cell-11-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8dff4907e41d08525de018caea8b07eb590802b21591849034c53ece42ec5817.webp",
+        "sha256_chirho": "8dff4907e41d08525de018caea8b07eb590802b21591849034c53ece42ec5817",
+        "bytes_chirho": 19780,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-06T01:09:44.658Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/99b968ec0fe18bf6366eb12b57d95eb6bd6f6b1b06646911972cc4fa6057ad5c.webp",
+        "sha256_chirho": "99b968ec0fe18bf6366eb12b57d95eb6bd6f6b1b06646911972cc4fa6057ad5c",
+        "bytes_chirho": 7720,
+        "width_chirho": 128,
+        "height_chirho": 128,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-06T01:09:45.761Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",

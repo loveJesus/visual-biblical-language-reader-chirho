@@ -7,7 +7,10 @@
 	onMount(() => initLocaleChirho(new URL(window.location.href)));
 </script>
 
-<svelte:head><title>Hinneh · {routeTChirho('page_title_chirho')}</title></svelte:head>
+<svelte:head>
+	<title>Hinneh · {routeTChirho('page_title_chirho')}</title>
+	<meta name="robots" content="noindex" />
+</svelte:head>
 <main class="unavailable-chirho">
 	<p class="eyebrow-chirho">Hinneh · {pageChirho.status}</p>
 	<h1>{routeTChirho('page_chirho')}</h1>

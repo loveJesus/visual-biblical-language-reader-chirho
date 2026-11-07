@@ -32,6 +32,7 @@ GeneratorJobChirho = importlib_chirho.import_module(
     "icon_generation_chirho"
 ).GeneratorJobChirho
 process_chirho = importlib_chirho.import_module("process_chirho")
+chapter_openings_chirho = importlib_chirho.import_module("chapter_openings_chirho")
 MODEL_CHIRHO = process_chirho.MODEL_CHIRHO
 image_calls_chirho = process_chirho.image_calls_chirho
 returned_original_chirho = process_chirho.returned_original_chirho
@@ -574,6 +575,19 @@ def run_chirho(root_chirho, concurrency_chirho, limit_chirho):
         TOTAL_DONE_CHIRHO = verified_completed_chirho(root_chirho)
         sources_chirho.mark_fallback_chirho(root_chirho)
         baseline_done_chirho = TOTAL_DONE_CHIRHO
+        if (
+            home_chirho / chapter_openings_chirho.POLICY_NAME_CHIRHO
+        ).exists() and not chapter_openings_chirho.run_chirho(
+            root_chirho,
+            sys_chirho.modules[__name__],
+            concurrency_chirho,
+            limit_chirho,
+        ):
+            status_chirho(
+                root_chirho,
+                "drained" if draining_chirho() else "bounded_checkpoint_with_holds",
+            )
+            return
         for book_chirho in INVENTORY_CHIRHO["books_chirho"]:
             manifest_chirho = sources_chirho.read_chirho(
                 root_chirho
