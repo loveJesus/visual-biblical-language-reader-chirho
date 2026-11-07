@@ -3005,6 +3005,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/1-corinthians-chirho/chapter-003-chirho/1cor-003-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/a534d8953b76cdfc1cedfa5e15b258e5aeb2b1da63f3cd74f201c30219bca62e.webp",
+        "sha256_chirho": "a534d8953b76cdfc1cedfa5e15b258e5aeb2b1da63f3cd74f201c30219bca62e",
+        "bytes_chirho": 2586010,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T06:12:53.961Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/f362a0adcc43ce6fabe7f212a2316a1e7df8bacdb249439ccae29942d7a67d0a.webp",
+        "sha256_chirho": "f362a0adcc43ce6fabe7f212a2316a1e7df8bacdb249439ccae29942d7a67d0a",
+        "bytes_chirho": 247364,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T06:12:55.028Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-04-chirho/mark-04-022-chirho.webp"
       ],
       "source_chirho": {
