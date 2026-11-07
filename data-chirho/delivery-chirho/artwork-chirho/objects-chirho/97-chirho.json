@@ -3541,6 +3541,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/genesis-prefall-v3-chirho/chapter-003-chirho/gen-003-005-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/9773512aec76e4cfea913d4342fdbc0b0a92fe8eda617da54b443f70b4f080e5.webp",
+        "sha256_chirho": "9773512aec76e4cfea913d4342fdbc0b0a92fe8eda617da54b443f70b4f080e5",
+        "bytes_chirho": 2741210,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T03:22:26.145Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/291ca5d3eec0e009551e008c6dc95c39d2c22dfb430c6d7c539389781882101a.webp",
+        "sha256_chirho": "291ca5d3eec0e009551e008c6dc95c39d2c22dfb430c6d7c539389781882101a",
+        "bytes_chirho": 295914,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T03:22:27.311Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-119-chirho/ps-119-053-chirho.webp"
       ],
       "source_chirho": {
