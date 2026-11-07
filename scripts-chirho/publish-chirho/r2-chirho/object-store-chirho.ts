@@ -34,6 +34,9 @@ export async function objectRequestChirho(
 		!secretChirho ||
 		!(
 			KEY_CHIRHO.test(keyChirho) ||
+			(/^video-chirho\/sha256-chirho\/[a-f0-9]{64}\.mp4$/.test(keyChirho) &&
+				(methodChirho === 'GET' ||
+					(methodChirho === 'PUT' && !!bytesChirho && bytesChirho.length <= 16 * 1024 ** 2))) ||
 			(methodChirho === 'GET' &&
 				/^audio-chirho\/sha256-chirho\/[a-f0-9]{64}\.mp3$/u.test(keyChirho)) ||
 			(methodChirho === 'GET' &&

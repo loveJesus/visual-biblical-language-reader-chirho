@@ -16,12 +16,19 @@
 		recordingsForLessonChirho,
 		type RecordingChirho
 	} from './recordings-chirho';
+	import {
+		sameEmbeddedReadingChirho,
+		validVerseVideoChirho
+	} from '$lib/domain-chirho/verse-video-chirho';
 	let {
 		lessonChirho,
-		verseNavigationChirho
+		verseNavigationChirho,
+		videoChirho = null
 	}: {
 		lessonChirho: LessonChirho | GreekLessonChirho;
 		verseNavigationChirho?: Snippet<[Snippet]>;
+		/** The catalogue's verse video, if any; it plays only as the clock of this same reading. */
+		videoChirho?: unknown;
 	} = $props();
 	let recordingsChirho = $state<RecordingChirho[]>([]);
 	// Workflow: verse-media-chirho.md. The verse button plays this reading first, so it is credited.
@@ -30,6 +37,24 @@
 			(clipChirho) => clipChirho.token_id_chirho === null && isHumanRecordingChirho(clipChirho)
 		)
 	);
+	// The video's own sound is the clock only when it is exactly this reading (root's shared rule).
+	// The scene separately checks that the video starts from the picture displayed there.
+	const videoReadingChirho = $derived.by(() => {
+		const clipChirho = humanReadingChirho;
+		const candidateChirho = videoChirho;
+		if (
+			!clipChirho ||
+			!validVerseVideoChirho(
+				candidateChirho,
+				lessonChirho.id_chirho,
+				clipChirho.canonical_sha256_chirho,
+				(candidateChirho as { scene_sha256_chirho?: string } | null)?.scene_sha256_chirho ?? ''
+			) ||
+			!sameEmbeddedReadingChirho(candidateChirho, clipChirho)
+		)
+			return null;
+		return { video_chirho: candidateChirho.sha256_chirho, clip_chirho: clipChirho.sha256_chirho };
+	});
 	let renditionChirho = $state('modern_aspirates');
 	let explicitRenditionChirho = $state(false);
 	let speedChirho = $state('1');
@@ -128,6 +153,8 @@
 	data-speech-messages-chirho={JSON.stringify(
 		AUDIO_MESSAGES_CHIRHO[localeStateChirho.currentChirho]
 	)}
+	data-verse-video-sha-chirho={videoReadingChirho?.video_chirho}
+	data-verse-video-clip-sha-chirho={videoReadingChirho?.clip_chirho}
 >
 	<div class="audio-actions-chirho">
 		<div class="audio-settings-chirho">

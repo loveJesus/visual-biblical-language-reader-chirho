@@ -29,7 +29,7 @@ import {
 
 // Inputs whose changes flow into previews automatically; every other input is code or content.
 export const MEDIA_INPUT_PATTERN_CHIRHO =
-	/^(?:data-chirho\/media-chirho\/|data-chirho\/delivery-chirho\/artwork-chirho\/|static\/assets-chirho\/|static\/media-chirho\/|static\/audio-chirho\/|data-chirho\/reader-chirho\/icon-reuse-chirho\/[0-9]{4}-chirho\/[a-z0-9-]+-chirho\.json$)/;
+	/^(?:data-chirho\/media-chirho\/|data-chirho\/video-chirho\/|data-chirho\/delivery-chirho\/artwork-chirho\/|static\/assets-chirho\/|static\/media-chirho\/|static\/audio-chirho\/|data-chirho\/reader-chirho\/icon-reuse-chirho\/[0-9]{4}-chirho\/[a-z0-9-]+-chirho\.json$)/;
 // Not build inputs: history, dependencies, outputs, private and fleet material, and tests/docs.
 const SKIPPED_TOP_CHIRHO = new Set([
 	'.git',

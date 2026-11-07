@@ -82,9 +82,36 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		end_offset_chirho?: number;
 		/** Present on a human verse reading (validated before it reaches this attribute). */
 		reading_source_chirho?: { kind_chirho?: string };
+		sha256_chirho?: string;
 	}
 	const humanChirho = (clipChirho: SavedClipChirho) =>
 		clipChirho.reading_source_chirho?.kind_chirho === 'human';
+	// Workflow: verse-media-chirho.md. The verse components decide, with root's shared rules, which
+	// video starts from the displayed scene and which reading is its own sound; this controller only
+	// compares their published hashes, so it stays self-contained for saved offline pages.
+	function verseVideoChirho(clipChirho: SavedClipChirho) {
+		const controlsChirho = rootChirho.querySelector<HTMLElement>(
+			'[data-verse-video-clip-sha-chirho]'
+		);
+		const videoShaChirho = controlsChirho?.dataset.verseVideoShaChirho;
+		if (
+			!humanChirho(clipChirho) ||
+			!videoShaChirho ||
+			controlsChirho?.dataset.verseVideoClipShaChirho !== clipChirho.sha256_chirho
+		)
+			return null;
+		return (
+			[...rootChirho.querySelectorAll<HTMLVideoElement>('video[data-scene-video-chirho]')].find(
+				(videoChirho) =>
+					videoChirho.dataset.videoShaChirho === videoShaChirho &&
+					videoChirho.dataset.videoFailedChirho !== 'true'
+			) ?? null
+		);
+	}
+	let currentVideoChirho: HTMLVideoElement | null = null;
+	function stillForChirho(videoChirho: HTMLVideoElement) {
+		return videoChirho.parentElement?.querySelector<HTMLImageElement>('img[data-scene-chirho]');
+	}
 	function clipsChirho(): SavedClipChirho[] {
 		if (typeof Audio === 'undefined') return [];
 		try {
@@ -323,6 +350,17 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			audioChirho.load();
 		}
 		sequenceAudiosChirho = [];
+		if (currentVideoChirho) {
+			// The video keeps its source for the next Play; the still returns to the scene's place.
+			const videoChirho = currentVideoChirho;
+			currentVideoChirho = null;
+			videoChirho.onended = videoChirho.onerror = null;
+			videoChirho.pause();
+			videoChirho.hidden = true;
+			const stillChirho = stillForChirho(videoChirho);
+			if (stillChirho) stillChirho.hidden = videoChirho.dataset.stillHiddenChirho === 'true';
+			if (videoChirho.readyState > 0) videoChirho.currentTime = 0;
+		}
 		if (activeButtonChirho) activeButtonChirho.removeAttribute('aria-busy');
 		activeButtonChirho = null;
 		if (currentUtteranceChirho) speechChirho?.cancel();
@@ -334,13 +372,56 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			buttonChirho.disabled = true;
 		if (!disposedChirho) statusChirho(idleMessageChirho());
 	}
+	function playVideoChirho(
+		videoChirho: HTMLVideoElement,
+		buttonChirho: HTMLButtonElement,
+		clipChirho: SavedClipChirho
+	) {
+		stopChirho();
+		const requestChirho = ++sequenceChirho;
+		currentVideoChirho = videoChirho;
+		const stillChirho = stillForChirho(videoChirho);
+		videoChirho.dataset.stillHiddenChirho = String(stillChirho?.hidden ?? false);
+		if (stillChirho) stillChirho.hidden = true;
+		videoChirho.hidden = false;
+		videoChirho.muted = false;
+		const rateChirho =
+			(rootChirho.querySelector('[data-speech-rate-chirho]') as HTMLSelectElement | null)?.value ??
+			'1';
+		videoChirho.playbackRate = ['0.65', '0.85', '0.88', '1'].includes(rateChirho)
+			? Number(rateChirho)
+			: 1;
+		videoChirho.preservesPitch = true;
+		activeButtonChirho = buttonChirho;
+		buttonChirho.setAttribute('aria-busy', 'true');
+		for (const stopButtonChirho of rootChirho.querySelectorAll<HTMLButtonElement>(
+			'[data-speech-stop-chirho]'
+		))
+			stopButtonChirho.disabled = false;
+		statusChirho(
+			messageChirho('video_playing_chirho', { name_chirho: readerNameChirho(clipChirho) })
+		);
+		const finishChirho = (failedChirho: boolean) => {
+			if (disposedChirho || sequenceChirho !== requestChirho) return;
+			// A failed video is not tried again on this page; the next Play reads over the still.
+			if (failedChirho) videoChirho.dataset.videoFailedChirho = 'true';
+			stopChirho();
+			if (failedChirho) statusChirho(messageChirho('video_failed_chirho'));
+		};
+		videoChirho.onended = () => finishChirho(false);
+		videoChirho.onerror = () => finishChirho(true);
+		void videoChirho.play().catch(() => finishChirho(true));
+	}
 	function clickChirho(eventChirho: Event) {
 		if (!(eventChirho.target instanceof Element)) return;
 		if (eventChirho.target.closest('[data-speech-stop-chirho]')) {
 			stopChirho();
 			return;
 		}
-		const buttonChirho = eventChirho.target.closest<HTMLButtonElement>(buttonSelectorChirho);
+		// The scene's play control and the playing video act as the verse's own Play button.
+		const buttonChirho = eventChirho.target.closest('[data-verse-video-play-chirho]')
+			? rootChirho.querySelector<HTMLButtonElement>('.verse-play-chirho [data-pronounce-chirho]')
+			: eventChirho.target.closest<HTMLButtonElement>(buttonSelectorChirho);
 		if (
 			!buttonChirho ||
 			buttonChirho.disabled ||
@@ -353,6 +434,11 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			return;
 		}
 		const savedChirho = recordingChirho(buttonChirho);
+		const videoChirho = savedChirho ? verseVideoChirho(savedChirho) : null;
+		if (savedChirho && videoChirho) {
+			playVideoChirho(videoChirho, buttonChirho, savedChirho);
+			return;
+		}
 		if (savedChirho) {
 			stopChirho();
 			const requestChirho = ++sequenceChirho;
@@ -503,6 +589,12 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			['0.65', '0.85', '0.88', '1'].includes(targetChirho.value)
 		)
 			currentRecordingChirho.playbackRate = Number(targetChirho.value);
+		if (
+			targetChirho.matches('[data-speech-rate-chirho]') &&
+			currentVideoChirho &&
+			['0.65', '0.85', '0.88', '1'].includes(targetChirho.value)
+		)
+			currentVideoChirho.playbackRate = Number(targetChirho.value);
 		if (
 			targetChirho.matches('[data-speech-rate-chirho]') &&
 			['0.65', '0.85', '0.88', '1'].includes(targetChirho.value)

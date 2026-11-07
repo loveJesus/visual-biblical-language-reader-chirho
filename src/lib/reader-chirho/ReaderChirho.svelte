@@ -49,8 +49,11 @@
 		iconsChirho,
 		headerChirho,
 		verseNavigationChirho,
-		spanishChirho = null
+		spanishChirho = null,
+		videoChirho = null
 	}: {
+		/** The chapter catalogue's record for this verse, unvalidated; the scene and player check it. */
+		videoChirho?: unknown;
 		spanishChirho?: SpanishLayerResultChirho | null;
 		headerChirho?: Snippet;
 		verseNavigationChirho?: Snippet<[Snippet]>;
@@ -145,7 +148,7 @@
 		</div>
 		<section class="reading-grid-chirho" aria-label={readerTChirho('reading_grid_hebrew_chirho')}>
 			<div class="verse-panel-chirho">
-				<AudioVerseChirho {lessonChirho} {verseNavigationChirho} />
+				<AudioVerseChirho {lessonChirho} {verseNavigationChirho} {videoChirho} />
 				<SourceNotesChirho notesChirho={lessonChirho.source_notes_chirho} />
 				<VerseChirho {lessonChirho} {iconsChirho} />
 				<div class="verse-bottom-chirho">
@@ -199,7 +202,12 @@
 					</details>
 				</div>
 			</div>
-			<SceneChirho {presentationChirho} verseIdChirho={lessonChirho.id_chirho} />
+			<SceneChirho
+				{presentationChirho}
+				verseIdChirho={lessonChirho.id_chirho}
+				{videoChirho}
+				canonicalTextChirho={lessonChirho.canonical_text_chirho}
+			/>
 		</section>
 		<GrammarChirho
 			lessonNoteChirho={(presentationChirho?.representation_reduced_chirho

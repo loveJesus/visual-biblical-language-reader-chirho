@@ -10,6 +10,7 @@
 // build-chirho/public-chirho, the one directory the publish config deploys. Anything else is a
 // local review build in build-chirho/review-chirho. Exit 2: refused, nothing written.
 
+import { verifiedVideoFactsChirho } from './video_rules_chirho';
 import { spawnSync } from 'node:child_process';
 import { mkdir, readdir, readFile, realpath, rename, rm, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
@@ -241,6 +242,12 @@ export async function buildReleaseChirho(optionsChirho: BuildOptionsChirho): Pro
 		optionsChirho.allow_pending_media_chirho || Boolean(optionsChirho.preview_chirho),
 		reasonsChirho
 	);
+	const videoFactsChirho = await verifiedVideoFactsChirho(
+		rootChirho,
+		publicChirho,
+		reasonsChirho,
+		optionsChirho.allow_pending_media_chirho || Boolean(optionsChirho.preview_chirho)
+	);
 	const previewChirho = optionsChirho.preview_chirho;
 	const secretTextsChirho: string[] = [];
 	for (const pathChirho of previewChirho?.secret_paths_chirho ?? [
@@ -259,7 +266,13 @@ export async function buildReleaseChirho(optionsChirho: BuildOptionsChirho): Pro
 	);
 	const workerBuildChirho = join(buildRootChirho, `.artwork-worker-build-chirho-${process.pid}`);
 	const remoteDescriptionChirho = remoteChirho
-		? await buildArtworkWorkerChirho(rootChirho, workerBuildChirho, publicChirho, remoteChirho)
+		? await buildArtworkWorkerChirho(
+				rootChirho,
+				workerBuildChirho,
+				publicChirho,
+				remoteChirho,
+				videoFactsChirho
+			)
 		: null;
 	// The exact decoded/hash-checked audio enters the Worker allowlist before static retirement.
 	if (remoteDescriptionChirho?.audio_objects_chirho) {

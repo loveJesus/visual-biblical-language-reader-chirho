@@ -24,6 +24,7 @@ describe('static reader with bounded artwork Worker', () => {
 		expect(configChirho.assets.run_worker_first).toEqual([
 			'/assets-chirho/*',
 			'/audio-chirho/sha256-chirho/*',
+			'/video-chirho/*',
 			'/api-chirho/*'
 		]);
 		expect(configChirho.r2_buckets).toEqual([

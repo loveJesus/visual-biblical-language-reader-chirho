@@ -22,7 +22,7 @@
 	} from '$lib/bible-chirho/content-client-chirho';
 	import { openingPassageChirho } from './opening-passage-chirho';
 	import type { ChapterEntryChirho } from './corpus-client-chirho';
-	import { fetchChapterMediaChirho } from './media-client-chirho';
+	import { fetchChapterMediaChirho, videosByLessonChirho } from './media-client-chirho';
 	import { readerTChirho, type ReaderKeyChirho } from '$lib/i18n-chirho/reader-messages-chirho';
 	import { bookNameChirho } from '$lib/i18n-chirho/labels-chirho';
 	import { siteTChirho } from '$lib/site-chirho/site-content-chirho';
@@ -92,6 +92,7 @@
 	let curatedChirho = $derived(lessonChirho.id_chirho === 'Prov.26.1');
 	let workerScenesChirho = $state<Record<string, ScenePresentationChirho>>({});
 	let workerIconsChirho = $state<unknown>({ schema_version_chirho: 1, icons_chirho: [] });
+	let workerVideosChirho = $state<Record<string, unknown>>({});
 	let mediaReadyChirho = $state(false);
 	let mediaFetchedAtChirho = 0;
 	let mediaKeyChirho = '';
@@ -201,6 +202,7 @@
 			if (requestIdChirho !== mediaRequestChirho) return;
 			workerScenesChirho = scenesForChapterChirho;
 			workerIconsChirho = mediaChirho.chapterChirho;
+			workerVideosChirho = videosByLessonChirho(mediaChirho.chapterChirho);
 			mediaSceneCountChirho = Number(mediaChirho.summaryChirho.scene_count_chirho);
 			mediaLemmaCountChirho = Number(mediaChirho.summaryChirho.lemma_icon_count_chirho ?? 0);
 			mediaReadyChirho = true;
@@ -264,6 +266,7 @@
 		bookChirho = nextBookChirho;
 		workerScenesChirho = {};
 		workerIconsChirho = { schema_version_chirho: 1, icons_chirho: [] };
+		workerVideosChirho = {};
 		mediaReadyChirho = false;
 		chaptersChirho = [];
 		loadingChirho = true;
@@ -436,6 +439,7 @@
 			{verseNavigationChirho}
 			iconsChirho={iconsForLessonChirho(workerIconsChirho, greekLessonChirho)}
 			presentationChirho={workerScenesChirho[greekLessonChirho.id_chirho] ?? null}
+			videoChirho={workerVideosChirho[greekLessonChirho.id_chirho] ?? null}
 			{spanishChirho}
 		/>
 	{:else}<ReaderChirho
@@ -447,6 +451,7 @@
 				: (scenesChirho[lessonChirho.id_chirho] ??
 					workerScenesChirho[lessonChirho.id_chirho] ??
 					null)}
+			videoChirho={workerVideosChirho[lessonChirho.id_chirho] ?? null}
 			languagesChirho={curatedChirho ? initialLanguagesChirho : []}
 			iconsChirho={curatedChirho
 				? { ...contextualIconsChirho, ...initialIconsChirho }

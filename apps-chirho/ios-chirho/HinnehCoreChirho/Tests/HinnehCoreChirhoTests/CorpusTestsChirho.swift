@@ -24,6 +24,36 @@ private struct CorpusTransportChirho: TransportChirho {
 /// rewrites source files, or infers verse presence from a count rather than the edition's manifest.
 @Suite(.enabled(if: ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"] != nil))
 struct CorpusTestsChirho {
+    @Test func publishedVerseVideosMatchTheirSceneAndSelectedHumanReadingChirho() async throws {
+        let pathChirho = try #require(ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"])
+        let rootChirho = URL(fileURLWithPath: pathChirho, isDirectory: true)
+        let remoteChirho = RemoteChirho(transportChirho: CorpusTransportChirho(rootChirho: rootChirho))
+        let contentChirho = ContentClientChirho(remoteChirho: remoteChirho)
+        let mediaChirho = MediaClientChirho(remoteChirho: remoteChirho)
+        let audioChirho = AudioClientChirho(remoteChirho: remoteChirho)
+        let bookChirho = try #require(BookListChirho.bundledChirho().booksChirho.first { $0.idChirho == "Prov" })
+        var expectedChirho = 0
+        var checkedChirho = 0
+        for numberChirho in 1...bookChirho.chapterCountChirho {
+            guard let chapterMediaChirho = try await mediaChirho.chapterMediaChirho(bookChirho, numberChirho),
+                  let videosChirho = chapterMediaChirho.videosChirho, !videosChirho.isEmpty else { continue }
+            let chapterChirho = try await contentChirho.chapterChirho(bookChirho, numberChirho)
+            expectedChirho += videosChirho.count
+            for videoChirho in videosChirho {
+                let verseNumberChirho = try #require(Int(videoChirho.lessonIdChirho.split(separator: ".").last ?? ""))
+                let verseChirho = VerseDisplayChirho(try chapterChirho.lessonChirho(verseNumberChirho))
+                let selectedChirho = try await mediaChirho.verseMediaChirho(bookChirho, numberChirho, verseChirho)
+                let readingChirho = try await audioChirho.verseAudioChirho(chapterChirho, verseChirho, .modernAspiratesChirho)
+                let clipChirho = try #require(readingChirho.verseClipChirho)
+                #expect(selectedChirho.videoChirho?.sha256Chirho == videoChirho.sha256Chirho)
+                #expect(videoChirho.carriesChirho(clipChirho))
+                checkedChirho += 1
+            }
+        }
+        #expect(checkedChirho == expectedChirho && expectedChirho > 0)
+        print("iOS published video contract: \(checkedChirho)/\(expectedChirho) scene and human-reading selections")
+    }
+
     @Test func humanReadingsSelectFromTheirSeparateSourceBoundArrayChirho() async throws {
         let pathChirho = try #require(ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"])
         let rootChirho = URL(fileURLWithPath: pathChirho, isDirectory: true).standardizedFileURL

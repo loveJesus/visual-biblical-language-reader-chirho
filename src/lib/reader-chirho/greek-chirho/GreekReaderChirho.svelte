@@ -39,8 +39,11 @@
 		verseNavigationChirho,
 		presentationChirho = null,
 		iconsChirho = {},
-		spanishChirho = null
+		spanishChirho = null,
+		videoChirho = null
 	}: {
+		/** The chapter catalogue's record for this verse, unvalidated; the scene and player check it. */
+		videoChirho?: unknown;
 		introVisibleChirho?: boolean;
 		lessonChirho: GreekLessonChirho;
 		headerChirho: Snippet;
@@ -98,7 +101,7 @@
 		</div>
 		<section class="reading-grid-chirho" aria-label={readerTChirho('reading_grid_greek_chirho')}>
 			<div class="verse-panel-chirho">
-				<AudioVerseChirho {lessonChirho} {verseNavigationChirho} />
+				<AudioVerseChirho {lessonChirho} {verseNavigationChirho} {videoChirho} />
 				{#key lessonChirho.id_chirho}<GreekPassageChirho
 						{lessonChirho}
 						{iconsChirho}
@@ -108,7 +111,12 @@
 					<span class="small-note-chirho">{readerTChirho('read_ltr_chirho')}</span>
 				</div>
 			</div>
-			<SceneChirho {presentationChirho} verseIdChirho={lessonChirho.id_chirho} />
+			<SceneChirho
+				{presentationChirho}
+				verseIdChirho={lessonChirho.id_chirho}
+				{videoChirho}
+				canonicalTextChirho={lessonChirho.canonical_text_chirho}
+			/>
 		</section>
 
 		<GreekGrammarChirho />

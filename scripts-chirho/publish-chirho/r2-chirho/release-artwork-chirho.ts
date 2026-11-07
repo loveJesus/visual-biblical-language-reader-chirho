@@ -22,6 +22,7 @@ export interface RemoteReleaseChirho {
 	catalogue_sha256_chirho: string;
 	registry_sha256_chirho: string;
 	object_count_chirho: number;
+	video_objects_chirho?: { sha256_chirho: string; bytes_chirho: number; key_chirho: string }[];
 	audio_objects_chirho?: { sha256_chirho: string; bytes_chirho: number; key_chirho: string }[];
 	objects_chirho: { sha256_chirho: string; bytes_chirho: number; key_chirho: string }[];
 }
@@ -168,7 +169,8 @@ export async function buildArtworkWorkerChirho(
 	rootChirho: string,
 	outputChirho: string,
 	filesChirho: FilesChirho,
-	remoteChirho: Awaited<ReturnType<typeof remoteMediaChirho>>
+	remoteChirho: Awaited<ReturnType<typeof remoteMediaChirho>>,
+	videoFactsChirho: Record<string, number> = {}
 ): Promise<RemoteReleaseChirho> {
 	const configurationChirho = JSON.parse(
 		await readFileChirho(joinChirho(rootChirho, 'config-chirho/artifact-flags-chirho.json'), 'utf8')
@@ -199,6 +201,7 @@ export async function buildArtworkWorkerChirho(
 		schema_version_chirho: 1,
 		assets_chirho: remoteChirho.assets_chirho,
 		audio_chirho: audioChirho,
+		video_chirho: videoFactsChirho,
 		verses_chirho: versesChirho,
 		hostname_chirho: configurationChirho.hostname_chirho,
 		hostnames_chirho: SITE_HOSTNAMES_CHIRHO,
@@ -243,6 +246,13 @@ export async function buildArtworkWorkerChirho(
 		catalogue_sha256_chirho: sha256Chirho(textChirho),
 		registry_sha256_chirho: remoteChirho.registry_sha256_chirho,
 		object_count_chirho: objectsChirho.length,
+		video_objects_chirho: Object.entries(videoFactsChirho)
+			.sort(([leftChirho], [rightChirho]) => leftChirho.localeCompare(rightChirho))
+			.map(([shaChirho, bytesChirho]) => ({
+				sha256_chirho: shaChirho,
+				bytes_chirho: bytesChirho,
+				key_chirho: `video-chirho/sha256-chirho/${shaChirho}.mp4`
+			})),
 		audio_objects_chirho: Object.entries(audioChirho)
 			.map(([shaChirho, bytesChirho]) => ({
 				sha256_chirho: shaChirho,

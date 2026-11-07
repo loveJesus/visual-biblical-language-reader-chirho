@@ -4,6 +4,8 @@ import { bytesChirho, parseChirho } from './corpus-client-chirho';
 
 import { bibleBookChirho } from '$lib/bible-chirho/books-chirho';
 type BookChirho = string;
+/** At most one video per verse; the longest chapter (Psalm 119) has 176 verses. */
+const VIDEOS_PER_CHAPTER_CHIRHO = 200;
 type EntryChirho = {
 	number_chirho: number;
 	path_chirho: string;
@@ -100,6 +102,7 @@ export async function fetchChapterMediaChirho(bookChirho: BookChirho, chapterChi
 			scenes_chirho?: unknown;
 			icons_chirho?: unknown;
 			lemma_icons_chirho?: unknown;
+			videos_chirho?: unknown;
 		};
 		if (
 			dataChirho?.schema_version_chirho !== 1 ||
@@ -112,12 +115,19 @@ export async function fetchChapterMediaChirho(bookChirho: BookChirho, chapterChi
 			(dataChirho.lemma_icons_chirho !== undefined &&
 				!Array.isArray(dataChirho.lemma_icons_chirho)) ||
 			((dataChirho.lemma_icons_chirho as unknown[] | undefined)?.length ?? 0) !==
-				(entryChirho.lemma_icon_count_chirho ?? 0)
+				(entryChirho.lemma_icon_count_chirho ?? 0) ||
+			(dataChirho.videos_chirho !== undefined &&
+				(!Array.isArray(dataChirho.videos_chirho) ||
+					dataChirho.videos_chirho.length > VIDEOS_PER_CHAPTER_CHIRHO))
 		)
 			throw new Error('Invalid media chapter.');
 		const prefixChirho = `${bookChirho}.${chapterChirho}.`;
 		if (
-			[...dataChirho.scenes_chirho, ...dataChirho.icons_chirho].some(
+			[
+				...dataChirho.scenes_chirho,
+				...dataChirho.icons_chirho,
+				...((dataChirho.videos_chirho as unknown[] | undefined) ?? [])
+			].some(
 				(recordChirho) =>
 					!recordChirho ||
 					typeof recordChirho !== 'object' ||
@@ -129,4 +139,25 @@ export async function fetchChapterMediaChirho(bookChirho: BookChirho, chapterChi
 		return { summaryChirho, chapterChirho: dataChirho };
 	}
 	throw new Error('Media is unavailable.');
+}
+
+/**
+ * Workflow: verse-media-chirho.md. A chapter's optional verse videos, by verse. A verse listed twice gets
+ * none, so an ambiguous catalogue never chooses between visuals. Each record is still checked against the
+ * displayed scene and the canonical verse before it is shown.
+ */
+export function videosByLessonChirho(chapterChirho: unknown): Record<string, unknown> {
+	const recordsChirho = (chapterChirho as { videos_chirho?: unknown } | null)?.videos_chirho;
+	if (!Array.isArray(recordsChirho)) return {};
+	const countsChirho = new Map<string, number>();
+	for (const recordChirho of recordsChirho)
+		countsChirho.set(
+			recordChirho.lesson_id_chirho,
+			(countsChirho.get(recordChirho.lesson_id_chirho) ?? 0) + 1
+		);
+	return Object.fromEntries(
+		recordsChirho
+			.filter((recordChirho) => countsChirho.get(recordChirho.lesson_id_chirho) === 1)
+			.map((recordChirho) => [recordChirho.lesson_id_chirho, recordChirho])
+	);
 }

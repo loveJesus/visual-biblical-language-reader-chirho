@@ -27,6 +27,44 @@ const hexChirho = async (bytesChirho: Uint8Array<ArrayBuffer>) =>
 const encodeChirho = (valueChirho: unknown) =>
 	new TextEncoder().encode(JSON.stringify(valueChirho));
 
+const sourceChirho = {
+	kind_chirho: 'human',
+	reader_id_chirho: 'rdb-chirho',
+	gbt_id_chirho: 'OT/RDB/Pro',
+	package_sha256_chirho: 'a'.repeat(64),
+	chapter_sha256_chirho: 'b'.repeat(64),
+	timings_sha256_chirho: 'c'.repeat(64),
+	start_chirho: 0,
+	end_chirho: 4.95,
+	chapter_duration_chirho: 219.996,
+	attribution_chirho: BEERI_ATTRIBUTION_CHIRHO,
+	license_chirho: 'CC BY-SA 3.0',
+	license_url_chirho: BEERI_LICENSE_URL_CHIRHO
+};
+// A verse video whose sound was cut from the given window of the same chapter recording.
+async function videoForChirho(endChirho = 4.95) {
+	const shaChirho = '9'.repeat(64);
+	return {
+		lesson_id_chirho: 'Prov.1.1',
+		asset_path_chirho: `/video-chirho/sha256-chirho/${shaChirho}-chirho.mp4`,
+		sha256_chirho: shaChirho,
+		bytes_chirho: 1_500_000,
+		duration_chirho: endChirho,
+		width_chirho: 1108,
+		height_chirho: 832,
+		scene_sha256_chirho: 'e'.repeat(64),
+		canonical_sha256_chirho: await hexChirho(
+			new TextEncoder().encode(lessonForChirho(1).canonical_text_chirho)
+		),
+		reading_language_chirho: 'he',
+		embedded_reading_chirho: { ...sourceChirho, end_chirho: endChirho },
+		attribution_chirho: BEERI_ATTRIBUTION_CHIRHO,
+		license_chirho: 'CC BY-SA 3.0',
+		license_url_chirho: BEERI_LICENSE_URL_CHIRHO,
+		review_chirho: 'pending'
+	};
+}
+
 async function clipChirho(
 	chapterChirho: number,
 	digitChirho: string,
@@ -55,20 +93,7 @@ beforeAllChirho(async () => {
 	const humanChirho = await clipChirho(1, '2', {
 		voice_name_chirho: "Rabbi Dan Be'eri",
 		duration_chirho: 4.95,
-		reading_source_chirho: {
-			kind_chirho: 'human',
-			reader_id_chirho: 'rdb-chirho',
-			gbt_id_chirho: 'OT/RDB/Pro',
-			package_sha256_chirho: 'a'.repeat(64),
-			chapter_sha256_chirho: 'b'.repeat(64),
-			timings_sha256_chirho: 'c'.repeat(64),
-			start_chirho: 0,
-			end_chirho: 4.95,
-			chapter_duration_chirho: 219.996,
-			attribution_chirho: BEERI_ATTRIBUTION_CHIRHO,
-			license_chirho: 'CC BY-SA 3.0',
-			license_url_chirho: BEERI_LICENSE_URL_CHIRHO
-		}
+		reading_source_chirho: sourceChirho
 	});
 	const synthesizedChirho = await clipChirho(2, '1', {
 		voice_name_chirho: 'Itamar',
@@ -145,3 +170,29 @@ testChirho('a verse with only a synthesized reading shows no human credit', asyn
 	await viChirho.waitFor(() => expectChirho(JSON.parse(controlsChirho()!)).toHaveLength(1));
 	expectChirho(document.querySelectorAll('[data-reading-credit-chirho]')).toHaveLength(0);
 });
+
+testChirho(
+	"the player learns of a verse video only when the video's sound is exactly this human reading",
+	async () => {
+		for (const [endChirho, expectedChirho] of [
+			[4.95, { video: '9'.repeat(64), clip: '2'.repeat(64) }],
+			[6.0, { video: undefined, clip: undefined }]
+		] as const) {
+			const { container: containerChirho, unmount: unmountChirho } = renderChirho(
+				AudioVerseChirho,
+				{ lessonChirho: lessonForChirho(1), videoChirho: await videoForChirho(endChirho) }
+			);
+			await viChirho.waitFor(() =>
+				expectChirho(containerChirho.querySelector('[data-reading-credit-chirho]')).not.toBeNull()
+			);
+			const controlsChirho = containerChirho.querySelector<HTMLElement>(
+				'[data-audio-controls-chirho]'
+			)!;
+			expectChirho({
+				video: controlsChirho.dataset.verseVideoShaChirho,
+				clip: controlsChirho.dataset.verseVideoClipShaChirho
+			}).toEqual(expectedChirho);
+			unmountChirho();
+		}
+	}
+);

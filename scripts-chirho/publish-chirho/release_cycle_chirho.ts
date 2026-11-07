@@ -37,6 +37,7 @@ import {
 } from './preview_snapshot_chirho';
 import { probeReleaseChirho } from './probe_release_chirho';
 import { KEY_PREFIX_CHIRHO } from './r2_media_sync_chirho';
+import { overlayVerseVideosChirho } from './video_rules_chirho';
 import { audioReceiptsChirho } from '../audio-chirho/r2_recordings_chirho';
 import {
 	DELIVERY_FOLDER_CHIRHO,
@@ -319,6 +320,7 @@ export async function runCycleChirho(
 		force: true
 	});
 	refreshSnapshotShardsChirho(snapshotChirho.directory_chirho);
+	await overlayVerseVideosChirho(snapshotChirho.directory_chirho);
 	const buildChirho = runChirho('bun', ['run', 'build'], snapshotChirho.directory_chirho);
 	if (buildChirho.status_chirho !== 0)
 		throw new RefusalChirho([

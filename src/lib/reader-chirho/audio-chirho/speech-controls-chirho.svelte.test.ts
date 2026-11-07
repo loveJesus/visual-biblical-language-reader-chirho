@@ -340,3 +340,129 @@ testChirho(
 		expectChirho(buttonChirho.disabled).toBe(true);
 	}
 );
+
+// Workflow: verse-media-chirho.md. A same-reading verse video is the shared player's clock.
+async function setupVideoChirho(matchChirho = true) {
+	const parts = await setupVerseChirho(true);
+	const { buttonChirho, hostChirho, rootChirho } = parts;
+	const wrapChirho = document.createElement('span');
+	wrapChirho.className = 'verse-play-chirho';
+	rootChirho.insertBefore(wrapChirho, buttonChirho);
+	wrapChirho.appendChild(buttonChirho);
+	const statusChirho = document.createElement('p');
+	statusChirho.dataset.audioStatusChirho = '';
+	const figureChirho = document.createElement('figure');
+	figureChirho.innerHTML =
+		'<img data-scene-chirho alt=""><video data-scene-video-chirho data-verse-video-play-chirho data-video-sha-chirho="' +
+		'v'.repeat(64) +
+		'" hidden></video><button data-verse-video-play-chirho>Play verse video</button>';
+	rootChirho.appendChild(statusChirho);
+	rootChirho.appendChild(figureChirho);
+	const videoChirho = figureChirho.querySelector('video')!;
+	const playedChirho = viChirho.fn(() => {
+		Object.defineProperty(videoChirho, 'paused', { configurable: true, value: false });
+		return Promise.resolve();
+	});
+	videoChirho.play = playedChirho;
+	videoChirho.pause = () =>
+		Object.defineProperty(videoChirho, 'paused', { configurable: true, value: true });
+	hostChirho.setAttribute('data-speech-messages-chirho', JSON.stringify(AUDIO_MESSAGES_CHIRHO.en));
+	const clipsChirho = JSON.parse(hostChirho.getAttribute('data-speech-recordings-chirho')!);
+	clipsChirho.push({
+		text_chirho: 'first second',
+		token_id_chirho: null,
+		language_chirho: 'he',
+		asset_path_chirho: '/audio-chirho/sha256-chirho/' + '4'.repeat(64) + '-chirho.mp3',
+		sha256_chirho: '4'.repeat(64),
+		voice_name_chirho: "Rabbi Dan Be'eri",
+		bytes_chirho: 100,
+		reading_source_chirho: { kind_chirho: 'human' }
+	});
+	hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+	hostChirho.setAttribute('data-verse-video-sha-chirho', 'v'.repeat(64));
+	hostChirho.setAttribute('data-verse-video-clip-sha-chirho', (matchChirho ? '4' : '5').repeat(64));
+	await viChirho.advanceTimersByTimeAsync(0);
+	const stillChirho = figureChirho.querySelector('img')!;
+	const captionChirho = figureChirho.querySelector('button')!;
+	return { ...parts, statusChirho, videoChirho, playedChirho, stillChirho, captionChirho };
+}
+
+testChirho(
+	"a same-reading verse video plays unmuted in the still's place, and Stop restores the still",
+	async () => {
+		const { buttonChirho, rootChirho, statusChirho, videoChirho, playedChirho, stillChirho } =
+			await setupVideoChirho();
+		expectChirho(videoChirho.hidden).toBe(true);
+		buttonChirho.click();
+		expectChirho(playedChirho).toHaveBeenCalledTimes(1);
+		expectChirho(ControlledAudioChirho.instancesChirho).toHaveLength(0);
+		expectChirho([videoChirho.hidden, stillChirho.hidden, videoChirho.muted]).toEqual([
+			false,
+			true,
+			false
+		]);
+		expectChirho(statusChirho.textContent).toBe(
+			"Playing the verse video with the reading by Rabbi Dan Be'eri."
+		);
+		expectChirho(buttonChirho.getAttribute('aria-busy')).toBe('true');
+		rootChirho.querySelector<HTMLButtonElement>('[data-speech-stop-chirho]')!.click();
+		expectChirho([videoChirho.hidden, stillChirho.hidden, videoChirho.paused]).toEqual([
+			true,
+			false,
+			true
+		]);
+		expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
+	}
+);
+
+testChirho(
+	'the caption control starts the video; a word speaker or navigation stops it',
+	async () => {
+		const { buttonChirho, hostChirho, videoChirho, stillChirho, captionChirho, wordButtonsChirho } =
+			await setupVideoChirho();
+		captionChirho.click();
+		expectChirho(videoChirho.hidden).toBe(false);
+		expectChirho(buttonChirho.getAttribute('aria-busy')).toBe('true');
+		wordButtonsChirho[0].click();
+		expectChirho([videoChirho.hidden, stillChirho.hidden, videoChirho.paused]).toEqual([
+			true,
+			false,
+			true
+		]);
+		expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.paused).toBe(false);
+		captionChirho.click();
+		expectChirho(videoChirho.hidden).toBe(false);
+		hostChirho.setAttribute('data-speech-pending-chirho', 'true');
+		await viChirho.advanceTimersByTimeAsync(0);
+		expectChirho([videoChirho.hidden, videoChirho.paused]).toEqual([true, true]);
+		expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
+	}
+);
+
+testChirho(
+	'a failed video is not retried, its late events cannot stop the next reading, which plays over the still',
+	async () => {
+		const { buttonChirho, statusChirho, videoChirho, stillChirho } = await setupVideoChirho();
+		buttonChirho.click();
+		const lateEndedChirho = videoChirho.onended;
+		videoChirho.onerror?.(new Event('error'));
+		expectChirho(statusChirho.textContent).toBe(
+			'The video could not be played. Press Play again to hear the reading.'
+		);
+		expectChirho([videoChirho.hidden, stillChirho.hidden]).toEqual([true, false]);
+		buttonChirho.click();
+		const readingChirho = ControlledAudioChirho.instancesChirho.at(-1)!;
+		expectChirho(readingChirho.src).toContain('4'.repeat(64));
+		lateEndedChirho?.call(videoChirho, new Event('ended'));
+		expectChirho(readingChirho.paused).toBe(false);
+		expectChirho(buttonChirho.getAttribute('aria-busy')).toBe('true');
+	}
+);
+
+testChirho('without a same-reading match, the reading plays over the still', async () => {
+	const { buttonChirho, videoChirho, playedChirho } = await setupVideoChirho(false);
+	buttonChirho.click();
+	expectChirho(playedChirho).not.toHaveBeenCalled();
+	expectChirho(videoChirho.hidden).toBe(true);
+	expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.src).toContain('4'.repeat(64));
+});

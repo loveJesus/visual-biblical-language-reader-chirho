@@ -9,7 +9,12 @@
 		"html_handling": "auto-trailing-slash",
 		"not_found_handling": "404-page",
 		"binding": "ASSETS_CHIRHO",
-		"run_worker_first": ["/assets-chirho/*", "/audio-chirho/sha256-chirho/*", "/api-chirho/*"]
+		"run_worker_first": [
+			"/assets-chirho/*",
+			"/audio-chirho/sha256-chirho/*",
+			"/video-chirho/*",
+			"/api-chirho/*"
+		]
 	},
 	"routes": [
 		{
