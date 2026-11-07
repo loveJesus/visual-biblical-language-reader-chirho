@@ -84,8 +84,11 @@ export async function verifyProfileWordSourcesChirho(
 				profileChirho.content_sha256_chirho !== occurrenceChirho.content_sha256_chirho
 			)
 				throw Error('Profile exact chapter binding differs');
-			const evidenceChirho = profileChirho.stress_evidence_chirho;
-			if (evidenceChirho) {
+			for (const evidenceChirho of [
+				profileChirho.stress_evidence_chirho,
+				profileChirho.tail_stress_evidence_chirho
+			]) {
+				if (!evidenceChirho) continue;
 				if (!isBibleChapterPathChirho(evidenceChirho.content_path_chirho, '/content-chirho/'))
 					throw Error('Profile stress evidence path refused');
 				const bytesChirho = await readMaqqefFileChirho(

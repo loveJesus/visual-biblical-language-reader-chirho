@@ -1,6 +1,8 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 // Workflow: reusable-word-audio-chirho.md. Finite exact-source profiles, never a general stress fallback.
 import dataChirho from './profile-readings-chirho/profiles-chirho.json';
+import continuationChirho from './profile-readings-chirho/continuation-01-chirho.json';
+import { hebrewAnalysisWordsChirho } from './source-analysis-chirho';
 import {
 	readingMatchesChirho,
 	sourceSpokenWordChirho,
@@ -52,7 +54,13 @@ export interface ProfileReadingChirho {
 	text_chirho: string;
 	spoken_text_chirho: string;
 	profile_kind_chirho:
-		'divine_maqqef_chirho' | 'qere_maqqef_chirho' | 'exact_stress_parallel_chirho';
+		| 'divine_maqqef_chirho'
+		| 'qere_maqqef_chirho'
+		| 'exact_stress_parallel_chirho'
+		| 'checked_tail_maqqef_chirho'
+		| 'yetiv_initial_chirho'
+		| 'doubled_telisha_qetanah_chirho'
+		| 'doubled_telisha_gedolah_chirho';
 	content_path_chirho: string;
 	content_sha256_chirho: string;
 	canonical_text_chirho: string;
@@ -66,6 +74,7 @@ export interface ProfileReadingChirho {
 	checked_tail_ipa_chirho: string | null;
 	stress_index_chirho: number | null;
 	stress_evidence_chirho: StressEvidenceChirho | null;
+	tail_stress_evidence_chirho?: StressEvidenceChirho;
 }
 export interface ProfileOccurrenceChirho {
 	token_id_chirho: string;
@@ -89,15 +98,42 @@ function freezeChirho(valueChirho: object): void {
 		if (childChirho && typeof childChirho === 'object') freezeChirho(childChirho);
 	Object.freeze(valueChirho);
 }
+interface ContinuationProfileChirho extends ProfileReadingChirho {
+	stress_evidence_id_chirho: string | null;
+	tail_stress_evidence_id_chirho: string | null;
+}
+const evidenceChirho = new Map(
+	continuationChirho.stress_evidence_chirho.map(({ id_chirho: idChirho, ...evidenceChirho }) => [
+		idChirho,
+		evidenceChirho as StressEvidenceChirho
+	])
+);
+const nextProfilesChirho = (continuationChirho.profiles_chirho as ContinuationProfileChirho[]).map(
+	({
+		stress_evidence_id_chirho: stressIdChirho,
+		tail_stress_evidence_id_chirho: tailIdChirho,
+		...profileChirho
+	}) => ({
+		...profileChirho,
+		stress_evidence_chirho: stressIdChirho ? (evidenceChirho.get(stressIdChirho) ?? null) : null,
+		...(tailIdChirho ? { tail_stress_evidence_chirho: evidenceChirho.get(tailIdChirho) } : {})
+	})
+);
 const profilesChirho = new Map<string, ProfileReadingChirho>();
-for (const profileChirho of dataChirho.profiles_chirho as ProfileReadingChirho[]) {
+for (const profileChirho of [
+	...(dataChirho.profiles_chirho as ProfileReadingChirho[]),
+	...nextProfilesChirho
+]) {
 	if (profilesChirho.has(profileChirho.token_id_chirho))
 		throw Error('Duplicate finite profile token');
 	freezeChirho(profileChirho);
 	profilesChirho.set(profileChirho.token_id_chirho, profileChirho);
 }
 // Independent token inventory retains fail-closed detection when an individual profile is absent.
-const tokenIdsChirho = new Set<string>(dataChirho.token_ids_chirho);
+const tokenIdsChirho = new Set<string>([
+	...dataChirho.token_ids_chirho,
+	...continuationChirho.token_ids_chirho
+]);
 export function hasProfileReadingChirho(tokenIdChirho: string): boolean {
 	return tokenIdsChirho.has(tokenIdChirho);
 }
@@ -182,19 +218,16 @@ function syllableIdentityChirho(wordsChirho: AnalysisWordsChirho): string {
 		)
 	);
 }
-function checkStressChirho(
-	profileChirho: ProfileReadingChirho,
-	verseChirho: ProfileVerseChirho,
+function checkedEvidenceChirho(
+	evidenceChirho: StressEvidenceChirho | undefined | null,
 	tokenChirho: ProfileTokenChirho
-): boolean {
-	const evidenceChirho = profileChirho.stress_evidence_chirho;
+) {
 	if (
 		!evidenceChirho ||
-		profileChirho.stress_index_chirho !== evidenceChirho.stress_index_chirho ||
 		JSON.stringify(readingIdentityChirho(tokenChirho)) !==
 			JSON.stringify(readingIdentityChirho(evidenceChirho.source_token_chirho))
 	)
-		return false;
+		return null;
 	const evidenceTokenChirho = evidenceChirho.source_token_chirho;
 	if (
 		evidenceTokenChirho.id_chirho !== evidenceChirho.token_id_chirho ||
@@ -203,35 +236,82 @@ function checkStressChirho(
 			evidenceTokenChirho.end_chirho
 		) !== evidenceTokenChirho.text_chirho
 	)
-		return false;
-	const evidenceSuffixChirho = evidenceChirho.canonical_text_chirho.slice(
-		evidenceTokenChirho.end_chirho
-	);
-	const evidenceTextChirho =
+		return null;
+	const suffixChirho = evidenceChirho.canonical_text_chirho.slice(evidenceTokenChirho.end_chirho);
+	const sourceChirho =
 		sourceSpokenWordChirho(evidenceTokenChirho) +
-		(evidenceSuffixChirho.includes('׃') && !/[\u05d0-\u05ea]/u.test(evidenceSuffixChirho)
-			? '׃'
-			: '');
-	if (evidenceTextChirho !== evidenceChirho.analysis_text_chirho) return false;
-	const checkedChirho = wordPhoneticsChirho(evidenceTextChirho);
-	const indexChirho = checkedChirho.words_chirho[0].syllables_chirho.findIndex(
-		(syllableChirho) => syllableChirho.stressed_chirho
-	);
+		(suffixChirho.includes('׃') && !/[\u05d0-\u05ea]/u.test(suffixChirho) ? '׃' : '');
+	if (sourceChirho !== evidenceChirho.analysis_text_chirho) return null;
+	const parsedChirho = wordPhoneticsChirho(sourceChirho),
+		indexChirho = parsedChirho.words_chirho[0].syllables_chirho.findIndex(
+			(syllableChirho) => syllableChirho.stressed_chirho
+		);
+	return indexChirho === evidenceChirho.stress_index_chirho &&
+		parsedChirho.ipa_chirho === evidenceChirho.ipa_chirho &&
+		sameWordsChirho(parsedChirho.words_chirho, evidenceChirho.analysis_words_chirho)
+		? { parsed_chirho: parsedChirho, index_chirho: indexChirho }
+		: null;
+}
+function checkStressChirho(
+	profileChirho: ProfileReadingChirho,
+	verseChirho: ProfileVerseChirho,
+	tokenChirho: ProfileTokenChirho
+): boolean {
+	const evidenceChirho = checkedEvidenceChirho(profileChirho.stress_evidence_chirho, tokenChirho);
 	const inputChirho = sourceSpokenWordChirho(tokenChirho) + finalChirho(verseChirho, tokenChirho);
 	if (
+		!evidenceChirho ||
+		profileChirho.stress_index_chirho !== evidenceChirho.index_chirho ||
+		inputChirho !== profileChirho.analysis_text_chirho
+	)
+		return false;
+	const parsedChirho = wordPhoneticsChirho(inputChirho, evidenceChirho.index_chirho);
+	return (
+		parsedChirho.ipa_chirho === profileChirho.ipa_chirho &&
+		parsedChirho.ipa_chirho === evidenceChirho.parsed_chirho.ipa_chirho &&
+		sameWordsChirho(parsedChirho.words_chirho, profileChirho.analysis_words_chirho) &&
+		syllableIdentityChirho(parsedChirho.words_chirho) ===
+			syllableIdentityChirho(evidenceChirho.parsed_chirho.words_chirho)
+	);
+}
+/** Unicode L2/25-242 pp.4–6,13: only these finite marked readings; §9J's silent-shewa exceptions are not inferred. */
+function checkAccentChirho(
+	profileChirho: ProfileReadingChirho,
+	verseChirho: ProfileVerseChirho,
+	tokenChirho: ProfileTokenChirho
+): boolean {
+	const inputChirho = sourceSpokenWordChirho(tokenChirho) + finalChirho(verseChirho, tokenChirho),
+		accentsChirho = (inputChirho.match(/[\u0591-\u05af]/gu) ?? []).join('');
+	if (inputChirho !== profileChirho.analysis_text_chirho) return false;
+	const wordsChirho = hebrewAnalysisWordsChirho(inputChirho.replace(/[־׀]/gu, ''));
+	if (wordsChirho.length !== 1) return false;
+	let indexChirho = -1;
+	if (profileChirho.profile_kind_chirho === 'yetiv_initial_chirho' && accentsChirho === '\u059a')
+		indexChirho = 0;
+	else if (
+		profileChirho.profile_kind_chirho === 'doubled_telisha_qetanah_chirho' &&
+		accentsChirho === '\u05a9\u05a9'
+	)
+		indexChirho = wordsChirho[0].syllables.findIndex((syllableChirho) =>
+			syllableChirho.text.includes('\u05a9')
+		);
+	else if (
+		profileChirho.profile_kind_chirho === 'doubled_telisha_gedolah_chirho' &&
+		accentsChirho === '\u05a0\u05a0'
+	)
+		indexChirho = wordsChirho[0].syllables.findLastIndex((syllableChirho) =>
+			syllableChirho.text.includes('\u05a0')
+		);
+	if (
+		indexChirho < 0 ||
 		indexChirho !== profileChirho.stress_index_chirho ||
-		inputChirho !== profileChirho.analysis_text_chirho ||
-		checkedChirho.ipa_chirho !== evidenceChirho.ipa_chirho ||
-		!sameWordsChirho(checkedChirho.words_chirho, evidenceChirho.analysis_words_chirho)
+		wordsChirho[0].syllables[indexChirho].vowelNames.includes('SHEVA')
 	)
 		return false;
 	const parsedChirho = wordPhoneticsChirho(inputChirho, indexChirho);
 	return (
 		parsedChirho.ipa_chirho === profileChirho.ipa_chirho &&
-		parsedChirho.ipa_chirho === checkedChirho.ipa_chirho &&
-		sameWordsChirho(parsedChirho.words_chirho, profileChirho.analysis_words_chirho) &&
-		syllableIdentityChirho(parsedChirho.words_chirho) ===
-			syllableIdentityChirho(checkedChirho.words_chirho)
+		sameWordsChirho(parsedChirho.words_chirho, profileChirho.analysis_words_chirho)
 	);
 }
 function checkGroupChirho(
@@ -276,7 +356,11 @@ function checkGroupChirho(
 				return false;
 			if (policyChirho) divineMembersChirho++;
 		} else if (
-			profileChirho.profile_kind_chirho !== 'qere_maqqef_chirho' ||
+			!['qere_maqqef_chirho', 'checked_tail_maqqef_chirho'].includes(
+				profileChirho.profile_kind_chirho
+			) ||
+			(profileChirho.profile_kind_chirho === 'checked_tail_maqqef_chirho' &&
+				Boolean(actualChirho.qere_chirho?.length)) ||
 			policyChirho ||
 			(actualChirho.written_reading_chirho === 'ketiv' && !actualChirho.qere_chirho?.length)
 		)
@@ -295,10 +379,24 @@ function checkGroupChirho(
 	const analysisChirho = textsChirho.join('־') + finalChirho(verseChirho, tailChirho);
 	if (analysisChirho !== profileChirho.analysis_text_chirho) return false;
 	const parsedChirho = hebrewPhoneticsChirho(analysisChirho),
-		headChirho = parsedChirho.words_chirho[0],
-		checkedTailChirho = wordPhoneticsChirho(
-			textsChirho.at(-1)! + finalChirho(verseChirho, tailChirho)
-		);
+		headChirho = parsedChirho.words_chirho[0];
+	const tailEvidenceChirho =
+		profileChirho.profile_kind_chirho === 'checked_tail_maqqef_chirho'
+			? checkedEvidenceChirho(profileChirho.tail_stress_evidence_chirho, tailChirho)
+			: null;
+	if (profileChirho.profile_kind_chirho === 'checked_tail_maqqef_chirho' && !tailEvidenceChirho)
+		return false;
+	const checkedTailChirho = wordPhoneticsChirho(
+		textsChirho.at(-1)! + finalChirho(verseChirho, tailChirho),
+		tailEvidenceChirho?.index_chirho
+	);
+	if (
+		tailEvidenceChirho &&
+		(checkedTailChirho.ipa_chirho !== tailEvidenceChirho.parsed_chirho.ipa_chirho ||
+			syllableIdentityChirho(checkedTailChirho.words_chirho) !==
+				syllableIdentityChirho(tailEvidenceChirho.parsed_chirho.words_chirho))
+	)
+		return false;
 	return (
 		parsedChirho.words_chirho.length === membersChirho.length &&
 		headChirho.maqqef_linked_chirho &&
@@ -338,7 +436,13 @@ export function profileReadingChirho(
 		return (
 			profileChirho.profile_kind_chirho === 'exact_stress_parallel_chirho'
 				? checkStressChirho(profileChirho, verseChirho, tokenChirho)
-				: checkGroupChirho(profileChirho, verseChirho, tokenChirho)
+				: [
+							'yetiv_initial_chirho',
+							'doubled_telisha_qetanah_chirho',
+							'doubled_telisha_gedolah_chirho'
+					  ].includes(profileChirho.profile_kind_chirho)
+					? checkAccentChirho(profileChirho, verseChirho, tokenChirho)
+					: checkGroupChirho(profileChirho, verseChirho, tokenChirho)
 		)
 			? profileChirho
 			: null;

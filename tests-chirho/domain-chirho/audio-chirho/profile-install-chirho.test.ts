@@ -11,6 +11,8 @@ import {
 import { join as joinChirho, dirname as dirnameChirho } from 'node:path';
 import { tmpdir as tmpdirChirho } from 'node:os';
 import dataChirho from '../../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho/profiles-chirho.json';
+import continuationChirho from '../../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho/continuation-01-chirho.json';
+import { profileReadingChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho';
 import type { ProfileReadingChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho';
 import type { LessonChirho } from '../../../src/lib/domain-chirho/lesson-chirho';
 import { verifyWordSourcesChirho } from '../../../scripts-chirho/audio-chirho/production-chirho/run_words_chirho';
@@ -114,6 +116,48 @@ itChirho(
 		await expectChirho(verifyWordSourcesChirho(process.cwd(), [wrongChirho])).rejects.toThrow(
 			/source|profile/i
 		);
+	}
+);
+itChirho(
+	'rereads independent checked-tail evidence before producer or installer work',
+	async () => {
+		const rawChirho = continuationChirho.profiles_chirho.find(
+			(rowChirho) => rowChirho.profile_kind_chirho === 'checked_tail_maqqef_chirho'
+		)!;
+		const bytesChirho = await readFileChirho('static' + rawChirho.content_path_chirho);
+		const chapterChirho = JSON.parse(bytesChirho.toString()) as { verses_chirho: LessonChirho[] };
+		const verseChirho = chapterChirho.verses_chirho.find(
+			(rowChirho) => rowChirho.id_chirho === rawChirho.lesson_id_chirho
+		)!;
+		const profileChirho = profileReadingChirho(verseChirho, rawChirho.token_id_chirho)!;
+		const evidenceChirho = profileChirho.tail_stress_evidence_chirho!;
+		expectChirho(evidenceChirho.content_path_chirho).not.toBe(profileChirho.content_path_chirho);
+		const rootChirho = await mkdtempChirho(
+			joinChirho(tmpdirChirho(), 'profile-tail-evidence-chirho-')
+		);
+		rootsChirho.push(rootChirho);
+		for (const pathChirho of [
+			profileChirho.content_path_chirho,
+			evidenceChirho.content_path_chirho
+		]) {
+			const fullChirho = joinChirho(rootChirho, 'static', pathChirho);
+			await mkdirChirho(dirnameChirho(fullChirho), { recursive: true });
+			await writeFileChirho(fullChirho, await readFileChirho('static' + pathChirho));
+		}
+		await verifyWordSourcesChirho(rootChirho, [wordChirho(profileChirho)]);
+		const evidencePathChirho = joinChirho(rootChirho, 'static', evidenceChirho.content_path_chirho);
+		const changedChirho = JSON.parse(await readFileChirho(evidencePathChirho, 'utf8')) as {
+			verses_chirho: LessonChirho[];
+		};
+		changedChirho.verses_chirho
+			.find((rowChirho) => rowChirho.id_chirho === evidenceChirho.lesson_id_chirho)!
+			.tokens_chirho.find(
+				(rowChirho) => rowChirho.id_chirho === evidenceChirho.token_id_chirho
+			)!.lemma_id_chirho = 'H1';
+		await writeFileChirho(evidencePathChirho, JSON.stringify(changedChirho));
+		await expectChirho(
+			verifyWordSourcesChirho(rootChirho, [wordChirho(profileChirho)])
+		).rejects.toThrow(/evidence chapter changed/i);
 	}
 );
 itChirho('refuses a deleted profile before any installer output or remote call', async () => {

@@ -2611,6 +2611,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/2-timothy-chirho/chapter-002-chirho/2tim-002-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/5f368b8bd6b6bd2de5e45c1d4e056e509fe1da104e0854fb70b5449612961919.webp",
+        "sha256_chirho": "5f368b8bd6b6bd2de5e45c1d4e056e509fe1da104e0854fb70b5449612961919",
+        "bytes_chirho": 2583150,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T07:53:47.987Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/85b90a368892abf50aa70e6777942816752c01415de5019fb6356266cc9f8908.webp",
+        "sha256_chirho": "85b90a368892abf50aa70e6777942816752c01415de5019fb6356266cc9f8908",
+        "bytes_chirho": 245666,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T07:53:49.048Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/matthew-chirho/chapter-005-chirho/matt-005-001-chirho.webp"
       ],
       "source_chirho": {
@@ -3011,6 +3045,40 @@
         "height_chirho": 900,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-01T19:01:01.537Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/2-thessalonians-chirho/chapter-003-chirho/2thess-003-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/5f59869f49051b2dcf6c89ffe45e1be2dd3209cacbabc1898ba5178bc0719368.webp",
+        "sha256_chirho": "5f59869f49051b2dcf6c89ffe45e1be2dd3209cacbabc1898ba5178bc0719368",
+        "bytes_chirho": 2650972,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T07:45:07.706Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/288c3618794232f1eb24aa4deaf63a264d548871b69566b8728df7d17bb2decf.webp",
+        "sha256_chirho": "288c3618794232f1eb24aa4deaf63a264d548871b69566b8728df7d17bb2decf",
+        "bytes_chirho": 273722,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T07:45:08.895Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",
