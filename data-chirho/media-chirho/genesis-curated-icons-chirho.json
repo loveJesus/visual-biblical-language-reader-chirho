@@ -1,39 +1,43 @@
 {
-	"schema_version_chirho": 1,
-	"reviewed_by_chirho": "gpt_chirho",
-	"reviewed_at_chirho": "2026-11-01",
-	"curation_note_chirho": "H1990 is the place name Ham in Genesis 14:5, confirmed by OSHB b/1990 + HR/Np and the pinned HebrewStrong proper-location entry. An existing cluster-of-houses illustration is reused as a general named-place mnemonic. It does not claim to reconstruct Ham or settle its geographical extent. The original sixteen-cell batch remains held over its separate H2082 source disagreement; no request or retry history is changed.",
-	"source_art_chirho": {
-		"manifest_chirho": "genesis-worker-icons-chirho.json",
-		"icon_id_chirho": "icon-attempt-28e87c0eda2c4235bf2dd6f06d9cb7fd-chirho-01-chirho",
-		"source_lemma_id_chirho": "H2691",
-		"source_lemma_augment_chirho": "b",
-		"sha256_chirho": "da83bd20bbe665bcd545870121c91327d3a71585641ff3e85bbfb465c1e0e5e9",
-		"visual_review_chirho": "Owner inspected the actual 128px WebP on 2026-11-01: a compact group of small tan dwellings and green vegetation, isolated on a transparent background. Suitable as an explicitly generic place mnemonic; no named-site reconstruction or new art approval is claimed."
-	},
-	"icons_chirho": [
-		{
-			"id_chirho": "genesis-h1990-ham-place-chirho",
-			"lesson_id_chirho": "Gen.14.5",
-			"token_id_chirho": "01ttW",
-			"lemma_id_chirho": "H1990",
-			"lemma_augment_chirho": null,
-			"lexical_form_chirho": "הָם",
-			"sense_id_chirho": "ham-named-place-chirho",
-			"contextual_meaning_chirho": "Ham, a place named in Genesis 14:5",
-			"asset_path_chirho": "/assets-chirho/icons-chirho/genesis-worker-v1-chirho/attempt-28e87c0eda2c4235bf2dd6f06d9cb7fd-chirho/0000-chirho/cell-01-chirho.webp",
-			"alt_chirho": "A compact group of small tan dwellings and green vegetation, used as a general place illustration.",
-			"width_chirho": 128,
-			"height_chirho": 128,
-			"sha256_chirho": "da83bd20bbe665bcd545870121c91327d3a71585641ff3e85bbfb465c1e0e5e9",
-			"sense_review_chirho": "agent_reviewed",
-			"art_review_chirho": "pending",
-			"evidence_refs_chirho": ["oshb-gen-chirho", "strong-chirho", "gbt-english-gen-chirho"],
-			"display_authority_chirho": "Checked place-name assignment using a general place illustration, not a reconstruction of Ham. Artwork remains pending L.J. review.",
-			"context_text_chirho": "בְּהָ֑ם",
-			"context_gloss_chirho": "in Ham",
-			"context_canonical_text_chirho": "וּבְאַרְבַּע֩ עֶשְׂרֵ֨ה שָׁנָ֜ה בָּ֣א כְדָרְלָעֹ֗מֶר וְהַמְּלָכִים֙ אֲשֶׁ֣ר אִתּ֔וֹ וַיַּכּ֤וּ אֶת־רְפָאִים֙ בְּעַשְׁתְּרֹ֣ת קַרְנַ֔יִם וְאֶת־הַזּוּזִ֖ים בְּהָ֑ם וְאֵת֙ הָֽאֵימִ֔ים בְּשָׁוֵ֖ה קִרְיָתָֽיִם׃",
-			"selected_chirho": true
-		}
-	]
+  "schema_version_chirho": 1,
+  "reviewed_by_chirho": "gpt_chirho",
+  "reviewed_at_chirho": "2026-11-01",
+  "curation_note_chirho": "H1990 is the place name Ham in Genesis 14:5, confirmed by OSHB b/1990 + HR/Np and the pinned HebrewStrong proper-location entry. An existing cluster-of-houses illustration is reused as a general named-place mnemonic. It does not claim to reconstruct Ham or settle its geographical extent. The original sixteen-cell batch remains held over its separate H2082 source disagreement; no request or retry history is changed.",
+  "source_art_chirho": {
+    "manifest_chirho": "genesis-worker-icons-chirho.json",
+    "icon_id_chirho": "icon-attempt-28e87c0eda2c4235bf2dd6f06d9cb7fd-chirho-01-chirho",
+    "source_lemma_id_chirho": "H2691",
+    "source_lemma_augment_chirho": "b",
+    "sha256_chirho": "da83bd20bbe665bcd545870121c91327d3a71585641ff3e85bbfb465c1e0e5e9",
+    "visual_review_chirho": "Owner inspected the actual 128px WebP on 2026-11-01: a compact group of small tan dwellings and green vegetation, isolated on a transparent background. Suitable as an explicitly generic place mnemonic; no named-site reconstruction or new art approval is claimed."
+  },
+  "icons_chirho": [
+    {
+      "id_chirho": "genesis-h1990-ham-place-chirho",
+      "lesson_id_chirho": "Gen.14.5",
+      "token_id_chirho": "01ttW",
+      "lemma_id_chirho": "H1990",
+      "lemma_augment_chirho": null,
+      "lexical_form_chirho": "הָם",
+      "sense_id_chirho": "ham-named-place-chirho",
+      "contextual_meaning_chirho": "Ham, a place named in Genesis 14:5",
+      "asset_path_chirho": "/assets-chirho/icons-chirho/genesis-worker-v1-chirho/attempt-28e87c0eda2c4235bf2dd6f06d9cb7fd-chirho/0000-chirho/cell-01-chirho.webp",
+      "alt_chirho": "A compact group of small tan dwellings and green vegetation, used as a general place illustration.",
+      "width_chirho": 128,
+      "height_chirho": 128,
+      "sha256_chirho": "da83bd20bbe665bcd545870121c91327d3a71585641ff3e85bbfb465c1e0e5e9",
+      "sense_review_chirho": "agent_reviewed",
+      "art_review_chirho": "pending",
+      "evidence_refs_chirho": [
+        "oshb-gen-chirho",
+        "strong-chirho",
+        "gbt-english-gen-chirho"
+      ],
+      "display_authority_chirho": "Checked place-name assignment using a general place illustration, not a reconstruction of Ham. Artwork remains pending L.J. review.",
+      "context_text_chirho": "בְּהָ֑ם",
+      "context_gloss_chirho": "in Ham",
+      "context_canonical_text_chirho": "וּבְאַרְבַּע֩ עֶשְׂרֵ֨ה שָׁנָ֜ה בָּ֣א כְדָרְלָעֹ֗מֶר וְהַמְּלָכִים֙ אֲשֶׁ֣ר אִתּ֔וֹ וַיַּכּ֤וּ אֶת־רְפָאִים֙ בְּעַשְׁתְּרֹ֣ת קַרְנַ֔יִם וְאֶת־הַזּוּזִ֖ים בְּהָ֑ם וְאֵת֙ הָֽאֵימִ֔ים בְּשָׁוֵ֖ה קִרְיָתָֽיִם׃",
+      "selected_chirho": true
+    }
+  ]
 }

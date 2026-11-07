@@ -1,0 +1,108 @@
+[
+	{
+		"job_chirho": {
+			"job_chirho": "v0001",
+			"verse_id_chirho": "Matt.1.2",
+			"reference_chirho": "Matthew 1:2",
+			"file_stem_chirho": "40-matthew-01-02",
+			"content_path_chirho": "matthew-chirho/chapter-01-chirho.json",
+			"content_sha256_chirho": "062b4869e177759558cd8aceb63814aafc45922f44156fd3607111ab221b66ca",
+			"canonical_text_chirho": "Ἀβραὰμ ἐγέννησεν τὸν Ἰσαάκ, Ἰσαὰκ δὲ ἐγέννησεν τὸν Ἰακώβ, Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰούδαν καὶ τοὺς ἀδελφοὺς αὐτοῦ,",
+			"canonical_sha256_chirho": "71914bf8acb5d7dab37b92b1e9e8e89eb6c1f3aa87ef2f22d70db47bcf430551",
+			"spoken_text_chirho": "Ἀβραὰμ ἐγέννησεν τὸν Ἰσαάκ, Ἰσαὰκ δὲ ἐγέννησεν τὸν Ἰακώβ, Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰούδαν καὶ τοὺς ἀδελφοὺς αὐτοῦ,",
+			"sent_chirho": "Αβραάμ εγέννησεν τον Ισαάκ, Ισαάκ δε εγέννησεν τον Ιακώβ, Ιακώβ δε εγέννησεν τον Ιούδαν και τους αδελφούς αυτού,",
+			"sent_sha256_chirho": "d988cf0f302368a1b4969578e6db5ae4ba3ecd64e5e29dc002f886bae6730b7e",
+			"rough_breathing_words_chirho": 0,
+			"state_chirho": "done",
+			"chosen_chirho": {
+				"path_chirho": "takes-chirho/v0001-40-matthew-01-02-dafc9cf8-chirho.mp3",
+				"sha256_chirho": "1110a05d079973df6e3b6fea2700db4121ba0c692fc43ececff078e010de4134",
+				"bytes_chirho": 55148,
+				"seconds_chirho": 6.888,
+				"flag_chirho": null,
+				"task_uuid_chirho": "dafc9cf8-64a9-42b7-a176-6268442fec2b",
+				"cost_chirho": 0.0,
+				"raw_path_chirho": "raw-chirho/v0001-40-matthew-01-02-dafc9cf8-chirho.flac",
+				"raw_sha256_chirho": "2c42d296b4e68af24fac5b71f0a2057990e15bc0116dbb3865462111c98108b5",
+				"seed_chirho": 1,
+				"sample_rate_chirho": 24000,
+				"asr_chirho": {
+					"job_chirho": "v0001",
+					"sha256_chirho": "1110a05d079973df6e3b6fea2700db4121ba0c692fc43ececff078e010de4134",
+					"heard_chirho": "Αβραάμ εγέννη σεντών Ισαάκ, Ισαάκ δε εγέννη σεντών Ιακώφ, Ιακώφ δε εγέννη σεντών Ιωδεν, κετουσα δελφούσαφ του.",
+					"cer_chirho": 0.1196
+				}
+			},
+			"attempts_chirho": [
+				{
+					"task_uuid_chirho": "dafc9cf8-64a9-42b7-a176-6268442fec2b",
+					"kind_chirho": "first",
+					"outcome_chirho": "result"
+				}
+			]
+		},
+		"delivery_chirho": {
+			"job_chirho": "v0001",
+			"verse_id_chirho": "Matt.1.2",
+			"path_chirho": "build-chirho/local-greek-install-2026-11-07-chirho/delivery-chirho/v0001-chirho.mp3",
+			"sha256_chirho": "12aca7f28703e5b29d1c8c2f73c0a1eef02d003652600b1cc3165a18fe1b56fd",
+			"bytes_chirho": 55213,
+			"duration_chirho": 6.844082,
+			"original_mp3_sha256_chirho": "1110a05d079973df6e3b6fea2700db4121ba0c692fc43ececff078e010de4134",
+			"raw_flac_sha256_chirho": "2c42d296b4e68af24fac5b71f0a2057990e15bc0116dbb3865462111c98108b5"
+		}
+	},
+	{
+		"job_chirho": {
+			"job_chirho": "v0015",
+			"verse_id_chirho": "Matt.1.16",
+			"reference_chirho": "Matthew 1:16",
+			"file_stem_chirho": "40-matthew-01-16",
+			"content_path_chirho": "matthew-chirho/chapter-01-chirho.json",
+			"content_sha256_chirho": "062b4869e177759558cd8aceb63814aafc45922f44156fd3607111ab221b66ca",
+			"canonical_text_chirho": "Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰωσὴφ τὸν ἄνδρα Μαρίας, ἐξ ἧς ἐγεννήθη Ἰησοῦς ὁ λεγόμενος Χριστός.",
+			"canonical_sha256_chirho": "9660d9d8426a14eed745ac4f653edd476cd23e8ebc5ccf97564638c8c0ac77a3",
+			"spoken_text_chirho": "Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰωσὴφ τὸν ἄνδρα Μαρίας, ἐξ ἧς ἐγεννήθη Ἰησοῦς ὁ λεγόμενος Χριστός.",
+			"sent_chirho": "Ιακώβ δε εγέννησεν τον Ιωσήφ τον άνδρα Μαρίας, εξ ης εγεννήθη Ιησούς ο λεγόμενος Χριστός.",
+			"sent_sha256_chirho": "b8d1b01d9833150ea4ce3a6e2a055d0c5d17e5dbb84d029644493378f75ca14c",
+			"rough_breathing_words_chirho": 2,
+			"state_chirho": "done",
+			"chosen_chirho": {
+				"path_chirho": "takes-chirho/v0015-40-matthew-01-16-d87d793e-chirho.mp3",
+				"sha256_chirho": "dc0a8bb129d579620c97ce16404c3057f96ad80a67bbe92d260e971b82bae13d",
+				"bytes_chirho": 50348,
+				"seconds_chirho": 6.288,
+				"flag_chirho": null,
+				"task_uuid_chirho": "d87d793e-397a-4c3c-99f4-8ff244a5d129",
+				"cost_chirho": 0.0,
+				"raw_path_chirho": "raw-chirho/v0015-40-matthew-01-16-d87d793e-chirho.flac",
+				"raw_sha256_chirho": "22492149c100440764976211dcb78feb5695cc9ff9897fcfcc17ca16b9090974",
+				"seed_chirho": 1,
+				"sample_rate_chirho": 24000,
+				"asr_chirho": {
+					"job_chirho": "v0015",
+					"sha256_chirho": "dc0a8bb129d579620c97ce16404c3057f96ad80a67bbe92d260e971b82bae13d",
+					"heard_chirho": "γιακόβδε εγενμίσεν τον Ιουσίφτον άντρα μάριάς εξίς εγενμίθι Ισούς ο λεχόμενος Χριστός",
+					"cer_chirho": 0.1918
+				}
+			},
+			"attempts_chirho": [
+				{
+					"task_uuid_chirho": "d87d793e-397a-4c3c-99f4-8ff244a5d129",
+					"kind_chirho": "first",
+					"outcome_chirho": "result"
+				}
+			]
+		},
+		"delivery_chirho": {
+			"job_chirho": "v0015",
+			"verse_id_chirho": "Matt.1.16",
+			"path_chirho": "build-chirho/local-greek-install-2026-11-07-chirho/delivery-chirho/v0015-chirho.mp3",
+			"sha256_chirho": "9899da9e0cb0a4735273d8fc2efa927d57a07b3ea0ce92e73da4a7d69d426910",
+			"bytes_chirho": 50407,
+			"duration_chirho": 6.243265,
+			"original_mp3_sha256_chirho": "dc0a8bb129d579620c97ce16404c3057f96ad80a67bbe92d260e971b82bae13d",
+			"raw_flac_sha256_chirho": "22492149c100440764976211dcb78feb5695cc9ff9897fcfcc17ca16b9090974"
+		}
+	}
+]

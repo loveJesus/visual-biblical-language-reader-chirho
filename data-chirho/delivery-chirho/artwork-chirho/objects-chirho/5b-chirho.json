@@ -4188,6 +4188,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-012-chirho/matt-012-027-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/5b879ba858c461ae51fca098d4982bfb2f1db23a87172544359aa4988fff183b.webp",
+        "sha256_chirho": "5b879ba858c461ae51fca098d4982bfb2f1db23a87172544359aa4988fff183b",
+        "bytes_chirho": 2479864,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T16:33:55.961Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/88d6c62f091ab215c89a6e44eafe23941513eab0e05b2051e4e5a2544f7da845.webp",
+        "sha256_chirho": "88d6c62f091ab215c89a6e44eafe23941513eab0e05b2051e4e5a2544f7da845",
+        "bytes_chirho": 216876,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T16:33:57.163Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/leviticus-chirho/chapter-025-chirho/lev-025-038-chirho.webp"
       ],
       "source_chirho": {

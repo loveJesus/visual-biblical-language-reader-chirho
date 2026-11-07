@@ -24,6 +24,44 @@ private struct CorpusTransportChirho: TransportChirho {
 /// rewrites source files, or infers verse presence from a count rather than the edition's manifest.
 @Suite(.enabled(if: ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"] != nil))
 struct CorpusTestsChirho {
+    @Test func localGreekVerseRecordingsRetainTheirSourceAndRenditionChirho() async throws {
+        let pathChirho = try #require(ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"])
+        let rootChirho = URL(fileURLWithPath: pathChirho, isDirectory: true)
+        let remoteChirho = RemoteChirho(transportChirho: CorpusTransportChirho(rootChirho: rootChirho))
+        let contentChirho = ContentClientChirho(remoteChirho: remoteChirho)
+        let audioChirho = AudioClientChirho(remoteChirho: remoteChirho)
+        let manifestChirho = try DecodingChirho.decodeChirho(AudioManifestChirho.self,
+            Data(contentsOf: rootChirho.appendingPathComponent("audio-chirho/manifest-chirho.json")))
+        var expectedChirho = 0
+        var checkedChirho = 0
+        for bookChirho in BookListChirho.bundledChirho().booksChirho where bookChirho.languageChirho == "grc" {
+            for entryChirho in manifestChirho.booksChirho[bookChirho.idChirho]?.chaptersChirho ?? [] {
+                let catalogueChirho = try DecodingChirho.decodeChirho(AudioChapterChirho.self,
+                    Data(contentsOf: rootChirho.appendingPathComponent(String(entryChirho.pathChirho.dropFirst()))))
+                let clipsChirho = catalogueChirho.clipsChirho.filter {
+                    $0.recipeIdChirho == "chatterbox-v3-modern-greek-verse-v1-chirho"
+                }
+                if clipsChirho.isEmpty { continue }
+                let chapterChirho = try await contentChirho.chapterChirho(bookChirho, entryChirho.numberChirho)
+                expectedChirho += clipsChirho.count
+                for clipChirho in clipsChirho {
+                    let numberChirho = try #require(Int(clipChirho.lessonIdChirho.split(separator: ".").last ?? ""))
+                    let verseChirho = VerseDisplayChirho(try chapterChirho.lessonChirho(numberChirho))
+                    let modernChirho = try await audioChirho.verseAudioChirho(chapterChirho, verseChirho, .modernChirho)
+                    let aspiratesChirho = try await audioChirho.verseAudioChirho(chapterChirho, verseChirho, .modernAspiratesChirho)
+                    let erasmianChirho = try await audioChirho.verseAudioChirho(chapterChirho, verseChirho, .erasmianChirho)
+                    #expect(modernChirho.verseClipChirho?.sha256Chirho == clipChirho.sha256Chirho)
+                    #expect(aspiratesChirho.verseClipChirho?.sha256Chirho ==
+                        (GreekRenditionChirho.hasRoughBreathingChirho(verseChirho.canonicalTextChirho) ? nil : clipChirho.sha256Chirho))
+                    #expect(erasmianChirho.verseClipChirho == nil)
+                    checkedChirho += 1
+                }
+            }
+        }
+        #expect(checkedChirho == expectedChirho && expectedChirho > 0)
+        print("iOS local Greek verse contract: \(checkedChirho)/\(expectedChirho) exact source and rendition selections")
+    }
+
     @Test func publishedVerseVideosMatchTheirSceneAndSelectedHumanReadingChirho() async throws {
         let pathChirho = try #require(ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"])
         let rootChirho = URL(fileURLWithPath: pathChirho, isDirectory: true)

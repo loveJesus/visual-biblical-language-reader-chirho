@@ -3197,6 +3197,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-009-chirho/matt-009-027-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/f74fad0797c90e455f241ec15901ef18250ed7082450c38d7accc9cfd7017305.webp",
+        "sha256_chirho": "f74fad0797c90e455f241ec15901ef18250ed7082450c38d7accc9cfd7017305",
+        "bytes_chirho": 2599370,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T13:42:05.278Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/a9170e9042237c09aca244390be4e50892cfc4ff23217f46a59c7ef79ec4e6b4.webp",
+        "sha256_chirho": "a9170e9042237c09aca244390be4e50892cfc4ff23217f46a59c7ef79ec4e6b4",
+        "bytes_chirho": 240364,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T13:42:06.272Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/exodus-chirho/chapter-008-chirho/exod-008-027-chirho.webp"
       ],
       "source_chirho": {

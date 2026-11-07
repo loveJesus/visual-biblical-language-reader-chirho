@@ -37,8 +37,14 @@ export async function objectRequestChirho(
 			(/^video-chirho\/sha256-chirho\/[a-f0-9]{64}\.mp4$/.test(keyChirho) &&
 				(methodChirho === 'GET' ||
 					(methodChirho === 'PUT' && !!bytesChirho && bytesChirho.length <= 16 * 1024 ** 2))) ||
-			(methodChirho === 'GET' &&
-				/^audio-chirho\/sha256-chirho\/[a-f0-9]{64}\.mp3$/u.test(keyChirho)) ||
+			(/^audio-chirho\/sha256-chirho\/[a-f0-9]{64}\.mp3$/u.test(keyChirho) &&
+				(methodChirho === 'GET' ||
+					(methodChirho === 'PUT' && !!bytesChirho && bytesChirho.length <= 4_000_000))) ||
+			(/^provenance-audio-chirho\/sha256-chirho\/[a-f0-9]{64}\.(?:mp3|flac|json|jsonl)$/.test(
+				keyChirho
+			) &&
+				(methodChirho === 'GET' ||
+					(methodChirho === 'PUT' && !!bytesChirho && bytesChirho.length <= 16 * 1024 ** 2))) ||
 			(methodChirho === 'GET' &&
 				/^artifact-flags-chirho\/open-chirho\/[a-f0-9]{64}\.json$/.test(keyChirho)) ||
 			(methodChirho === 'GET' &&

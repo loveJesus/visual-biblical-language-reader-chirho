@@ -3,6 +3,11 @@
 import phoneticsChirho from '../../../../data-chirho/audio-chirho/proverbs-26-phonetics-chirho.json';
 import greekRenditionsChirho from './greek-renditions-chirho.json';
 import { spokenVerseChirho, spokenWordChirho } from '../pronunciation-chirho';
+import { BIBLE_BOOKS_CHIRHO } from '../../bible-chirho/books-chirho';
+import {
+	LOCAL_GREEK_VERSE_RECIPE_CHIRHO,
+	localGreekVerseTextChirho
+} from './greek-chirho/local-verse-chirho';
 
 export const HEBREW_CHAPTER_RECIPE_CHIRHO = 'israeli-ipa-phrasing-v1-chirho';
 export const HEBREW_CONNECTED_RECIPE_CHIRHO = 'israeli-ipa-connected-v2-chirho';
@@ -39,6 +44,15 @@ export function chapterRecipeChirho(
 	ipa_chirho?: string;
 	synthesis_text_chirho: string;
 } | null {
+	if (
+		recipeIdChirho === LOCAL_GREEK_VERSE_RECIPE_CHIRHO &&
+		BIBLE_BOOKS_CHIRHO.some(
+			(bookChirho) =>
+				bookChirho.language_chirho === 'grc' &&
+				lessonChirho.id_chirho.startsWith(bookChirho.id_chirho + '.')
+		)
+	)
+		return { synthesis_text_chirho: localGreekVerseTextChirho(lessonChirho.canonical_text_chirho) };
 	if (
 		recipeIdChirho === HEBREW_CHAPTER_RECIPE_CHIRHO ||
 		recipeIdChirho === HEBREW_CONNECTED_RECIPE_CHIRHO

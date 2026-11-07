@@ -2292,6 +2292,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-009-chirho/matt-009-038-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/0c1225e7c1365a676d9c947c0db37e20878284b4bea8e48534e60de96478a72d.webp",
+        "sha256_chirho": "0c1225e7c1365a676d9c947c0db37e20878284b4bea8e48534e60de96478a72d",
+        "bytes_chirho": 2643068,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T13:59:15.362Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/32a529ed8667edb3b802fe144c98491afa181a61556ba592a010a94d0173bd2f.webp",
+        "sha256_chirho": "32a529ed8667edb3b802fe144c98491afa181a61556ba592a010a94d0173bd2f",
+        "bytes_chirho": 251426,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T13:59:16.461Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/high-quality-v1-chirho/acts-chirho/chapter-012-chirho/acts-012-001-chirho.webp"
       ],
       "source_chirho": {
@@ -4949,6 +4983,40 @@
         "provider_chirho": "runware",
         "model_chirho": "runware:100@1",
         "operation_chirho": "provider_passthrough"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-007-chirho/matt-007-021-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/0cc716c36ed4e9b5c10517497c5b068413d3e057c6e2422a454bb1bdde8a9b84.webp",
+        "sha256_chirho": "0cc716c36ed4e9b5c10517497c5b068413d3e057c6e2422a454bb1bdde8a9b84",
+        "bytes_chirho": 2629538,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T11:54:08.551Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/99fe4ff0ffd55c9be00653b6b290206ad85a1f8d47571fac656d1b4a9c2b0760.webp",
+        "sha256_chirho": "99fe4ff0ffd55c9be00653b6b290206ad85a1f8d47571fac656d1b4a9c2b0760",
+        "bytes_chirho": 248576,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T11:54:09.849Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
       }
     },
     {

@@ -3089,6 +3089,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-013-chirho/matt-013-024-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/c866b0e6a8d657ef59000429293752f8c81d575b23dc1667a83900c36542a796.webp",
+        "sha256_chirho": "c866b0e6a8d657ef59000429293752f8c81d575b23dc1667a83900c36542a796",
+        "bytes_chirho": 2470962,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T17:40:43.016Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/a373fe9398f3db83ee68442339c93a7f539907762740d402d22cd2dbee18454a.webp",
+        "sha256_chirho": "a373fe9398f3db83ee68442339c93a7f539907762740d402d22cd2dbee18454a",
+        "bytes_chirho": 224816,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T17:40:44.124Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ruth-chirho/chapter-003-chirho/ruth-003-003-chirho.webp"
       ],
       "source_chirho": {
