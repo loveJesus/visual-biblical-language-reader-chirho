@@ -7,6 +7,7 @@ import {
 	vi as viChirho
 } from 'vitest';
 import { installSpeechChirho } from './speech-controls-chirho';
+import { AUDIO_MESSAGES_CHIRHO } from './audio-messages-chirho';
 
 // The media clock is deliberately independent of timers, as it is during network buffering.
 class ControlledAudioChirho {
@@ -259,6 +260,46 @@ testChirho(
 		lateChirho?.();
 		await viChirho.advanceTimersByTimeAsync(3000);
 		expectChirho(secondChirho.paused).toBe(true);
+		expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
+	}
+);
+
+testChirho(
+	'a human verse reading plays before a synthesized one, whole, under human wording, until a word speaker stops it',
+	async () => {
+		const { buttonChirho, hostChirho, rootChirho, wordButtonsChirho } =
+			await setupVerseChirho(true);
+		const statusChirho = document.createElement('p');
+		statusChirho.dataset.audioStatusChirho = '';
+		rootChirho.appendChild(statusChirho);
+		hostChirho.setAttribute(
+			'data-speech-messages-chirho',
+			JSON.stringify(AUDIO_MESSAGES_CHIRHO.en)
+		);
+		const clipsChirho = JSON.parse(hostChirho.getAttribute('data-speech-recordings-chirho')!);
+		clipsChirho.push({
+			text_chirho: 'first second',
+			token_id_chirho: null,
+			language_chirho: 'he',
+			asset_path_chirho: '/audio-chirho/sha256-chirho/' + '4'.repeat(64) + '-chirho.mp3',
+			voice_name_chirho: "Rabbi Dan Be'eri",
+			bytes_chirho: 100,
+			reading_source_chirho: { kind_chirho: 'human' }
+		});
+		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+		await viChirho.advanceTimersByTimeAsync(0);
+		expectChirho(statusChirho.textContent).toBe("Human reading · Rabbi Dan Be'eri.");
+		buttonChirho.click();
+		const humanChirho = ControlledAudioChirho.instancesChirho[0];
+		expectChirho(humanChirho.src).toContain('4'.repeat(64));
+		expectChirho(statusChirho.textContent).toBe("Playing the reading by Rabbi Dan Be'eri.");
+		humanChirho.currentTime = 30;
+		viChirho.advanceTimersByTime(30_000);
+		expectChirho(humanChirho.paused).toBe(false);
+		wordButtonsChirho[0].click();
+		expectChirho(humanChirho.paused).toBe(true);
+		expectChirho(humanChirho.src).toBe('');
+		expectChirho(ControlledAudioChirho.instancesChirho[1].paused).toBe(false);
 		expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
 	}
 );

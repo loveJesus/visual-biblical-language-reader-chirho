@@ -3550,6 +3550,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/revelation-chirho/chapter-009-chirho/rev-009-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/764dc9cced2611f20befbefe2eac2649390d2bd036f617a6f8034e141128fda7.webp",
+        "sha256_chirho": "764dc9cced2611f20befbefe2eac2649390d2bd036f617a6f8034e141128fda7",
+        "bytes_chirho": 2439384,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T09:17:31.517Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8ea904ae20b09cdcace1f25973a9bb53c2e407f28d99a0e57127674e55dc6867.webp",
+        "sha256_chirho": "8ea904ae20b09cdcace1f25973a9bb53c2e407f28d99a0e57127674e55dc6867",
+        "bytes_chirho": 201614,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T09:17:32.024Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/proverbs-worker-v1-chirho/chapter-09-chirho/prov-09-017-chirho.webp"
       ],
       "source_chirho": {

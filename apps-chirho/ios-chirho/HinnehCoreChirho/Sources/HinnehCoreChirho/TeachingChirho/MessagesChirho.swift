@@ -124,6 +124,7 @@ public struct MessagesChirho: Sendable {
 
     /// The pronunciation profile and review state of one recording, as the listener should know them.
     public func voiceChirho(_ clipChirho: ClipChirho) -> String {
+        if clipChirho.readingSourceChirho != nil { return clipChirho.voiceNameChirho }
         let profileChirho = switch clipChirho.pronunciationChirho {
         case "israeli_hebrew": hebrewVoiceChirho
         case "modern_greek_aspirates": greekAspiratesVoiceChirho

@@ -14,6 +14,7 @@ public enum ResourceKindChirho: Sendable, CaseIterable {
     case audioManifestChirho
     case audioChapterChirho
     case audioClipChirho
+    case videoClipChirho
     case glossManifestChirho
     case glossLayerChirho
 
@@ -28,6 +29,7 @@ public enum ResourceKindChirho: Sendable, CaseIterable {
         case .audioManifestChirho: 2 * 1024 * 1024
         case .audioChapterChirho: 2 * 1024 * 1024
         case .audioClipChirho: 4_000_000
+        case .videoClipChirho: 16 * 1024 * 1024
         case .glossManifestChirho: 512 * 1024
         case .glossLayerChirho: 2_000_000
         }
@@ -48,6 +50,7 @@ public enum ResourceKindChirho: Sendable, CaseIterable {
         case .audioManifestChirho: patternChirho = "/audio-chirho/manifest-chirho\\.json"
         case .audioChapterChirho: patternChirho = "/audio-chirho/\(slugChirho)/\(chapterChirho)"
         case .audioClipChirho: patternChirho = "/audio-chirho/sha256-chirho/[a-f0-9]{64}-chirho\\.mp3"
+        case .videoClipChirho: patternChirho = "/video-chirho/sha256-chirho/[a-f0-9]{64}-chirho\\.mp4"
         case .glossManifestChirho: patternChirho = "/glosses-chirho/es-chirho/manifest-chirho\\.json"
         case .glossLayerChirho: patternChirho = "/glosses-chirho/es-chirho/\(slugChirho)/\(chapterChirho)"
         }

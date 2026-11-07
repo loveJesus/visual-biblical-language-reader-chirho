@@ -2,6 +2,7 @@
 
 import HinnehCoreChirho
 import SwiftUI
+import AVKit
 
 /// The reading screen: one verse at a time, original text first, everything else beside it.
 struct ReaderViewChirho: View {
@@ -9,6 +10,7 @@ struct ReaderViewChirho: View {
     @State private var selectedWordChirho: WordDisplayChirho?
     @State private var choosingChirho = false
     @State private var showingKeyChirho = false
+    @Environment(\.scenePhase) private var scenePhaseChirho
 
     private var messagesChirho: MessagesChirho { modelChirho.messagesChirho }
 
@@ -46,6 +48,9 @@ struct ReaderViewChirho: View {
             }
         }
         .environment(\.locale, Locale(identifier: modelChirho.localeChirho.rawValue))
+        .onChange(of: scenePhaseChirho) { _, phaseChirho in
+            if phaseChirho != .active { modelChirho.playerChirho.stopChirho() }
+        }
     }
 
     @ToolbarContentBuilder private var toolbarChirho: some ToolbarContent {
@@ -154,12 +159,18 @@ struct ReaderViewChirho: View {
         if let clipChirho = modelChirho.audioChirho.verseClipChirho {
             let activeChirho = modelChirho.playerChirho.activeIdChirho == "verse"
             VStack(alignment: .leading, spacing: 4) {
-                Button { modelChirho.playerChirho.toggleChirho(clipChirho, idChirho: "verse") } label: {
+                Button { modelChirho.toggleVerseChirho() } label: {
                     Label(activeChirho ? messagesChirho.stopChirho : messagesChirho.playVerseChirho,
                           systemImage: activeChirho ? "stop.fill" : "play.fill")
                 }
                 .buttonStyle(.bordered)
                 Text(messagesChirho.voiceChirho(clipChirho)).font(.caption).foregroundStyle(.secondary)
+                if let sourceChirho = clipChirho.readingSourceChirho {
+                    ReadingCreditViewChirho(attributionChirho: sourceChirho.attributionChirho,
+                                            licenseChirho: sourceChirho.licenseChirho,
+                                            licenseUrlChirho: sourceChirho.licenseUrlChirho,
+                                            localeChirho: modelChirho.localeChirho)
+                }
                 if modelChirho.playerChirho.failedIdChirho == "verse" {
                     Text(messagesChirho.audioFailedChirho).font(.caption).foregroundStyle(.red)
                 }
@@ -226,6 +237,13 @@ struct SceneViewChirho: View {
     var body: some View {
         if let sceneChirho {
             VStack(alignment: .leading, spacing: 6) {
+                if let playerChirho = modelChirho.playerChirho.videoPlayerChirho,
+                   let videoChirho = modelChirho.mediaChirho.videoChirho {
+                    VideoPlayer(player: playerChirho)
+                        .aspectRatio(CGFloat(videoChirho.widthChirho) / CGFloat(videoChirho.heightChirho), contentMode: .fit)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                        .accessibilityLabel(modelChirho.referenceChirho)
+                } else {
                 VerifiedImageChirho(pathChirho: sceneChirho.assetPathChirho, sha256Chirho: sceneChirho.sha256Chirho,
                                     altChirho: sceneChirho.altChirho, storeChirho: modelChirho.artworkChirho) { failedChirho in
                     placeholderChirho(failedChirho ? modelChirho.messagesChirho.sceneUnavailableChirho
@@ -234,6 +252,24 @@ struct SceneViewChirho: View {
                 .aspectRatio(CGFloat(sceneChirho.widthChirho) / CGFloat(max(1, sceneChirho.heightChirho)),
                              contentMode: .fit)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
+                .overlay(alignment: .bottomTrailing) {
+                    if modelChirho.mediaChirho.videoChirho != nil {
+                        Button { modelChirho.toggleVerseChirho() } label: {
+                            Label(modelChirho.playerChirho.activeIdChirho == "verse" ? modelChirho.messagesChirho.stopChirho : modelChirho.messagesChirho.playVerseChirho,
+                                  systemImage: modelChirho.playerChirho.activeIdChirho == "verse" ? "stop.fill" : "play.fill")
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .padding(12)
+                    }
+                }
+                }
+                if let videoChirho = modelChirho.mediaChirho.videoChirho,
+                   modelChirho.audioChirho.verseClipChirho?.readingSourceChirho == nil {
+                    ReadingCreditViewChirho(attributionChirho: videoChirho.attributionChirho,
+                                            licenseChirho: videoChirho.licenseChirho,
+                                            licenseUrlChirho: videoChirho.licenseUrlChirho,
+                                            localeChirho: modelChirho.localeChirho)
+                }
                 Text(modelChirho.messagesChirho.sceneCaptionChirho + " "
                      + (sceneChirho.artReviewChirho == "approved" ? modelChirho.messagesChirho.artApprovedChirho
                         : modelChirho.messagesChirho.artPendingChirho))

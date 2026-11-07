@@ -14,6 +14,8 @@ final class AudioPlayerChirho {
     private(set) var activeIdChirho: String?
     /// The id whose recording could not be fetched, verified or played.
     private(set) var failedIdChirho: String?
+    /// Visible only for an explicitly started, verified video; the still remains the poster.
+    private(set) var videoPlayerChirho: AVPlayer?
 
     static let greekRateChirho: Float = 0.88
 
@@ -40,16 +42,27 @@ final class AudioPlayerChirho {
     }
 
     func playChirho(_ clipChirho: ClipChirho, idChirho: String) {
+        playAssetChirho(clipChirho.assetPathChirho, clipChirho.sha256Chirho, clipChirho.bytesChirho,
+                       .audioClipChirho, clipChirho.languageChirho == "el" ? Self.greekRateChirho : 1, idChirho)
+    }
+
+    func playVideoChirho(_ videoChirho: VerseVideoChirho, idChirho: String = "verse") {
+        playAssetChirho(videoChirho.assetPathChirho, videoChirho.sha256Chirho, videoChirho.bytesChirho,
+                       .videoClipChirho, 1, idChirho)
+    }
+
+    private func playAssetChirho(_ pathChirho: String, _ shaChirho: String, _ bytesChirho: Int,
+                                 _ kindChirho: ResourceKindChirho, _ rateChirho: Float, _ idChirho: String) {
         stopChirho()
         let playChirho = beginChirho(idChirho)
-        let rateChirho: Float = clipChirho.languageChirho == "el" ? Self.greekRateChirho : 1
         taskChirho = Task {
             do {
                 let dataChirho = try await remoteChirho.verifiedChirho(
-                    clipChirho.assetPathChirho, .audioClipChirho, sha256Chirho: clipChirho.sha256Chirho)
+                    pathChirho, kindChirho, sha256Chirho: shaChirho)
                 try Task.checkCancellation()
-                guard dataChirho.count == clipChirho.bytesChirho else { throw RemoteErrorChirho.integrityChirho }
-                let fileValueChirho = try Self.writeChirho(dataChirho, clipChirho.sha256Chirho, playChirho)
+                guard dataChirho.count == bytesChirho else { throw RemoteErrorChirho.integrityChirho }
+                let videoChirho = kindChirho == .videoClipChirho
+                let fileValueChirho = try Self.writeChirho(dataChirho, shaChirho, playChirho, videoChirho ? "mp4" : "mp3")
                 guard !Task.isCancelled, playChirho == playIdChirho else {
                     try? FileManager.default.removeItem(at: fileValueChirho)
                     return
@@ -57,7 +70,7 @@ final class AudioPlayerChirho {
                 fileChirho = fileValueChirho
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio)
                 try AVAudioSession.sharedInstance().setActive(true)
-                startChirho(fileValueChirho, rateChirho, playChirho)
+                startChirho(fileValueChirho, rateChirho, playChirho, videoChirho)
             } catch is CancellationError {
                 return
             } catch {
@@ -92,7 +105,7 @@ final class AudioPlayerChirho {
         if failedChirho { failedIdChirho = activeChirho }
     }
 
-    private func startChirho(_ fileValueChirho: URL, _ rateChirho: Float, _ playChirho: UUID) {
+    private func startChirho(_ fileValueChirho: URL, _ rateChirho: Float, _ playChirho: UUID, _ videoChirho: Bool) {
         let itemChirho = AVPlayerItem(url: fileValueChirho)
         // Spectral time-pitch keeps the speaker's pitch when the rate is slowed.
         itemChirho.audioTimePitchAlgorithm = .spectral
@@ -114,6 +127,7 @@ final class AudioPlayerChirho {
             Task { @MainActor in self?.completeChirho(playChirho, failedChirho: true) }
         }
         playerChirho = playerValueChirho
+        videoPlayerChirho = videoChirho ? playerValueChirho : nil
         playerValueChirho.playImmediately(atRate: rateChirho)
     }
 
@@ -123,17 +137,18 @@ final class AudioPlayerChirho {
         statusChirho?.invalidate()
         statusChirho = nil
         playerChirho?.pause()
+        videoPlayerChirho = nil
         playerChirho = nil
         if let fileChirho { try? FileManager.default.removeItem(at: fileChirho) }
         fileChirho = nil
     }
 
     /// The verified bytes, in a private temporary file that exists only while they play.
-    private static func writeChirho(_ dataChirho: Data, _ sha256Chirho: String, _ playChirho: UUID) throws -> URL {
+    private static func writeChirho(_ dataChirho: Data, _ sha256Chirho: String, _ playChirho: UUID, _ extensionChirho: String) throws -> URL {
         let folderChirho = FileManager.default.temporaryDirectory
             .appendingPathComponent("hinneh-audio-chirho", isDirectory: true)
         try FileManager.default.createDirectory(at: folderChirho, withIntermediateDirectories: true)
-        let fileChirho = folderChirho.appendingPathComponent("\(sha256Chirho)-\(playChirho.uuidString)-chirho.mp3")
+        let fileChirho = folderChirho.appendingPathComponent("\(sha256Chirho)-\(playChirho.uuidString)-chirho.\(extensionChirho)")
         try dataChirho.write(to: fileChirho, options: [.atomic, .completeFileProtection])
         return fileChirho
     }

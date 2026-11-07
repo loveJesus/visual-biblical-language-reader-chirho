@@ -125,6 +125,7 @@ const PROJECT_LICENSES_CHIRHO: Record<LocaleChirho, InformationSectionChirho> = 
 			'Hinneh’s original application and native-app code is open source under the GNU General Public License, version 3 or any later version. You may study, share and improve it under that license.',
 			'Hinneh-created illustrations, word pictures and branding artwork are dedicated to the public domain under CC0 1.0 Universal, to the extent of the rights we hold. You may copy, adapt and share them, including commercially, without permission or required attribution. Credit is welcome, but optional.',
 			'The rights we hold in our pronunciation recordings are shared under Creative Commons Attribution 4.0. Credit “Hinneh — L.J. (Love Jesus), https://hinneh.us/”, link that license and indicate changes when reusing recordings.',
+			"Whole-verse Hebrew readings by Rabbi Dan Be'eri are his work, not ours. They keep their CC BY-SA 3.0 license and the credit “Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools”. Share a reused or adapted reading under the same license.",
 			'The Bible texts, source data and adapted grammar help retain their own terms. The artwork dedication and recording license cover only rights we hold; they do not grant rights to an underlying voice model or another person’s identity. Public-domain material remains public domain.'
 		],
 		links_chirho: [
@@ -137,6 +138,10 @@ const PROJECT_LICENSES_CHIRHO: Record<LocaleChirho, InformationSectionChirho> = 
 			{
 				label_chirho: 'Recordings: CC BY 4.0',
 				href_chirho: 'https://creativecommons.org/licenses/by/4.0/'
+			},
+			{
+				label_chirho: "Be'eri readings: CC BY-SA 3.0",
+				href_chirho: 'https://creativecommons.org/licenses/by-sa/3.0/'
 			}
 		]
 	},
@@ -146,6 +151,7 @@ const PROJECT_LICENSES_CHIRHO: Record<LocaleChirho, InformationSectionChirho> = 
 			'El código original de Hinneh y sus aplicaciones nativas es abierto bajo la Licencia Pública General de GNU, versión 3 o cualquier versión posterior. Puedes estudiarlo, compartirlo y mejorarlo conforme a esa licencia.',
 			'Las ilustraciones, imágenes de palabras y obras de identidad visual creadas para Hinneh se dedican al dominio público bajo CC0 1.0 Universal, hasta donde permiten nuestros derechos. Puedes copiarlas, adaptarlas y compartirlas, incluso comercialmente, sin permiso ni atribución obligatoria. Se agradece el crédito, pero es opcional.',
 			'Los derechos que poseemos sobre las grabaciones de pronunciación se comparten bajo Creative Commons Atribución 4.0. Acredita «Hinneh — L.J. (Love Jesus), https://hinneh.us/», enlaza esa licencia e indica los cambios al reutilizar grabaciones.',
+			"Las lecturas hebreas de versículos completos de Rabbi Dan Be'eri son obra suya, no nuestra. Conservan su licencia CC BY-SA 3.0 y el crédito «Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools». Comparte una lectura reutilizada o adaptada bajo la misma licencia.",
 			'Los textos bíblicos, datos y ayudas gramaticales adaptadas conservan sus propias condiciones. La dedicación de las obras y la licencia de grabaciones cubren solo nuestros derechos; no conceden derechos sobre el modelo de voz ni sobre la identidad de otra persona. El material de dominio público sigue siendo de dominio público.'
 		],
 		links_chirho: [
@@ -161,6 +167,10 @@ const PROJECT_LICENSES_CHIRHO: Record<LocaleChirho, InformationSectionChirho> = 
 			{
 				label_chirho: 'Grabaciones: CC BY 4.0',
 				href_chirho: 'https://creativecommons.org/licenses/by/4.0/'
+			},
+			{
+				label_chirho: "Lecturas de Be'eri: CC BY-SA 3.0",
+				href_chirho: 'https://creativecommons.org/licenses/by-sa/3.0/'
 			}
 		]
 	}
@@ -501,7 +511,8 @@ export const INFORMATION_PAGES_CHIRHO = {
 					paragraphs_chirho: [
 						'Hebrew grammar help draws on unfoldingWord Hebrew Grammar. Adapted help text is credited to unfoldingWord under CC BY-SA 4.0; the compact cue layout is Hinneh’s teaching convention.',
 						'Optional IPA guides reuse the Hebrew pronunciation analysis and the chosen Greek teaching convention. Hebrew syllable analysis uses HavarotJS by Charles Loder (MIT). Greek sounds follow the cited pronunciation references; these are word-level teaching transcriptions, not a reconstruction of ancient pitch.',
-						'Verse scenes and word pictures are AI-assisted and retain their review labels. Pronunciation clips are AI-generated study aids, with profile, source binding and review information retained. A fluent voice or attractive image does not certify linguistic accuracy.'
+						'Verse scenes and word pictures are AI-assisted and retain their review labels. Word pronunciation clips and synthesized verse readings are AI-generated study aids, with profile, source binding and review information retained. A fluent voice or attractive image does not certify linguistic accuracy.',
+						"Where available, Play verse uses a human Hebrew reading by Rabbi Dan Be'eri, compiled at archive.org, with chapter files and verse timings from Global Bible Tools. Each verse is cut from its chapter recording at its checked verse timing and credited beside the player under CC BY-SA 3.0. Some books are chanted with cantillation rather than read as ordinary speech."
 					],
 					links_chirho: [
 						{
@@ -523,6 +534,16 @@ export const INFORMATION_PAGES_CHIRHO = {
 						{
 							label_chirho: 'Greek breathing marks',
 							href_chirho: 'https://dcc.dickinson.edu/grammar/age/breathing-marks'
+						},
+						{
+							label_chirho: "Rabbi Dan Be'eri's Tanakh reading",
+							href_chirho:
+								'https://archive.org/details/TanakhAudioRecordingByRabbiDanBeeri-BookByBook'
+						},
+						{ label_chirho: 'Global Bible Tools', href_chirho: 'https://globalbibletools.com' },
+						{
+							label_chirho: 'CC BY-SA 3.0',
+							href_chirho: 'https://creativecommons.org/licenses/by-sa/3.0/'
 						}
 					]
 				}
@@ -596,7 +617,8 @@ export const INFORMATION_PAGES_CHIRHO = {
 					paragraphs_chirho: [
 						'La ayuda gramatical hebrea utiliza unfoldingWord Hebrew Grammar. El texto adaptado se atribuye a unfoldingWord bajo CC BY-SA 4.0. La disposición de marcas es una convención didáctica de Hinneh.',
 						'Las guías AFI opcionales reutilizan el análisis de pronunciación hebrea y la convención griega elegida. El análisis de sílabas hebreas utiliza HavarotJS de Charles Loder (MIT). Los sonidos griegos siguen las fuentes citadas; son transcripciones didácticas por palabra, no una reconstrucción del tono antiguo.',
-						'Las escenas e imágenes de palabras utilizan IA y conservan sus estados de revisión. Las pronunciaciones son ayudas de estudio generadas por IA; se mantiene la información de perfil, fuente y revisión. Una voz fluida o una imagen atractiva no certifican exactitud lingüística.'
+						'Las escenas e imágenes de palabras utilizan IA y conservan sus estados de revisión. Las pronunciaciones de palabras y las lecturas sintetizadas de versículos son ayudas de estudio generadas por IA; se mantiene la información de perfil, fuente y revisión. Una voz fluida o una imagen atractiva no certifican exactitud lingüística.',
+						"Cuando está disponible, Oír versículo usa una lectura hebrea humana de Rabbi Dan Be'eri, recopilada en archive.org, con archivos de capítulos y tiempos de versículos de Global Bible Tools. Cada versículo se recorta de la grabación de su capítulo según su tiempo de versículo verificado y se acredita junto al reproductor bajo CC BY-SA 3.0. Algunos libros se cantan con cantilación en lugar de leerse como habla corriente."
 					],
 					links_chirho: [
 						{
@@ -618,6 +640,16 @@ export const INFORMATION_PAGES_CHIRHO = {
 						{
 							label_chirho: 'Greek breathing marks',
 							href_chirho: 'https://dcc.dickinson.edu/grammar/age/breathing-marks'
+						},
+						{
+							label_chirho: "Lectura del Tanaj de Rabbi Dan Be'eri",
+							href_chirho:
+								'https://archive.org/details/TanakhAudioRecordingByRabbiDanBeeri-BookByBook'
+						},
+						{ label_chirho: 'Global Bible Tools', href_chirho: 'https://globalbibletools.com' },
+						{
+							label_chirho: 'CC BY-SA 3.0',
+							href_chirho: 'https://creativecommons.org/licenses/by-sa/3.0/'
 						}
 					]
 				}
@@ -710,7 +742,7 @@ export const READING_AIDS_CHIRHO: Record<LocaleChirho, readonly AidChirho[]> = {
 			kind_chirho: 'sound',
 			title_chirho: 'Sound',
 			body_chirho:
-				'Tap a word’s speaker to hear it pronounced. The saved recordings are AI-generated study aids, still under review.'
+				'Tap a word’s speaker to hear it pronounced. Word recordings are AI-generated study aids, still under review.'
 		}
 	],
 	es: [
@@ -736,7 +768,7 @@ export const READING_AIDS_CHIRHO: Record<LocaleChirho, readonly AidChirho[]> = {
 			kind_chirho: 'sound',
 			title_chirho: 'Sonido',
 			body_chirho:
-				'Toca el altavoz de una palabra para oír su pronunciación. Las grabaciones guardadas son ayudas de estudio generadas con IA, todavía en revisión.'
+				'Toca el altavoz de una palabra para oír su pronunciación. Las grabaciones de palabras son ayudas de estudio generadas con IA, todavía en revisión.'
 		}
 	]
 };
@@ -825,7 +857,7 @@ export const ABOUT_GUIDE_CHIRHO: Record<LocaleChirho, AboutGuideChirho> = {
 			{
 				title_chirho: 'AI-assisted, clearly labelled',
 				body_chirho:
-					'Pictures, scenes and recordings are made with AI assistance and can contain mistakes. These study aids are still being reviewed. A general word picture is a memory aid for a lemma; another use of that word may call for a different picture. Use “Report image issue” to point out an illustration that needs attention.'
+					"Pictures, scenes and word recordings are made with AI assistance and can contain mistakes. These study aids are still being reviewed. Whole-verse Hebrew readings by Rabbi Dan Be'eri, where available, are human recordings, credited beside the player. A general word picture is a memory aid for a lemma; another use of that word may call for a different picture. Use “Report image issue” to point out an illustration that needs attention."
 			},
 			{
 				title_chirho: 'Meanings with their sources',
@@ -840,7 +872,7 @@ export const ABOUT_GUIDE_CHIRHO: Record<LocaleChirho, AboutGuideChirho> = {
 			{
 				title_chirho: 'Pronunciation and verse playback',
 				body_chirho:
-					'The IPA is a draft guide to the chosen pronunciation, with stress and reading questions checked against the source. Recordings are AI-generated pronunciation aids awaiting review. Play verse uses a saved full-verse rendition where available, otherwise a complete sequence of saved word clips. Assembled readings may sound less natural; verses with missing clips remain unavailable while the library grows. An individual word may use a matching local device voice when its recording is missing; whole-verse playback uses saved recordings only.'
+					"The IPA is a draft guide to the chosen pronunciation, with stress and reading questions checked against the source. Word recordings are AI-generated pronunciation aids awaiting review. Play verse first uses a human Hebrew reading by Rabbi Dan Be'eri where one is available; some books are chanted with cantillation. Otherwise it uses a saved full-verse rendition, or a complete sequence of saved word clips. Assembled readings may sound less natural; verses with missing clips remain unavailable while the library grows. An individual word may use a matching local device voice when its recording is missing; whole-verse playback uses saved recordings only."
 			}
 		],
 		sources_link_chirho: 'Sources and credits'
@@ -911,7 +943,7 @@ export const ABOUT_GUIDE_CHIRHO: Record<LocaleChirho, AboutGuideChirho> = {
 			{
 				title_chirho: 'Con ayuda de IA, bien identificado',
 				body_chirho:
-					'Las imágenes, escenas y grabaciones se hacen con ayuda de IA y pueden contener errores. Estas ayudas de estudio siguen en revisión. La imagen general de una palabra sirve como ayuda de memoria para su lema; otro uso de esa palabra puede necesitar una imagen diferente. «Informar de un problema» permite señalar una ilustración que necesita atención.'
+					"Las imágenes, escenas y grabaciones de palabras se hacen con ayuda de IA y pueden contener errores. Estas ayudas de estudio siguen en revisión. Las lecturas hebreas de versículos completos de Rabbi Dan Be'eri, cuando están disponibles, son grabaciones humanas y se acreditan junto al reproductor. La imagen general de una palabra sirve como ayuda de memoria para su lema; otro uso de esa palabra puede necesitar una imagen diferente. «Informar de un problema» permite señalar una ilustración que necesita atención."
 			},
 			{
 				title_chirho: 'Significados con su fuente',
@@ -926,7 +958,7 @@ export const ABOUT_GUIDE_CHIRHO: Record<LocaleChirho, AboutGuideChirho> = {
 			{
 				title_chirho: 'Pronunciación y audio del versículo',
 				body_chirho:
-					'El AFI es una guía provisional de la pronunciación elegida, con el acento y las dudas de lectura contrastados con la fuente. Las grabaciones son ayudas de pronunciación generadas con IA y pendientes de revisión. Oír versículo usa una grabación completa cuando está disponible; en otro caso, une una secuencia completa de grabaciones de palabras. Estas lecturas pueden sonar menos naturales; los versículos con grabaciones faltantes siguen sin audio mientras crece la biblioteca. Una palabra individual puede usar una voz local del dispositivo si falta su grabación; el audio del versículo completo usa solo grabaciones guardadas.'
+					"El AFI es una guía provisional de la pronunciación elegida, con el acento y las dudas de lectura contrastados con la fuente. Las grabaciones de palabras son ayudas de pronunciación generadas con IA y pendientes de revisión. Oír versículo usa primero una lectura hebrea humana de Rabbi Dan Be'eri cuando existe; algunos libros se cantan con cantilación. En otro caso, usa una grabación completa del versículo o une una secuencia completa de grabaciones de palabras. Estas lecturas pueden sonar menos naturales; los versículos con grabaciones faltantes siguen sin audio mientras crece la biblioteca. Una palabra individual puede usar una voz local del dispositivo si falta su grabación; el audio del versículo completo usa solo grabaciones guardadas."
 			}
 		],
 		sources_link_chirho: 'Fuentes y créditos'

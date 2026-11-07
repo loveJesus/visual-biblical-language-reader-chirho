@@ -21,6 +21,7 @@ public struct ClipChirho: Codable, Sendable, Hashable {
     public let startOffsetChirho: Double?
     public let endOffsetChirho: Double?
     public let reviewChirho: String
+    public var readingSourceChirho: HumanReadingSourceChirho? = nil
 
     public var isApprovedChirho: Bool { reviewChirho == "approved" }
 }
@@ -47,6 +48,7 @@ struct AudioChapterChirho: Codable, Sendable {
     let contentPathChirho: String
     let contentSha256Chirho: String
     let clipsChirho: [ClipChirho]
+    var readingsChirho: [ClipChirho]? = nil
 }
 
 /// How Greek is pronounced for playback. Modern with aspirates is the default; the website's
@@ -107,7 +109,8 @@ public actor AudioClientChirho {
     public func verseAudioChirho(_ chapterChirho: VerifiedChapterChirho, _ verseChirho: VerseDisplayChirho,
                                  _ renditionChirho: GreekRenditionChirho) async throws -> VerseAudioChirho {
         guard let catalogueChirho = try await catalogueChirho(chapterChirho) else { return .emptyChirho }
-        return AudioRulesChirho.selectChirho(catalogueChirho.clipsChirho, verseChirho, renditionChirho)
+        let readingsChirho = (catalogueChirho.readingsChirho ?? []).filter { $0.readingSourceChirho?.validChirho($0) == true }
+        return AudioRulesChirho.selectChirho(catalogueChirho.clipsChirho + readingsChirho, verseChirho, renditionChirho)
     }
 
     private func catalogueChirho(_ chapterChirho: VerifiedChapterChirho) async throws -> AudioChapterChirho? {
@@ -126,7 +129,8 @@ public actor AudioClientChirho {
             entryChirho.pathChirho, .audioChapterChirho, sha256Chirho: entryChirho.sha256Chirho)
         let catalogueChirho = try DecodingChirho.decodeChirho(AudioChapterChirho.self, dataChirho)
         guard catalogueChirho.schemaVersionChirho == 1, catalogueChirho.bookIdChirho == bookChirho.idChirho,
-              catalogueChirho.chapterChirho == numberChirho, catalogueChirho.clipsChirho.count <= 2000,
+              catalogueChirho.chapterChirho == numberChirho,
+              catalogueChirho.clipsChirho.count + (catalogueChirho.readingsChirho?.count ?? 0) <= 2000,
               catalogueChirho.contentPathChirho == chapterChirho.entryChirho.pathChirho,
               catalogueChirho.contentSha256Chirho == chapterChirho.entryChirho.sha256Chirho
         else { throw RemoteErrorChirho.invalidChirho("audio chapter binding") }
@@ -195,7 +199,8 @@ enum AudioRulesChirho {
     /// Preference among equally valid recordings: the rendition's own profile, then reviewed,
     /// then connected phrasing, then a published recipe, then an IPA-controlled reading.
     static func rankChirho(_ clipChirho: ClipChirho, _ renditionChirho: GreekRenditionChirho) -> Int {
-        (clipChirho.pronunciationChirho == renditionChirho.nativeProfileChirho ? 16 : 0)
+        (clipChirho.readingSourceChirho == nil ? 0 : 32)
+            + (clipChirho.pronunciationChirho == renditionChirho.nativeProfileChirho ? 16 : 0)
             + (clipChirho.isApprovedChirho ? 8 : 0) + (clipChirho.recipeIdChirho == connectedRecipeChirho ? 4 : 0)
             + (clipChirho.recipeIdChirho == nil ? 0 : 2) + (clipChirho.ipaChirho == nil ? 0 : 1)
     }
@@ -211,6 +216,7 @@ enum AudioRulesChirho {
               clipChirho.durationChirho > 0, clipChirho.durationChirho <= 120,
               validWindowChirho(clipChirho)
         else { return false }
+        if let sourceChirho = clipChirho.readingSourceChirho { return sourceChirho.validChirho(clipChirho) }
         if let recipeChirho = clipChirho.recipeIdChirho {
             return recipeChirho.wholeMatch(of: /[a-z0-9]+(?:-[a-z0-9]+)*-chirho/) != nil
                 && clipChirho.synthesisTextChirho != nil

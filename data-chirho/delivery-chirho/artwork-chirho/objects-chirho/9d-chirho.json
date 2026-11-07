@@ -5128,6 +5128,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/revelation-chirho/chapter-011-chirho/rev-011-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/9de4011608090bbbaed527e137bf29f90403781ecd98a32bb6cf50329763b970.webp",
+        "sha256_chirho": "9de4011608090bbbaed527e137bf29f90403781ecd98a32bb6cf50329763b970",
+        "bytes_chirho": 2349272,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T09:19:07.681Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/5a8b36c6615d516c4ef4197f1e4a590c173ead0e9d5e51bde908b19dcad1d33b.webp",
+        "sha256_chirho": "5a8b36c6615d516c4ef4197f1e4a590c173ead0e9d5e51bde908b19dcad1d33b",
+        "bytes_chirho": 179494,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T09:19:08.267Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/genesis-ordered-v1-chirho/chapter-31-chirho/genesis-31-035-chirho.webp"
       ],
       "source_chirho": {

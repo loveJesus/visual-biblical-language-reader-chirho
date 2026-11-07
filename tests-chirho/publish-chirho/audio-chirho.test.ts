@@ -22,6 +22,10 @@ import {
 } from '../../scripts-chirho/publish-chirho/release_cycle_chirho';
 import type { ReleaseManifestChirho } from '../../scripts-chirho/publish-chirho/build_release_chirho';
 import { rejectedAudioChirho } from '../../src/lib/domain-chirho/pronunciation-chirho/audio-reviews-chirho';
+import {
+	BEERI_ATTRIBUTION_CHIRHO,
+	BEERI_LICENSE_URL_CHIRHO
+} from '../../src/lib/domain-chirho/pronunciation-chirho/reading-source-chirho';
 
 const CHAPTER_CHIRHO = 'audio-chirho/proverbs-chirho/chapter-01-chirho.json';
 const CONTENT_CHIRHO = 'content-chirho/proverbs-chirho/chapter-01-chirho.json';
@@ -31,7 +35,76 @@ const TARGET_CHIRHO = {
 	email_chirho: 'test@example.invalid',
 	api_key_chirho: 'test-only-chirho'
 };
-function fixtureChirho(changeChirho?: (clipChirho: Record<string, unknown>) => void): FilesChirho {
+function humanSourceChirho() {
+	return {
+		kind_chirho: 'human',
+		reader_id_chirho: 'rdb-chirho',
+		gbt_id_chirho: 'OT/RDB/Pro',
+		package_sha256_chirho: 'a'.repeat(64),
+		chapter_sha256_chirho: 'b'.repeat(64),
+		timings_sha256_chirho: 'c'.repeat(64),
+		start_chirho: 2,
+		end_chirho: 3,
+		chapter_duration_chirho: 100,
+		attribution_chirho: BEERI_ATTRIBUTION_CHIRHO,
+		license_chirho: 'CC BY-SA 3.0',
+		license_url_chirho: BEERI_LICENSE_URL_CHIRHO
+	};
+}
+
+it('publishes source-bound human readings and refuses wrong source, license, window or AI identity', () => {
+	const validChirho = fixtureChirho((clipChirho) => {
+		clipChirho.voice_name_chirho = "Rabbi Dan Be'eri";
+		clipChirho.reading_source_chirho = humanSourceChirho();
+	});
+	const reasonsChirho: string[] = [];
+	verifyAudioChirho(validChirho, true, reasonsChirho);
+	expect(reasonsChirho).toEqual([]);
+	for (const [keyChirho, valueChirho] of [
+		['gbt_id_chirho', 'OT/RDB/Gen'],
+		['license_url_chirho', 'https://example.com/'],
+		['start_chirho', -1],
+		['end_chirho', 99],
+		['chapter_sha256_chirho', 'broken']
+	] as const) {
+		const filesChirho = fixtureChirho((clipChirho) => {
+			clipChirho.voice_name_chirho = "Rabbi Dan Be'eri";
+			clipChirho.reading_source_chirho = { ...humanSourceChirho(), [keyChirho]: valueChirho };
+		});
+		const failuresChirho: string[] = [];
+		verifyAudioChirho(filesChirho, true, failuresChirho);
+		expect(failuresChirho.some((reasonChirho) => reasonChirho.includes('human reading'))).toBe(
+			true
+		);
+	}
+	for (const fieldChirho of ['ipa_chirho', 'synthesis_text_chirho', 'recipe_id_chirho']) {
+		const filesChirho = fixtureChirho((clipChirho) => {
+			clipChirho.voice_name_chirho = "Rabbi Dan Be'eri";
+			clipChirho.reading_source_chirho = humanSourceChirho();
+			clipChirho[fieldChirho] = 'fabricated';
+		});
+		const failuresChirho: string[] = [];
+		verifyAudioChirho(filesChirho, true, failuresChirho);
+		expect(failuresChirho.some((reasonChirho) => reasonChirho.includes('human reading'))).toBe(
+			true
+		);
+	}
+});
+it('keeps valid human readings out of the unattributed legacy playback stream', () => {
+	const filesChirho = fixtureChirho((clipChirho) => {
+		clipChirho.voice_name_chirho = "Rabbi Dan Be'eri";
+		clipChirho.reading_source_chirho = humanSourceChirho();
+	}, true);
+	const reasonsChirho: string[] = [];
+	verifyAudioChirho(filesChirho, true, reasonsChirho);
+	expect(
+		reasonsChirho.some((reasonChirho) => reasonChirho.includes('updated-client reading array'))
+	).toBe(true);
+});
+function fixtureChirho(
+	changeChirho?: (clipChirho: Record<string, unknown>) => void,
+	forceLegacyChirho = false
+): FilesChirho {
 	const audioChirho = new Uint8Array(834);
 	for (const offsetChirho of [0, 417]) audioChirho.set([0xff, 0xfb, 0x90, 0xc0], offsetChirho);
 	const hashChirho = sha256Chirho(audioChirho);
@@ -75,7 +148,11 @@ function fixtureChirho(changeChirho?: (clipChirho: Record<string, unknown>) => v
 		chapter_chirho: 1,
 		content_path_chirho: `/${CONTENT_CHIRHO}`,
 		content_sha256_chirho: sha256Chirho(contentChirho),
-		clips_chirho: [clipChirho]
+		clips_chirho:
+			clipChirho.reading_source_chirho !== undefined && !forceLegacyChirho ? [] : [clipChirho],
+		...(clipChirho.reading_source_chirho !== undefined && !forceLegacyChirho
+			? { readings_chirho: [clipChirho] }
+			: {})
 	});
 	const manifestChirho = JSON.stringify({
 		schema_version_chirho: 1,

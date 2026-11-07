@@ -24,6 +24,39 @@ private struct CorpusTransportChirho: TransportChirho {
 /// rewrites source files, or infers verse presence from a count rather than the edition's manifest.
 @Suite(.enabled(if: ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"] != nil))
 struct CorpusTestsChirho {
+    @Test func humanReadingsSelectFromTheirSeparateSourceBoundArrayChirho() async throws {
+        let pathChirho = try #require(ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"])
+        let rootChirho = URL(fileURLWithPath: pathChirho, isDirectory: true).standardizedFileURL
+        let remoteChirho = RemoteChirho(transportChirho: CorpusTransportChirho(rootChirho: rootChirho))
+        let contentChirho = ContentClientChirho(remoteChirho: remoteChirho)
+        let audioChirho = AudioClientChirho(remoteChirho: remoteChirho)
+        let manifestChirho = try DecodingChirho.decodeChirho(AudioManifestChirho.self,
+            Data(contentsOf: rootChirho.appendingPathComponent("audio-chirho/manifest-chirho.json")))
+        var expectedChirho = 0
+        var checkedChirho = 0
+        for bookChirho in BookListChirho.bundledChirho().booksChirho where ["Gen", "Prov"].contains(bookChirho.idChirho) {
+            for entryChirho in manifestChirho.booksChirho[bookChirho.idChirho]?.chaptersChirho ?? [] {
+                let catalogueChirho = try DecodingChirho.decodeChirho(AudioChapterChirho.self,
+                    Data(contentsOf: rootChirho.appendingPathComponent(String(entryChirho.pathChirho.dropFirst()))))
+                let readingsChirho = catalogueChirho.readingsChirho ?? []
+                if readingsChirho.isEmpty { continue }
+                #expect(catalogueChirho.clipsChirho.allSatisfy { $0.readingSourceChirho == nil })
+                let chapterChirho = try await contentChirho.chapterChirho(bookChirho, entryChirho.numberChirho)
+                expectedChirho += readingsChirho.count
+                for readingChirho in readingsChirho {
+                    let numberChirho = try #require(Int(readingChirho.lessonIdChirho.split(separator: ".").last ?? ""))
+                    let verseChirho = VerseDisplayChirho(try chapterChirho.lessonChirho(numberChirho))
+                    let selectedChirho = try await audioChirho.verseAudioChirho(chapterChirho, verseChirho, .modernAspiratesChirho)
+                    #expect(selectedChirho.verseClipChirho?.sha256Chirho == readingChirho.sha256Chirho)
+                    #expect(selectedChirho.verseClipChirho?.readingSourceChirho?.readerIdChirho == "rdb-chirho")
+                    checkedChirho += 1
+                }
+            }
+        }
+        #expect(checkedChirho == expectedChirho && expectedChirho > 0)
+        print("iOS human reading contract: \(checkedChirho)/\(expectedChirho) source-bound verse selections")
+    }
+
     @Test func everyPublishedVerseValidatesAndPreservesItsVisibleSourceChirho() async throws {
         let pathChirho = try #require(ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"])
         let rootChirho = URL(fileURLWithPath: pathChirho, isDirectory: true).standardizedFileURL

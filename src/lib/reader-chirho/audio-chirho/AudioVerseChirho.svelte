@@ -11,7 +11,11 @@
 	import { onMount, untrack } from 'svelte';
 	import { AUDIO_MESSAGES_CHIRHO, audioTChirho } from './audio-messages-chirho';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
-	import { recordingsForLessonChirho, type RecordingChirho } from './recordings-chirho';
+	import {
+		isHumanRecordingChirho,
+		recordingsForLessonChirho,
+		type RecordingChirho
+	} from './recordings-chirho';
 	let {
 		lessonChirho,
 		verseNavigationChirho
@@ -20,6 +24,12 @@
 		verseNavigationChirho?: Snippet<[Snippet]>;
 	} = $props();
 	let recordingsChirho = $state<RecordingChirho[]>([]);
+	// Workflow: verse-media-chirho.md. The verse button plays this reading first, so it is credited.
+	const humanReadingChirho = $derived(
+		recordingsChirho.find(
+			(clipChirho) => clipChirho.token_id_chirho === null && isHumanRecordingChirho(clipChirho)
+		)
+	);
 	let renditionChirho = $state('modern_aspirates');
 	let explicitRenditionChirho = $state(false);
 	let speedChirho = $state('1');
@@ -170,6 +180,17 @@
 	<p class="small-note-chirho" id="audio-status-chirho" data-audio-status-chirho aria-live="polite">
 		{audioTChirho('checking_chirho')}
 	</p>
+	{#if humanReadingChirho?.reading_source_chirho}
+		<!-- The CC BY-SA attribution stays verbatim in English, as published; only the link text follows the locale. -->
+		<p class="small-note-chirho" data-reading-credit-chirho>
+			<span lang="en">{humanReadingChirho.reading_source_chirho.attribution_chirho}</span> ·
+			<a
+				href="https://creativecommons.org/licenses/by-sa/3.0/"
+				target="_blank"
+				rel="external noreferrer">{audioTChirho('license_chirho')}</a
+			>
+		</p>
+	{/if}
 	{#if lessonChirho.language_chirho === 'grc'}<p class="small-note-chirho">
 			{audioTChirho('rendition_coverage_chirho')}
 		</p>{/if}

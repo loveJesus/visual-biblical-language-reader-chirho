@@ -18,8 +18,21 @@ import {
 	hasProfileReadingChirho,
 	verifyProfileRecordingChirho
 } from '$lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho';
+import {
+	validHumanRecordingChirho,
+	type ReadingSourceChirho
+} from '$lib/domain-chirho/pronunciation-chirho/reading-source-chirho';
+
+/** A whole-verse reading by a person (Be'eri), as opposed to a synthesized voice. */
+export function isHumanRecordingChirho(clipChirho: {
+	reading_source_chirho?: { kind_chirho?: unknown };
+}): boolean {
+	return clipChirho.reading_source_chirho?.kind_chirho === 'human';
+}
 
 export interface RecordingChirho {
+	/** Present only on human verse readings; validated by the shared reading-source rules. */
+	reading_source_chirho?: ReadingSourceChirho;
 	id_chirho?: string;
 	source_context_chirho?: string;
 	profile_id_chirho?: string;
@@ -54,7 +67,12 @@ const BOOKS_CHIRHO: Record<string, string> = Object.fromEntries(
 	BIBLE_BOOKS_CHIRHO.map((bookChirho) => [bookChirho.id_chirho, bookChirho.slug_chirho])
 );
 const LIMIT_CHIRHO = 2_000_000;
-const cacheChirho = new Map<string, Promise<{ clips_chirho: RecordingChirho[] }>>();
+/** One audio chapter: legacy word/AI clips, plus human readings that released apps never read. */
+interface AudioChapterChirho {
+	clips_chirho: RecordingChirho[];
+	readings_chirho?: RecordingChirho[];
+}
+const cacheChirho = new Map<string, Promise<AudioChapterChirho>>();
 let manifestChirho: Promise<AudioManifestChirho> | undefined;
 let manifestReadAtChirho = 0;
 const shaChirho = async (bytesChirho: BufferSource) =>
@@ -146,10 +164,11 @@ export async function recordingsForLessonChirho(lessonChirho: {
 				dataChirho.book_id_chirho !== bookChirho ||
 				dataChirho.chapter_chirho !== Number(chapterTextChirho) ||
 				!Array.isArray(dataChirho.clips_chirho) ||
-				dataChirho.clips_chirho.length > 2000
+				(dataChirho.readings_chirho !== undefined && !Array.isArray(dataChirho.readings_chirho)) ||
+				dataChirho.clips_chirho.length + (dataChirho.readings_chirho?.length ?? 0) > 2000
 			)
 				throw new Error('Invalid recording chapter');
-			return dataChirho as { clips_chirho: RecordingChirho[] };
+			return dataChirho as AudioChapterChirho;
 		});
 		const pendingChirho = chapterChirho;
 		chapterChirho.catch(() => {
@@ -168,8 +187,18 @@ export async function recordingsForLessonChirho(lessonChirho: {
 		])
 	);
 	const verseChirho = spokenVerseChirho(lessonChirho);
-	return (await chapterChirho).clips_chirho
+	const catalogueChirho = await chapterChirho;
+	// Workflow: verse-media-chirho.md. Human readings travel in their own optional array, so released
+	// apps that predate it never play one unattributed; every entry there must be a validated human reading.
+	const readingsChirho = (catalogueChirho.readings_chirho ?? []).filter((clipChirho) =>
+		validHumanRecordingChirho(clipChirho)
+	);
+	return [...catalogueChirho.clips_chirho, ...readingsChirho]
 		.filter((clipChirho) => {
+			// Workflow: verse-media-chirho.md. A clip claiming a human source is kept only when the
+			// shared reading-source rules accept the whole record; it never borrows AI recipe fields.
+			if (clipChirho.reading_source_chirho !== undefined && !validHumanRecordingChirho(clipChirho))
+				return false;
 			if (
 				clipChirho.source_context_chirho === 'profile_chirho' ||
 				clipChirho.profile_id_chirho !== undefined ||
@@ -237,6 +266,8 @@ export async function recordingsForLessonChirho(lessonChirho: {
 		})
 		.sort(
 			(leftChirho, rightChirho) =>
+				// Human verse readings come before every synthesized verse reading (L.J., 2026-11-06).
+				Number(isHumanRecordingChirho(rightChirho)) - Number(isHumanRecordingChirho(leftChirho)) ||
 				Number(rightChirho.review_chirho === 'approved') -
 					Number(leftChirho.review_chirho === 'approved') ||
 				Number(rightChirho.recipe_id_chirho === HEBREW_CONNECTED_RECIPE_CHIRHO) -

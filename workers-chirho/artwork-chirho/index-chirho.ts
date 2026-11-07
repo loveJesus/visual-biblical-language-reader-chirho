@@ -7,6 +7,7 @@ import type {
 	EdgeCacheChirho
 } from './types-chirho';
 import { artworkResponseChirho } from './artwork-chirho';
+import { videoResponseChirho } from './video-chirho';
 import { flagResponseChirho } from './flags-chirho';
 import { contactResponseChirho } from './contact-chirho';
 import { isSiteHostnameChirho } from '../../src/lib/site-chirho';
@@ -40,6 +41,26 @@ export function createArtworkWorkerChirho(
 				fetch_chirho: overrideChirho?.fetch_chirho ?? globalThis.fetch.bind(globalThis),
 				now_chirho: overrideChirho?.now_chirho ?? Date.now
 			};
+			if (pathChirho.startsWith('/video-chirho/')) {
+				const matchChirho = /^\/video-chirho\/sha256-chirho\/([a-f0-9]{64})-chirho\.mp4$/.exec(
+					pathChirho
+				);
+				const shaChirho = matchChirho?.[1] ?? '';
+				const bytesChirho =
+					catalogueChirho.video_chirho && Object.hasOwn(catalogueChirho.video_chirho, shaChirho)
+						? catalogueChirho.video_chirho[shaChirho]
+						: undefined;
+				return bytesChirho === undefined
+					? new Response(null, { status: 404 })
+					: videoResponseChirho(
+							requestChirho,
+							shaChirho,
+							bytesChirho,
+							environmentChirho,
+							contextChirho,
+							dependenciesChirho
+						);
+			}
 			if (pathChirho.startsWith('/audio-chirho/sha256-chirho/')) {
 				const matchChirho = /^\/audio-chirho\/sha256-chirho\/([a-f0-9]{64})-chirho\.mp3$/u.exec(
 					pathChirho

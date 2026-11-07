@@ -11,6 +11,7 @@ export interface MediaCatalogueChirho {
 	schema_version_chirho: 1;
 	assets_chirho: Record<string, MediaFactChirho>;
 	audio_chirho?: Record<string, number>;
+	video_chirho?: Record<string, number>;
 	verses_chirho: Record<string, true>;
 	hostname_chirho: string;
 	hostnames_chirho?: readonly string[];

@@ -98,6 +98,17 @@ final class ReaderModelChirho {
 
     func retryChirho() { openChirho(passageChirho) }
 
+    /// Current original-language baseline uses one embedded soundtrack/clock. A different selected
+    /// reading keeps the still until a separately reviewed replacement pair is available.
+    func toggleVerseChirho() {
+        if playerChirho.activeIdChirho == "verse" { playerChirho.stopChirho(); return }
+        let clipChirho = audioChirho.verseClipChirho
+        if let videoChirho = mediaChirho.videoChirho,
+           clipChirho.map(videoChirho.carriesChirho) ?? true {
+            playerChirho.playVideoChirho(videoChirho)
+        } else if let clipChirho { playerChirho.playChirho(clipChirho, idChirho: "verse") }
+    }
+
     func stepChirho(_ stepChirho: StepChirho) async {
         guard let nextChirho = try? await contentChirho.neighbourChirho(passageChirho, stepChirho, booksChirho)
         else { return }

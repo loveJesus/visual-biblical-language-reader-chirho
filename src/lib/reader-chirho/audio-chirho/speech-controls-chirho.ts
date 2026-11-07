@@ -80,7 +80,11 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		bytes_chirho: number;
 		start_offset_chirho?: number;
 		end_offset_chirho?: number;
+		/** Present on a human verse reading (validated before it reaches this attribute). */
+		reading_source_chirho?: { kind_chirho?: string };
 	}
+	const humanChirho = (clipChirho: SavedClipChirho) =>
+		clipChirho.reading_source_chirho?.kind_chirho === 'human';
 	function clipsChirho(): SavedClipChirho[] {
 		if (typeof Audio === 'undefined') return [];
 		try {
@@ -113,7 +117,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		);
 	}
 	function recordingChirho(buttonChirho: HTMLButtonElement) {
-		return clipsChirho().find(
+		const matchesChirho = clipsChirho().filter(
 			(clipChirho) =>
 				clipChirho.text_chirho === buttonChirho.dataset.pronounceChirho &&
 				compatibleChirho(clipChirho, buttonChirho) &&
@@ -125,6 +129,11 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 					clipChirho.asset_path_chirho
 				)
 		);
+		// Workflow: verse-media-chirho.md. A human verse reading is preferred wherever it matches.
+		return matchesChirho.find(humanChirho) ?? matchesChirho[0];
+	}
+	function readerNameChirho(clipChirho: SavedClipChirho) {
+		return clipChirho.voice_name_chirho.split(' - ')[0];
 	}
 	function wordSequenceChirho(buttonChirho: HTMLButtonElement) {
 		if (buttonChirho.classList.contains('word-speech-chirho')) return null;
@@ -249,10 +258,12 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		const savedChirho = buttonChirho ? recordingChirho(buttonChirho) : undefined;
 		if (savedChirho)
 			return messageChirho(
-				savedChirho.ipa_chirho ? 'recorded_ipa_ready_chirho' : 'recorded_ready_chirho',
-				{
-					name_chirho: savedChirho.voice_name_chirho.split(' - ')[0]
-				}
+				humanChirho(savedChirho)
+					? 'human_ready_chirho'
+					: savedChirho.ipa_chirho
+						? 'recorded_ipa_ready_chirho'
+						: 'recorded_ready_chirho',
+				{ name_chirho: readerNameChirho(savedChirho) }
 			);
 		if (buttonChirho && wordSequenceChirho(buttonChirho))
 			return messageChirho('assembled_ready_chirho');
@@ -361,9 +372,12 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			))
 				stopButtonChirho.disabled = false;
 			statusChirho(
-				messageChirho('recorded_playing_chirho', {
-					name_chirho: savedChirho.voice_name_chirho.split(' - ')[0]
-				})
+				messageChirho(
+					humanChirho(savedChirho) ? 'human_playing_chirho' : 'recorded_playing_chirho',
+					{
+						name_chirho: readerNameChirho(savedChirho)
+					}
+				)
 			);
 			const finishedChirho = (errorChirho = false) => {
 				if (disposedChirho || sequenceChirho !== requestChirho) return;

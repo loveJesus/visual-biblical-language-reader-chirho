@@ -65,6 +65,7 @@ struct MediaChapterChirho: Codable, Sendable {
     let scenesChirho: [SceneRecordChirho]
     let iconsChirho: [IconRecordChirho]
     let lemmaIconsChirho: [IconRecordChirho]?
+    var videosChirho: [VerseVideoChirho]? = nil
 }
 
 /// How a word's picture was chosen. A general picture never claims this verse's sense.
@@ -84,6 +85,7 @@ public struct WordPictureChirho: Sendable, Hashable {
 public struct VerseMediaChirho: Sendable, Hashable {
     public let sceneChirho: SceneRecordChirho?
     public let picturesChirho: [String: WordPictureChirho]
+    public var videoChirho: VerseVideoChirho? = nil
 
     public static let emptyChirho = VerseMediaChirho(sceneChirho: nil, picturesChirho: [:])
 }

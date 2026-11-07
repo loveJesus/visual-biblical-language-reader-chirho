@@ -163,9 +163,15 @@ export async function snapshotAudioInputsChirho(rootChirho: string) {
 					'audio catalogue changed during snapshot; retry from its published manifest'
 				]);
 			metadataChirho.set(pathChirho, dataChirho);
-			const valuesChirho = JSON.parse(dataChirho.toString('utf8')).clips_chirho;
-			if (!Array.isArray(valuesChirho) || valuesChirho.length > 2000)
+			const catalogueChirho = JSON.parse(dataChirho.toString('utf8'));
+			const readingsChirho = catalogueChirho.readings_chirho ?? [];
+			if (
+				!Array.isArray(catalogueChirho.clips_chirho) ||
+				!Array.isArray(readingsChirho) ||
+				catalogueChirho.clips_chirho.length + readingsChirho.length > 2000
+			)
 				throw new RefusalChirho(['audio clips invalid']);
+			const valuesChirho = [...catalogueChirho.clips_chirho, ...readingsChirho];
 			for (const clipChirho of valuesChirho) {
 				if (
 					!/^\/audio-chirho\/sha256-chirho\/[a-f0-9]{64}-chirho\.mp3$/u.test(

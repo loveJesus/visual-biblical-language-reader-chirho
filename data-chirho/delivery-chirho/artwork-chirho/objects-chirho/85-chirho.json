@@ -2174,6 +2174,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/hebrews-chirho/chapter-013-chirho/heb-013-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8504835fc22ba0ea0e6e40a6c49809c2166575108751997030359997a40100a2.webp",
+        "sha256_chirho": "8504835fc22ba0ea0e6e40a6c49809c2166575108751997030359997a40100a2",
+        "bytes_chirho": 2461356,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T08:19:58.026Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/9416d2b02bcfd46f64c537648e428b74406d21d14e00db5aab09db73fe186837.webp",
+        "sha256_chirho": "9416d2b02bcfd46f64c537648e428b74406d21d14e00db5aab09db73fe186837",
+        "bytes_chirho": 217608,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T08:19:59.047Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/luke-chirho/chapter-019-chirho/luke-019-021-chirho.webp"
       ],
       "source_chirho": {

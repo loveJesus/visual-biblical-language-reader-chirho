@@ -95,7 +95,10 @@ enum MediaRulesChirho {
         for (tokenIdChirho, pictureChirho) in contextualPicturesChirho(mediaChirho.iconsChirho, verseChirho) {
             picturesChirho[tokenIdChirho] = pictureChirho
         }
-        return VerseMediaChirho(sceneChirho: sceneChirho, picturesChirho: picturesChirho)
+        let videoChirho = sceneChirho.flatMap { sceneValueChirho in
+            mediaChirho.videosChirho?.prefix(400).first { $0.validChirho(verseChirho, sceneValueChirho) }
+        }
+        return VerseMediaChirho(sceneChirho: sceneChirho, picturesChirho: picturesChirho, videoChirho: videoChirho)
     }
 
     static func validSceneChirho(_ sceneChirho: SceneRecordChirho) -> Bool {

@@ -34,6 +34,7 @@ import {
 	verifyProfileRecordingChirho,
 	type ProfileVerseChirho
 } from '../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho';
+import { validHumanRecordingChirho } from '../../src/lib/domain-chirho/pronunciation-chirho/reading-source-chirho';
 
 const BOOKS_CHIRHO: Record<string, readonly [string, number]> = Object.fromEntries(
 	BIBLE_BOOKS_CHIRHO.map((bookChirho) => [
@@ -150,7 +151,20 @@ export function verifyAudioChirho(
 				const contentChirho = parseChirho(contentBytesChirho, 4 * 1024 * 1024);
 				if (!Array.isArray(contentChirho.verses_chirho))
 					throw new Error('audio source has no verses');
-				for (const clipValueChirho of chapterChirho.clips_chirho) {
+				const readingsChirho = chapterChirho.readings_chirho ?? [];
+				if (
+					!Array.isArray(readingsChirho) ||
+					chapterChirho.clips_chirho.length + readingsChirho.length > 2000 ||
+					readingsChirho.some((clipChirho) => !validHumanRecordingChirho(clipChirho))
+				)
+					throw new Error('human reading array/source refused');
+				if (
+					chapterChirho.clips_chirho.some(
+						(clipChirho) => objectChirho(clipChirho).reading_source_chirho !== undefined
+					)
+				)
+					throw new Error('human recordings require the updated-client reading array');
+				for (const clipValueChirho of [...chapterChirho.clips_chirho, ...readingsChirho]) {
 					const clipChirho = objectChirho(clipValueChirho);
 					if (!validRecordingWindowChirho(clipChirho))
 						throw new Error('audio playback window refused');
@@ -171,6 +185,11 @@ export function verifyAudioChirho(
 								: 'israeli_hebrew')
 					)
 						throw new Error('audio pronunciation/source identity differs');
+					if (
+						clipChirho.reading_source_chirho !== undefined &&
+						!validHumanRecordingChirho(clipChirho)
+					)
+						throw new Error('human recording source/window/license differs');
 					const tokenChirho = lessonChirho.tokens_chirho.find(
 						(rowChirho: Record<string, unknown>) =>
 							rowChirho.id_chirho === clipChirho.token_id_chirho
