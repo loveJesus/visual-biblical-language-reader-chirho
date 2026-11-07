@@ -1,9 +1,9 @@
 {
 	"schema_version_chirho": 1,
 	"release_kind_chirho": "recorded_preview",
-	"authority_chirho": "L.J., 2026-10-27, relayed by gpt_chirho (DM #2486, #2489): \"It would be nice if you are uploading the images to R2 as they are being made (in a properly compressed format) and deploying from time to time.\" GPT's tasklist records that this authorizes the project's R2 storage and Hinneh deployment effects, and that it neither approves any artwork's semantic review nor authorizes a GitHub push or visibility change.",
-	"scope_chirho": "Periodic preview deployments of the current reader to hinneh.us and the retained hinneh.bible.systems alias. L.J., 2026-11-02, directly instructed setup of his newly registered hinneh.us using the existing Porkbun and Cloudflare keys. Generated artwork stays pending and is labeled pending; previews ask search engines not to index them. GitHub Pages/public-repo hosting remains a discussion; this record grants no GitHub push or visibility change.",
+	"authority_chirho": "L.J., 2026-10-27, relayed by gpt_chirho (DM #2486, #2489): \"It would be nice if you are uploading the images to R2 as they are being made (in a properly compressed format) and deploying from time to time.\" GPT's tasklist records that this authorizes the project's R2 storage and Hinneh deployment effects, and that it neither approves any artwork's semantic review nor authorizes a GitHub push or visibility change. L.J., 2026-11-06, directly instructed: \"please make sure our SEO is well done\" and \"continue\", authorizing public search-engine indexing of Hinneh's public pages while generated media remain pending review and media/internal assets retain noindex.",
+	"scope_chirho": "Periodic preview deployments of the current reader to hinneh.us and the retained hinneh.bible.systems alias. L.J., 2026-11-02, directly instructed setup of his newly registered hinneh.us using the existing Porkbun and Cloudflare keys. Under L.J.'s 2026-11-06 SEO instruction, public pages may be indexed by search engines while generated artwork stays pending and is labeled pending, and media and internal assets retain noindex. Actual artwork review states and every provider/budget scope remain unchanged.",
 	"art_review_states_shown_chirho": ["pending", "approved"],
-	"recorded_by_chirho": "claude2_chirho",
-	"recorded_at_chirho": "2026-10-27T16:25:00-04:00"
+	"recorded_by_chirho": "agy_chirho",
+	"recorded_at_chirho": "2026-11-06T21:45:00-05:00"
 }

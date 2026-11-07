@@ -181,7 +181,8 @@ export async function probeReleaseChirho(
 			(responseChirho) =>
 				responseChirho.status === 200 &&
 				/text\/html/.test(responseChirho.headers.get('content-type') ?? '') &&
-				responseChirho.headers.get('x-content-type-options') === 'nosniff'
+				responseChirho.headers.get('x-content-type-options') === 'nosniff' &&
+				!/noindex/i.test(responseChirho.headers.get('x-robots-tag') ?? '')
 		],
 		[
 			'HEAD has no body',
@@ -195,7 +196,8 @@ export async function probeReleaseChirho(
 			scriptChirho ?? '/missing-chirho',
 			(responseChirho) =>
 				responseChirho.status === 200 &&
-				/immutable/.test(responseChirho.headers.get('cache-control') ?? '')
+				/immutable/.test(responseChirho.headers.get('cache-control') ?? '') &&
+				/noindex/i.test(responseChirho.headers.get('x-robots-tag') ?? '')
 		],
 		[
 			'chapter JSON',
@@ -284,10 +286,12 @@ export async function probeReleaseChirho(
 		const rootResponseChirho = await fetch(originChirho, { signal: AbortSignal.timeout(10_000) });
 		if (kindChirho === 'recorded_preview')
 			checksChirho.push([
-				'preview asks not to be indexed',
+				'preview indexes public pages while media retains noindex',
 				'GET',
-				'/',
-				(responseChirho) => /noindex/.test(responseChirho.headers.get('x-robots-tag') ?? '')
+				mediaChirho,
+				(responseChirho) =>
+					!/noindex/i.test(rootResponseChirho.headers.get('x-robots-tag') ?? '') &&
+					/noindex/i.test(responseChirho.headers.get('x-robots-tag') ?? '')
 			]);
 		const etagChirho = rootResponseChirho.headers.get('etag') ?? '';
 		checksChirho.push([

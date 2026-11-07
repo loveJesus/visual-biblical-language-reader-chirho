@@ -21,6 +21,28 @@ sources_chirho = importlib_chirho.import_module("scene_upgrade_sources_chirho")
 
 
 class ChapterOpeningTestsChirho(unittest_chirho.TestCase):
+    def test_surviving_prior_artists_prevent_new_dispatch_chirho(self_chirho):
+        runner_chirho = self_chirho.runner_chirho()
+        runner_chirho.status_chirho = mock_chirho.Mock()
+        runner_chirho.DISPATCHED_CHIRHO = 0
+        runner_chirho.draining_chirho = lambda: False
+        with (
+            mock_chirho.patch.object(module_chirho, "freeze_policy_chirho"),
+            mock_chirho.patch.object(
+                module_chirho, "reconcile_inflight_chirho", return_value=False
+            ),
+            mock_chirho.patch.object(
+                module_chirho, "candidates_chirho", return_value=iter(())
+            ) as candidates_chirho,
+        ):
+            self_chirho.assertFalse(
+                module_chirho.run_chirho(ROOT_CHIRHO, runner_chirho, 3, 100)
+            )
+            candidates_chirho.assert_not_called()
+        runner_chirho.status_chirho.assert_called_once_with(
+            ROOT_CHIRHO, "needs_reconciliation", phase_chirho="chapter_openings"
+        )
+
     def runner_chirho(self_chirho):
         return types_chirho.SimpleNamespace(
             MASTER_HOME_CHIRHO=PathChirho("queue-chirho"),

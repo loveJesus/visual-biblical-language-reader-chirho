@@ -583,10 +583,6 @@ def run_chirho(root_chirho, concurrency_chirho, limit_chirho):
             concurrency_chirho,
             limit_chirho,
         ):
-            status_chirho(
-                root_chirho,
-                "drained" if draining_chirho() else "bounded_checkpoint_with_holds",
-            )
             return
         for book_chirho in INVENTORY_CHIRHO["books_chirho"]:
             manifest_chirho = sources_chirho.read_chirho(

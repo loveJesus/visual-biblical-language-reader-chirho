@@ -29,11 +29,14 @@ export const RELEASE_HEADERS_CHIRHO = `/*
   ! Cache-Control
   Cache-Control: public, immutable, max-age=31536000
 `;
-// Recorded previews carry pending artwork, so search engines are asked not to index them.
-export const PREVIEW_HEADERS_CHIRHO = RELEASE_HEADERS_CHIRHO.replace(
-	'/*\n',
-	'/*\n  X-Robots-Tag: noindex\n'
-);
+// Public pages may be indexed under L.J.'s SEO authority while pending media and internal assets retain noindex.
+export const PREVIEW_HEADERS_CHIRHO = `${RELEASE_HEADERS_CHIRHO}/assets-chirho/*
+  X-Robots-Tag: noindex
+/media-chirho/*
+  X-Robots-Tag: noindex
+/audio-chirho/*
+  X-Robots-Tag: noindex
+`;
 
 const SEGMENT_CHIRHO = /^[A-Za-z0-9_][A-Za-z0-9._-]{0,127}$/;
 const MEDIA_PATH_CHIRHO = /^\/assets-chirho(?:\/[a-z0-9][a-z0-9-]*)+\.webp$/;

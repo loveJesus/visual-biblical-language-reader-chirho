@@ -143,11 +143,48 @@ def candidates_chirho(root_chirho, runner_chirho):
             yield owner_chirho, selected_chirho
 
 
+def reconcile_inflight_chirho(root_chirho, runner_chirho):
+    """Drain surviving original artists before adding three new chapter workers."""
+    ready_chirho = True
+    for book_chirho in runner_chirho.INVENTORY_CHIRHO["books_chirho"]:
+        pin_chirho = runner_chirho.INVENTORY_CHIRHO["source_manifests_chirho"][
+            book_chirho["id_chirho"]
+        ]
+        manifest_chirho = runner_chirho.sources_chirho.read_chirho(
+            root_chirho / pin_chirho["path_chirho"]
+        )
+        for entry_chirho in manifest_chirho["chapters_chirho"]:
+            owner_chirho = ChapterOwnerChirho(
+                runner_chirho, book_chirho, entry_chirho["number_chirho"]
+            )
+            home_chirho = root_chirho / owner_chirho.HOME_CHIRHO
+            if not (home_chirho / "inflight-chirho.json").exists() and not any(
+                home_chirho.glob("attempt-*/prepared-chirho.json")
+            ):
+                continue
+            jobs_chirho = runner_chirho.sources_chirho.chapter_jobs_chirho(
+                root_chirho, runner_chirho.INVENTORY_CHIRHO, book_chirho, entry_chirho
+            )
+            pool_chirho = runner_chirho.POOL_CHIRHO.OrderedPoolChirho(
+                owner_chirho, root_chirho, book_chirho["id_chirho"], jobs_chirho, 1
+            )
+            ready_chirho = pool_chirho.recover_chirho() and ready_chirho
+    return ready_chirho
+
+
 def run_chirho(root_chirho, runner_chirho, concurrency_chirho, limit_chirho):
     """Three independent chapter artists, one installer, original per-chapter recovery."""
     freeze_policy_chirho(root_chirho, runner_chirho)
+    if not reconcile_inflight_chirho(root_chirho, runner_chirho):
+        runner_chirho.status_chirho(
+            root_chirho, "needs_reconciliation", phase_chirho="chapter_openings"
+        )
+        return False
     remaining_chirho = limit_chirho - runner_chirho.DISPATCHED_CHIRHO
     if remaining_chirho <= 0:
+        runner_chirho.status_chirho(
+            root_chirho, "bounded_checkpoint", phase_chirho="chapter_openings"
+        )
         return False
     iterator_chirho = iter(candidates_chirho(root_chirho, runner_chirho))
     failures_chirho, selected_chirho = 0, 0
@@ -198,8 +235,19 @@ def run_chirho(root_chirho, runner_chirho, concurrency_chirho, limit_chirho):
                 or selected_chirho >= remaining_chirho
             ):
                 exhausted_chirho = True
-    return (
+    complete_chirho = (
         failures_chirho < 3
         and not runner_chirho.draining_chirho()
         and selected_chirho < remaining_chirho
     )
+    if not complete_chirho:
+        runner_chirho.status_chirho(
+            root_chirho,
+            "drained"
+            if runner_chirho.draining_chirho()
+            else "bounded_checkpoint_with_holds"
+            if failures_chirho >= 3
+            else "bounded_checkpoint",
+            phase_chirho="chapter_openings",
+        )
+    return complete_chirho

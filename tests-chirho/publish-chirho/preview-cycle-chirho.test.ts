@@ -389,7 +389,7 @@ describe('recorded preview snapshot and overlay', () => {
 		await expect(verifySnapshotReuseChirho(rootChirho)).resolves.toBeUndefined();
 	});
 
-	it('builds a recorded preview with pending art kept pending and noindex headers', async () => {
+	it('builds a recorded preview with pending art kept pending, indexable public pages, and noindex media/internal assets', async () => {
 		const projectChirho = await fixtureChirho();
 		const rootChirho = projectChirho.root_chirho;
 		const optionsChirho = {
@@ -417,7 +417,13 @@ describe('recorded preview snapshot and overlay', () => {
 			)
 		).toBe(true);
 		expect(await readFile(join(directoryChirho, '_headers'), 'utf8')).toBe(PREVIEW_HEADERS_CHIRHO);
-		expect(PREVIEW_HEADERS_CHIRHO).toMatch(/^\/\*\n {2}X-Robots-Tag: noindex\n/);
+		expect(PREVIEW_HEADERS_CHIRHO).not.toMatch(
+			/^\/\*\n(?: {2}[^\n]+\n)* {2}X-Robots-Tag: noindex\n/
+		);
+		expect(PREVIEW_HEADERS_CHIRHO).toContain('/_app/*\n  X-Robots-Tag: noindex\n');
+		expect(PREVIEW_HEADERS_CHIRHO).toContain('/assets-chirho/*\n  X-Robots-Tag: noindex\n');
+		expect(PREVIEW_HEADERS_CHIRHO).toContain('/media-chirho/*\n  X-Robots-Tag: noindex\n');
+		expect(PREVIEW_HEADERS_CHIRHO).toContain('/audio-chirho/*\n  X-Robots-Tag: noindex\n');
 		expect(
 			await verifyReleaseChirho(rootChirho, 'recorded_preview', optionsChirho.git_chirho)
 		).toEqual([]);
