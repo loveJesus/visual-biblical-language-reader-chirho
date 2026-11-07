@@ -3794,6 +3794,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/acts-chirho/chapter-018-chirho/acts-018-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/68646df4e3836b3c6007321c96928bbb19d37caf4641623a70669e662a896186.webp",
+        "sha256_chirho": "68646df4e3836b3c6007321c96928bbb19d37caf4641623a70669e662a896186",
+        "bytes_chirho": 2755302,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T05:27:33.406Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/61f1c6ce63e5bdc3accbc24d570fdb516438d631cbe24cf34ae227cb1a6b9829.webp",
+        "sha256_chirho": "61f1c6ce63e5bdc3accbc24d570fdb516438d631cbe24cf34ae227cb1a6b9829",
+        "bytes_chirho": 285968,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T05:27:34.584Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/malachi-chirho/chapter-002-chirho/mal-002-016-chirho.webp"
       ],
       "source_chirho": {

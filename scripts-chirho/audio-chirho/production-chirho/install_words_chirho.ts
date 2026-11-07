@@ -8,6 +8,11 @@ import { spokenWordChirho } from '../../../src/lib/domain-chirho/pronunciation-c
 import { uploadAudioChirho, type AudioUploadChirho } from '../r2_recordings_chirho';
 import { acquireLockChirho, type TargetChirho } from '../../publish-chirho/r2_upload_watch_chirho';
 import type { LibraryWordChirho } from './prepare_words_chirho';
+import {
+	maqqefContextRequiredChirho,
+	verifyMaqqefOccurrenceChirho,
+	verifyMaqqefWordSourcesChirho
+} from './maqqef-chirho/context_chirho';
 
 interface PublicChapterChirho {
 	schema_version_chirho: number;
@@ -86,6 +91,12 @@ async function installUnlockedWordsChirho(
 				token_id_chirho: occurrenceChirho.token_id_chirho,
 				text_chirho: occurrenceChirho.text_chirho,
 				canonical_sha256_chirho: occurrenceChirho.canonical_sha256_chirho,
+				...(maqqefContextRequiredChirho(wordChirho)
+					? {
+							source_context_chirho: 'maqqef_chirho',
+							maqqef_group_chirho: occurrenceChirho.maqqef_group_chirho
+						}
+					: {}),
 				voice_name_chirho: receiptChirho.voice_name_chirho,
 				asset_path_chirho: assetPathChirho,
 				sha256_chirho: receiptChirho.sha256_chirho,
@@ -166,6 +177,13 @@ async function installUnlockedWordsChirho(
 				spokenWordChirho(tokenChirho) !== entryChirho.occurrence_chirho.text_chirho
 			)
 				throw new Error('Word occurrence no longer agrees with the source');
+			if (maqqefContextRequiredChirho(entryChirho.clip_chirho))
+				verifyMaqqefOccurrenceChirho(
+					sourceChirho,
+					entryChirho.occurrence_chirho,
+					entryChirho.clip_chirho,
+					entryChirho.clip_chirho.source_context_chirho
+				);
 			const previousChirho = clipsChirho.find(
 				(rowChirho) =>
 					rowChirho.lesson_id_chirho === entryChirho.clip_chirho.lesson_id_chirho &&
@@ -238,11 +256,21 @@ export async function installWordsChirho(
 	targetChirho: TargetChirho | null,
 	fetchChirho: typeof fetch = fetch
 ) {
+	// Refuse a changed maqqef proof even before creating installer lock directories.
+	const receivedWordsChirho = wordsChirho.filter((wordChirho) =>
+		receiptsChirho.some(
+			(receiptChirho) =>
+				receiptChirho.id_chirho === wordChirho.job_chirho.id_chirho &&
+				receiptChirho.state_chirho === 'received'
+		)
+	);
+	await verifyMaqqefWordSourcesChirho(rootChirho, receivedWordsChirho);
 	await mkdirChirho(joinChirho(rootChirho, 'build-chirho/r2-chirho'), { recursive: true });
 	const releaseChirho = await acquireLockChirho(
 		joinChirho(rootChirho, 'build-chirho/r2-chirho/audio-catalogue-chirho.lock')
 	);
 	try {
+		await verifyMaqqefWordSourcesChirho(rootChirho, receivedWordsChirho);
 		return await installUnlockedWordsChirho(
 			rootChirho,
 			folderChirho,

@@ -37,6 +37,11 @@ import { isBibleChapterPathChirho } from '../../../src/lib/bible-chirho/books-ch
 import { accountedReceiptCreditsChirho } from './credit_accounting_chirho';
 import { reconcileFundingChirho } from './reconcile_funding_chirho';
 import { lemmaPriorityChirho } from './lemma_priority_chirho';
+import {
+	maqqefContextRequiredChirho,
+	verifyMaqqefOccurrenceChirho,
+	type MaqqefVerseChirho
+} from './maqqef-chirho/context_chirho';
 
 interface BatchEntryChirho {
 	path_chirho: string;
@@ -117,15 +122,7 @@ export async function verifyWordSourcesChirho(
 		string,
 		{
 			sha_chirho: string;
-			verses_chirho: {
-				id_chirho: string;
-				canonical_text_chirho: string;
-				tokens_chirho: {
-					id_chirho: string;
-					text_chirho: string;
-					qere_chirho?: { text_chirho: string }[];
-				}[];
-			}[];
+			verses_chirho: MaqqefVerseChirho[];
 		}
 	>();
 	for (const wordChirho of wordsChirho) {
@@ -177,6 +174,20 @@ export async function verifyWordSourcesChirho(
 				spokenWordChirho(tokenChirho) !== occurrenceChirho.text_chirho
 			)
 				throw new WordSourceRefusalChirho('Word context changed');
+			if (maqqefContextRequiredChirho(wordChirho)) {
+				try {
+					verifyMaqqefOccurrenceChirho(
+						verseChirho,
+						occurrenceChirho,
+						jobChirho,
+						wordChirho.source_context_chirho
+					);
+				} catch (errorChirho) {
+					throw new WordSourceRefusalChirho(
+						errorChirho instanceof Error ? errorChirho.message : 'Maqqef source context refused'
+					);
+				}
+			}
 			const inputChirho = productionWordRecipeChirho(
 				occurrenceChirho.text_chirho,
 				jobChirho.recipe_id_chirho,

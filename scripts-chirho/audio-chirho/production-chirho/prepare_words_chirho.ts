@@ -30,12 +30,14 @@ export interface WordOccurrenceChirho {
 	canonical_sha256_chirho: string;
 	content_path_chirho: string;
 	content_sha256_chirho: string;
+	maqqef_group_chirho?: string;
 }
 export interface LibraryWordChirho {
 	key_chirho: string;
 	job_chirho: AudioJobChirho;
 	occurrences_chirho: WordOccurrenceChirho[];
 	analysis_note_chirho: string;
+	source_context_chirho?: 'maqqef_chirho';
 }
 interface SourceChapterChirho {
 	book_chirho: string;

@@ -154,3 +154,24 @@ flowchart LR
   disjoint_batches_chirho -->|unknown| no_repost_chirho[Preserve original receipt without retry]
   one_installer_chirho --> library_refresh_chirho[Refresh verified libraries and normal release]
 ```
+
+## Source-bound maqqef continuation
+
+The isolated-word preparation did not supply a verified stress context for every unaccented maqqef member. The November 7 continuation keeps the source group intact, derives its unstressed first member and checks the final member against its independently supported stress. It keeps the existing Hebrew v1 IPA recipe, narrator, model and cache key. This is a contextual pronunciation aid, not an assertion of isolated dictionary stress. Divine-name profiles, unchecked tail stress, qere/ketiv collisions and other excluded analyses remain held.
+
+One source-context validator is shared by production, installation and publication. Each occurrence retains its own exact maqqef group together with its chapter, canonical verse and token binding. Replacing a group or supplying a self-consistent but incorrect IPA refuses before speech reservation or installation. Canonical Scripture bytes do not change.
+
+The separate private authority freezes 1,081 keys across 2,211 occurrences. Two exact historical MP3s are reused at zero new reservation. Only the remaining 1,079 keys may be requested, at most 11,180 raw input units. The whole previous 443,483-unit global envelope remains reserved; this pass adds only its fixed new allocation. The named inflections account remains included-only, bound to its existing identity and billing cycle, with the normal 1,000-credit reserve. Previous authorities, plans, receipts and unknown outcomes are not rewritten. The scene artists operate independently; audio has its own production lock and one catalogue installer.
+
+```mermaid
+flowchart LR
+  source_maqqef_chirho[Exact maqqef source group] --> context_check_chirho[Derive unstressed target and verify checked tail]
+  context_check_chirho --> prior_take_chirho{Exact received cache key exists}
+  prior_take_chirho -->|yes| reuse_maqqef_chirho[Preserve original take and provenance]
+  prior_take_chirho -->|no| fixed_pool_chirho[Freeze new keys and entire included-credit reservation]
+  fixed_pool_chirho --> parallel_audio_chirho[At most two disjoint speech batches]
+  parallel_audio_chirho --> serial_audio_chirho[One source-checking installer and R2 readback]
+  reuse_maqqef_chirho --> serial_audio_chirho
+  serial_audio_chirho --> source_publish_chirho[Recheck occurrence context in the release]
+  source_publish_chirho --> hosted_audio_chirho[Verify hosted clips and actual selection]
+```

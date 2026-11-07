@@ -24,6 +24,11 @@ import {
 	ipaForRecordingChirho,
 	ipaInputChirho
 } from '../../src/lib/domain-chirho/pronunciation-chirho/ipa-trial-chirho';
+import {
+	maqqefContextRequiredChirho,
+	verifyMaqqefOccurrenceChirho,
+	type MaqqefVerseChirho
+} from '../audio-chirho/production-chirho/maqqef-chirho/context_chirho';
 
 const BOOKS_CHIRHO: Record<string, readonly [string, number]> = Object.fromEntries(
 	BIBLE_BOOKS_CHIRHO.map((bookChirho) => [
@@ -165,6 +170,24 @@ export function verifyAudioChirho(
 						(rowChirho: Record<string, unknown>) =>
 							rowChirho.id_chirho === clipChirho.token_id_chirho
 					);
+					if (maqqefContextRequiredChirho(clipChirho)) {
+						if (
+							!tokenChirho ||
+							typeof clipChirho.token_id_chirho !== 'string' ||
+							typeof clipChirho.text_chirho !== 'string'
+						)
+							throw new Error('Maqqef recording has no source word');
+						verifyMaqqefOccurrenceChirho(
+							lessonChirho as MaqqefVerseChirho,
+							{
+								token_id_chirho: clipChirho.token_id_chirho,
+								text_chirho: clipChirho.text_chirho,
+								maqqef_group_chirho: clipChirho.maqqef_group_chirho
+							},
+							clipChirho,
+							clipChirho.source_context_chirho
+						);
+					}
 					const wordRecipeChirho = tokenChirho
 						? productionWordRecipeChirho(
 								spokenWordChirho(tokenChirho),
