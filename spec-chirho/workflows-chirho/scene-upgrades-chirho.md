@@ -11,6 +11,10 @@ flowchart TD
   priority_chirho --> reserve_chirho[Original per-chapter checkpoint before dispatch]
   reserve_chirho --> artist_chirho[One built-in image call per verse]
   artist_chirho --> original_chirho[Bind exact returned PNG and source excerpt]
+  artist_chirho --> async_chirho[If exec yields, retain its exact cell identity]
+  async_chirho --> wait_chirho[Follow only matching wait completions]
+  wait_chirho --> original_chirho
+  wait_chirho --> hold_chirho
   artist_chirho --> hold_chirho[Refused or unknown outcome retained; no regeneration]
   original_chirho --> convert_chirho[Deterministic centered 4:3 lossless source WebP]
   convert_chirho --> install_chirho[Sole catalogue installer]
@@ -30,3 +34,5 @@ The integrated-only `chapter-opening-priority-chirho.json` policy enables `chapt
 Each chapter has its own durable pool under `workspace-chirho/art-chirho/queue-chirho/high-quality-scenes-chirho/books-chirho/`. The global progress file records actual dispatch/install/recovery events. One file lock owns the supervisor. A 15 GiB free-space floor drains new work. `SIGUSR1`, `SIGTERM` or a `PAUSE-chirho` file drains active artists. Three consecutive generator failures stop the run. Archive/source failures stop dispatch and preserve the same received output for recovery. Helper output is streamed through a fixed 64 KiB diagnostic tail; its full byte count and SHA-256 remain in a stage receipt, avoiding a duplicate whole-library index per scene. Timeout stops only that helper process group and preserves the received scene. Human artwork review remains pending.
 
 Dry inventory: `/opt/homebrew/bin/python3 -I -B scripts-chirho/art-chirho/recovery-chirho/scene_upgrades_chirho.py`. Add `--apply-chirho` to run; `--limit-chirho 1 --concurrency-chirho 1` bounds the first end-to-end proof. The limit counts attempted dispatches, including preflight failures. Resume reuses checked installed or prepared outputs and never resubmits an uncertain request. Continue with the default three generators only after the bounded proof is verified.
+
+The shared `icon_pipeline_chirho/process_chirho.py` validator binds an asynchronous image result through the original exec's returned cell id and only that cell's wait chain. Missing, cancelled or foreign completions stay held. A completed result must still supply the exact original PNG bytes or returned path, with one image call and the original SHA. Root can reconcile a saved receipt failure after positive evidence and source/visual checks, retaining the original failure and request and installing the existing image through the ordinary R2/checkpoint path. Such recovery creates no image request or new attempt allowance; unrelated holds remain unchanged.

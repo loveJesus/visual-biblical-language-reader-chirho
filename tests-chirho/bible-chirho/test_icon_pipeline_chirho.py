@@ -609,6 +609,173 @@ class OriginalReturnTestsChirho(unittest.TestCase):
             ):
                 self_chirho.verify_chirho(sha_chirho)
 
+    def async_evidence_chirho(self_chirho, cell_chirho="3", repeated_chirho=True):
+        self_chirho.evidence_chirho()
+        rows_chirho = [
+            json.loads(line_chirho)
+            for line_chirho in self_chirho.rollout_chirho.read_text().splitlines()
+        ]
+        result_chirho = rows_chirho.pop()["payload"]
+        result_chirho["call_id"] = "wait-final-chirho"
+        result_chirho["output"][0]["text"] = (
+            f"Generated images are saved as {self_chirho.original_chirho} by default."
+        )
+        rows_chirho.append(
+            {
+                "type": "response_item",
+                "payload": {
+                    "type": "custom_tool_call_output",
+                    "call_id": "call-chirho",
+                    "output": "Script running with cell ID 3\nWall time 1.0 seconds\n",
+                },
+            }
+        )
+        if repeated_chirho:
+            rows_chirho.extend(
+                [
+                    {
+                        "type": "response_item",
+                        "payload": {
+                            "type": "function_call",
+                            "name": "wait",
+                            "call_id": "wait-first-chirho",
+                            "arguments": json.dumps({"cell_id": cell_chirho}),
+                        },
+                    },
+                    {
+                        "type": "response_item",
+                        "payload": {
+                            "type": "function_call_output",
+                            "call_id": "wait-first-chirho",
+                            "output": "Script still running with cell ID 3\n",
+                        },
+                    },
+                ]
+            )
+        rows_chirho.extend(
+            [
+                {
+                    "type": "response_item",
+                    "payload": {
+                        "type": "function_call",
+                        "name": "wait",
+                        "call_id": "wait-final-chirho",
+                        "arguments": json.dumps({"cell_id": cell_chirho}),
+                    },
+                },
+                {"type": "response_item", "payload": result_chirho},
+            ]
+        )
+        self_chirho.rollout_chirho.write_text(
+            "\n".join(json.dumps(row_chirho) for row_chirho in rows_chirho)
+        )
+        return rows_chirho
+
+    def test_original_exec_cell_binds_repeated_wait_completion_chirho(self_chirho):
+        self_chirho.async_evidence_chirho()
+        receipt_chirho = self_chirho.verify_chirho()
+        self_chirho.assertEqual(receipt_chirho["binding_chirho"], "returned_png")
+        self_chirho.assertEqual(receipt_chirho["call_id_chirho"], "call-chirho")
+
+    def test_async_path_only_still_binds_the_exact_original_chirho(self_chirho):
+        rows_chirho = self_chirho.async_evidence_chirho(repeated_chirho=False)
+        rows_chirho[-1]["payload"]["output"] = rows_chirho[-1]["payload"]["output"][:1]
+        self_chirho.rollout_chirho.write_text(
+            "\n".join(json.dumps(row_chirho) for row_chirho in rows_chirho)
+        )
+        self_chirho.assertEqual(
+            self_chirho.verify_chirho()["binding_chirho"], "returned_path"
+        )
+
+    def test_one_result_may_repeat_its_path_in_json_and_plain_text_chirho(self_chirho):
+        self_chirho.evidence_chirho()
+        rows_chirho = [
+            json.loads(line_chirho)
+            for line_chirho in self_chirho.rollout_chirho.read_text().splitlines()
+        ]
+        rows_chirho[-1]["payload"]["output"].append(
+            {
+                "type": "input_text",
+                "text": f"Generated images are saved as {self_chirho.original_chirho} by default.",
+            }
+        )
+        self_chirho.rollout_chirho.write_text(
+            "\n".join(json.dumps(row_chirho) for row_chirho in rows_chirho)
+        )
+        self_chirho.assertEqual(
+            self_chirho.verify_chirho()["call_id_chirho"], "call-chirho"
+        )
+
+    def test_distinct_completions_remain_ambiguous_chirho(self_chirho):
+        rows_chirho = self_chirho.async_evidence_chirho(repeated_chirho=False)
+        second_call_chirho = {
+            "type": "response_item",
+            "payload": {
+                "type": "function_call",
+                "name": "wait",
+                "call_id": "wait-second-chirho",
+                "arguments": json.dumps({"cell_id": "3"}),
+            },
+        }
+        rows_chirho.insert(-1, second_call_chirho)
+        second_result_chirho = json.loads(json.dumps(rows_chirho[-1]))
+        second_result_chirho["payload"]["call_id"] = "wait-second-chirho"
+        second_result_chirho["payload"]["output"] = second_result_chirho["payload"][
+            "output"
+        ][:1]
+        rows_chirho.append(second_result_chirho)
+        self_chirho.rollout_chirho.write_text(
+            "\n".join(json.dumps(row_chirho) for row_chirho in rows_chirho)
+        )
+        with self_chirho.assertRaises(ValueError):
+            self_chirho.verify_chirho()
+
+    def test_unrelated_or_unfinished_cell_cannot_supply_an_original_chirho(self_chirho):
+        for mode_chirho in ("other-cell", "missing-completion", "cancelled"):
+            with self_chirho.subTest(mode_chirho=mode_chirho):
+                rows_chirho = self_chirho.async_evidence_chirho(
+                    cell_chirho="other" if mode_chirho == "other-cell" else "3",
+                    repeated_chirho=False,
+                )
+                if mode_chirho == "missing-completion":
+                    rows_chirho.pop()
+                elif mode_chirho == "cancelled":
+                    rows_chirho[-2]["payload"]["arguments"] = json.dumps(
+                        {"cell_id": "3", "terminate": True}
+                    )
+                self_chirho.rollout_chirho.write_text(
+                    "\n".join(json.dumps(row_chirho) for row_chirho in rows_chirho)
+                )
+                with self_chirho.assertRaises(ValueError):
+                    self_chirho.verify_chirho()
+
+    def test_async_wrong_png_and_multiple_images_remain_held_chirho(self_chirho):
+        for mode_chirho in ("wrong-png", "second-image-call"):
+            with self_chirho.subTest(mode_chirho=mode_chirho):
+                rows_chirho = self_chirho.async_evidence_chirho()
+                if mode_chirho == "wrong-png":
+                    rows_chirho[-1]["payload"]["output"][1]["image_url"] = (
+                        "data:image/png;base64,"
+                        + base64.b64encode(b"different image").decode()
+                    )
+                else:
+                    rows_chirho.append(
+                        {
+                            "type": "response_item",
+                            "payload": {
+                                "type": "custom_tool_call",
+                                "name": "exec",
+                                "call_id": "second-chirho",
+                                "input": "await tools.image_gen__imagegen({})",
+                            },
+                        }
+                    )
+                self_chirho.rollout_chirho.write_text(
+                    "\n".join(json.dumps(row_chirho) for row_chirho in rows_chirho)
+                )
+                with self_chirho.assertRaises(ValueError):
+                    self_chirho.verify_chirho()
+
     def test_missing_wrong_call_and_multiple_calls_remain_held_chirho(self_chirho):
         for options_chirho in [
             {"inline_chirho": False, "hint_chirho": False},

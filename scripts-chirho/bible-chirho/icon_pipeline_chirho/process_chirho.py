@@ -111,6 +111,80 @@ def image_calls_chirho(attempt_chirho, log_name_chirho="codex-chirho.jsonl"):
     return count_chirho
 
 
+def image_result_outputs_chirho(rollout_chirho):
+    """Follow only the original image call's yielded exec cell through its wait results."""
+    # Workflows: whole-bible-chirho.md and scene-upgrades-chirho.md.
+    calls_chirho, linked_chirho, cells_chirho, outputs_chirho = set(), {}, {}, []
+    with rollout_chirho.open() as file_chirho:
+        for line_chirho in file_chirho:
+            if len(line_chirho) > 40 * 1024**2:
+                raise ValueError("Original tool evidence is oversized")
+            row_chirho = json.loads(line_chirho)
+            payload_chirho = row_chirho.get("payload", {})
+            if row_chirho.get("type") != "response_item":
+                continue
+            call_id_chirho = payload_chirho.get("call_id")
+            if payload_chirho.get("type") in ("function_call", "custom_tool_call"):
+                if image_call_chirho(payload_chirho):
+                    calls_chirho.add(call_id_chirho)
+                    linked_chirho[call_id_chirho] = call_id_chirho
+                elif payload_chirho.get("name") in ("wait", "functions.wait"):
+                    try:
+                        arguments_chirho = json.loads(
+                            payload_chirho.get("arguments", "")
+                        )
+                    except (ValueError, TypeError):
+                        continue
+                    if (
+                        isinstance(arguments_chirho, dict)
+                        and arguments_chirho.get("terminate") is not True
+                    ):
+                        cell_chirho = arguments_chirho.get("cell_id")
+                        if isinstance(cell_chirho, str) and cell_chirho in cells_chirho:
+                            linked_chirho[call_id_chirho] = cells_chirho[cell_chirho]
+                continue
+            if (
+                payload_chirho.get("type")
+                not in ("function_call_output", "custom_tool_call_output")
+                or call_id_chirho not in linked_chirho
+            ):
+                continue
+            original_call_chirho = linked_chirho.pop(call_id_chirho)
+            output_chirho = payload_chirho.get("output")
+            text_chirho = (
+                output_chirho
+                if isinstance(output_chirho, str)
+                else "\n".join(
+                    item_chirho.get("text", "")
+                    for item_chirho in output_chirho
+                    if item_chirho.get("type") == "input_text"
+                )
+                if isinstance(output_chirho, list)
+                else ""
+            )
+            yielded_chirho = re.match(
+                r"Script (?:still )?running with cell ID ([A-Za-z0-9-]+)(?:\n|$)",
+                text_chirho,
+            )
+            if yielded_chirho:
+                cell_chirho = yielded_chirho[1]
+                if (
+                    cell_chirho in cells_chirho
+                    and cells_chirho[cell_chirho] != original_call_chirho
+                ):
+                    raise ValueError("Image exec cell identity is ambiguous")
+                cells_chirho[cell_chirho] = original_call_chirho
+                continue
+            cells_chirho = {
+                cell_chirho: owner_chirho
+                for cell_chirho, owner_chirho in cells_chirho.items()
+                if owner_chirho != original_call_chirho
+            }
+            if isinstance(output_chirho, list):
+                outputs_chirho.append(payload_chirho)
+    return calls_chirho, outputs_chirho
+
+
 def returned_original_chirho(attempt_chirho, original_chirho, expected_sha_chirho):
     """Bind an external Codex original to the original call's returned path and image."""
     original_chirho = original_chirho.resolve(strict=True)
@@ -127,56 +201,36 @@ def returned_original_chirho(attempt_chirho, original_chirho, expected_sha_chirh
     ):
         raise ValueError("Original bytes differ from saved generation evidence")
     rollout_chirho = generation_rollout_chirho(attempt_chirho)
-    calls_chirho, returned_chirho, images_chirho = set(), [], []
-    with rollout_chirho.open() as file_chirho:
-        for line_chirho in file_chirho:
-            if len(line_chirho) > 40 * 1024**2:
-                raise ValueError("Original tool evidence is oversized")
-            row_chirho = json.loads(line_chirho)
-            payload_chirho = row_chirho.get("payload", {})
-            if row_chirho.get("type") != "response_item":
-                continue
-            if payload_chirho.get("type") in ("function_call", "custom_tool_call"):
-                if image_call_chirho(payload_chirho):
-                    calls_chirho.add(payload_chirho.get("call_id"))
-                continue
-            if (
-                payload_chirho.get("type")
-                not in ("function_call_output", "custom_tool_call_output")
-                or payload_chirho.get("call_id") not in calls_chirho
-            ):
-                continue
-            output_chirho = payload_chirho.get("output")
-            if not isinstance(output_chirho, list):
-                continue
-            for item_chirho in output_chirho:
-                if item_chirho.get("type") == "input_text":
-                    try:
-                        detail_chirho = json.loads(item_chirho.get("text", ""))
-                    except (ValueError, TypeError):
-                        continue
-                    if not isinstance(detail_chirho, dict):
-                        continue
+    calls_chirho, outputs_chirho = image_result_outputs_chirho(rollout_chirho)
+    returned_chirho, images_chirho = set(), []
+    for payload_chirho in outputs_chirho:
+        output_chirho = payload_chirho["output"]
+        for item_chirho in output_chirho:
+            if item_chirho.get("type") == "input_text":
+                hint_chirho = item_chirho.get("text", "")
+                try:
+                    detail_chirho = json.loads(hint_chirho)
+                except (ValueError, TypeError):
+                    detail_chirho = None
+                if isinstance(detail_chirho, dict):
                     hint_chirho = detail_chirho.get(
                         "output_hint_chirho", detail_chirho.get("output_hint")
                     )
-                    if isinstance(hint_chirho, str) and (
-                        f" as {original_chirho} by default." in hint_chirho
-                    ):
-                        returned_chirho.append(payload_chirho["call_id"])
-                if item_chirho.get("type") == "input_image":
-                    url_chirho = item_chirho.get("image_url", "")
-                    if not isinstance(url_chirho, str) or not url_chirho.startswith(
-                        "data:image/png;base64,"
-                    ):
-                        raise ValueError("Original tool image format differs")
-                    images_chirho.append(
-                        hashlib.sha256(
-                            base64.b64decode(
-                                url_chirho.partition(",")[2], validate=True
-                            )
-                        ).hexdigest()
-                    )
+                if isinstance(hint_chirho, str) and (
+                    f" as {original_chirho} by default." in hint_chirho
+                ):
+                    returned_chirho.add(payload_chirho["call_id"])
+            if item_chirho.get("type") == "input_image":
+                url_chirho = item_chirho.get("image_url", "")
+                if not isinstance(url_chirho, str) or not url_chirho.startswith(
+                    "data:image/png;base64,"
+                ):
+                    raise ValueError("Original tool image format differs")
+                images_chirho.append(
+                    hashlib.sha256(
+                        base64.b64decode(url_chirho.partition(",")[2], validate=True)
+                    ).hexdigest()
+                )
     if images_chirho and images_chirho != [expected_sha_chirho]:
         raise ValueError("Original differs from the returned PNG bytes")
     if (
