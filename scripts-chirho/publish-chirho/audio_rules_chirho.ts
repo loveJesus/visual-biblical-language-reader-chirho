@@ -29,6 +29,11 @@ import {
 	verifyMaqqefOccurrenceChirho,
 	type MaqqefVerseChirho
 } from '../audio-chirho/production-chirho/maqqef-chirho/context_chirho';
+import { profileContextRequiredChirho } from '../audio-chirho/production-chirho/profile-chirho/context_chirho';
+import {
+	verifyProfileRecordingChirho,
+	type ProfileVerseChirho
+} from '../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho';
 
 const BOOKS_CHIRHO: Record<string, readonly [string, number]> = Object.fromEntries(
 	BIBLE_BOOKS_CHIRHO.map((bookChirho) => [
@@ -170,6 +175,22 @@ export function verifyAudioChirho(
 						(rowChirho: Record<string, unknown>) =>
 							rowChirho.id_chirho === clipChirho.token_id_chirho
 					);
+					if (profileContextRequiredChirho(clipChirho)) {
+						if (
+							typeof clipChirho.token_id_chirho !== 'string' ||
+							typeof clipChirho.text_chirho !== 'string'
+						)
+							throw Error('Profile recording has no source word');
+						verifyProfileRecordingChirho(
+							lessonChirho as ProfileVerseChirho,
+							{
+								token_id_chirho: clipChirho.token_id_chirho,
+								text_chirho: clipChirho.text_chirho,
+								profile_id_chirho: clipChirho.profile_id_chirho
+							},
+							clipChirho
+						);
+					}
 					if (maqqefContextRequiredChirho(clipChirho)) {
 						if (
 							!tokenChirho ||

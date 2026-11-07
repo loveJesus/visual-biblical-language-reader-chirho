@@ -4774,6 +4774,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/2-corinthians-chirho/chapter-008-chirho/2cor-008-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/77b6f4ce35760591676aa212168194516d2b3e97c6c6a792fa207c797274a489.webp",
+        "sha256_chirho": "77b6f4ce35760591676aa212168194516d2b3e97c6c6a792fa207c797274a489",
+        "bytes_chirho": 2494734,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T06:41:37.439Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/656dcf3e44966d25623a683c737c0621fd465d5e9b3c5197d9959425ef5f7569.webp",
+        "sha256_chirho": "656dcf3e44966d25623a683c737c0621fd465d5e9b3c5197d9959425ef5f7569",
+        "bytes_chirho": 227500,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T06:41:38.745Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/daniel-chirho/chapter-007-chirho/dan-007-006-chirho.webp"
       ],
       "source_chirho": {

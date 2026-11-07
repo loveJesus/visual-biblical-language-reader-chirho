@@ -155,6 +155,24 @@ flowchart LR
   one_installer_chirho --> library_refresh_chirho[Refresh verified libraries and normal release]
 ```
 
+## Finite source profiles
+
+The finite follow-on for explicitly checked divine-name/qere maqqef groups and six stress parallels uses `profile-readings-chirho.ts`. Each reviewed source position has an exact canonical, token, recursive qere, maqqef-member and analysis-policy binding. Divine-name analysis copies retain the existing Adonai/Elohim policy; source Scripture is unchanged. A missing profile marker, changed H3068/H3069 identity, altered qere child or mismatched analysis refuses rather than falling through to generic word synthesis. The generic maqqef validator retains its exclusions. The shared finite validator is used before producer reservation, before installer writes and again under its lock, by publication, and by the actual web selector. Exact historical audio can be reused without changing its original receipt; only keys absent from the complete prior-request inventory belong to a separately bounded included-credit authority.
+
+```mermaid
+flowchart TD
+  finite_profile_chirho[Finite exact source and analysis profiles] --> finite_source_check_chirho[Canonical token qere member policy checks]
+  finite_source_check_chirho --> finite_receipt_inventory_chirho[Complete old receipt inventory]
+  finite_receipt_inventory_chirho -->|exact received| finite_reuse_chirho[Reuse verified audio with original provenance]
+  finite_receipt_inventory_chirho -->|no prior request| finite_authority_chirho[Separate included-only request ceiling]
+  finite_receipt_inventory_chirho -->|unknown or changed| finite_hold_chirho[Retain hold without resend]
+  finite_authority_chirho --> finite_speech_chirho[Journal then synthesize once]
+  finite_reuse_chirho --> finite_install_chirho[Serialized verified R2 install]
+  finite_speech_chirho --> finite_install_chirho
+  finite_install_chirho --> finite_publish_chirho[Revalidate source and publish]
+  finite_publish_chirho --> finite_selector_chirho[Exact selector and full-file playback]
+```
+
 ## Source-bound maqqef continuation
 
 The isolated-word preparation did not supply a verified stress context for every unaccented maqqef member. The November 7 continuation keeps the source group intact, derives its unstressed first member and checks the final member against its independently supported stress. It keeps the existing Hebrew v1 IPA recipe, narrator, model and cache key. This is a contextual pronunciation aid, not an assertion of isolated dictionary stress. Divine-name profiles, unchecked tail stress, qere/ketiv collisions and other excluded analyses remain held.

@@ -53,7 +53,8 @@ const hashChirho = (bytesChirho: string | Buffer) =>
 /** Existing maqqef job IDs keep a deleted proof from silently becoming a legacy word. */
 export function maqqefContextRequiredChirho(valueChirho: MaqqefScopeChirho): boolean {
 	return (
-		valueChirho.source_context_chirho !== undefined ||
+		(valueChirho.source_context_chirho !== undefined &&
+			valueChirho.source_context_chirho !== 'profile_chirho') ||
 		valueChirho.maqqef_group_chirho !== undefined ||
 		(typeof valueChirho.id_chirho === 'string' && valueChirho.id_chirho.startsWith('maqqef-')) ||
 		valueChirho.job_chirho?.id_chirho.startsWith('maqqef-') === true ||

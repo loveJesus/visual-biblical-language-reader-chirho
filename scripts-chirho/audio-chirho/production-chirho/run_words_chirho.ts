@@ -42,6 +42,7 @@ import {
 	verifyMaqqefOccurrenceChirho,
 	type MaqqefVerseChirho
 } from './maqqef-chirho/context_chirho';
+import { verifyProfileWordSourcesChirho } from './profile-chirho/context_chirho';
 
 interface BatchEntryChirho {
 	path_chirho: string;
@@ -118,6 +119,7 @@ export async function verifyWordSourcesChirho(
 	rootChirho: string,
 	wordsChirho: LibraryWordChirho[]
 ) {
+	await verifyProfileWordSourcesChirho(rootChirho, wordsChirho);
 	const chaptersChirho = new Map<
 		string,
 		{

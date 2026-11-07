@@ -14,8 +14,15 @@ import {
 	ipaForRecordingChirho,
 	ipaInputChirho
 } from '$lib/domain-chirho/pronunciation-chirho/ipa-trial-chirho';
+import {
+	hasProfileReadingChirho,
+	verifyProfileRecordingChirho
+} from '$lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho';
 
 export interface RecordingChirho {
+	id_chirho?: string;
+	source_context_chirho?: string;
+	profile_id_chirho?: string;
 	lesson_id_chirho: string;
 	token_id_chirho: string | null;
 	text_chirho: string;
@@ -163,6 +170,23 @@ export async function recordingsForLessonChirho(lessonChirho: {
 	const verseChirho = spokenVerseChirho(lessonChirho);
 	return (await chapterChirho).clips_chirho
 		.filter((clipChirho) => {
+			if (
+				clipChirho.source_context_chirho === 'profile_chirho' ||
+				clipChirho.profile_id_chirho !== undefined ||
+				clipChirho.id_chirho?.startsWith('profile-') ||
+				(clipChirho.token_id_chirho !== null && hasProfileReadingChirho(clipChirho.token_id_chirho))
+			) {
+				if (clipChirho.token_id_chirho === null) return false;
+				try {
+					verifyProfileRecordingChirho(
+						lessonChirho,
+						{ ...clipChirho, token_id_chirho: clipChirho.token_id_chirho },
+						clipChirho
+					);
+				} catch {
+					return false;
+				}
+			}
 			const wordRecipeChirho =
 				clipChirho.token_id_chirho !== null
 					? productionWordRecipeChirho(

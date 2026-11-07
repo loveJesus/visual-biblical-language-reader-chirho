@@ -13,6 +13,11 @@ import {
 	verifyMaqqefOccurrenceChirho,
 	verifyMaqqefWordSourcesChirho
 } from './maqqef-chirho/context_chirho';
+import {
+	profileContextRequiredChirho,
+	verifyProfileWordSourcesChirho
+} from './profile-chirho/context_chirho';
+import { verifyProfileRecordingChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho';
 
 interface PublicChapterChirho {
 	schema_version_chirho: number;
@@ -91,6 +96,12 @@ async function installUnlockedWordsChirho(
 				token_id_chirho: occurrenceChirho.token_id_chirho,
 				text_chirho: occurrenceChirho.text_chirho,
 				canonical_sha256_chirho: occurrenceChirho.canonical_sha256_chirho,
+				...(profileContextRequiredChirho(wordChirho)
+					? {
+							source_context_chirho: 'profile_chirho',
+							profile_id_chirho: occurrenceChirho.profile_id_chirho
+						}
+					: {}),
 				...(maqqefContextRequiredChirho(wordChirho)
 					? {
 							source_context_chirho: 'maqqef_chirho',
@@ -177,6 +188,12 @@ async function installUnlockedWordsChirho(
 				spokenWordChirho(tokenChirho) !== entryChirho.occurrence_chirho.text_chirho
 			)
 				throw new Error('Word occurrence no longer agrees with the source');
+			if (profileContextRequiredChirho(entryChirho.clip_chirho))
+				verifyProfileRecordingChirho(
+					sourceChirho,
+					entryChirho.occurrence_chirho,
+					entryChirho.clip_chirho
+				);
 			if (maqqefContextRequiredChirho(entryChirho.clip_chirho))
 				verifyMaqqefOccurrenceChirho(
 					sourceChirho,
@@ -265,12 +282,14 @@ export async function installWordsChirho(
 		)
 	);
 	await verifyMaqqefWordSourcesChirho(rootChirho, receivedWordsChirho);
+	await verifyProfileWordSourcesChirho(rootChirho, receivedWordsChirho);
 	await mkdirChirho(joinChirho(rootChirho, 'build-chirho/r2-chirho'), { recursive: true });
 	const releaseChirho = await acquireLockChirho(
 		joinChirho(rootChirho, 'build-chirho/r2-chirho/audio-catalogue-chirho.lock')
 	);
 	try {
 		await verifyMaqqefWordSourcesChirho(rootChirho, receivedWordsChirho);
+		await verifyProfileWordSourcesChirho(rootChirho, receivedWordsChirho);
 		return await installUnlockedWordsChirho(
 			rootChirho,
 			folderChirho,

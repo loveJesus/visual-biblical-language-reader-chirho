@@ -26,6 +26,8 @@ worker-configuration.d.ts
 /static/media-index-chirho.json
 
 # Generated artwork measurements and offline previews retain their producer's bytes.
+# Finite source-profile data is generated and hash-bound; preserve its deterministic bytes.
+/src/lib/domain-chirho/pronunciation-chirho/hebrew-chirho/profile-readings-chirho/
 /workspace-chirho/art-chirho/**/*.json
 /workspace-chirho/previews-chirho/
 /workspace-chirho/audio-chirho/**/*.json
