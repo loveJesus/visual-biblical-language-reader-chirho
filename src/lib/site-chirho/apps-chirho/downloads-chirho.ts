@@ -13,7 +13,7 @@ export const APP_STORES_CHIRHO: readonly {
 		id_chirho: 'apple-chirho',
 		name_chirho: 'App Store',
 		platform_chirho: 'iPhone · iPad',
-		url_chirho: null
+		url_chirho: 'https://apps.apple.com/app/id6830790082'
 	},
 	{
 		id_chirho: 'google-chirho',
@@ -25,16 +25,14 @@ export const APP_STORES_CHIRHO: readonly {
 const DOWNLOAD_MESSAGES_CHIRHO = defineCatalogueChirho({
 	en: {
 		title_chirho: 'Read on your phone or tablet',
-		body_chirho:
-			'Get the native Android app on Google Play. iPhone and iPad are coming soon. You can also read in your browser.',
+		body_chirho: 'Download Hinneh for iPhone, iPad or Android, or read in your browser.',
 		group_chirho: 'Hinneh apps',
 		soon_chirho: 'Coming soon',
 		download_chirho: 'Download'
 	},
 	es: {
 		title_chirho: 'Lee en tu teléfono o tableta',
-		body_chirho:
-			'Descarga la aplicación nativa de Android en Google Play. iPhone y iPad, próximamente. También puedes leer en tu navegador.',
+		body_chirho: 'Descarga Hinneh para iPhone, iPad o Android, o lee en tu navegador.',
 		group_chirho: 'Aplicaciones de Hinneh',
 		soon_chirho: 'Próximamente',
 		download_chirho: 'Descargar'

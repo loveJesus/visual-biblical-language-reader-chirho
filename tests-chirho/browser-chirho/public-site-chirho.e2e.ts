@@ -186,6 +186,10 @@ testChirho(
 	'permanent app download positions stay honest and learning paths open the verified external resources',
 	async ({ page: pageChirho }) => {
 		const thirdPartyRequestsChirho: string[] = [];
+		const storeUrlsChirho = [
+			'https://apps.apple.com/app/id6830790082',
+			'https://play.google.com/store/apps/details?id=us.hinneh.readerchirho'
+		];
 		pageChirho.on('request', (requestChirho) => {
 			if (
 				/https:\/\/(?:www\.)?(?:youtube\.com|linguadeogloria\.org|freehebrew\.online|freegreek\.online)\//u.test(
@@ -197,24 +201,20 @@ testChirho(
 		for (const localeChirho of ['en', 'es']) {
 			await pageChirho.goto(`/?lang_chirho=${localeChirho}`);
 			await expectChirho(pageChirho.locator('html')).toHaveAttribute('lang', localeChirho);
-			await expectChirho(
-				pageChirho.locator('[data-online-intro-chirho] .pending-chirho')
-			).toHaveCount(1);
-			await expectChirho(pageChirho.locator('footer .pending-chirho')).toHaveCount(1);
-			const downloadsChirho = pageChirho.locator('.app-downloads-chirho a');
-			await expectChirho(downloadsChirho.first()).toBeVisible();
-			for (const linkChirho of await downloadsChirho.all())
-				await expectChirho(linkChirho).toHaveAttribute(
-					'href',
-					'https://play.google.com/store/apps/details?id=us.hinneh.readerchirho'
-				);
+			for (const scopeChirho of ['[data-online-intro-chirho]', 'footer']) {
+				const downloadsChirho = pageChirho.locator(scopeChirho).locator('.app-downloads-chirho');
+				await expectChirho(downloadsChirho.locator('.pending-chirho')).toHaveCount(0);
+				for (const hrefChirho of storeUrlsChirho)
+					await expectChirho(downloadsChirho.locator(`a[href="${hrefChirho}"]`)).toHaveCount(1);
+			}
 			await pageChirho.locator('.intro-learning-chirho a').click();
 			await expectChirho(pageChirho.locator('#learning-paths-chirho')).toBeVisible();
 			expectChirho(new URL(pageChirho.url()).hash).toBe('#learning-paths-chirho');
-			await expectChirho(pageChirho.locator('#apps-chirho .pending-chirho')).toHaveCount(1);
-			await expectChirho(pageChirho.locator('#apps-chirho')).toContainText(
-				localeChirho === 'en' ? 'Coming soon' : 'Próximamente'
-			);
+			await expectChirho(pageChirho.locator('#apps-chirho .pending-chirho')).toHaveCount(0);
+			for (const hrefChirho of storeUrlsChirho)
+				await expectChirho(pageChirho.locator(`#apps-chirho a[href="${hrefChirho}"]`)).toHaveCount(
+					1
+				);
 			const learningChirho = pageChirho.locator('#learning-paths-chirho');
 			for (const hrefChirho of [
 				'https://www.linguadeogloria.org/',
