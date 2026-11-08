@@ -37,6 +37,80 @@ def checked_source_chirho(root_chirho, source_chirho):
     return json_chirho.loads(raw_chirho)
 
 
+def setting_binding_chirho(episode_chirho, directions_chirho, references_chirho):
+    """Validate a selected setting's place/building/era; unbound places supply no image."""
+    identity_chirho = episode_chirho.get("setting_identity_chirho")
+    bindings_chirho = [
+        row_chirho
+        for row_chirho in directions_chirho.get("place_bindings_chirho", [])
+        if row_chirho["id_chirho"] == episode_chirho.get("place_id_chirho")
+    ]
+    setting_ids_chirho = episode_chirho["setting_reference_ids_chirho"]
+    if identity_chirho is None:
+        if bindings_chirho or any(
+            references_chirho[id_chirho].get("setting_identity_chirho")
+            for id_chirho in setting_ids_chirho
+        ):
+            raise ValueError(
+                "A period-bound setting needs an explicit episode identity"
+            )
+        return None
+    if (
+        not isinstance(identity_chirho, dict)
+        or set(identity_chirho)
+        != {"place_id_chirho", "building_id_chirho", "era_id_chirho"}
+        or any(
+            not isinstance(value_chirho, str) or not value_chirho
+            for value_chirho in identity_chirho.values()
+        )
+        or len(bindings_chirho) != 1
+    ):
+        raise ValueError("Setting identity or selected place binding is invalid")
+    binding_chirho = bindings_chirho[0]
+    if binding_chirho.get(
+        "setting_identity_chirho"
+    ) != identity_chirho or binding_chirho.get("binding_status_chirho") not in (
+        "reference-bound",
+        "unbound",
+    ):
+        raise ValueError("Selected place/building/era differs from the episode")
+    if binding_chirho["binding_status_chirho"] == "unbound":
+        if setting_ids_chirho or binding_chirho["existing_reference_ids_chirho"]:
+            raise ValueError("An unbound place cannot supply a setting image")
+        return binding_chirho
+    for id_chirho in setting_ids_chirho:
+        if (
+            id_chirho not in binding_chirho["existing_reference_ids_chirho"]
+            or references_chirho[id_chirho].get("setting_identity_chirho")
+            != identity_chirho
+        ):
+            raise ValueError("Setting reference belongs to another place/building/era")
+    return binding_chirho
+
+
+def wardrobe_anchor_chirho(episode_chirho, role_chirho, reference_chirho):
+    """An outfit anchor belongs to this episode's existing scene, never a neutral portrait."""
+    anchor_chirho = role_chirho.get("wardrobe_anchor_chirho")
+    if anchor_chirho is None:
+        return
+    if (
+        anchor_chirho.get("episode_id_chirho") != episode_chirho.get("id_chirho")
+        or anchor_chirho.get("reference_id_chirho")
+        != role_chirho["reference_id_chirho"]
+        or anchor_chirho.get("reference_sha256_chirho")
+        != reference_chirho["sha256_chirho"]
+        or reference_chirho.get("kind_chirho") != "existing-scene"
+        or not isinstance(anchor_chirho.get("clothing_direction_chirho"), str)
+        or not anchor_chirho["clothing_direction_chirho"].strip()
+        or not isinstance(anchor_chirho.get("props_chirho"), list)
+        or any(
+            not isinstance(prop_chirho, str) or not prop_chirho
+            for prop_chirho in anchor_chirho["props_chirho"]
+        )
+    ):
+        raise ValueError("Wardrobe anchor is not this episode's exact existing scene")
+
+
 def build_pack_chirho(root_chirho, lesson_id_chirho):
     data_home_chirho = "data-chirho/art-direction-chirho/"
     registry_raw_chirho = checked_bytes_chirho(
@@ -107,6 +181,7 @@ def build_pack_chirho(root_chirho, lesson_id_chirho):
     )
     references_chirho = []
     roles_chirho = []
+    binding_chirho = None
     if episode_chirho is not None:
         checked_source_chirho(root_chirho, episode_chirho["source_chirho"])
         roles_chirho = [
@@ -114,6 +189,19 @@ def build_pack_chirho(root_chirho, lesson_id_chirho):
             for role_chirho in episode_chirho["roles_chirho"]
             if lesson_id_chirho in role_chirho["applicable_verses_chirho"]
         ]
+        references_by_id_chirho = {
+            row_chirho["id_chirho"]: row_chirho
+            for row_chirho in registry_chirho["references_chirho"]
+        }
+        binding_chirho = setting_binding_chirho(
+            episode_chirho, directions_chirho, references_by_id_chirho
+        )
+        for role_chirho in roles_chirho:
+            wardrobe_anchor_chirho(
+                episode_chirho,
+                role_chirho,
+                references_by_id_chirho[role_chirho["reference_id_chirho"]],
+            )
         ids_chirho = set(episode_chirho["setting_reference_ids_chirho"])
         ids_chirho.update(
             role_chirho["reference_id_chirho"] for role_chirho in roles_chirho
@@ -146,10 +234,12 @@ def build_pack_chirho(root_chirho, lesson_id_chirho):
         "reading_unit_chirho": unit_chirho,
         "episode_chirho": episode_chirho,
         "active_roles_chirho": roles_chirho,
+        "place_binding_chirho": binding_chirho,
         "references_chirho": references_chirho,
         "directions_chirho": [
             "Inspect each supplied image. Preserve recurring identity, the selected age, and the episode's clothes, architecture, props and time progression.",
             "Identity references do not mandate the same clothes across distinct episodes. A setting reference supplies architecture only; do not copy its unrelated people.",
+            "A wardrobe_anchor_chirho applies only to its named episode and exact existing scene. Use its clothing and verse-appropriate props; a neutral identity portrait is not an episode outfit. A selected setting must keep the supplied place/building/era identity; an unbound place supplies no substitute architecture.",
             "Use only roles present in this verse or explicitly justified by its narrative context. A named mention, ancestor, quotation, absent person or described object is not automatically on screen.",
             "Standalone Proverbs sayings do not inherit people, place, clothes or events from adjacent sayings. Anonymous story roles stay local and are not renamed as universal-cast people.",
             "These visual conventions are imaginative. Keep source facts, editorial grouping, art choices and unresolved identity/place/age questions distinct.",

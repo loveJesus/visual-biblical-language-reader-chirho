@@ -56,7 +56,15 @@
 						"Prov.7.26",
 						"Prov.7.27"
 					],
-					"focus_chirho": "Older watcher at left, also a possible consistent teaching-frame father; keep source observation distinct from artistic framing."
+					"focus_chirho": "Older watcher at left, also a possible consistent teaching-frame father; keep source observation distinct from artistic framing.",
+					"wardrobe_anchor_chirho": {
+						"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+						"reference_id_chirho": "prov-7-7-existing-chirho",
+						"reference_sha256_chirho": "fb365b520693b56a0f01aa57b9cf755655d5d0446bbde90b85314a099db819d7",
+						"clothing_direction_chirho": "Keep the older watcher's clothing as shown in this episode anchor.",
+						"props_chirho": [],
+						"props_direction_chirho": "Keep only verse-appropriate props from this episode anchor; absent people and merely described objects do not become visible."
+					}
 				},
 				{
 					"role_chirho": "young-man-local-chirho",
@@ -80,7 +88,15 @@
 						"Prov.7.22",
 						"Prov.7.23"
 					],
-					"focus_chirho": "Young man at right, same face and plain tunic/striped mantle through this encounter."
+					"focus_chirho": "Young man at right, same face and plain tunic/striped mantle through this encounter.",
+					"wardrobe_anchor_chirho": {
+						"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+						"reference_id_chirho": "prov-7-10-existing-chirho",
+						"reference_sha256_chirho": "a1db9a1ed60f3e70d83b5ed83af3d47f264d5489ba29db04e3185327d474eb34",
+						"clothing_direction_chirho": "Keep the plain tunic and striped mantle shown in this encounter anchor.",
+						"props_chirho": [],
+						"props_direction_chirho": "Keep only verse-appropriate props from this episode anchor; absent people and merely described objects do not become visible."
+					}
 				},
 				{
 					"role_chirho": "woman-local-chirho",
@@ -101,7 +117,15 @@
 						"Prov.7.22",
 						"Prov.7.23"
 					],
-					"focus_chirho": "Woman at left, same face, red/purple clothing and jewelry through this encounter."
+					"focus_chirho": "Woman at left, same face, red/purple clothing and jewelry through this encounter.",
+					"wardrobe_anchor_chirho": {
+						"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+						"reference_id_chirho": "prov-7-10-existing-chirho",
+						"reference_sha256_chirho": "a1db9a1ed60f3e70d83b5ed83af3d47f264d5489ba29db04e3185327d474eb34",
+						"clothing_direction_chirho": "Keep the red/purple clothing and jewelry shown in this encounter anchor.",
+						"props_chirho": [],
+						"props_direction_chirho": "Keep only verse-appropriate props from this episode anchor; absent people and merely described objects do not become visible."
+					}
 				}
 			],
 			"continuity_directions_chirho": [
@@ -148,7 +172,15 @@
 						"Acts.3.9",
 						"Acts.3.10"
 					],
-					"focus_chirho": "Older gray-haired man at left in brown; preserve his face and episode outfit where shown."
+					"focus_chirho": "Older gray-haired man at left in brown; preserve his face and episode outfit where shown.",
+					"wardrobe_anchor_chirho": {
+						"episode_id_chirho": "acts-03-temple-gateway-chirho",
+						"reference_id_chirho": "acts-3-1-existing-chirho",
+						"reference_sha256_chirho": "7641a5f996bc6158ceebfe2f0ee902badb2c511634634f8608536a6e2206a57f",
+						"clothing_direction_chirho": "Keep the brown clothing of the older man at left in this episode anchor.",
+						"props_chirho": [],
+						"props_direction_chirho": "Keep only verse-appropriate props from this episode anchor; absent people and merely described objects do not become visible."
+					}
 				},
 				{
 					"role_chirho": "john-son-zebedee-chirho",
@@ -165,13 +197,26 @@
 						"Acts.3.9",
 						"Acts.3.10"
 					],
-					"focus_chirho": "Younger dark-haired man at right in blue-green; preserve his face and episode outfit where shown."
+					"focus_chirho": "Younger dark-haired man at right in blue-green; preserve his face and episode outfit where shown.",
+					"wardrobe_anchor_chirho": {
+						"episode_id_chirho": "acts-03-temple-gateway-chirho",
+						"reference_id_chirho": "acts-3-1-existing-chirho",
+						"reference_sha256_chirho": "7641a5f996bc6158ceebfe2f0ee902badb2c511634634f8608536a6e2206a57f",
+						"clothing_direction_chirho": "Keep the blue-green clothing of the younger man at right in this episode anchor.",
+						"props_chirho": [],
+						"props_direction_chirho": "Keep only verse-appropriate props from this episode anchor; absent people and merely described objects do not become visible."
+					}
 				}
 			],
 			"continuity_directions_chirho": [
 				"Use the same temple approach, pale stone, gateway proportions and clothing through the connected event.",
 				"The man lame from birth remains a local episode role. Do not import the architecture into Solomon-era temple scenes."
-			]
+			],
+			"setting_identity_chirho": {
+				"place_id_chirho": "jerusalem-chirho",
+				"building_id_chirho": "second-temple-chirho",
+				"era_id_chirho": "second-temple-first-century-chirho"
+			}
 		},
 		{
 			"id_chirho": "david-anointed-chirho",
@@ -274,6 +319,50 @@
 				"zerubbabel-temple-earlier-period-chirho",
 				"heavenly-throne-visions-chirho"
 			],
+			"attribution_chirho": "OpenBible.info Bible Geocoding Data, CC BY 4.0",
+			"setting_identity_chirho": {
+				"place_id_chirho": "jerusalem-chirho",
+				"building_id_chirho": "second-temple-chirho",
+				"era_id_chirho": "second-temple-first-century-chirho"
+			},
+			"binding_status_chirho": "reference-bound"
+		},
+		{
+			"id_chirho": "solomonic-temple-chirho",
+			"place_source_chirho": {
+				"source_id_chirho": "a15257a",
+				"name_chirho": "Jerusalem",
+				"types_chirho": ["settlement"],
+				"scope_note_chirho": "Place identity/mentions only. Building, room, historical period and actual scene presence need a separate source-checked art binding. No map geometry or third-party thumbnail is imported."
+			},
+			"building_identity_chirho": "First Temple / Solomonic temple",
+			"setting_identity_chirho": {
+				"place_id_chirho": "jerusalem-chirho",
+				"building_id_chirho": "first-temple-chirho",
+				"era_id_chirho": "first-temple-solomonic-chirho"
+			},
+			"binding_status_chirho": "unbound",
+			"existing_reference_ids_chirho": [],
+			"use_chirho": "Explicitly unbound: no adopted visual reference; do not substitute the first-century Acts architecture.",
+			"attribution_chirho": "OpenBible.info Bible Geocoding Data, CC BY 4.0"
+		},
+		{
+			"id_chirho": "zerubbabel-temple-earlier-period-chirho",
+			"place_source_chirho": {
+				"source_id_chirho": "a15257a",
+				"name_chirho": "Jerusalem",
+				"types_chirho": ["settlement"],
+				"scope_note_chirho": "Place identity/mentions only. Building, room, historical period and actual scene presence need a separate source-checked art binding. No map geometry or third-party thumbnail is imported."
+			},
+			"building_identity_chirho": "Earlier Second Temple / Zerubbabel period",
+			"setting_identity_chirho": {
+				"place_id_chirho": "jerusalem-chirho",
+				"building_id_chirho": "second-temple-chirho",
+				"era_id_chirho": "second-temple-earlier-chirho"
+			},
+			"binding_status_chirho": "unbound",
+			"existing_reference_ids_chirho": [],
+			"use_chirho": "Explicitly unbound: no adopted visual reference; do not substitute the first-century Acts architecture.",
 			"attribution_chirho": "OpenBible.info Bible Geocoding Data, CC BY 4.0"
 		}
 	],

@@ -16,6 +16,11 @@ flowchart TD
     A --> J[Editorial pericope map with source hashes]
     J --> K[Episode-local outfits, architecture, props and time progression]
     I --> L[Build source-checked reference pack]
+    J --> EraChirho[Select explicit place, building and era]
+    EraChirho --> EraCheckChirho{Setting reference compatible?}
+    EraCheckChirho -->|yes| L
+    EraCheckChirho -->|unbound, no image| L
+    EraCheckChirho -->|mismatch| Q
     K --> L
     L --> M[Copy exact references into a new scene attempt and pin input]
     M --> N[Artist inspects references and generates one scene]
@@ -33,6 +38,12 @@ Place identity is separate from a building/room and its historical period. Jerus
 The Proverbs map covers915source verses exactly once in608editorial units, with11local continuity episodes. The31chapter unit shards are bounded and hash-bound. Standalone sayings inherit no literal people/clothes/place from adjacent sayings. Connected narratives preserve people, outfit, architecture and time, while teaching frames and figurative material retain their own role. The proposed map is not a claim of scholarly consensus. Source text/verse numbering is untouched.
 
 `index_sources_chirho.py` checks pinned upstream hashes and extracts identity/place/mention research records, omitting generated biographies, map geometry and third-party images. STEP Bible and OpenBible data retain CC BY4.0; the authored artwork is CC0. `split_sheet_chirho.py` cuts exact original pixels into nine cells and refuses an existing output. `reference_pack_chirho.py` checks source chapters, unit shards, adopted reference hashes, containment and regular files; unadopted candidates never silently become active references.
+
+A selected period-bound setting now carries explicit place, building and era identities. The adopted Acts3gateway is bound to first-century Second Temple architecture. First Temple/Solomonic and earlier Second Temple profiles remain explicitly unbound with no adopted image; they cannot borrow that Acts setting. The pack delivers the selected place binding and refuses a mismatched setting before staging or generation. An unbound place with no image remains usable as source context; unmapped jobs keep their ordinary fallback. No geographic inference, external photo or archaeology claim is introduced.
+
+Acts3and Proverbs7roles carry episode-local wardrobe/props anchors tied to the exact existing scene hash. These are separate from universal identity portraits. An anchor from another episode, a changed reference identity or a neutral portrait used as an episode outfit refuses. No new concrete props are asserted by this unit. The artist still decides which verse-appropriate elements are visible; absent or merely described people/objects remain excluded. Other episodes retain their current guidance until deliberately curated.
+
+These new checks run only at new pack construction. Recording an old attempt verifies its own pinned source and staged references, without rederiving its choices from the changed library. Library evolution cannot rewrite an older attempt. Staging makes references available and the prompt instructs the artist to use them; the existing recorder does not independently compare the image tool's actual referenced_image_paths with that pack. That separate evidence gap remains explicit.
 
 The scene producer uses this pack only for a new, mapped job. Exact reference bytes are copied into that attempt before its source pin. The artist receives their intended identity/setting roles and must inspect/use them. Recording checks the frozen source pin and staged image hashes. Later library changes cannot rewrite an earlier attempt. Existing requests, unknown outcomes, retry caps, provider/budget scopes and held originals are unchanged. Source/reference mismatches hold before generation; no paid fallback is introduced. Unmapped jobs retain the ordinary source/style process.
 
