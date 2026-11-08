@@ -10,7 +10,7 @@ To the extent possible under law, L.J. (Love Jesus) dedicates all copyright and 
 
 The rights we hold in generated pronunciation recordings remain shared under Creative Commons Attribution 4.0 International: https://creativecommons.org/licenses/by/4.0/. Suggested recording attribution: “Hinneh — L.J. (Love Jesus), https://hinneh.us/, CC BY 4.0.” Retain supplied source/voice credits, link the license and indicate changes when reusing those recordings.
 
-The media grant applies to rights the project holds. It does not license an underlying voice model, another person's voice or identity rights, or independently licensed third-party material. Public-domain elements remain public domain; no exclusive copyright over AI-generated material is claimed. Saved speech was generated under paid subscriptions using licensed public-library voices; provider and voice-specific provenance is retained separately.
+The media grant applies to rights the project holds. It does not license an underlying voice model, another person's voice or identity rights, or independently licensed third-party material. Public-domain elements remain public domain; no exclusive copyright over AI-generated material is claimed. Saved synthetic speech is produced through paid services and local speech models; provider, model and voice-specific provenance is retained separately.
 
 Third-party resources retain their own licenses and notices:
 
