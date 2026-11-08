@@ -1,0 +1,85 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Prov",
+	"chapter_chirho": 9,
+	"source_sha256_chirho": "74ade3731a9757282a7e797f9986a85ce707ecf01d137cb46ad3accf657d216e",
+	"units_chirho": [
+		{
+			"unit_id_chirho": "prov-009-001-006-chirho",
+			"start_chirho": "Prov.9.1",
+			"end_chirho": "Prov.9.6",
+			"verse_count_chirho": 6,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "narrative",
+			"episode_id_chirho": "prov-09-two-invitations-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Wisdom builds her house of seven pillars, prepares meat and wine, sends her maidens, and calls the simple in.",
+			"title_chirho": "Wisdom's house and banquet",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom, personified",
+					"text_facts_chirho": "builds, prepares and calls from the city heights (9:1-3)"
+				},
+				{
+					"role_chirho": "her maidens",
+					"text_facts_chirho": "sent out (9:3)"
+				},
+				{
+					"role_chirho": "the simple",
+					"text_facts_chirho": "invited (9:4-6)"
+				}
+			],
+			"art_choices_chirho": ["the house's look beyond its seven pillars"]
+		},
+		{
+			"unit_id_chirho": "prov-009-007-012-chirho",
+			"start_chirho": "Prov.9.7",
+			"end_chirho": "Prov.9.12",
+			"verse_count_chirho": 6,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": "prov-09-two-invitations-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Sayings between the two invitations: rebuke a wise man and he will love you; the fear of the LORD.",
+			"title_chirho": "Correcting scoffers and the wise",
+			"roles_chirho": [
+				{
+					"role_chirho": "scoffer and wise man",
+					"text_facts_chirho": "contrasted (9:7-9)"
+				},
+				{
+					"role_chirho": "Wisdom",
+					"text_facts_chirho": "speaks 'by me your days are multiplied' (9:11)"
+				}
+			],
+			"uncertainty_chirho": "Who speaks 9:7-12 is not marked; it reads as Wisdom continuing."
+		},
+		{
+			"unit_id_chirho": "prov-009-013-018-chirho",
+			"start_chirho": "Prov.9.13",
+			"end_chirho": "Prov.9.18",
+			"verse_count_chirho": 6,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "narrative",
+			"episode_id_chirho": "prov-09-two-invitations-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "The foolish woman sits at her door on the city heights and calls passers-by: stolen water is sweet.",
+			"title_chirho": "Folly calls from her door",
+			"roles_chirho": [
+				{
+					"role_chirho": "Folly, the foolish woman",
+					"text_facts_chirho": "loud, simple, sits at her door (9:13-14); a figure distinct from Wisdom"
+				},
+				{
+					"role_chirho": "passers-by",
+					"text_facts_chirho": "going straight on their way (9:15)"
+				},
+				{
+					"role_chirho": "her guests",
+					"text_facts_chirho": "the dead are there, in the depths of Sheol (9:18)"
+				}
+			],
+			"art_choices_chirho": ["keep Folly visibly distinct from Wisdom", "her house and door"]
+		}
+	]
+}

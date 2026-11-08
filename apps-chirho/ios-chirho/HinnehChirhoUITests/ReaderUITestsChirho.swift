@@ -38,11 +38,11 @@ final class ReaderUITestsChirho: XCTestCase {
         let cornerChirho = wordChirho.coordinate(withNormalizedOffset: .zero)
             .withOffset(CGVector(dx: wordChirho.frame.width - 11, dy: 22))
         cornerChirho.tap()
-        XCTAssertFalse(appChirho.navigationBars["Look closer"].waitForExistence(timeout: 2),
+        XCTAssertFalse(appChirho.buttons["Done"].waitForExistence(timeout: 2),
                        "the speaker tap is independent of the word card")
         XCTAssertFalse(appChirho.staticTexts["The recording could not be played."].exists)
         wordChirho.tap()
-        XCTAssertTrue(appChirho.navigationBars["Look closer"].waitForExistence(timeout: 10))
+        XCTAssertTrue(appChirho.buttons["Done"].waitForExistence(timeout: 10))
         XCTAssertTrue(appChirho.staticTexts["Meaning"].exists || appChirho.staticTexts["MEANING"].exists)
         keepChirho(appChirho, "proverbs-26-1-word-card-en")
         // The word's verified recording plays without an error.
@@ -52,7 +52,7 @@ final class ReaderUITestsChirho: XCTestCase {
         XCTAssertFalse(appChirho.staticTexts["The recording could not be played."].waitForExistence(timeout: 4))
         appChirho.buttons["Done"].tap()
         // The verse reading plays complete to its natural end, then offers itself again.
-        let verseChirho = appChirho.buttons["Listen to the verse"]
+        let verseChirho = appChirho.buttons["Listen to the verse"].firstMatch
         XCTAssertTrue(verseChirho.waitForExistence(timeout: 20))
         verseChirho.tap()
         XCTAssertTrue(appChirho.buttons["Stop"].waitForExistence(timeout: 20), "the reading started")
@@ -82,9 +82,41 @@ final class ReaderUITestsChirho: XCTestCase {
         XCTAssertTrue(wordChirho.label.contains("adverbio"), "Greek grammar is named in Spanish")
         keepChirho(appChirho, "john-3-16-es")
         wordChirho.tap()
-        XCTAssertTrue(appChirho.navigationBars["Mire más de cerca"].waitForExistence(timeout: 10))
-        XCTAssertTrue(appChirho.staticTexts["Glosa en español aprobada en la exportación de Global Bible Tools"]
-            .waitForExistence(timeout: 20))
+        XCTAssertTrue(appChirho.buttons["Listo"].waitForExistence(timeout: 10))
+        XCTAssertTrue(appChirho.staticTexts["Significado"].exists || appChirho.staticTexts["SIGNIFICADO"].exists)
         keepChirho(appChirho, "john-3-16-word-card-es")
+    }
+
+    @MainActor
+    func testVideoStopsOnSwipeAndVerticalScrollingStillWorksChirho() {
+        let appChirho = launchChirho("Prov.1.1", "en")
+        XCTAssertTrue(appChirho.staticTexts["Proverbs 1:1"].firstMatch.waitForExistence(timeout: 30))
+        let playChirho = appChirho.buttons["Listen to the verse"].firstMatch
+        XCTAssertTrue(playChirho.waitForExistence(timeout: 30))
+        playChirho.tap()
+        XCTAssertTrue(appChirho.buttons["Stop"].firstMatch.waitForExistence(timeout: 20))
+        keepChirho(appChirho, "proverbs-video-playing-en")
+        // The word area accepts horizontal navigation; the video scrubber is excluded.
+        let startChirho = appChirho.coordinate(withNormalizedOffset: CGVector(dx: 0.85, dy: 0.85))
+        let endChirho = appChirho.coordinate(withNormalizedOffset: CGVector(dx: 0.15, dy: 0.85))
+        startChirho.press(forDuration: 0.05, thenDragTo: endChirho)
+        XCTAssertTrue(appChirho.staticTexts["Proverbs 1:2"].firstMatch.waitForExistence(timeout: 30))
+        XCTAssertFalse(appChirho.buttons["Stop"].exists, "navigation cancels the previous soundtrack")
+        appChirho.swipeUp()
+        XCTAssertTrue(appChirho.staticTexts["Proverbs 1:2"].firstMatch.exists, "vertical scrolling never steps")
+        keepChirho(appChirho, "verse-after-swipe-en")
+    }
+
+    @MainActor
+    func testBeginningDisablesPreviousAndSettingsOffersNormalChirho() {
+        let appChirho = launchChirho("Gen.1.1", "en")
+        XCTAssertTrue(appChirho.staticTexts["Genesis 1:1"].firstMatch.waitForExistence(timeout: 30))
+        appChirho.buttons["Settings"].tap()
+        XCTAssertTrue(appChirho.buttons["Normal · 1×"].waitForExistence(timeout: 5))
+        appChirho.buttons["Normal · 1×"].tap()
+        appChirho.swipeUp()
+        appChirho.swipeUp()
+        XCTAssertTrue(appChirho.buttons["Previous verse"].waitForExistence(timeout: 10))
+        XCTAssertFalse(appChirho.buttons["Previous verse"].isEnabled)
     }
 }

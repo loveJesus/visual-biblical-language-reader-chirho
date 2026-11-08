@@ -3489,6 +3489,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/psalms-chirho/chapter-066-chirho/ps-066-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/a67ce4fc0592ab78bcf096a8ab83540dbad32d01e3bf0a556ada13c2e867f729.webp",
+        "sha256_chirho": "a67ce4fc0592ab78bcf096a8ab83540dbad32d01e3bf0a556ada13c2e867f729",
+        "bytes_chirho": 2743204,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T20:39:29.841Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/cfce0c683333c93d1377ff68c9b6ccc3a1316843bcb4988b2e7be405f207710c.webp",
+        "sha256_chirho": "cfce0c683333c93d1377ff68c9b6ccc3a1316843bcb4988b2e7be405f207710c",
+        "bytes_chirho": 280418,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T20:39:30.995Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ecclesiastes-chirho/chapter-002-chirho/eccl-002-023-chirho.webp"
       ],
       "source_chirho": {

@@ -5,19 +5,24 @@ import androidx.annotation.StringRes
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.hasClickAction
 import androidx.compose.ui.test.hasContentDescription
+import androidx.compose.ui.test.hasScrollAction
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.isHeading
 import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.compose.ui.test.onFirst
+import androidx.compose.ui.test.onLast
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
+import androidx.compose.ui.test.performTouchInput
+import androidx.compose.ui.test.swipeLeft
+import androidx.compose.ui.test.swipeRight
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import java.time.LocalDate
 
-/** The real activity against https://hinneh.us/: daily default, book choice, Look closer, playback, stepping. */
+/** The real activity against https://hinneh.us/: daily default, book choice, Look closer, playback, stepping and swiping. */
 @RunWith(AndroidJUnit4::class)
 class ReaderFlowTestChirho {
     @get:Rule
@@ -60,8 +65,16 @@ class ReaderFlowTestChirho {
         composeChirho.onNode(stopChirho).performClick()
         waitForChirho(listenChirho)
 
-        // Stepping follows the source numbering.
-        composeChirho.onNode(hasText(textChirho(R.string.next_verse_chirho), substring = true) and hasClickAction()).performScrollTo().performClick()
+        // Stepping follows the source numbering, here from the step row below the verse.
+        composeChirho.onAllNodes(hasText(textChirho(R.string.next_verse_chirho), substring = true) and hasClickAction()).onLast()
+            .performScrollTo().performClick()
+        waitForChirho(hasText("$johnChirho 1:2") and isHeading())
+
+        // Swiping the page steps the same way: the next verse comes in from the right, the previous from the left.
+        val pageChirho = composeChirho.onAllNodes(hasScrollAction()).onFirst()
+        pageChirho.performTouchInput { swipeLeft(startX = width * 0.8f, endX = width * 0.2f) }
+        waitForChirho(hasText("$johnChirho 1:3") and isHeading())
+        pageChirho.performTouchInput { swipeRight(startX = width * 0.2f, endX = width * 0.8f) }
         waitForChirho(hasText("$johnChirho 1:2") and isHeading())
     }
 

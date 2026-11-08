@@ -3,8 +3,7 @@
 import HinnehCoreChirho
 import SwiftUI
 
-/// "Look closer": one word's meanings, morphology, picture, recording and sourced notes.
-/// Source notes are English data and are marked as such.
+/// One word's meaning, lexical form, grammar, pictures and saved pronunciation.
 struct WordDetailViewChirho: View {
     let wordChirho: WordDisplayChirho
     let scriptChirho: ScriptChirho
@@ -34,9 +33,12 @@ struct WordDetailViewChirho: View {
                 morphologySectionChirho
                 pictureSectionChirho
                 marksSectionChirho
-                notesSectionChirho
+                Section {
+                    Link(messagesChirho.studyAidsChirho,
+                         destination: URL(string: "https://hinneh.us/about-chirho/?lang_chirho=\(modelChirho.localeChirho.rawValue)#study-aids-chirho")!)
+                }
             }
-            .navigationTitle(messagesChirho.lookCloserChirho)
+            .navigationTitle(wordChirho.textChirho)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -56,7 +58,6 @@ struct WordDetailViewChirho: View {
                       : MessagesChirho.fillChirho(messagesChirho.playWordChirho, ["word_chirho": wordChirho.textChirho]),
                       systemImage: activeChirho ? "stop.circle" : "speaker.wave.2")
             }
-            Text(messagesChirho.voiceChirho(clipChirho)).font(.footnote).foregroundStyle(.secondary)
             if modelChirho.playerChirho.failedIdChirho == wordChirho.idChirho {
                 Text(messagesChirho.audioFailedChirho).font(.footnote).foregroundStyle(.red)
             }
@@ -72,7 +73,6 @@ struct WordDetailViewChirho: View {
                 case "-": Text(messagesChirho.notSeparatelyTranslatedChirho)
                 case let glossChirho?: Text(TaggedTextChirho.textChirho(glossChirho, "en")).font(.title3)
                 }
-                Text(originChirho).font(.footnote).foregroundStyle(.secondary)
             }
         }
     }
@@ -83,7 +83,6 @@ struct WordDetailViewChirho: View {
             case .readyChirho(let glossesChirho, _):
                 if let glossChirho = glossesChirho[wordChirho.idChirho] ?? nil {
                     Text(TaggedTextChirho.textChirho(glossChirho, "es")).font(.title3)
-                    Text(messagesChirho.spanishGlossApprovedChirho).font(.footnote).foregroundStyle(.secondary)
                 } else {
                     Text(messagesChirho.spanishGlossMissingChirho)
                 }
@@ -94,13 +93,6 @@ struct WordDetailViewChirho: View {
         }
     }
 
-    private var originChirho: String {
-        if scriptChirho == .greekChirho { return messagesChirho.glossBereanChirho }
-        guard wordChirho.glossChirho != nil else { return "" }
-        return wordChirho.hebrewChirho?.glossOriginChirho == "gbt_approved"
-            ? messagesChirho.glossApprovedChirho : messagesChirho.glossAppChirho
-    }
-
     private var morphologySectionChirho: some View {
         Section(messagesChirho.morphologyChirho) {
             Text(MorphologyChirho.summaryChirho(wordChirho, modelChirho.localeChirho))
@@ -109,11 +101,7 @@ struct WordDetailViewChirho: View {
             }
             LabeledContent(messagesChirho.lemmaChirho, value: wordChirho.lemmaIdChirho
                            + (wordChirho.lemmaAugmentChirho.map { " (\($0))" } ?? ""))
-            LabeledContent(messagesChirho.sourceMorphologyChirho) {
-                Text(wordChirho.rawMorphologyChirho).font(.body.monospaced()).textSelection(.enabled)
-            }
             if let hebrewChirho = wordChirho.hebrewChirho {
-                LabeledContent(messagesChirho.rootChirho) { Text(rootChirho(hebrewChirho)) }
                 ForEach(hebrewChirho.qereChirho) { qereChirho in
                     VStack(alignment: .leading, spacing: 4) {
                         Text(messagesChirho.qereChirho).font(.headline)
@@ -124,18 +112,6 @@ struct WordDetailViewChirho: View {
                 }
             }
             if wordChirho.isAramaicChirho { Text(messagesChirho.aramaicNoteChirho) }
-        }
-    }
-
-    private func rootChirho(_ hebrewChirho: HebrewFactsChirho) -> AttributedString {
-        switch hebrewChirho.rootStatusChirho {
-        case "traditional":
-            var rootChirho = sourceChirho(hebrewChirho.rootTextChirho ?? "")
-            rootChirho += AttributedString(" · \(hebrewChirho.rootEntryIdChirho ?? "") · "
-                                           + messagesChirho.rootTraditionalChirho)
-            return rootChirho
-        case "not_applicable": return AttributedString(messagesChirho.rootNotApplicableChirho)
-        default: return AttributedString(messagesChirho.rootUnresolvedChirho)
         }
     }
 
@@ -157,9 +133,6 @@ struct WordDetailViewChirho: View {
                         if pictureChirho.assignmentChirho == .generalChirho {
                             Text(messagesChirho.generalPictureCaveatChirho).font(.footnote)
                         }
-                        Text(pictureChirho.recordChirho.artReviewChirho == "approved"
-                             ? messagesChirho.artApprovedChirho : messagesChirho.artPendingChirho)
-                            .font(.footnote).foregroundStyle(.secondary)
                     }
                 }
                 if !pictureChirho.alternativesChirho.isEmpty {
@@ -202,20 +175,6 @@ struct WordDetailViewChirho: View {
             Text(messagesChirho.marksChirho)
         } footer: {
             if scriptChirho == .hebrewChirho { GrammarCreditViewChirho(messagesChirho: messagesChirho) }
-        }
-    }
-
-    @ViewBuilder private var notesSectionChirho: some View {
-        let notesChirho = [wordChirho.analysisChirho, wordChirho.hebrewChirho?.rootNoteChirho, wordChirho.sourceNoteChirho,
-                           wordChirho.hebrewChirho?.formNoteChirho?.textChirho]
-            .compactMap { $0 }
-            .filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
-        if !notesChirho.isEmpty {
-            Section(messagesChirho.sourceNoteChirho) {
-                ForEach(Array(notesChirho.enumerated()), id: \.offset) { _, noteChirho in
-                    Text(TaggedTextChirho.textChirho(noteChirho, "en")).font(.callout)
-                }
-            }
         }
     }
 

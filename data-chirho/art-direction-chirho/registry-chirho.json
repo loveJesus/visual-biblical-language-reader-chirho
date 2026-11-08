@@ -1,0 +1,555 @@
+{
+	"schema_version_chirho": 1,
+	"purpose_chirho": "Shared cast for people recurring across distinct Scriptural passages. Episode-only roles remain local.",
+	"sheet_id_chirho": "recurring-cast-01-chirho",
+	"grid_chirho": [3, 3],
+	"license_chirho": "CC0-1.0",
+	"characters_chirho": [
+		{
+			"id_chirho": "saul-king-chirho",
+			"name_chirho": "Saul, king of Israel",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "mature",
+			"sheet_cell_chirho": 0,
+			"appearance_direction_chirho": "Broad long face, strong heavy brow, dark hair and a dark beard with early gray. Broad-shouldered; burgundy outer cloth. Distinct from Saul/Paul.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "1Sam.9.2",
+					"chapter_path_chirho": "static/content-chirho/1-samuel-chirho/chapter-09-chirho.json",
+					"chapter_sha256_chirho": "e26055ff4b35c030e7c6379432063f5028ecb29fe30b6df752e12d5218cfcee6",
+					"canonical_sha256_chirho": "267abcaafbaf6c95f53d3a1b19a3caee20348c2776e6714a55cb2644408ea456",
+					"glosses_chirho": "And he had a son and whose name [was] Saul choice and handsome and [There was] not a person among the sons of Israel more handsome than he from his shoulders and upward [he was] higher than any of the people"
+				},
+				{
+					"lesson_id_chirho": "1Sam.10.24",
+					"chapter_path_chirho": "static/content-chirho/1-samuel-chirho/chapter-10-chirho.json",
+					"chapter_sha256_chirho": "8866aee4049971a9bb169716b6d7bdcd58dab8508ddf2a73685655206c369923",
+					"canonical_sha256_chirho": "225606f9c2dabd4fadc1b5d8bf56c39fcee505d5d337b056be08efb317f5387f",
+					"glosses_chirho": "And said Samuel to all of the people do you see whom has chosen him Yahweh that [there is] no one like him among all of the people so shouted all of the people and said Long live the king"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "Saul@1Sa.9.2-Act=H7586G",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"selected_reference_ids_chirho": ["saul-king-mature-chirho"]
+		},
+		{
+			"id_chirho": "david-chirho",
+			"name_chirho": "David",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "young-adult",
+			"sheet_cell_chirho": 1,
+			"appearance_direction_chirho": "Lean oval face, warm ruddy-brown complexion, wavy auburn-brown hair, short warm-brown beard and attentive eyes; muted ochre tunic. Later king/elder variants must retain facial geometry.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "1Sam.16.12",
+					"chapter_path_chirho": "static/content-chirho/1-samuel-chirho/chapter-16-chirho.json",
+					"chapter_sha256_chirho": "b567250ca2386216c304b47bb12189a1fba5384ed39f66daaebc511a7d0a7660",
+					"canonical_sha256_chirho": "54947e27da993248e38bba69c6bb9c29d9f36fb9f835e065a46aa69479e9cc7a",
+					"glosses_chirho": "So he sent and brought him in and he [was] ruddy with bright of eyes and of good-looking And said Yahweh Arise anoint him for this [is] he"
+				},
+				{
+					"lesson_id_chirho": "2Sam.5.3",
+					"chapter_path_chirho": "static/content-chirho/2-samuel-chirho/chapter-05-chirho.json",
+					"chapter_sha256_chirho": "92942ecdec7e9d1ce0b57e5f6e6f12fd57b0b02ef50bad49a263e0024cfdbdb6",
+					"canonical_sha256_chirho": "cd3b708afea07bdd20846c958223fc55e198b0c7255392ab48b8b14736547854",
+					"glosses_chirho": "Therefore came all of the elders of Israel to the king at Hebron and made with them King David a covenant at Hebron before of Yahweh and they anointed - David king over Israel"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "David@Rut.4.17-Rev=H1732",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"age_variants_chirho": {
+				"youth": ["david-youth-front-chirho", "david-youth-three-quarter-chirho"],
+				"young-adult": ["david-young-adult-front-chirho", "david-young-adult-three-quarter-chirho"],
+				"mature": ["david-mature-front-chirho", "david-mature-three-quarter-chirho"],
+				"elder": [
+					"david-elder-front-chirho",
+					"david-elder-three-quarter-chirho",
+					"david-elder-profile-chirho"
+				]
+			}
+		},
+		{
+			"id_chirho": "samuel-chirho",
+			"name_chirho": "Samuel",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "elder",
+			"sheet_cell_chirho": 2,
+			"appearance_direction_chirho": "Long narrow face, deep-set eyes, long silver beard, silver hair and a plain sand-colored mantle; child and adult variants are queued separately.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "1Sam.3.1",
+					"chapter_path_chirho": "static/content-chirho/1-samuel-chirho/chapter-03-chirho.json",
+					"chapter_sha256_chirho": "a0218221d4c28ec5f0c1430beb781c8dd4e7fb1ddc29fa77303ca2de2c9826d7",
+					"canonical_sha256_chirho": "87cfab8dd646daf5c984f6fe482ed597c5dfa7c0ec81a1dd2ea42d961d572f54",
+					"glosses_chirho": "And the boy Samuel ministered to Yahweh before of Eli And the word of Yahweh was rare in days those [there was] no revelation widespread"
+				},
+				{
+					"lesson_id_chirho": "1Sam.16.13",
+					"chapter_path_chirho": "static/content-chirho/1-samuel-chirho/chapter-16-chirho.json",
+					"chapter_sha256_chirho": "b567250ca2386216c304b47bb12189a1fba5384ed39f66daaebc511a7d0a7660",
+					"canonical_sha256_chirho": "cd84f59f5c49f94cb3a9bc5c072b7e662a50c7c782779603f766cd4e6d07018b",
+					"glosses_chirho": "And took Samuel - the horn of oil and anointed him in the midst of his brothers and came the Spirit of Yahweh upon David from day that and forward So arose Samuel and went to Ramah"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "Samuel@1Sa.1.20-Heb=H8050G",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"selected_reference_ids_chirho": ["samuel-elder-chirho"]
+		},
+		{
+			"id_chirho": "jonathan-son-saul-chirho",
+			"name_chirho": "Jonathan, son of Saul",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "adult",
+			"sheet_cell_chirho": 3,
+			"appearance_direction_chirho": "Athletic face, wide dark eyes, thick wavy dark hair and neatly trimmed dark beard; muted blue outer cloth. Resemblance to King Saul without duplicating his face.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "1Sam.14.1",
+					"chapter_path_chirho": "static/content-chirho/1-samuel-chirho/chapter-14-chirho.json",
+					"chapter_sha256_chirho": "a865b783b9c985b15d579785ba2ebddc24ccff334cdccc81853aa83c4afffbae",
+					"canonical_sha256_chirho": "b9240ebb0a474058e76a8a7dcbe51ba1de193f20f37976bdbb03e41c4c0fb8c1",
+					"glosses_chirho": "And it came to pass one day that said Jonathan son of Saul to the young man who bore of his armor come and let us go over to the garrison of Philistines' that [is] on other side of this but his father not he did tell"
+				},
+				{
+					"lesson_id_chirho": "1Sam.18.1",
+					"chapter_path_chirho": "static/content-chirho/1-samuel-chirho/chapter-18-chirho.json",
+					"chapter_sha256_chirho": "d54a36bbd3006d12cb155068c3c986fef74ee4cb47239f17cfe3828eb21347d5",
+					"canonical_sha256_chirho": "7f75dc6f2726590bdcf8bafa59dd3a4d4ca8c311a6417c6111dc34ce229dbd15",
+					"glosses_chirho": "Now when he had finished speaking to Saul and the soul of Jonathan was knit to the soul of David and loved him Jonathan as his own soul"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "Jonathan@1Sa.13.2-1Ch=H3083H",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"selected_reference_ids_chirho": ["jonathan-adult-chirho"]
+		},
+		{
+			"id_chirho": "moses-chirho",
+			"name_chirho": "Moses",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "elder",
+			"sheet_cell_chirho": 4,
+			"appearance_direction_chirho": "Deeply lined broad face, strong aquiline nose, thick brows, long curly gray-white beard and shoulder-length gray hair; natural undyed wool.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "Exod.2.10",
+					"chapter_path_chirho": "static/content-chirho/exodus-chirho/chapter-02-chirho.json",
+					"chapter_sha256_chirho": "5325685a411a75c433323391cf56c2dfcbdd7af5e3ff36eabc6d39d90e59c508",
+					"canonical_sha256_chirho": "aaaff2690a9b1f871cf7535faeea9b84c2411073f67fc8551c7da12592520eb1",
+					"glosses_chirho": "And grew the child and she brought him unto the daughter of Pharaoh and he became her son So she called his name Moses and said because out of the water I drew him"
+				},
+				{
+					"lesson_id_chirho": "Exod.3.4",
+					"chapter_path_chirho": "static/content-chirho/exodus-chirho/chapter-03-chirho.json",
+					"chapter_sha256_chirho": "bf90d856a29beda717459073cd6b28b0caa89bcd10a621d5fb10007c2ebbc9ed",
+					"canonical_sha256_chirho": "7e26f849c73136967c05909d7d9047aee537306cca106a7dd8c25db8b1b535df",
+					"glosses_chirho": "So when saw Yahweh that he turned aside to look then called to him God from the midst of the bush and said Moses Moses and he said Here I am"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "Moses@Exo.2.10-Rev=H4872",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"selected_reference_ids_chirho": ["moses-elder-chirho"]
+		},
+		{
+			"id_chirho": "aaron-chirho",
+			"name_chirho": "Aaron",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "elder",
+			"sheet_cell_chirho": 5,
+			"appearance_direction_chirho": "Family resemblance to Moses with a narrower face and gentler expression, close gray curls and shorter neatly divided silver beard; pale blue-gray mantle. Priestly vestments belong to specific episodes.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "Exod.4.14",
+					"chapter_path_chirho": "static/content-chirho/exodus-chirho/chapter-04-chirho.json",
+					"chapter_sha256_chirho": "437e6ce8993ae3800581d902b4329c438d61d502bc55a32284652d94d15f8b0e",
+					"canonical_sha256_chirho": "313d6bb26e378efdea8f6881eb2488741955a1740ea1e57bdeb1c839633c5b5b",
+					"glosses_chirho": "So was kindled the anger of Yahweh against Moses and He said is not Aaron your brother the Levite I know that well can speak he And also look he is coming out to meet you and when he sees you then he will be glad in his heart"
+				},
+				{
+					"lesson_id_chirho": "Exod.7.1",
+					"chapter_path_chirho": "static/content-chirho/exodus-chirho/chapter-07-chirho.json",
+					"chapter_sha256_chirho": "338d698250ec97d5ca82499c99082c27c3f9ef91ca52c47a66a4544aeabd013e",
+					"canonical_sha256_chirho": "54c91c9391745f7300aa29492f45097794cbba5647a868f77af2c7090d2cead2",
+					"glosses_chirho": "so said Yahweh to Moses See I have made you [as] God to Pharaoh and Aaron your brother shall be your prophet"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "Aaron@Exo.4.14-Heb=H0175",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"selected_reference_ids_chirho": ["aaron-elder-chirho"]
+		},
+		{
+			"id_chirho": "joshua-son-nun-chirho",
+			"name_chirho": "Joshua, son of Nun",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "mature",
+			"sheet_cell_chirho": 6,
+			"appearance_direction_chirho": "Angular weathered face, straight nose, dark brown eyes, short dark hair with gray temples and a short dark beard; muted olive mantle.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "Exod.17.9",
+					"chapter_path_chirho": "static/content-chirho/exodus-chirho/chapter-17-chirho.json",
+					"chapter_sha256_chirho": "0eb1451eca6071f3d8548ae5bb6dcf6de28509deda90963c8d778e9f8b3d8f02",
+					"canonical_sha256_chirho": "8c67159665d9e29c3825f36f9b6b1c76a230a143b72a4479512617be0882e655",
+					"glosses_chirho": "And said Moses to Joshua Choose us some men and go out fight with Amalek Tomorrow I will stand on the top of the hill and with the rod of God in my hand"
+				},
+				{
+					"lesson_id_chirho": "Josh.1.1",
+					"chapter_path_chirho": "static/content-chirho/joshua-chirho/chapter-01-chirho.json",
+					"chapter_sha256_chirho": "98e39f125d1aea5a6ad7ab91b806c4c3f298236fdfc69c992da331ddb0479606",
+					"canonical_sha256_chirho": "eb7021b097fcb441636b3bd6e5f254620b1f6ae104ec001f4c41274fdd358a71",
+					"glosses_chirho": "And it came to pass after the death of Moses the servant of Yahweh that spoke Yahweh to Joshua son of Nun minister of Moses saying"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "Joshua@Exo.17.9-Heb=H3091G",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"selected_reference_ids_chirho": ["joshua-mature-chirho"]
+		},
+		{
+			"id_chirho": "simon-peter-chirho",
+			"name_chirho": "Simon Peter",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "adult",
+			"sheet_cell_chirho": 7,
+			"appearance_direction_chirho": "Broad rounded face, dark curly hair, thick short curly beard with a few gray strands, strong brows and warm brown skin; ochre-brown mantle.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "Matt.4.18",
+					"chapter_path_chirho": "static/content-chirho/matthew-chirho/chapter-04-chirho.json",
+					"chapter_sha256_chirho": "5bf554daaf036f6f47f52a82e101af30c9d0267cab4009a7d680f687debffe9c",
+					"canonical_sha256_chirho": "2dff1426801316256986966bb5b306c04460ea32a422f61ec2fbd885a24862ca",
+					"glosses_chirho": "Walking now beside the Sea - of Galilee He saw two brothers Simon - called Peter and Andrew the brother of him casting a net into the sea they were for fishermen"
+				},
+				{
+					"lesson_id_chirho": "Acts.2.14",
+					"chapter_path_chirho": "static/content-chirho/acts-chirho/chapter-02-chirho.json",
+					"chapter_sha256_chirho": "0961165a14afa3d9e32ab0a2b47719908065009f98e2853d146cf92de8914dc3",
+					"canonical_sha256_chirho": "afd385cccfce12f99c4c1498355291322778f7fe4ca6365cab5184dec98f50a8",
+					"glosses_chirho": "Having stood up however - Peter with the eleven he lifted up the voice of him and spoke forth to them Men of Judea and those inhabiting Jerusalem all this to you known let be and give heed to the words of me"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "Peter@Mat.4.18-2Pe=G4074G",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"selected_reference_ids_chirho": ["acts-3-1-existing-chirho"]
+		},
+		{
+			"id_chirho": "john-son-zebedee-chirho",
+			"name_chirho": "John, son of Zebedee",
+			"identity_scope_chirho": "recurring-across-distinct-passages",
+			"age_variant_chirho": "young-adult",
+			"sheet_cell_chirho": 8,
+			"appearance_direction_chirho": "Slender long face, softly arched brows, wavy dark shoulder-length hair, a short sparse dark beard and medium-brown complexion; muted sage mantle. Distinct from John the Baptist.",
+			"appearance_status_chirho": "imaginative-visual-convention",
+			"source_anchors_chirho": [
+				{
+					"lesson_id_chirho": "Matt.4.21",
+					"chapter_path_chirho": "static/content-chirho/matthew-chirho/chapter-04-chirho.json",
+					"chapter_sha256_chirho": "5bf554daaf036f6f47f52a82e101af30c9d0267cab4009a7d680f687debffe9c",
+					"canonical_sha256_chirho": "45d045fa30ca57973b5dcbceb320d859596e9075257424c58f8e3da39150d6c8",
+					"glosses_chirho": "And having gone on from there He saw others two brothers James the [son] - of Zebedee and John the brother of him in the boat with Zebedee the father of them mending the nets of them and He called them"
+				},
+				{
+					"lesson_id_chirho": "Acts.3.1",
+					"chapter_path_chirho": "static/content-chirho/acts-chirho/chapter-03-chirho.json",
+					"chapter_sha256_chirho": "60b79d340b1fb23660770ad60958303911004a2ba35a5e11e9ecf79d221f925f",
+					"canonical_sha256_chirho": "550d3c840507eb9269444edb4663529bb238df51f3cbeb7118ac408343a9af40",
+					"glosses_chirho": "Peter now and John were going up into the temple at the hour - of prayer the ninth"
+				}
+			],
+			"reference_review_chirho": "agent-selected art convention; source artwork remains pending L.J. review",
+			"outfit_policy_chirho": "default reference garment only; exact outfit locked separately per continuity episode",
+			"tipnr_source_id_chirho": "John@Mat.4.21-Rev=G2491H",
+			"tipnr_attribution_chirho": "STEP Bible, https://www.STEPBible.org, CC BY 4.0",
+			"automatic_verse_depiction_chirho": false,
+			"selected_reference_ids_chirho": ["acts-3-1-existing-chirho"]
+		}
+	],
+	"references_chirho": [
+		{
+			"id_chirho": "saul-king-mature-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/saul-king-mature-chirho.png",
+			"sha256_chirho": "9eac3a766b4cd21c700b6179472bab0b960497a54728c835a5c0ce0dfb51562e",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-young-adult-candidate-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/david-young-adult-candidate-chirho.png",
+			"sha256_chirho": "a19b050a17658d6b2f6e6d949707808dd2f065dcaee32bea6d022d0836b484d8",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "candidate",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "samuel-elder-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/samuel-elder-chirho.png",
+			"sha256_chirho": "30a955dc023e369a02f4635cad58b674e9ee54300c80ed892430f03c6eaa8a55",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "jonathan-adult-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/jonathan-adult-chirho.png",
+			"sha256_chirho": "8affd09227e33113e253eaa295c8ab4bd377ffb29fc55e28239cc5d20936f8f2",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "moses-elder-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/moses-elder-chirho.png",
+			"sha256_chirho": "d1e0f76603725b69f7e5ea244f40128c1b360c4ba72a938e01188208a352e2b0",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "aaron-elder-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/aaron-elder-chirho.png",
+			"sha256_chirho": "a422158699356c926a4eed3afaf775151cb51c6e2c85180d8b07fd042c702078",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "joshua-mature-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/joshua-mature-chirho.png",
+			"sha256_chirho": "9a12e9257d0f73073fd146ebd6e6c5f68ca83f38b2460334deebadd237c77148",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "peter-adult-candidate-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/peter-adult-candidate-chirho.png",
+			"sha256_chirho": "0562d674f63f7eb2bc0bbf49043b9020ded2faf20b92c7e55d2f8fe6204543bb",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "candidate",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "john-young-adult-candidate-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/cast-01-chirho/john-young-adult-candidate-chirho.png",
+			"sha256_chirho": "1dbcd24a182bd78b8970f0449a120ab29830e26e1eb03b26d2d66287cdf3c19f",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "candidate",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "4a1d14106d8e1374cc5c5b22c9ca85fb43e2a32fc5a1e1390547affb7091365b",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-youth-front-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-youth-front-chirho.png",
+			"sha256_chirho": "98e5ec4c1d345c58c8853311c6f94454090fe2a0844b2f33067dffc7b9aa4ebe",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-young-adult-front-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-young-adult-front-chirho.png",
+			"sha256_chirho": "cb273f0e07b17ab52b8355601fa3dd81618d3e67f89b2134d4f4167e5d75dbdf",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-mature-front-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-mature-front-chirho.png",
+			"sha256_chirho": "7f4af10e8233dde225214ea90e6c33732d9e9ad556b750cc4bc5a5a7d38fe9c5",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-elder-front-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-elder-front-chirho.png",
+			"sha256_chirho": "7d2e780f64185750d2a25f36e3c6bf6a39830b90bcdcb2f745d4295a1e061f0c",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-youth-three-quarter-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-youth-three-quarter-chirho.png",
+			"sha256_chirho": "6a2d1fe8083bb274e008692440c7e7dc14e3bf1b662e4d00a76adc1f765c9419",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-young-adult-three-quarter-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-young-adult-three-quarter-chirho.png",
+			"sha256_chirho": "05b421d742eda08354efbff9c9c0239bd141384cbd426f78f009c93ab215140e",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-mature-three-quarter-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-mature-three-quarter-chirho.png",
+			"sha256_chirho": "a89afe4f65b222221d6b73a999dacb6cab09e827b659bf44b76b93d3fe5ad4b6",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-elder-three-quarter-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-elder-three-quarter-chirho.png",
+			"sha256_chirho": "e0605020bb431512a2c1e4a6581dbf4f531e42d2b09d36d3d1f2814276bf0f29",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "david-elder-profile-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/cells-chirho/david-ages-chirho/david-elder-profile-chirho.png",
+			"sha256_chirho": "3fb71a1597dee74861f5b6f913d160b834d401edfea2aa37d8e56e96ad6c0bcd",
+			"kind_chirho": "watercolor-portrait-cell",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"source_sheet_sha256_chirho": "c84ff339bc1569ffca84509bd449cd4bf2a38180ccccfcca1f7cd868a1f4615e",
+			"review_chirho": "root visually inspected; pending L.J. art review"
+		},
+		{
+			"id_chirho": "acts-3-1-existing-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/existing-chirho/Acts.3.1-chirho.webp",
+			"sha256_chirho": "7641a5f996bc6158ceebfe2f0ee902badb2c511634634f8608536a6e2206a57f",
+			"source_lesson_id_chirho": "Acts.3.1",
+			"asset_path_chirho": "/assets-chirho/scenes-chirho/high-quality-v1-chirho/acts-chirho/chapter-003-chirho/acts-003-001-chirho.webp",
+			"kind_chirho": "existing-scene",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"depicted_role_conventions_chirho": ["simon-peter-chirho", "john-son-zebedee-chirho"],
+			"focus_chirho": "Peter is the older gray-haired man at left in brown; John is the younger dark-haired man at right in blue-green. This assignment is the selected art convention, not a textual left/right claim. Temple gateway is an imaginative architectural reference.",
+			"review_chirho": "root inspected; source artwork remains pending L.J. review"
+		},
+		{
+			"id_chirho": "1kgs-1-1-existing-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/existing-chirho/1Kgs.1.1-chirho.webp",
+			"sha256_chirho": "a654a9fc146139590da1a698cf974d8fc4ec6483b83988a381f40c9726eeac6f",
+			"source_lesson_id_chirho": "1Kgs.1.1",
+			"asset_path_chirho": "/assets-chirho/scenes-chirho/high-quality-v1-chirho/1-kings-chirho/chapter-001-chirho/1kgs-001-001-chirho.webp",
+			"kind_chirho": "existing-scene",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"depicted_role_conventions_chirho": ["david-chirho"],
+			"focus_chirho": "Existing elder David face and royal-room palette. The new age sheet derives this face backwards; do not transplant the bed into unrelated scenes.",
+			"review_chirho": "root inspected; source artwork remains pending L.J. review"
+		},
+		{
+			"id_chirho": "prov-7-7-existing-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/existing-chirho/Prov.7.7-chirho.webp",
+			"sha256_chirho": "fb365b520693b56a0f01aa57b9cf755655d5d0446bbde90b85314a099db819d7",
+			"source_lesson_id_chirho": "Prov.7.7",
+			"asset_path_chirho": "/assets-chirho/scenes-chirho/proverbs-worker-v1-chirho/chapter-07-chirho/prov-07-007-chirho.webp",
+			"kind_chirho": "existing-scene",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"depicted_role_conventions_chirho": ["prov-07-narrator-local-chirho"],
+			"focus_chirho": "Use the older man at the lattice for the narrator and the house/street architecture. The story does not name the city; do not label it Jerusalem.",
+			"review_chirho": "root inspected; source artwork remains pending L.J. review"
+		},
+		{
+			"id_chirho": "prov-7-10-existing-chirho",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/existing-chirho/Prov.7.10-chirho.webp",
+			"sha256_chirho": "a1db9a1ed60f3e70d83b5ed83af3d47f264d5489ba29db04e3185327d474eb34",
+			"source_lesson_id_chirho": "Prov.7.10",
+			"asset_path_chirho": "/assets-chirho/scenes-chirho/proverbs-worker-v1-chirho/chapter-07-chirho/prov-07-010-chirho.webp",
+			"kind_chirho": "existing-scene",
+			"use_chirho": "agent-selected-reference",
+			"license_chirho": "CC0-1.0",
+			"depicted_role_conventions_chirho": [
+				"prov-07-young-man-local-chirho",
+				"prov-07-woman-local-chirho"
+			],
+			"focus_chirho": "Use the young man at right and woman at left for encounter identities, clothes and dusk palette. Preserve their identities across the local episode, not across unrelated proverbial types.",
+			"review_chirho": "root inspected; source artwork remains pending L.J. review"
+		}
+	],
+	"license_note_chirho": "Authored artwork CC0; STEP identity/reference data retains CC BY 4.0 and is not relicensed as CC0.",
+	"source_records_chirho": [
+		{
+			"repository_chirho": "STEPBible/STEPBible-Data",
+			"commit_chirho": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+			"url_chirho": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/Proper%20Nouns/TIPNR%20-%20Translators%20Individualised%20Proper%20Names%20with%20all%20References%20-%20STEPBible.org%20CC%20BY.txt",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/research-chirho/sources-chirho/tipnr-original-chirho.txt",
+			"sha256_chirho": "d595b9163d32a400bb0ef96b27a6de58335a63da840b82531fe9f5e1d16a318c",
+			"bytes_chirho": 8202454,
+			"license_chirho": "CC-BY-4.0"
+		},
+		{
+			"repository_chirho": "openbibleinfo/Bible-Geocoding-Data",
+			"commit_chirho": "7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f",
+			"url_chirho": "https://raw.githubusercontent.com/openbibleinfo/Bible-Geocoding-Data/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/ancient.jsonl",
+			"path_chirho": "workspace-chirho/art-chirho/recurring-cast-2026-11-07-chirho/research-chirho/sources-chirho/openbible-ancient-original-chirho.jsonl",
+			"sha256_chirho": "b8187aa4737e8517ccc090f765d2be11da4c548cd2a59d3cdcb62e952cb8c0f2",
+			"bytes_chirho": 11550193,
+			"license_chirho": "CC-BY-4.0"
+		}
+	]
+}

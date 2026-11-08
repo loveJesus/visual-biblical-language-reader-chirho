@@ -76,8 +76,8 @@ export const readerCatalogueChirho = defineCatalogueChirho({
 		reveal_canonical_hebrew_chirho: 'Reveal the exact canonical Hebrew',
 		canonical_note_chirho:
 			'This is the preserved source text, without teaching dots, superscripts or icon placeholders. Select it to copy.',
-		root_lemma_note_chirho:
-			'Root and lemma are different. A traditional lexical relationship is not a claim of certain historical origin. Illustrations are learning aids; the original text and its sourced morphology guide the reading.',
+		verse_note_link_chirho: 'Source note for this verse',
+		verse_notes_summary_chirho: 'Source notes for this verse',
 		sources_summary_chirho: 'Sources, licenses & grammar references',
 		export_line_chirho:
 			'Export {exported_chirho}; file last changed {updated_chirho}. Revision {revision_chirho}; SHA-256 {sha_chirho}.',
@@ -226,8 +226,8 @@ export const readerCatalogueChirho = defineCatalogueChirho({
 		reveal_canonical_hebrew_chirho: 'Mostrar el hebreo canónico exacto',
 		canonical_note_chirho:
 			'Este es el texto fuente preservado, sin puntos didácticos, superíndices ni marcadores de iconos. Selecciónelo para copiarlo.',
-		root_lemma_note_chirho:
-			'La raíz y el lema son distintos. Una relación léxica tradicional no afirma un origen histórico seguro. Las ilustraciones son ayudas para aprender; el texto original y su morfología documentada guían la lectura.',
+		verse_note_link_chirho: 'Nota de la fuente para este versículo',
+		verse_notes_summary_chirho: 'Notas de la fuente para este versículo',
 		sources_summary_chirho: 'Fuentes, licencias y referencias gramaticales',
 		export_line_chirho:
 			'Exportación {exported_chirho}; archivo modificado por última vez {updated_chirho}. Revisión {revision_chirho}; SHA-256 {sha_chirho}.',

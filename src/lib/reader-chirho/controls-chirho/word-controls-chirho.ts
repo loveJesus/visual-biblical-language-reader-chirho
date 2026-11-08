@@ -18,6 +18,8 @@ export function installWordNavigationChirho(rootChirho: Document): () => void {
 		const cardChirho = rootChirho.getElementById(linkChirho.dataset.wordJumpChirho ?? '');
 		if (!cardChirho) return;
 		eventChirho.preventDefault();
+		// A folded target (the verse's source notes) opens, so the jump never lands on a closed panel.
+		if (cardChirho instanceof HTMLDetailsElement) cardChirho.open = true;
 		cardChirho.focus({ preventScroll: true });
 		cardChirho.scrollIntoView({
 			block: cardChirho.classList.contains('word-card-chirho') ? 'start' : 'center',

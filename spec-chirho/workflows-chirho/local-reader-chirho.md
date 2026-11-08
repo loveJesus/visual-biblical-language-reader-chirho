@@ -235,3 +235,20 @@ flowchart TD
     available_style_chirho -->|no| honest_gap_chirho[Withhold mismatched fallback and explain availability]
     recorded_style_chirho --> listener_review_chirho[Review vowels aspiration stress and connected phrasing]
 ```
+
+## November 8 word-card usability
+
+```mermaid
+flowchart TD
+    SourceChirho[Exact word source notes] --> SpecificChirho[Keep source-specific cautions; strip recognized process prose]
+    SpecificChirho --> CommonChirho[Find sentences repeated on every card of this verse]
+    CommonChirho --> FoldChirho[Show common caution once in folded verse Sources]
+    CommonChirho --> CardChirho[Keep honest meaning availability and word-specific detail]
+    CardChirho --> LinkChirho[Open and focus that source fold without changing passage URL]
+    CardChirho --> BackChirho[Each card keeps its own sticky Back to verse link]
+    BackChirho --> WordChirho[Return focus to the selected source word]
+    ParseChirho[Sourced morphology] --> SummaryChirho[Visible card summary contains known fields and readable terms]
+    ParseChirho --> AccessibleChirho[Existing screen-reader parse label remains unchanged]
+```
+
+`verseStudyNotesChirho` deduplicates only sentences shared by every word in a multi-word verse. A single-word note stays with its word. Missing glosses remain missing; no corpus or alignment data are repaired by presentation. The delegated word jump opens a details target before focusing it. Each card owns its Back link, including saved offline pages; focus scroll margins keep keyboard targets below the sticky link. `morphologySummaryLocalizedChirho` omits unknown/not-applicable fields from visible card prose while leaving the sourced parse, teaching cues and accessibility labels intact.

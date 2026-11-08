@@ -4,6 +4,7 @@ package us.hinneh.readerchirho.mediachirho
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonObject
+import us.hinneh.readerchirho.videochirho.VideoRecordChirho
 
 @Serializable
 data class MediaEntryChirho(
@@ -33,6 +34,7 @@ data class MediaChapterFileChirho(
     @SerialName("scenes_chirho") val scenesChirho: List<JsonObject>,
     @SerialName("icons_chirho") val iconsChirho: List<JsonObject>,
     @SerialName("lemma_icons_chirho") val lemmaIconsChirho: List<JsonObject>? = null,
+    @SerialName("videos_chirho") val videosChirho: List<JsonObject>? = null,
 )
 
 @Serializable
@@ -88,6 +90,10 @@ data class WordPictureChirho(
 data class VerseMediaChirho(
     val sceneChirho: ScenePresentationChirho?,
     val picturesChirho: Map<String, WordPictureChirho>,
+    /** When present, the video takes the scene's place and Play plays it with its reading. */
+    val videoChirho: VideoRecordChirho? = null,
+    /** True only for a development video staged on this device (debug builds), never a published one. */
+    val videoStagedChirho: Boolean = false,
 ) {
     companion object {
         val EMPTY_CHIRHO = VerseMediaChirho(null, emptyMap())

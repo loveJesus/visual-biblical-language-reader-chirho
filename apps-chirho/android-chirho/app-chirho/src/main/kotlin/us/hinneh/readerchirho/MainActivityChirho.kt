@@ -5,10 +5,15 @@ import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.os.LocaleList
+import android.view.Surface
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
@@ -26,8 +31,11 @@ import us.hinneh.readerchirho.statechirho.InterfaceLanguageChirho
 import us.hinneh.readerchirho.statechirho.PreferencesChirho
 import us.hinneh.readerchirho.statechirho.ReaderViewModelChirho
 import us.hinneh.readerchirho.uichirho.HinnehThemeChirho
+import us.hinneh.readerchirho.uichirho.LocalTextScaleChirho
+import us.hinneh.readerchirho.uichirho.ProvideTextScaleChirho
 import us.hinneh.readerchirho.uichirho.ReaderActionsChirho
 import us.hinneh.readerchirho.uichirho.ReaderScreenChirho
+import us.hinneh.readerchirho.videochirho.VideoPlayerChirho
 
 class MainActivityChirho : ComponentActivity() {
     /** A language chosen in Hinneh applies on every Android version; otherwise the device decides. */
@@ -58,6 +66,9 @@ class MainActivityChirho : ComponentActivity() {
                                 mediaChirho = graphChirho.mediaChirho,
                                 audioChirho = graphChirho.audioChirho,
                                 playbackFactoryChirho = { scopeChirho -> ClipPlayerChirho(applicationContext, graphChirho.remoteChirho, scopeChirho) },
+                                videoFactoryChirho = { scopeChirho ->
+                                    VideoPlayerChirho(applicationContext, graphChirho.videoSourceChirho::bytesChirho, scopeChirho)
+                                },
                                 preferencesChirho = graphChirho.preferencesChirho,
                                 savedChirho = createSavedStateHandle(),
                                 explicitPassageChirho = explicitChirho,
@@ -69,29 +80,42 @@ class MainActivityChirho : ComponentActivity() {
                 val playbackChirho by modelChirho.playbackStateChirho.collectAsStateWithLifecycle()
                 LifecycleEventEffect(Lifecycle.Event.ON_STOP) { modelChirho.stopAudioChirho() }
                 val spanishChirho = LocalConfiguration.current.locales[0].language == "es"
-                ReaderScreenChirho(
-                    stateChirho = stateChirho,
-                    playbackChirho = playbackChirho,
-                    languageChirho = graphChirho.preferencesChirho.interfaceLanguageChirho,
-                    spanishChirho = spanishChirho,
-                    imagesChirho = graphChirho.imagesChirho,
-                    actionsChirho = object : ReaderActionsChirho {
-                        override fun onBookChirho(idChirho: String) = modelChirho.selectBookChirho(idChirho)
-                        override fun onChapterChirho(numberChirho: Int) = modelChirho.selectChapterChirho(numberChirho)
-                        override fun onVerseChirho(numberChirho: Int) = modelChirho.selectVerseChirho(numberChirho)
-                        override fun onStepChirho(forwardChirho: Boolean) = modelChirho.stepChirho(forwardChirho)
-                        override fun onRetryChirho() = modelChirho.retryChirho()
-                        override fun onToggleWordChirho(wordChirho: WordChirho) = modelChirho.toggleWordChirho(wordChirho)
-                        override fun onToggleVerseChirho() = modelChirho.toggleVerseChirho()
-                        override fun onRenditionChirho(renditionChirho: GreekRenditionChirho) = modelChirho.setRenditionChirho(renditionChirho)
-                        override fun onSpeedChirho(speedChirho: Float) = modelChirho.setSpeedChirho(speedChirho)
-                        override fun onLanguageChirho(languageChirho: InterfaceLanguageChirho) {
-                            if (graphChirho.preferencesChirho.interfaceLanguageChirho == languageChirho) return
-                            graphChirho.preferencesChirho.interfaceLanguageChirho = languageChirho
-                            recreate()
-                        }
-                    },
-                )
+                var textScaleChirho by remember { mutableFloatStateOf(graphChirho.preferencesChirho.textScaleChirho) }
+                CompositionLocalProvider(LocalTextScaleChirho provides textScaleChirho) {
+                    ProvideTextScaleChirho {
+                        ReaderScreenChirho(
+                            stateChirho = stateChirho,
+                            playbackChirho = playbackChirho,
+                            languageChirho = graphChirho.preferencesChirho.interfaceLanguageChirho,
+                            textScaleChirho = textScaleChirho,
+                            spanishChirho = spanishChirho,
+                            imagesChirho = graphChirho.imagesChirho,
+                            actionsChirho = object : ReaderActionsChirho {
+                                override fun onBookChirho(idChirho: String) = modelChirho.selectBookChirho(idChirho)
+                                override fun onChapterChirho(numberChirho: Int) = modelChirho.selectChapterChirho(numberChirho)
+                                override fun onVerseChirho(numberChirho: Int) = modelChirho.selectVerseChirho(numberChirho)
+                                override fun onStepChirho(forwardChirho: Boolean) = modelChirho.stepChirho(forwardChirho)
+                                override fun onRetryChirho() = modelChirho.retryChirho()
+                                override fun onToggleWordChirho(wordChirho: WordChirho) = modelChirho.toggleWordChirho(wordChirho)
+                                override fun onToggleVerseChirho() = modelChirho.toggleVerseChirho()
+                                override fun onVideoSurfaceChirho(surfaceChirho: Surface?) = modelChirho.videoSurfaceChirho(surfaceChirho)
+                                override fun onRenditionChirho(renditionChirho: GreekRenditionChirho) =
+                                    modelChirho.setRenditionChirho(renditionChirho)
+                                override fun onSpeedChirho(speedChirho: Float) = modelChirho.setSpeedChirho(speedChirho)
+                                override fun onLanguageChirho(languageChirho: InterfaceLanguageChirho) {
+                                    if (graphChirho.preferencesChirho.interfaceLanguageChirho == languageChirho) return
+                                    graphChirho.preferencesChirho.interfaceLanguageChirho = languageChirho
+                                    recreate()
+                                }
+                                // Text size applies at once, without recreating the screen.
+                                override fun onTextScaleChirho(scaleChirho: Float) {
+                                    graphChirho.preferencesChirho.textScaleChirho = scaleChirho
+                                    textScaleChirho = scaleChirho
+                                }
+                            },
+                        )
+                    }
+                }
             }
         }
     }

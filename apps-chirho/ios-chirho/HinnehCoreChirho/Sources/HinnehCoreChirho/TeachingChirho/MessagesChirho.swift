@@ -29,6 +29,10 @@ public struct MessagesChirho: Sendable {
     public let chapterChirho: String
     public let verseChirho: String
     public let languageChirho: String
+    public let settingsChirho: String
+    public let speedChirho: String
+    public let studyAidsChirho: String
+    public let studyAidsHelpChirho: String
     public let oldTestamentChirho: String
     public let newTestamentChirho: String
     public let doneChirho: String
@@ -159,6 +163,10 @@ public struct MessagesChirho: Sendable {
         chapterChirho: "Chapter",
         verseChirho: "Verse",
         languageChirho: "Language",
+        settingsChirho: "Settings",
+        speedChirho: "Playback speed",
+        studyAidsChirho: "About meanings & study aids",
+        studyAidsHelpChirho: "Word meanings and grammar come from the credited editions. Pictures illustrate a possible sense, not an etymological root. Artwork and synthesized recordings are AI-assisted study aids that may contain errors and are still being reviewed. Human Hebrew readings are by Rabbi Dan Be’eri under CC BY-SA 3.0; the exact recording credit and license are in each verse’s Sources. About explains coverage, sources and corrections.",
         oldTestamentChirho: "Old Testament · Hebrew",
         newTestamentChirho: "New Testament · Greek",
         doneChirho: "Done",
@@ -259,6 +267,10 @@ public struct MessagesChirho: Sendable {
         chapterChirho: "Capítulo",
         verseChirho: "Versículo",
         languageChirho: "Idioma",
+        settingsChirho: "Ajustes",
+        speedChirho: "Velocidad de reproducción",
+        studyAidsChirho: "Significados y ayudas de estudio",
+        studyAidsHelpChirho: "Los significados y la gramática proceden de las ediciones acreditadas. Las imágenes ilustran un sentido posible, no una raíz etimológica. Las ilustraciones y grabaciones sintetizadas son ayudas con IA que pueden contener errores y siguen en revisión. Las lecturas hebreas humanas son del rabino Dan Be’eri bajo CC BY-SA 3.0; el crédito exacto y la licencia están en las Fuentes de cada versículo. Acerca de explica la cobertura, las fuentes y las correcciones.",
         oldTestamentChirho: "Antiguo Testamento · Hebreo",
         newTestamentChirho: "Nuevo Testamento · Griego",
         doneChirho: "Listo",

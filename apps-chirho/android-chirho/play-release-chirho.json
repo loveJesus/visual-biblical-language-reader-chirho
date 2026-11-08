@@ -1,0 +1,11 @@
+{
+	"package_name_chirho": "us.hinneh.readerchirho",
+	"gradle_task_chirho": ":app-chirho:bundleRelease",
+	"bundle_path_chirho": "app-chirho/build/outputs/bundle/release/app-chirho-release.aab",
+	"upload_key_chirho": {
+		"keystore_path_env_chirho": "HINNEH_ANDROID_UPLOAD_KEYSTORE_PATH_CHIRHO",
+		"store_password_env_chirho": "HINNEH_ANDROID_UPLOAD_STORE_PASSWORD_CHIRHO",
+		"key_password_env_chirho": "HINNEH_ANDROID_UPLOAD_KEY_PASSWORD_CHIRHO",
+		"alias_chirho": "hinneh-upload-chirho"
+	}
+}

@@ -35,6 +35,8 @@ data class AudioChapterFileChirho(
     @SerialName("content_path_chirho") val contentPathChirho: String,
     @SerialName("content_sha256_chirho") val contentSha256Chirho: String,
     @SerialName("clips_chirho") val clipsChirho: List<JsonObject>,
+    /** Human verse readings only, kept apart so released apps that cannot credit them never play them (GPT, DM #3410). */
+    @SerialName("readings_chirho") val readingsChirho: List<JsonObject> = emptyList(),
 )
 
 @Serializable
@@ -56,6 +58,8 @@ data class ClipChirho(
     @SerialName("start_offset_chirho") val startOffsetChirho: Double? = null,
     @SerialName("end_offset_chirho") val endOffsetChirho: Double? = null,
     @SerialName("review_chirho") val reviewChirho: String,
+    /** Present only on a human reading; see HumanReadingChirho. */
+    @SerialName("reading_source_chirho") val readingSourceChirho: ReadingSourceChirho? = null,
 )
 
 /** The website's Greek reading choices; Modern with Aspirates is the preferred default. */
@@ -71,17 +75,24 @@ data class VerseRecordingsChirho(val wordsChirho: Map<String, List<ClipChirho>>,
 /**
  * Ported from recordings-chirho.ts and production-recipe-chirho.ts. Word-library recipes are
  * self-contained and re-checked here; verse recipes keep their identity and profile and rely on
- * the publisher's recipe check (GPT, DM #2692). Unknown shapes and rejected bytes are withheld.
+ * the publisher's recipe check (GPT, DM #2692). Human verse readings carry a reading source instead
+ * of a recipe (GPT, DM #3390). Unknown shapes and rejected bytes are withheld.
  */
 object AudioSelectionChirho {
     const val HEBREW_WORD_RECIPE_CHIRHO = "israeli-ipa-word-library-v1-chirho"
     const val GREEK_WORD_RECIPE_CHIRHO = "modern-greek-word-library-v1-chirho"
     const val HEBREW_CONNECTED_RECIPE_CHIRHO = "israeli-ipa-connected-v2-chirho"
+    /** Local Chatterbox V3 whole-verse readings: plain Modern, rough breathing silent (GPT, DM #3449). */
+    const val LOCAL_GREEK_VERSE_RECIPE_CHIRHO = "chatterbox-v3-modern-greek-verse-v1-chirho"
     private val HEBREW_VERSE_RECIPES_CHIRHO = setOf("israeli-ipa-phrasing-v1-chirho", HEBREW_CONNECTED_RECIPE_CHIRHO)
     private val GREEK_VERSE_RECIPES_CHIRHO = mapOf(
         "modern-greek-phrasing-v1-chirho" to "modern_greek",
         "modern-vowels-rough-breathing-v2-chirho" to "modern_greek_aspirates",
         "erasmian-teaching-v1-chirho" to "erasmian_greek",
+        // Fish whole-verse readings with a capital H before rough breathing (GPT, DM #3362).
+        "fish-modern-aspirates-verse-v1-chirho" to "modern_greek_aspirates",
+        // Never Aspirates: compatibleChirho lets it stand for Aspirates only when the verse has no rough breathing.
+        LOCAL_GREEK_VERSE_RECIPE_CHIRHO to "modern_greek",
     )
 
     /** audio-reviews-chirho.json: exact rejected bytes never regain playback (also publisher-excluded). */
@@ -137,12 +148,18 @@ object AudioSelectionChirho {
         greekChirho: Boolean,
         canonicalSha256Chirho: String,
         decodeChirho: (JsonObject) -> ClipChirho?,
+        readingsChirho: List<JsonObject> = emptyList(),
     ): VerseRecordingsChirho {
         val spokenChirho = verseChirho.wordsChirho.associate { it.idChirho to SpokenChirho.wordChirho(it) }
         val aramaicChirho = verseChirho.wordsChirho.filter { (it as? HebrewWordChirho)?.sourceLanguageChirho == "arc" }
             .map { it.idChirho }.toSet()
         val verseTextChirho = SpokenChirho.verseChirho(verseChirho)
-        val validChirho = rawChirho.mapNotNull(decodeChirho).filter { clipChirho ->
+        // Every readings_chirho entry must be a valid human reading; a clips_chirho entry that claims a human
+        // source must prove it too, and is never reread as an AI recording.
+        val candidatesChirho = rawChirho.map { it to ("reading_source_chirho" in it) } + readingsChirho.map { it to true }
+        val validChirho = candidatesChirho.mapNotNull { (objectChirho, humanChirho) ->
+            decodeChirho(objectChirho)?.let { Triple(objectChirho, it, humanChirho) }
+        }.filter { (objectChirho, clipChirho, humanChirho) ->
             val tokenChirho = clipChirho.tokenIdChirho
             val identityChirho = clipChirho.lessonIdChirho == verseChirho.idChirho &&
                 clipChirho.canonicalSha256Chirho == canonicalSha256Chirho &&
@@ -156,20 +173,22 @@ object AudioSelectionChirho {
                 SHA_CHIRHO.matches(clipChirho.sha256Chirho) &&
                 clipChirho.assetPathChirho == "/audio-chirho/sha256-chirho/${clipChirho.sha256Chirho}-chirho.mp3"
             identityChirho && if (tokenChirho == null) {
-                clipChirho.textChirho == verseTextChirho && verseRecipeChirho(clipChirho, greekChirho)
+                clipChirho.textChirho == verseTextChirho &&
+                    if (humanChirho) HumanReadingChirho.validClipChirho(objectChirho, clipChirho) else verseRecipeChirho(clipChirho, greekChirho)
             } else {
-                tokenChirho !in aramaicChirho && spokenChirho[tokenChirho] == clipChirho.textChirho &&
+                !humanChirho && tokenChirho !in aramaicChirho && spokenChirho[tokenChirho] == clipChirho.textChirho &&
                     wordRecipeChirho(clipChirho, greekChirho, clipChirho.textChirho)
             }
-        }.sortedWith(PRIORITY_CHIRHO)
+        }.map { it.second }.sortedWith(PRIORITY_CHIRHO)
         return VerseRecordingsChirho(
             wordsChirho = validChirho.filter { it.tokenIdChirho != null }.groupBy { it.tokenIdChirho!! },
             versesChirho = validChirho.filter { it.tokenIdChirho == null },
         )
     }
 
-    /** Approved first, then the connected reading, then recipe-backed, then IPA-backed clips. */
-    private val PRIORITY_CHIRHO = compareByDescending<ClipChirho> { it.reviewChirho == "approved" }
+    /** A human reading first (GPT, DM #3386), then approved, the connected reading, recipe-backed and IPA-backed clips. */
+    private val PRIORITY_CHIRHO = compareByDescending<ClipChirho> { it.readingSourceChirho != null }
+        .thenByDescending { it.reviewChirho == "approved" }
         .thenByDescending { it.recipeIdChirho == HEBREW_CONNECTED_RECIPE_CHIRHO }
         .thenByDescending { it.recipeIdChirho != null }
         .thenByDescending { it.ipaChirho != null }

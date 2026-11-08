@@ -444,16 +444,29 @@ small {
 	padding: 20px;
 	min-width: 0;
 }
+/* Each card's own link stays in view while that card is read, so returning never lands on the next word. */
 .back-to-verse-chirho {
-	display: inline-flex;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	display: flex;
+	width: fit-content;
 	align-items: center;
 	gap: 6px;
 	min-height: 44px;
 	margin-block: -8px 4px;
+	padding-inline: 6px;
+	margin-inline-start: -6px;
+	border-radius: 0 0 8px 8px;
+	background: #fcfcf7;
 	color: #355443;
 	font-size: 14px;
 	font-weight: 600;
 	text-underline-offset: 3px;
+}
+/* Keyboard focus inside a card scrolls clear of the pinned Back link above it. */
+.word-card-chirho :is(a, button, summary, select, input, [tabindex]):not(.back-to-verse-chirho) {
+	scroll-margin-top: 56px;
 }
 .word-card-top-chirho {
 	display: flex;
@@ -512,10 +525,24 @@ small {
 	font-size: 10px;
 }
 .canonical-details-chirho,
-.sources-details-chirho {
+.sources-details-chirho,
+.verse-notes-chirho {
 	border-top: 1px solid var(--line-chirho);
 	padding: 18px 0;
 	font-size: 12px;
+}
+.verse-notes-chirho p {
+	font-size: 11px;
+	line-height: 1.8;
+	margin: 10px 0 0;
+}
+.verse-note-link-chirho {
+	margin: 0.75rem 0 0;
+	font-size: 0.75rem;
+}
+.verse-note-link-chirho a {
+	color: #586c5b;
+	text-underline-offset: 3px;
 }
 .canonical-chirho {
 	font: 32px/2 var(--hebrew-chirho);

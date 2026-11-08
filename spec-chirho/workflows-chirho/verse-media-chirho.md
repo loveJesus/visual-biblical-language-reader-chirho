@@ -47,3 +47,17 @@ flowchart TD
 ```
 
 Only done rows are eligible, even when an excluded row has a chosen take. Automated text screening does not establish listener acceptance; clips remain audition. The local Chatterbox V3 recipe preserves canonical text and separately re-derives the producer's modern monotonic spelling. Existing pronunciation compatibility stays in force: plain Modern may serve the aspirates choice only when the source has no rough breathing. The default rendition is unchanged. Original FLAC headers need not declare duration; preparation measures decoded samples. Original evidence is private, content addressed and never exposed through the public audio route. A partial catalogue commit resumes only with its frozen input binding and each destination's exact before/after hash; foreign edits are held. No synthesis, retake, quota reset or provider spending belongs to installation.
+
+## November 8 credit and statistics placement
+
+```mermaid
+flowchart TD
+    SelectedChirho[Validated selected human reading] --> NotifyChirho[AudioVerse reports the selected source to its reader]
+    NotifyChirho --> CreditChirho[ReadingCredit retains exact attribution and localized license link]
+    CreditChirho --> SourcesChirho[One credit inside the verse Sources fold]
+    VideoChirho[Video uses the same matched reading] --> SourcesChirho
+    CountsChirho[Verified current-book media counts] --> SourcesChirho
+    PlayChirho[Main playback controls] --> StatusChirho[Only current playback status and actionable errors]
+```
+
+The source contracts and validators do not change when the credit moves. The exact published Be’eri attribution remains English, as before, with a localized License link. The main playback area no longer repeats the full credit. The existing current-book art count moves from the passage chooser to the last item in Sources; its data and readiness condition are unchanged. General meanings/root/AI-study-aid explanations link to About. Whole-verse playback, Normal default speed, video/reading identity and cancellation behavior remain available.

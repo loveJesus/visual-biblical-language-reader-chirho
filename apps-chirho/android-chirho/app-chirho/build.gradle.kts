@@ -15,8 +15,8 @@ android {
         applicationId = "us.hinneh.readerchirho"
         minSdk = 26
         targetSdk = 37
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -51,6 +51,11 @@ android {
             testChirho.systemProperty(
                 "hinneh.fullCorpusChirho",
                 providers.gradleProperty("hinneh.fullCorpusChirho").getOrElse("false"),
+            )
+            // Opt-in checks against the live site through the app's own network path.
+            testChirho.systemProperty(
+                "hinneh.liveChirho",
+                providers.gradleProperty("hinneh.liveChirho").getOrElse("false"),
             )
         }
     }

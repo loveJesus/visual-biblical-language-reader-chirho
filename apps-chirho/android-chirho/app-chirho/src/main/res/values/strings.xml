@@ -26,35 +26,21 @@
     <string name="hide_translation_chirho">Hide translation</string>
     <string name="kjv_numbering_chirho">Hebrew verse numbering · English Bible: %1$s</string>
 
-    <string name="scene_caption_chirho">An imaginative learning aid</string>
-    <string name="scene_caption_sub_chirho">A visual reflection on the verse</string>
     <string name="scene_missing_chirho">The scene is unavailable. You can still read the preserved text and its grammar cues.</string>
-    <string name="scene_awaiting_note_chirho">An illustration is being prepared for this passage.</string>
     <string name="scene_unavailable_chirho">The illustration is unavailable right now.</string>
     <string name="scene_standard_chirho">Standard</string>
     <string name="scene_reduced_chirho">Reduced representation</string>
-    <string name="art_pending_chirho">AI-generated illustration · awaiting artwork review</string>
-    <string name="art_approved_chirho">AI-generated illustration · reviewed</string>
 
     <string name="look_closer_chirho">Look closer</string>
-    <string name="lemma_unverified_chirho">Lemma link unverified</string>
     <string name="lexical_form_chirho">Lexical form:</string>
-    <string name="source_morphology_chirho">Source morphology:</string>
-    <string name="root_not_applicable_chirho">Not applicable</string>
-    <string name="root_traditional_chirho">Traditional</string>
-    <string name="root_unresolved_chirho">Unresolved</string>
-    <string name="root_relationship_chirho">Root relationship</string>
+    <string name="traditional_root_chirho">Traditional root:</string>
     <string name="meaning_morphology_chirho">Meaning &amp; morphology</string>
     <string name="gloss_unavailable_chirho">A reviewed word meaning is not available yet.</string>
-    <string name="origin_gbt_chirho">Approved in Global Bible Tools export</string>
     <string name="origin_app_chirho">App-authored learning gloss</string>
-    <string name="origin_unavailable_chirho">Meaning unavailable</string>
-    <string name="berean_gloss_note_chirho">Berean Interlinear Bible gloss, via biblicalhumanities.org</string>
     <string name="not_separately_short_chirho">not separately translated</string>
     <string name="qere_label_chirho">Reading (qere)</string>
     <string name="qere_note_chirho">The reading is preserved separately from the written text (ketiv) above.</string>
     <string name="general_picture_chirho">General word picture:</string>
-    <string name="general_picture_caveat_chirho">This verse’s meaning may call for a different picture.</string>
     <string name="icon_general_chirho">general word picture</string>
     <string name="icon_contextual_chirho">contextual illustration</string>
     <string name="icon_unavailable_chirho">illustration unavailable</string>
@@ -65,7 +51,11 @@
     <string name="listen_verse_chirho">Listen to this verse</string>
     <string name="stop_chirho">Stop</string>
     <string name="recorded_failed_chirho">The recording could not be played. Please try again.</string>
-    <string name="audition_note_chirho">AI voice audition · %1$s. Pronunciation awaits review.</string>
+    <string name="play_verse_video_chirho">Play this verse</string>
+    <string name="verse_video_chirho">Verse video</string>
+    <string name="license_link_chirho">License</string>
+    <string name="recording_credit_chirho">This verse’s recording</string>
+    <string name="video_staged_chirho">Staged on this device for development, not published yet.</string>
     <string name="no_word_recording_chirho">No saved recording for this word yet.</string>
     <string name="rendition_chirho">Pronunciation</string>
     <string name="modern_aspirates_chirho">Modern with Aspirates</string>
@@ -78,23 +68,42 @@
     <string name="slightly_slower_chirho" formatted="false">12% slower</string>
     <string name="normal_chirho">Normal</string>
 
-    <string name="source_eyebrow_chirho">Grounded in the source</string>
-    <string name="source_heading_chirho">Keep the text. Keep the context.</string>
     <string name="sources_summary_chirho">Sources, licenses &amp; grammar references</string>
+    <string name="source_edition_notes_chirho">Source-edition notes</string>
     <string name="credit_hebrew_attribution_chirho" translatable="false">Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb.</string>
     <string name="credit_hebrew_rest_chirho">Lexical files: Open Scriptures Hebrew Bible Project. Morphology and lexical files are used under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and adapted here into word spans, grammar cues and source notes. The Hebrew text is public domain. No endorsement is implied.</string>
     <string name="credit_greek_chirho">Greek text: Nestle 1904 (public domain). Morphology and lemmas: Ulrik Sandborg-Petersen and biblicalhumanities.org (CC0). English glosses: Berean Interlinear Bible, via biblicalhumanities.org; see the public-domain terms (https://berean.bible/terms.htm).</string>
+    <string name="credit_hebrew_readings_chirho">Hebrew verse readings, including the sound of verse videos, are by Rabbi Dan Be’eri, under CC BY-SA 3.0. Each verse’s exact credit and license are in its Sources.</string>
     <string name="reveal_canonical_hebrew_chirho">Reveal the exact canonical Hebrew</string>
     <string name="reveal_canonical_greek_chirho">Reveal the exact Greek text</string>
     <string name="canonical_note_chirho">This is the preserved source text, without teaching dots, superscripts or icon placeholders. Select it to copy.</string>
     <string name="root_lemma_note_chirho">Root and lemma are different. A traditional lexical relationship is not a claim of certain historical origin. Illustrations are learning aids; the original text and its sourced morphology guide the reading.</string>
-    <string name="greek_sources_note_chirho">The Greek text and grammar follow the Nestle 1904 morphology source. English word meanings are from the Berean Interlinear Bible; they are word glosses, not a sentence translation or Global Bible Tools approvals.</string>
-    <string name="greek_cues_note_chirho">Centered roman numerals mark case. At the upper left, a capital tense code is followed by a lowercase voice code. At the upper right, a person number is followed by a capital mood code. For example, Ia on the left and 3I on the right mean imperfect active, third-person indicative. A participle can also carry a centered case numeral.</string>
+    <string name="greek_sources_note_chirho">The Greek text and grammar follow the Nestle 1904 morphology source. English word meanings are from the Berean Interlinear Bible; they are word glosses in the original word order, not a sentence translation.</string>
     <string name="open_on_web_chirho">Open this verse on hinneh.us</string>
-    <string name="report_on_web_chirho">To report a problem with a picture, open this verse on hinneh.us.</string>
+
+    <string name="reading_key_chirho">Reading key</string>
+    <string name="reading_key_hint_chirho">Small marks, useful clues. The colors, numbers and letters are Hinneh teaching conventions.</string>
+    <string name="grammar_reference_chirho">Grammar reference</string>
+    <string name="grammar_credit_chirho">Grammar explanations adapt unfoldingWord Hebrew Grammar, © 2021 unfoldingWord, under %1$s. They are condensed and reworded; the adapted explanations are shared under the same license. The numeric and letter codes, colors and layout are Hinneh’s teaching conventions. No endorsement is implied.</string>
+    <string name="study_aids_heading_chirho">About meanings &amp; study aids</string>
+    <string name="hebrew_meanings_note_chirho">Word meanings are glosses in the original word order, not a sentence translation. Hebrew meanings are the approved word glosses from Global Bible Tools. Where the sources do not line up word for word, the meaning is left out rather than guessed.</string>
+    <string name="hebrew_grammar_note_chirho">Lemmas and grammar follow the Open Scriptures Hebrew Bible; the grammar descriptions are generated from its codes. Many words do not have a reviewed root yet, so no root is shown for them.</string>
+    <string name="picture_note_chirho">A general word picture is a memory aid for the word; a particular verse may call for a different picture.</string>
+
+    <string name="about_heading_chirho">About Hinneh</string>
+    <string name="about_aids_chirho">Hinneh’s pictures, videos, word recordings and synthesized verse readings are AI-generated study aids, still awaiting review. Hebrew verse readings by Rabbi Dan Be’eri are human recordings, used under CC BY-SA 3.0. The original text and its sources guide the reading. To report a problem with a picture, open its verse on hinneh.us.</string>
+    <string name="privacy_policy_chirho">Privacy policy</string>
+    <string name="about_support_chirho">About and support</string>
+    <string name="contact_chirho">Contact</string>
+    <string name="source_code_chirho">Source code</string>
 
     <string name="settings_chirho">Reading settings</string>
     <string name="interface_language_chirho">Interface language</string>
     <string name="device_language_chirho">Device language</string>
+    <string name="text_size_chirho">Text size</string>
+    <string name="text_small_chirho">Small</string>
+    <string name="text_medium_chirho">Medium</string>
+    <string name="text_large_chirho">Large</string>
+    <string name="text_extra_large_chirho">Extra large</string>
     <string name="close_chirho">Close</string>
 </resources>

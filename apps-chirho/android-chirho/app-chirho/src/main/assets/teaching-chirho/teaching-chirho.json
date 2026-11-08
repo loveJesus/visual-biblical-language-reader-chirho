@@ -1,0 +1,997 @@
+{
+	"schema_version_chirho": 1,
+	"hebrew_stems_chirho": {
+		"qal": "1",
+		"niphal": "2",
+		"piel": "3",
+		"pual": "4",
+		"hiphil": "5",
+		"hophal": "6",
+		"hithpael": "7"
+	},
+	"hebrew_forms_chirho": {
+		"qatal": "P",
+		"weqatal": "W",
+		"yiqtol": "I",
+		"wayyiqtol": "Y",
+		"cohortative": "O",
+		"jussive": "J",
+		"imperative": "M",
+		"participle_active": "A",
+		"participle_passive": "A",
+		"infinitive_absolute": "B",
+		"infinitive_construct": "C"
+	},
+	"hebrew_constructions_chirho": {
+		"weyiqtol": { "form_chirho": "yiqtol", "marker_chirho": "E" },
+		"qatal_copulative": { "form_chirho": "qatal", "marker_chirho": "Q" }
+	},
+	"greek_cues_chirho": {
+		"case_chirho": {
+			"nominative": "i",
+			"genitive": "ii",
+			"dative": "iii",
+			"accusative": "iv",
+			"vocative": "v"
+		},
+		"tense_chirho": {
+			"present": "P",
+			"imperfect": "I",
+			"future": "F",
+			"second future": "2F",
+			"aorist": "A",
+			"second aorist": "2A",
+			"perfect": "R",
+			"second perfect": "2R",
+			"pluperfect": "L",
+			"second pluperfect": "2L"
+		},
+		"voice_chirho": {
+			"active": "a",
+			"middle": "m",
+			"passive": "p",
+			"middle or passive": "e",
+			"middle deponent": "d",
+			"passive deponent": "o",
+			"middle or passive deponent": "n"
+		},
+		"person_chirho": { "first": "1", "second": "2", "third": "3" },
+		"mood_chirho": {
+			"indicative": "I",
+			"subjunctive": "S",
+			"imperative": "M",
+			"infinitive": "N",
+			"participle": "P"
+		}
+	},
+	"terms_es_chirho": {
+		"noun": "sustantivo",
+		"verb": "verbo",
+		"adjective": "adjetivo",
+		"particle": "partícula",
+		"pronoun": "pronombre",
+		"article": "artículo",
+		"unknown": "sin categoría",
+		"na": "no aplica",
+		"masculine": "masculino",
+		"feminine": "femenino",
+		"common": "común",
+		"neuter": "neutro",
+		"singular": "singular",
+		"plural": "plural",
+		"dual": "dual",
+		"absolute": "absoluto",
+		"construct": "constructo",
+		"adverb": "adverbio",
+		"aramaic": "arameo",
+		"cond": "condicional",
+		"conjunction": "conjunción",
+		"hebrew": "hebreo",
+		"correlative pronoun": "pronombre correlativo",
+		"demonstrative pronoun": "pronombre demostrativo",
+		"indefinite pronoun": "pronombre indefinido",
+		"interrogative pronoun": "pronombre interrogativo",
+		"numeral indeclinable": "numeral indeclinable",
+		"personal pronoun": "pronombre personal",
+		"possessive pronoun": "pronombre posesivo",
+		"preposition": "preposición",
+		"proper noun indeclinable": "nombre propio indeclinable",
+		"reciprocal pronoun": "pronombre recíproco",
+		"reflexive pronoun": "pronombre reflexivo",
+		"relative pronoun": "pronombre relativo",
+		"nominative": "nominativo",
+		"genitive": "genitivo",
+		"dative": "dativo",
+		"accusative": "acusativo",
+		"vocative": "vocativo",
+		"present": "presente",
+		"imperfect": "imperfecto",
+		"future": "futuro",
+		"second future": "segundo futuro",
+		"aorist": "aoristo",
+		"second aorist": "segundo aoristo",
+		"perfect": "perfecto",
+		"second perfect": "segundo perfecto",
+		"pluperfect": "pluscuamperfecto",
+		"second pluperfect": "segundo pluscuamperfecto",
+		"active": "activa",
+		"middle": "media",
+		"passive": "pasiva",
+		"middle or passive": "media o pasiva",
+		"middle deponent": "media deponente",
+		"passive deponent": "pasiva deponente",
+		"middle or passive deponent": "media o pasiva deponente",
+		"first": "primera persona",
+		"second": "segunda persona",
+		"third": "tercera persona",
+		"indicative": "indicativo",
+		"subjunctive": "subjuntivo",
+		"imperative": "imperativo",
+		"infinitive": "infinitivo",
+		"participle": "participio"
+	},
+	"legend_hebrew_chirho": [
+		{
+			"label_en_chirho": "Gender",
+			"label_es_chirho": "Género",
+			"items_chirho": [
+				{
+					"id_chirho": "masculine-chirho",
+					"style_chirho": "gender-masculine-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/gender_masculine.html",
+					"label_en_chirho": "Masculine",
+					"help_en_chirho": "Blue marks sourced masculine grammatical gender. Grammatical gender does not establish the sex of a referent.",
+					"label_es_chirho": "Masculino",
+					"help_es_chirho": "El azul marca el género gramatical masculino según la fuente. El género gramatical no establece el sexo del referente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "feminine-chirho",
+					"style_chirho": "gender-feminine-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/gender_feminine.html",
+					"label_en_chirho": "Feminine",
+					"help_en_chirho": "Pink marks sourced feminine grammatical gender. It is independent of number and word class.",
+					"label_es_chirho": "Femenino",
+					"help_es_chirho": "El rosa marca el género gramatical femenino según la fuente. Es independiente del número y de la clase de palabra.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "clear-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/gender_both.html",
+					"label_en_chirho": "Both / common",
+					"help_en_chirho": "A clear background marks sourced both/common gender. Word details distinguish this from unknown or not applicable.",
+					"label_es_chirho": "Ambos / común",
+					"help_es_chirho": "Un fondo transparente marca el género ambos/común según la fuente. Los detalles de la palabra lo distinguen de desconocido o no aplica.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "unknown-gender-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/",
+					"label_en_chirho": "N/A / unknown",
+					"help_en_chirho": "Not applicable and unknown also have a clear background, but remain distinct categories in word details. Neither means masculine or both.",
+					"label_es_chirho": "No aplica / desconocido",
+					"help_es_chirho": "No aplica y desconocido también tienen fondo transparente, pero siguen siendo categorías distintas en los detalles de la palabra. Ninguno significa masculino ni ambos.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Number",
+			"label_es_chirho": "Número",
+			"items_chirho": [
+				{
+					"id_chirho": "plural-chirho",
+					"style_chirho": "number-plural-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/number_plural.html",
+					"label_en_chirho": "Plural",
+					"help_en_chirho": "A yellow line under the word marks sourced plural number. The sticker has its own outline.",
+					"label_es_chirho": "Plural",
+					"help_es_chirho": "Una línea amarilla bajo la palabra marca el número plural según la fuente. El icono tiene su propio contorno.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "dual-chirho",
+					"style_chirho": "number-dual-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/number_dual.html",
+					"label_en_chirho": "Dual",
+					"help_en_chirho": "A green line under the word marks sourced dual number, often associated with a pair.",
+					"label_es_chirho": "Dual",
+					"help_es_chirho": "Una línea verde bajo la palabra marca el número dual según la fuente, a menudo asociado con un par.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "unmarked-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/number_singular.html",
+					"label_en_chirho": "No line",
+					"help_en_chirho": "Singular, not applicable and unknown have no number line. An absent line alone is not a positive claim of singular.",
+					"label_es_chirho": "Sin línea",
+					"help_es_chirho": "El singular, no aplica y desconocido no tienen línea de número. La sola ausencia de línea no afirma que la palabra sea singular.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Noun state",
+			"label_es_chirho": "Estado del sustantivo",
+			"items_chirho": [
+				{
+					"id_chirho": "absolute-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/state_absolute.html",
+					"label_en_chirho": "i · absolute",
+					"help_en_chirho": "A centered lowercase Roman i marks a noun in the absolute state. Only nouns receive this superscript here; adjective state stays in details.",
+					"label_es_chirho": "i · absoluto",
+					"help_es_chirho": "Una i romana minúscula centrada marca un sustantivo en estado absoluto. Aquí solo los sustantivos reciben este superíndice; el estado de los adjetivos queda en los detalles.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "construct-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/state_construct.html",
+					"label_en_chirho": "ii · construct",
+					"help_en_chirho": "A centered lowercase Roman ii marks a noun in the construct state, used in a construction linking it with what follows. Definiteness and possession are not extra states.",
+					"label_es_chirho": "ii · constructo",
+					"help_es_chirho": "Una ii romana minúscula centrada marca un sustantivo en estado constructo, usado en una construcción que lo une con lo que sigue. La determinación y la posesión no son estados adicionales.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Verb stem LEFT",
+			"label_es_chirho": "Tema verbal IZQUIERDA",
+			"items_chirho": [
+				{
+					"id_chirho": "qal-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_qal.html",
+					"label_en_chirho": "1 Qal",
+					"help_en_chirho": "The basic stem can express actions or states. It does not always correspond to an active English verb. 1 is our local code, physically above the left of a verb.",
+					"label_es_chirho": "1 Qal",
+					"help_es_chirho": "El tema básico puede expresar acciones o estados. No siempre corresponde a un verbo activo en la traducción. 1 es nuestro código local, colocado arriba a la izquierda del verbo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "niphal-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_niphal.html",
+					"label_en_chirho": "2 Niphal",
+					"help_en_chirho": "Often passive or middle, with lexical variation. Check the particular verb and context.",
+					"label_es_chirho": "2 Niphal",
+					"help_es_chirho": "A menudo pasivo o medio, con variación léxica. Revise el verbo concreto y el contexto.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "piel-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_piel.html",
+					"label_en_chirho": "3 Piel",
+					"help_en_chirho": "A stem with varied lexical functions. It is not a universal intensive or stronger action.",
+					"label_es_chirho": "3 Piel",
+					"help_es_chirho": "Un tema con funciones léxicas variadas. No es un intensivo universal ni una acción más fuerte.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "pual-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_pual.html",
+					"label_en_chirho": "4 Pual",
+					"help_en_chirho": "Often the passive counterpart of Piel. The actual meaning depends on the verb.",
+					"label_es_chirho": "4 Pual",
+					"help_es_chirho": "A menudo la contraparte pasiva del Piel. El significado real depende del verbo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "hiphil-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_hiphil.html",
+					"label_en_chirho": "5 Hiphil",
+					"help_en_chirho": "Often causative, but context and lexical meaning still matter.",
+					"label_es_chirho": "5 Hiphil",
+					"help_es_chirho": "A menudo causativo, pero el contexto y el significado léxico siguen importando.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "hophal-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_hophal.html",
+					"label_en_chirho": "6 Hophal",
+					"help_en_chirho": "Often passive causative, commonly related to Hiphil.",
+					"label_es_chirho": "6 Hophal",
+					"help_es_chirho": "A menudo causativo pasivo, comúnmente relacionado con el Hiphil.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "hithpael-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_hithpael.html",
+					"label_en_chirho": "7 Hithpael",
+					"help_en_chirho": "Often reflexive or middle, and sometimes reciprocal. It has other lexical functions too.",
+					"label_es_chirho": "7 Hithpael",
+					"help_es_chirho": "A menudo reflexivo o medio, y a veces recíproco. También tiene otras funciones léxicas.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Verb conjugation RIGHT",
+			"label_es_chirho": "Conjugación verbal DERECHA",
+			"items_chirho": [
+				{
+					"id_chirho": "qatal-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_perfect.html",
+					"label_en_chirho": "P qatal",
+					"help_en_chirho": "Traditionally called perfect. Qatal is not an automatic past-tense switch; context determines its use. P is a local teaching code above the right of a verb.",
+					"label_es_chirho": "P qatal",
+					"help_es_chirho": "Tradicionalmente llamado perfecto. El qatal no es un interruptor automático de tiempo pasado; el contexto determina su uso. P es un código didáctico local, colocado arriba a la derecha del verbo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "yiqtol-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_imperfect.html",
+					"label_en_chirho": "I yiqtol",
+					"help_en_chirho": "Traditionally called imperfect. Yiqtol is not an automatic future-tense switch. I is distinct from imperative M. A waw alone does not establish wayyiqtol.",
+					"label_es_chirho": "I yiqtol",
+					"help_es_chirho": "Tradicionalmente llamado imperfecto. El yiqtol no es un interruptor automático de tiempo futuro. La I es distinta de la M del imperativo. Una waw sola no establece un wayyiqtol.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "imperative-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_imperative.html",
+					"label_en_chirho": "M imperative",
+					"help_en_chirho": "A form commonly used in commands or requests. M must remain distinct from yiqtol I.",
+					"label_es_chirho": "M imperativo",
+					"help_es_chirho": "Una forma usada comúnmente en mandatos o peticiones. La M debe mantenerse distinta de la I del yiqtol.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "participle-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb.html",
+					"label_en_chirho": "A participle",
+					"help_en_chirho": "A participle retains its stem; 1A means a Qal participle. Verb conjugation is a broad teaching group here: finite conjugations, plus non-finite participles and infinitives. Their function in a sentence still depends on context.",
+					"label_es_chirho": "A participio",
+					"help_es_chirho": "Un participio conserva su tema; 1A significa un participio Qal. Aquí la conjugación verbal es un grupo didáctico amplio: las conjugaciones finitas, más los participios e infinitivos no finitos. Su función en la oración sigue dependiendo del contexto.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "infinitive-construct-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/infinitive_construct.html",
+					"label_en_chirho": "C infinitive construct",
+					"help_en_chirho": "A non-finite verb form with several syntactic uses. It is a verb form, not the noun-state numeral ii.",
+					"label_es_chirho": "C infinitivo constructo",
+					"help_es_chirho": "Una forma verbal no finita con varios usos sintácticos. Es una forma verbal, no el numeral ii del estado del sustantivo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "infinitive-absolute-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/infinitive_absolute.html",
+					"label_en_chirho": "B infinitive absolute",
+					"help_en_chirho": "A non-finite verb form that may emphasize or otherwise qualify an action. It is distinct from noun absolute state i.",
+					"label_es_chirho": "B infinitivo absoluto",
+					"help_es_chirho": "Una forma verbal no finita que puede enfatizar o matizar de otro modo una acción. Es distinta del estado absoluto i del sustantivo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "weqatal-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_sequential_perfect.html",
+					"label_en_chirho": "W weqatal",
+					"help_en_chirho": "The sequential perfect conjugation connects with an earlier verb in a sequence of time or thought. Its use depends on context, not a fixed English tense. It can look like ordinary waw + qatal, so the reader preserves the sourced classification rather than guessing from waw.",
+					"label_es_chirho": "W weqatal",
+					"help_es_chirho": "La conjugación de perfecto secuencial se conecta con un verbo anterior en una secuencia de tiempo o de pensamiento. Su uso depende del contexto, no de un tiempo verbal fijo de la traducción. Puede parecerse a una waw + qatal ordinaria, así que el lector conserva la clasificación de la fuente en lugar de adivinarla a partir de la waw.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "wayyiqtol-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_sequential_imperfect.html",
+					"label_en_chirho": "Y wayyiqtol",
+					"help_en_chirho": "The sequential imperfect conjugation often carries a narrative sequence forward. It has a specialized waw pattern and is distinct from ordinary waw + yiqtol. This full name requires sourced morphology; the presence of waw alone does not establish it.",
+					"label_es_chirho": "Y wayyiqtol",
+					"help_es_chirho": "La conjugación de imperfecto secuencial suele hacer avanzar una secuencia narrativa. Tiene un patrón especial de waw y es distinta de una waw + yiqtol ordinaria. Este nombre completo requiere morfología de la fuente; la sola presencia de la waw no lo establece.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "weyiqtol-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_imperfect.html",
+					"label_en_chirho": "E weyiqtol",
+					"help_en_chirho": "Ordinary conjunction waw + yiqtol, with yiqtol retained as the underlying form. It is distinct from sequential wayyiqtol and does not by itself assign an English tense. This full label appears only when the construction is explicitly sourced.",
+					"label_es_chirho": "E weyiqtol",
+					"help_es_chirho": "Waw conjuntiva ordinaria + yiqtol, con el yiqtol conservado como forma subyacente. Es distinta del wayyiqtol secuencial y por sí sola no asigna un tiempo verbal de la traducción. Esta etiqueta completa solo aparece cuando la fuente documenta explícitamente la construcción.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "jussive-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_jussive.html",
+					"label_en_chirho": "J jussive",
+					"help_en_chirho": "A volitional form expressing wishes, indirect commands and related meanings according to context. It is commonly third person, but second-person forms can express negative commands. It may resemble yiqtol; sourced jussive classification remains distinct from both yiqtol I and imperative M.",
+					"label_es_chirho": "J yusivo",
+					"help_es_chirho": "Una forma volitiva que expresa deseos, mandatos indirectos y significados afines según el contexto. Suele ser de tercera persona, pero las formas de segunda persona pueden expresar mandatos negativos. Puede parecerse al yiqtol; la clasificación de yusivo de la fuente se mantiene distinta tanto de la I del yiqtol como de la M del imperativo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "cohortative-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_cohortative.html",
+					"label_en_chirho": "O cohortative",
+					"help_en_chirho": "A first-person volitional form expressing requests, intentions, wishes or related meanings according to context. It resembles yiqtol but retains its own sourced classification and a distinct local teaching code O.",
+					"label_es_chirho": "O cohortativo",
+					"help_es_chirho": "Una forma volitiva de primera persona que expresa peticiones, intenciones, deseos o significados afines según el contexto. Se parece al yiqtol, pero conserva su propia clasificación de la fuente y el código didáctico local O.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "qatal-copulative-chirho",
+					"style_chirho": "",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_sequential_perfect.html",
+					"label_en_chirho": "Q waw + qatal",
+					"help_en_chirho": "Qatal joined by an ordinary copulative waw. It is distinct from sequential weqatal even when the written forms look alike. Context and the recorded source classification determine the distinction; a prefixed waw is not enough.",
+					"label_es_chirho": "Q waw + qatal",
+					"help_es_chirho": "Un qatal unido por una waw copulativa ordinaria. Es distinto del weqatal secuencial aun cuando las formas escritas se parecen. El contexto y la clasificación registrada en la fuente determinan la distinción; una waw prefijada no basta.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Icon outline POS",
+			"label_es_chirho": "Contorno del icono: clase de palabra",
+			"items_chirho": [
+				{
+					"id_chirho": "noun-chirho",
+					"style_chirho": "pos-noun-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/noun.html",
+					"label_en_chirho": "Noun",
+					"help_en_chirho": "A teal rounded icon outline marks the word as a noun. The outline encodes word class, not gender.",
+					"label_es_chirho": "Sustantivo",
+					"help_es_chirho": "Un contorno redondeado verde azulado en el icono marca la palabra como sustantivo. El contorno codifica la clase de palabra, no el género.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "verb-chirho",
+					"style_chirho": "pos-verb-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb.html",
+					"label_en_chirho": "Verb",
+					"help_en_chirho": "A purple rounded outline marks a verb, including participles in this teaching scheme.",
+					"label_es_chirho": "Verbo",
+					"help_es_chirho": "Un contorno redondeado morado marca un verbo, incluidos los participios en este esquema didáctico.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "adjective-chirho",
+					"style_chirho": "pos-adjective-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/adjective.html",
+					"label_en_chirho": "Adjective",
+					"help_en_chirho": "An orange rounded outline marks an adjective. A dictionary noun heading does not override verse-specific morphology.",
+					"label_es_chirho": "Adjetivo",
+					"help_es_chirho": "Un contorno redondeado naranja marca un adjetivo. Un encabezado nominal del diccionario no prevalece sobre la morfología propia del versículo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "particle-chirho",
+					"style_chirho": "pos-particle-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/particle.html",
+					"label_en_chirho": "Particle",
+					"help_en_chirho": "A gray rounded outline marks a particle. Raw verse-specific morphology remains visible in details.",
+					"label_es_chirho": "Partícula",
+					"help_es_chirho": "Un contorno redondeado gris marca una partícula. La morfología original propia del versículo sigue visible en los detalles.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "unknown-pos-chirho",
+					"style_chirho": "pos-unknown-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/",
+					"label_en_chirho": "Unknown",
+					"help_en_chirho": "A dashed gray outline marks an unresolved word class. It does not make a grammatical claim.",
+					"label_es_chirho": "Desconocido",
+					"help_es_chirho": "Un contorno gris discontinuo marca una clase de palabra sin resolver. No hace ninguna afirmación gramatical.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Form pattern",
+			"label_es_chirho": "Patrón de forma",
+			"items_chirho": [
+				{
+					"id_chirho": "exceptional-chirho",
+					"style_chirho": "pattern-solid-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb.html",
+					"label_en_chirho": "Solid · exceptional",
+					"help_en_chirho": "A solid orange line over a word requires a documented exceptional or suppletive form, an explanation, and a source. An unusual spelling or unresolved root alone never earns this mark.",
+					"label_es_chirho": "Continua · excepcional",
+					"help_es_chirho": "Una línea naranja continua sobre una palabra requiere una forma excepcional o supletiva documentada, una explicación y una fuente. Una ortografía inusual o una raíz sin resolver nunca bastan por sí solas para esta marca.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "weak-chirho",
+					"style_chirho": "pattern-dotted-chirho",
+					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb.html",
+					"label_en_chirho": "Dotted · predictable weak",
+					"help_en_chirho": "A dotted orange line over a word requires a sourced explanation of the actual predictable weak or form-change pattern. Weak patterns are not automatically exceptional.",
+					"label_es_chirho": "Punteada · débil predecible",
+					"help_es_chirho": "Una línea naranja punteada sobre una palabra requiere una explicación documentada del patrón real, predecible, débil o de cambio de forma. Los patrones débiles no son automáticamente excepcionales.",
+					"spanish_available_chirho": true
+				}
+			]
+		}
+	],
+	"legend_greek_chirho": [
+		{
+			"label_en_chirho": "Word kind",
+			"label_es_chirho": "Clase de palabra",
+			"items_chirho": [
+				{
+					"id_chirho": "greek-noun-chirho",
+					"style_chirho": "pos-noun-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Noun",
+					"help_en_chirho": "A noun names a person, place, thing or idea.",
+					"label_es_chirho": "Sustantivo",
+					"help_es_chirho": "Un sustantivo nombra una persona, un lugar, una cosa o una idea.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-verb-chirho",
+					"style_chirho": "pos-verb-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Verb",
+					"help_en_chirho": "A verb expresses an action or state.",
+					"label_es_chirho": "Verbo",
+					"help_es_chirho": "Un verbo expresa una acción o un estado.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-adjective-chirho",
+					"style_chirho": "pos-adjective-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Adjective",
+					"help_en_chirho": "An adjective describes or qualifies a noun.",
+					"label_es_chirho": "Adjetivo",
+					"help_es_chirho": "Un adjetivo describe o califica a un sustantivo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-particle-chirho",
+					"style_chirho": "pos-particle-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Particle or connector",
+					"help_en_chirho": "This outline also groups prepositions, conjunctions and adverbs.",
+					"label_es_chirho": "Partícula o conector",
+					"help_es_chirho": "Este contorno también agrupa preposiciones, conjunciones y adverbios.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-pronoun-chirho",
+					"style_chirho": "greek-pronoun-key-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Pronoun · dashed round outline",
+					"help_en_chirho": "A pronoun stands for or points to a person or thing. The source gives its particular kind.",
+					"label_es_chirho": "Pronombre · contorno redondo discontinuo",
+					"help_es_chirho": "Un pronombre sustituye o señala a una persona o cosa. La fuente indica su clase concreta.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-article-chirho",
+					"style_chirho": "greek-article-key-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Article · round outline",
+					"help_en_chirho": "The article accompanies or identifies a word; its form has case, number and gender.",
+					"label_es_chirho": "Artículo · contorno redondo",
+					"help_es_chirho": "El artículo acompaña o identifica una palabra; su forma tiene caso, número y género.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Gender",
+			"label_es_chirho": "Género",
+			"items_chirho": [
+				{
+					"id_chirho": "greek-masculine-chirho",
+					"style_chirho": "gender-masculine-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Masculine",
+					"help_en_chirho": "Blue marks masculine grammatical gender as parsed in the source.",
+					"label_es_chirho": "Masculino",
+					"help_es_chirho": "El azul marca el género gramatical masculino según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-feminine-chirho",
+					"style_chirho": "gender-feminine-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Feminine",
+					"help_en_chirho": "Pink marks feminine grammatical gender as parsed in the source.",
+					"label_es_chirho": "Femenino",
+					"help_es_chirho": "El rosa marca el género gramatical femenino según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-neuter-chirho",
+					"style_chirho": "greek-neuter-key-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Neuter",
+					"help_en_chirho": "Gray marks neuter grammatical gender as parsed in the source.",
+					"label_es_chirho": "Neutro",
+					"help_es_chirho": "El gris marca el género gramatical neutro según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-no-gender-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "Unknown or not applicable · clear",
+					"help_en_chirho": "A clear background indicates no gender cue is available or applicable.",
+					"label_es_chirho": "Desconocido o no aplica · transparente",
+					"help_es_chirho": "Un fondo transparente indica que no hay una indicación de género disponible o aplicable.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Number",
+			"label_es_chirho": "Número",
+			"items_chirho": [
+				{
+					"id_chirho": "greek-plural-chirho",
+					"style_chirho": "number-plural-chirho",
+					"source_chirho": null,
+					"label_en_chirho": "Plural · yellow underline",
+					"help_en_chirho": "The yellow underline marks a source parse of plural number.",
+					"label_es_chirho": "Plural · subrayado amarillo",
+					"help_es_chirho": "El subrayado amarillo marca un análisis de la fuente con número plural.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-other-number-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "Other or unknown · no underline",
+					"help_en_chirho": "No underline is used for singular, unknown or inapplicable number.",
+					"label_es_chirho": "Otro o desconocido · sin subrayado",
+					"help_es_chirho": "No se subraya el número singular, desconocido o no aplicable.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Case · center",
+			"label_es_chirho": "Caso · centro",
+			"items_chirho": [
+				{
+					"id_chirho": "greek-case-i-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "i nominative",
+					"help_en_chirho": "Nominative case, as parsed in the source.",
+					"label_es_chirho": "i nominativo",
+					"help_es_chirho": "Caso nominativo, según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-case-ii-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "ii genitive",
+					"help_en_chirho": "Genitive case, as parsed in the source.",
+					"label_es_chirho": "ii genitivo",
+					"help_es_chirho": "Caso genitivo, según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-case-iii-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "iii dative",
+					"help_en_chirho": "Dative case, as parsed in the source.",
+					"label_es_chirho": "iii dativo",
+					"help_es_chirho": "Caso dativo, según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-case-iv-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "iv accusative",
+					"help_en_chirho": "Accusative case, as parsed in the source.",
+					"label_es_chirho": "iv acusativo",
+					"help_es_chirho": "Caso acusativo, según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-case-v-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "v vocative",
+					"help_en_chirho": "Vocative case, as parsed in the source.",
+					"label_es_chirho": "v vocativo",
+					"help_es_chirho": "Caso vocativo, según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Verb tense · left",
+			"label_es_chirho": "Tiempo verbal · izquierda",
+			"items_chirho": [
+				{
+					"id_chirho": "greek-tense-p-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "P present",
+					"help_en_chirho": "The source parses a present tense form.",
+					"label_es_chirho": "P presente",
+					"help_es_chirho": "La fuente analiza una forma de tiempo presente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-i-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "I imperfect",
+					"help_en_chirho": "The source parses an imperfect tense form.",
+					"label_es_chirho": "I imperfecto",
+					"help_es_chirho": "La fuente analiza una forma de tiempo imperfecto.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-f-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "F future",
+					"help_en_chirho": "The source parses a future tense form.",
+					"label_es_chirho": "F futuro",
+					"help_es_chirho": "La fuente analiza una forma de tiempo futuro.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-2f-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "2F second future",
+					"help_en_chirho": "The source distinguishes a second future form.",
+					"label_es_chirho": "2F segundo futuro",
+					"help_es_chirho": "La fuente distingue una forma de segundo futuro.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-a-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "A aorist",
+					"help_en_chirho": "The source parses an aorist tense form.",
+					"label_es_chirho": "A aoristo",
+					"help_es_chirho": "La fuente analiza una forma de tiempo aoristo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-2a-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "2A second aorist",
+					"help_en_chirho": "The source distinguishes a second aorist form.",
+					"label_es_chirho": "2A segundo aoristo",
+					"help_es_chirho": "La fuente distingue una forma de segundo aoristo.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-r-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "R perfect",
+					"help_en_chirho": "The source parses a perfect tense form.",
+					"label_es_chirho": "R perfecto",
+					"help_es_chirho": "La fuente analiza una forma de tiempo perfecto.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-2r-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "2R second perfect",
+					"help_en_chirho": "The source distinguishes a second perfect form.",
+					"label_es_chirho": "2R segundo perfecto",
+					"help_es_chirho": "La fuente distingue una forma de segundo perfecto.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-l-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "L pluperfect",
+					"help_en_chirho": "The source parses a pluperfect tense form.",
+					"label_es_chirho": "L pluscuamperfecto",
+					"help_es_chirho": "La fuente analiza una forma de tiempo pluscuamperfecto.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-tense-2l-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "2L second pluperfect",
+					"help_en_chirho": "The source distinguishes a second pluperfect form.",
+					"label_es_chirho": "2L segundo pluscuamperfecto",
+					"help_es_chirho": "La fuente distingue una forma de segundo pluscuamperfecto.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Verb voice · left, lowercase",
+			"label_es_chirho": "Voz verbal · izquierda, minúscula",
+			"items_chirho": [
+				{
+					"id_chirho": "greek-voice-a-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "a active",
+					"help_en_chirho": "Active voice in the source parse.",
+					"label_es_chirho": "a activa",
+					"help_es_chirho": "Voz activa en el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-voice-m-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "m middle",
+					"help_en_chirho": "Middle voice in the source parse.",
+					"label_es_chirho": "m media",
+					"help_es_chirho": "Voz media en el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-voice-p-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "p passive",
+					"help_en_chirho": "Passive voice in the source parse.",
+					"label_es_chirho": "p pasiva",
+					"help_es_chirho": "Voz pasiva en el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-voice-e-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "e middle or passive",
+					"help_en_chirho": "The source leaves middle or passive voice unresolved.",
+					"label_es_chirho": "e media o pasiva",
+					"help_es_chirho": "La fuente deja sin resolver la voz media o pasiva.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-voice-d-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "d middle deponent",
+					"help_en_chirho": "The source labels this middle deponent; the cue preserves that classification.",
+					"label_es_chirho": "d media deponente",
+					"help_es_chirho": "La fuente la clasifica como media deponente; la indicación conserva esa clasificación.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-voice-o-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "o passive deponent",
+					"help_en_chirho": "The source labels this passive deponent; the cue preserves that classification.",
+					"label_es_chirho": "o pasiva deponente",
+					"help_es_chirho": "La fuente la clasifica como pasiva deponente; la indicación conserva esa clasificación.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-voice-n-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "n middle or passive deponent",
+					"help_en_chirho": "The source labels this middle or passive deponent without choosing between them.",
+					"label_es_chirho": "n media o pasiva deponente",
+					"help_es_chirho": "La fuente la clasifica como media o pasiva deponente sin elegir entre ambas.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Person · right",
+			"label_es_chirho": "Persona · derecha",
+			"items_chirho": [
+				{
+					"id_chirho": "greek-person-1-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "1 first",
+					"help_en_chirho": "First person in the source parse. Number is shown separately by the word underline.",
+					"label_es_chirho": "1 primera",
+					"help_es_chirho": "Primera persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-person-2-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "2 second",
+					"help_en_chirho": "Second person in the source parse. Number is shown separately by the word underline.",
+					"label_es_chirho": "2 segunda",
+					"help_es_chirho": "Segunda persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-person-3-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "3 third",
+					"help_en_chirho": "Third person in the source parse. Number is shown separately by the word underline.",
+					"label_es_chirho": "3 tercera",
+					"help_es_chirho": "Tercera persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.",
+					"spanish_available_chirho": true
+				}
+			]
+		},
+		{
+			"label_en_chirho": "Verb mood · right",
+			"label_es_chirho": "Modo verbal · derecha",
+			"items_chirho": [
+				{
+					"id_chirho": "greek-mood-i-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "I indicative",
+					"help_en_chirho": "An indicative form, as parsed in the source.",
+					"label_es_chirho": "I indicativo",
+					"help_es_chirho": "Una forma indicativa, según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-mood-s-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "S subjunctive",
+					"help_en_chirho": "A subjunctive form, as parsed in the source.",
+					"label_es_chirho": "S subjuntivo",
+					"help_es_chirho": "Una forma subjuntiva, según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-mood-m-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "M imperative",
+					"help_en_chirho": "An imperative form, as parsed in the source.",
+					"label_es_chirho": "M imperativo",
+					"help_es_chirho": "Una forma imperativa, según el análisis de la fuente.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-mood-n-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "N infinitive",
+					"help_en_chirho": "An infinitive form; it has no finite person cue.",
+					"label_es_chirho": "N infinitivo",
+					"help_es_chirho": "Una forma de infinitivo; no tiene indicación de persona finita.",
+					"spanish_available_chirho": true
+				},
+				{
+					"id_chirho": "greek-mood-p-chirho",
+					"style_chirho": "",
+					"source_chirho": null,
+					"label_en_chirho": "P participle",
+					"help_en_chirho": "A participle. Its sourced case appears in the center; it has no finite person cue.",
+					"label_es_chirho": "P participio",
+					"help_es_chirho": "Un participio. Su caso documentado aparece en el centro; no tiene indicación de persona finita.",
+					"spanish_available_chirho": true
+				}
+			]
+		}
+	]
+}

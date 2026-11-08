@@ -37,6 +37,20 @@ class NavigationTestChirho {
     }
 
     @Test
+    fun buttonsAndSwipesStepOnlyWhereTheCurrentBookHasANeighbor() {
+        fun stateChirho(idChirho: String, withManifestChirho: Boolean = true) = ReaderUiStateChirho(
+            passageChirho = requireNotNull(PassageChirho.parseChirho(idChirho)),
+            manifestChirho = manifestChirho.takeIf { withManifestChirho },
+        )
+        assertEquals(listOf(false, true), listOf(false, true).map { stateChirho("Acts.1.1").canStepChirho(it) })
+        assertEquals(listOf(true, false), listOf(false, true).map { stateChirho("Acts.3.2").canStepChirho(it) })
+        assertEquals(listOf(true, true), listOf(false, true).map { stateChirho("Acts.2.8").canStepChirho(it) })
+        // While another book's manifest is still loaded, or none is, neither direction may step.
+        assertEquals(listOf(false, false), listOf(false, true).map { stateChirho("Prov.1.2").canStepChirho(it) })
+        assertEquals(listOf(false, false), listOf(false, true).map { stateChirho("Acts.1.2", withManifestChirho = false).canStepChirho(it) })
+    }
+
+    @Test
     fun passageIdsParseStrictlyAndTheDailyDefaultUsesTheLocalDay() {
         assertEquals(PassageChirho("1Cor", 13, 4), PassageChirho.parseChirho("1Cor.13.4"))
         for (badChirho in listOf("Prov.0.1", "Prov.1", "Prov.1.1.1", "Prov.١.1", " Prov.1.1", "Prov.1000.1", "4Kgs.1.1")) {

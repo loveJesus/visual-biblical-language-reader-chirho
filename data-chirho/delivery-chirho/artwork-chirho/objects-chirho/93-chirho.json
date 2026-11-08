@@ -2032,6 +2032,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/psalms-chirho/chapter-060-chirho/ps-060-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/930977de3162bbc57471308d504923ba76c6ca59cc5af7c45d1d425d84a6acec.webp",
+        "sha256_chirho": "930977de3162bbc57471308d504923ba76c6ca59cc5af7c45d1d425d84a6acec",
+        "bytes_chirho": 2408748,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-07T20:28:58.589Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/1896981bac7645325ae1974da86d5a973854ecba244dea3e058f9b2d6c1aedfc.webp",
+        "sha256_chirho": "1896981bac7645325ae1974da86d5a973854ecba244dea3e058f9b2d6c1aedfc",
+        "bytes_chirho": 197190,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-07T20:28:59.700Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/galatians-chirho/chapter-006-chirho/gal-006-002-chirho.webp"
       ],
       "source_chirho": {

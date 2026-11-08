@@ -1,6 +1,7 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 
 import { morphologyLabelChirho } from '$lib/domain-chirho/cues-chirho';
+import { verbFormLabelChirho } from '$lib/domain-chirho/verb-forms-chirho';
 import { greekAnalysisChirho, type GreekTokenChirho } from '$lib/domain-chirho/greek-chirho';
 import type { TokenChirho } from '$lib/domain-chirho/lesson-chirho';
 import type { LocaleChirho } from './locale-chirho';
@@ -94,9 +95,21 @@ const SPANISH_TERMS_CHIRHO: Record<string, string> = {
 	third: 'tercera persona'
 };
 
+// English keeps the source's own words; only these joined source keys get readable names.
+const ENGLISH_TERMS_CHIRHO: Record<string, string> = {
+	participle_active: 'active participle',
+	participle_passive: 'passive participle',
+	infinitive_absolute: 'infinitive absolute',
+	infinitive_construct: 'infinitive construct',
+	qatal_copulative: verbFormLabelChirho('qatal', 'qatal_copulative')
+};
+
 // An unlisted value stays visible as the source gives it rather than being guessed.
 export function termChirho(valueChirho: string, localeChirho: LocaleChirho): string {
-	return localeChirho === 'es' ? (SPANISH_TERMS_CHIRHO[valueChirho] ?? valueChirho) : valueChirho;
+	return (
+		(localeChirho === 'es' ? SPANISH_TERMS_CHIRHO : ENGLISH_TERMS_CHIRHO)[valueChirho] ??
+		valueChirho
+	);
 }
 
 // The English label stays the domain's own; Spanish mirrors it term for term. Stem and form
@@ -112,6 +125,35 @@ export function morphologyLabelLocalizedChirho(
 			? `; código verbal local ${tokenChirho.verb_code_chirho}`
 			: '';
 	return `${termChirho(tokenChirho.pos_chirho, 'es')}; género ${termChirho(tokenChirho.gender_chirho, 'es')}; número ${termChirho(tokenChirho.number_chirho, 'es')}; estado ${termChirho(tokenChirho.state_chirho, 'es')}${verbChirho}`;
+}
+
+/**
+ * The visible word-card line: the part of speech, then only the values the source gives, as the Greek line
+ * does. Unknown and not-applicable fields stay in the full label used for screen readers.
+ */
+export function morphologySummaryLocalizedChirho(
+	tokenChirho: TokenChirho,
+	localeChirho: LocaleChirho
+): string {
+	const spanishChirho = localeChirho === 'es';
+	const fieldChirho = (nameEnChirho: string, nameEsChirho: string, valueChirho: string) =>
+		valueChirho === 'unknown' || valueChirho === 'na'
+			? null
+			: `${spanishChirho ? nameEsChirho : nameEnChirho} ${termChirho(valueChirho, localeChirho)}`;
+	const verbChirho = tokenChirho.verb_form_chirho
+		? `${tokenChirho.verb_stem_chirho ?? ''} ${termChirho(tokenChirho.verb_construction_chirho ?? tokenChirho.verb_form_chirho, localeChirho)}`.trim()
+		: tokenChirho.verb_code_chirho
+			? `${spanishChirho ? 'código verbal local' : 'local verb code'} ${tokenChirho.verb_code_chirho}`
+			: null;
+	return [
+		termChirho(tokenChirho.pos_chirho, localeChirho),
+		fieldChirho('gender', 'género', tokenChirho.gender_chirho),
+		fieldChirho('number', 'número', tokenChirho.number_chirho),
+		fieldChirho('state', 'estado', tokenChirho.state_chirho),
+		verbChirho
+	]
+		.filter((partChirho): partChirho is string => !!partChirho)
+		.join('; ');
 }
 
 // Mirrors greekAnalysisChirho: part of speech, then each known parse value, in the same order.

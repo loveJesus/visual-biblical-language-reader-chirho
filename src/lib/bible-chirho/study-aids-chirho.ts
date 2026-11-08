@@ -28,3 +28,35 @@ export function specificSourceNoteChirho(tokenChirho: {
 			.trim() || null
 	);
 }
+
+type NotedTokenChirho = Parameters<typeof specificSourceNoteChirho>[0] & { id_chirho: string };
+
+/**
+ * A caution that every word of a verse repeats (e.g. "No English gloss: GBT and OSHB list a different number of
+ * words for this verse.") belongs to the verse: it is shown once, in the folded source notes, and each card keeps
+ * only what is particular to its word. A single-word verse keeps its note on its card.
+ */
+export function verseStudyNotesChirho(tokensChirho: readonly NotedTokenChirho[]): {
+	verseNotesChirho: string[];
+	cardNotesChirho: Map<string, string | null>;
+} {
+	const sentencesChirho = tokensChirho.map((tokenChirho) => {
+		const noteChirho = specificSourceNoteChirho(tokenChirho);
+		return noteChirho ? noteChirho.split(/(?<=[.!?])\s+(?=\p{Lu})/u) : [];
+	});
+	const verseNotesChirho =
+		tokensChirho.length > 1
+			? sentencesChirho[0].filter((sentenceChirho) =>
+					sentencesChirho.every((listChirho) => listChirho.includes(sentenceChirho))
+				)
+			: [];
+	const cardNotesChirho = new Map(
+		tokensChirho.map((tokenChirho, indexChirho) => [
+			tokenChirho.id_chirho,
+			sentencesChirho[indexChirho]
+				.filter((sentenceChirho) => !verseNotesChirho.includes(sentenceChirho))
+				.join(' ') || null
+		])
+	);
+	return { verseNotesChirho, cardNotesChirho };
+}

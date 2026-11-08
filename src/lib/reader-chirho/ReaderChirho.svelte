@@ -1,7 +1,7 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
 	import StudyAidLinkChirho from '$lib/bible-chirho/StudyAidLinkChirho.svelte';
-	import { specificSourceNoteChirho } from '$lib/bible-chirho/study-aids-chirho';
+	import { verseStudyNotesChirho } from '$lib/bible-chirho/study-aids-chirho';
 	import { installIpaChirho } from './controls-chirho/ipa-controls-chirho';
 	import SceneChirho from '$lib/reader-chirho/scene-chirho/SceneChirho.svelte';
 	import PronunciationNoteChirho from './audio-chirho/PronunciationNoteChirho.svelte';
@@ -9,6 +9,8 @@
 	import SourceNotesChirho from '$lib/bible-chirho/SourceNotesChirho.svelte';
 	import { lexiconLinkChirho } from '$lib/bible-chirho/lexicon-links-chirho';
 	import AudioVerseChirho from './audio-chirho/AudioVerseChirho.svelte';
+	import ReadingCreditChirho from './audio-chirho/ReadingCreditChirho.svelte';
+	import type { RecordingChirho } from './audio-chirho/recordings-chirho';
 	import SpeechButtonChirho from './audio-chirho/SpeechButtonChirho.svelte';
 	import { installSpeechChirho } from './audio-chirho/speech-controls-chirho';
 	import { spokenWordChirho } from '$lib/domain-chirho/pronunciation-chirho';
@@ -32,7 +34,7 @@
 	} from '$lib/i18n-chirho/reader-messages-chirho';
 	import {
 		bookNameChirho,
-		morphologyLabelLocalizedChirho,
+		morphologySummaryLocalizedChirho,
 		referenceChirho
 	} from '$lib/i18n-chirho/labels-chirho';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
@@ -50,8 +52,11 @@
 		headerChirho,
 		verseNavigationChirho,
 		spanishChirho = null,
-		videoChirho = null
+		videoChirho = null,
+		artProgressChirho = null
 	}: {
+		/** This book's artwork counts, listed in the Sources fold. */
+		artProgressChirho?: string | null;
 		/** The chapter catalogue's record for this verse, unvalidated; the scene and player check it. */
 		videoChirho?: unknown;
 		spanishChirho?: SpanishLayerResultChirho | null;
@@ -65,6 +70,9 @@
 		presentationChirho: import('$lib/domain-chirho/media-chirho').ScenePresentationChirho | null;
 	} = $props();
 	let readerElementChirho = $state<HTMLDivElement>();
+	// A caution repeated by every word is shown once, folded with the sources; cards keep their own notes.
+	const studyNotesChirho = $derived(verseStudyNotesChirho(lessonChirho.tokens_chirho));
+	let humanReadingChirho = $state<RecordingChirho | null>(null);
 	let speechControlsChirho = $state<ReturnType<typeof installSpeechChirho>>();
 	$effect(() => {
 		void lessonChirho.id_chirho;
@@ -148,7 +156,12 @@
 		</div>
 		<section class="reading-grid-chirho" aria-label={readerTChirho('reading_grid_hebrew_chirho')}>
 			<div class="verse-panel-chirho">
-				<AudioVerseChirho {lessonChirho} {verseNavigationChirho} {videoChirho} />
+				<AudioVerseChirho
+					{lessonChirho}
+					{verseNavigationChirho}
+					{videoChirho}
+					onHumanReadingChirho={(readingChirho) => (humanReadingChirho = readingChirho)}
+				/>
 				<SourceNotesChirho notesChirho={lessonChirho.source_notes_chirho} />
 				<VerseChirho {lessonChirho} {iconsChirho} />
 				<div class="verse-bottom-chirho">
@@ -291,7 +304,7 @@
 								<span dir="rtl" lang="he">{tokenChirho.root_text_chirho ?? '—'}</span>
 							</p>{/if}
 						<p class="morphology-chirho">
-							{morphologyLabelLocalizedChirho(tokenChirho, localeStateChirho.currentChirho)}
+							{morphologySummaryLocalizedChirho(tokenChirho, localeStateChirho.currentChirho)}
 						</p>
 						<PictureNoteChirho
 							iconChirho={iconsChirho[tokenChirho.id_chirho]}
@@ -346,8 +359,13 @@
 								{#if tokenChirho.root_text_chirho}<p lang="en">
 										{tokenChirho.root_note_chirho}
 									</p>{/if}
-								{#if specificSourceNoteChirho(tokenChirho)}<p lang="en">
-										{specificSourceNoteChirho(tokenChirho)}
+								{#if studyNotesChirho.cardNotesChirho.get(tokenChirho.id_chirho)}<p lang="en">
+										{studyNotesChirho.cardNotesChirho.get(tokenChirho.id_chirho)}
+									</p>{/if}
+								{#if studyNotesChirho.verseNotesChirho.length}<p class="verse-note-link-chirho">
+										<a href="#verse-notes-chirho" data-word-jump-chirho="verse-notes-chirho"
+											>{readerTChirho('verse_note_link_chirho')}</a
+										>
 									</p>{/if}
 								<p class="raw-morphology-chirho">
 									OSHB: <code>{tokenChirho.raw_morphology_chirho}</code>
@@ -375,13 +393,23 @@
 			</details>
 			<div class="source-notes-chirho">
 				<SourceCreditChirho languageChirho="he" />
-				<p>
-					{readerTChirho('root_lemma_note_chirho')}
-				</p>
+				<StudyAidLinkChirho />
 			</div>
+			{#if studyNotesChirho.verseNotesChirho.length}
+				<!-- Workflow: local-reader-chirho.md. A caution every word shares is kept once, folded here. -->
+				<details class="verse-notes-chirho" id="verse-notes-chirho" tabindex="-1">
+					<summary>{readerTChirho('verse_notes_summary_chirho')}</summary>
+					{#each studyNotesChirho.verseNotesChirho as noteChirho (noteChirho)}<p lang="en">
+							{noteChirho}
+						</p>{/each}
+				</details>
+			{/if}
 			<details class="sources-details-chirho">
 				<summary>{readerTChirho('sources_summary_chirho')}</summary>
 				<ul>
+					{#if humanReadingChirho}<li>
+							<ReadingCreditChirho readingChirho={humanReadingChirho} />
+						</li>{/if}
 					{#each languagesChirho as languageChirho (languageChirho.id_chirho)}<li>
 							<a href={languageChirho.source_url_chirho} rel="external noreferrer" target="_blank"
 								>Global Bible Tools · {languageChirho.label_chirho} ↗</a
@@ -425,6 +453,7 @@
 							>{uhgPartsChirho[1]}
 						</p>
 					</li>
+					{#if artProgressChirho}<li><p>{artProgressChirho}</p></li>{/if}
 				</ul>
 			</details>
 		</section>

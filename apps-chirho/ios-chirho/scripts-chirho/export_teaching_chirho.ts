@@ -1,10 +1,12 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 
-// Exports the website's teaching tables and book identities for the native iOS reader, so both
-// readers share one source. Reads the web modules read-only and writes only inside this app.
+// Exports the website's teaching tables and book identities for the native readers, so the
+// website, iOS and Android share one source. Reads the web modules read-only and writes only the
+// apps' bundled copies: iOS resources and byte-identical Android assets. Unchanged files are left
+// untouched.
 //   bun apps-chirho/ios-chirho/scripts-chirho/export_teaching_chirho.ts           # write
 //   bun apps-chirho/ios-chirho/scripts-chirho/export_teaching_chirho.ts --check   # exit 1 on drift
-import { readFileSync, renameSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as prettierChirho from 'prettier';
@@ -159,31 +161,51 @@ async function formattedChirho(pathChirho: string, valueChirho: unknown): Promis
 	});
 }
 
+const teachingTextChirho = await formattedChirho(
+	join(resourcesChirho, 'teaching-chirho.json'),
+	teachingChirho()
+);
+const booksTextChirho = await formattedChirho(
+	join(resourcesChirho, 'books-fallback-chirho.json'),
+	booksChirho()
+);
+// The Android reader bundles the same bytes: its reading key and its offline book list.
+const androidAssetsChirho = join(
+	hereChirho,
+	'..',
+	'..',
+	'android-chirho',
+	'app-chirho',
+	'src',
+	'main',
+	'assets'
+);
 const outputsChirho = new Map<string, string>([
-	[
-		join(resourcesChirho, 'teaching-chirho.json'),
-		await formattedChirho(join(resourcesChirho, 'teaching-chirho.json'), teachingChirho())
-	],
-	[
-		join(resourcesChirho, 'books-fallback-chirho.json'),
-		await formattedChirho(join(resourcesChirho, 'books-fallback-chirho.json'), booksChirho())
-	]
+	[join(resourcesChirho, 'teaching-chirho.json'), teachingTextChirho],
+	[join(resourcesChirho, 'books-fallback-chirho.json'), booksTextChirho],
+	[join(androidAssetsChirho, 'teaching-chirho', 'teaching-chirho.json'), teachingTextChirho],
+	[join(androidAssetsChirho, 'library-chirho', 'books-chirho.json'), booksTextChirho]
 ]);
 
+function currentChirho(pathChirho: string): string | null {
+	try {
+		return readFileSync(pathChirho, 'utf8');
+	} catch {
+		return null;
+	}
+}
+
+const driftChirho = [...outputsChirho].filter(
+	([pathChirho, textChirho]) => currentChirho(pathChirho) !== textChirho
+);
 if (process.argv.includes('--check')) {
-	const driftChirho = [...outputsChirho].filter(([pathChirho, textChirho]) => {
-		try {
-			return readFileSync(pathChirho, 'utf8') !== textChirho;
-		} catch {
-			return true;
-		}
-	});
 	for (const [pathChirho] of driftChirho) console.error(`drift: ${pathChirho}`);
 	if (!driftChirho.length) console.log(`up to date: ${outputsChirho.size} files`);
 	process.exit(driftChirho.length ? 1 : 0);
 }
-for (const [pathChirho, textChirho] of outputsChirho) {
+for (const [pathChirho, textChirho] of driftChirho) {
+	mkdirSync(dirname(pathChirho), { recursive: true });
 	writeFileSync(`${pathChirho}.tmp-chirho`, textChirho, { flag: 'wx' });
 	renameSync(`${pathChirho}.tmp-chirho`, pathChirho);
 }
-console.log(`wrote ${outputsChirho.size} files`);
+console.log(`wrote ${driftChirho.length} of ${outputsChirho.size} files`);

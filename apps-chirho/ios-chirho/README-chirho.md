@@ -10,7 +10,9 @@ The app reads one verified chapter at a time and shows:
 - the Hebrew or Greek words with their teaching marks;
 - word pictures and the verse scene;
 - word cards for meaning and morphology;
-- individual word recordings.
+- individual word recordings and available whole-verse readings;
+- source-bound verse videos where supplied, with one matching soundtrack;
+- previous/next navigation and horizontal swipes, plus saved playback speed.
 
 The shared remote contract is in [../README-chirho.md](../README-chirho.md).
 
@@ -41,7 +43,7 @@ xcodebuild -project HinnehChirho.xcodeproj -scheme HinnehChirho \
 bun apps-chirho/ios-chirho/scripts-chirho/export_teaching_chirho.ts --check   # from the repo root
 ```
 
-From the repository root, run the complete offline source contract with `HINNEH_STATIC_ROOT_CHIRHO="$PWD/static" bash apps-chirho/ios-chirho/scripts-chirho/ios_chirho.sh test`. GPT added this integration check after the lane handoff: all 66 book manifests and 31,156 verses pass through the real bounded client, chapter hashes, validators and visible-source surface ordering. It uses no network and does not rewrite corpus files. Without that variable, the corpus suite is skipped; the live smoke tests are independently opt-in.
+From the repository root, set `HINNEH_STATIC_ROOT_CHIRHO` to the verified served-resource tree, then run `bash apps-chirho/ios-chirho/scripts-chirho/ios_chirho.sh test`. For a frozen publisher cut, that tree is `build-chirho/preview-chirho/public-chirho`; the public source mirror also carries delivered JSON under `static/`. The private working tree's authoring `static/` lacks the publisher's video overlays, so it is not the complete delivered-video fixture. The integration suite checks all 66 book manifests and 31,156 verses through the real bounded client, chapter hashes, validators and visible-source surface ordering, plus human readings, local Greek recordings and published video matches. It uses no network and does not rewrite corpus files. Without that variable, the corpus suite is skipped; the live smoke tests are independently opt-in.
 
 Build outputs default to `build-chirho/` here, which `.gitignore` excludes. Set
 `HINNEH_BUILD_ROOT_CHIRHO` to build elsewhere.
@@ -75,12 +77,16 @@ Launch arguments:
   - The global manifest names the chapter catalogue. That catalogue must be bound to the exact
     content chapter, and each clip to the verse's canonical text hash and the word's spoken form,
     which follows the qere.
-  - Each MP3 is SHA-verified, then plays complete to its natural end. Greek plays at 0.88 with its
-    pitch preserved (AVPlayer spectral time-pitch); Hebrew plays at 1.0.
-  - Greek defaults to Modern with aspirates. A bulk modern recording stands in only for words
-    without rough breathing. Erasmian and plain Modern accept only their own recordings.
+  - Each MP3 is SHA-verified, then plays complete to its natural end. Fresh playback starts at
+    Normal (1x); a saved Gentle (0.85x) or Brisk (1.25x) choice applies to words, verses and videos
+    with pitch preserved (AVPlayer spectral time-pitch).
+  - An explicit Greek pronunciation choice persists. Without one, the reader prefers an available
+    aspirated verse reading, then an available plain Modern verse reading. Plain Modern never
+    substitutes for Aspirates where the source has rough breathing, or for Erasmian.
   - Each play carries its own identity: a late end or failure from an earlier play, even of the
-    same word, is ignored. Rejected recordings never play.
+    same word, is ignored. Changing pronunciation clears the old selectable recordings immediately.
+    Rejected recordings never play. If a video fails, the next explicit Play can use its verified
+    standalone reading over the still; the failed MP4 is not repeatedly requested.
 - **Spanish meanings.** Fetched only for the chapter on screen, and only when the interface is
   Spanish. A layer must be hash-checked and bound to the chapter bytes; otherwise it is withheld.
 - **Caches.** Bounded to four chapters per client, plus limited URL and image caches. Navigation
@@ -97,6 +103,12 @@ That file holds identities only. It is exported, with the teaching tables, from 
 registry and modules by `scripts-chirho/export_teaching_chirho.ts`.
 
 ## Local integration result
+
+November 8: version 0.1.1/build 3 is submitted to Apple and reads WAITING_FOR_REVIEW, with AFTER_APPROVAL retained. Version 0.1 remains the public version until Apple approves the update. The signed IPA passed Apple validation and was uploaded once; its processed build is VALID and APP_STORE_ELIGIBLE. English and Spanish update notes and all 24 inherited screenshots are verified. Existing App Privacy, age, availability, pricing and owner declarations are unchanged.
+
+This update adds the native source-bound video/human-reading path, Normal speed, saved speed selection, edition-aware disabled navigation, horizontal verse swipes and return-to-heading navigation. Word cards keep their meanings, lexical form and grammar, while process explanations move to Reading key/About and exact recording credits remain in the verse Sources fold. Required soundtrack keys and duplicate-video refusal match the shared contract without removing valid stills or word pictures. Old rendition results and callbacks cannot replace a newer selection.
+
+The delivered core suite passes 36 tests, including 2,007 human readings and 1,084 local Greek verse selections; the final validator accepts all 19 published video/reading matches. Six hosted native tests and seven UI tests pass on both the dedicated iPhone and iPad simulators, including actual AVPlayer time advancement, speed/pitch, corrupt-video fallback, word playback, Spanish cards, policy links, swipe cancellation and vertical scrolling. Physical-device and VoiceOver listening checks remain unclaimed. Compiler warnings are zero; Xcode's existing AppIntents extraction warning and simulator runtime diagnostics are retained. The next-version operator and its unknown-write recovery are documented in `scripts-chirho/release-chirho/README-chirho.md`; the first-release listing operator is not used for this update.
 
 November 3: GPT independently verified the unsigned build, 25 core tests plus both opt-in live tests, the complete offline corpus check, and all six hosted model/UI cases on iPhone 17e with iOS 26.5. The simulator UI covers the corner speaker independently of Look closer, natural verse playback to its end, next verse, absent-verse recovery and Spanish Greek meanings. Exact Greek byte keys, rendition selection and per-play UUID identity remain covered. The same six cases passed in the lane on iPhone 17 Pro; the lane also reported an iPad visual check. The AppIntents metadata processor emits a tool warning when it finds no AppIntents dependency; compiler warnings are zero.
 

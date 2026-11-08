@@ -1,0 +1,39 @@
+<!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
+
+# Recurring people, places and episode continuity
+
+```mermaid
+flowchart TD
+    A[Pin people/place sources and local canonical chapters] --> B[Resolve individual identities and source numbering]
+    B --> C[Find appearances in distinct story sections]
+    C --> D[Inventory existing scenes and inspect useful faces/settings]
+    D --> E{Usable reference exists?}
+    E -->|yes| F[Select existing art with explicit subject/setting focus]
+    E -->|no or missing age| G[One built-in watercolor reference-sheet call]
+    G --> H[Preserve original and prompt; inspect; cut 3x3 without pixel changes]
+    H --> F
+    F --> I[Choose recurring identity and age variant]
+    A --> J[Editorial pericope map with source hashes]
+    J --> K[Episode-local outfits, architecture, props and time progression]
+    I --> L[Build source-checked reference pack]
+    K --> L
+    L --> M[Copy exact references into a new scene attempt and pin input]
+    M --> N[Artist inspects references and generates one scene]
+    N --> O[Verify original receipt and unchanged staged references]
+    O --> P[Existing archive, installation and publication workflow]
+    E -->|uncertain identity/place| Q[Keep candidate unresolved; do not merge or depict automatically]
+```
+
+The shared cast is for recurring people in distinct sections, not every person named twice in one episode. STEP Bible TIPNR separates namesakes and aliases; its named mentions do not prove that a person is visible in the scene. Cross-chapter counts are research triage, not a final pericope classification. Jabez remains a one-chapter local example; King Saul and Saul/Paul, and John the apostle and John the Baptist, are distinct. Genealogies, quotations, absent people and descriptions do not automatically put their subjects on screen.
+
+Existing artwork is the first place to seek identity/setting references. The initial seed includes nine recurring people and a four-stage David reference derived from the existing elder-David scene. Specific faces, neutral portrait garments and approximate age appearances are imaginative conventions. Future episodes select an age and an outfit separately. The same face is persistent; the same outfit is persistent within an event, rather than across a lifetime. References remain pending L.J.'s artwork review.
+
+Place identity is separate from a building/room and its historical period. Jerusalem's geography may recur; Solomon's temple, later temple periods and heavenly throne visions are distinct. OpenBible's uncertainty is retained. Its data license does not license every photograph or OpenStreetMap geometry; this import includes neither. Proverbs7's town is unnamed and is not assigned to Jerusalem. A setting reference supplies architecture without importing its unrelated people.
+
+The Proverbs map covers915source verses exactly once in608editorial units, with11local continuity episodes. The31chapter unit shards are bounded and hash-bound. Standalone sayings inherit no literal people/clothes/place from adjacent sayings. Connected narratives preserve people, outfit, architecture and time, while teaching frames and figurative material retain their own role. The proposed map is not a claim of scholarly consensus. Source text/verse numbering is untouched.
+
+`index_sources_chirho.py` checks pinned upstream hashes and extracts identity/place/mention research records, omitting generated biographies, map geometry and third-party images. STEP Bible and OpenBible data retain CC BY4.0; the authored artwork is CC0. `split_sheet_chirho.py` cuts exact original pixels into nine cells and refuses an existing output. `reference_pack_chirho.py` checks source chapters, unit shards, adopted reference hashes, containment and regular files; unadopted candidates never silently become active references.
+
+The scene producer uses this pack only for a new, mapped job. Exact reference bytes are copied into that attempt before its source pin. The artist receives their intended identity/setting roles and must inspect/use them. Recording checks the frozen source pin and staged image hashes. Later library changes cannot rewrite an earlier attempt. Existing requests, unknown outcomes, retry caps, provider/budget scopes and held originals are unchanged. Source/reference mismatches hold before generation; no paid fallback is introduced. Unmapped jobs retain the ordinary source/style process.
+
+The first curated bindings cover Proverbs7, Acts3:1–10, David's anointing, his accession at thirty and his elder-palace opening. Other people, ages, pericopes and regions remain an expansion queue. Reference-ready is not a guarantee that the model preserves every feature or that all existing scenes have been corrected. Existing good pictures remain; targeted corrections are separate requested work.

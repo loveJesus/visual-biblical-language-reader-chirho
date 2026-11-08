@@ -43,7 +43,8 @@ object LabelsChirho {
         if (!spanishChirho) {
             fun shownChirho(valueChirho: String) = if (valueChirho == "na") "not applicable" else valueChirho
             val verbChirho = when {
-                formChirho != null -> "; ${wordChirho.verbStemChirho ?: ""} ${wordChirho.verbConstructionChirho ?: formChirho}"
+                // Source values such as participle_active are read aloud, so their underscores become spaces.
+                formChirho != null -> "; ${wordChirho.verbStemChirho ?: ""} ${(wordChirho.verbConstructionChirho ?: formChirho).replace('_', ' ')}"
                 wordChirho.verbCodeChirho != null -> "; local verb code ${wordChirho.verbCodeChirho}"
                 else -> ""
             }

@@ -33,7 +33,7 @@ actor GatedTransportChirho: TransportChirho {
         return dataChirho
     }
 
-    static func johnChirho() throws -> GatedTransportChirho {
+    static func johnChirho(aspiratesVerseChirho: Bool = true) throws -> GatedTransportChirho {
         func fixtureChirho(_ nameChirho: String) throws -> Any {
             let urlChirho = try #require(Bundle(for: BundleTokenChirho.self).url(
                 forResource: nameChirho, withExtension: "json", subdirectory: "FixturesChirho")
@@ -57,10 +57,15 @@ actor GatedTransportChirho: TransportChirho {
             }
         ] as [String: Any])
         let audioPathChirho = "/audio-chirho/john-chirho/chapter-01-chirho.json"
+        let clipsChirho = try #require(try fixtureChirho("john-1-1-audio-chirho") as? [[String: Any]])
+            .filter { clipChirho in
+                aspiratesVerseChirho || !(clipChirho["token_id_chirho"] is NSNull
+                    && clipChirho["pronunciation_chirho"] as? String == "modern_greek_aspirates")
+            }
         let audioChirho = try jsonChirho([
             "schema_version_chirho": 1, "book_id_chirho": "John", "chapter_chirho": 1,
             "content_path_chirho": chapterPathChirho, "content_sha256_chirho": chapterShaChirho,
-            "clips_chirho": try fixtureChirho("john-1-1-audio-chirho")
+            "clips_chirho": clipsChirho
         ] as [String: Any])
         return GatedTransportChirho([
             "/content-chirho/john-chirho/manifest-chirho.json": manifestChirho,
@@ -84,6 +89,7 @@ actor GatedTransportChirho: TransportChirho {
 private final class BundleTokenChirho {}
 
 @MainActor
+@Suite(.serialized)
 struct ReaderModelTestsChirho {
     func waitChirho(_ conditionChirho: () async -> Bool) async throws {
         for _ in 0..<500 {
@@ -114,5 +120,50 @@ struct ReaderModelTestsChirho {
                 "the slow load must not restore recordings chosen for the previous rendition")
         #expect(modelChirho.audioChirho.wordClipsChirho.count == modelChirho.verseChirho?.wordsChirho.count,
                 "plain Modern has a recording for every word, including the rough-breathing ὁ")
+    }
+
+    @Test func automaticModernFallbackDoesNotSaveOrOverrideAReadersChoiceChirho() async throws {
+        let defaultsChirho = UserDefaults.standard
+        let savedChirho = defaultsChirho.object(forKey: ReaderModelChirho.renditionKeyChirho)
+        defer {
+            if let savedChirho { defaultsChirho.set(savedChirho, forKey: ReaderModelChirho.renditionKeyChirho) }
+            else { defaultsChirho.removeObject(forKey: ReaderModelChirho.renditionKeyChirho) }
+        }
+        defaultsChirho.removeObject(forKey: ReaderModelChirho.renditionKeyChirho)
+        let transportChirho = try GatedTransportChirho.johnChirho(aspiratesVerseChirho: false)
+        await transportChirho.releaseChirho()
+        let modelChirho = ReaderModelChirho(
+            passageChirho: PassageChirho(bookIdChirho: "John", chapterChirho: 1, verseChirho: 1),
+            remoteChirho: RemoteChirho(transportChirho: transportChirho))
+        modelChirho.openChirho(modelChirho.passageChirho)
+        try await waitChirho { modelChirho.audioChirho.verseClipChirho != nil }
+        #expect(modelChirho.greekRenditionChirho == .modernChirho)
+        #expect(defaultsChirho.object(forKey: ReaderModelChirho.renditionKeyChirho) == nil)
+        modelChirho.greekRenditionChirho = .modernAspiratesChirho
+        try await waitChirho { modelChirho.audioChirho.verseClipChirho == nil }
+        #expect(defaultsChirho.string(forKey: ReaderModelChirho.renditionKeyChirho)
+                == GreekRenditionChirho.modernAspiratesChirho.rawValue)
+        modelChirho.retryChirho()
+        try await waitChirho { modelChirho.phaseChirho == .readyChirho }
+        try await Task.sleep(for: .milliseconds(100))
+        #expect(modelChirho.greekRenditionChirho == .modernAspiratesChirho)
+        #expect(modelChirho.audioChirho.verseClipChirho == nil)
+    }
+
+    @Test func navigationHonoursTheEditionAndStopsTheOldPlayChirho() async throws {
+        let transportChirho = try GatedTransportChirho.johnChirho()
+        await transportChirho.releaseChirho()
+        let modelChirho = ReaderModelChirho(
+            passageChirho: PassageChirho(bookIdChirho: "John", chapterChirho: 1, verseChirho: 1),
+            remoteChirho: RemoteChirho(transportChirho: transportChirho))
+        modelChirho.openChirho(modelChirho.passageChirho)
+        try await waitChirho { modelChirho.nextPassageChirho != nil }
+        #expect(modelChirho.nextPassageChirho?.idChirho == "John.2.1")
+        let oldChirho = modelChirho.playerChirho.beginChirho("verse")
+        await modelChirho.stepChirho(.nextChirho)
+        #expect(modelChirho.passageChirho.idChirho == "John.2.1")
+        #expect(modelChirho.playerChirho.activeIdChirho == nil)
+        modelChirho.playerChirho.completeChirho(oldChirho, failedChirho: true)
+        #expect(modelChirho.playerChirho.failedIdChirho == nil)
     }
 }

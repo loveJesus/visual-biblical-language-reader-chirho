@@ -5,9 +5,11 @@
 # 2026-06-17, core-ktx 1.19.1 on 2026-09-23). Android platform 37.0 is installed (root, DM #2709),
 # so compileSdk/targetSdk are 37 and BOM 2026.09.00 (Compose 1.12.1, Material3 1.4.0) applies.
 # AGP and the Gradle wrapper are being settled with GPT; lint reports their newer releases unsuppressed.
+# AGP 9.5.1 (patch, Google Maven Last-Modified 2026-11-05 15:52 GMT) was adopted the same day on
+# L.J.'s explicit word, an exception to the one-week rule, after lint flagged it.
 
 [versions]
-agp-chirho = "9.5.0"
+agp-chirho = "9.5.1"
 kotlin-chirho = "2.4.21"
 compose-bom-chirho = "2026.09.00"
 activity-compose-chirho = "1.13.0"

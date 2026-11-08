@@ -28,16 +28,23 @@ import us.hinneh.readerchirho.statechirho.InterfaceLanguageChirho
 @Composable
 fun SettingsSheetChirho(
     languageChirho: InterfaceLanguageChirho,
+    spanishChirho: Boolean,
+    textScaleChirho: Float,
     renditionChirho: GreekRenditionChirho,
     speedChirho: Float,
     onLanguageChirho: (InterfaceLanguageChirho) -> Unit,
+    onTextScaleChirho: (Float) -> Unit,
     onRenditionChirho: (GreekRenditionChirho) -> Unit,
     onSpeedChirho: (Float) -> Unit,
     onDismissChirho: () -> Unit,
 ) {
-    ClosableSheetChirho(onDismissChirho) {
-        Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(bottom = 32.dp)) {
+    ClosableSheetChirho(
+        onDismissChirho,
+        titleChirho = {
             Text(stringResource(R.string.settings_chirho), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.semantics { heading() })
+        },
+    ) {
+        Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(bottom = 32.dp)) {
             ChoiceGroupChirho(
                 stringResource(R.string.interface_language_chirho),
                 listOf(
@@ -46,6 +53,16 @@ fun SettingsSheetChirho(
                     InterfaceLanguageChirho.SPANISH_CHIRHO to stringResource(R.string.spanish_chirho),
                 ),
                 languageChirho, onLanguageChirho,
+            )
+            ChoiceGroupChirho(
+                stringResource(R.string.text_size_chirho),
+                listOf(
+                    0.8f to stringResource(R.string.text_small_chirho),
+                    0.9f to stringResource(R.string.text_medium_chirho),
+                    1f to stringResource(R.string.text_large_chirho),
+                    1.15f to stringResource(R.string.text_extra_large_chirho),
+                ),
+                textScaleChirho, onTextScaleChirho,
             )
             ChoiceGroupChirho(
                 stringResource(R.string.rendition_chirho),
@@ -66,6 +83,7 @@ fun SettingsSheetChirho(
                 ),
                 speedChirho, onSpeedChirho,
             )
+            AboutSectionChirho(spanishChirho)
         }
     }
 }

@@ -22,9 +22,19 @@ final class ReaderModelChirho {
     private(set) var mediaFailedChirho = false
     private(set) var audioChirho = VerseAudioChirho.emptyChirho
     private(set) var spanishChirho: SpanishGlossesChirho?
+    private(set) var previousPassageChirho: PassageChirho?
+    private(set) var nextPassageChirho: PassageChirho?
+    var playbackSpeedChirho: PlaybackSpeedChirho {
+        didSet {
+            UserDefaults.standard.set(playbackSpeedChirho.rawValue, forKey: Self.speedKeyChirho)
+            playerChirho.speedChirho = playbackSpeedChirho
+        }
+    }
     /// The Greek pronunciation for playback; it persists independently of the interface language.
     var greekRenditionChirho: GreekRenditionChirho {
         didSet {
+            if selectingAutomaticallyChirho { return }
+            hasRenditionPreferenceChirho = true
             UserDefaults.standard.set(greekRenditionChirho.rawValue, forKey: Self.renditionKeyChirho)
             reselectAudioChirho()
         }
@@ -46,9 +56,15 @@ final class ReaderModelChirho {
     private var chapterChirho: VerifiedChapterChirho?
     private var loadTaskChirho: Task<Void, Never>?
     private var spanishTaskChirho: Task<Void, Never>?
+    private var navigationTaskChirho: Task<Void, Never>?
+    private var audioTaskChirho: Task<Void, Never>?
+    private var audioSelectionIdChirho = UUID()
+    private var selectingAutomaticallyChirho = false
+    private var hasRenditionPreferenceChirho: Bool
 
     static let localeKeyChirho = "hinneh-locale-chirho"
     static let renditionKeyChirho = "hinneh-greek-rendition-chirho"
+    static let speedKeyChirho = "hinneh-playback-speed-chirho"
 
     init(passageChirho: PassageChirho = .dailyChirho(), remoteChirho: RemoteChirho = RemoteChirho(
         transportChirho: URLSessionTransportChirho(cacheDirectoryChirho: ReaderModelChirho.cacheDirectoryChirho))) {
@@ -56,14 +72,19 @@ final class ReaderModelChirho {
         self.remoteChirho = remoteChirho
         let storedChirho = UserDefaults.standard.string(forKey: Self.localeKeyChirho).flatMap(LocaleChirho.init)
         localeChirho = storedChirho ?? .preferredChirho()
-        greekRenditionChirho = UserDefaults.standard.string(forKey: Self.renditionKeyChirho)
-            .flatMap(GreekRenditionChirho.init) ?? .modernAspiratesChirho
+        let renditionChirho = UserDefaults.standard.string(forKey: Self.renditionKeyChirho)
+            .flatMap(GreekRenditionChirho.init)
+        greekRenditionChirho = renditionChirho ?? .modernAspiratesChirho
+        hasRenditionPreferenceChirho = renditionChirho != nil
+        playbackSpeedChirho = UserDefaults.standard.string(forKey: Self.speedKeyChirho)
+            .flatMap(PlaybackSpeedChirho.init) ?? .normalChirho
         playerChirho = AudioPlayerChirho(remoteChirho: remoteChirho)
         artworkChirho = ArtworkStoreChirho(remoteChirho: remoteChirho)
         contentChirho = ContentClientChirho(remoteChirho: remoteChirho)
         mediaClientChirho = MediaClientChirho(remoteChirho: remoteChirho)
         audioClientChirho = AudioClientChirho(remoteChirho: remoteChirho)
         glossClientChirho = GlossClientChirho(remoteChirho: remoteChirho)
+        playerChirho.speedChirho = playbackSpeedChirho
     }
 
     private static let cacheDirectoryChirho = FileManager.default
@@ -85,7 +106,11 @@ final class ReaderModelChirho {
     func openChirho(_ nextChirho: PassageChirho) {
         loadTaskChirho?.cancel()
         spanishTaskChirho?.cancel()
+        navigationTaskChirho?.cancel()
+        audioTaskChirho?.cancel()
+        audioSelectionIdChirho = UUID()
         playerChirho.stopChirho()
+        playerChirho.clearFailureChirho()
         passageChirho = nextChirho
         phaseChirho = .loadingChirho
         verseChirho = nil
@@ -93,6 +118,17 @@ final class ReaderModelChirho {
         mediaFailedChirho = false
         audioChirho = .emptyChirho
         spanishChirho = nil
+        chapterChirho = nil
+        previousPassageChirho = nil
+        nextPassageChirho = nil
+        navigationTaskChirho = Task {
+            async let previousChirho = try? contentChirho.neighbourChirho(nextChirho, .previousChirho, booksChirho)
+            async let followingChirho = try? contentChirho.neighbourChirho(nextChirho, .nextChirho, booksChirho)
+            let neighboursChirho = await (previousChirho, followingChirho)
+            guard !Task.isCancelled, passageChirho == nextChirho else { return }
+            previousPassageChirho = neighboursChirho.0
+            nextPassageChirho = neighboursChirho.1
+        }
         loadTaskChirho = Task { await loadChirho(nextChirho) }
     }
 
@@ -104,14 +140,19 @@ final class ReaderModelChirho {
         if playerChirho.activeIdChirho == "verse" { playerChirho.stopChirho(); return }
         let clipChirho = audioChirho.verseClipChirho
         if let videoChirho = mediaChirho.videoChirho,
+           playerChirho.failedVideoShaChirho != videoChirho.sha256Chirho,
            clipChirho.map(videoChirho.carriesChirho) ?? true {
             playerChirho.playVideoChirho(videoChirho)
         } else if let clipChirho { playerChirho.playChirho(clipChirho, idChirho: "verse") }
     }
 
     func stepChirho(_ stepChirho: StepChirho) async {
-        guard let nextChirho = try? await contentChirho.neighbourChirho(passageChirho, stepChirho, booksChirho)
-        else { return }
+        let nextChirho: PassageChirho?
+        switch stepChirho {
+        case .previousChirho: nextChirho = previousPassageChirho
+        case .nextChirho: nextChirho = nextPassageChirho
+        }
+        guard let nextChirho else { return }
         openChirho(nextChirho)
     }
 
@@ -143,17 +184,35 @@ final class ReaderModelChirho {
         phaseChirho = .readyChirho
         if localeChirho == .spanishChirho { loadSpanishChirho() }
         // Recordings are chosen for the rendition in force now; a later choice re-selects them.
-        let renditionChirho = greekRenditionChirho
+        let initialRenditionChirho = greekRenditionChirho
+        let selectionIdChirho = audioSelectionIdChirho
+        let automaticChirho = !hasRenditionPreferenceChirho
+        let renditionChirho = automaticChirho ? .modernAspiratesChirho : greekRenditionChirho
         async let mediaValueChirho = try? mediaClientChirho.verseMediaChirho(
             bookChirho, targetChirho.chapterChirho, verseValueChirho)
         async let audioValueChirho = try? audioClientChirho.verseAudioChirho(
             verifiedChirho, verseValueChirho, renditionChirho)
         let mediaResultChirho = await mediaValueChirho
-        let audioResultChirho = await audioValueChirho
+        var audioResultChirho = await audioValueChirho
+        var chosenRenditionChirho = renditionChirho
+        if automaticChirho, verseValueChirho.scriptChirho == .greekChirho,
+           audioResultChirho?.verseClipChirho == nil {
+            let modernChirho = try? await audioClientChirho.verseAudioChirho(
+                verifiedChirho, verseValueChirho, .modernChirho)
+            if modernChirho?.verseClipChirho != nil {
+                audioResultChirho = modernChirho
+                chosenRenditionChirho = .modernChirho
+            }
+        }
         guard !Task.isCancelled, passageChirho == targetChirho else { return }
         mediaChirho = mediaResultChirho ?? .emptyChirho
         mediaFailedChirho = mediaResultChirho == nil
-        if greekRenditionChirho == renditionChirho {
+        if audioSelectionIdChirho == selectionIdChirho,
+           greekRenditionChirho == initialRenditionChirho,
+           !automaticChirho || !hasRenditionPreferenceChirho {
+            selectingAutomaticallyChirho = true
+            greekRenditionChirho = chosenRenditionChirho
+            selectingAutomaticallyChirho = false
             audioChirho = audioResultChirho ?? .emptyChirho
         }
     }
@@ -161,13 +220,18 @@ final class ReaderModelChirho {
     /// A new Greek rendition re-selects recordings from the already verified catalogue.
     private func reselectAudioChirho() {
         playerChirho.stopChirho()
+        audioTaskChirho?.cancel()
+        let selectionIdChirho = UUID()
+        audioSelectionIdChirho = selectionIdChirho
+        audioChirho = .emptyChirho
         guard let chapterValueChirho = chapterChirho, let verseValueChirho = verseChirho else { return }
         let targetChirho = passageChirho
         let renditionChirho = greekRenditionChirho
-        Task {
+        audioTaskChirho = Task {
             let resultChirho = try? await audioClientChirho.verseAudioChirho(
                 chapterValueChirho, verseValueChirho, renditionChirho)
-            guard passageChirho == targetChirho, greekRenditionChirho == renditionChirho else { return }
+            guard !Task.isCancelled, audioSelectionIdChirho == selectionIdChirho,
+                  passageChirho == targetChirho, greekRenditionChirho == renditionChirho else { return }
             audioChirho = resultChirho ?? .emptyChirho
         }
     }

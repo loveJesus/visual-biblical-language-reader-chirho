@@ -53,10 +53,13 @@ class AudioRepositoryChirho(
         return withContext(workDispatcherChirho) {
             val verseChirho = loadedChirho.verseChirho
             val canonicalChirho = sha256HexChirho(verseChirho.canonicalTextChirho.encodeToByteArray())
-            val ownChirho = fileChirho.clipsChirho.filter {
+            fun ownChirho(listChirho: List<JsonObject>) = listChirho.filter {
                 (it["lesson_id_chirho"] as? JsonPrimitive)?.content == verseChirho.idChirho
             }
-            AudioSelectionChirho.recordingsChirho(ownChirho, verseChirho, bookChirho.greekChirho, canonicalChirho, ::decodeClipChirho)
+            AudioSelectionChirho.recordingsChirho(
+                ownChirho(fileChirho.clipsChirho), verseChirho, bookChirho.greekChirho, canonicalChirho, ::decodeClipChirho,
+                readingsChirho = ownChirho(fileChirho.readingsChirho),
+            )
         }
     }
 
@@ -96,7 +99,8 @@ class AudioRepositoryChirho(
                 throw RemoteFailureChirho.InvalidChirho("Invalid recording chapter: ${errorChirho.message}")
             }
             if (fileChirho.schemaVersionChirho != 1 || fileChirho.bookIdChirho != loadedChirho.bookChirho.idChirho ||
-                fileChirho.chapterChirho != loadedChirho.passageChirho.chapterChirho || fileChirho.clipsChirho.size > 2000
+                fileChirho.chapterChirho != loadedChirho.passageChirho.chapterChirho ||
+                fileChirho.clipsChirho.size + fileChirho.readingsChirho.size > 2000
             ) {
                 throw RemoteFailureChirho.InvalidChirho("Invalid recording chapter")
             }

@@ -11,6 +11,8 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import org.junit.Assume.assumeTrue
 import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
+import us.hinneh.readerchirho.audiochirho.HumanReadingChirho
+import us.hinneh.readerchirho.audiochirho.ReadingSourceChirho
 import us.hinneh.readerchirho.contentchirho.BookCatalogueChirho
 import us.hinneh.readerchirho.contentchirho.ContentRepositoryChirho
 import us.hinneh.readerchirho.contentchirho.LoadedVerseChirho
@@ -24,6 +26,9 @@ import us.hinneh.readerchirho.contentchirho.HebrewWordChirho
 import us.hinneh.readerchirho.contentchirho.SourceChirho
 import us.hinneh.readerchirho.remotechirho.RemoteFailureChirho
 import us.hinneh.readerchirho.remotechirho.TransportChirho
+import us.hinneh.readerchirho.remotechirho.sha256HexChirho
+import us.hinneh.readerchirho.videochirho.StagedVideosChirho
+import us.hinneh.readerchirho.videochirho.VideoRecordChirho
 import java.io.File
 import java.io.IOException
 import java.net.URL
@@ -64,11 +69,13 @@ class FakeTransportChirho(private val fallbackChirho: TransportChirho? = null) :
 }
 
 /** The repository's published static tree behind a controllable transport, as the app reads it. */
-class PublishedWorldChirho(rootChirho: File, dispatcherChirho: CoroutineDispatcher) {
+class PublishedWorldChirho(rootChirho: File, dispatcherChirho: CoroutineDispatcher, stagedVideosChirho: StagedVideosChirho? = null) {
     val transportChirho = FakeTransportChirho(FileTransportChirho(rootChirho))
     private val remoteChirho = RemoteClientChirho(transportChirho, null, dispatcherChirho)
     val contentChirho = ContentRepositoryChirho(remoteChirho, { File(BUNDLED_BOOKS_CHIRHO).readBytes() }, dispatcherChirho)
-    val mediaChirho = MediaRepositoryChirho(remoteChirho, workDispatcherChirho = dispatcherChirho)
+    val mediaChirho = MediaRepositoryChirho(
+        remoteChirho, workDispatcherChirho = dispatcherChirho, stagedVideosChirho = stagedVideosChirho, ioDispatcherChirho = dispatcherChirho,
+    )
     val audioChirho = AudioRepositoryChirho(remoteChirho, workDispatcherChirho = dispatcherChirho)
 
     suspend fun loadedChirho(idChirho: String): LoadedVerseChirho {
@@ -79,10 +86,10 @@ class PublishedWorldChirho(rootChirho: File, dispatcherChirho: CoroutineDispatch
 
     companion object {
         /** The published world, or a skipped test when the static tree is unavailable. */
-        fun orSkipChirho(dispatcherChirho: CoroutineDispatcher): PublishedWorldChirho {
+        fun orSkipChirho(dispatcherChirho: CoroutineDispatcher, stagedVideosChirho: StagedVideosChirho? = null): PublishedWorldChirho {
             val rootChirho = staticRootChirho()
             assumeTrue("repository static tree unavailable", rootChirho != null && File(rootChirho, "content-chirho").isDirectory)
-            return PublishedWorldChirho(rootChirho!!, dispatcherChirho)
+            return PublishedWorldChirho(rootChirho!!, dispatcherChirho, stagedVideosChirho)
         }
     }
 }
@@ -94,6 +101,14 @@ fun publishedRecordsChirho(relativePathChirho: String, listKeyChirho: String, le
     return objectChirho.getValue(listKeyChirho).jsonArray.map { it.jsonObject }
         .filter { (it["lesson_id_chirho"] as? JsonPrimitive)?.content == lessonIdChirho }
 }
+
+/** A verse's entries in one audio chapter: clips_chirho plus, when present, the human readings_chirho (GPT, DM #3410). */
+fun audioEntriesChirho(chapterChirho: JsonObject, lessonIdChirho: String): List<JsonObject> = listOf("clips_chirho", "readings_chirho")
+    .flatMap { keyChirho -> chapterChirho[keyChirho]?.jsonArray?.map { it.jsonObject }.orEmpty() }
+    .filter { (it["lesson_id_chirho"] as? JsonPrimitive)?.content == lessonIdChirho }
+
+fun publishedAudioEntriesChirho(relativePathChirho: String, lessonIdChirho: String): List<JsonObject> =
+    audioEntriesChirho(Json.parseToJsonElement(File(requireNotNull(staticRootChirho()), relativePathChirho).readText()).jsonObject, lessonIdChirho)
 
 fun JsonObject.withChirho(keyChirho: String, valueChirho: String?): JsonObject =
     JsonObject(this + (keyChirho to (valueChirho?.let(::JsonPrimitive) ?: JsonNull)))
@@ -173,4 +188,56 @@ class FileTransportChirho(private val rootChirho: File) : TransportChirho {
         if (bytesChirho.size > limitChirho) throw RemoteFailureChirho.TooLargeChirho(limitChirho)
         return bytesChirho
     }
+}
+
+/** A Proverbs verse's canonical-text hash and current standard scene hash in the static tree (placeholders without it). */
+fun proverbsVerseIdentityChirho(lessonIdChirho: String): Pair<String, String> {
+    val rootChirho = staticRootChirho() ?: return "a".repeat(64) to "c".repeat(64)
+    val fileChirho = "proverbs-chirho/chapter-%02d-chirho.json".format(lessonIdChirho.split(".")[1].toInt())
+    fun listChirho(folderChirho: String, keyChirho: String) =
+        Json.parseToJsonElement(File(rootChirho, "$folderChirho/$fileChirho").readText()).jsonObject.getValue(keyChirho).jsonArray.map { it.jsonObject }
+    val verseChirho = listChirho("content-chirho", "verses_chirho").first { (it["id_chirho"] as JsonPrimitive).content == lessonIdChirho }
+    val sceneChirho = listChirho("media-chirho", "scenes_chirho").first {
+        (it["lesson_id_chirho"] as JsonPrimitive).content == lessonIdChirho && ((it["variant_chirho"] as? JsonPrimitive)?.content ?: "standard") == "standard"
+    }
+    return sha256HexChirho((verseChirho.getValue("canonical_text_chirho") as JsonPrimitive).content.encodeToByteArray()) to
+        (sceneChirho.getValue("sha256_chirho") as JsonPrimitive).content
+}
+
+/** Where a video's Be'eri sound was cut from, valid for its book (GPT, DM #3390); the window matches a 4.958 s video. */
+fun sampleReadingSourceChirho(gbtIdChirho: String = "OT/RDB/Pro") = ReadingSourceChirho(
+    kindChirho = "human", readerIdChirho = "rdb-chirho", gbtIdChirho = gbtIdChirho,
+    packageSha256Chirho = "1".repeat(64), chapterSha256Chirho = "2".repeat(64), timingsSha256Chirho = "3".repeat(64),
+    startChirho = 0.0, endChirho = 4.95, chapterDurationChirho = 169.0,
+    attributionChirho = HumanReadingChirho.BEERI_ATTRIBUTION_CHIRHO, licenseChirho = HumanReadingChirho.BEERI_LICENSE_CHIRHO,
+    licenseUrlChirho = HumanReadingChirho.BEERI_LICENSE_URL_CHIRHO,
+)
+
+/** A Proverbs verse video record as GPT's verse-video-chirho.ts defines it (DM #3399), bound to the verse's real text and scene. */
+fun sampleVideoChirho(lessonIdChirho: String = "Prov.1.1", sha256Chirho: String = "b".repeat(64)): VideoRecordChirho {
+    val (canonicalChirho, sceneChirho) = proverbsVerseIdentityChirho(lessonIdChirho)
+    return VideoRecordChirho(
+        lessonIdChirho = lessonIdChirho,
+        assetPathChirho = "/video-chirho/sha256-chirho/$sha256Chirho-chirho.mp4",
+        sha256Chirho = sha256Chirho,
+        bytesChirho = 1_551_755,
+        durationChirho = 4.958,
+        widthChirho = 1108,
+        heightChirho = 832,
+        sceneSha256Chirho = sceneChirho,
+        canonicalSha256Chirho = canonicalChirho,
+        readingLanguageChirho = "he",
+        embeddedReadingChirho = sampleReadingSourceChirho(),
+        attributionChirho = HumanReadingChirho.BEERI_ATTRIBUTION_CHIRHO,
+        licenseChirho = HumanReadingChirho.BEERI_LICENSE_CHIRHO,
+        licenseUrlChirho = HumanReadingChirho.BEERI_LICENSE_URL_CHIRHO,
+        reviewChirho = "pending",
+    )
+}
+
+/** Staged development videos held in memory. */
+class FixedStagedVideosChirho(vararg recordsChirho: VideoRecordChirho) : StagedVideosChirho {
+    private val byVerseChirho = recordsChirho.associateBy { it.lessonIdChirho }
+    override fun recordChirho(verseIdChirho: String): VideoRecordChirho? = byVerseChirho[verseIdChirho]
+    override fun bytesChirho(recordChirho: VideoRecordChirho): ByteArray? = null
 }

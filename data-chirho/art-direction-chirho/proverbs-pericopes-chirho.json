@@ -1,0 +1,576 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Prov",
+	"status_chirho": "editorial visual-reading map; source hashes and exact coverage checked by root; no claim of scholarly consensus",
+	"prepared_by_chirho": "VBLREADER_CHIRHO/claude2_chirho",
+	"prepared_on_chirho": "2026-11-07",
+	"request_chirho": "GPT DM 3467, acting on L.J.'s scene-continuity direction",
+	"source_chirho": {
+		"text_chirho": "Open Scriptures Hebrew Bible (Westminster Leningrad Codex) as installed for Hinneh, Hebrew verse numbering",
+		"manifest_path_chirho": "static/content-chirho/proverbs-chirho/manifest-chirho.json",
+		"manifest_sha256_chirho": "3157491f8e8367866603f2e7b7f6549073cf03fea3925b31cc481fd2670b829e",
+		"revision_chirho": "3d15126fb1ef74867fc1434be1942e837932691f",
+		"book_source_sha256_chirho": "964f99c00239b53b854c4686c99490c8d1ac7664784a30afdfc23781a3abb161"
+	},
+	"conventions_chirho": {
+		"text_facts_chirho": "roles_chirho.text_facts_chirho states only what the verses say, with references.",
+		"art_choices_chirho": "Ages, faces, clothes, scenery, lighting and how figurative language is drawn are art choices, listed in art_choices_chirho.",
+		"literal_continuity_chirho": "True when a unit's verses show the same people, place and time; false for discourse or sayings grouped by theme or syntax.",
+		"episodes_chirho": "Local continuity episodes span units of one story or speech; they are not the universal cast.",
+		"god_unpictured_chirho": "The LORD is never depicted as a person (project rule).",
+		"coverage_chirho": "Every installed verse (915) appears in exactly one unit, contiguous within its chapter."
+	},
+	"counts_chirho": {
+		"verses_chirho": 915,
+		"units_chirho": 608,
+		"episodes_chirho": 11,
+		"multi_verse_units_chirho": 109,
+		"single_verse_units_chirho": 499
+	},
+	"chapters_chirho": [
+		{
+			"chapter_chirho": 1,
+			"verse_count_chirho": 33,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-01-chirho.json",
+			"source_sha256_chirho": "9cc2ec24fd18af0e94df0d5ba73cc7f3ce3a60a8fdb7e9acc7be66058cb985c6",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-001-chirho.json",
+			"units_sha256_chirho": "d5c96d7012825ffc484af2d5ed38a0639a11c49261a1426b111d599a99ef6a8f"
+		},
+		{
+			"chapter_chirho": 2,
+			"verse_count_chirho": 22,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-02-chirho.json",
+			"source_sha256_chirho": "e5e004fc793b4b30e74ef8e7f2196ac4782429d5fe1fe8bbd679946f01d52c03",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-002-chirho.json",
+			"units_sha256_chirho": "12b11eb7619073b4d2eec22762667864af91f13406e6d7fe51511bfe9256548a"
+		},
+		{
+			"chapter_chirho": 3,
+			"verse_count_chirho": 35,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-03-chirho.json",
+			"source_sha256_chirho": "743d9c5ead9e4aa489d657eca469857ffb355ab437e62369cb08f8826d95b2a6",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-003-chirho.json",
+			"units_sha256_chirho": "ef89643d253846f789cc44b294e8b6a054a1f34af53394e013f38f5490fd583f"
+		},
+		{
+			"chapter_chirho": 4,
+			"verse_count_chirho": 27,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-04-chirho.json",
+			"source_sha256_chirho": "5ed26172697f6f9749582e59c1ff1b5a3adcbe158792ea483b110e028825492e",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-004-chirho.json",
+			"units_sha256_chirho": "39940ef2bcff9ae53a1656c0c3fa6007f5588af108b499f89cb5965b3b0040d9"
+		},
+		{
+			"chapter_chirho": 5,
+			"verse_count_chirho": 23,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-05-chirho.json",
+			"source_sha256_chirho": "2fa7e3fd60912bf4b6c247919943e9364cc22479fdcfb33e89eff09a3fadf653",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-005-chirho.json",
+			"units_sha256_chirho": "884cc1eca16d0b943d2adff1df738feae273cd66e44416c301225347431cfcaf"
+		},
+		{
+			"chapter_chirho": 6,
+			"verse_count_chirho": 35,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-06-chirho.json",
+			"source_sha256_chirho": "f363d55506b16f426204e512da7b91be88863a84abb28416c8dbc7313b0805ff",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-006-chirho.json",
+			"units_sha256_chirho": "62006eb8ca0f6bfa7b94ac5a9daee82e62005eead77d2943a3769839059f7c10"
+		},
+		{
+			"chapter_chirho": 7,
+			"verse_count_chirho": 27,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-07-chirho.json",
+			"source_sha256_chirho": "a7e7870ec71894a636fb7da4cd157fea8cd0df9b9a0185bfee81c2c384df01af",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-007-chirho.json",
+			"units_sha256_chirho": "24c2cec0c1c4c56acf856a35c9400c6b163aa7bbea9207e7be8c096031b76bff"
+		},
+		{
+			"chapter_chirho": 8,
+			"verse_count_chirho": 36,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-08-chirho.json",
+			"source_sha256_chirho": "dee2d8378b92a683ea0d2fe74ce4ce9959cd8ccf1bc7381a2af1daff716a4eba",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-008-chirho.json",
+			"units_sha256_chirho": "a1e43fc7e7545dbf66f1a9841b51a5877d250f4891e79b29e484a2353f9a89b5"
+		},
+		{
+			"chapter_chirho": 9,
+			"verse_count_chirho": 18,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-09-chirho.json",
+			"source_sha256_chirho": "74ade3731a9757282a7e797f9986a85ce707ecf01d137cb46ad3accf657d216e",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0000-chirho/chapter-009-chirho.json",
+			"units_sha256_chirho": "df457defd2c19016bc542626bb677be57b5df3097c2cd6824f94257c0908979e"
+		},
+		{
+			"chapter_chirho": 10,
+			"verse_count_chirho": 32,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-10-chirho.json",
+			"source_sha256_chirho": "9100298545bd1631f29c7febcb88bd08ebb122ec1da72083bad74b133cfb5ca3",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-010-chirho.json",
+			"units_sha256_chirho": "5377319440b54a8d1a6e9c3c4950a7ce3865218442cc7badb4dc84c5784fe703"
+		},
+		{
+			"chapter_chirho": 11,
+			"verse_count_chirho": 31,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-11-chirho.json",
+			"source_sha256_chirho": "b0d3f5fc9d81ce549ce7c11966ec19d81344b97e21b208ff5fca3d535f4e9910",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-011-chirho.json",
+			"units_sha256_chirho": "b339966e2565bd59d0fcd475612653d78980f0e36096c395caa162fab70efa26"
+		},
+		{
+			"chapter_chirho": 12,
+			"verse_count_chirho": 28,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-12-chirho.json",
+			"source_sha256_chirho": "3cec0d5796537bb9d5e4eedb7c23285f2268f158bdf33340266efb1dfbada469",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-012-chirho.json",
+			"units_sha256_chirho": "29cb38e926258fa02ecd5ab5c815f9f808224f0a7449fd430533e29404f924f2"
+		},
+		{
+			"chapter_chirho": 13,
+			"verse_count_chirho": 25,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-13-chirho.json",
+			"source_sha256_chirho": "3818f826b1629512fa1d87b7187cd9fdd95288675b72a70b36aa8ac9fc933756",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-013-chirho.json",
+			"units_sha256_chirho": "f86c3eb85395bf24e2bf446222ba43862622aa7218f2a8af9a1287f74d0c01f0"
+		},
+		{
+			"chapter_chirho": 14,
+			"verse_count_chirho": 35,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-14-chirho.json",
+			"source_sha256_chirho": "d6074bd8c3051a813be670d254c3666ad202b8bc92399f2ee5e272bdc1f551d3",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-014-chirho.json",
+			"units_sha256_chirho": "07f18bee9f5d607819857cb54f26725a111569751013bbba7325e1a8440167bb"
+		},
+		{
+			"chapter_chirho": 15,
+			"verse_count_chirho": 33,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-15-chirho.json",
+			"source_sha256_chirho": "34a09298c2fc0b95c15c8a9bcf518f06759c180284954f84cda1bfce1c0caaaa",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-015-chirho.json",
+			"units_sha256_chirho": "7430468765f468d2934d2be3d451e0094b465ac7daaa34db5b004fafcc663743"
+		},
+		{
+			"chapter_chirho": 16,
+			"verse_count_chirho": 33,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-16-chirho.json",
+			"source_sha256_chirho": "4c8172d786de358bf44f324a47265dc7aa76997d615db1ff6a729a9ea14873e7",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-016-chirho.json",
+			"units_sha256_chirho": "28023c88e4a09ff7c9dbd9ff46181713650251216bb3a1a2a9ad1d6ffd9de62b"
+		},
+		{
+			"chapter_chirho": 17,
+			"verse_count_chirho": 28,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-17-chirho.json",
+			"source_sha256_chirho": "dd6e03d29ff66a16d270e6f4c9abb40aa2e7e6a3cd01838eaf37ce7554d4926e",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-017-chirho.json",
+			"units_sha256_chirho": "a5fe47733f466bcdcd54f23cfbb2af1f65fde0977010056511efc7c64f8bd76c"
+		},
+		{
+			"chapter_chirho": 18,
+			"verse_count_chirho": 24,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-18-chirho.json",
+			"source_sha256_chirho": "25298adf06b11dc097619c51d714a169b34ee27cb0216f2953c60bd90f20f449",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-018-chirho.json",
+			"units_sha256_chirho": "5e024b4a97042d34dc1b61d70dda50ea8ff8eca9fd682e733a6dd6f23872e6d9"
+		},
+		{
+			"chapter_chirho": 19,
+			"verse_count_chirho": 29,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-19-chirho.json",
+			"source_sha256_chirho": "d1800543bf0d17c08e993f3e6a026c8698c03c2b02cd6effed9e9c7f573d56e7",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0010-chirho/chapter-019-chirho.json",
+			"units_sha256_chirho": "d9a454b659528129b3d3338878f680bf44f90718541568d1538b74c5de59241b"
+		},
+		{
+			"chapter_chirho": 20,
+			"verse_count_chirho": 30,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-20-chirho.json",
+			"source_sha256_chirho": "0054327944e273cf7b41f4074830f75367a82cc388418ed64fae4b89bbbb3fe9",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-020-chirho.json",
+			"units_sha256_chirho": "5f9f4760f344f53d41304bc4d52c0a9ef10dcffae0de3ecc8273371a39d208a8"
+		},
+		{
+			"chapter_chirho": 21,
+			"verse_count_chirho": 31,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-21-chirho.json",
+			"source_sha256_chirho": "6bf980c41c1ae04f1bc404c0b1ac337c055c7033477f20e31b7d7bb05b4d791d",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-021-chirho.json",
+			"units_sha256_chirho": "d333ba5c7ec24f58370a18ce5781dba08b8bcfdd2d45735bcf992b3b3bffc253"
+		},
+		{
+			"chapter_chirho": 22,
+			"verse_count_chirho": 29,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-22-chirho.json",
+			"source_sha256_chirho": "d7fece5f9e66d9003d08cc5f8b8b7e2945d782ff62e7f24da5f142595ece600a",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-022-chirho.json",
+			"units_sha256_chirho": "e5ffbb7e9c6eb2738d9ab9822419d5fc09dffe2429d57cae2f4ff0d9f92d2382"
+		},
+		{
+			"chapter_chirho": 23,
+			"verse_count_chirho": 35,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-23-chirho.json",
+			"source_sha256_chirho": "84bbd4994e855bf6f33e86541bb1e09370ecd2f1e0397423c90347a350506019",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-023-chirho.json",
+			"units_sha256_chirho": "267c5fb21801bbd429661aaaec55305123d81b5b10b51f880df1036248f68c81"
+		},
+		{
+			"chapter_chirho": 24,
+			"verse_count_chirho": 34,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-24-chirho.json",
+			"source_sha256_chirho": "2f3f99548128974d43b89cffba7183b6f20a861bd73ef31fd519ec632f05e24a",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-024-chirho.json",
+			"units_sha256_chirho": "49c7c137040e5c7e78f331683162a3e69caa444a2e0ac4912d9e933568953fc5"
+		},
+		{
+			"chapter_chirho": 25,
+			"verse_count_chirho": 28,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-25-chirho.json",
+			"source_sha256_chirho": "9353c172d9fe71b9248aa62285de289a2603dfea1616e7194415774621a35dba",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-025-chirho.json",
+			"units_sha256_chirho": "67fbbaef2bb744d8c109d185f22ec4ed32085e3426c813234128fb65acd91a0c"
+		},
+		{
+			"chapter_chirho": 26,
+			"verse_count_chirho": 28,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-26-chirho.json",
+			"source_sha256_chirho": "bb1093728625ee2dcea22653d768a3a39e9bfabcecf90ddba4717d55f58dc91f",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-026-chirho.json",
+			"units_sha256_chirho": "35d34473bd72508793734cf3e3e56da9301503930316edfccadcdbded0c6fa85"
+		},
+		{
+			"chapter_chirho": 27,
+			"verse_count_chirho": 27,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-27-chirho.json",
+			"source_sha256_chirho": "72ebd09a04003d0bcaa5b7cd3dbae6be7cb0036775d399459f516aa6e783b627",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-027-chirho.json",
+			"units_sha256_chirho": "0299acac11efa22689a8641bb57cfbe1bee4c723b3e0c4ad61bd96703494d507"
+		},
+		{
+			"chapter_chirho": 28,
+			"verse_count_chirho": 28,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-28-chirho.json",
+			"source_sha256_chirho": "776a214ba978eda07d7b6b7c5c04b70d93d19c72c0b45b6faa64eb2eba3cbe93",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-028-chirho.json",
+			"units_sha256_chirho": "19b30d3f9aceb8ed169da0d579d2c90ef85766df9b80d4cf92fb570f06338852"
+		},
+		{
+			"chapter_chirho": 29,
+			"verse_count_chirho": 27,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-29-chirho.json",
+			"source_sha256_chirho": "39eb0a7894c6def778134a728a422e9e62eef13b1df5006cf9e21066f2fac0a4",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0020-chirho/chapter-029-chirho.json",
+			"units_sha256_chirho": "856dd770aa8573ca38c4c75b4d3b966d4540e943704df1fd313323e952b7c14b"
+		},
+		{
+			"chapter_chirho": 30,
+			"verse_count_chirho": 33,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-30-chirho.json",
+			"source_sha256_chirho": "66e423b41b13747f6329f2ecb3d07632f78f8b5ceb6dd67834134955650d53d9",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0030-chirho/chapter-030-chirho.json",
+			"units_sha256_chirho": "af9be6ac33cf363818b0cd1728b2aaae2b739e8695ee13a31b02c4033ff76593"
+		},
+		{
+			"chapter_chirho": 31,
+			"verse_count_chirho": 31,
+			"source_path_chirho": "static/content-chirho/proverbs-chirho/chapter-31-chirho.json",
+			"source_sha256_chirho": "09e845f2b173a5f8ac960bf822570cbb5f85a3634f9c3e4a48804a1d076ca079",
+			"units_path_chirho": "data-chirho/art-direction-chirho/pericopes-chirho/0030-chirho/chapter-031-chirho.json",
+			"units_sha256_chirho": "81d0dc0308498b20a0fdcb871331577e913eb246ced06d9e3139853b9eb8512f"
+		}
+	],
+	"sections_chirho": [
+		{
+			"section_id_chirho": "prologue-instructions-chirho",
+			"start_chirho": "Prov.1.1",
+			"end_chirho": "Prov.9.18",
+			"title_chirho": "Prologue and the father's instructions, with Wisdom's speeches",
+			"note_chirho": "Extended discourses addressed to 'my son'; personified Wisdom and Folly speak; one observed narrative in chapter 7."
+		},
+		{
+			"section_id_chirho": "solomon-sayings-1-chirho",
+			"start_chirho": "Prov.10.1",
+			"end_chirho": "Prov.22.16",
+			"title_chirho": "Proverbs of Solomon (10:1 heading)",
+			"note_chirho": "Mostly independent two-line sayings; adjacent verses rarely share literal people, clothes or setting."
+		},
+		{
+			"section_id_chirho": "words-of-the-wise-chirho",
+			"start_chirho": "Prov.22.17",
+			"end_chirho": "Prov.24.22",
+			"title_chirho": "Words of the wise",
+			"note_chirho": "Short admonitions, usually two or three verses each, with a fuller vignette on drunkenness (23:29-35)."
+		},
+		{
+			"section_id_chirho": "more-words-of-the-wise-chirho",
+			"start_chirho": "Prov.24.23",
+			"end_chirho": "Prov.24.34",
+			"title_chirho": "Further sayings of the wise",
+			"note_chirho": "Short sayings, ending with the narrator's walk past the sluggard's field (24:30-34)."
+		},
+		{
+			"section_id_chirho": "hezekiah-collection-chirho",
+			"start_chirho": "Prov.25.1",
+			"end_chirho": "Prov.29.27",
+			"title_chirho": "Proverbs of Solomon copied by Hezekiah's men (25:1 heading)",
+			"note_chirho": "Mostly independent sayings, with a few comparisons or subjects that run over two to five verses."
+		},
+		{
+			"section_id_chirho": "agur-chirho",
+			"start_chirho": "Prov.30.1",
+			"end_chirho": "Prov.30.33",
+			"title_chirho": "The words of Agur son of Jakeh",
+			"note_chirho": "A first-person confession and prayer (30:1-9), then numerical and other sayings."
+		},
+		{
+			"section_id_chirho": "lemuel-chirho",
+			"start_chirho": "Prov.31.1",
+			"end_chirho": "Prov.31.9",
+			"title_chirho": "The words of King Lemuel, taught by his mother",
+			"note_chirho": "A mother's instruction to her son the king."
+		},
+		{
+			"section_id_chirho": "woman-of-valor-chirho",
+			"start_chirho": "Prov.31.10",
+			"end_chirho": "Prov.31.31",
+			"title_chirho": "The woman of valor (Hebrew alphabetic acrostic)",
+			"note_chirho": "One portrait poem of a capable wife and her household."
+		}
+	],
+	"universal_cast_mentions_chirho": [
+		{
+			"person_chirho": "Solomon",
+			"verses_chirho": ["Prov.1.1", "Prov.10.1", "Prov.25.1"],
+			"note_chirho": "Named as the proverbs' source in headings. He recurs across Kings and Chronicles, so he is a universal-cast person."
+		},
+		{
+			"person_chirho": "David",
+			"verses_chirho": ["Prov.1.1"],
+			"note_chirho": "Named only as Solomon's father; universal-cast person, not depicted by default."
+		},
+		{
+			"person_chirho": "Hezekiah king of Judah",
+			"verses_chirho": ["Prov.25.1"],
+			"note_chirho": "His men copied the proverbs. He recurs in Kings, Chronicles and Isaiah, so he is a universal-cast person."
+		},
+		{
+			"person_chirho": "the generic king of the sayings",
+			"verses_chirho": ["Prov.24.21", "Prov.25.2", "Prov.25.3", "Prov.25.5", "Prov.25.6"],
+			"note_chirho": "Sayings about 'the king' are general; do not make him Solomon or any recurring person."
+		},
+		{
+			"person_chirho": "Agur, Jakeh, Ithiel, Ucal, Lemuel and Lemuel's mother",
+			"verses_chirho": ["Prov.30.1", "Prov.31.1"],
+			"note_chirho": "Appear only here: local figures, not universal cast."
+		}
+	],
+	"recurring_figures_chirho": [
+		{
+			"figure_chirho": "the father-teacher and his son",
+			"where_chirho": "Prov 1:8; 2:1; 3:1, 11, 21; 4:1, 10, 20; 5:1, 7; 6:1, 20; 7:1, 24; also 'my son' sayings in 23-27",
+			"text_facts_chirho": "An unnamed father teaches 'my son'; the mother's teaching is named (1:8; 6:20).",
+			"recommendation_chirho": "A consistent teacher-and-son pair across the chapter 1-7 discourses would be an art choice, not a text fact. In chapters 10-29 'my son' sayings stand alone."
+		},
+		{
+			"figure_chirho": "Wisdom personified",
+			"where_chirho": "1:20-33; 3:13-18; 4:5-9; 7:4; 8:1-36; 9:1-12",
+			"text_facts_chirho": "Feminine personification: she calls, builds a house, sends maidens, was present at creation.",
+			"recommendation_chirho": "Keep her consistent at least within 1:20-33, chapter 8 and 9:1-12. She is a personification, not a historical person, so she belongs to Proverbs rather than to the universal cast."
+		},
+		{
+			"figure_chirho": "Folly, the foolish woman",
+			"where_chirho": "9:13-18",
+			"text_facts_chirho": "Sits at her door and calls the simple; distinct from Wisdom.",
+			"recommendation_chirho": "Local to 9:13-18; keep her visibly distinct from Wisdom."
+		},
+		{
+			"figure_chirho": "the strange or adulterous woman",
+			"where_chirho": "2:16-19; 5:3-20; 6:24-35; 7:5-27; 23:27-28",
+			"text_facts_chirho": "A recurring type warned against; the text does not make her one individual across chapters.",
+			"recommendation_chirho": "One woman within chapter 7's episode; elsewhere a type, so a single recurring face is not implied. Depict modestly."
+		}
+	],
+	"episodes_chirho": [
+		{
+			"episode_id_chirho": "prov-01-sinners-invitation-chirho",
+			"start_chirho": "Prov.1.8",
+			"end_chirho": "Prov.1.19",
+			"unit_ids_chirho": [
+				"prov-001-008-009-chirho",
+				"prov-001-010-014-chirho",
+				"prov-001-015-019-chirho"
+			],
+			"title_chirho": "The father's warning against the sinners' invitation",
+			"roles_chirho": [
+				"father (teacher)",
+				"son",
+				"mother (named, silent)",
+				"the gang of sinners",
+				"their hypothetical victim"
+			],
+			"setting_and_time_chirho": "The teaching itself has no stated setting; the ambush on the road is the gang's proposal, not narrated.",
+			"continuity_chirho": "Keep the father and son the same through 1:8-19. The gang appears only as the scene the son is warned about."
+		},
+		{
+			"episode_id_chirho": "prov-01-wisdom-calls-chirho",
+			"start_chirho": "Prov.1.20",
+			"end_chirho": "Prov.1.33",
+			"unit_ids_chirho": [
+				"prov-001-020-023-chirho",
+				"prov-001-024-028-chirho",
+				"prov-001-029-033-chirho"
+			],
+			"title_chirho": "Wisdom calls in the city",
+			"roles_chirho": ["Wisdom personified", "the simple, scoffers and fools"],
+			"setting_and_time_chirho": "Streets, open squares, chief crossings and the openings of the city gates (1:20-21); no time of day.",
+			"continuity_chirho": "Keep Wisdom's figure and the public setting the same through 1:20-33; match her depiction in chapters 8-9 if those are kept consistent."
+		},
+		{
+			"episode_id_chirho": "prov-04-fathers-teaching-chirho",
+			"start_chirho": "Prov.4.1",
+			"end_chirho": "Prov.4.9",
+			"unit_ids_chirho": ["prov-004-001-004-chirho", "prov-004-005-009-chirho"],
+			"title_chirho": "A father passes on his own father's teaching",
+			"roles_chirho": [
+				"father (speaking now)",
+				"his children",
+				"his own father (remembered)",
+				"his mother (remembered)"
+			],
+			"setting_and_time_chirho": "Present teaching, with a remembered childhood (4:3-4).",
+			"continuity_chirho": "The speaking father is the same man in the present and, younger, in his remembered childhood; the grandfather appears only in the memory."
+		},
+		{
+			"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+			"start_chirho": "Prov.7.1",
+			"end_chirho": "Prov.7.27",
+			"unit_ids_chirho": [
+				"prov-007-001-005-chirho",
+				"prov-007-006-009-chirho",
+				"prov-007-010-013-chirho",
+				"prov-007-014-020-chirho",
+				"prov-007-021-023-chirho",
+				"prov-007-024-027-chirho"
+			],
+			"title_chirho": "The young man and the strange woman, watched from the window",
+			"roles_chirho": [
+				"narrator-father at his window",
+				"son or children (addressees of the frame)",
+				"the young man lacking sense",
+				"the woman in a harlot's attire",
+				"her absent husband"
+			],
+			"setting_and_time_chirho": "The narrator's house window with a lattice (7:6); the street near her corner and the way to her house (7:8); twilight, evening, then black night (7:9); her house only as the destination (7:8, 7:27).",
+			"continuity_chirho": "One episode from 7:1 to 7:27. The narrator in 7:6 and 7:7 is the same man and matches the teaching father of the frames; the young man is the same from 7:7 to 7:23; the woman the same from 7:10 to 7:23; the time darkens to night from 7:9 on and stays night through her speech. The husband is not present. 7:1-5 and 7:24-27 frame the story as teaching."
+		},
+		{
+			"episode_id_chirho": "prov-08-wisdom-speaks-chirho",
+			"start_chirho": "Prov.8.1",
+			"end_chirho": "Prov.8.36",
+			"unit_ids_chirho": [
+				"prov-008-001-005-chirho",
+				"prov-008-006-011-chirho",
+				"prov-008-012-016-chirho",
+				"prov-008-017-021-chirho",
+				"prov-008-022-031-chirho",
+				"prov-008-032-036-chirho"
+			],
+			"title_chirho": "Wisdom's great speech",
+			"roles_chirho": ["Wisdom personified", "the sons of men", "rulers (generic)"],
+			"setting_and_time_chirho": "Heights, crossroads, gates and city entrances (8:1-3); 8:22-31 moves back to before and during creation.",
+			"continuity_chirho": "Keep Wisdom's figure the same through 8:1-36. In 8:22-31 show creation with her present, never God as a person."
+		},
+		{
+			"episode_id_chirho": "prov-09-two-invitations-chirho",
+			"start_chirho": "Prov.9.1",
+			"end_chirho": "Prov.9.18",
+			"unit_ids_chirho": [
+				"prov-009-001-006-chirho",
+				"prov-009-007-012-chirho",
+				"prov-009-013-018-chirho"
+			],
+			"title_chirho": "Wisdom's banquet and Folly's door",
+			"roles_chirho": [
+				"Wisdom personified",
+				"her maidens",
+				"the simple",
+				"Folly (the foolish woman)",
+				"passers-by",
+				"Folly's dead guests"
+			],
+			"setting_and_time_chirho": "Wisdom's house of seven pillars and the city heights (9:1-3); Folly's door and seat on the city heights (9:14).",
+			"continuity_chirho": "Two contrasting women in one chapter: keep each consistent within her section and clearly distinct from the other."
+		},
+		{
+			"episode_id_chirho": "prov-23-drunkard-chirho",
+			"start_chirho": "Prov.23.29",
+			"end_chirho": "Prov.23.35",
+			"unit_ids_chirho": ["prov-023-029-035-chirho"],
+			"title_chirho": "The drunkard",
+			"roles_chirho": ["the drunkard"],
+			"setting_and_time_chirho": "Lingering at wine (23:30), then waking and seeking more (23:35); no named place.",
+			"continuity_chirho": "One man through 23:29-35; the similes are not literal scenes."
+		},
+		{
+			"episode_id_chirho": "prov-24-sluggard-field-chirho",
+			"start_chirho": "Prov.24.30",
+			"end_chirho": "Prov.24.34",
+			"unit_ids_chirho": ["prov-024-030-034-chirho"],
+			"title_chirho": "The field of the sluggard",
+			"roles_chirho": ["narrator", "the absent lazy owner"],
+			"setting_and_time_chirho": "A neglected field and vineyard with thorns, nettles and a broken stone wall (24:30-31).",
+			"continuity_chirho": "The same field and the same observing narrator through 24:30-34."
+		},
+		{
+			"episode_id_chirho": "prov-30-agur-chirho",
+			"start_chirho": "Prov.30.1",
+			"end_chirho": "Prov.30.9",
+			"unit_ids_chirho": [
+				"prov-030-001-004-chirho",
+				"prov-030-005-006-chirho",
+				"prov-030-007-009-chirho"
+			],
+			"title_chirho": "Agur's confession and prayer",
+			"roles_chirho": ["Agur son of Jakeh", "Ithiel and Ucal (addressed, uncertain reading)"],
+			"setting_and_time_chirho": "None stated.",
+			"continuity_chirho": "Agur is the same speaker through 30:1-9. The numerical sayings after 30:9 need not show him."
+		},
+		{
+			"episode_id_chirho": "prov-31-lemuel-mother-chirho",
+			"start_chirho": "Prov.31.1",
+			"end_chirho": "Prov.31.9",
+			"unit_ids_chirho": [
+				"prov-031-001-003-chirho",
+				"prov-031-004-007-chirho",
+				"prov-031-008-009-chirho"
+			],
+			"title_chirho": "King Lemuel taught by his mother",
+			"roles_chirho": ["King Lemuel", "his mother"],
+			"setting_and_time_chirho": "None stated; a royal setting is implied by 'king' (31:1, 31:4).",
+			"continuity_chirho": "The same mother and son through 31:1-9."
+		},
+		{
+			"episode_id_chirho": "prov-31-woman-of-valor-chirho",
+			"start_chirho": "Prov.31.10",
+			"end_chirho": "Prov.31.31",
+			"unit_ids_chirho": [
+				"prov-031-010-012-chirho",
+				"prov-031-013-015-chirho",
+				"prov-031-016-018-chirho",
+				"prov-031-019-022-chirho",
+				"prov-031-023-025-chirho",
+				"prov-031-026-027-chirho",
+				"prov-031-028-031-chirho"
+			],
+			"title_chirho": "The woman of valor",
+			"roles_chirho": [
+				"the woman of valor",
+				"her husband",
+				"her children",
+				"her household and maidservants",
+				"the merchant",
+				"the poor and needy"
+			],
+			"setting_and_time_chirho": "Her house, a field and vineyard, the city gates; night work (31:15, 31:18) and a snowy season (31:21). The poem is a portrait, not one day's chronology.",
+			"continuity_chirho": "One woman, one husband and one household through 31:10-31; her clothing of fine linen and purple is stated (31:22)."
+		}
+	]
+}

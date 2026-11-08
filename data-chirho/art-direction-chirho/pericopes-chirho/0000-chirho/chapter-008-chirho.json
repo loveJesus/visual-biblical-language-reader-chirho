@@ -1,0 +1,133 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Prov",
+	"chapter_chirho": 8,
+	"source_sha256_chirho": "dee2d8378b92a683ea0d2fe74ce4ce9959cd8ccf1bc7381a2af1daff716a4eba",
+	"units_chirho": [
+		{
+			"unit_id_chirho": "prov-008-001-005-chirho",
+			"start_chirho": "Prov.8.1",
+			"end_chirho": "Prov.8.5",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-08-wisdom-speaks-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Wisdom stands on the heights, at the crossroads and city gates, calling all people.",
+			"title_chirho": "Wisdom calls at the heights and gates",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom, personified",
+					"text_facts_chirho": "cries at the heights, crossroads, gates and doors (8:1-3)"
+				},
+				{
+					"role_chirho": "the sons of men",
+					"text_facts_chirho": "addressed (8:4)"
+				}
+			],
+			"art_choices_chirho": [
+				"Wisdom as a woman follows the personification; keep her consistent through chapter 8 and with 9:1-6"
+			]
+		},
+		{
+			"unit_id_chirho": "prov-008-006-011-chirho",
+			"start_chirho": "Prov.8.6",
+			"end_chirho": "Prov.8.11",
+			"verse_count_chirho": 6,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-08-wisdom-speaks-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Her words are truthful and plain; instruction better than silver and gold.",
+			"title_chirho": "My words are right; better than rubies",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom",
+					"text_facts_chirho": "speaker"
+				}
+			]
+		},
+		{
+			"unit_id_chirho": "prov-008-012-016-chirho",
+			"start_chirho": "Prov.8.12",
+			"end_chirho": "Prov.8.16",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-08-wisdom-speaks-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Wisdom dwells with prudence; rulers decree justice by her.",
+			"title_chirho": "By me kings reign",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom",
+					"text_facts_chirho": "speaker"
+				},
+				{
+					"role_chirho": "kings, princes, nobles, judges",
+					"text_facts_chirho": "rule by her (8:15-16); generic, not Solomon"
+				}
+			]
+		},
+		{
+			"unit_id_chirho": "prov-008-017-021-chirho",
+			"start_chirho": "Prov.8.17",
+			"end_chirho": "Prov.8.21",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-08-wisdom-speaks-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Riches and honour with her; she walks in the way of righteousness.",
+			"title_chirho": "I love those who love me",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom",
+					"text_facts_chirho": "speaker"
+				}
+			]
+		},
+		{
+			"unit_id_chirho": "prov-008-022-031-chirho",
+			"start_chirho": "Prov.8.22",
+			"end_chirho": "Prov.8.31",
+			"verse_count_chirho": 10,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-08-wisdom-speaks-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Before the depths, mountains and fields, Wisdom was there as the LORD established heaven, sea and earth.",
+			"title_chirho": "Wisdom at the creation",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom",
+					"text_facts_chirho": "brought forth before creation; beside him as a master workman, rejoicing (8:22-31)"
+				}
+			],
+			"art_choices_chirho": ["scenes of depths, springs, mountains, sky and sea boundaries"],
+			"uncertainty_chirho": "A time transition back to before creation. God is not depicted as a person (project rule). 8:30 'master workman' or 'little child' is debated."
+		},
+		{
+			"unit_id_chirho": "prov-008-032-036-chirho",
+			"start_chirho": "Prov.8.32",
+			"end_chirho": "Prov.8.36",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-08-wisdom-speaks-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Closing appeal: watching daily at her gates; whoever finds her finds life.",
+			"title_chirho": "Blessed is the one who listens",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom",
+					"text_facts_chirho": "speaker"
+				},
+				{
+					"role_chirho": "children",
+					"text_facts_chirho": "addressed (8:32)"
+				}
+			]
+		}
+	]
+}

@@ -24,14 +24,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import us.hinneh.readerchirho.R
 import us.hinneh.readerchirho.audiochirho.ClipChirho
-import us.hinneh.readerchirho.contentchirho.GreekWordChirho
 import us.hinneh.readerchirho.contentchirho.HebrewVerseChirho
 import us.hinneh.readerchirho.contentchirho.HebrewWordChirho
 import us.hinneh.readerchirho.contentchirho.VerseChirho
@@ -39,7 +38,10 @@ import us.hinneh.readerchirho.contentchirho.WordChirho
 import us.hinneh.readerchirho.mediachirho.ImageLoaderChirho
 import us.hinneh.readerchirho.mediachirho.WordPictureChirho
 
-/** "Look closer": the word, its sourced analysis, picture, meaning and recording. */
+/**
+ * "Look closer": the word, its picture, meaning and grammar, and its recording. How meanings and
+ * grammar are sourced is said once at the end of the reading key, not under every word (L.J., 2026-11-06).
+ */
 @Composable
 fun WordSheetChirho(
     verseChirho: VerseChirho,
@@ -53,11 +55,10 @@ fun WordSheetChirho(
     onSpeakChirho: () -> Unit,
     onDismissChirho: () -> Unit,
 ) {
-    ClosableSheetChirho(onDismissChirho, fullHeightChirho = true) {
-        Column(
-            Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(bottom = 32.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
+    ClosableSheetChirho(
+        onDismissChirho,
+        fullHeightChirho = true,
+        titleChirho = {
             Text(
                 sourceTextChirho(wordChirho.textChirho, greekChirho),
                 fontFamily = SourceFontChirho,
@@ -65,29 +66,21 @@ fun WordSheetChirho(
                 style = MaterialTheme.typography.headlineSmall.copy(textDirection = if (greekChirho) TextDirection.Ltr else TextDirection.Rtl),
                 modifier = Modifier.semantics { heading() },
             )
-            val lemmaKeyChirho = wordChirho.lemmaIdChirho + ((wordChirho as? HebrewWordChirho)?.lemmaAugmentChirho ?: "")
-            Text("$lemmaKeyChirho · ${stringResource(R.string.lemma_unverified_chirho)}", style = MaterialTheme.typography.bodySmall)
+        },
+    ) {
+        Column(
+            Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(bottom = 32.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+        ) {
+            LexicalFormChirho(wordChirho, greekChirho)
             SpeechRowChirho(clipChirho, playingChirho, onSpeakChirho)
-            when (wordChirho) {
-                is HebrewWordChirho -> {
-                    val statusChirho = when (wordChirho.rootStatusChirho) {
-                        "not_applicable" -> R.string.root_not_applicable_chirho
-                        "traditional" -> R.string.root_traditional_chirho
-                        else -> R.string.root_unresolved_chirho
-                    }
-                    Text(
-                        "${stringResource(statusChirho)} · ${stringResource(R.string.root_relationship_chirho)} ",
-                        style = MaterialTheme.typography.bodyMedium,
-                    )
-                    Text(sourceTextChirho(wordChirho.rootTextChirho ?: "—", false), fontFamily = SourceFontChirho, fontSize = 24.sp)
-                }
-                is GreekWordChirho -> Unit
-            }
-            Text(morphologyForChirho(wordChirho, spanishChirho), style = MaterialTheme.typography.bodyMedium)
+            // Only a reviewed root is shown; no published word has one yet.
+            (wordChirho as? HebrewWordChirho)?.let { hebrewChirho -> hebrewChirho.rootTextChirho?.let { RootChirho(it, hebrewChirho.rootNoteChirho) } }
             PictureBlockChirho(pictureChirho, imagesChirho, wordChirho)
             HorizontalDivider(color = InkChirho.LINE_CHIRHO)
             Text(stringResource(R.string.meaning_morphology_chirho), style = MaterialTheme.typography.titleMedium, modifier = Modifier.semantics { heading() })
             MeaningChirho(verseChirho, wordChirho)
+            Text(grammarChirho(wordChirho, spanishChirho), style = MaterialTheme.typography.bodyMedium)
             (wordChirho as? HebrewWordChirho)?.qereChirho?.takeIf { it.isNotEmpty() }?.let { readingsChirho ->
                 Text(stringResource(R.string.qere_label_chirho), style = MaterialTheme.typography.labelLarge)
                 for (readingChirho in readingsChirho) {
@@ -96,12 +89,40 @@ fun WordSheetChirho(
                 }
                 Text(stringResource(R.string.qere_note_chirho), style = MaterialTheme.typography.bodySmall)
             }
-            (wordChirho as? HebrewWordChirho)?.let { Text(englishDataChirho(it.rootNoteChirho), style = MaterialTheme.typography.bodyMedium) }
-            Text(englishDataChirho(wordChirho.sourceNoteChirho), style = MaterialTheme.typography.bodyMedium)
-            val codeLabelChirho = if (greekChirho) stringResource(R.string.source_morphology_chirho) else "OSHB:"
-            Text("$codeLabelChirho ${wordChirho.rawMorphologyChirho}", fontFamily = FontFamily.Monospace, fontSize = 14.sp, color = InkChirho.QUIET_CHIRHO)
         }
     }
+}
+
+private val STRONG_NUMBER_CHIRHO = Regex("[HG][1-9][0-9]{0,4}[a-z]?")
+
+/** The dictionary form and its Strong's number; OSHB's internal particle ids are not shown. */
+@Composable
+private fun LexicalFormChirho(wordChirho: WordChirho, greekChirho: Boolean) {
+    val numberChirho = (wordChirho.lemmaIdChirho + ((wordChirho as? HebrewWordChirho)?.lemmaAugmentChirho ?: ""))
+        .takeIf { STRONG_NUMBER_CHIRHO.matches(it) }
+    val formChirho = wordChirho.lexicalFormChirho.takeIf { it.isNotBlank() }
+    if (formChirho == null && numberChirho == null) return
+    val labelChirho = stringResource(R.string.lexical_form_chirho)
+    Text(
+        buildAnnotatedString {
+            if (formChirho != null) {
+                append("$labelChirho ")
+                append(sourceTextChirho(formChirho, greekChirho))
+            }
+            if (formChirho != null && numberChirho != null) append(" · ")
+            if (numberChirho != null) append(numberChirho)
+        },
+        style = MaterialTheme.typography.bodySmall,
+    )
+}
+
+@Composable
+private fun RootChirho(rootChirho: String, noteChirho: String) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Text(stringResource(R.string.traditional_root_chirho) + " ", style = MaterialTheme.typography.bodyMedium)
+        Text(sourceTextChirho(rootChirho, false), fontFamily = SourceFontChirho, fontSize = 24.sp)
+    }
+    Text(englishDataChirho(noteChirho), style = MaterialTheme.typography.bodySmall)
 }
 
 @Composable
@@ -116,7 +137,6 @@ private fun SpeechRowChirho(clipChirho: ClipChirho?, playingChirho: Boolean, onS
             Text(stringResource(if (playingChirho) R.string.stop_chirho else R.string.hear_word_chirho), modifier = Modifier.padding(start = 8.dp))
         }
     }
-    Text(stringResource(R.string.audition_note_chirho, clipChirho.voiceNameChirho), style = MaterialTheme.typography.bodySmall)
 }
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -135,15 +155,8 @@ private fun PictureBlockChirho(pictureChirho: WordPictureChirho?, imagesChirho: 
                 Text(stringResource(R.string.icon_unavailable_chirho), style = MaterialTheme.typography.bodyMedium)
             } else if (pictureChirho.generalChirho) {
                 Text("${stringResource(R.string.general_picture_chirho)} ${recordChirho.contextualMeaningChirho}.", style = MaterialTheme.typography.bodyMedium)
-                Text(stringResource(R.string.general_picture_caveat_chirho), style = MaterialTheme.typography.bodySmall)
             } else {
                 Text(englishDataChirho(recordChirho.contextualMeaningChirho), style = MaterialTheme.typography.bodyMedium)
-            }
-            recordChirho?.let {
-                Text(
-                    stringResource(if (it.artReviewChirho == "approved") R.string.art_approved_chirho else R.string.art_pending_chirho),
-                    style = MaterialTheme.typography.bodySmall,
-                )
             }
         }
     }
@@ -164,39 +177,27 @@ private fun PictureBlockChirho(pictureChirho: WordPictureChirho?, imagesChirho: 
     }
 }
 
+/**
+ * The word's meaning. Approved Global Bible Tools and Berean glosses are explained once in the
+ * reading key; only a gloss written for Hinneh itself carries a label, so the two never blend.
+ */
 @Composable
 private fun MeaningChirho(verseChirho: VerseChirho, wordChirho: WordChirho) {
     val glossChirho = wordChirho.glossChirho
-    when (wordChirho) {
-        is HebrewWordChirho -> {
-            Text(glossChirho?.let(::englishDataChirho) ?: AnnotatedString(stringResource(R.string.gloss_unavailable_chirho)), style = MaterialTheme.typography.bodyLarge)
-            val originChirho = wordChirho.glossOriginChirho ?: (verseChirho as? HebrewVerseChirho)?.glossOriginChirho
-            Text(
-                stringResource(
-                    when {
-                        originChirho == "gbt_approved" -> R.string.origin_gbt_chirho
-                        glossChirho != null -> R.string.origin_app_chirho
-                        else -> R.string.origin_unavailable_chirho
-                    },
-                ),
-                style = MaterialTheme.typography.bodySmall,
-            )
-            Text(englishDataChirho(wordChirho.analysisChirho), style = MaterialTheme.typography.bodyMedium)
-        }
-        is GreekWordChirho -> {
-            Text(
-                when (glossChirho) {
-                    null -> AnnotatedString(stringResource(R.string.gloss_unavailable_chirho))
-                    "-" -> AnnotatedString(stringResource(R.string.not_separately_short_chirho))
-                    else -> englishDataChirho(glossChirho)
-                },
-                style = MaterialTheme.typography.bodyLarge,
-            )
-            Text(stringResource(R.string.berean_gloss_note_chirho), style = MaterialTheme.typography.bodySmall)
-            Text(
-                "${stringResource(R.string.lexical_form_chirho)} ${wordChirho.lexicalFormChirho} · ${wordChirho.lemmaIdChirho}",
-                style = MaterialTheme.typography.bodyMedium,
-            )
-        }
+    Text(
+        when (glossChirho) {
+            null -> AnnotatedString(stringResource(R.string.gloss_unavailable_chirho))
+            "-" -> AnnotatedString(stringResource(R.string.not_separately_short_chirho))
+            else -> englishDataChirho(glossChirho)
+        },
+        style = MaterialTheme.typography.bodyLarge,
+    )
+    if (glossChirho != null && wordChirho is HebrewWordChirho) {
+        val originChirho = wordChirho.glossOriginChirho ?: (verseChirho as? HebrewVerseChirho)?.glossOriginChirho
+        if (originChirho != "gbt_approved") Text(stringResource(R.string.origin_app_chirho), style = MaterialTheme.typography.bodySmall)
     }
 }
+
+/** One grammar line: the source's own English description, or the translated labels in Spanish. */
+private fun grammarChirho(wordChirho: WordChirho, spanishChirho: Boolean): AnnotatedString =
+    if (spanishChirho) AnnotatedString(morphologyForChirho(wordChirho, true)) else englishDataChirho(wordChirho.analysisChirho)

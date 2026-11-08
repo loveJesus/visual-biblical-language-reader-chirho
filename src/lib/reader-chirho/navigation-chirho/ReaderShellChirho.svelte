@@ -100,6 +100,16 @@
 	let mediaRequestChirho = 0;
 	let mediaSceneCountChirho = $state(0);
 	let mediaLemmaCountChirho = $state(0);
+	// L.J. (2026-11-07): production details belong in an info view, so the counts sit in the verse's Sources fold.
+	const artProgressChirho = $derived(
+		mediaReadyChirho
+			? readerTChirho('art_progress_chirho', {
+					book_chirho: bookLabelChirho(bookChirho),
+					scenes_chirho: mediaSceneCountChirho,
+					lemmas_chirho: mediaLemmaCountChirho
+				})
+			: null
+	);
 	let contextualIconsChirho = $derived(iconsForLessonChirho(workerIconsChirho, lessonChirho));
 	let verseChoicesChirho = $derived(
 		chaptersChirho[chapterChirho - 1] ? verseNumbersChirho(chaptersChirho[chapterChirho - 1]) : [1]
@@ -408,13 +418,6 @@
 							: changeBookChirho(bookChirho)}>{readerTChirho('retry_chirho')}</button
 				>{/if}
 		</p>
-		{#if mediaReadyChirho}<p class="art-progress-chirho">
-				{readerTChirho('art_progress_chirho', {
-					book_chirho: bookLabelChirho(bookChirho),
-					scenes_chirho: mediaSceneCountChirho,
-					lemmas_chirho: mediaLemmaCountChirho
-				})}
-			</p>{/if}
 	</nav>
 {/snippet}
 {#snippet verseNavigationChirho(playbackChirho: Snippet)}
@@ -453,6 +456,7 @@
 			presentationChirho={workerScenesChirho[greekLessonChirho.id_chirho] ?? null}
 			videoChirho={workerVideosChirho[greekLessonChirho.id_chirho] ?? null}
 			{spanishChirho}
+			{artProgressChirho}
 		/>
 	{:else}<ReaderChirho
 			{introVisibleChirho}
@@ -471,6 +475,7 @@
 			{headerChirho}
 			{verseNavigationChirho}
 			{spanishChirho}
+			{artProgressChirho}
 		/>
 	{/if}
 </div>
@@ -480,11 +485,6 @@
 		margin: 0 0 16px;
 		font: 400 25px/1.2 var(--serif-chirho);
 		color: #355443;
-	}
-	.art-progress-chirho {
-		margin: 0.5rem 0 0;
-		color: #526757;
-		font-size: 0.8rem;
 	}
 	.navigation-chirho {
 		margin: 1rem 0;

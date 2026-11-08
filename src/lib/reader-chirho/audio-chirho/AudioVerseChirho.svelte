@@ -23,20 +23,27 @@
 	let {
 		lessonChirho,
 		verseNavigationChirho,
-		videoChirho = null
+		videoChirho = null,
+		onHumanReadingChirho
 	}: {
 		lessonChirho: LessonChirho | GreekLessonChirho;
 		verseNavigationChirho?: Snippet<[Snippet]>;
 		/** The catalogue's verse video, if any; it plays only as the clock of this same reading. */
 		videoChirho?: unknown;
+		/** Reports the verse's validated human reading (or null), so its credit can be shown in the Sources fold. */
+		onHumanReadingChirho?: (readingChirho: RecordingChirho | null) => void;
 	} = $props();
 	let recordingsChirho = $state<RecordingChirho[]>([]);
-	// Workflow: verse-media-chirho.md. The verse button plays this reading first, so it is credited.
+	// Workflow: verse-media-chirho.md. The verse button plays this reading first; its credit is shown by
+	// the reader in the verse's Sources fold (L.J., 2026-11-07: credits in an info view, not the main UI).
 	const humanReadingChirho = $derived(
 		recordingsChirho.find(
 			(clipChirho) => clipChirho.token_id_chirho === null && isHumanRecordingChirho(clipChirho)
 		)
 	);
+	$effect(() => {
+		onHumanReadingChirho?.(humanReadingChirho ?? null);
+	});
 	// The video's own sound is the clock only when it is exactly this reading (root's shared rule).
 	// The scene separately checks that the video starts from the picture displayed there.
 	const videoReadingChirho = $derived.by(() => {
@@ -207,17 +214,6 @@
 	<p class="small-note-chirho" id="audio-status-chirho" data-audio-status-chirho aria-live="polite">
 		{audioTChirho('checking_chirho')}
 	</p>
-	{#if humanReadingChirho?.reading_source_chirho}
-		<!-- The CC BY-SA attribution stays verbatim in English, as published; only the link text follows the locale. -->
-		<p class="small-note-chirho" data-reading-credit-chirho>
-			<span lang="en">{humanReadingChirho.reading_source_chirho.attribution_chirho}</span> ·
-			<a
-				href="https://creativecommons.org/licenses/by-sa/3.0/"
-				target="_blank"
-				rel="external noreferrer">{audioTChirho('license_chirho')}</a
-			>
-		</p>
-	{/if}
 	{#if lessonChirho.language_chirho === 'grc'}<p class="small-note-chirho">
 			{audioTChirho('rendition_coverage_chirho')}
 		</p>{/if}

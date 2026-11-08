@@ -16,6 +16,7 @@ import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho.MODERN_ASPIRATES_
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho.MODERN_CHIRHO
 import us.hinneh.readerchirho.contentchirho.LoadedVerseChirho
 import us.hinneh.readerchirho.contentchirho.WordChirho
+import us.hinneh.readerchirho.publishedAudioEntriesChirho
 import us.hinneh.readerchirho.publishedRecordsChirho
 import us.hinneh.readerchirho.remotechirho.ResourceKindChirho
 import us.hinneh.readerchirho.remotechirho.TrustedOriginChirho
@@ -44,13 +45,13 @@ class AudioSelectionTestChirho {
         for (wordChirho in loadedChirho.verseChirho.wordsChirho) {
             assertNotNull(wordChirho.textChirho, AudioSelectionChirho.bestChirho(recordingsChirho.wordsChirho[wordChirho.idChirho], false, MODERN_ASPIRATES_CHIRHO))
         }
-        val verseChirho = requireNotNull(AudioSelectionChirho.bestChirho(recordingsChirho.versesChirho, false, MODERN_ASPIRATES_CHIRHO))
+        // A published human reading plays first (HumanReadingTestChirho); among AI readings the connected one leads.
+        val verseChirho = requireNotNull(recordingsChirho.versesChirho.firstOrNull { it.readingSourceChirho == null })
         assertEquals(AudioSelectionChirho.HEBREW_CONNECTED_RECIPE_CHIRHO, verseChirho.recipeIdChirho)
         val clipsChirho = recordingsChirho.versesChirho + recordingsChirho.wordsChirho.values.flatten()
         assertTrue(clipsChirho.all { TrustedOriginChirho.isTrustedPathChirho(it.assetPathChirho, ResourceKindChirho.AUDIO_CLIP_CHIRHO) })
-        // Every clip published for this verse passes the same rules the website applies.
-        val rawChirho = publishedRecordsChirho("audio-chirho/proverbs-chirho/chapter-26-chirho.json", "clips_chirho", "Prov.26.1")
-        assertEquals(rawChirho.size, countChirho(recordingsChirho))
+        // Every clip and human reading published for this verse passes the same rules the website applies.
+        assertEquals(publishedAudioEntriesChirho("audio-chirho/proverbs-chirho/chapter-26-chirho.json", "Prov.26.1").size, countChirho(recordingsChirho))
     }
 
     @Test

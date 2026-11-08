@@ -18,9 +18,59 @@ public struct VerseVideoChirho: Codable, Sendable, Hashable {
     public let licenseChirho: String
     public let licenseUrlChirho: String
     public let reviewChirho: String
+    private let hasReadingKeysChirho: Bool
+
+    enum CodingKeys: String, CodingKey {
+        case lessonIdChirho, assetPathChirho, sha256Chirho, bytesChirho, durationChirho
+        case widthChirho, heightChirho, sceneSha256Chirho, canonicalSha256Chirho
+        case readingLanguageChirho, embeddedReadingChirho, attributionChirho
+        case licenseChirho, licenseUrlChirho, reviewChirho
+    }
+
+    public init(from decoderChirho: any Decoder) throws {
+        let fieldsChirho = try decoderChirho.container(keyedBy: CodingKeys.self)
+        lessonIdChirho = try fieldsChirho.decode(String.self, forKey: .lessonIdChirho)
+        assetPathChirho = try fieldsChirho.decode(String.self, forKey: .assetPathChirho)
+        sha256Chirho = try fieldsChirho.decode(String.self, forKey: .sha256Chirho)
+        bytesChirho = try fieldsChirho.decode(Int.self, forKey: .bytesChirho)
+        durationChirho = try fieldsChirho.decode(Double.self, forKey: .durationChirho)
+        widthChirho = try fieldsChirho.decode(Int.self, forKey: .widthChirho)
+        heightChirho = try fieldsChirho.decode(Int.self, forKey: .heightChirho)
+        sceneSha256Chirho = try fieldsChirho.decode(String.self, forKey: .sceneSha256Chirho)
+        canonicalSha256Chirho = try fieldsChirho.decode(String.self, forKey: .canonicalSha256Chirho)
+        readingLanguageChirho = try fieldsChirho.decodeIfPresent(String.self, forKey: .readingLanguageChirho)
+        embeddedReadingChirho = try fieldsChirho.decodeIfPresent(HumanReadingSourceChirho.self, forKey: .embeddedReadingChirho)
+        attributionChirho = try fieldsChirho.decode(String.self, forKey: .attributionChirho)
+        licenseChirho = try fieldsChirho.decode(String.self, forKey: .licenseChirho)
+        licenseUrlChirho = try fieldsChirho.decode(String.self, forKey: .licenseUrlChirho)
+        reviewChirho = try fieldsChirho.decode(String.self, forKey: .reviewChirho)
+        // Missing soundtrack information is not a declaration of silence. Keep the record
+        // decodable so refusing its video never removes the valid still or word pictures.
+        hasReadingKeysChirho = fieldsChirho.contains(.readingLanguageChirho)
+            && fieldsChirho.contains(.embeddedReadingChirho)
+    }
+
+    public func encode(to encoderChirho: any Encoder) throws {
+        var fieldsChirho = encoderChirho.container(keyedBy: CodingKeys.self)
+        try fieldsChirho.encode(lessonIdChirho, forKey: .lessonIdChirho)
+        try fieldsChirho.encode(assetPathChirho, forKey: .assetPathChirho)
+        try fieldsChirho.encode(sha256Chirho, forKey: .sha256Chirho)
+        try fieldsChirho.encode(bytesChirho, forKey: .bytesChirho)
+        try fieldsChirho.encode(durationChirho, forKey: .durationChirho)
+        try fieldsChirho.encode(widthChirho, forKey: .widthChirho)
+        try fieldsChirho.encode(heightChirho, forKey: .heightChirho)
+        try fieldsChirho.encode(sceneSha256Chirho, forKey: .sceneSha256Chirho)
+        try fieldsChirho.encode(canonicalSha256Chirho, forKey: .canonicalSha256Chirho)
+        try fieldsChirho.encode(readingLanguageChirho, forKey: .readingLanguageChirho)
+        try fieldsChirho.encode(embeddedReadingChirho, forKey: .embeddedReadingChirho)
+        try fieldsChirho.encode(attributionChirho, forKey: .attributionChirho)
+        try fieldsChirho.encode(licenseChirho, forKey: .licenseChirho)
+        try fieldsChirho.encode(licenseUrlChirho, forKey: .licenseUrlChirho)
+        try fieldsChirho.encode(reviewChirho, forKey: .reviewChirho)
+    }
 
     func validChirho(_ verseChirho: VerseDisplayChirho, _ sceneChirho: SceneRecordChirho) -> Bool {
-        guard lessonIdChirho == verseChirho.idChirho,
+        guard hasReadingKeysChirho, lessonIdChirho == verseChirho.idChirho,
               canonicalSha256Chirho == DigestChirho.sha256HexChirho(verseChirho.canonicalTextChirho),
               sceneSha256Chirho == sceneChirho.sha256Chirho,
               DigestChirho.isHexChirho(sha256Chirho),

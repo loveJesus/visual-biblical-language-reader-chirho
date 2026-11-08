@@ -79,6 +79,8 @@ enum MediaRulesChirho {
               mediaChirho.scenesChirho.count == entryChirho.sceneCountChirho,
               mediaChirho.iconsChirho.count == entryChirho.iconCountChirho,
               (mediaChirho.lemmaIconsChirho?.count ?? 0) == (entryChirho.lemmaIconCountChirho ?? 0),
+              (mediaChirho.videosChirho?.count ?? 0) <= 200,
+              (mediaChirho.videosChirho ?? []).allSatisfy({ $0.lessonIdChirho.hasPrefix(prefixChirho) }),
               mediaChirho.scenesChirho.allSatisfy({ $0.lessonIdChirho.hasPrefix(prefixChirho) }),
               mediaChirho.iconsChirho.allSatisfy({ $0.lessonIdChirho?.hasPrefix(prefixChirho) == true })
         else { throw RemoteErrorChirho.invalidChirho("media chapter") }
@@ -95,8 +97,12 @@ enum MediaRulesChirho {
         for (tokenIdChirho, pictureChirho) in contextualPicturesChirho(mediaChirho.iconsChirho, verseChirho) {
             picturesChirho[tokenIdChirho] = pictureChirho
         }
-        let videoChirho = sceneChirho.flatMap { sceneValueChirho in
-            mediaChirho.videosChirho?.prefix(400).first { $0.validChirho(verseChirho, sceneValueChirho) }
+        let videoChirho: VerseVideoChirho? = sceneChirho.flatMap { sceneValueChirho in
+            guard let videosChirho = mediaChirho.videosChirho, videosChirho.count <= 200 else { return nil }
+            let matchesChirho = videosChirho.filter { $0.lessonIdChirho == verseChirho.idChirho }
+            guard matchesChirho.count == 1, let matchChirho = matchesChirho.first,
+                  matchChirho.validChirho(verseChirho, sceneValueChirho) else { return nil }
+            return matchChirho
         }
         return VerseMediaChirho(sceneChirho: sceneChirho, picturesChirho: picturesChirho, videoChirho: videoChirho)
     }

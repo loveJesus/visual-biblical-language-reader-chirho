@@ -38,6 +38,12 @@ class TrustedOriginTestChirho {
     }
 
     @Test
+    fun websitePagesOpenOnTheTrustedOriginInTheInterfaceLanguage() {
+        assertEquals("https://hinneh.us/privacy-chirho/?lang_chirho=en", TrustedOriginChirho.sitePageChirho("privacy-chirho", spanishChirho = false))
+        assertEquals("https://hinneh.us/contact-chirho/?lang_chirho=es", TrustedOriginChirho.sitePageChirho("contact-chirho", spanishChirho = true))
+    }
+
+    @Test
     fun traversalQueriesOtherKindsAndOtherHostsAreRefused() {
         val refusedChirho = listOf(
             "/content-chirho/../.env" to ResourceKindChirho.CONTENT_CHAPTER_CHIRHO,

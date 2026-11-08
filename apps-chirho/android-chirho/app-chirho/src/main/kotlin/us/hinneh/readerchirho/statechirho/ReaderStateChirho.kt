@@ -1,6 +1,8 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 package us.hinneh.readerchirho.statechirho
 
+import us.hinneh.readerchirho.audiochirho.AudioSelectionChirho
+import us.hinneh.readerchirho.audiochirho.ClipChirho
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.audiochirho.VerseRecordingsChirho
 import us.hinneh.readerchirho.contentchirho.BookCatalogueChirho
@@ -8,6 +10,7 @@ import us.hinneh.readerchirho.contentchirho.BookManifestChirho
 import us.hinneh.readerchirho.contentchirho.LoadedVerseChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.mediachirho.VerseMediaChirho
+import us.hinneh.readerchirho.videochirho.VideoRecordChirho
 
 enum class FailureChirho { BOOK_CHIRHO, VERSE_CHIRHO, ABSENT_CHIRHO }
 
@@ -31,18 +34,65 @@ data class ReaderUiStateChirho(
     val verseChirho: VerseLoadChirho = VerseLoadChirho.LoadingChirho,
     val mediaChirho: OptionalChirho<VerseMediaChirho> = OptionalChirho.LoadingChirho,
     val recordingsChirho: OptionalChirho<VerseRecordingsChirho> = OptionalChirho.LoadingChirho,
-    val renditionChirho: GreekRenditionChirho = GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO,
+    /** The reader's saved Greek choice; null until one is made, which means automatic. */
+    val renditionChoiceChirho: GreekRenditionChirho? = null,
     val speedChoiceChirho: Float? = null,
+    /** This visit's verse video failed to play; cleared when another passage loads. */
+    val videoFailedChirho: Boolean = false,
 ) {
     val greekChirho: Boolean get() = catalogueChirho?.bookChirho(passageChirho.bookIdChirho)?.greekChirho == true
 
-    /** The website's defaults: Greek 12% slower (0.88), Hebrew gentle (0.85). */
-    val speedChirho: Float get() = speedChoiceChirho ?: if (greekChirho) 0.88f else 0.85f
+    /**
+     * The Greek reading in effect. With no saved choice it follows the website (AudioVerseChirho.svelte):
+     * Modern with Aspirates when this verse has an Aspirates verse reading, otherwise Modern. Either way a
+     * plain Modern recording never stands in for Aspirates in a rough-breathing verse (compatibleChirho).
+     */
+    val renditionChirho: GreekRenditionChirho
+        get() = renditionChoiceChirho ?: if (greekChirho) automaticRenditionChirho(recordingsChirho) else GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO
+
+    /** Normal for Hebrew and Greek, as on the website since 2026-11-03 (L.J.: "let's start at normal"). */
+    val speedChirho: Float get() = speedChoiceChirho ?: DEFAULT_SPEED_CHIRHO
+
+    /** The verse recording Play would play under the reading now in effect, if any. */
+    val verseClipChirho: ClipChirho?
+        get() = (recordingsChirho as? OptionalChirho.ReadyChirho)?.valueChirho
+            ?.let { AudioSelectionChirho.bestChirho(it.versesChirho, greekChirho, renditionChirho) }
+
+    /**
+     * The verse video shown in the scene's place and played by Play. As on the website (speech-controls), a video
+     * that failed is not tried again on this visit while a recording can be read over the still instead; with no
+     * recording to fall back on, Play may try the video again.
+     */
+    val playableVideoChirho: VideoRecordChirho?
+        get() {
+            val videoChirho = (mediaChirho as? OptionalChirho.ReadyChirho)?.valueChirho?.videoChirho ?: return null
+            return if (videoFailedChirho && verseClipChirho != null) null else videoChirho
+        }
+
+    /** Whether Previous/Next (button or swipe) has a verse to go to; a manifest of another book does not count. */
+    fun canStepChirho(forwardChirho: Boolean): Boolean {
+        val currentManifestChirho = manifestChirho?.takeIf { it.bookIdChirho == passageChirho.bookIdChirho } ?: return false
+        return neighborChirho(currentManifestChirho, passageChirho, forwardChirho) != null
+    }
+
+    companion object {
+        const val DEFAULT_SPEED_CHIRHO = 1f
+
+        /** Until the verse's recordings arrive, the preferred Modern with Aspirates stands. */
+        fun automaticRenditionChirho(recordingsChirho: OptionalChirho<VerseRecordingsChirho>): GreekRenditionChirho {
+            val readyChirho = recordingsChirho as? OptionalChirho.ReadyChirho ?: return GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO
+            return if (readyChirho.valueChirho.versesChirho.any { it.pronunciationChirho == "modern_greek_aspirates" }) {
+                GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO
+            } else {
+                GreekRenditionChirho.MODERN_CHIRHO
+            }
+        }
+    }
 }
 
-/** Saved reading choices; the passage itself is never persisted across fresh launches. */
+/** Saved reading choices; the passage itself is never persisted across fresh launches. Null means not chosen. */
 interface ReaderPreferencesChirho {
-    var renditionChirho: GreekRenditionChirho
+    var renditionChirho: GreekRenditionChirho?
     var speedChirho: Float?
 }
 

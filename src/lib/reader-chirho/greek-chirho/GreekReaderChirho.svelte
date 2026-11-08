@@ -1,12 +1,14 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
 	import StudyAidLinkChirho from '$lib/bible-chirho/StudyAidLinkChirho.svelte';
-	import { specificSourceNoteChirho } from '$lib/bible-chirho/study-aids-chirho';
+	import { verseStudyNotesChirho } from '$lib/bible-chirho/study-aids-chirho';
 	import { installIpaChirho } from '../controls-chirho/ipa-controls-chirho';
 	import { lexiconLinkChirho } from '$lib/bible-chirho/lexicon-links-chirho';
 	import SceneChirho from '$lib/reader-chirho/scene-chirho/SceneChirho.svelte';
 	import PictureNoteChirho from '../PictureNoteChirho.svelte';
 	import AudioVerseChirho from '../audio-chirho/AudioVerseChirho.svelte';
+	import ReadingCreditChirho from '../audio-chirho/ReadingCreditChirho.svelte';
+	import type { RecordingChirho } from '../audio-chirho/recordings-chirho';
 	import SpeechButtonChirho from '../audio-chirho/SpeechButtonChirho.svelte';
 	import { installSpeechChirho } from '../audio-chirho/speech-controls-chirho';
 	import { onMount, type Snippet } from 'svelte';
@@ -40,8 +42,11 @@
 		presentationChirho = null,
 		iconsChirho = {},
 		spanishChirho = null,
-		videoChirho = null
+		videoChirho = null,
+		artProgressChirho = null
 	}: {
+		/** This book's artwork counts, listed in the Sources fold. */
+		artProgressChirho?: string | null;
 		/** The chapter catalogue's record for this verse, unvalidated; the scene and player check it. */
 		videoChirho?: unknown;
 		introVisibleChirho?: boolean;
@@ -53,6 +58,9 @@
 		spanishChirho?: SpanishLayerResultChirho | null;
 	} = $props();
 	const spanishLayerChirho = $derived(readyLayerChirho(spanishChirho));
+	// A caution repeated by every word is shown once, folded with the sources; cards keep their own notes.
+	const studyNotesChirho = $derived(verseStudyNotesChirho(lessonChirho.tokens_chirho));
+	let humanReadingChirho = $state<RecordingChirho | null>(null);
 	const referenceLabelChirho = $derived(
 		referenceChirho(lessonChirho.id_chirho, localeStateChirho.currentChirho)
 	);
@@ -101,7 +109,12 @@
 		</div>
 		<section class="reading-grid-chirho" aria-label={readerTChirho('reading_grid_greek_chirho')}>
 			<div class="verse-panel-chirho">
-				<AudioVerseChirho {lessonChirho} {verseNavigationChirho} {videoChirho} />
+				<AudioVerseChirho
+					{lessonChirho}
+					{verseNavigationChirho}
+					{videoChirho}
+					onHumanReadingChirho={(readingChirho) => (humanReadingChirho = readingChirho)}
+				/>
 				{#key lessonChirho.id_chirho}<GreekPassageChirho
 						{lessonChirho}
 						{iconsChirho}
@@ -198,8 +211,16 @@
 									{readerTChirho('source_morphology_chirho')}
 									<code>{tokenChirho.raw_morphology_chirho}</code>
 								</p>
-								{#if specificSourceNoteChirho(tokenChirho)}<p class="quiet-note-chirho" lang="en">
-										{specificSourceNoteChirho(tokenChirho)}
+								{#if studyNotesChirho.cardNotesChirho.get(tokenChirho.id_chirho)}<p
+										class="quiet-note-chirho"
+										lang="en"
+									>
+										{studyNotesChirho.cardNotesChirho.get(tokenChirho.id_chirho)}
+									</p>{/if}
+								{#if studyNotesChirho.verseNotesChirho.length}<p class="verse-note-link-chirho">
+										<a href="#verse-notes-chirho" data-word-jump-chirho="verse-notes-chirho"
+											>{readerTChirho('verse_note_link_chirho')}</a
+										>
 									</p>{/if}
 								{#each lessonChirho.source_notes_chirho ?? [] as noteChirho, indexChirho (indexChirho)}
 									{#if noteChirho.kind_chirho === 'gloss_editor_note' && noteChirho.before_token_id_chirho === tokenChirho.id_chirho}<p
@@ -245,6 +266,15 @@
 						{noteChirho.text_chirho}
 					</p>{/if}
 			{/each}
+			{#if studyNotesChirho.verseNotesChirho.length}
+				<!-- Workflow: local-reader-chirho.md. A caution every word shares is kept once, folded here. -->
+				<details class="verse-notes-chirho" id="verse-notes-chirho" tabindex="-1">
+					<summary>{readerTChirho('verse_notes_summary_chirho')}</summary>
+					{#each studyNotesChirho.verseNotesChirho as noteChirho (noteChirho)}<p lang="en">
+							{noteChirho}
+						</p>{/each}
+				</details>
+			{/if}
 			<details class="canonical-details-chirho">
 				<summary>{readerTChirho('reveal_canonical_greek_chirho')}</summary>
 				<p class="canonical-chirho" lang="grc" dir="ltr">{lessonChirho.canonical_text_chirho}</p>
@@ -253,6 +283,9 @@
 			<details class="sources-details-chirho">
 				<summary>{readerTChirho('sources_licenses_chirho')}</summary>
 				<ul>
+					{#if humanReadingChirho}<li>
+							<ReadingCreditChirho readingChirho={humanReadingChirho} />
+						</li>{/if}
 					{#each sourcesShownChirho as sourceChirho (sourceChirho.id_chirho)}<li>
 							{#if sourceChirho.url_chirho}<a
 									href={sourceChirho.url_chirho}
@@ -266,6 +299,7 @@
 								})}<br />SHA-256 {sourceChirho.sha256_chirho}</small
 							>
 						</li>{/each}
+					{#if artProgressChirho}<li><p>{artProgressChirho}</p></li>{/if}
 				</ul>
 			</details>
 		</section>

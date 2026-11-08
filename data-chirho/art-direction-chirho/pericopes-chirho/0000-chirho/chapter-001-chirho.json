@@ -1,0 +1,180 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Prov",
+	"chapter_chirho": 1,
+	"source_sha256_chirho": "9cc2ec24fd18af0e94df0d5ba73cc7f3ce3a60a8fdb7e9acc7be66058cb985c6",
+	"units_chirho": [
+		{
+			"unit_id_chirho": "prov-001-001-007-chirho",
+			"start_chirho": "Prov.1.1",
+			"end_chirho": "Prov.1.7",
+			"verse_count_chirho": 7,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "prologue",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Heading naming Solomon, the book's purposes (1:2-6) and its motto, the fear of the LORD (1:7).",
+			"title_chirho": "Title, purpose and motto",
+			"roles_chirho": [
+				{
+					"role_chirho": "Solomon son of David, king of Israel",
+					"text_facts_chirho": "named as the source of the proverbs (1:1)"
+				}
+			],
+			"art_choices_chirho": [
+				"any depiction of Solomon writing or teaching is a framing choice; the verse is a heading"
+			]
+		},
+		{
+			"unit_id_chirho": "prov-001-008-009-chirho",
+			"start_chirho": "Prov.1.8",
+			"end_chirho": "Prov.1.9",
+			"verse_count_chirho": 2,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": "prov-01-sinners-invitation-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Opening appeal to heed father and mother; their teaching is a garland and a chain (1:9).",
+			"title_chirho": "Hear your father's instruction",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				},
+				{
+					"role_chirho": "mother",
+					"text_facts_chirho": "her law (teaching) is named, 1:8; she does not speak"
+				}
+			]
+		},
+		{
+			"unit_id_chirho": "prov-001-010-014-chirho",
+			"start_chirho": "Prov.1.10",
+			"end_chirho": "Prov.1.14",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": "prov-01-sinners-invitation-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "The gang's invitation is quoted as one speech (1:11-14): ambush the innocent, share one purse.",
+			"title_chirho": "If sinners entice you",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				},
+				{
+					"role_chirho": "sinners",
+					"text_facts_chirho": "a group who entice the son, plan to lie in wait for blood (1:11)"
+				},
+				{
+					"role_chirho": "the innocent",
+					"text_facts_chirho": "the intended victim of the ambush, hypothetical (1:11)"
+				}
+			],
+			"art_choices_chirho": [
+				"number, ages and dress of the gang",
+				"the road or place of the ambush"
+			],
+			"uncertainty_chirho": "The ambush is the gang's proposal inside the father's warning, not a narrated event."
+		},
+		{
+			"unit_id_chirho": "prov-001-015-019-chirho",
+			"start_chirho": "Prov.1.15",
+			"end_chirho": "Prov.1.19",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": "prov-01-sinners-invitation-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "The father's answer: avoid their path; they lie in wait for their own blood (1:18).",
+			"title_chirho": "Do not walk with them",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				}
+			],
+			"uncertainty_chirho": "The bird and net (1:17) is a comparison, not a scene element."
+		},
+		{
+			"unit_id_chirho": "prov-001-020-023-chirho",
+			"start_chirho": "Prov.1.20",
+			"end_chirho": "Prov.1.23",
+			"verse_count_chirho": 4,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-01-wisdom-calls-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Personified Wisdom raises her voice in public places and calls the simple and scoffers to turn.",
+			"title_chirho": "Wisdom calls in the streets",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom, personified",
+					"text_facts_chirho": "feminine ('she'), cries aloud in the street, squares, gate openings (1:20-21)"
+				},
+				{
+					"role_chirho": "the simple, scoffers and fools",
+					"text_facts_chirho": "addressed (1:22)"
+				}
+			],
+			"art_choices_chirho": [
+				"Wisdom shown as a woman follows the text's personification; her face, age and clothes are art choices"
+			],
+			"uncertainty_chirho": "Personification, not a historical person."
+		},
+		{
+			"unit_id_chirho": "prov-001-024-028-chirho",
+			"start_chirho": "Prov.1.24",
+			"end_chirho": "Prov.1.28",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-01-wisdom-calls-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Because they refused, she will laugh at their calamity; distress comes like a storm and whirlwind (1:27).",
+			"title_chirho": "Refused, she warns of calamity",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom, personified",
+					"text_facts_chirho": "speaker"
+				},
+				{
+					"role_chirho": "those who refused",
+					"text_facts_chirho": "they will call and not be answered (1:28)"
+				}
+			],
+			"uncertainty_chirho": "The storm and whirlwind are comparisons for coming calamity."
+		},
+		{
+			"unit_id_chirho": "prov-001-029-033-chirho",
+			"start_chirho": "Prov.1.29",
+			"end_chirho": "Prov.1.33",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-01-wisdom-calls-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Consequences: the complacent destroyed; whoever listens dwells safely (1:33).",
+			"title_chirho": "The end of the two paths",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom, personified",
+					"text_facts_chirho": "speaker"
+				}
+			]
+		}
+	]
+}

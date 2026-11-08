@@ -1,22 +1,35 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 package us.hinneh.readerchirho.uichirho
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.material3.Typography
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.semantics.heading
-import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.sp
+
+/** Hinneh's own text size (Settings › Text size), multiplied with the device's font scale. */
+val LocalTextScaleChirho = staticCompositionLocalOf { 1f }
+
+/**
+ * Applies Hinneh's text size to everything inside. It always multiplies the device's own font
+ * scale, so a sheet (which opens in its own window and resets density) can apply it again without
+ * compounding. Every text size in the app is in sp, so all text scales together.
+ */
+@Composable
+fun ProvideTextScaleChirho(contentChirho: @Composable () -> Unit) {
+    val densityChirho = LocalDensity.current
+    val fontScaleChirho = LocalConfiguration.current.fontScale * LocalTextScaleChirho.current
+    CompositionLocalProvider(LocalDensity provides Density(densityChirho.density, fontScaleChirho), content = contentChirho)
+}
 
 /** The website's paper-and-ink reading palette. */
 object InkChirho {
@@ -64,13 +77,4 @@ fun HinnehThemeChirho(contentChirho: @Composable () -> Unit) {
         typography = TypographyChirho,
         content = contentChirho,
     )
-}
-
-/** A small uppercase eyebrow above a serif section heading, read as one heading. */
-@Composable
-fun SectionHeadingChirho(eyebrowChirho: String, headingChirho: String, modifier: Modifier = Modifier) {
-    Column(modifier.padding(top = 20.dp, bottom = 8.dp).semantics(mergeDescendants = true) { heading() }) {
-        Text(eyebrowChirho.uppercase(), style = MaterialTheme.typography.labelSmall)
-        Text(headingChirho, style = MaterialTheme.typography.titleMedium)
-    }
 }

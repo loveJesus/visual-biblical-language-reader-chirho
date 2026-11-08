@@ -1,0 +1,111 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Prov",
+	"chapter_chirho": 5,
+	"source_sha256_chirho": "2fa7e3fd60912bf4b6c247919943e9364cc22479fdcfb33e89eff09a3fadf653",
+	"units_chirho": [
+		{
+			"unit_id_chirho": "prov-005-001-006-chirho",
+			"start_chirho": "Prov.5.1",
+			"end_chirho": "Prov.5.6",
+			"verse_count_chirho": 6,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "The strange woman's smooth speech; her end bitter as wormwood, her feet go down to death.",
+			"title_chirho": "Her lips drip honey",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				},
+				{
+					"role_chirho": "the strange woman",
+					"text_facts_chirho": "smooth lips (5:3), unstable ways (5:6); a type"
+				}
+			],
+			"art_choices_chirho": ["modest depiction"]
+		},
+		{
+			"unit_id_chirho": "prov-005-007-014-chirho",
+			"start_chirho": "Prov.5.7",
+			"end_chirho": "Prov.5.14",
+			"verse_count_chirho": 8,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Warning, with the projected regret of the young man at his life's end (5:11-14).",
+			"title_chirho": "Keep far from her door",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				},
+				{
+					"role_chirho": "the ruined man",
+					"text_facts_chirho": "laments at the end of his life (5:11-14); a projected future, not a narrated event"
+				}
+			],
+			"uncertainty_chirho": "The lament is hypothetical: a possible future, spoken now."
+		},
+		{
+			"unit_id_chirho": "prov-005-015-020-chirho",
+			"start_chirho": "Prov.5.15",
+			"end_chirho": "Prov.5.20",
+			"verse_count_chirho": 6,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Faithfulness to the wife of your youth, in water and well imagery.",
+			"title_chirho": "Drink from your own cistern",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				},
+				{
+					"role_chirho": "the wife of your youth",
+					"text_facts_chirho": "loving doe, graceful roe (5:19)"
+				}
+			],
+			"uncertainty_chirho": "Cistern and spring are figures for marriage."
+		},
+		{
+			"unit_id_chirho": "prov-005-021-023-chirho",
+			"start_chirho": "Prov.5.21",
+			"end_chirho": "Prov.5.23",
+			"verse_count_chirho": 3,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "The wicked are held by the cords of their own sins.",
+			"title_chirho": "The LORD sees every path",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				}
+			]
+		}
+	]
+}

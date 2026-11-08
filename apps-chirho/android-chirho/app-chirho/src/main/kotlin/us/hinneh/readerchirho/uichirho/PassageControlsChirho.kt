@@ -7,12 +7,14 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -36,7 +38,6 @@ import androidx.compose.ui.unit.dp
 import us.hinneh.readerchirho.R
 import us.hinneh.readerchirho.contentchirho.BookChirho
 import us.hinneh.readerchirho.statechirho.ReaderUiStateChirho
-import us.hinneh.readerchirho.statechirho.neighborChirho
 
 fun bookLabelChirho(bookChirho: BookChirho?, idChirho: String, spanishChirho: Boolean): String =
     bookChirho?.let { if (spanishChirho) it.spanishLabelChirho else it.labelChirho } ?: idChirho
@@ -72,22 +73,7 @@ fun PassageControlsChirho(
                 pickerChirho = PickerChirho.VERSE_CHIRHO
             }
         }
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-            TextButton(
-                onClick = { onStepChirho(false) },
-                enabled = manifestChirho != null && neighborChirho(manifestChirho, passageChirho, forwardChirho = false) != null,
-            ) { Text("← " + stringResource(R.string.previous_verse_chirho)) }
-            Text(
-                "$bookTextChirho ${passageChirho.chapterChirho}:${passageChirho.verseChirho}",
-                style = MaterialTheme.typography.titleMedium,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.weight(1f).semantics { heading() },
-            )
-            TextButton(
-                onClick = { onStepChirho(true) },
-                enabled = manifestChirho != null && neighborChirho(manifestChirho, passageChirho, forwardChirho = true) != null,
-            ) { Text(stringResource(R.string.next_verse_chirho) + " →") }
-        }
+        VerseStepRowChirho(stateChirho, spanishChirho, onStepChirho)
     }
 
     if (pickerChirho == PickerChirho.NONE_CHIRHO) return
@@ -111,6 +97,54 @@ fun PassageControlsChirho(
         }
     }
 }
+
+/**
+ * Previous verse, the reference and next verse. The row sits above the verse and again below it,
+ * so a reader never has to scroll back up to move on; only the upper reference is a heading.
+ */
+@Composable
+fun VerseStepRowChirho(
+    stateChirho: ReaderUiStateChirho,
+    spanishChirho: Boolean,
+    onStepChirho: (Boolean) -> Unit,
+    headingChirho: Boolean = true,
+) {
+    val passageChirho = stateChirho.passageChirho
+    val bookTextChirho = bookLabelChirho(stateChirho.catalogueChirho?.bookChirho(passageChirho.bookIdChirho), passageChirho.bookIdChirho, spanishChirho)
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+        StepButtonChirho("← " + stringResource(R.string.previous_verse_chirho), stateChirho.canStepChirho(forwardChirho = false)) {
+            onStepChirho(false)
+        }
+        Text(
+            "$bookTextChirho ${passageChirho.chapterChirho}:${passageChirho.verseChirho}",
+            style = MaterialTheme.typography.titleMedium,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.weight(1f).semantics { if (headingChirho) heading() },
+        )
+        StepButtonChirho(stringResource(R.string.next_verse_chirho) + " →", stateChirho.canStepChirho(forwardChirho = true)) {
+            onStepChirho(true)
+        }
+    }
+}
+
+/**
+ * One step button, in ink, faded where there is no verse that way (Genesis 1:1 has no Previous).
+ * The label needs its own colorless style: the theme's body text carries the ink color, which would
+ * otherwise override the button's faded color and make a disabled step look tappable.
+ */
+@Composable
+private fun StepButtonChirho(labelChirho: String, enabledChirho: Boolean, onClickChirho: () -> Unit) {
+    TextButton(
+        onClick = onClickChirho,
+        enabled = enabledChirho,
+        colors = ButtonDefaults.textButtonColors(contentColor = InkChirho.INK_CHIRHO),
+        modifier = Modifier.widthIn(max = STEP_LABEL_MAX_CHIRHO),
+    ) { Text(labelChirho, style = MaterialTheme.typography.labelLarge, textAlign = TextAlign.Center) }
+}
+
+// Long labels (Spanish "Versículo siguiente") wrap inside their buttons instead of squeezing the
+// reference until a book name breaks mid-word; English labels still fit on one line.
+private val STEP_LABEL_MAX_CHIRHO = 140.dp
 
 @Composable
 private fun PickerButtonChirho(labelChirho: String, valueChirho: String, enabledChirho: Boolean, modifier: Modifier, onClickChirho: () -> Unit) {

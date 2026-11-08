@@ -44,6 +44,11 @@ struct ReadingKeyViewChirho: View {
                 if scriptChirho == .hebrewChirho {
                     Section { GrammarCreditViewChirho(messagesChirho: modelChirho.messagesChirho) }
                 }
+                Section(modelChirho.messagesChirho.studyAidsChirho) {
+                    Text(modelChirho.messagesChirho.studyAidsHelpChirho)
+                    PolicyLinksViewChirho(messagesChirho: modelChirho.messagesChirho,
+                                          localeChirho: modelChirho.localeChirho)
+                }
             }
             .navigationTitle(modelChirho.messagesChirho.readingKeyChirho)
             .navigationBarTitleDisplayMode(.inline)

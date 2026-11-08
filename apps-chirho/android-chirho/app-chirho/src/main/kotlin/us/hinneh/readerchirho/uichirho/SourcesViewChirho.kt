@@ -18,27 +18,31 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import us.hinneh.readerchirho.R
 import us.hinneh.readerchirho.contentchirho.HebrewVerseChirho
+import us.hinneh.readerchirho.contentchirho.SourceNoteChirho
 import us.hinneh.readerchirho.contentchirho.VerseChirho
 import us.hinneh.readerchirho.contentchirho.VerseValidationChirho
 import us.hinneh.readerchirho.remotechirho.TrustedOriginChirho
 
+/**
+ * What belongs to this verse alone: its English numbering, its exact source text, its sources, the credit
+ * of the recording or video Play plays, and source-edition notes (folded away), and its page on hinneh.us.
+ * The general credits and how meanings, grammar and pictures are made are said once, at the end of the
+ * reading key (L.J., 2026-11-06 and 2026-11-07).
+ */
 @Composable
-fun SourcesViewChirho(verseChirho: VerseChirho, greekChirho: Boolean, kjvReferenceChirho: String?) {
+fun SourcesViewChirho(verseChirho: VerseChirho, greekChirho: Boolean, kjvReferenceChirho: String?, playedCreditChirho: MediaCreditChirho?) {
     val uriHandlerChirho = LocalUriHandler.current
     var canonicalOpenChirho by rememberSaveable(verseChirho.idChirho) { mutableStateOf(false) }
     var sourcesOpenChirho by rememberSaveable(verseChirho.idChirho) { mutableStateOf(false) }
-    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        SectionHeadingChirho(stringResource(R.string.source_eyebrow_chirho), stringResource(R.string.source_heading_chirho))
+    Column(Modifier.fillMaxWidth().padding(top = 8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
         if (kjvReferenceChirho != null) {
             Text(stringResource(R.string.kjv_numbering_chirho, kjvReferenceChirho), style = MaterialTheme.typography.bodySmall)
-        }
-        for (noteChirho in verseChirho.sourceNotesChirho) {
-            Text(englishDataChirho(noteChirho.textChirho), style = MaterialTheme.typography.bodyMedium)
         }
         TextButton(onClick = { canonicalOpenChirho = !canonicalOpenChirho }) {
             Text(stringResource(if (greekChirho) R.string.reveal_canonical_greek_chirho else R.string.reveal_canonical_hebrew_chirho))
@@ -54,25 +58,22 @@ fun SourcesViewChirho(verseChirho: VerseChirho, greekChirho: Boolean, kjvReferen
             }
             Text(stringResource(R.string.canonical_note_chirho), style = MaterialTheme.typography.bodySmall)
         }
-        if (greekChirho) {
-            Text(stringResource(R.string.credit_greek_chirho), style = MaterialTheme.typography.bodySmall)
-            Text(stringResource(R.string.greek_sources_note_chirho), style = MaterialTheme.typography.bodySmall)
-            Text(stringResource(R.string.greek_cues_note_chirho), style = MaterialTheme.typography.bodySmall)
-        } else {
-            // The CC BY attribution sentence stays verbatim in English; the explanation follows the locale.
-            Text(
-                stringResource(R.string.credit_hebrew_attribution_chirho) + " " + stringResource(R.string.credit_hebrew_rest_chirho),
-                style = MaterialTheme.typography.bodySmall,
-            )
-            Text(stringResource(R.string.root_lemma_note_chirho), style = MaterialTheme.typography.bodySmall)
-        }
         TextButton(onClick = { sourcesOpenChirho = !sourcesOpenChirho }) { Text(stringResource(R.string.sources_summary_chirho)) }
         if (sourcesOpenChirho) {
+            if (playedCreditChirho != null) {
+                Column(Modifier.padding(bottom = 6.dp)) { CreditChirho(playedCreditChirho) }
+            }
+            if (verseChirho.sourceNotesChirho.isNotEmpty()) {
+                Text(stringResource(R.string.source_edition_notes_chirho), style = MaterialTheme.typography.labelLarge)
+                for (noteChirho in verseChirho.sourceNotesChirho) {
+                    Text(sourceNoteTextChirho(noteChirho), style = MaterialTheme.typography.bodySmall)
+                }
+            }
             for (sourceChirho in verseChirho.sourcesChirho) {
                 Column(Modifier.padding(bottom = 6.dp)) {
                     val urlChirho = sourceChirho.urlChirho?.takeIf { VerseValidationChirho.isSafeSourceUrlChirho(it, httpsOnlyChirho = true) }
                     if (urlChirho != null) {
-                        TextButton(onClick = { uriHandlerChirho.openUri(urlChirho) }) { Text(sourceChirho.titleChirho + " ↗") }
+                        TextButton(onClick = { openLinkChirho(uriHandlerChirho, urlChirho) }) { Text(sourceChirho.titleChirho + " ↗") }
                     } else {
                         Text(sourceChirho.titleChirho, style = MaterialTheme.typography.labelLarge)
                     }
@@ -81,11 +82,17 @@ fun SourcesViewChirho(verseChirho: VerseChirho, greekChirho: Boolean, kjvReferen
                 }
             }
         }
-        OutlinedButton(onClick = { uriHandlerChirho.openUri(TrustedOriginChirho.versePageChirho(verseChirho.idChirho)) }) {
+        OutlinedButton(onClick = { openLinkChirho(uriHandlerChirho, TrustedOriginChirho.versePageChirho(verseChirho.idChirho)) }) {
             Text(stringResource(R.string.open_on_web_chirho))
         }
-        Text(stringResource(R.string.report_on_web_chirho), style = MaterialTheme.typography.bodySmall)
     }
+}
+
+/** As the website lists them: the note's code or kind, then its text (Hebrew for qere and paragraph marks). */
+private fun sourceNoteTextChirho(noteChirho: SourceNoteChirho) = buildAnnotatedString {
+    append(englishDataChirho((noteChirho.codeChirho ?: noteChirho.kindChirho).replace('_', ' ') + ": "))
+    val hebrewChirho = noteChirho.kindChirho == "qere_source" || noteChirho.kindChirho == "paragraph"
+    append(if (hebrewChirho) sourceTextChirho(noteChirho.textChirho, false) else englishDataChirho(noteChirho.textChirho))
 }
 
 /** The English Bible's reference when the Hebrew numbering differs, as the website shows it. */

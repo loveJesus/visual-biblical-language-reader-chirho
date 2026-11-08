@@ -25,6 +25,7 @@ sys_chirho.path[:0] = [
     str(ROOT_CHIRHO / "scripts-chirho/art-chirho"),
     str(ROOT_CHIRHO / "scripts-chirho/bible-chirho"),
     str(ROOT_CHIRHO / "scripts-chirho/bible-chirho/icon_pipeline_chirho"),
+    str(ROOT_CHIRHO / "scripts-chirho/art-chirho/continuity-chirho"),
 ]
 ordered_chirho = importlib_chirho.import_module("ordered_scenes_chirho")
 sources_chirho = importlib_chirho.import_module("scene_upgrade_sources_chirho")
@@ -33,6 +34,7 @@ GeneratorJobChirho = importlib_chirho.import_module(
 ).GeneratorJobChirho
 process_chirho = importlib_chirho.import_module("process_chirho")
 chapter_openings_chirho = importlib_chirho.import_module("chapter_openings_chirho")
+reference_pack_chirho = importlib_chirho.import_module("reference_pack_chirho")
 MODEL_CHIRHO = process_chirho.MODEL_CHIRHO
 image_calls_chirho = process_chirho.image_calls_chirho
 returned_original_chirho = process_chirho.returned_original_chirho
@@ -251,6 +253,8 @@ def prompt_chirho(job_chirho, attempt_chirho):
 
 First inspect {attempt_chirho / "style-reference-chirho.webp"} with view_image as a STYLE REFERENCE ONLY. Generate one beautiful, reverent, detailed hand-painted watercolor storybook scene grounded in this verse, with warm colors, fine drawn contours and textured paper. The Scripture is the treasure: balance sober reverence with delight in the Lord. Landscape 4:3, loose central composition with room for a centered 4:3 crop. No text, lettering, panels, border or watermark. Use the source meanings honestly; a genealogy or abstract teaching may use a clearly imaginative object/setting composition rather than inventing an event. Prefer faithful indirect compositions that keep Jesus out of direct view; a hand may appear where relevant. Do not replace Him with an unrelated dove or misleading symbol. Never portray God as a human figure. Keep all people modestly presented; use restrained, indirect compositions for sexual matters, nudity, childbirth and violence rather than graphic acts. Do not change or soften what the verse says; explain the selected visual relationship honestly.
 
+If source-input-chirho.json contains visual_continuity_chirho, read its reading unit, active roles and episode directions, inspect each staged reference image, and provide those images to image_gen as identity/setting references in addition to the style reference. Keep the selected face and age consistent. Keep clothes, buildings, props and time progression consistent within the episode; an identity portrait's neutral garment is not a permanent costume. Respect each reference's focus: copy a setting's architecture without copying unrelated people. Do not put named ancestors, quotations, absent people or described objects literally into the scene merely because they are mentioned. Standalone sayings do not inherit the preceding saying's cast or setting. All supplied portraits and architecture are imaginative conventions, not historical likeness or archaeological certainty. This does not authorize another image call or changing any earlier attempt.
+
 Write the COMPLETE actual image prompt to prompt-chirho.txt before the one image call. After generation, inspect the actual original PNG using view_image. Leave the exact original intact for the parent's verified R2 archive. Write provenance-chirho.json with original_generator_path_chirho and original_generator_sha256_chirho. Write record-chirho.json with four nonempty strings: verse_explanation_chirho (concise, independently explain the source verse; copy reusable_brief_chirho.explanation_chirho verbatim if supplied), alt_chirho (describe only the inspected image, at most 500 characters), reading_note_chirho (explain its imaginative relationship to the verse, at most 600 characters), prompt_chirho (the actual complete prompt, matching prompt-chirho.txt). Read the JSON back to check it. The parent performs deterministic crop/encoding, archive and installation. You must not write a catalogue, source file, DB, Git, cloud configuration or message. If source is uncertain, the tool refuses or the actual image is unsuitable, write failure-chirho.json and stop without another image call. Pending human artwork review remains pending. Every shell command starts rtk proxy."""
 
 
@@ -261,6 +265,23 @@ def produce_chirho(root_chirho, _book_chirho, job_chirho, attempt_chirho):
             raise OSError(69, "Bounded scene dispatch limit reached")
         DISPATCHED_CHIRHO += 1
     value_chirho, _brief_path_chirho = source_input_chirho(root_chirho, job_chirho)
+    if (root_chirho / "data-chirho/art-direction-chirho/registry-chirho.json").exists():
+        continuity_chirho = reference_pack_chirho.build_pack_chirho(
+            root_chirho, job_chirho["id_chirho"]
+        )
+        if continuity_chirho is not None:
+            if (
+                continuity_chirho["canonical_sha256_chirho"]
+                != job_chirho["canonical_sha256_chirho"]
+            ):
+                raise POOL_CHIRHO.SourceChangedChirho(
+                    "Continuity source differs from image job"
+                )
+            value_chirho["visual_continuity_chirho"] = (
+                reference_pack_chirho.stage_pack_chirho(
+                    root_chirho, attempt_chirho, continuity_chirho
+                )
+            )
     sources_chirho.write_chirho(
         attempt_chirho / "source-input-chirho.json", value_chirho
     )
@@ -314,6 +335,13 @@ def record_chirho(root_chirho, job_chirho, attempt_chirho):
         or image_calls_chirho(attempt_chirho) != 1
     ):
         raise ValueError("Source excerpt or single image-call identity differs")
+    frozen_input_chirho = sources_chirho.read_chirho(
+        attempt_chirho / "source-input-chirho.json"
+    )
+    if frozen_input_chirho.get("visual_continuity_chirho") is not None:
+        reference_pack_chirho.verify_staged_pack_chirho(
+            attempt_chirho, frozen_input_chirho["visual_continuity_chirho"]
+        )
     raw_chirho = sources_chirho.read_chirho(
         attempt_chirho / "record-chirho.json", 64 * 1024
     )

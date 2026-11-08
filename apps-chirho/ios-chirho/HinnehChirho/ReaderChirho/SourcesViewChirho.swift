@@ -35,6 +35,19 @@ struct SourcesViewChirho: View {
             }
             DisclosureGroup(messagesChirho.sourcesChirho) {
                 VStack(alignment: .leading, spacing: 12) {
+                    if let sourceChirho = modelChirho.audioChirho.verseClipChirho?.readingSourceChirho {
+                        ReadingCreditViewChirho(attributionChirho: sourceChirho.attributionChirho,
+                                                licenseChirho: sourceChirho.licenseChirho,
+                                                licenseUrlChirho: sourceChirho.licenseUrlChirho,
+                                                localeChirho: modelChirho.localeChirho)
+                    }
+                    if let videoChirho = modelChirho.mediaChirho.videoChirho,
+                       modelChirho.audioChirho.verseClipChirho?.readingSourceChirho == nil {
+                        ReadingCreditViewChirho(attributionChirho: videoChirho.attributionChirho,
+                                                licenseChirho: videoChirho.licenseChirho,
+                                                licenseUrlChirho: videoChirho.licenseUrlChirho,
+                                                localeChirho: modelChirho.localeChirho)
+                    }
                     ForEach(sourcesChirho) { sourceChirho in
                         VStack(alignment: .leading, spacing: 3) {
                             if let linkChirho = sourceChirho.safeLinkChirho {

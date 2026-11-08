@@ -23,35 +23,21 @@
     <string name="hide_translation_chirho">Ocultar traducción</string>
     <string name="kjv_numbering_chirho">Numeración hebrea del versículo · Biblia inglesa (KJV): %1$s</string>
 
-    <string name="scene_caption_chirho">Una ayuda imaginativa para aprender</string>
-    <string name="scene_caption_sub_chirho">Una reflexión visual sobre el versículo</string>
     <string name="scene_missing_chirho">La escena no está disponible. Aún puede leer el texto preservado y sus indicaciones gramaticales.</string>
-    <string name="scene_awaiting_note_chirho">Se está preparando una ilustración para este pasaje.</string>
     <string name="scene_unavailable_chirho">La ilustración no está disponible en este momento.</string>
     <string name="scene_standard_chirho">Estándar</string>
     <string name="scene_reduced_chirho">Representación reducida</string>
-    <string name="art_pending_chirho">Ilustración generada por IA · pendiente de revisión artística</string>
-    <string name="art_approved_chirho">Ilustración generada por IA · revisada</string>
 
     <string name="look_closer_chirho">Mirar de cerca</string>
-    <string name="lemma_unverified_chirho">Enlace al lema sin verificar</string>
     <string name="lexical_form_chirho">Forma léxica:</string>
-    <string name="source_morphology_chirho">Morfología de la fuente:</string>
-    <string name="root_not_applicable_chirho">No aplica</string>
-    <string name="root_traditional_chirho">Tradicional</string>
-    <string name="root_unresolved_chirho">Sin resolver</string>
-    <string name="root_relationship_chirho">Relación con la raíz</string>
+    <string name="traditional_root_chirho">Raíz tradicional:</string>
     <string name="meaning_morphology_chirho">Significado y morfología</string>
     <string name="gloss_unavailable_chirho">Todavía no hay un significado revisado para esta palabra.</string>
-    <string name="origin_gbt_chirho">Aprobado en la exportación de Global Bible Tools</string>
     <string name="origin_app_chirho">Glosa de aprendizaje escrita por la aplicación</string>
-    <string name="origin_unavailable_chirho">Significado no disponible</string>
-    <string name="berean_gloss_note_chirho">Glosa en inglés de la Berean Interlinear Bible, mediante biblicalhumanities.org</string>
     <string name="not_separately_short_chirho">no se traduce por separado</string>
     <string name="qere_label_chirho">Lectura (qere)</string>
     <string name="qere_note_chirho">La lectura se conserva aparte del texto escrito (ketiv) de arriba.</string>
     <string name="general_picture_chirho">Imagen general de la palabra:</string>
-    <string name="general_picture_caveat_chirho">El significado en este versículo puede pedir otra imagen.</string>
     <string name="icon_general_chirho">imagen general de la palabra</string>
     <string name="icon_contextual_chirho">ilustración contextual</string>
     <string name="icon_unavailable_chirho">ilustración no disponible</string>
@@ -62,7 +48,11 @@
     <string name="listen_verse_chirho">Escuchar este versículo</string>
     <string name="stop_chirho">Detener</string>
     <string name="recorded_failed_chirho">No se pudo reproducir la grabación. Inténtalo de nuevo.</string>
-    <string name="audition_note_chirho">Prueba de voz IA · %1$s. Pronunciación pendiente de revisión.</string>
+    <string name="play_verse_video_chirho">Reproducir este versículo</string>
+    <string name="verse_video_chirho">Video del versículo</string>
+    <string name="license_link_chirho">Licencia</string>
+    <string name="recording_credit_chirho">La grabación de este versículo</string>
+    <string name="video_staged_chirho">Preparado en este dispositivo para desarrollo, aún no publicado.</string>
     <string name="no_word_recording_chirho">Todavía no hay una grabación guardada de esta palabra.</string>
     <string name="rendition_chirho">Pronunciación</string>
     <string name="modern_aspirates_chirho">Moderna con aspiración</string>
@@ -75,22 +65,41 @@
     <string name="slightly_slower_chirho" formatted="false">12% más lenta</string>
     <string name="normal_chirho">Normal</string>
 
-    <string name="source_eyebrow_chirho">Fundado en la fuente</string>
-    <string name="source_heading_chirho">Conserve el texto. Conserve el contexto.</string>
     <string name="sources_summary_chirho">Fuentes, licencias y referencias gramaticales</string>
+    <string name="source_edition_notes_chirho">Notas de la edición original</string>
     <string name="credit_hebrew_rest_chirho">Archivos léxicos: Open Scriptures Hebrew Bible Project. La morfología y los archivos léxicos se usan bajo CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) y se adaptan aquí en segmentos de palabras, indicaciones gramaticales y notas de fuente. El texto hebreo es de dominio público. No se implica ningún respaldo.</string>
     <string name="credit_greek_chirho">Texto griego: Nestle 1904 (dominio público). Morfología y lemas: Ulrik Sandborg-Petersen y biblicalhumanities.org (CC0). Glosas en inglés: Berean Interlinear Bible, mediante biblicalhumanities.org; vea los términos de dominio público (https://berean.bible/terms.htm).</string>
+    <string name="credit_hebrew_readings_chirho">Las lecturas hebreas de los versículos, incluido el sonido de los videos, son de Rabbi Dan Be’eri, bajo CC BY-SA 3.0. El crédito exacto y la licencia de cada versículo están en sus Fuentes.</string>
     <string name="reveal_canonical_hebrew_chirho">Mostrar el hebreo canónico exacto</string>
     <string name="reveal_canonical_greek_chirho">Mostrar el texto griego exacto</string>
     <string name="canonical_note_chirho">Este es el texto fuente preservado, sin puntos didácticos, superíndices ni marcadores de iconos. Selecciónelo para copiarlo.</string>
     <string name="root_lemma_note_chirho">La raíz y el lema son distintos. Una relación léxica tradicional no afirma un origen histórico seguro. Las ilustraciones son ayudas para aprender; el texto original y su morfología documentada guían la lectura.</string>
-    <string name="greek_sources_note_chirho">El texto griego y la gramática siguen la fuente morfológica de Nestle 1904. Los significados en inglés provienen de la Berean Interlinear Bible; son glosas por palabra, no una traducción de la oración ni aprobaciones de Global Bible Tools.</string>
-    <string name="greek_cues_note_chirho">Los numerales romanos centrados marcan el caso. Arriba a la izquierda, un código de tiempo en mayúscula va seguido de un código de voz en minúscula. Arriba a la derecha, un número de persona va seguido de un código de modo en mayúscula. Por ejemplo, Ia a la izquierda y 3I a la derecha significan imperfecto activo, tercera persona del indicativo. Un participio también puede llevar un numeral de caso centrado.</string>
+    <string name="greek_sources_note_chirho">El texto griego y la gramática siguen la fuente morfológica de Nestle 1904. Los significados en inglés provienen de la Berean Interlinear Bible; son glosas por palabra en el orden original, no una traducción de la oración.</string>
     <string name="open_on_web_chirho">Abrir este versículo en hinneh.us</string>
-    <string name="report_on_web_chirho">Para informar un problema con una imagen, abra este versículo en hinneh.us.</string>
+
+    <string name="reading_key_chirho">Clave de lectura</string>
+    <string name="reading_key_hint_chirho">Marcas pequeñas, pistas útiles. Los colores, números y letras son convenciones didácticas de Hinneh.</string>
+    <string name="grammar_reference_chirho">Referencia gramatical (en inglés)</string>
+    <string name="grammar_credit_chirho">Las explicaciones gramaticales adaptan la unfoldingWord Hebrew Grammar, © 2021 unfoldingWord, bajo %1$s. Están resumidas y redactadas de nuevo; las explicaciones adaptadas se comparten bajo la misma licencia. Los códigos numéricos y de letras, los colores y la disposición son convenciones didácticas de Hinneh. No se implica ningún respaldo.</string>
+    <string name="study_aids_heading_chirho">Acerca de los significados y las ayudas de estudio</string>
+    <string name="hebrew_meanings_note_chirho">Los significados son glosas en el orden original de las palabras, no una traducción de la oración. Los significados hebreos son las glosas aprobadas de Global Bible Tools y, por ahora, se muestran en inglés. Cuando las fuentes no coinciden palabra por palabra, el significado se omite en lugar de adivinarlo.</string>
+    <string name="hebrew_grammar_note_chirho">Los lemas y la gramática siguen la Open Scriptures Hebrew Bible; las descripciones gramaticales se generan a partir de sus códigos. Muchas palabras aún no tienen una raíz revisada, por eso no se muestra ninguna raíz para ellas.</string>
+    <string name="picture_note_chirho">Una imagen general de la palabra es una ayuda para recordarla; un versículo concreto puede pedir otra imagen.</string>
+
+    <string name="about_heading_chirho">Acerca de Hinneh</string>
+    <string name="about_aids_chirho">Las imágenes, los videos, las grabaciones de palabras y las lecturas sintetizadas de versículos de Hinneh son ayudas de estudio generadas con IA, aún pendientes de revisión. Las lecturas hebreas de versículos de Rabbi Dan Be’eri son grabaciones humanas, usadas bajo CC BY-SA 3.0. El texto original y sus fuentes guían la lectura. Para informar un problema con una imagen, abra su versículo en hinneh.us.</string>
+    <string name="privacy_policy_chirho">Política de privacidad</string>
+    <string name="about_support_chirho">Acerca de y soporte</string>
+    <string name="contact_chirho">Contacto</string>
+    <string name="source_code_chirho">Código fuente</string>
 
     <string name="settings_chirho">Ajustes de lectura</string>
     <string name="interface_language_chirho">Idioma de la interfaz</string>
     <string name="device_language_chirho">Idioma del dispositivo</string>
+    <string name="text_size_chirho">Tamaño del texto</string>
+    <string name="text_small_chirho">Pequeño</string>
+    <string name="text_medium_chirho">Mediano</string>
+    <string name="text_large_chirho">Grande</string>
+    <string name="text_extra_large_chirho">Muy grande</string>
     <string name="close_chirho">Cerrar</string>
 </resources>

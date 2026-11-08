@@ -6,8 +6,8 @@ import HinnehCoreChirho
 import Observation
 
 /// Plays one published recording at a time. The MP3 is fully downloaded and its SHA-256 checked
-/// before it plays; a word plays complete, untrimmed, to its natural end. Greek plays at the
-/// website's 0.88 with its pitch preserved. Navigation stops playback.
+/// before it plays; a word plays complete, untrimmed, to its natural end. Playback starts at
+/// Normal speed, with pitch preserved at the reader's chosen speed. Navigation stops playback.
 @MainActor @Observable
 final class AudioPlayerChirho {
     /// The word id (or "verse") now loading or playing.
@@ -16,8 +16,15 @@ final class AudioPlayerChirho {
     private(set) var failedIdChirho: String?
     /// Visible only for an explicitly started, verified video; the still remains the poster.
     private(set) var videoPlayerChirho: AVPlayer?
+    private(set) var failedVideoShaChirho: String?
 
-    static let greekRateChirho: Float = 0.88
+    var speedChirho = PlaybackSpeedChirho.normalChirho {
+        didSet {
+            guard let playerChirho else { return }
+            playerChirho.defaultRate = speedChirho.rateChirho
+            if playerChirho.rate != 0 { playerChirho.rate = speedChirho.rateChirho }
+        }
+    }
 
     @ObservationIgnored private let remoteChirho: RemoteChirho
     /// The identity of the current play. Callbacks carry the identity they were made for, so a
@@ -28,6 +35,7 @@ final class AudioPlayerChirho {
     @ObservationIgnored private var fileChirho: URL?
     @ObservationIgnored private var observersChirho: [any NSObjectProtocol] = []
     @ObservationIgnored private var statusChirho: NSKeyValueObservation?
+    @ObservationIgnored private var activeVideoShaChirho: String?
 
     init(remoteChirho: RemoteChirho) {
         self.remoteChirho = remoteChirho
@@ -43,18 +51,19 @@ final class AudioPlayerChirho {
 
     func playChirho(_ clipChirho: ClipChirho, idChirho: String) {
         playAssetChirho(clipChirho.assetPathChirho, clipChirho.sha256Chirho, clipChirho.bytesChirho,
-                       .audioClipChirho, clipChirho.languageChirho == "el" ? Self.greekRateChirho : 1, idChirho)
+                       .audioClipChirho, idChirho)
     }
 
     func playVideoChirho(_ videoChirho: VerseVideoChirho, idChirho: String = "verse") {
         playAssetChirho(videoChirho.assetPathChirho, videoChirho.sha256Chirho, videoChirho.bytesChirho,
-                       .videoClipChirho, 1, idChirho)
+                       .videoClipChirho, idChirho)
     }
 
     private func playAssetChirho(_ pathChirho: String, _ shaChirho: String, _ bytesChirho: Int,
-                                 _ kindChirho: ResourceKindChirho, _ rateChirho: Float, _ idChirho: String) {
+                                 _ kindChirho: ResourceKindChirho, _ idChirho: String) {
         stopChirho()
         let playChirho = beginChirho(idChirho)
+        activeVideoShaChirho = kindChirho == .videoClipChirho ? shaChirho : nil
         taskChirho = Task {
             do {
                 let dataChirho = try await remoteChirho.verifiedChirho(
@@ -70,7 +79,7 @@ final class AudioPlayerChirho {
                 fileChirho = fileValueChirho
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio)
                 try AVAudioSession.sharedInstance().setActive(true)
-                startChirho(fileValueChirho, rateChirho, playChirho, videoChirho)
+                startChirho(fileValueChirho, playChirho, videoChirho)
             } catch is CancellationError {
                 return
             } catch {
@@ -87,6 +96,11 @@ final class AudioPlayerChirho {
         playIdChirho = UUID()
     }
 
+    func clearFailureChirho() {
+        failedIdChirho = nil
+        failedVideoShaChirho = nil
+    }
+
     /// Starts a play for `idChirho` and returns the identity its callbacks must present.
     func beginChirho(_ idChirho: String) -> UUID {
         activeIdChirho = idChirho
@@ -99,13 +113,14 @@ final class AudioPlayerChirho {
     /// Ends the play that `playChirho` names; a stale identity changes nothing.
     func completeChirho(_ playChirho: UUID, failedChirho: Bool) {
         guard playChirho == playIdChirho, let activeChirho = activeIdChirho else { return }
+        if failedChirho, let activeVideoShaChirho { failedVideoShaChirho = activeVideoShaChirho }
         releaseChirho()
         activeIdChirho = nil
         playIdChirho = UUID()
         if failedChirho { failedIdChirho = activeChirho }
     }
 
-    private func startChirho(_ fileValueChirho: URL, _ rateChirho: Float, _ playChirho: UUID, _ videoChirho: Bool) {
+    private func startChirho(_ fileValueChirho: URL, _ playChirho: UUID, _ videoChirho: Bool) {
         let itemChirho = AVPlayerItem(url: fileValueChirho)
         // Spectral time-pitch keeps the speaker's pitch when the rate is slowed.
         itemChirho.audioTimePitchAlgorithm = .spectral
@@ -128,7 +143,8 @@ final class AudioPlayerChirho {
         }
         playerChirho = playerValueChirho
         videoPlayerChirho = videoChirho ? playerValueChirho : nil
-        playerValueChirho.playImmediately(atRate: rateChirho)
+        playerValueChirho.defaultRate = speedChirho.rateChirho
+        playerValueChirho.playImmediately(atRate: speedChirho.rateChirho)
     }
 
     private func releaseChirho() {
@@ -139,6 +155,7 @@ final class AudioPlayerChirho {
         playerChirho?.pause()
         videoPlayerChirho = nil
         playerChirho = nil
+        activeVideoShaChirho = nil
         if let fileChirho { try? FileManager.default.removeItem(at: fileChirho) }
         fileChirho = nil
     }

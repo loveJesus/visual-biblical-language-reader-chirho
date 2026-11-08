@@ -14,26 +14,50 @@ import us.hinneh.readerchirho.remotechirho.RemoteFailureChirho
 import us.hinneh.readerchirho.remotechirho.ResourceKindChirho
 import us.hinneh.readerchirho.remotechirho.SHA256_PATTERN_CHIRHO
 import us.hinneh.readerchirho.remotechirho.decodeUtf8Chirho
+import us.hinneh.readerchirho.remotechirho.sha256HexChirho
+import us.hinneh.readerchirho.videochirho.StagedVideosChirho
+import us.hinneh.readerchirho.videochirho.VideoRecordChirho
+import us.hinneh.readerchirho.videochirho.VideoSelectionChirho
 
-/** Reads a book's small media summary, then verifies only the selected chapter's media index. */
+/**
+ * Reads a book's small media summary, then verifies only the selected chapter's media index. A
+ * published verse video wins; a debug build's staged video fills in only where none is published.
+ */
 class MediaRepositoryChirho(
     private val remoteChirho: RemoteClientChirho,
     private val clockChirho: () -> Long = System::currentTimeMillis,
     private val workDispatcherChirho: CoroutineDispatcher = Dispatchers.Default,
+    private val stagedVideosChirho: StagedVideosChirho? = null,
+    /** Reads the debug build's staged-video index; tests pass their own dispatcher so no read outlives a test. */
+    private val ioDispatcherChirho: CoroutineDispatcher = Dispatchers.IO,
 ) {
     private data class TimedSummaryChirho(val summaryChirho: MediaSummaryChirho, val readAtChirho: Long)
 
     private val summariesChirho = BoundedLruChirho<String, TimedSummaryChirho>(4)
     private val chaptersChirho = BoundedLruChirho<String, MediaChapterFileChirho>(2)
 
+    /** Workflow: spec-chirho/workflows-chirho/native-chirho/verse-video-chirho.md (video selection). */
     suspend fun verseMediaChirho(loadedChirho: LoadedVerseChirho, catalogueChirho: BookCatalogueChirho): VerseMediaChirho {
-        val fileChirho = chapterChirho(loadedChirho.bookChirho, loadedChirho.passageChirho.chapterChirho)
-            ?: return VerseMediaChirho.EMPTY_CHIRHO
+        val verseIdChirho = loadedChirho.verseChirho.idChirho
+        val stagedRecordChirho = stagedVideosChirho?.let { localChirho -> withContext(ioDispatcherChirho) { localChirho.recordChirho(verseIdChirho) } }
+        // A video is bound to the scene shown in its place, so a chapter without media has no video either.
+        val fileChirho = chapterChirho(loadedChirho.bookChirho, loadedChirho.passageChirho.chapterChirho) ?: return VerseMediaChirho.EMPTY_CHIRHO
         return withContext(workDispatcherChirho) {
             val scenesChirho = MediaSelectionChirho.scenesChirho(fileChirho.scenesChirho, catalogueChirho)
+            val sceneChirho = scenesChirho?.get(verseIdChirho)
+            val canonicalChirho = sha256HexChirho(loadedChirho.verseChirho.canonicalTextChirho.encodeToByteArray())
+            // Only for this verse's exact text, in place of the scene now shown (GPT, DM #3399); published before staged.
+            fun forThisVerseChirho(recordChirho: VideoRecordChirho?): VideoRecordChirho? {
+                val sceneShaChirho = sceneChirho?.standardChirho?.sha256Chirho ?: return null
+                return recordChirho?.takeIf { VideoSelectionChirho.validChirho(it, verseIdChirho, canonicalChirho, sceneShaChirho) }
+            }
+            val publishedChirho = forThisVerseChirho(VideoSelectionChirho.verseRecordChirho(fileChirho.videosChirho, verseIdChirho))
+            val stagedChirho = if (publishedChirho == null) forThisVerseChirho(stagedRecordChirho) else null
             VerseMediaChirho(
-                sceneChirho = scenesChirho?.get(loadedChirho.verseChirho.idChirho),
+                sceneChirho = sceneChirho,
                 picturesChirho = MediaSelectionChirho.picturesChirho(fileChirho, loadedChirho.verseChirho, catalogueChirho),
+                videoChirho = publishedChirho ?: stagedChirho,
+                videoStagedChirho = stagedChirho != null,
             )
         }
     }

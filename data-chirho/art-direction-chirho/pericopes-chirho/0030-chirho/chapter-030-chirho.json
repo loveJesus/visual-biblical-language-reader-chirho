@@ -1,0 +1,178 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Prov",
+	"chapter_chirho": 30,
+	"source_sha256_chirho": "66e423b41b13747f6329f2ecb3d07632f78f8b5ceb6dd67834134955650d53d9",
+	"units_chirho": [
+		{
+			"unit_id_chirho": "prov-030-001-004-chirho",
+			"start_chirho": "Prov.30.1",
+			"end_chirho": "Prov.30.4",
+			"verse_count_chirho": 4,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-30-agur-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Agur's heading and first-person confession of ignorance, then the questions: who has gone up to heaven?",
+			"title_chirho": "Agur's confession",
+			"roles_chirho": [
+				{
+					"role_chirho": "Agur son of Jakeh",
+					"text_facts_chirho": "speaker (30:1-4); appears only here"
+				},
+				{
+					"role_chirho": "Ithiel and Ucal",
+					"text_facts_chirho": "addressed (30:1)"
+				}
+			],
+			"art_choices_chirho": ["Agur's age and appearance"],
+			"uncertainty_chirho": "30:1 'to Ithiel and Ucal' can also be read 'I am weary, O God'. Show the questions without depicting God."
+		},
+		{
+			"unit_id_chirho": "prov-030-005-006-chirho",
+			"start_chirho": "Prov.30.5",
+			"end_chirho": "Prov.30.6",
+			"verse_count_chirho": 2,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-30-agur-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Agur's statement on God's word: do not add to it.",
+			"title_chirho": "Every word of God is pure",
+			"roles_chirho": [
+				{
+					"role_chirho": "Agur",
+					"text_facts_chirho": "speaker"
+				}
+			]
+		},
+		{
+			"unit_id_chirho": "prov-030-007-009-chirho",
+			"start_chirho": "Prov.30.7",
+			"end_chirho": "Prov.30.9",
+			"verse_count_chirho": 3,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "speech",
+			"episode_id_chirho": "prov-30-agur-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Two requests before he dies: remove falsehood; give only daily bread.",
+			"title_chirho": "Agur's prayer: neither poverty nor riches",
+			"roles_chirho": [
+				{
+					"role_chirho": "Agur",
+					"text_facts_chirho": "prays (30:7)"
+				}
+			]
+		},
+		{
+			"unit_id_chirho": "prov-030-010-010-chirho",
+			"start_chirho": "Prov.30.10",
+			"end_chirho": "Prov.30.10",
+			"verse_count_chirho": 1,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "saying",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Independent proverb; its people and setting belong to this saying alone, not to its neighbours.",
+			"title_chirho": "Do not slander a servant"
+		},
+		{
+			"unit_id_chirho": "prov-030-011-014-chirho",
+			"start_chirho": "Prov.30.11",
+			"end_chirho": "Prov.30.14",
+			"verse_count_chirho": 4,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "saying-cluster",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Four lines beginning 'there is a generation': a type of people, not one group.",
+			"title_chirho": "There is a generation"
+		},
+		{
+			"unit_id_chirho": "prov-030-015-016-chirho",
+			"start_chirho": "Prov.30.15",
+			"end_chirho": "Prov.30.16",
+			"verse_count_chirho": 2,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "numerical-saying",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "The leech's daughters and four things that never say 'enough'.",
+			"title_chirho": "Never satisfied"
+		},
+		{
+			"unit_id_chirho": "prov-030-017-017-chirho",
+			"start_chirho": "Prov.30.17",
+			"end_chirho": "Prov.30.17",
+			"verse_count_chirho": 1,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "saying",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Independent proverb; its people and setting belong to this saying alone, not to its neighbours.",
+			"title_chirho": "The eye that mocks a father"
+		},
+		{
+			"unit_id_chirho": "prov-030-018-020-chirho",
+			"start_chirho": "Prov.30.18",
+			"end_chirho": "Prov.30.20",
+			"verse_count_chirho": 3,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "numerical-saying",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Four ways beyond knowing, then the adulterous woman's way (30:20).",
+			"title_chirho": "Too wonderful for me"
+		},
+		{
+			"unit_id_chirho": "prov-030-021-023-chirho",
+			"start_chirho": "Prov.30.21",
+			"end_chirho": "Prov.30.23",
+			"verse_count_chirho": 3,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "numerical-saying",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Four unbearable reversals.",
+			"title_chirho": "Under these the earth trembles"
+		},
+		{
+			"unit_id_chirho": "prov-030-024-028-chirho",
+			"start_chirho": "Prov.30.24",
+			"end_chirho": "Prov.30.28",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "numerical-saying",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Ants, rock badgers, locusts and the lizard (or spider).",
+			"title_chirho": "Four small but wise",
+			"uncertainty_chirho": "30:28 is a lizard or a spider."
+		},
+		{
+			"unit_id_chirho": "prov-030-029-031-chirho",
+			"start_chirho": "Prov.30.29",
+			"end_chirho": "Prov.30.31",
+			"verse_count_chirho": 3,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "numerical-saying",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Lion, strutting rooster or greyhound, goat and a king with his army (generic).",
+			"title_chirho": "Four stately in their going",
+			"uncertainty_chirho": "The second animal (30:31) is uncertain."
+		},
+		{
+			"unit_id_chirho": "prov-030-032-033-chirho",
+			"start_chirho": "Prov.30.32",
+			"end_chirho": "Prov.30.33",
+			"verse_count_chirho": 2,
+			"section_id_chirho": "agur-chirho",
+			"kind_chirho": "saying-cluster",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "One admonition: pressing anger brings strife.",
+			"title_chirho": "Hand over your mouth"
+		}
+	]
+}

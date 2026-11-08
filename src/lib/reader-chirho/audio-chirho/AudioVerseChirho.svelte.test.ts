@@ -8,6 +8,7 @@ import {
 } from 'vitest';
 import { render as renderChirho } from 'vitest-browser-svelte';
 import AudioVerseChirho from './AudioVerseChirho.svelte';
+import type { RecordingChirho } from './recordings-chirho';
 import { syntheticLessonChirho } from '../../../../tests-chirho/fixtures-chirho/synthetic-chirho';
 import { spokenVerseChirho } from '$lib/domain-chirho/pronunciation-chirho';
 import {
@@ -141,34 +142,42 @@ beforeAllChirho(async () => {
 	});
 });
 
+// L.J. (2026-11-07): credits belong in an info view, so the reader shows this credit in the Sources fold.
 testChirho(
-	'a human verse reading is credited with its CC BY-SA license, without AI wording',
+	'the human reading is reported for the Sources fold; no credit or AI wording sits under Play',
 	async () => {
-		renderChirho(AudioVerseChirho, { lessonChirho: lessonForChirho(1) });
+		const reportedChirho: (RecordingChirho | null)[] = [];
+		const { container: containerChirho } = renderChirho(AudioVerseChirho, {
+			lessonChirho: lessonForChirho(1),
+			onHumanReadingChirho: (readingChirho) => reportedChirho.push(readingChirho)
+		});
 		await viChirho.waitFor(() =>
-			expectChirho(document.querySelector('[data-reading-credit-chirho]')).not.toBeNull()
+			expectChirho(reportedChirho.at(-1)?.sha256_chirho).toBe('2'.repeat(64))
 		);
-		const creditChirho = document.querySelector<HTMLElement>('[data-reading-credit-chirho]')!;
-		expectChirho(creditChirho.textContent?.replace(/\s+/gu, ' ').trim()).toBe(
-			`${BEERI_ATTRIBUTION_CHIRHO} · License`
+		expectChirho(reportedChirho.at(-1)?.reading_source_chirho?.attribution_chirho).toBe(
+			BEERI_ATTRIBUTION_CHIRHO
 		);
-		expectChirho(creditChirho.querySelector('a')!.getAttribute('href')).toBe(
-			BEERI_LICENSE_URL_CHIRHO
-		);
-		expectChirho(document.body.textContent).not.toMatch(/\bAI\b|audition/iu);
+		expectChirho(containerChirho.querySelector('[data-reading-credit-chirho]')).toBeNull();
+		expectChirho(containerChirho.textContent).not.toMatch(/\bAI\b|audition/iu);
 	}
 );
 
-testChirho('a verse with only a synthesized reading shows no human credit', async () => {
-	renderChirho(AudioVerseChirho, { lessonChirho: lessonForChirho(2) });
-	const controlsChirho = () =>
-		document
-			.querySelectorAll('[data-audio-controls-chirho]')
-			[document.querySelectorAll('[data-audio-controls-chirho]').length - 1].getAttribute(
-				'data-speech-recordings-chirho'
-			);
-	await viChirho.waitFor(() => expectChirho(JSON.parse(controlsChirho()!)).toHaveLength(1));
-	expectChirho(document.querySelectorAll('[data-reading-credit-chirho]')).toHaveLength(0);
+const recordingsLoadedChirho = (containerChirho: HTMLElement) =>
+	JSON.parse(
+		containerChirho
+			.querySelector('[data-audio-controls-chirho]')!
+			.getAttribute('data-speech-recordings-chirho')!
+	).length;
+
+testChirho('a verse with only a synthesized reading reports no human reading', async () => {
+	const reportedChirho: (RecordingChirho | null)[] = [];
+	const { container: containerChirho } = renderChirho(AudioVerseChirho, {
+		lessonChirho: lessonForChirho(2),
+		onHumanReadingChirho: (readingChirho) => reportedChirho.push(readingChirho)
+	});
+	await viChirho.waitFor(() => expectChirho(recordingsLoadedChirho(containerChirho)).toBe(1));
+	expectChirho(reportedChirho.at(-1)).toBeNull();
+	expectChirho(containerChirho.querySelector('[data-reading-credit-chirho]')).toBeNull();
 });
 
 testChirho(
@@ -182,9 +191,7 @@ testChirho(
 				AudioVerseChirho,
 				{ lessonChirho: lessonForChirho(1), videoChirho: await videoForChirho(endChirho) }
 			);
-			await viChirho.waitFor(() =>
-				expectChirho(containerChirho.querySelector('[data-reading-credit-chirho]')).not.toBeNull()
-			);
+			await viChirho.waitFor(() => expectChirho(recordingsLoadedChirho(containerChirho)).toBe(1));
 			const controlsChirho = containerChirho.querySelector<HTMLElement>(
 				'[data-audio-controls-chirho]'
 			)!;

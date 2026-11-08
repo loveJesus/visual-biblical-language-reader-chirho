@@ -1,6 +1,7 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 package us.hinneh.readerchirho.statechirho
 
+import android.view.Surface
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,9 +9,12 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import us.hinneh.readerchirho.audiochirho.AudioPlaybackChirho
@@ -23,23 +27,27 @@ import us.hinneh.readerchirho.contentchirho.ContentRepositoryChirho
 import us.hinneh.readerchirho.contentchirho.WordChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.mediachirho.MediaRepositoryChirho
+import us.hinneh.readerchirho.videochirho.VideoPlaybackChirho
 import java.time.LocalDate
 
 /**
  * Loads one passage at a time. A new selection cancels the previous passage's requests and stops
- * its audio; verified text appears first, then optional pictures and recordings beside it.
+ * its audio and video; verified text appears first, then optional pictures and recordings beside it.
+ * Only one sound plays at a time: a verse video (with its own reading), a verse recording or a word.
  */
 class ReaderViewModelChirho(
     private val contentChirho: ContentRepositoryChirho,
     private val mediaChirho: MediaRepositoryChirho,
     private val audioChirho: AudioRepositoryChirho,
     playbackFactoryChirho: (CoroutineScope) -> AudioPlaybackChirho,
+    videoFactoryChirho: (CoroutineScope) -> VideoPlaybackChirho,
     private val preferencesChirho: ReaderPreferencesChirho,
     private val savedChirho: SavedStateHandle,
     explicitPassageChirho: PassageChirho?,
     todayChirho: () -> LocalDate = LocalDate::now,
 ) : ViewModel() {
     private val playbackChirho: AudioPlaybackChirho = playbackFactoryChirho(viewModelScope)
+    private val videoChirho: VideoPlaybackChirho = videoFactoryChirho(viewModelScope)
 
     private data class RequestChirho(val passageChirho: PassageChirho, val snapChirho: Boolean, val attemptChirho: Int = 0)
 
@@ -50,15 +58,30 @@ class ReaderViewModelChirho(
     private val stateChirho = MutableStateFlow(
         ReaderUiStateChirho(
             passageChirho = initialChirho,
-            renditionChirho = preferencesChirho.renditionChirho,
+            renditionChoiceChirho = preferencesChirho.renditionChirho,
             speedChoiceChirho = preferencesChirho.speedChirho,
         ),
     )
     val uiStateChirho: StateFlow<ReaderUiStateChirho> = stateChirho.asStateFlow()
-    val playbackStateChirho: StateFlow<PlaybackChirho> = playbackChirho.playbackChirho
+
+    /** What is sounding now; a verse video uses the verse key, so the verse control shows it too. */
+    val playbackStateChirho: StateFlow<PlaybackChirho> =
+        combine(playbackChirho.playbackChirho, videoChirho.playbackChirho) { audioChirho, videoStateChirho ->
+            if (videoStateChirho is PlaybackChirho.IdleChirho) audioChirho else videoStateChirho
+        }.stateIn(viewModelScope, SharingStarted.Eagerly, PlaybackChirho.IdleChirho)
 
     init {
         viewModelScope.launch { requestChirho.collectLatest { loadChirho(it) } }
+        // A superseded or stopped play never reports (PlaybackSlotChirho), so a failure here is this verse's video.
+        viewModelScope.launch {
+            videoChirho.playbackChirho.collect { videoStateChirho ->
+                if (videoStateChirho is PlaybackChirho.FailedChirho &&
+                    videoStateChirho.keyChirho == "verse:${stateChirho.value.passageChirho.idChirho}"
+                ) {
+                    stateChirho.update { it.copy(videoFailedChirho = true) }
+                }
+            }
+        }
     }
 
     fun selectBookChirho(bookIdChirho: String) = requestPassageChirho(PassageChirho(bookIdChirho, 1, 1), snapChirho = true)
@@ -82,7 +105,7 @@ class ReaderViewModelChirho(
     }
 
     private suspend fun loadChirho(requestChirho: RequestChirho): Unit = coroutineScope {
-        playbackChirho.stopChirho()
+        stopAllChirho()
         var passageChirho = requestChirho.passageChirho
         stateChirho.update {
             it.copy(
@@ -90,6 +113,7 @@ class ReaderViewModelChirho(
                 verseChirho = VerseLoadChirho.LoadingChirho,
                 mediaChirho = OptionalChirho.LoadingChirho,
                 recordingsChirho = OptionalChirho.LoadingChirho,
+                videoFailedChirho = false,
             )
         }
         val catalogueChirho = attemptChirho { contentChirho.catalogueChirho() } ?: return@coroutineScope failChirho(FailureChirho.BOOK_CHIRHO)
@@ -148,6 +172,8 @@ class ReaderViewModelChirho(
     private fun currentRecordingsChirho() =
         (stateChirho.value.recordingsChirho as? OptionalChirho.ReadyChirho)?.valueChirho
 
+    private fun currentVideoChirho() = stateChirho.value.playableVideoChirho
+
     fun wordClipAvailableChirho(wordChirho: WordChirho): Boolean = currentRecordingsChirho()?.let {
         AudioSelectionChirho.bestChirho(it.wordsChirho[wordChirho.idChirho], stateChirho.value.greekChirho, stateChirho.value.renditionChirho) != null
     } == true
@@ -159,21 +185,41 @@ class ReaderViewModelChirho(
             currentRecordingsChirho()?.wordsChirho?.get(wordChirho.idChirho), stateNowChirho.greekChirho, stateNowChirho.renditionChirho,
         ) ?: return
         toggleChirho("word:${stateNowChirho.passageChirho.idChirho}:${wordChirho.idChirho}") { keyChirho ->
+            videoChirho.stopChirho()
             playbackChirho.playChirho(keyChirho, clipChirho, stateNowChirho.speedChirho)
         }
     }
 
-    fun verseClipAvailableChirho(): Boolean = currentRecordingsChirho()?.let {
+    fun verseClipAvailableChirho(): Boolean = currentVideoChirho() != null || currentRecordingsChirho()?.let {
         AudioSelectionChirho.bestChirho(it.versesChirho, stateChirho.value.greekChirho, stateChirho.value.renditionChirho) != null
     } == true
 
+    /**
+     * A verse with a video plays the video, whose sound is the verse's reading; otherwise, or after its video
+     * failed on this visit, its saved recording over the still (ReaderUiStateChirho.playableVideoChirho).
+     */
     fun toggleVerseChirho() {
         val stateNowChirho = stateChirho.value
+        val keyChirho = "verse:${stateNowChirho.passageChirho.idChirho}"
+        currentVideoChirho()?.let { verseVideoChirho ->
+            val currentChirho = videoChirho.playbackChirho.value
+            if (currentChirho.keyChirho == keyChirho &&
+                (currentChirho is PlaybackChirho.PlayingChirho || currentChirho is PlaybackChirho.LoadingChirho)
+            ) {
+                videoChirho.stopChirho()
+            } else {
+                playbackChirho.stopChirho()
+                // The video and its reading follow the Speed setting, pitch kept (L.J., 2026-11-06: "change video speed").
+                videoChirho.playChirho(keyChirho, verseVideoChirho, stateNowChirho.speedChirho)
+            }
+            return
+        }
         val clipChirho = AudioSelectionChirho.bestChirho(
             currentRecordingsChirho()?.versesChirho, stateNowChirho.greekChirho, stateNowChirho.renditionChirho,
         ) ?: return
-        toggleChirho("verse:${stateNowChirho.passageChirho.idChirho}") { keyChirho ->
-            playbackChirho.playChirho(keyChirho, clipChirho, stateNowChirho.speedChirho)
+        toggleChirho(keyChirho) { verseKeyChirho ->
+            videoChirho.stopChirho()
+            playbackChirho.playChirho(verseKeyChirho, clipChirho, stateNowChirho.speedChirho)
         }
     }
 
@@ -188,10 +234,11 @@ class ReaderViewModelChirho(
         }
     }
 
+    /** A choice made in Settings is saved and from then on replaces the automatic one, as on the website. */
     fun setRenditionChirho(renditionChirho: GreekRenditionChirho) {
-        playbackChirho.stopChirho()
+        stopAllChirho()
         preferencesChirho.renditionChirho = renditionChirho
-        stateChirho.update { it.copy(renditionChirho = renditionChirho) }
+        stateChirho.update { it.copy(renditionChoiceChirho = renditionChirho) }
     }
 
     fun setSpeedChirho(speedChirho: Float?) {
@@ -199,10 +246,19 @@ class ReaderViewModelChirho(
         stateChirho.update { it.copy(speedChoiceChirho = speedChirho) }
     }
 
-    fun stopAudioChirho() = playbackChirho.stopChirho()
+    /** The verse video's drawing surface, lent by the screen while it is shown. */
+    fun videoSurfaceChirho(surfaceChirho: Surface?) = videoChirho.surfaceChirho(surfaceChirho)
+
+    fun stopAudioChirho() = stopAllChirho()
+
+    private fun stopAllChirho() {
+        playbackChirho.stopChirho()
+        videoChirho.stopChirho()
+    }
 
     override fun onCleared() {
-        playbackChirho.stopChirho()
+        stopAllChirho()
+        videoChirho.surfaceChirho(null)
     }
 
     companion object {

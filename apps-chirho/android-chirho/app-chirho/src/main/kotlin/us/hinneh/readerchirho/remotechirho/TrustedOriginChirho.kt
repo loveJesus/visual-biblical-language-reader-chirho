@@ -24,6 +24,10 @@ object TrustedOriginChirho {
 
     /** A web address for opening the same verse on the website in the user's browser. */
     fun versePageChirho(passageIdChirho: String): String = "$ORIGIN_CHIRHO/#$passageIdChirho"
+
+    /** One of the website's own pages (privacy-chirho, about-chirho, contact-chirho) in the interface language. */
+    fun sitePageChirho(slugChirho: String, spanishChirho: Boolean): String =
+        "$ORIGIN_CHIRHO/$slugChirho/?lang_chirho=${if (spanishChirho) "es" else "en"}"
 }
 
 /** Every remote resource kind: its exact published path shape and its byte ceiling. */
@@ -37,4 +41,5 @@ enum class ResourceKindChirho(val patternChirho: Regex, val limitChirho: Int) {
     AUDIO_CHAPTER_CHIRHO(Regex("/audio-chirho/[a-z0-9-]+/chapter-[0-9]{2,3}-chirho\\.json"), 2_000_000),
     AUDIO_CLIP_CHIRHO(Regex("/audio-chirho/sha256-chirho/[a-f0-9]{64}-chirho\\.mp3"), 4_000_000),
     ARTWORK_CHIRHO(Regex("/assets-chirho/[a-z0-9/-]+\\.webp"), 8 * 1024 * 1024),
+    VERSE_VIDEO_CHIRHO(Regex("/video-chirho/sha256-chirho/[a-f0-9]{64}-chirho\\.mp4"), 16 * 1024 * 1024),
 }

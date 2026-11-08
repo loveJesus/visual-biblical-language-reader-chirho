@@ -30,6 +30,27 @@ import Testing
         #expect(selectedChirho.videoChirho == videoChirho)
         #expect(selectedChirho.picturesChirho == beforeChirho.picturesChirho)
         #expect(videoChirho.carriesChirho(clipChirho))
+        var silentChirho = objectChirho
+        silentChirho["reading_language_chirho"] = NSNull()
+        silentChirho["embedded_reading_chirho"] = NSNull()
+        silentChirho["license_chirho"] = "CC0"
+        silentChirho["license_url_chirho"] = "https://creativecommons.org/publicdomain/zero/1.0/"
+        let silentVideoChirho = try DecodingChirho.decodeChirho(VerseVideoChirho.self, FixtureChirho.jsonChirho(silentChirho))
+        #expect(silentVideoChirho.validChirho(verseChirho, sceneChirho))
+        for missingKeyChirho in ["reading_language_chirho", "embedded_reading_chirho"] {
+            var missingChirho = silentChirho
+            missingChirho.removeValue(forKey: missingKeyChirho)
+            mediaChirho.videosChirho = [try DecodingChirho.decodeChirho(VerseVideoChirho.self, FixtureChirho.jsonChirho(missingChirho))]
+            let refusedChirho = MediaRulesChirho.selectChirho(mediaChirho, verseChirho)
+            #expect(refusedChirho.videoChirho == nil)
+            #expect(refusedChirho.sceneChirho == beforeChirho.sceneChirho)
+            #expect(refusedChirho.picturesChirho == beforeChirho.picturesChirho)
+        }
+        mediaChirho.videosChirho = [silentVideoChirho, silentVideoChirho]
+        let ambiguousChirho = MediaRulesChirho.selectChirho(mediaChirho, verseChirho)
+        #expect(ambiguousChirho.videoChirho == nil)
+        #expect(ambiguousChirho.picturesChirho == beforeChirho.picturesChirho)
+
         for (keyChirho, valueChirho) in [
             ("scene_sha256_chirho", String(repeating: "e", count: 64) as Any),
             ("canonical_sha256_chirho", String(repeating: "e", count: 64) as Any),

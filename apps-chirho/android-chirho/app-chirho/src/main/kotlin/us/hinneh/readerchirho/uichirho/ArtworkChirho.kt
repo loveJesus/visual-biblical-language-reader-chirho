@@ -135,7 +135,7 @@ fun StickerChirho(
     }
 }
 
-/** The verse scene with its alt text, reading note and an honest AI-artwork review label. */
+/** The verse scene with its alt text. That pictures are AI study aids awaiting review is said once, in About. */
 @Composable
 fun SceneViewChirho(imagesChirho: ImageLoaderChirho?, sceneChirho: ScenePresentationChirho) {
     var reducedChirho by remember(sceneChirho) { mutableStateOf(false) }
@@ -173,12 +173,5 @@ fun SceneViewChirho(imagesChirho: ImageLoaderChirho?, sceneChirho: ScenePresenta
                 )
             }
         }
-        Text(stringResource(R.string.scene_caption_chirho), style = MaterialTheme.typography.labelLarge, modifier = Modifier.padding(top = 8.dp))
-        Text(stringResource(R.string.scene_caption_sub_chirho), style = MaterialTheme.typography.bodySmall)
-        Text(
-            stringResource(if (shownChirho.artReviewChirho == "approved") R.string.art_approved_chirho else R.string.art_pending_chirho),
-            style = MaterialTheme.typography.bodySmall,
-        )
-        Text(englishDataChirho(shownChirho.readingNoteChirho), style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(top = 4.dp))
     }
 }

@@ -1,0 +1,169 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Prov",
+	"chapter_chirho": 7,
+	"source_sha256_chirho": "a7e7870ec71894a636fb7da4cd157fea8cd0df9b9a0185bfee81c2c384df01af",
+	"units_chirho": [
+		{
+			"unit_id_chirho": "prov-007-001-005-chirho",
+			"start_chirho": "Prov.7.1",
+			"end_chirho": "Prov.7.5",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "frame",
+			"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Opening frame of the chapter's lesson: keep the commandments so they keep you from the strange woman (7:5).",
+			"title_chirho": "Keep my words; call wisdom your sister",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				},
+				{
+					"role_chirho": "Wisdom",
+					"text_facts_chirho": "to be called 'my sister' (7:4); figurative"
+				}
+			],
+			"art_choices_chirho": [
+				"the frame may be shown as the father teaching his son, consistent with the watcher of 7:6-7"
+			]
+		},
+		{
+			"unit_id_chirho": "prov-007-006-009-chirho",
+			"start_chirho": "Prov.7.6",
+			"end_chirho": "Prov.7.9",
+			"verse_count_chirho": 4,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "narrative",
+			"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "The narrator looks out through the lattice and sees a simple young man walk toward her house at dusk into night.",
+			"title_chirho": "At my window I watched the young man",
+			"roles_chirho": [
+				{
+					"role_chirho": "narrator ('I')",
+					"text_facts_chirho": "looks through the window lattice of his own house (7:6) and sees (7:7)"
+				},
+				{
+					"role_chirho": "the young man",
+					"text_facts_chirho": "among the simple and the youths, lacking sense (7:7); passes near her corner (7:8)"
+				}
+			],
+			"art_choices_chirho": [
+				"the narrator's age and appearance (consistent with the teaching father of 7:1-5)",
+				"the young man's clothes"
+			],
+			"uncertainty_chirho": "Hebrew (MT, which Hinneh follows) has the narrator at the window in 7:6; the Greek LXX puts the woman there. So 7:6 and 7:7 both show the same narrator watching."
+		},
+		{
+			"unit_id_chirho": "prov-007-010-013-chirho",
+			"start_chirho": "Prov.7.10",
+			"end_chirho": "Prov.7.13",
+			"verse_count_chirho": 4,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "narrative",
+			"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "A woman dressed as a harlot meets him, loud and restless, lying in wait at corners; she seizes and kisses him.",
+			"title_chirho": "She meets him",
+			"roles_chirho": [
+				{
+					"role_chirho": "the woman",
+					"text_facts_chirho": "harlot's attire, crafty heart (7:10); loud, stubborn, not staying home (7:11-12)"
+				},
+				{
+					"role_chirho": "the young man",
+					"text_facts_chirho": "seized and kissed (7:13)"
+				},
+				{
+					"role_chirho": "narrator",
+					"text_facts_chirho": "still the observer, at his window"
+				}
+			],
+			"art_choices_chirho": [
+				"the specific dress, kept modest per project norms",
+				"the street and corner"
+			]
+		},
+		{
+			"unit_id_chirho": "prov-007-014-020-chirho",
+			"start_chirho": "Prov.7.14",
+			"end_chirho": "Prov.7.20",
+			"verse_count_chirho": 7,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "narrative",
+			"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Her persuasion: vows paid and peace offerings, a prepared bed with Egyptian linen and spices, the husband away.",
+			"title_chirho": "Her speech",
+			"roles_chirho": [
+				{
+					"role_chirho": "the woman",
+					"text_facts_chirho": "speaks (7:14-20); married"
+				},
+				{
+					"role_chirho": "the young man",
+					"text_facts_chirho": "listens"
+				},
+				{
+					"role_chirho": "her husband",
+					"text_facts_chirho": "absent on a long journey with a bag of money, returning at the full moon (7:19-20); not present"
+				}
+			],
+			"art_choices_chirho": [
+				"show speaker and listener in the street at night; the bed and spices are things she describes, not the setting"
+			],
+			"uncertainty_chirho": "7:20 'the day appointed' may mean the full moon. The husband is described, not seen."
+		},
+		{
+			"unit_id_chirho": "prov-007-021-023-chirho",
+			"start_chirho": "Prov.7.21",
+			"end_chirho": "Prov.7.23",
+			"verse_count_chirho": 3,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "narrative",
+			"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "Won by her smooth talk he goes after her at once, like an ox to slaughter, a bird to the snare.",
+			"title_chirho": "He follows her",
+			"roles_chirho": [
+				{
+					"role_chirho": "the young man",
+					"text_facts_chirho": "follows her (7:22)"
+				},
+				{
+					"role_chirho": "the woman",
+					"text_facts_chirho": "leads him"
+				}
+			],
+			"uncertainty_chirho": "Ox, fetters, arrow and snare are comparisons, not scene elements."
+		},
+		{
+			"unit_id_chirho": "prov-007-024-027-chirho",
+			"start_chirho": "Prov.7.24",
+			"end_chirho": "Prov.7.27",
+			"verse_count_chirho": 4,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "frame",
+			"episode_id_chirho": "prov-07-young-man-and-strange-woman-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Closing frame: listen, children; many strong men have fallen by her.",
+			"title_chirho": "Her house is the way to Sheol",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, speaking",
+					"text_facts_chirho": "addresses 'children' (7:24)"
+				},
+				{
+					"role_chirho": "children",
+					"text_facts_chirho": "listeners"
+				}
+			]
+		}
+	]
+}

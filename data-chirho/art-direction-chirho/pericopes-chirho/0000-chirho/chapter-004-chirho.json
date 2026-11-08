@@ -1,0 +1,103 @@
+{
+	"schema_version_chirho": 1,
+	"book_id_chirho": "Prov",
+	"chapter_chirho": 4,
+	"source_sha256_chirho": "5ed26172697f6f9749582e59c1ff1b5a3adcbe158792ea483b110e028825492e",
+	"units_chirho": [
+		{
+			"unit_id_chirho": "prov-004-001-004-chirho",
+			"start_chirho": "Prov.4.1",
+			"end_chirho": "Prov.4.4",
+			"verse_count_chirho": 4,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": "prov-04-fathers-teaching-chirho",
+			"literal_continuity_chirho": true,
+			"rationale_chirho": "The father recalls being taught as a tender only son by his own father (4:3-4).",
+			"title_chirho": "I was my father's son",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, speaking",
+					"text_facts_chirho": "addresses 'children' (plural, 4:1)"
+				},
+				{
+					"role_chirho": "children",
+					"text_facts_chirho": "the listeners (4:1)"
+				},
+				{
+					"role_chirho": "the father's own father",
+					"text_facts_chirho": "taught him when young (4:4), in the past"
+				},
+				{
+					"role_chirho": "the father's mother",
+					"text_facts_chirho": "he was tender and only beloved in her sight (4:3)"
+				}
+			],
+			"art_choices_chirho": ["the father's age; the remembered childhood setting"],
+			"uncertainty_chirho": "4:3-4 is a remembered past within the present lecture: a time transition, not a second teacher present now."
+		},
+		{
+			"unit_id_chirho": "prov-004-005-009-chirho",
+			"start_chirho": "Prov.4.5",
+			"end_chirho": "Prov.4.9",
+			"verse_count_chirho": 5,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": "prov-04-fathers-teaching-chirho",
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "The grandfather's words continue (where they end is debated): get wisdom; she gives a crown of glory.",
+			"title_chirho": "Get wisdom; she will crown you",
+			"roles_chirho": [
+				{
+					"role_chirho": "Wisdom, personified",
+					"text_facts_chirho": "she will place a garland and crown on your head (4:9)"
+				}
+			],
+			"uncertainty_chirho": "Whether 4:5-9 is still the grandfather's quotation is debated."
+		},
+		{
+			"unit_id_chirho": "prov-004-010-019-chirho",
+			"start_chirho": "Prov.4.10",
+			"end_chirho": "Prov.4.19",
+			"verse_count_chirho": 10,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "The way of wisdom as growing light against the dark path of the wicked (4:18-19).",
+			"title_chirho": "Two paths",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				}
+			]
+		},
+		{
+			"unit_id_chirho": "prov-004-020-027-chirho",
+			"start_chirho": "Prov.4.20",
+			"end_chirho": "Prov.4.27",
+			"verse_count_chirho": 8,
+			"section_id_chirho": "prologue-instructions-chirho",
+			"kind_chirho": "discourse",
+			"episode_id_chirho": null,
+			"literal_continuity_chirho": false,
+			"rationale_chirho": "Ears, eyes, heart, mouth and feet kept straight.",
+			"title_chirho": "Keep your heart",
+			"roles_chirho": [
+				{
+					"role_chirho": "father, the speaking teacher",
+					"text_facts_chirho": "addresses 'my son' and teaches; unnamed"
+				},
+				{
+					"role_chirho": "son, the addressee",
+					"text_facts_chirho": "listens; unnamed; age not given"
+				}
+			]
+		}
+	]
+}

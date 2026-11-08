@@ -10,15 +10,19 @@ struct ReaderViewChirho: View {
     @State private var selectedWordChirho: WordDisplayChirho?
     @State private var choosingChirho = false
     @State private var showingKeyChirho = false
+    @State private var sceneFrameChirho = CGRect.zero
+    @State private var readerFrameChirho = CGRect.zero
     @Environment(\.scenePhase) private var scenePhaseChirho
+    @Environment(\.layoutDirection) private var layoutDirectionChirho
 
     private var messagesChirho: MessagesChirho { modelChirho.messagesChirho }
 
     var body: some View {
         NavigationStack {
+            ScrollViewReader { scrollChirho in
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    headerChirho
+                    headerChirho.id("reader-top-chirho")
                     switch modelChirho.phaseChirho {
                     case .loadingChirho: loadingChirho
                     case .failedChirho: failureChirho
@@ -33,6 +37,24 @@ struct ReaderViewChirho: View {
                 .frame(maxWidth: .infinity)
             }
             .background(PaletteChirho.paperChirho)
+            .onGeometryChange(for: CGRect.self) { geometryChirho in
+                geometryChirho.frame(in: .global)
+            } action: { frameChirho in readerFrameChirho = frameChirho }
+            .simultaneousGesture(DragGesture(minimumDistance: 24, coordinateSpace: .global)
+                .onEnded { dragChirho in
+                    let horizontalChirho = dragChirho.translation.width
+                    let verticalChirho = dragChirho.translation.height
+                    guard modelChirho.phaseChirho == .readyChirho,
+                          abs(horizontalChirho) >= 80, abs(horizontalChirho) > abs(verticalChirho) * 1.5,
+                          !sceneFrameChirho.contains(dragChirho.startLocation),
+                          dragChirho.startLocation.x > readerFrameChirho.minX + 24,
+                          dragChirho.startLocation.x < readerFrameChirho.maxX - 24 else { return }
+                    let forwardChirho = (horizontalChirho < 0) == (layoutDirectionChirho == .leftToRight)
+                    Task { await modelChirho.stepChirho(forwardChirho ? .nextChirho : .previousChirho) }
+                })
+            .onChange(of: modelChirho.passageChirho) { _, _ in
+                scrollChirho.scrollTo("reader-top-chirho", anchor: .top)
+            }
             .refreshable { modelChirho.retryChirho() }
             .toolbar { toolbarChirho }
             .navigationBarTitleDisplayMode(.inline)
@@ -45,6 +67,7 @@ struct ReaderViewChirho: View {
             .sheet(isPresented: $showingKeyChirho) {
                 ReadingKeyViewChirho(scriptChirho: modelChirho.bookChirho?.scriptChirho ?? .hebrewChirho,
                                      modelChirho: modelChirho)
+            }
             }
         }
         .environment(\.locale, Locale(identifier: modelChirho.localeChirho.rawValue))
@@ -75,8 +98,13 @@ struct ReaderViewChirho: View {
                         Text(localeChirho.nativeNameChirho).tag(localeChirho)
                     }
                 }
+                Picker(messagesChirho.speedChirho, selection: $modelChirho.playbackSpeedChirho) {
+                    ForEach(PlaybackSpeedChirho.allCases) { speedChirho in
+                        Text(speedChirho.labelChirho(modelChirho.localeChirho)).tag(speedChirho)
+                    }
+                }
             } label: {
-                Label(messagesChirho.languageChirho, systemImage: "globe")
+                Label(messagesChirho.settingsChirho, systemImage: "slider.horizontal.3")
             }
         }
     }
@@ -133,6 +161,9 @@ struct ReaderViewChirho: View {
     private func readingChirho(_ verseChirho: VerseDisplayChirho) -> some View {
         VStack(alignment: .leading, spacing: 20) {
             SceneViewChirho(sceneChirho: modelChirho.mediaChirho.sceneChirho, modelChirho: modelChirho)
+                .onGeometryChange(for: CGRect.self) { geometryChirho in
+                    geometryChirho.frame(in: .global)
+                } action: { frameChirho in sceneFrameChirho = frameChirho }
             VStack(alignment: .leading, spacing: 12) {
                 verseAudioChirho(verseChirho)
                 VerseViewChirho(verseChirho: verseChirho, modelChirho: modelChirho) { selectedWordChirho = $0 }
@@ -156,7 +187,7 @@ struct ReaderViewChirho: View {
             .pickerStyle(.menu)
             .tint(PaletteChirho.quietChirho)
         }
-        if let clipChirho = modelChirho.audioChirho.verseClipChirho {
+        if modelChirho.audioChirho.verseClipChirho != nil {
             let activeChirho = modelChirho.playerChirho.activeIdChirho == "verse"
             VStack(alignment: .leading, spacing: 4) {
                 Button { modelChirho.toggleVerseChirho() } label: {
@@ -164,13 +195,6 @@ struct ReaderViewChirho: View {
                           systemImage: activeChirho ? "stop.fill" : "play.fill")
                 }
                 .buttonStyle(.bordered)
-                Text(messagesChirho.voiceChirho(clipChirho)).font(.caption).foregroundStyle(.secondary)
-                if let sourceChirho = clipChirho.readingSourceChirho {
-                    ReadingCreditViewChirho(attributionChirho: sourceChirho.attributionChirho,
-                                            licenseChirho: sourceChirho.licenseChirho,
-                                            licenseUrlChirho: sourceChirho.licenseUrlChirho,
-                                            localeChirho: modelChirho.localeChirho)
-                }
                 if modelChirho.playerChirho.failedIdChirho == "verse" {
                     Text(messagesChirho.audioFailedChirho).font(.caption).foregroundStyle(.red)
                 }
@@ -208,11 +232,13 @@ struct ReaderViewChirho: View {
             Button { Task { await modelChirho.stepChirho(.previousChirho) } } label: {
                 Label(messagesChirho.previousVerseChirho, systemImage: "chevron.backward")
             }
+            .disabled(modelChirho.previousPassageChirho == nil)
             Spacer()
             Button { Task { await modelChirho.stepChirho(.nextChirho) } } label: {
                 Label(messagesChirho.nextVerseChirho, systemImage: "chevron.forward")
                     .labelStyle(TrailingIconLabelStyleChirho())
             }
+            .disabled(modelChirho.nextPassageChirho == nil)
         }
         .buttonStyle(.bordered)
     }
@@ -263,18 +289,6 @@ struct SceneViewChirho: View {
                     }
                 }
                 }
-                if let videoChirho = modelChirho.mediaChirho.videoChirho,
-                   modelChirho.audioChirho.verseClipChirho?.readingSourceChirho == nil {
-                    ReadingCreditViewChirho(attributionChirho: videoChirho.attributionChirho,
-                                            licenseChirho: videoChirho.licenseChirho,
-                                            licenseUrlChirho: videoChirho.licenseUrlChirho,
-                                            localeChirho: modelChirho.localeChirho)
-                }
-                Text(modelChirho.messagesChirho.sceneCaptionChirho + " "
-                     + (sceneChirho.artReviewChirho == "approved" ? modelChirho.messagesChirho.artApprovedChirho
-                        : modelChirho.messagesChirho.artPendingChirho))
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
             }
         }
     }
