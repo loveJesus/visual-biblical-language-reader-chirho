@@ -4325,6 +4325,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/leviticus-chirho/chapter-002-chirho/lev-002-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8986dd095082c3985efcaa620ebfbe3b8b97773d6bba2ed15b1455a8f85f3b00.webp",
+        "sha256_chirho": "8986dd095082c3985efcaa620ebfbe3b8b97773d6bba2ed15b1455a8f85f3b00",
+        "bytes_chirho": 2131610,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-08T19:21:40.618Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/d34dad4f0c27a9b0278643f66488387a7a5ff05344d431992727de1895c313df.webp",
+        "sha256_chirho": "d34dad4f0c27a9b0278643f66488387a7a5ff05344d431992727de1895c313df",
+        "bytes_chirho": 155670,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-08T19:21:41.719Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/nehemiah-chirho/chapter-008-chirho/neh-008-001-chirho.webp"
       ],
       "source_chirho": {

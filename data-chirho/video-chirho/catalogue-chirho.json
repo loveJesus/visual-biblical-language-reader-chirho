@@ -1890,6 +1890,41 @@
 			"key_chirho": "video-chirho/sha256-chirho/95d4276e20226142811d44bcd35ac5ec09d11cdcd186a438d1c63f7e2d8e47e0.mp4",
 			"readback_sha256_chirho": "95d4276e20226142811d44bcd35ac5ec09d11cdcd186a438d1c63f7e2d8e47e0",
 			"verified_at_chirho": "2026-11-08T18:56:24.638Z"
+		},
+		{
+			"video_chirho": {
+				"lesson_id_chirho": "Gen.3.3",
+				"asset_path_chirho": "/video-chirho/sha256-chirho/4eb4daf82837e4a5d18b3d4483dd26aa8cc7f73fb188f42aa16ad6593e0c1800-chirho.mp4",
+				"sha256_chirho": "4eb4daf82837e4a5d18b3d4483dd26aa8cc7f73fb188f42aa16ad6593e0c1800",
+				"bytes_chirho": 4838936,
+				"duration_chirho": 10.708,
+				"width_chirho": 1108,
+				"height_chirho": 832,
+				"scene_sha256_chirho": "4f752b609909cbd12fa5e354192033e97aa739d924b063d7fe3a422af0d19aa7",
+				"canonical_sha256_chirho": "fce0259c0df82ef608b59013ed28573dc4717f35ccefb7f744f83eb48810492d",
+				"reading_language_chirho": "he",
+				"embedded_reading_chirho": {
+					"kind_chirho": "human",
+					"reader_id_chirho": "rdb-chirho",
+					"gbt_id_chirho": "OT/RDB/Gen",
+					"package_sha256_chirho": "07f97bd429a19a0b7aa5e6894f03b7ec17ce1719c0162e028d048611817ea8a5",
+					"chapter_sha256_chirho": "3f6e050b449bfa7826258cf8cb513b14965753830fc1242ea9e6082ee9ab92a0",
+					"timings_sha256_chirho": "b0de816315a7dd0e62c5aacf26318b5ae7342a200f383d95096707ce201d3cc9",
+					"start_chirho": 21.52,
+					"end_chirho": 32.23,
+					"chapter_duration_chirho": 271.44,
+					"attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+					"license_chirho": "CC BY-SA 3.0",
+					"license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/"
+				},
+				"attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+				"license_chirho": "CC BY-SA 3.0",
+				"license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/",
+				"review_chirho": "pending"
+			},
+			"key_chirho": "video-chirho/sha256-chirho/4eb4daf82837e4a5d18b3d4483dd26aa8cc7f73fb188f42aa16ad6593e0c1800.mp4",
+			"readback_sha256_chirho": "4eb4daf82837e4a5d18b3d4483dd26aa8cc7f73fb188f42aa16ad6593e0c1800",
+			"verified_at_chirho": "2026-11-08T19:26:56.807Z"
 		}
 	]
 }

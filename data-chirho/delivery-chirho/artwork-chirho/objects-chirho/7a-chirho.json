@@ -4442,6 +4442,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/exodus-chirho/chapter-038-chirho/exod-038-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7a8f346c946938331f353f8552bbb44d363bffb66b2bc21db36724bc8175b4c6.webp",
+        "sha256_chirho": "7a8f346c946938331f353f8552bbb44d363bffb66b2bc21db36724bc8175b4c6",
+        "bytes_chirho": 2212412,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-08T19:14:54.822Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/2eeee7bcdc8c3887e0f58ed1f35769432fa3c3a0f9affdf62319e51e75e494a8.webp",
+        "sha256_chirho": "2eeee7bcdc8c3887e0f58ed1f35769432fa3c3a0f9affdf62319e51e75e494a8",
+        "bytes_chirho": 162954,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-08T19:14:56.099Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/romans-chirho/chapter-008-chirho/rom-008-025-chirho.webp"
       ],
       "source_chirho": {
