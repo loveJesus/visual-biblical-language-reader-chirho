@@ -6041,5 +6041,38 @@
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
     }
+  ],
+  "readings_chirho": [
+    {
+      "id_chirho": "beeri-prov-24-1-chirho",
+      "lesson_id_chirho": "Prov.24.1",
+      "token_id_chirho": null,
+      "text_chirho": "אַל־תְּ֭קַנֵּא בְּאַנְשֵׁ֣י רָעָ֑ה וְאַל־תִּ֝תְאָ֗יו לִהְי֥וֹת אִתָּֽם׃",
+      "canonical_sha256_chirho": "24c7d5baf9cc0d089ea2f51a52f26cc7e9cb31409fb2f61e11dd479043b41e73",
+      "language_chirho": "he",
+      "pronunciation_chirho": "israeli_hebrew",
+      "voice_name_chirho": "Rabbi Dan Be'eri",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/210d8144d7f41bd636ae6ea004aea86f81ff845e12394da25d62d17fe955cadc-chirho.mp3",
+      "sha256_chirho": "210d8144d7f41bd636ae6ea004aea86f81ff845e12394da25d62d17fe955cadc",
+      "bytes_chirho": 48735,
+      "duration_chirho": 6.01,
+      "review_chirho": "audition",
+      "reading_source_chirho": {
+        "kind_chirho": "human",
+        "reader_id_chirho": "rdb-chirho",
+        "gbt_id_chirho": "OT/RDB/Pro",
+        "package_sha256_chirho": "69bd7e3492038996aa5fd7d71456f08a2ec4229757879eaa86a8a89dca505829",
+        "chapter_sha256_chirho": "2c34470cbd1135d94c184ed8bbe82c78da29a0aa76438c6a7518e363e854edda",
+        "timings_sha256_chirho": "02a371d04eed801251d847d32341899187d12603984fcb13e1eacef44aa3aac5",
+        "start_chirho": 0,
+        "end_chirho": 6.01,
+        "chapter_duration_chirho": 218.34,
+        "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+        "license_chirho": "CC BY-SA 3.0",
+        "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "provider_chirho": "Global Bible Tools",
+      "license_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools https://creativecommons.org/licenses/by-sa/3.0/"
+    }
   ]
 }

@@ -4742,6 +4742,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/psalms-chirho/chapter-111-chirho/ps-111-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/34931c18557c7a936cb42927abe01973fc943d4b87a62e86bea4cf4d6613a3af.webp",
+        "sha256_chirho": "34931c18557c7a936cb42927abe01973fc943d4b87a62e86bea4cf4d6613a3af",
+        "bytes_chirho": 2506168,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-08T15:22:32.790Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/e352fe8c998185cd318c69c89bb57afeb3154ef7418f38b72a4731cd2bfa532d.webp",
+        "sha256_chirho": "e352fe8c998185cd318c69c89bb57afeb3154ef7418f38b72a4731cd2bfa532d",
+        "bytes_chirho": 246360,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-08T15:22:34.147Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-06-chirho/mark-06-005-chirho.webp"
       ],
       "source_chirho": {

@@ -19,6 +19,11 @@ import {
 	validHumanRecordingChirho,
 	type ReadingSourceChirho
 } from '../../../src/lib/domain-chirho/pronunciation-chirho/reading-source-chirho';
+import {
+	loadOpeningDefinitionChirho,
+	correctedOpeningWindowChirho,
+	verifyOpeningPhaseChirho
+} from './correction_chirho';
 
 interface PreparedReadingChirho {
 	lesson_id_chirho: string;
@@ -30,6 +35,7 @@ interface PreparedReadingChirho {
 	sha256_chirho: string;
 	bytes_chirho: number;
 	duration_chirho: number;
+	source_correction_sha256_chirho?: string;
 	source_chirho: Omit<ReadingSourceChirho, 'kind_chirho' | 'reader_id_chirho'> & {
 		files_chirho: Record<string, string>;
 		manifest_sha256_chirho: string;
@@ -57,6 +63,8 @@ const runArgumentChirho = argumentsChirho.indexOf('--run-chirho');
 const applyChirho = argumentsChirho.includes('--apply-chirho');
 const confirmArgumentChirho = argumentsChirho.indexOf('--confirm-chirho');
 const booksArgumentChirho = argumentsChirho.indexOf('--books-chirho');
+const phaseArgumentChirho = argumentsChirho.indexOf('--phase-chirho');
+const phaseChirho = phaseArgumentChirho < 0 ? null : argumentsChirho[phaseArgumentChirho + 1];
 const selectedIdsChirho = (
 	booksArgumentChirho < 0 ? 'Gen,Prov' : (argumentsChirho[booksArgumentChirho + 1] ?? '')
 ).split(',');
@@ -72,10 +80,14 @@ if (
 	!argumentsChirho[runArgumentChirho + 1] ||
 	argumentsChirho.some(
 		(valueChirho, indexChirho) =>
-			!['--run-chirho', '--apply-chirho', '--confirm-chirho', '--books-chirho'].includes(
-				valueChirho
-			) &&
-			!['--run-chirho', '--confirm-chirho', '--books-chirho'].includes(
+			![
+				'--run-chirho',
+				'--apply-chirho',
+				'--confirm-chirho',
+				'--books-chirho',
+				'--phase-chirho'
+			].includes(valueChirho) &&
+			!['--run-chirho', '--confirm-chirho', '--books-chirho', '--phase-chirho'].includes(
 				argumentsChirho[indexChirho - 1]
 			)
 	)
@@ -87,6 +99,11 @@ if (
 	joinChirho(rootChirho, 'workspace-chirho/audio-chirho/beeri-verses-2026-11-07-chirho')
 )
 	throw Error('Unowned human reading run');
+if (phaseArgumentChirho >= 0 && (!phaseChirho || selectedIdsChirho.join(',') !== 'Prov'))
+	throw Error('Corrected opening phase requires only Proverbs');
+const openingPhaseChirho = phaseChirho
+	? await loadOpeningDefinitionChirho(rootChirho, phaseChirho)
+	: null;
 const accountChirho = process.env.CLOUDFLARE_GLOBAL_API_MAIN_ACCOUNT_ID_CHIRHO ?? '';
 let targetChirho: TargetChirho | null = null;
 if (applyChirho) {
@@ -134,6 +151,18 @@ const sourceManifestChirho = new Map(
 	).map((rowChirho) => [rowChirho.id, rowChirho.sha256])
 );
 const sourceCacheChirho = new Map<string, { sha256_chirho: string; duration_chirho: number }>();
+async function inspectSourceChirho(pathChirho: string) {
+	return {
+		sha256_chirho: sha256Chirho(await readFileChirho(pathChirho)),
+		duration_chirho: Number(
+			execFileSyncChirho(
+				'ffprobe',
+				['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', pathChirho],
+				{ encoding: 'utf8' }
+			).trim()
+		)
+	};
+}
 const booksDirectoryChirho = joinChirho(runChirho, 'books-chirho');
 for (const bookFolderChirho of await readdirChirho(booksDirectoryChirho, { withFileTypes: true })) {
 	if (!bookFolderChirho.isDirectory() || bookFolderChirho.isSymbolicLink())
@@ -214,24 +243,7 @@ for (const bookFolderChirho of await readdirChirho(booksDirectoryChirho, { withF
 			);
 			let sourceProbeChirho = sourceCacheChirho.get(chapterSourcePathChirho);
 			if (!sourceProbeChirho) {
-				sourceProbeChirho = {
-					sha256_chirho: sha256Chirho(await readFileChirho(chapterSourcePathChirho)),
-					duration_chirho: Number(
-						execFileSyncChirho(
-							'ffprobe',
-							[
-								'-v',
-								'error',
-								'-show_entries',
-								'format=duration',
-								'-of',
-								'csv=p=0',
-								chapterSourcePathChirho
-							],
-							{ encoding: 'utf8' }
-						).trim()
-					)
-				};
+				sourceProbeChirho = await inspectSourceChirho(chapterSourcePathChirho);
 				sourceCacheChirho.set(chapterSourcePathChirho, sourceProbeChirho);
 			}
 			const timingBytesChirho = await readFileChirho(
@@ -248,30 +260,38 @@ for (const bookFolderChirho of await readdirChirho(booksDirectoryChirho, { withF
 			)
 				throw Error('Human source evidence changed');
 			if (timingBytesChirho.length % 11) throw Error('Source timing record is torn');
-			const verseNumberChirho = Number(readingChirho.lesson_id_chirho.split('.')[2]);
-			let timingOffsetChirho = -1;
-			for (let offsetChirho = 0; offsetChirho < timingBytesChirho.length; offsetChirho += 11) {
-				if (
-					timingBytesChirho[offsetChirho + 1] === Number(chapterTextChirho) &&
-					timingBytesChirho[offsetChirho + 2] === verseNumberChirho
-				) {
-					if (timingOffsetChirho !== -1) throw Error('Duplicate timing identity');
-					timingOffsetChirho = offsetChirho;
+			const correctedWindowChirho = correctedOpeningWindowChirho(
+				openingPhaseChirho?.definition_chirho ?? null,
+				readingChirho,
+				timingBytesChirho,
+				sourceProbeChirho
+			);
+			if (!correctedWindowChirho) {
+				const verseNumberChirho = Number(readingChirho.lesson_id_chirho.split('.')[2]);
+				let timingOffsetChirho = -1;
+				for (let offsetChirho = 0; offsetChirho < timingBytesChirho.length; offsetChirho += 11) {
+					if (
+						timingBytesChirho[offsetChirho + 1] === Number(chapterTextChirho) &&
+						timingBytesChirho[offsetChirho + 2] === verseNumberChirho
+					) {
+						if (timingOffsetChirho !== -1) throw Error('Duplicate timing identity');
+						timingOffsetChirho = offsetChirho;
+					}
 				}
+				if (timingOffsetChirho < 0) throw Error('Original verse timing is absent');
+				const nextOffsetChirho = timingOffsetChirho + 11;
+				const endChirho =
+					nextOffsetChirho < timingBytesChirho.length &&
+					timingBytesChirho[nextOffsetChirho + 1] === Number(chapterTextChirho)
+						? timingBytesChirho.readUInt32BE(nextOffsetChirho + 3) / 100
+						: sourceProbeChirho.duration_chirho;
+				if (
+					readingChirho.source_chirho.start_chirho !==
+						timingBytesChirho.readUInt32BE(timingOffsetChirho + 3) / 100 ||
+					readingChirho.source_chirho.end_chirho !== endChirho
+				)
+					throw Error('Prepared cut window differs from the original timing');
 			}
-			if (timingOffsetChirho < 0) throw Error('Original verse timing is absent');
-			const nextOffsetChirho = timingOffsetChirho + 11;
-			const endChirho =
-				nextOffsetChirho < timingBytesChirho.length &&
-				timingBytesChirho[nextOffsetChirho + 1] === Number(chapterTextChirho)
-					? timingBytesChirho.readUInt32BE(nextOffsetChirho + 3) / 100
-					: sourceProbeChirho.duration_chirho;
-			if (
-				readingChirho.source_chirho.start_chirho !==
-					timingBytesChirho.readUInt32BE(timingOffsetChirho + 3) / 100 ||
-				readingChirho.source_chirho.end_chirho !== endChirho
-			)
-				throw Error('Prepared cut window differs from the original timing');
 			const readingSourceChirho: ReadingSourceChirho = {
 				kind_chirho: 'human',
 				reader_id_chirho: 'rdb-chirho',
@@ -320,28 +340,33 @@ const countChirho = [...changesChirho.values()].reduce(
 	(sumChirho, rowsChirho) => sumChirho + rowsChirho.length,
 	0
 );
+const plannedChirho = [...changesChirho].map(([pathChirho, rowsChirho]) => ({
+	path_chirho: pathChirho,
+	clips_chirho: rowsChirho.map((rowChirho) => rowChirho.clip_chirho)
+}));
+if (openingPhaseChirho)
+	verifyOpeningPhaseChirho(
+		openingPhaseChirho.definition_chirho,
+		openingPhaseChirho.prior_plan_chirho,
+		plannedChirho
+	);
 if (!applyChirho) {
 	console.log(
 		JSON.stringify({
 			prepared_chirho: countChirho,
 			chapters_chirho: changesChirho.size,
 			writes_chirho: 0,
-			provider_posts_chirho: 0
+			provider_posts_chirho: 0,
+			...(phaseChirho ? { phase_chirho: phaseChirho, new_openings_chirho: 12 } : {})
 		})
 	);
 } else {
-	const frozenPlanChirho =
-		JSON.stringify(
-			[...changesChirho].map(([pathChirho, rowsChirho]) => ({
-				path_chirho: pathChirho,
-				clips_chirho: rowsChirho.map((rowChirho) => rowChirho.clip_chirho)
-			})),
-			null,
-			2
-		) + '\n';
+	const frozenPlanChirho = JSON.stringify(plannedChirho, null, 2) + '\n';
 	const planPathChirho = joinChirho(
 		runChirho,
-		`install-${selectedIdsChirho.join('-').toLowerCase()}-plan-chirho.json`
+		openingPhaseChirho
+			? 'install-prov-openings-v1-plan-chirho.json'
+			: `install-${selectedIdsChirho.join('-').toLowerCase()}-plan-chirho.json`
 	);
 	const previousPlanChirho = await readFileChirho(planPathChirho, 'utf8').catch(
 		(errorChirho: NodeJS.ErrnoException) => {
@@ -357,6 +382,38 @@ if (!applyChirho) {
 		joinChirho(rootChirho, 'build-chirho/r2-chirho/audio-catalogue-chirho.lock')
 	);
 	try {
+		if (openingPhaseChirho && phaseChirho) {
+			const coldPhaseChirho = await loadOpeningDefinitionChirho(rootChirho, phaseChirho);
+			verifyOpeningPhaseChirho(
+				coldPhaseChirho.definition_chirho,
+				coldPhaseChirho.prior_plan_chirho,
+				plannedChirho
+			);
+			const sourceHomeChirho = joinChirho(runChirho, 'books-chirho/proverbs-chirho/source-chirho');
+			const coldTimingsChirho = await readFileChirho(
+				joinChirho(sourceHomeChirho, 'timings-chirho.bin')
+			);
+			for (const rowChirho of [...changesChirho.values()].flat()) {
+				if (!rowChirho.reading_chirho.source_correction_sha256_chirho) continue;
+				const chapterChirho = rowChirho.reading_chirho.lesson_id_chirho
+					.split('.')[1]
+					.padStart(3, '0');
+				correctedOpeningWindowChirho(
+					coldPhaseChirho.definition_chirho,
+					rowChirho.reading_chirho,
+					coldTimingsChirho,
+					await inspectSourceChirho(
+						joinChirho(sourceHomeChirho, `chapter-${chapterChirho}-chirho.mp3`)
+					)
+				);
+				if (
+					sha256Chirho(
+						await readFileChirho(joinChirho(rootChirho, rowChirho.reading_chirho.path_chirho))
+					) !== rowChirho.reading_chirho.sha256_chirho
+				)
+					throw Error('Prepared corrected MP3 changed while waiting for the catalogue lock');
+			}
+		}
 		const indexPathChirho = joinChirho(rootChirho, 'static/audio-chirho/manifest-chirho.json');
 		const indexChirho = JSON.parse(
 			await readFileChirho(indexPathChirho, 'utf8')
