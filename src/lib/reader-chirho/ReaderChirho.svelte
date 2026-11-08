@@ -392,7 +392,6 @@
 				</p>
 			</details>
 			<div class="source-notes-chirho">
-				<SourceCreditChirho languageChirho="he" />
 				<StudyAidLinkChirho />
 			</div>
 			{#if studyNotesChirho.verseNotesChirho.length}
@@ -410,6 +409,8 @@
 					{#if humanReadingChirho}<li>
 							<ReadingCreditChirho readingChirho={humanReadingChirho} />
 						</li>{/if}
+					<!-- L.J. (2026-11-07): credits live in this info fold, not the main reading flow. -->
+					<li><SourceCreditChirho languageChirho="he" /></li>
 					{#each languagesChirho as languageChirho (languageChirho.id_chirho)}<li>
 							<a href={languageChirho.source_url_chirho} rel="external noreferrer" target="_blank"
 								>Global Bible Tools · {languageChirho.label_chirho} ↗</a

@@ -257,7 +257,6 @@
 				>
 					{presentationChirho.reading_note_chirho}
 				</p>{/if}
-			<SourceCreditChirho languageChirho="grc" />
 			{#each lessonChirho.source_notes_chirho ?? [] as noteChirho, indexChirho (indexChirho)}
 				{#if noteChirho.kind_chirho === 'parenthesized_passage'}<p
 						class="quiet-note-chirho"
@@ -286,6 +285,8 @@
 					{#if humanReadingChirho}<li>
 							<ReadingCreditChirho readingChirho={humanReadingChirho} />
 						</li>{/if}
+					<!-- L.J. (2026-11-07): credits live in this info fold, not the main reading flow. -->
+					<li><SourceCreditChirho languageChirho="grc" /></li>
 					{#each sourcesShownChirho as sourceChirho (sourceChirho.id_chirho)}<li>
 							{#if sourceChirho.url_chirho}<a
 									href={sourceChirho.url_chirho}

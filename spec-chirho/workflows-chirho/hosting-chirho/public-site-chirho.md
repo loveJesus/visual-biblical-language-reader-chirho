@@ -121,6 +121,18 @@ flowchart LR
 
 `lexiconLinkChirho` uses the existing checked Hebrew entry map throughout the reader and otherwise opens a labelled search at lexicon-chirho.bible.systems. External IDs are padded to four digits; Hebrew augments remain distinct. Search does not certify a unique lexical-form or sense match, especially for Greek forms sharing a Strong number. URLs use a fixed HTTPS origin and exact entry path; malformed identities and arbitrary supplied targets do not become links. Lexicon language is eng or spa, from the local interface preference. No lexicon query, import or synthesis runs on the reader's request path; following the link is a visitor action. Sister-project sources are read-only.
 
-## Temporary word-only audio controls
+## Verse playback and folded source credits
 
-The shared AudioVerseChirho view exposes word recordings, speed, pronunciation and IPA settings with previous/next passage navigation. L.J. requested removal of the sentence-level Play button. The navigation snippet therefore takes no playback snippet, the view supplies no verse-play button or assembly-order dataset, and its public recording dataset contains only token-bound clips. The per-word speakers and Stop remain. Saved natural recordings, source catalogues and the reusable playback library are retained for possible later use; no synthesis, funding or retry policy changes follow from this UI choice. The rendered controls are also used by offline exports. Public EN/ES guidance describes word playback.
+```mermaid
+flowchart TD
+  catalogueChirho[Verified verse catalogue] --> selectionChirho[Prefer a valid human reading; retain pronunciation rules]
+  selectionChirho --> playbackChirho[Play the matching video or read over the still]
+  playbackChirho --> cancelChirho[Stop, another speaker or passage change cancels playback]
+  selectionChirho --> creditChirho[Exact human attribution and license in Sources]
+  sourceChirho[OSHB or Nestle/Berean source credit] --> foldChirho[One unchanged credit in each verse Sources fold]
+  creditChirho --> foldChirho
+```
+
+AudioVerseChirho exposes verse and word playback, Stop, speed, pronunciation and IPA settings. The same validated media identities drive the scene video and the verse reading; navigation cancels the old playback. Opening a word card leaves the verse playing, while its speaker replaces it. The separate verse-media workflow owns the source, timing, licensing and delivery rules.
+
+Each reader keeps its source attribution and links verbatim in the verse's Sources fold, immediately after a human-reading credit when present. Each credit appears once. The Hebrew About study-aids link stays visible; moving credits does not change canonical text, pronunciation, media selection or licensing. Offline exports use the same reader markup.
