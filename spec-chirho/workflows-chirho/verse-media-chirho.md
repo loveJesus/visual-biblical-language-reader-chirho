@@ -97,3 +97,48 @@ rtk proxy bun scripts-chirho/audio-chirho/readings-chirho/install_chirho.ts --ru
 The installation dry run must report 573 prepared readings in 31 Proverbs chapters before root applies with its privately derived exact --confirm-chirho target. It must not rewrite the old Gen/Prov phase plan. After exact R2 proof and installation, root runs the existing scripts-chirho/video-chirho/install_chirho.ts dry/apply pair, then the normal frozen publisher and hosted verification. Until that occurs, the twelve openings remain prepared implementation work, not published media.
 
 The fixed November8 Greek continuation imports exactly24new screened takes (21seed2retakes and3seed1firsttakes) through the same archive and durable catalogue transaction. Both the old1084import and this phase read preserved manifest/plan/journal snapshots, so later producer appends cannot invalidate completed replay. The original v1wrapper remains seed1-only; the finite handoff wrapper separately binds every seed2take to its exact source, request, result, raw audio and passing screen. The four failed retakes, unscreened jobs and unknown outcomes remain excluded. Details and the immutable snapshot hashes are in scripts-chirho/audio-chirho/local-greek-chirho/README-chirho.md. No synthesis or provider spending belongs to either import.
+
+## Bounded other-book human readings
+
+The next human-reading import contains exactly 11,451 already-prepared readings in 445 existing chapters. The fixed readiness audit pins every prepared manifest, canonical chapter and original source chapter. Ezra 5 and Daniel 7 remain excluded (45 readings), and all 3,941 source holds stay held. Obadiah is the first phase: 21 readings in one chapter. The remaining phases retain canonical book/chapter order and use no inferred timing changes.
+
+```mermaid
+flowchart TD
+    auditChirho[Exact fixed readiness audit] --> planChirho[Freeze immutable 31-phase plan]
+    planChirho --> selectChirho[Select next phase: at most 30 existing chapters]
+    selectChirho --> lockChirho[Acquire catalogue lock]
+    lockChirho --> sourceChirho[Shared validator checks frozen manifest, canonical text, source MP3, timings and exact cut bytes]
+    sourceChirho --> completedChirho{Phase completed?}
+    completedChirho -->|yes| replayChirho[Verify owned clips and exact prior readback receipts; zero writes and fetches]
+    completedChirho -->|no| partialChirho{Partial commit journal?}
+    partialChirho -->|yes| recoveryChirho[Require every archive receipt; recover exact before/after states before coherence checks]
+    partialChirho -->|no| preflightChirho[Existing chapter/index coherence and count/size bounds]
+    recoveryChirho --> preflightChirho
+    preflightChirho --> stageChirho[Stage exact content-addressed MP3s; refuse conflicting bytes]
+    stageChirho --> archiveChirho[Upload lock, established S3 adapter and durable standard readback receipts]
+    archiveChirho --> coldChirho[Cold source/window/MP3 recheck under catalogue lock]
+    coldChirho --> journalChirho[Unchanged shared durable journal: at most 31 writes and 32 MiB]
+    journalChirho --> commitChirho[Atomic chapter writes, index last, completion marker]
+    commitChirho --> selectChirho
+    sourceChirho -->|changed| holdChirho[Stop; retain inputs, unknowns, prior receipts and foreign edits]
+    recoveryChirho -->|foreign edit or missing proof| holdChirho
+    archiveChirho -->|readback failure| holdChirho
+    coldChirho -->|changed| holdChirho
+```
+
+Root commands, from the real repository root after the scratch patch is reviewed and landed:
+
+```sh
+bun scripts-chirho/audio-chirho/readings-chirho/bounded_plan_chirho.ts
+bun scripts-chirho/audio-chirho/readings-chirho/bounded_plan_chirho.ts --freeze-chirho
+bun scripts-chirho/audio-chirho/readings-chirho/bounded_install_chirho.ts --phase-chirho batch-001-chirho
+bun scripts-chirho/audio-chirho/readings-chirho/bounded_install_chirho.ts --phase-chirho batch-001-chirho --apply-chirho --confirm-chirho hinneh.us@84bd
+bun scripts-chirho/audio-chirho/readings-chirho/bounded_install_chirho.ts --all-chirho
+bun scripts-chirho/audio-chirho/readings-chirho/bounded_install_chirho.ts --all-chirho --apply-chirho --confirm-chirho hinneh.us@84bd
+```
+
+Run the actual Obadiah archive/install/selector/publication vertical before the all-phases apply. The background command is sequential and stops at the first error. Re-running the same all-phases command starts with disk-backed completed replay and recovers a partial phase before proceeding. The old generic entry point refuses other-book apply; its Gen/Prov flows remain available, including the explicit corrected Proverbs phase.
+
+The immutable plan lives under workspace-chirho/audio-chirho/beeri-verses-2026-11-07-chirho/bounded-other-books-v1-chirho/plan-chirho.json. Phase state is shallow-sharded under phases-chirho/000-chirho, 010-chirho, 020-chirho and 030-chirho. The unchanged shared catalogue helper requires existing regular destinations, preserves foreign edits, and retains its 31-write and 32-MiB recovery ceilings. The new runner checks aggregate journal size before archive and does not raise a bound.
+
+A private fake-S3 proof used copies of the 21 actual Obadiah cuts and canonical/source inputs. It made 42 local stub calls, then a fresh process completed with zero writes and zero fetches while storage keys were absent. This is fixture evidence, not a real R2 readback, production import or listener acceptance. The actual R2/archive/install/deploy remains root's work.

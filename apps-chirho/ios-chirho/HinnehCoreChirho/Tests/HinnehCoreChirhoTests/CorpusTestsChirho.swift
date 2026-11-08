@@ -102,7 +102,7 @@ struct CorpusTestsChirho {
             Data(contentsOf: rootChirho.appendingPathComponent("audio-chirho/manifest-chirho.json")))
         var expectedChirho = 0
         var checkedChirho = 0
-        for bookChirho in BookListChirho.bundledChirho().booksChirho where ["Gen", "Prov"].contains(bookChirho.idChirho) {
+        for bookChirho in BookListChirho.bundledChirho().booksChirho {
             for entryChirho in manifestChirho.booksChirho[bookChirho.idChirho]?.chaptersChirho ?? [] {
                 let catalogueChirho = try DecodingChirho.decodeChirho(AudioChapterChirho.self,
                     Data(contentsOf: rootChirho.appendingPathComponent(String(entryChirho.pathChirho.dropFirst()))))
