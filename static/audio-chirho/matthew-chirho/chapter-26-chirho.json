@@ -27872,6 +27872,39 @@
       },
       "generation_seed_chirho": 2,
       "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
+    },
+    {
+      "id_chirho": "local-greek-v8026-chirho",
+      "lesson_id_chirho": "Matt.26.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καὶ ἐγένετο ὅτε ἐτέλεσεν ὁ Ἰησοῦς πάντας τοὺς λόγους τούτους, εἶπεν τοῖς μαθηταῖς αὐτοῦ",
+      "synthesis_text_chirho": "Και εγένετο ότε ετέλεσεν ο Ιησούς πάντας τους λόγους τούτους, είπεν τοις μαθηταίς αυτού",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "f7e126aea16f258ffe63d180db22a8de8d2f6238d5394067fe53aab13575f318",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "ec3557f037cc04ee8452f12c8ec6f94992c817e3a4a0409c56dfc87044ae4ecd",
+      "raw_flac_sha256_chirho": "13324db7f7a12359c52fb0dc136808432e1a81a760e148848de1b836e749064d",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/edbbff83404c1e0728212e4ef218623543a159fbf65b9bac7b3e32b2728a3d42-chirho.mp3",
+      "sha256_chirho": "edbbff83404c1e0728212e4ef218623543a159fbf65b9bac7b3e32b2728a3d42",
+      "bytes_chirho": 37450,
+      "duration_chirho": 4.623673,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.137
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

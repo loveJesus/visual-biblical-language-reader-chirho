@@ -11092,6 +11092,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8251-chirho",
+      "lesson_id_chirho": "Rev.14.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καὶ εἶδον, καὶ ἰδοὺ τὸ Ἀρνίον ἑστὸς ἐπὶ τὸ ὄρος Σιών, καὶ μετ’ αὐτοῦ ἑκατὸν τεσσεράκοντα τέσσαρες χιλιάδες ἔχουσαι τὸ ὄνομα αὐτοῦ καὶ τὸ ὄνομα τοῦ Πατρὸς αὐτοῦ γεγραμμένον ἐπὶ τῶν μετώπων αὐτῶν.",
+      "synthesis_text_chirho": "Και είδον, και ιδού το Αρνίον εστός επί το όρος Σιών, και μετ’ αυτού εκατόν τεσσεράκοντα τέσσαρες χιλιάδες έχουσαι το όνομα αυτού και το όνομα του Πατρός αυτού γεγραμμένον επί των μετώπων αυτών.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "cf9decdb81264ad074fbfccfa7ae1997208f165f71fb1096505c0c9bb3bc9070",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "a7fa37afb69eb46e9d8ef9013315aa33f2cf58b2fccf15e70cdb0332c72a439b",
+      "raw_flac_sha256_chirho": "fc83b70e60874de93ec5550588ad13fb02e67215c78115f555527996e24a0408",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/a1deed32d06d27b53cb4ace9f98f379ec772dcb565e51944c51802c55cd1310e-chirho.mp3",
+      "sha256_chirho": "a1deed32d06d27b53cb4ace9f98f379ec772dcb565e51944c51802c55cd1310e",
+      "bytes_chirho": 89277,
+      "duration_chirho": 11.102041,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.0949
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

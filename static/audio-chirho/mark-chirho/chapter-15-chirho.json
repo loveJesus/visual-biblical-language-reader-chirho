@@ -13116,6 +13116,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8043-chirho",
+      "lesson_id_chirho": "Mark.15.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καὶ εὐθὺς πρωῒ συμβούλιον ἑτοιμάσαντες οἱ ἀρχιερεῖς μετὰ τῶν πρεσβυτέρων καὶ γραμματέων καὶ ὅλον τὸ συνέδριον, δήσαντες τὸν Ἰησοῦν ἀπήνεγκαν καὶ παρέδωκαν Πειλάτῳ.",
+      "synthesis_text_chirho": "Και ευθύς πρωΐ συμβούλιον ετοιμάσαντες οι αρχιερείς μετά των πρεσβυτέρων και γραμματέων και όλον το συνέδριον, δήσαντες τον Ιησούν απήνεγκαν και παρέδωκαν Πειλάτω.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "02b674b0bc65103d35d506921a6fe52c883f20e49ae19f1a44ebc0305eec6a8c",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "22462fd0e3c880ba17e16f86419dd159c5d630a960a5fbb4298b3379b9b97831",
+      "raw_flac_sha256_chirho": "406db9b26cd3863edaca10fccf9df4a70e0ae964da94c00d2ed6447484cfc474",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/60f14710451229341e819e7a8610915fbd18534ceadda041a49f90d47291db64-chirho.mp3",
+      "sha256_chirho": "60f14710451229341e819e7a8610915fbd18534ceadda041a49f90d47291db64",
+      "bytes_chirho": 74439,
+      "duration_chirho": 9.247347,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1942
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

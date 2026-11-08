@@ -15030,6 +15030,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8063-chirho",
+      "lesson_id_chirho": "Luke.19.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καὶ εἰσελθὼν διήρχετο τὴν Ἱερειχώ.",
+      "synthesis_text_chirho": "Και εισελθών διήρχετο την Ιερειχώ.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "b152188e5b2143027252d91f38625ccd7191ed43399f45e72cbc7863811a9ac2",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "df5f43a7e78e79045e5e7088c80f486f47064563a0d3d1e6a23d444881ed0fa8",
+      "raw_flac_sha256_chirho": "f61067e1b83737650303b2b5d75d09827de7a7e661335d03dfa7143e5785a312",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/3b67d6f1633acadf3a9cc5362de0c3c77d3da1b781c4b97aa8203cdf1a9ce797-chirho.mp3",
+      "sha256_chirho": "3b67d6f1633acadf3a9cc5362de0c3c77d3da1b781c4b97aa8203cdf1a9ce797",
+      "bytes_chirho": 24493,
+      "duration_chirho": 3.004082,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.3103
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

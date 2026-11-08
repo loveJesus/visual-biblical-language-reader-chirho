@@ -36,6 +36,7 @@ export interface ImportInputChirho {
 	manifest_chirho: LocalGreekManifestChirho;
 	manifest_sha256_chirho: string;
 	prepared_home_chirho: string;
+	run_home_chirho?: string;
 	expected_jobs_chirho: number;
 	flagged_excluded_chirho: number;
 	archive_inputs_chirho: ArchiveInputChirho[];

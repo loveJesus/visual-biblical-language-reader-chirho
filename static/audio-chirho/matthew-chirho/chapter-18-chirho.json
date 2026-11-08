@@ -14436,6 +14436,39 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.119
       }
+    },
+    {
+      "id_chirho": "local-greek-v8018-chirho",
+      "lesson_id_chirho": "Matt.18.1",
+      "token_id_chirho": null,
+      "text_chirho": "Ἐν ἐκείνῃ τῇ ὥρᾳ προσῆλθον οἱ μαθηταὶ τῷ Ἰησοῦ λέγοντες Τίς ἄρα μείζων ἐστὶν ἐν τῇ βασιλείᾳ τῶν οὐρανῶν;",
+      "synthesis_text_chirho": "Εν εκείνη τη ώρα προσήλθον οι μαθηταί τω Ιησού λέγοντες Τις άρα μείζων εστίν εν τη βασιλεία των ουρανών;",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "79034b5f1c657b3b52adf15b01b9430171eff2c45809c815f8666196ff8bc20a",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "884310ae6b4db0c129ffce2da7e81443db492f30f432a437c6bb32f5fb5fe3d1",
+      "raw_flac_sha256_chirho": "10acd4890a1faba299da6bd0eb0a79a41627f49306df196cdd73ea73cfff04cb",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/93ac907b6e00bdb82425efe4dbd45f249581d5d30f738d77caa5617b8d4e6a9c-chirho.mp3",
+      "sha256_chirho": "93ac907b6e00bdb82425efe4dbd45f249581d5d30f738d77caa5617b8d4e6a9c",
+      "bytes_chirho": 44137,
+      "duration_chirho": 5.459592,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2471
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

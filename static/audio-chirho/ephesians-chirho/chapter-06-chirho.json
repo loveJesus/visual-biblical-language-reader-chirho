@@ -7726,6 +7726,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8173-chirho",
+      "lesson_id_chirho": "Eph.6.1",
+      "token_id_chirho": null,
+      "text_chirho": "Τὰ τέκνα, ὑπακούετε τοῖς γονεῦσιν ὑμῶν ἐν Κυρίῳ· τοῦτο γάρ ἐστιν δίκαιον.",
+      "synthesis_text_chirho": "Τα τέκνα, υπακούετε τοις γονεύσιν υμών εν Κυρίω, τούτο γαρ εστιν δίκαιον.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "415ee74b36eec011a71e130d7ecedc8baac878e42de4b2cca629e3df776a059e",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "de344839e29c48624762888ad820d9ddef6b6b5763605cb18c4035f34f905e98",
+      "raw_flac_sha256_chirho": "a35d720c0cb3425988cbf2fb086f8ea9a5de21fcc01ca8123e161fa6bd5bf13d",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/9b95e516ab769f669bbd02d753119617e33f3871473ed6b0ddfe63eaa4c7fe96-chirho.mp3",
+      "sha256_chirho": "9b95e516ab769f669bbd02d753119617e33f3871473ed6b0ddfe63eaa4c7fe96",
+      "bytes_chirho": 35778,
+      "duration_chirho": 4.414694,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2881
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

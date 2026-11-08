@@ -14986,6 +14986,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8093-chirho",
+      "lesson_id_chirho": "Acts.5.1",
+      "token_id_chirho": null,
+      "text_chirho": "Ἀνὴρ δέ τις Ἀνανίας ὀνόματι σὺν Σαπφείρῃ τῇ γυναικὶ αὐτοῦ ἐπώλησεν κτῆμα,",
+      "synthesis_text_chirho": "Ανήρ δε τις Ανανίας ονόματι συν Σαπφείρη τη γυναικί αυτού επώλησεν κτήμα,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "259e8fe8761d038a8fbdb5bb6d0294d44b97b123952a3e856151688a5fb5fac4",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "e5e627b6790bd4ce382a507844c509510fbd6043c729e7b16d71b44ebc85d45d",
+      "raw_flac_sha256_chirho": "f1d56e4e32873e1369498ec6e0ac6e229023b21cc748bedf6cfb1edde1952fdd",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/14b318c9a897ff71595833a6e9c9776ab0b8b3ee6b2efd808262d9f67f89eb09-chirho.mp3",
+      "sha256_chirho": "14b318c9a897ff71595833a6e9c9776ab0b8b3ee6b2efd808262d9f67f89eb09",
+      "bytes_chirho": 35151,
+      "duration_chirho": 4.336327,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.3443
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

@@ -6912,6 +6912,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8180-chirho",
+      "lesson_id_chirho": "Col.3.1",
+      "token_id_chirho": null,
+      "text_chirho": "Εἰ οὖν συνηγέρθητε τῷ Χριστῷ, τὰ ἄνω ζητεῖτε, οὗ ὁ Χριστός ἐστιν ἐν δεξιᾷ τοῦ Θεοῦ καθήμενος·",
+      "synthesis_text_chirho": "Ει ουν συνηγέρθητε τω Χριστώ, τα άνω ζητείτε, ου ο Χριστός εστιν εν δεξιά του Θεού καθήμενος,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "5466581deea7ef96db477fb3ff8ac7acd7e7dfd6706e702116632edc2abc61b6",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "aec6c7cd1e6c089f929fdf3d24438749743cd18a0bee379eebcdaa1237c669ff",
+      "raw_flac_sha256_chirho": "d99874586e89351d5cabc96eaa447218d13f5911ab2982ef26b7b644466fed7a",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/4c064849bcd06e54beca93c5b72f31ffe07570dcd8b28ea87b73f69fcafcf527-chirho.mp3",
+      "sha256_chirho": "4c064849bcd06e54beca93c5b72f31ffe07570dcd8b28ea87b73f69fcafcf527",
+      "bytes_chirho": 48526,
+      "duration_chirho": 6.008163,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2162
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

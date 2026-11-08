@@ -6164,6 +6164,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8186-chirho",
+      "lesson_id_chirho": "1Thess.5.1",
+      "token_id_chirho": null,
+      "text_chirho": "Περὶ δὲ τῶν χρόνων καὶ τῶν καιρῶν, ἀδελφοί, οὐ χρείαν ἔχετε ὑμῖν γράφεσθαι·",
+      "synthesis_text_chirho": "Περί δε των χρόνων και των καιρών, αδελφοί, ου χρείαν έχετε υμίν γράφεσθαι,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "e70dcdf6a4d17022df1ca8705a0d7df5b61dec2d5aecab760feb0248a2cbd998",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "6340e9eb0f18f5a1f57743b57fcf7944f330abc9f82562922d735af024cae011",
+      "raw_flac_sha256_chirho": "b7ceb0e46d58f965b38995f0c6bbc2827861f0d4dcb7a0d1228a337ab4d9dcc7",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/fef79dd98e2b1418a3d8b9fab53c7ddebefffba6fcd05c65bf8c176696ff8e92-chirho.mp3",
+      "sha256_chirho": "fef79dd98e2b1418a3d8b9fab53c7ddebefffba6fcd05c65bf8c176696ff8e92",
+      "bytes_chirho": 33270,
+      "duration_chirho": 4.101224,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.3
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

@@ -15206,6 +15206,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8076-chirho",
+      "lesson_id_chirho": "John.9.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καὶ παράγων εἶδεν ἄνθρωπον τυφλὸν ἐκ γενετῆς.",
+      "synthesis_text_chirho": "Και παράγων είδεν άνθρωπον τυφλόν εκ γενετής.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "151c4d2b5b7e83d03437d35b0e047a719351329f72cda4201050bc9390212d32",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "1cdbde7076b04c8cf995661df7ba74cccdc78ab166fb2f7b8f18040cf391ab60",
+      "raw_flac_sha256_chirho": "b41fc4cc10ad829523288f891c8f9f5b07622864c4bab114b0b599b4cf610f3b",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/28e8c0514f85acca74b4d4785c9052f2de24d925286954710f3b541b98ec5e70-chirho.mp3",
+      "sha256_chirho": "28e8c0514f85acca74b4d4785c9052f2de24d925286954710f3b541b98ec5e70",
+      "bytes_chirho": 25120,
+      "duration_chirho": 3.082449,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1316
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

@@ -12940,6 +12940,39 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.1895
       }
+    },
+    {
+      "id_chirho": "local-greek-v8008-chirho",
+      "lesson_id_chirho": "Matt.8.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καταβάντος δὲ αὐτοῦ ἀπὸ τοῦ ὄρους ἠκολούθησαν αὐτῷ ὄχλοι πολλοί.",
+      "synthesis_text_chirho": "Καταβάντος δε αυτού από του όρους ηκολούθησαν αυτώ όχλοι πολλοί.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "b350fb583769044528ca211b1d823b4fe9416b666f992a850e4d2cefce38aae1",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "cef83362cb2cd6dc6127bcde02517af4440967625bb8a2788f8bcccd0ca1faae",
+      "raw_flac_sha256_chirho": "534bee4d88f0218d75909500aa579425fe04d4be8bc5d6f269207ffb1dbff944",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/413bc4d0613fdd939d3fb16e342f98d2fc5b2f24f9ad3c018e1cb0bccd7b8454-chirho.mp3",
+      "sha256_chirho": "413bc4d0613fdd939d3fb16e342f98d2fc5b2f24f9ad3c018e1cb0bccd7b8454",
+      "bytes_chirho": 35151,
+      "duration_chirho": 4.336327,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1667
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

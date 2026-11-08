@@ -13710,6 +13710,39 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.2785
       }
+    },
+    {
+      "id_chirho": "local-greek-v8006-chirho",
+      "lesson_id_chirho": "Matt.6.1",
+      "token_id_chirho": null,
+      "text_chirho": "Προσέχετε δὲ τὴν δικαιοσύνην ὑμῶν μὴ ποιεῖν ἔμπροσθεν τῶν ἀνθρώπων πρὸς τὸ θεαθῆναι αὐτοῖς· εἰ δὲ μήγε, μισθὸν οὐκ ἔχετε παρὰ τῷ Πατρὶ ὑμῶν τῷ ἐν τοῖς οὐρανοῖς.",
+      "synthesis_text_chirho": "Προσέχετε δε την δικαιοσύνην υμών μη ποιείν έμπροσθεν των ανθρώπων προς το θεαθήναι αυτοίς, ει δε μήγε, μισθόν ουκ έχετε παρά τω Πατρί υμών τω εν τοις ουρανοίς.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "5011ad7d59643eef919671e8372bd137ca3f7d66e94de6986c5bcd1fe6f58052",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "3741f4a838571e5c6c2cedf31049dc579b4ed50ed41a82e0d7abcb99b01e41f4",
+      "raw_flac_sha256_chirho": "678b0fcccb9893376ae9fa80fd2ae293bbc03d11c55db6cfe01dd1a139aca7af",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/513554674bed988289e085740214a8430de732cda2e92e60a3e6d308398588dd-chirho.mp3",
+      "sha256_chirho": "513554674bed988289e085740214a8430de732cda2e92e60a3e6d308398588dd",
+      "bytes_chirho": 72140,
+      "duration_chirho": 8.96,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2308
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

@@ -6164,6 +6164,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8196-chirho",
+      "lesson_id_chirho": "2Tim.1.1",
+      "token_id_chirho": null,
+      "text_chirho": "Παῦλος ἀπόστολος Χριστοῦ Ἰησοῦ διὰ θελήματος Θεοῦ κατ’ ἐπαγγελίαν ζωῆς τῆς ἐν Χριστῷ Ἰησοῦ",
+      "synthesis_text_chirho": "Παύλος απόστολος Χριστού Ιησού διά θελήματος Θεού κατ’ επαγγελίαν ζωής της εν Χριστώ Ιησού",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "24852453459dddb15e14f9a881c9a0905692dcf4a57710afd23e660333b216fe",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "216abe59f3685a50320c3adb0d8f3b4c149fa6c7a4c0f8a9b1525891b238d3ea",
+      "raw_flac_sha256_chirho": "d25645707589b09043a520e6516dedc07387dd802c347a4bd8f08f18bbfddf48",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/93a789e4a1e04d80e05090b308cded605e6ac763d67e9865538e37ea32657cd2-chirho.mp3",
+      "sha256_chirho": "93a789e4a1e04d80e05090b308cded605e6ac763d67e9865538e37ea32657cd2",
+      "bytes_chirho": 48526,
+      "duration_chirho": 6.008163,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1711
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

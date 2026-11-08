@@ -6582,6 +6582,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8203-chirho",
+      "lesson_id_chirho": "Phlm.1.1",
+      "token_id_chirho": null,
+      "text_chirho": "Παῦλος δέσμιος Χριστοῦ Ἰησοῦ καὶ Τιμόθεος ὁ ἀδελφὸς Φιλήμονι τῷ ἀγαπητῷ καὶ συνεργῷ ἡμῶν",
+      "synthesis_text_chirho": "Παύλος δέσμιος Χριστού Ιησού και Τιμόθεος ο αδελφός Φιλήμονι τω αγαπητώ και συνεργώ ημών",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "6045ea919d3ce61ef8d504a247c1a4cc1b1e8c95d508a94edddf69f890620cd4",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "d9c8301447345faf2a61db2d0c56bd30abe4a59620d051cff2e0237db20ce6c2",
+      "raw_flac_sha256_chirho": "8f7f6cf9ab940ff3d45f38f8b6a48fee6f0f5b9d79627466d2c410c5a48c410c",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/fa689ac96a28e22f9fd8794abdcba64433247ec9cda03bf3cbd03d82b8b0829b-chirho.mp3",
+      "sha256_chirho": "fa689ac96a28e22f9fd8794abdcba64433247ec9cda03bf3cbd03d82b8b0829b",
+      "bytes_chirho": 46227,
+      "duration_chirho": 5.720816,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2267
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

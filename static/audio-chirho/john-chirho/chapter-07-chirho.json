@@ -18968,6 +18968,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8074-chirho",
+      "lesson_id_chirho": "John.7.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καὶ μετὰ ταῦτα περιεπάτει ὁ Ἰησοῦς ἐν τῇ Γαλιλαίᾳ· οὐ γὰρ ἤθελεν ἐν τῇ Ἰουδαίᾳ περιπατεῖν, ὅτι ἐζήτουν αὐτὸν οἱ Ἰουδαῖοι ἀποκτεῖναι.",
+      "synthesis_text_chirho": "Και μετά ταύτα περιεπάτει ο Ιησούς εν τη Γαλιλαία, ου γαρ ήθελεν εν τη Ιουδαία περιπατείν, ότι εζήτουν αυτόν οι Ιουδαίοι αποκτείναι.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "39178b3b8ace4e38d155febcb6d2aa75ff71a4b15dd486b97a3bdacaa76da7ec",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "54cf679ec9981a476298c9c46ecb999353e1f6a28699cec3b70c1b3e6e53322b",
+      "raw_flac_sha256_chirho": "82f592fa124ac53be7126bd766779d2eb26e8377efed07ff613ff06453cba893",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/6235ae5722e44658ac8ff82a59183ca9d7a71348ed0f568f86a87412b0563918-chirho.mp3",
+      "sha256_chirho": "6235ae5722e44658ac8ff82a59183ca9d7a71348ed0f568f86a87412b0563918",
+      "bytes_chirho": 62318,
+      "duration_chirho": 7.732245,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1019
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

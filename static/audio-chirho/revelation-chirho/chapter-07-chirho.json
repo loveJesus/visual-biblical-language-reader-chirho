@@ -8122,6 +8122,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8244-chirho",
+      "lesson_id_chirho": "Rev.7.1",
+      "token_id_chirho": null,
+      "text_chirho": "Μετὰ τοῦτο εἶδον τέσσαρας ἀγγέλους ἑστῶτας ἐπὶ τὰς τέσσαρας γωνίας τῆς γῆς, κρατοῦντας τοὺς τέσσαρας ἀνέμους τῆς γῆς, ἵνα μὴ πνέῃ ἄνεμος ἐπὶ τῆς γῆς μήτε ἐπὶ τῆς θαλάσσης μήτε ἐπὶ πᾶν δένδρον.",
+      "synthesis_text_chirho": "Μετά τούτο είδον τέσσαρας αγγέλους εστώτας επί τας τέσσαρας γωνίας της γης, κρατούντας τους τέσσαρας ανέμους της γης, ίνα μη πνέη άνεμος επί της γης μήτε επί της θαλάσσης μήτε επί παν δένδρον.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "10692a316a6660ba676a65f8a8bda1a931ce0cafbf17e54149ee649fc6e9d51e",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "45cd5ad4612c95c0da3655f15e816d1a57eab2cb470522c6f8e690e0a19a3125",
+      "raw_flac_sha256_chirho": "dee007db9710f0da6fa57d4356b93a5f2c9900011cdd0f30839d7c5b7471d4a9",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/005c57d9ba137e33f6fbe9dd70f86ec69d1884b4f5f1f092ffbbf53c183edbd2-chirho.mp3",
+      "sha256_chirho": "005c57d9ba137e33f6fbe9dd70f86ec69d1884b4f5f1f092ffbbf53c183edbd2",
+      "bytes_chirho": 94292,
+      "duration_chirho": 11.72898,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.0955
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

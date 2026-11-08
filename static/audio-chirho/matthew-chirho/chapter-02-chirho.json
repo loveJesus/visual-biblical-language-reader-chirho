@@ -9750,6 +9750,39 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.2
       }
+    },
+    {
+      "id_chirho": "local-greek-v8002-chirho",
+      "lesson_id_chirho": "Matt.2.1",
+      "token_id_chirho": null,
+      "text_chirho": "Τοῦ δὲ Ἰησοῦ γεννηθέντος ἐν Βηθλέεμ τῆς Ἰουδαίας ἐν ἡμέραις Ἡρῴδου τοῦ βασιλέως, ἰδοὺ μάγοι ἀπὸ ἀνατολῶν παρεγένοντο εἰς Ἱεροσόλυμα",
+      "synthesis_text_chirho": "Του δε Ιησού γεννηθέντος εν Βηθλέεμ της Ιουδαίας εν ημέραις Ηρώδου του βασιλέως, ιδού μάγοι από ανατολών παρεγένοντο εις Ιεροσόλυμα",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "1aaf8a133c111ee34821fb7a7c36f712d0913b342f1924ef104773ccfd15ada2",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "0013a6bc3c4f4059e49dfe1ca08792e343f38c7791f0253b8dbb3c416ae7a0d1",
+      "raw_flac_sha256_chirho": "deb8f0a41c46b5bef74b6d8b38c032473f6f4990574d1ebc26159cd6f2b15e06",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/6612a93b0863efc2b8591c89524dd837da6781cd591330cb6ad5cbc2de48d090-chirho.mp3",
+      "sha256_chirho": "6612a93b0863efc2b8591c89524dd837da6781cd591330cb6ad5cbc2de48d090",
+      "bytes_chirho": 62945,
+      "duration_chirho": 7.810612,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1982
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

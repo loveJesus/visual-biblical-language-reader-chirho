@@ -17846,6 +17846,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8101-chirho",
+      "lesson_id_chirho": "Acts.13.1",
+      "token_id_chirho": null,
+      "text_chirho": "Ἦσαν δὲ ἐν Ἀντιοχείᾳ κατὰ τὴν οὖσαν ἐκκλησίαν προφῆται καὶ διδάσκαλοι ὅ τε Βαρνάβας καὶ Συμεὼν ὁ καλούμενος Νίγερ, καὶ Λούκιος ὁ Κυρηναῖος, Μαναήν τε Ἡρῴδου τοῦ τετραάρχου σύντροφος καὶ Σαῦλος.",
+      "synthesis_text_chirho": "Ήσαν δε εν Αντιοχεία κατά την ούσαν εκκλησίαν προφήται και διδάσκαλοι ο τε Βαρνάβας και Συμεών ο καλούμενος Νίγερ, και Λούκιος ο Κυρηναίος, Μαναήν τε Ηρώδου του τετραάρχου σύντροφος και Σαύλος.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "34326e1a683cf37052b4fb931b83828cb9bf5b48acea9f3128e1b2c3ccb9c0ef",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "b355276883f5d41918101546056842e0875d6563b9a1550fc257929bcd0ae9b0",
+      "raw_flac_sha256_chirho": "02b8d4377b29e0aabbf5c392bda234d53187bf0b6f42ede4a39bbe43150abfcc",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/8266b77216d804733b3a3a2e3abaa0a11183b7d76a811c33614a6ee06be4a201-chirho.mp3",
+      "sha256_chirho": "8266b77216d804733b3a3a2e3abaa0a11183b7d76a811c33614a6ee06be4a201",
+      "bytes_chirho": 79873,
+      "duration_chirho": 9.926531,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2062
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

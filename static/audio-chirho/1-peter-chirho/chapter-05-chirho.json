@@ -3590,6 +3590,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8226-chirho",
+      "lesson_id_chirho": "1Pet.5.1",
+      "token_id_chirho": null,
+      "text_chirho": "Πρεσβυτέρους οὖν ἐν ὑμῖν παρακαλῶ ὁ συνπρεσβύτερος καὶ μάρτυς τῶν τοῦ Χριστοῦ παθημάτων, ὁ καὶ τῆς μελλούσης ἀποκαλύπτεσθαι δόξης κοινωνός,",
+      "synthesis_text_chirho": "Πρεσβυτέρους ουν εν υμίν παρακαλώ ο συνπρεσβύτερος και μάρτυς των του Χριστού παθημάτων, ο και της μελλούσης αποκαλύπτεσθαι δόξης κοινωνός,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "3ef341e7711518b9233bc9b4d1e860fd8f0c49ab5fab0b0f307677af6a5b9264",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "a3a15381ac8ed796d7275f9be3b4e9fa817672b2002d49bdc14b49caf27d618c",
+      "raw_flac_sha256_chirho": "28f9239aee2b61e994b955442fec002107ca0d93f6f5a411cf41e04dc781c3c2",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/afb26bec1c20d193ff97c6e49f6394b300bbc5a2d160892476f428cc340d474d-chirho.mp3",
+      "sha256_chirho": "afb26bec1c20d193ff97c6e49f6394b300bbc5a2d160892476f428cc340d474d",
+      "bytes_chirho": 60438,
+      "duration_chirho": 7.497143,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2458
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

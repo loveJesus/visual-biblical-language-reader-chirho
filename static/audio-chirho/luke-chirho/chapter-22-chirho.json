@@ -21938,6 +21938,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8066-chirho",
+      "lesson_id_chirho": "Luke.22.1",
+      "token_id_chirho": null,
+      "text_chirho": "Ἤγγιζεν δὲ ἡ ἑορτὴ τῶν ἀζύμων ἡ λεγομένη Πάσχα.",
+      "synthesis_text_chirho": "Ήγγιζεν δε η εορτή των αζύμων η λεγομένη Πάσχα.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "e973090a89a42ff7481339c2cedf8cb5180b4a36fd867bf7c8f5e38c07a1bf43",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "1256dfb116bcf715ea8d408a993223c06955287d0f6acc92635d2de722915a3e",
+      "raw_flac_sha256_chirho": "22948bdd0d08fd20e8232da9d07d5f5dc50dbd39d2c47792f9be84312c2ce21d",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/29ef68b3fe95c743232b2beb6f71a54c78a65b75a741bf3d1d7abacd949cc1d8-chirho.mp3",
+      "sha256_chirho": "29ef68b3fe95c743232b2beb6f71a54c78a65b75a741bf3d1d7abacd949cc1d8",
+      "bytes_chirho": 27210,
+      "duration_chirho": 3.343673,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2368
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

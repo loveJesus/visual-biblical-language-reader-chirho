@@ -9112,6 +9112,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8259-chirho",
+      "lesson_id_chirho": "Rev.22.1",
+      "token_id_chirho": null,
+      "text_chirho": "καὶ ἔδειξέν μοι ποταμὸν ὕδατος ζωῆς λαμπρὸν ὡς κρύσταλλον, ἐκπορευόμενον ἐκ τοῦ θρόνου τοῦ Θεοῦ καὶ τοῦ Ἀρνίου.",
+      "synthesis_text_chirho": "και έδειξέν μοι ποταμόν ύδατος ζωής λαμπρόν ως κρύσταλλον, εκπορευόμενον εκ του θρόνου του Θεού και του Αρνίου.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "05eb40590ee9bb523866878618cc9f0d3effa83994664dfade8fbeac5c489507",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "511c7fd0f1c45406d84d99715cbd63d2865d271c8d3ad0b90383c04b84cb2413",
+      "raw_flac_sha256_chirho": "91f43e3dd0fdbd2e984f527beb80394a135ddaa45b0e62bfe603deaced1a38e7",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/6937b7e4817796241dea0aaae52a5f1087580ae2c45e38a2305350bd029586c4-chirho.mp3",
+      "sha256_chirho": "6937b7e4817796241dea0aaae52a5f1087580ae2c45e38a2305350bd029586c4",
+      "bytes_chirho": 52496,
+      "duration_chirho": 6.50449,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1087
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

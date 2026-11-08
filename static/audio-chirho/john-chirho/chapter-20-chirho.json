@@ -13534,6 +13534,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8087-chirho",
+      "lesson_id_chirho": "John.20.1",
+      "token_id_chirho": null,
+      "text_chirho": "Τῇ δὲ μιᾷ τῶν σαββάτων Μαρία ἡ Μαγδαληνὴ ἔρχεται πρωῒ σκοτίας ἔτι οὔσης εἰς τὸ μνημεῖον, καὶ βλέπει τὸν λίθον ἠρμένον ἐκ τοῦ μνημείου.",
+      "synthesis_text_chirho": "Τη δε μιά των σαββάτων Μαρία η Μαγδαληνή έρχεται πρωΐ σκοτίας έτι ούσης εις το μνημείον, και βλέπει τον λίθον ηρμένον εκ του μνημείου.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "8ff292b3128bef82e6a5b470bbdb66e76dfa7066fbf72af7558b0e6d17935b10",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "46abdfec5bea3ac92e7cd91995a646c779f53a44507edf5063f281acd3106986",
+      "raw_flac_sha256_chirho": "2d82a07c248806772749c975a69a77ca7886f9fa38fef5fb3bf623fdfb304508",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/2c3941183be25a4e5586027f47cb76c7ddc99ded0a39cc6cdf9bd8b9bb4508b4-chirho.mp3",
+      "sha256_chirho": "2c3941183be25a4e5586027f47cb76c7ddc99ded0a39cc6cdf9bd8b9bb4508b4",
+      "bytes_chirho": 68797,
+      "duration_chirho": 8.542041,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1835
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

@@ -18336,6 +18336,39 @@
       },
       "generation_seed_chirho": 2,
       "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
+    },
+    {
+      "id_chirho": "local-greek-v8024-chirho",
+      "lesson_id_chirho": "Matt.24.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καὶ ἐξελθὼν ὁ Ἰησοῦς ἀπὸ τοῦ ἱεροῦ ἐπορεύετο, καὶ προσῆλθον οἱ μαθηταὶ αὐτοῦ ἐπιδεῖξαι αὐτῷ τὰς οἰκοδομὰς τοῦ ἱεροῦ.",
+      "synthesis_text_chirho": "Και εξελθών ο Ιησούς από του ιερού επορεύετο, και προσήλθον οι μαθηταί αυτού επιδείξαι αυτώ τας οικοδομάς του ιερού.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "b80f6896790e73887e6a142ec5de66809c1c174fcfee1078de866d3d5dc594c9",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "d99cf7c8e549efc745f8818a674030b5a8cb9c0564a1c015cece21735408c7c7",
+      "raw_flac_sha256_chirho": "c04d84ef202b39d0e48dc02e651d103a86025fe1637a981f21c9ee7c861d6cd3",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/03c8a412f492e41016fef8ede2a83bdb8bd28e3fc30d6f40c262c6fc17e1bb22-chirho.mp3",
+      "sha256_chirho": "03c8a412f492e41016fef8ede2a83bdb8bd28e3fc30d6f40c262c6fc17e1bb22",
+      "bytes_chirho": 53123,
+      "duration_chirho": 6.582857,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1562
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

@@ -13886,6 +13886,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8062-chirho",
+      "lesson_id_chirho": "Luke.18.1",
+      "token_id_chirho": null,
+      "text_chirho": "Ἔλεγεν δὲ παραβολὴν αὐτοῖς πρὸς τὸ δεῖν πάντοτε προσεύχεσθαι αὐτοὺς καὶ μὴ ἐνκακεῖν,",
+      "synthesis_text_chirho": "Έλεγεν δε παραβολήν αυτοίς προς το δειν πάντοτε προσεύχεσθαι αυτούς και μη ενκακείν,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "a7556df34262e6731a84bca6d0bcc8912eec68b24d19738fe93370b9081b316f",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "86888b5cecdbbc72ae42205c5d363ed89129bef83c93dd91886933f128626ae5",
+      "raw_flac_sha256_chirho": "fa9bc25801f228d80e707fbc61a8eee288c1e10302d853ca9ce441fd17b712f9",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/5c0028d01eefc8dbaeeedbe3287728a585877c77b42a28ad912fa32096b96d2b-chirho.mp3",
+      "sha256_chirho": "5c0028d01eefc8dbaeeedbe3287728a585877c77b42a28ad912fa32096b96d2b",
+      "bytes_chirho": 38286,
+      "duration_chirho": 4.728163,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2113
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

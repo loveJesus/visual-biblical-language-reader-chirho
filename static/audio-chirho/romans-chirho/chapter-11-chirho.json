@@ -11136,6 +11136,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8127-chirho",
+      "lesson_id_chirho": "Rom.11.1",
+      "token_id_chirho": null,
+      "text_chirho": "Λέγω οὖν, μὴ ἀπώσατο ὁ Θεὸς τὸν λαὸν αὐτοῦ; μὴ γένοιτο· καὶ γὰρ ἐγὼ Ἰσραηλείτης εἰμί, ἐκ σπέρματος Ἀβραάμ, φυλῆς Βενιαμείν.",
+      "synthesis_text_chirho": "Λέγω ουν, μη απώσατο ο Θεός τον λαόν αυτού; μη γένοιτο, και γαρ εγώ Ισραηλείτης ειμί, εκ σπέρματος Αβραάμ, φυλής Βενιαμείν.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "69bdae0ba1bd5ea6ea46f23fdb8a3cfd12e989d02c75c1a91d77e2301304243b",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "a4b3d0352836498e7423fdc31213ece7dcd323307e4d0c5182b897606ad47631",
+      "raw_flac_sha256_chirho": "4b41aae2307de3da13a6957c4deb7819628ba46f1a1f3d82e2fb1916731ec33b",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/996e3806d77db0fa91607cf379105cbae9e3a353475b1eb7e76a5067bc4f3ef0-chirho.mp3",
+      "sha256_chirho": "996e3806d77db0fa91607cf379105cbae9e3a353475b1eb7e76a5067bc4f3ef0",
+      "bytes_chirho": 63572,
+      "duration_chirho": 7.88898,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2268
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

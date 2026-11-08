@@ -11726,6 +11726,39 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.2667
       }
+    },
+    {
+      "id_chirho": "local-greek-v8016-chirho",
+      "lesson_id_chirho": "Matt.16.1",
+      "token_id_chirho": null,
+      "text_chirho": "Καὶ προσελθόντες οἱ Φαρισαῖοι καὶ Σαδδουκαῖοι πειράζοντες ἐπηρώτησαν αὐτὸν σημεῖον ἐκ τοῦ οὐρανοῦ ἐπιδεῖξαι αὐτοῖς.",
+      "synthesis_text_chirho": "Και προσελθόντες οι Φαρισαίοι και Σαδδουκαίοι πειράζοντες επηρώτησαν αυτόν σημείον εκ του ουρανού επιδείξαι αυτοίς.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "3aa77b8e750755ed39c9036be9c5f1d1e3ab70e12ca1decb7c27beb830d01ee8",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "31d64d12949b727a892b5758c4a0871b1de7bd9f4351cf43e28c63504e2bd188",
+      "raw_flac_sha256_chirho": "ac792e9d0ce19e0c9eaa0b35283daf010fcf1166adee73ba0a71b39759736e08",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/ce46eb31a0576fdc88c95cc74f6c8ded0550d2cf9a91f640fa8acde6f40e632c-chirho.mp3",
+      "sha256_chirho": "ce46eb31a0576fdc88c95cc74f6c8ded0550d2cf9a91f640fa8acde6f40e632c",
+      "bytes_chirho": 55631,
+      "duration_chirho": 6.896327,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

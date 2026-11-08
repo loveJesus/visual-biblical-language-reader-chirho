@@ -58,6 +58,7 @@ export async function installLocalGreekChirho(
 	rootChirho: string
 ) {
 	const homeChirho = joinChirho(rootChirho, inputChirho.prepared_home_chirho);
+	const runHomeChirho = inputChirho.run_home_chirho ?? RUN_HOME_CHIRHO;
 	const manifestChirho = inputChirho.manifest_chirho;
 	const manifestShaChirho = inputChirho.manifest_sha256_chirho;
 	const expectedChirho = inputChirho.expected_jobs_chirho;
@@ -120,6 +121,9 @@ export async function installLocalGreekChirho(
 			throw Error('Delivery MP3 bytes differ');
 		rowsChirho.push({ job_chirho: jobChirho, clip_chirho: clipChirho, bytes_chirho: bytesChirho });
 	}
+	// The shared transaction admits 30 chapters and its manifest. Refuse before archive work.
+	if (sourceChirho.size > 30)
+		throw Error('Local Greek catalogue phase exceeds 30 chapters; partition the input');
 	console.log(
 		JSON.stringify({
 			eligible_chirho: rowsChirho.length,
@@ -229,12 +233,12 @@ export async function installLocalGreekChirho(
 		await runPoolChirho(rowsChirho, 4, async (rowChirho) => {
 			const takeChirho = rowChirho.job_chirho.chosen_chirho!;
 			await originalChirho(
-				`${RUN_HOME_CHIRHO}/${takeChirho.path_chirho}`,
+				`${runHomeChirho}/${takeChirho.path_chirho}`,
 				takeChirho.sha256_chirho,
 				'mp3'
 			);
 			await originalChirho(
-				`${RUN_HOME_CHIRHO}/${takeChirho.raw_path_chirho}`,
+				`${runHomeChirho}/${takeChirho.raw_path_chirho}`,
 				takeChirho.raw_sha256_chirho,
 				'flac'
 			);

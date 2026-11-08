@@ -14524,6 +14524,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8080-chirho",
+      "lesson_id_chirho": "John.13.1",
+      "token_id_chirho": null,
+      "text_chirho": "Πρὸ δὲ τῆς ἑορτῆς τοῦ πάσχα εἰδὼς ὁ Ἰησοῦς ὅτι ἦλθεν αὐτοῦ ἡ ὥρα ἵνα μεταβῇ ἐκ τοῦ κόσμου τούτου πρὸς τὸν Πατέρα, ἀγαπήσας τοὺς ἰδίους τοὺς ἐν τῷ κόσμῳ, εἰς τέλος ἠγάπησεν αὐτούς.",
+      "synthesis_text_chirho": "Προ δε της εορτής του πάσχα ειδώς ο Ιησούς ότι ήλθεν αυτού η ώρα ίνα μεταβή εκ του κόσμου τούτου προς τον Πατέρα, αγαπήσας τους ιδίους τους εν τω κόσμω, εις τέλος ηγάπησεν αυτούς.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "3c8b96681cb8be6794c8785d1e88d530f59effdf62be78e47c661458646fac31",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "f44f78954dd4ddd3a7e5313c91fbe39a76fb0b4ceb12fbe2a7bac62839b6686d",
+      "raw_flac_sha256_chirho": "a98967505874f13187ee8ecd3226b17fefd7bf65822490f5af05fcde9ad8a603",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/d037e7aa68d6f20daac578c453908c23d267d851c3008386339a0460920e54e0-chirho.mp3",
+      "sha256_chirho": "d037e7aa68d6f20daac578c453908c23d267d851c3008386339a0460920e54e0",
+      "bytes_chirho": 81545,
+      "duration_chirho": 10.13551,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1329
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

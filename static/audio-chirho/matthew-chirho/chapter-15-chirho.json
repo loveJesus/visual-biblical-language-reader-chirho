@@ -13202,6 +13202,39 @@
       },
       "generation_seed_chirho": 2,
       "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
+    },
+    {
+      "id_chirho": "local-greek-v8015-chirho",
+      "lesson_id_chirho": "Matt.15.1",
+      "token_id_chirho": null,
+      "text_chirho": "Τότε προσέρχονται τῷ Ἰησοῦ ἀπὸ Ἱεροσολύμων Φαρισαῖοι καὶ γραμματεῖς λέγοντες",
+      "synthesis_text_chirho": "Τότε προσέρχονται τω Ιησού από Ιεροσολύμων Φαρισαίοι και γραμματείς λέγοντες",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "fd039a2af30c8c8c8d4f1960b2907abb161015f59b961d60f2c408efe34f04ae",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "b83908d2a7cea67ea51df9d942ced663eba73c5c0a2479dee87bc61ea22fd016",
+      "raw_flac_sha256_chirho": "84b7c1161bfb747bcdcb18441e379ab1b533daac91d2053da97ed847f8cbe337",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/281c00fc994ce7a0d27d329f28a606cb6d8c17d7974f02a16209c472333c2d20-chirho.mp3",
+      "sha256_chirho": "281c00fc994ce7a0d27d329f28a606cb6d8c17d7974f02a16209c472333c2d20",
+      "bytes_chirho": 34524,
+      "duration_chirho": 4.257959,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2836
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

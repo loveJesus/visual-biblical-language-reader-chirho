@@ -9024,6 +9024,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8159-chirho",
+      "lesson_id_chirho": "2Cor.11.1",
+      "token_id_chirho": null,
+      "text_chirho": "Ὄφελον ἀνείχεσθέ μου μικρόν τι ἀφροσύνης· ἀλλὰ καὶ ἀνέχεσθέ μου.",
+      "synthesis_text_chirho": "Όφελον ανείχεσθέ μου μικρόν τι αφροσύνης, αλλά και ανέχεσθέ μου.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "8e2df571e2cb629eec5ef9ba57cc08e0f7dd28e9cd53cbb6044f31b6c56e4a90",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "ae9140e8dc92e20059e693623cc2db1a87552491c245d5e705a2f28a10645023",
+      "raw_flac_sha256_chirho": "a93edaa04f4bda383cc8bb9af7c853d02490ebf77350e6e27c72777cfa882679",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/1455a389032d1493612ddda3b369b9d71e6bfd75cb7a32427d46018722547e82-chirho.mp3",
+      "sha256_chirho": "1455a389032d1493612ddda3b369b9d71e6bfd75cb7a32427d46018722547e82",
+      "bytes_chirho": 30972,
+      "duration_chirho": 3.813878,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2075
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

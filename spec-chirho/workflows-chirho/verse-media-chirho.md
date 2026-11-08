@@ -48,6 +48,10 @@ flowchart TD
 
 Only done rows are eligible, even when an excluded row has a chosen take. Automated text screening does not establish listener acceptance; clips remain audition. The local Chatterbox V3 recipe preserves canonical text and separately re-derives the producer's modern monotonic spelling. Existing pronunciation compatibility stays in force: plain Modern may serve the aspirates choice only when the source has no rough breathing. The default rendition is unchanged. Original FLAC headers need not declare duration; preparation measures decoded samples. Original evidence is private, content addressed and never exposed through the public audio route. A partial catalogue commit resumes only with its frozen input binding and each destination's exact before/after hash; foreign edits are held. No synthesis, retake, quota reset or provider spending belongs to installation.
 
+The November 8 chapter-opening adapter supplies the same DAG with a separately pinned 259-job plan and five frozen evidence files (plan, manifest, journal, ASR and finite handoff). Only its 256 screened seed-1 takes enter; John 3:1, Acts 28:1 and 1 Corinthians 13:1 remain held. The input carries its original batch home explicitly, while earlier imports keep their existing home. The shared recipe, source validation, encoder, archive/readback and catalogue transaction are unchanged. See `scripts-chirho/audio-chirho/local-greek-chirho/README-chirho.md` for the bounded commands and exact manifest identity.
+
+These openings apply through small catalogue parts of at most six chapters plus the manifest, with a separate prepared subset and recovery binding per part. The existing 31-write and 32 MiB transaction/recovery bounds remain. Replaying a completed part preserves later additions; a changed prepared subset or foreign catalogue edit refuses. An initial oversized whole-batch intent was refused before any catalogue write and remains preserved as failed-attempt evidence, rather than being repurposed for a smaller part.
+
 ## November 8 credit and statistics placement
 
 ```mermaid

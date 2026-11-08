@@ -55,3 +55,21 @@ The installer is the original implementation exported as a library with fixed va
 Old replay remains available through `install_chirho.ts`, reading the immutable night-one inputs and the original prepared derivatives. A growing producer journal, a replaced live manifest, later completed jobs or the new retake seed do not change those inputs or their archive keys. New generation belongs to a separately frozen phase, not a mutation of these snapshots.
 
 Tests cover exact phase/source/request/result/ASR binding, rejection of unknown/unscreened/flagged/prior-done jobs, seed-1 first takes and strict old seed-1 behavior, real source codecs, canonical changes, independent derivative replay/conflicts, redirected outputs, corrupt archive refusal before catalogue writes, and zero-provider-call completed archive/catalogue replay. Tests use temporary tones only for codec/storage checks; they do not claim pronunciation acceptance.
+
+## November 8 chapter openings
+
+The separate `openings-2026-11-08-chirho` producer plan covers 259 NT chapter openings, excluding the already recorded John 1:1. Its fixed manifest is `2da5fc001ef23358b92af4f69f3aeee26f3df7f0e82b1273d76a73559f7c4cd5`. Exactly 256 seed-1 takes pass the existing text screen. John 3:1, Acts 28:1 and 1 Corinthians 13:1 remain held, with no automatic retake or rescreen.
+
+`openings_chirho.ts` binds the immutable plan, manifest, journal, ASR and finite handoff in `build-chirho/local-greek-openings-2026-11-08-chirho/source-chirho/`. It checks the complete first-verse partition, unchanged local model and voice, exact received request/result pairs, source text and separate ASR identities before returning only the eligible jobs. The shared source/recipe validator and existing derivative encoder remain unchanged. The installer receives an explicit original batch home; older imports retain their original default home and frozen inputs.
+
+```bash
+rtk proxy bun --no-env-file scripts-chirho/audio-chirho/local-greek-chirho/openings_chirho.ts --describe-chirho
+# Root's bounded local operator reuses prepare_chirho.py and exclusive-output helpers:
+rtk proxy /opt/homebrew/bin/python3 -I -B build-chirho/local-greek-openings-2026-11-08-chirho/prepare_chirho.py
+rtk proxy bun --no-env-file scripts-chirho/audio-chirho/local-greek-chirho/install_openings_chirho.ts
+rtk proxy bun scripts-chirho/audio-chirho/local-greek-chirho/install_openings_chirho.ts --apply-chirho
+```
+
+The same archive-before-reference DAG applies. All accepted original MP3s, FLACs and five evidence files receive private content-addressed preservation; delivery uses the existing 44.1 kHz MPEG-1 derivative. The catalogue transaction, conflict checks and completed replay remain shared. No Fish recording, voice clone, provider request, synthesis, retry-cap change or pronunciation-policy change belongs to this phase.
+
+Catalogue application is partitioned into at most six chapters per part, each with its own immutable prepared subset and recovery directory. This keeps both the existing 31-write transaction limit and 32 MiB recovery-input limit intact, even with near-limit chapter files. The full batch is validated before applying a part. Exact original readback receipts may be reused across these parts; they do not authorize a different take. The first whole-batch attempt completed archive readbacks but was refused by the transaction bound before changing any catalogue file; its intent and log remain preserved separately. Never replay that oversized top-level intent or increase a bound to accept it. The generic installer also refuses more than 30 chapters before starting archive work.

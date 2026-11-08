@@ -20464,6 +20464,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8071-chirho",
+      "lesson_id_chirho": "John.4.1",
+      "token_id_chirho": null,
+      "text_chirho": "Ὡς οὖν ἔγνω ὁ Κύριος ὅτι ἤκουσαν οἱ Φαρισαῖοι ὅτι Ἰησοῦς πλείονας μαθητὰς ποιεῖ καὶ βαπτίζει ἢ Ἰωάνης,",
+      "synthesis_text_chirho": "Ως ουν έγνω ο Κύριος ότι ήκουσαν οι Φαρισαίοι ότι Ιησούς πλείονας μαθητάς ποιεί και βαπτίζει η Ιωάνης,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "0081c2dc3a3d53c3cd67aefb83a474488c6507a622ff064a8ceb84696ad58c73",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "46481458cff9fa1839ef16d10b5b5d90f72ac561fcdbf66abf65cb25119f0ba6",
+      "raw_flac_sha256_chirho": "bf95b121d6d896bde6b5e73cb9645749f4a271986a2b03168ee5953a1e799846",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/a44287dd805846470b3a1c7f4db1f6d633008a8e49192e39507afb36b72b95c4-chirho.mp3",
+      "sha256_chirho": "a44287dd805846470b3a1c7f4db1f6d633008a8e49192e39507afb36b72b95c4",
+      "bytes_chirho": 50407,
+      "duration_chirho": 6.243265,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2976
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

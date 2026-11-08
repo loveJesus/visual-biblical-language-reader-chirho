@@ -4646,6 +4646,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8187-chirho",
+      "lesson_id_chirho": "2Thess.1.1",
+      "token_id_chirho": null,
+      "text_chirho": "Παῦλος καὶ Σιλουανὸς καὶ Τιμόθεος τῇ ἐκκλησίᾳ Θεσσαλονικέων ἐν Θεῷ Πατρὶ ἡμῶν καὶ Κυρίῳ Ἰησοῦ Χριστῷ·",
+      "synthesis_text_chirho": "Παύλος και Σιλουανός και Τιμόθεος τη εκκλησία Θεσσαλονικέων εν Θεώ Πατρί ημών και Κυρίω Ιησού Χριστώ,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "4541c500a4aeb20324f6d09d3ccddc18ee7aaa54fba25a06f9320146f552e81a",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "b971959d200cab13d0657a213fe027c55263318213d235e213db31e070b6a375",
+      "raw_flac_sha256_chirho": "cf27db0f8759035a2355dfe350e25de892a664894a1f6e9d5fd7e2de4ba1ad58",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/a1e0d48e1df2601bb86eb99f9162fdf7da373421672da93d6f3016d4eb6cdb8c-chirho.mp3",
+      "sha256_chirho": "a1e0d48e1df2601bb86eb99f9162fdf7da373421672da93d6f3016d4eb6cdb8c",
+      "bytes_chirho": 47690,
+      "duration_chirho": 5.903673,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2235
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

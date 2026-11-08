@@ -10740,6 +10740,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8047-chirho",
+      "lesson_id_chirho": "Luke.3.1",
+      "token_id_chirho": null,
+      "text_chirho": "Ἐν ἔτει δὲ πεντεκαιδεκάτῳ τῆς ἡγεμονίας Τιβερίου Καίσαρος, ἡγεμονεύοντος Ποντίου Πειλάτου τῆς Ἰουδαίας, καὶ τετρααρχοῦντος τῆς Γαλιλαίας Ἡρῴδου, Φιλίππου δὲ τοῦ ἀδελφοῦ αὐτοῦ τετρααρχοῦντος τῆς Ἰτουραίας καὶ Τραχωνίτιδος χώρας, καὶ Λυσανίου τῆς Ἀβιληνῆς τετρααρχοῦντος,",
+      "synthesis_text_chirho": "Εν έτει δε πεντεκαιδεκάτω της ηγεμονίας Τιβερίου Καίσαρος, ηγεμονεύοντος Ποντίου Πειλάτου της Ιουδαίας, και τετρααρχούντος της Γαλιλαίας Ηρώδου, Φιλίππου δε του αδελφού αυτού τετρααρχούντος της Ιτουραίας και Τραχωνίτιδος χώρας, και Λυσανίου της Αβιληνής τετρααρχούντος,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "599b2258632454fc300f3627921ce5606ba36b03c12e66ae5c7c84465f2337db",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "2a69baec9762f43927344c3002fb7f0209d860ad24502fdc1d5ddb4ed39c5505",
+      "raw_flac_sha256_chirho": "0235c3ae8fae5285c96f861ca2f1d57a8e00b83d840df076d9b1490b9a4cc11b",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/1a237a967b0f237a3d1325b766a6c83b5102ae6a531fe7903fe95487b3592d49-chirho.mp3",
+      "sha256_chirho": "1a237a967b0f237a3d1325b766a6c83b5102ae6a531fe7903fe95487b3592d49",
+      "bytes_chirho": 115399,
+      "duration_chirho": 14.367347,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.3377
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }

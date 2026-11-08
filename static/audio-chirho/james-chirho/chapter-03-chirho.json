@@ -5086,6 +5086,39 @@
       "provider_chirho": "ElevenLabs",
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
+    },
+    {
+      "id_chirho": "local-greek-v8219-chirho",
+      "lesson_id_chirho": "Jas.3.1",
+      "token_id_chirho": null,
+      "text_chirho": "Μὴ πολλοὶ διδάσκαλοι γίνεσθε, ἀδελφοί μου, εἰδότες ὅτι μεῖζον κρίμα λημψόμεθα.",
+      "synthesis_text_chirho": "Μη πολλοί διδάσκαλοι γίνεσθε, αδελφοί μου, ειδότες ότι μείζον κρίμα λημψόμεθα.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "192d0f21b73b51ec8c39ba42c8fb8af589de618545814aaacc8af72f83fde73d",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "26691808878d60ee91388e7602d708279311e01307ea2876ee12347f6d2b2bd3",
+      "raw_flac_sha256_chirho": "3499a5fc5c7d21015c4fc297ffc7c968e125817e0bbe2676f47c67eb4ae7a12c",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/b0d8fc62f74943772d0dee51e50592799f11e20265f2147af5e037e866d59f02-chirho.mp3",
+      "sha256_chirho": "b0d8fc62f74943772d0dee51e50592799f11e20265f2147af5e037e866d59f02",
+      "bytes_chirho": 40167,
+      "duration_chirho": 4.963265,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2923
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "7ed431cdde9b9cb6cacfa3720c93c0d4edbdd0a73c194dab4b79e13a6e46ae7a",
+      "source_asr_sha256_chirho": "266d0b64baa1cf2eacae005785dfcf2f6c74c6bbd7de889bbc9a5c28888127b0"
     }
   ]
 }
