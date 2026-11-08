@@ -42,3 +42,23 @@ flowchart TD
 ```
 
 The next-version operator, its bounded private journal and command contract are documented in apps-chirho/ios-chirho/scripts-chirho/release-chirho/README-chirho.md. Shared upload claims and unknown outcomes are retained. A lost response never authorizes a duplicate POST/upload. No owner legal declaration is inferred from a successful build. The private progress database and store responses remain outside the public source mirror; binaries stay in ignored build output.
+
+## Reviewed spoken forms and human Aramaic readings
+
+```mermaid
+flowchart TD
+    ReviewsChirho[Source-bound web reading reviews] --> ExportChirho[Cold-check canonical chapter and full token identity]
+    ExportChirho --> AssetChirho[One separate small spoken-overrides asset in both native apps]
+    AssetChirho --> QereChirho{Content qere available?}
+    QereChirho -->|Yes| SourceChirho[Use the content reading]
+    QereChirho -->|No| MatchChirho{Written token, lemma, augment, morphology and recursive qere match?}
+    MatchChirho -->|No| WrittenChirho[Use written source text]
+    MatchChirho -->|Yes| WordChirho[Word speaker uses the exact reviewed reading]
+    WordChirho --> GroupChirho{Whole consecutive group and canonical verse match?}
+    GroupChirho -->|Yes| VerseChirho[Whole verse replaces group once at its last member]
+    GroupChirho -->|No| FallbackChirho[Whole verse retains source words without collapsing]
+```
+
+The exporter writes only the three reviewed overrides not already carried by content qere. Native assets are byte-identical and malformed assets give no overrides. iOS compares Unicode scalars exactly, preserving the web identity boundary rather than Swift's normalization-equivalent String equality. No canonical Scripture or phonetic guess is introduced. Valid human Be'eri recordings in Aramaic or mixed-language passages may pass the human validator; the existing exclusions still apply to synthesized Aramaic words and verses. A failed human claim is never treated as an AI clip.
+
+The0.1.2/build4 source candidate repairs the97 safely withheld human readings in0.1.1/build3. A pending submitted version stays immutable. Candidate archive/export, Apple validation, upload, review and public release are separate evidence states; preparing the next binary does not withdraw or replace an existing review. Silent file/core checks can run while the submitted version awaits Apple.

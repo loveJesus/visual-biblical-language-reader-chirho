@@ -42,6 +42,8 @@ data class QereChirho(
     @SerialName("lemma_augment_chirho") val lemmaAugmentChirho: String? = null,
     @SerialName("gloss_chirho") val glossChirho: String? = null,
     @SerialName("analysis_chirho") val analysisChirho: String? = null,
+    /** Part of the qere's exact identity when a reviewed spoken reading is bound to it (SpokenOverridesChirho). */
+    @SerialName("raw_morphology_chirho") val rawMorphologyChirho: String? = null,
 )
 
 sealed interface WordChirho {

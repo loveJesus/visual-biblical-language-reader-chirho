@@ -135,23 +135,32 @@ class HumanReadingTestChirho {
      */
     @Test
     fun everyInstalledBeeriReadingIsAcceptedAndPlaysFirst() = runBlocking {
+        // One chapter at a time, so the whole catalogue (524 chapters on 2026-11-08) never sits in the test heap at once.
         val worldChirho = PublishedWorldChirho.orSkipChirho(Dispatchers.Unconfined)
-        val chaptersChirho = File(requireNotNull(staticRootChirho()), "audio-chirho").walkTopDown()
-            .filter { it.name.endsWith("-chirho.json") && it.readText().contains("\"reading_source_chirho\"") }
-            .associate { it.relativeTo(requireNotNull(staticRootChirho())).path to Json.parseToJsonElement(it.readText()).jsonObject }
-        val humanChirho = chaptersChirho.flatMap { (relativeChirho, chapterChirho) ->
-            listOf("clips_chirho", "readings_chirho").flatMap { keyChirho -> chapterChirho[keyChirho]?.jsonArray?.map { it.jsonObject }.orEmpty() }
-                .filter { "reading_source_chirho" in it }.map { relativeChirho to (it.getValue("lesson_id_chirho") as JsonPrimitive).content }
+        val rootChirho = requireNotNull(staticRootChirho())
+        var humanChirho = 0
+        var chaptersChirho = 0
+        var inReadingsChirho = 0
+        for (fileChirho in File(rootChirho, "audio-chirho").walkTopDown().filter { it.name.endsWith("-chirho.json") }.sortedBy { it.path }) {
+            val textChirho = fileChirho.readText()
+            if (!textChirho.contains("\"reading_source_chirho\"")) continue
+            chaptersChirho++
+            val chapterChirho = Json.parseToJsonElement(textChirho).jsonObject
+            inReadingsChirho += chapterChirho["readings_chirho"]?.jsonArray?.size ?: 0
+            val relativeChirho = fileChirho.relativeTo(rootChirho).path
+            val lessonsChirho = listOf("clips_chirho", "readings_chirho")
+                .flatMap { keyChirho -> chapterChirho[keyChirho]?.jsonArray?.map { it.jsonObject }.orEmpty() }
+                .filter { "reading_source_chirho" in it }.map { (it.getValue("lesson_id_chirho") as JsonPrimitive).content }.distinct()
+            for (lessonIdChirho in lessonsChirho) {
+                humanChirho++
+                val recordingsChirho = worldChirho.audioChirho.recordingsChirho(worldChirho.loadedChirho(lessonIdChirho))
+                val firstChirho = recordingsChirho.versesChirho.firstOrNull()
+                assertEquals("$relativeChirho $lessonIdChirho", HumanReadingChirho.BEERI_VOICE_CHIRHO, firstChirho?.voiceNameChirho)
+                assertEquals(lessonIdChirho, audioEntriesChirho(chapterChirho, lessonIdChirho).size,
+                    recordingsChirho.versesChirho.size + recordingsChirho.wordsChirho.values.sumOf { it.size })
+            }
         }
-        assumeTrue("no Be'eri readings installed in this static tree yet", humanChirho.isNotEmpty())
-        for ((relativeChirho, lessonIdChirho) in humanChirho.distinct()) {
-            val recordingsChirho = worldChirho.audioChirho.recordingsChirho(worldChirho.loadedChirho(lessonIdChirho))
-            val firstChirho = recordingsChirho.versesChirho.firstOrNull()
-            assertEquals("$relativeChirho $lessonIdChirho", HumanReadingChirho.BEERI_VOICE_CHIRHO, firstChirho?.voiceNameChirho)
-            assertEquals(lessonIdChirho, audioEntriesChirho(chaptersChirho.getValue(relativeChirho), lessonIdChirho).size,
-                recordingsChirho.versesChirho.size + recordingsChirho.wordsChirho.values.sumOf { it.size })
-        }
-        val inReadingsChirho = chaptersChirho.values.sumOf { chapterChirho -> chapterChirho["readings_chirho"]?.jsonArray?.size ?: 0 }
-        println("Be'eri readings accepted and first: ${humanChirho.size} in ${chaptersChirho.size} chapters ($inReadingsChirho in readings_chirho)")
+        assumeTrue("no Be'eri readings installed in this static tree yet", humanChirho > 0)
+        println("Be'eri readings accepted and first: $humanChirho in $chaptersChirho chapters ($inReadingsChirho in readings_chirho)")
     }
 }

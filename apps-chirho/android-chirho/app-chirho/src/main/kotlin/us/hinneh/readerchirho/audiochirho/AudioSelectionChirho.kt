@@ -8,6 +8,7 @@ import us.hinneh.readerchirho.contentchirho.HebrewWordChirho
 import us.hinneh.readerchirho.contentchirho.VerseChirho
 import us.hinneh.readerchirho.contentchirho.WHITESPACE_CLASS_CHIRHO
 import us.hinneh.readerchirho.domainchirho.SpokenChirho
+import us.hinneh.readerchirho.domainchirho.SpokenOverridesChirho
 import java.text.Normalizer
 import java.util.Locale
 
@@ -149,11 +150,13 @@ object AudioSelectionChirho {
         canonicalSha256Chirho: String,
         decodeChirho: (JsonObject) -> ClipChirho?,
         readingsChirho: List<JsonObject> = emptyList(),
+        overridesChirho: SpokenOverridesChirho = SpokenOverridesChirho.NONE_CHIRHO,
     ): VerseRecordingsChirho {
-        val spokenChirho = verseChirho.wordsChirho.associate { it.idChirho to SpokenChirho.wordChirho(it) }
+        // A word clip speaks its word (word semantics); a verse reading speaks the verse, a written group as one word.
+        val spokenChirho = verseChirho.wordsChirho.associate { it.idChirho to SpokenChirho.wordChirho(it, overridesChirho) }
         val aramaicChirho = verseChirho.wordsChirho.filter { (it as? HebrewWordChirho)?.sourceLanguageChirho == "arc" }
             .map { it.idChirho }.toSet()
-        val verseTextChirho = SpokenChirho.verseChirho(verseChirho)
+        val verseTextChirho = SpokenChirho.verseChirho(verseChirho, overridesChirho)
         // Every readings_chirho entry must be a valid human reading; a clips_chirho entry that claims a human
         // source must prove it too, and is never reread as an AI recording.
         val candidatesChirho = rawChirho.map { it to ("reading_source_chirho" in it) } + readingsChirho.map { it to true }

@@ -142,3 +142,24 @@ Run the actual Obadiah archive/install/selector/publication vertical before the 
 The immutable plan lives under workspace-chirho/audio-chirho/beeri-verses-2026-11-07-chirho/bounded-other-books-v1-chirho/plan-chirho.json. Phase state is shallow-sharded under phases-chirho/000-chirho, 010-chirho, 020-chirho and 030-chirho. The unchanged shared catalogue helper requires existing regular destinations, preserves foreign edits, and retains its 31-write and 32-MiB recovery ceilings. The new runner checks aggregate journal size before archive and does not raise a bound.
 
 A private fake-S3 proof used copies of the 21 actual Obadiah cuts and canonical/source inputs. It made 42 local stub calls, then a fresh process completed with zero writes and zero fetches while storage keys were absent. This is fixture evidence, not a real R2 readback, production import or listener acceptance. The actual R2/archive/install/deploy remains root's work.
+
+## Existing Genesis 3 video installation
+
+```mermaid
+flowchart TD
+    scopeChirho[Explicit --genesis3-chirho: fixed producer folder and verses1to24] --> preflightChirho[Hash each MP4; decode codec, frames and duration; bind canonical chapter and delivered scene]
+    preflightChirho --> humanChirho[Require the selected valid human reading and matching embedded window]
+    humanChirho --> dryChirho[Dry run has zero network or locks]
+    humanChirho --> lockChirho[Apply acquires the single video catalogue lock and repeats preflight]
+    lockChirho --> replayChirho{Exact completed entry?}
+    replayChirho -->|Yes| unchangedChirho[Zero remote calls and zero catalogue writes]
+    replayChirho -->|No| getChirho[GET original by SHA; PUT only on404]
+    getChirho --> readbackChirho[Require exact bounded GET bytes after PUT or lost response]
+    readbackChirho --> coldChirho[Cold source and foreign catalogue checks]
+    coldChirho --> atomicChirho[Atomic catalogue extension; retain all prior entries]
+    atomicChirho --> releaseChirho[Root frozen publish; hosted range and quiet playback proofs]
+```
+
+The default scope still replays the31Proverbs openings. Genesis3 requires the explicit fixed scope and accepts at most24records. There is no arbitrary producer-folder argument. Source MP4s stay private/R2 and are not re-encoded. The first handoff has23records, with3:3 deliberately absent until its corrected scene and replacement clip are ready. A changed canonical source, displayed scene, selected reading, file or foreign catalogue stops installation before publication. The catalogue remains bounded to1000entries and4MiB. Completed replay verifies the source and catalogue without object-store calls; an uncertain upload is reconciled by its content-addressed GET before any new PUT. No synthesis, generation, retry reset or paid spending belongs to this installer.
+
+Unattended browser and native playback proofs must be silent. The test harness sets native element volume0 before every attached or detached play, verifies the getter and forbids device speech; native emulators use no-audio output. Quiet timing/decoder/state checks do not establish audible output or listener acceptance. Product and system volume defaults remain unchanged.

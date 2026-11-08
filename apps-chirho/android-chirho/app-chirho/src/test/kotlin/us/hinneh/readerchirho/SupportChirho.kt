@@ -16,6 +16,7 @@ import us.hinneh.readerchirho.audiochirho.ReadingSourceChirho
 import us.hinneh.readerchirho.contentchirho.BookCatalogueChirho
 import us.hinneh.readerchirho.contentchirho.ContentRepositoryChirho
 import us.hinneh.readerchirho.contentchirho.LoadedVerseChirho
+import us.hinneh.readerchirho.domainchirho.SpokenOverridesChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.mediachirho.MediaRepositoryChirho
 import us.hinneh.readerchirho.remotechirho.RemoteClientChirho
@@ -76,7 +77,9 @@ class PublishedWorldChirho(rootChirho: File, dispatcherChirho: CoroutineDispatch
     val mediaChirho = MediaRepositoryChirho(
         remoteChirho, workDispatcherChirho = dispatcherChirho, stagedVideosChirho = stagedVideosChirho, ioDispatcherChirho = dispatcherChirho,
     )
-    val audioChirho = AudioRepositoryChirho(remoteChirho, workDispatcherChirho = dispatcherChirho)
+    val audioChirho = AudioRepositoryChirho(remoteChirho, workDispatcherChirho = dispatcherChirho, spokenOverridesChirho = {
+        SpokenOverridesChirho.decodeChirho(File(SPOKEN_OVERRIDES_CHIRHO).readBytes())
+    })
 
     suspend fun loadedChirho(idChirho: String): LoadedVerseChirho {
         val passageChirho = requireNotNull(PassageChirho.parseChirho(idChirho))
@@ -114,6 +117,8 @@ fun JsonObject.withChirho(keyChirho: String, valueChirho: String?): JsonObject =
     JsonObject(this + (keyChirho to (valueChirho?.let(::JsonPrimitive) ?: JsonNull)))
 
 const val BUNDLED_BOOKS_CHIRHO = "src/main/assets/library-chirho/books-chirho.json"
+/** The reviewed spoken readings exported from the website (GPT, DM #3551), as the app bundles them. */
+const val SPOKEN_OVERRIDES_CHIRHO = "src/main/assets/teaching-chirho/spoken-overrides-chirho.json"
 
 val SOURCE_CHIRHO = SourceChirho(
     idChirho = "oshb-prov-chirho", titleChirho = "Open Scriptures Hebrew Bible", urlChirho = "https://github.com/openscriptures/morphhb",

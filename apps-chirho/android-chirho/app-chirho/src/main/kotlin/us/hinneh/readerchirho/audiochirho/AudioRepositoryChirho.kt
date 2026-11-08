@@ -13,6 +13,7 @@ import us.hinneh.readerchirho.contentchirho.LoadedVerseChirho
 import us.hinneh.readerchirho.remotechirho.BoundedLruChirho
 import us.hinneh.readerchirho.remotechirho.RemoteClientChirho
 import us.hinneh.readerchirho.remotechirho.RemoteFailureChirho
+import us.hinneh.readerchirho.domainchirho.SpokenOverridesChirho
 import us.hinneh.readerchirho.remotechirho.ResourceKindChirho
 import us.hinneh.readerchirho.remotechirho.SHA256_PATTERN_CHIRHO
 import us.hinneh.readerchirho.remotechirho.decodeUtf8Chirho
@@ -23,7 +24,10 @@ class AudioRepositoryChirho(
     private val remoteChirho: RemoteClientChirho,
     private val clockChirho: () -> Long = System::currentTimeMillis,
     private val workDispatcherChirho: CoroutineDispatcher = Dispatchers.Default,
+    /** The reviewed spoken readings (assets/teaching-chirho/spoken-overrides-chirho.json), read once on the work dispatcher. */
+    spokenOverridesChirho: () -> SpokenOverridesChirho = { SpokenOverridesChirho.NONE_CHIRHO },
 ) {
+    private val overridesChirho by lazy(spokenOverridesChirho)
     private val manifestMutexChirho = Mutex()
     private var manifestChirho: AudioManifestChirho? = null
     private var manifestReadAtChirho = 0L
@@ -58,7 +62,7 @@ class AudioRepositoryChirho(
             }
             AudioSelectionChirho.recordingsChirho(
                 ownChirho(fileChirho.clipsChirho), verseChirho, bookChirho.greekChirho, canonicalChirho, ::decodeClipChirho,
-                readingsChirho = ownChirho(fileChirho.readingsChirho),
+                readingsChirho = ownChirho(fileChirho.readingsChirho), overridesChirho = overridesChirho,
             )
         }
     }

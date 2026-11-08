@@ -8,6 +8,7 @@ import androidx.core.content.edit
 import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.contentchirho.ContentRepositoryChirho
+import us.hinneh.readerchirho.domainchirho.SpokenOverridesChirho
 import us.hinneh.readerchirho.mediachirho.ImageLoaderChirho
 import us.hinneh.readerchirho.mediachirho.MediaRepositoryChirho
 import us.hinneh.readerchirho.remotechirho.HashCacheChirho
@@ -16,6 +17,7 @@ import us.hinneh.readerchirho.remotechirho.RemoteClientChirho
 import us.hinneh.readerchirho.videochirho.VideoSourceChirho
 import us.hinneh.readerchirho.videochirho.stagedVideosChirho
 import java.io.File
+import java.io.IOException
 
 /** Interface language: follow the device, or a choice made in Hinneh. */
 enum class InterfaceLanguageChirho(val tagChirho: String?) { SYSTEM_CHIRHO(null), ENGLISH_CHIRHO("en"), SPANISH_CHIRHO("es") }
@@ -82,7 +84,14 @@ class AppGraphChirho(contextChirho: Context) {
         RemoteClientChirho(HttpTransportChirho(), HashCacheChirho(File(appContextChirho.cacheDir, "verified-video-chirho"), 64L * 1024 * 1024)),
         stagedVideosChirho,
     )
-    val audioChirho = AudioRepositoryChirho(remoteChirho)
+    /** Reviewed spoken readings exported from the website (GPT, DM #3551); a missing or invalid asset gives none. */
+    val audioChirho = AudioRepositoryChirho(remoteChirho, spokenOverridesChirho = {
+        try {
+            appContextChirho.assets.open(SpokenOverridesChirho.ASSET_PATH_CHIRHO).use { SpokenOverridesChirho.decodeChirho(it.readBytes()) }
+        } catch (missingChirho: IOException) {
+            SpokenOverridesChirho.NONE_CHIRHO
+        }
+    })
     val imagesChirho = ImageLoaderChirho(remoteChirho, minOf(32L * 1024 * 1024, Runtime.getRuntime().maxMemory() / 8))
     val preferencesChirho = PreferencesChirho(appContextChirho)
 }

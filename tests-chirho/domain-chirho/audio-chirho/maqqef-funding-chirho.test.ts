@@ -436,7 +436,7 @@ describe('separately bounded source-context Hebrew continuation', () => {
 		const previousChirho = stubChirho.calls_chirho.execute_chirho;
 		await runMaqqefChirho(fixtureRootChirho.root_chirho, true, false, stubChirho.services_chirho);
 		expect(stubChirho.calls_chirho.execute_chirho).toBe(previousChirho);
-	});
+	}, 30_000); // Real1081-key disk-backed run and cold replay need more than the default5s.
 	it('holds an existing unknown without metadata, POST, installation or removing its reservation', async () => {
 		const fixtureRootChirho = await fixtureChirho(),
 			stubChirho = servicesChirho(),

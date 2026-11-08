@@ -110,6 +110,11 @@ A newer selection cancels the older passage's requests and stops its audio. A fa
   - Until a choice is saved in Settings, each verse picks its own: Modern with Aspirates when it has an Aspirates verse reading, otherwise Modern (`ReaderUiStateChirho.renditionChirho`). A saved choice always wins.
   - A plain Modern recording stands in for Aspirates only when the text has no rough breathing (any U+0314, ῥ included). Erasmian plays only Erasmian recordings.
 - Speed starts at Normal for Hebrew and Greek, as on the website since L.J.'s 2026-11-03 "let's start at normal". Slow, Gentle and Slightly slower remain in Settings, and a choice is saved.
+- Reviewed spoken readings follow the website's reading-continuation table through `assets/teaching-chirho/spoken-overrides-chirho.json`. GPT's exporter writes that asset byte-identically, and Android never edits it (`domainchirho/SpokenOverridesChirho.kt` and `domainchirho/SpokenChirho.kt`).
+  - A review applies only to its exact word: id, text, lemma, augment, morphology and qere.
+  - A word clip speaks that word's reading. In a verse reading, a reviewed written group (Lam 4:3, כי ענים read as one word) is read once, and only when the whole group and the exact verse text match. Anything changed keeps the source words.
+  - A missing or invalid asset gives no reviews.
+  - The opt-in corpus walk (`PublishedClipsCorpusTestChirho`) checks that every published clip and reading binds. It reads one audio chapter at a time.
 - Pictures and recordings carry no per-item AI or review notes (L.J., 2026-11-05). Settings → About Hinneh states once that they are AI-generated study aids still awaiting review, and links the privacy policy (which Google Play requires inside the app), About and support, Contact and the source code. Missing meanings, pictures and recordings stay visibly unavailable.
 - Word cards carry no per-word source or review notes either (L.J., 2026-11-06): no gloss-source label, root status, importer note or raw OSHB code.
   - Look closer puts the word on Close's row, then shows its lexical form and Strong's number, the recording, the picture, the meaning and one grammar line. The grammar line is the source's English description, or the translated labels in Spanish.
@@ -126,9 +131,21 @@ A newer selection cancels the older passage's requests and stops its audio. A fa
 - Settings › Text size scales all text: Small 80%, Medium 90% (the default since L.J.'s 2026-11-05 request), Large 100% (the original size) and Extra large 115%. It multiplies the device's own font size and is reapplied inside sheets, which have their own window.
 - Image reports stay in the website's protected flow: the app links to the verse on hinneh.us.
 
-## Status (0.1.1, versionCode 2, 2026-11-08)
+## Status (0.1.2, versionCode 3, 2026-11-08)
 
-Version 0.1.0 (versionCode 1) is live on Google Play since 2026-11-06. Version 0.1.1 adds human readings, published verse videos, verse swipes, the cleaner word cards and reading key, Normal speed, the automatic Greek reading and credits in Sources. It was checked on this Mac with the toolchain above, against the Android 16 (API 36) arm64 emulator `Hinneh_Review_Chirho` (emulator-5556) and the live site:
+Version 0.1.2 adds the reviewed spoken readings (`spoken-overrides-chirho.json`, GPT DM #3567).
+- Before it, Android withheld 4 of 437,331 published entries: Lam 4:3's Be'eri reading and two words, and one word in Jer 48:44. Now all of them bind.
+- Checks on this Mac, against the local static tree, which is identical to the live site:
+  - A clean build with every task rerun: Kotlin has no warnings, and lint finds no issues in release or debug.
+  - JVM: 64 tests, of which 63 pass and the opt-in live test is skipped by default. The full-corpus walk refuses 0 of 437,331 entries, all 13,470 human readings are accepted and first, and the corpus contract covers 31,156 verses.
+  - Live: all 31 videos verify through the app's own network path.
+  - Device: 6 connected tests pass on emulator-5556, booted with `-no-audio` (all checks are silent since L.J.'s 2026-11-08 report).
+  - On the device, a release-variant build signed only with the local debug key:
+    - Lam 4:3 shows speakers on כי and ענים and offers Listen, which plays Be'eri's reading silently. Its credit is in Sources.
+    - Jer 48:44 shows its speaker on הניס.
+  - In a scratch copy, breaking the group rule or the word path makes the corpus and human-reading tests fail.
+
+Version 0.1.1 (versionCode 2) went public on Google Play on 2026-11-08. Version 0.1.0 (versionCode 1) had been live since 2026-11-06. Version 0.1.1 adds human readings, published verse videos, verse swipes, the cleaner word cards and reading key, Normal speed, the automatic Greek reading and credits in Sources. It was checked on this Mac with the toolchain above, against the Android 16 (API 36) arm64 emulator `Hinneh_Review_Chirho` (emulator-5556) and the live site:
 
 - A clean build with every task rerun: Kotlin compiles with no warnings (warnings are errors), and lint finds no issues in release or debug.
 - JVM: 60 tests, of which 59 pass and the opt-in live test is skipped by default. Run with `-Phinneh.liveChirho=true`, it shows and verifies all 19 published Proverbs videos. In a scratch copy, removing the failed-video fallback or decoding absent video keys as null makes the new tests fail.

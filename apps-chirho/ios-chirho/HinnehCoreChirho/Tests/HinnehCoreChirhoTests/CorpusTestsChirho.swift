@@ -20,6 +20,29 @@ private struct CorpusTransportChirho: TransportChirho {
     }
 }
 
+private struct SpokenOracleEntryChirho: Decodable {
+    let bookIdChirho: String
+    let numberChirho: Int
+    let pathChirho: String
+    let sha256Chirho: String
+    let contentSha256Chirho: String
+    let audioSha256Chirho: String
+}
+private struct SpokenOracleIndexChirho: Decodable {
+    let audioManifestSha256Chirho: String
+    let chaptersChirho: [SpokenOracleEntryChirho]
+    let versesChirho: Int
+    let humanReadingsChirho: Int
+    let wordClipsChirho: Int
+}
+private struct SpokenOracleVerseChirho: Decodable {
+    let lessonIdChirho: String
+    let spokenVerseChirho: String
+    let spokenWordsChirho: [String: String]
+    let wordClipsChirho: [String: String]
+    let humanSha256Chirho: String?
+}
+
 /// Set HINNEH_STATIC_ROOT_CHIRHO to the repository's static directory. This never uses the network,
 /// rewrites source files, or infers verse presence from a count rather than the edition's manifest.
 @Suite(.enabled(if: ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"] != nil))
@@ -97,25 +120,36 @@ struct CorpusTestsChirho {
         let rootChirho = URL(fileURLWithPath: pathChirho, isDirectory: true).standardizedFileURL
         let remoteChirho = RemoteChirho(transportChirho: CorpusTransportChirho(rootChirho: rootChirho))
         let contentChirho = ContentClientChirho(remoteChirho: remoteChirho)
-        let audioChirho = AudioClientChirho(remoteChirho: remoteChirho)
         let manifestChirho = try DecodingChirho.decodeChirho(AudioManifestChirho.self,
             Data(contentsOf: rootChirho.appendingPathComponent("audio-chirho/manifest-chirho.json")))
         var expectedChirho = 0
         var checkedChirho = 0
         for bookChirho in BookListChirho.bundledChirho().booksChirho {
             for entryChirho in manifestChirho.booksChirho[bookChirho.idChirho]?.chaptersChirho ?? [] {
-                let catalogueChirho = try DecodingChirho.decodeChirho(AudioChapterChirho.self,
-                    Data(contentsOf: rootChirho.appendingPathComponent(String(entryChirho.pathChirho.dropFirst()))))
+                let catalogueBytesChirho = try Data(contentsOf:
+                    rootChirho.appendingPathComponent(String(entryChirho.pathChirho.dropFirst())))
+                #expect(DigestChirho.sha256HexChirho(catalogueBytesChirho) == entryChirho.sha256Chirho)
+                let catalogueChirho = try DecodingChirho.decodeChirho(AudioChapterChirho.self, catalogueBytesChirho)
                 let readingsChirho = catalogueChirho.readingsChirho ?? []
                 if readingsChirho.isEmpty { continue }
                 #expect(catalogueChirho.clipsChirho.allSatisfy { $0.readingSourceChirho == nil })
                 let chapterChirho = try await contentChirho.chapterChirho(bookChirho, entryChirho.numberChirho)
+                #expect(catalogueChirho.contentPathChirho == chapterChirho.entryChirho.pathChirho)
+                #expect(catalogueChirho.contentSha256Chirho == chapterChirho.entryChirho.sha256Chirho)
+                #expect(catalogueChirho.bookIdChirho == bookChirho.idChirho && catalogueChirho.chapterChirho == entryChirho.numberChirho)
+                #expect(catalogueChirho.schemaVersionChirho == 1 && catalogueChirho.clipsChirho.count + readingsChirho.count <= 2000)
                 expectedChirho += readingsChirho.count
+                // Bound work to one verified chapter and one verse's clips, rather than repeatedly
+                // scanning and decoding the full chapter through an actor for every reading.
+                let byLessonChirho = Dictionary(grouping: catalogueChirho.clipsChirho + readingsChirho,
+                    by: \.lessonIdChirho)
                 for readingChirho in readingsChirho {
                     let numberChirho = try #require(Int(readingChirho.lessonIdChirho.split(separator: ".").last ?? ""))
                     let verseChirho = VerseDisplayChirho(try chapterChirho.lessonChirho(numberChirho))
-                    let selectedChirho = try await audioChirho.verseAudioChirho(chapterChirho, verseChirho, .modernAspiratesChirho)
-                    #expect(selectedChirho.verseClipChirho?.sha256Chirho == readingChirho.sha256Chirho)
+                    let selectedChirho = AudioRulesChirho.selectChirho(
+                        byLessonChirho[readingChirho.lessonIdChirho] ?? [], verseChirho, .modernAspiratesChirho)
+                    #expect(selectedChirho.verseClipChirho?.sha256Chirho == readingChirho.sha256Chirho,
+                        "Human reading \(readingChirho.lessonIdChirho)")
                     #expect(selectedChirho.verseClipChirho?.readingSourceChirho?.readerIdChirho == "rdb-chirho")
                     checkedChirho += 1
                 }
@@ -123,6 +157,57 @@ struct CorpusTestsChirho {
         }
         #expect(checkedChirho == expectedChirho && expectedChirho > 0)
         print("iOS human reading contract: \(checkedChirho)/\(expectedChirho) source-bound verse selections")
+    }
+
+    /// Cold oracle generated by the actual web selector; all reads remain local and chapter-bounded.
+    @Test(.enabled(if: ProcessInfo.processInfo.environment["HINNEH_WEB_SPOKEN_ROOT_CHIRHO"] != nil))
+    func reviewedSpokenCorpusMatchesWebChirho() async throws {
+        let rootChirho = URL(fileURLWithPath: try #require(ProcessInfo.processInfo.environment["HINNEH_STATIC_ROOT_CHIRHO"]))
+        let oracleRootChirho = URL(fileURLWithPath: try #require(ProcessInfo.processInfo.environment["HINNEH_WEB_SPOKEN_ROOT_CHIRHO"]))
+        let indexChirho = try DecodingChirho.decodeChirho(SpokenOracleIndexChirho.self,
+            Data(contentsOf: oracleRootChirho.appendingPathComponent("index-chirho.json")))
+        #expect(DigestChirho.sha256HexChirho(try Data(contentsOf: rootChirho.appendingPathComponent("audio-chirho/manifest-chirho.json"))) == indexChirho.audioManifestSha256Chirho)
+        let contentChirho = ContentClientChirho(remoteChirho: RemoteChirho(transportChirho: CorpusTransportChirho(rootChirho: rootChirho)))
+        var checkedVersesChirho = 0
+        var checkedHumansChirho = 0
+        var checkedWordsChirho = 0
+        var mismatchesChirho: [String] = []
+        for entryChirho in indexChirho.chaptersChirho {
+            let bookChirho = FixtureChirho.bookChirho(entryChirho.bookIdChirho)
+            let chapterChirho = try await contentChirho.chapterChirho(bookChirho,entryChirho.numberChirho)
+            #expect(chapterChirho.entryChirho.sha256Chirho == entryChirho.contentSha256Chirho)
+            let audioPathChirho = "audio-chirho/\(bookChirho.slugChirho)/" + bookChirho.chapterFileChirho(entryChirho.numberChirho)
+            let audioBytesChirho = try Data(contentsOf: rootChirho.appendingPathComponent(audioPathChirho))
+            #expect(DigestChirho.sha256HexChirho(audioBytesChirho) == entryChirho.audioSha256Chirho)
+            let catalogueChirho = try DecodingChirho.decodeChirho(AudioChapterChirho.self,audioBytesChirho)
+            let byLessonChirho = Dictionary(grouping: catalogueChirho.clipsChirho + (catalogueChirho.readingsChirho ?? []),by: \.lessonIdChirho)
+            let oracleBytesChirho = try Data(contentsOf: oracleRootChirho.appendingPathComponent(entryChirho.pathChirho))
+            #expect(DigestChirho.sha256HexChirho(oracleBytesChirho) == entryChirho.sha256Chirho)
+            let rowsChirho = try DecodingChirho.decodeChirho([SpokenOracleVerseChirho].self,oracleBytesChirho)
+            for rowChirho in rowsChirho {
+                let numberChirho = try #require(Int(rowChirho.lessonIdChirho.split(separator: ".").last ?? ""))
+                let verseChirho = VerseDisplayChirho(try chapterChirho.lessonChirho(numberChirho))
+                if !ExactTextChirho.equalChirho(AudioRulesChirho.spokenVerseTextChirho(verseChirho),rowChirho.spokenVerseChirho) { mismatchesChirho.append("spoken verse \(rowChirho.lessonIdChirho)") }
+                for wordChirho in verseChirho.wordsChirho {
+                    let expectedChirho = try #require(rowChirho.spokenWordsChirho[wordChirho.idChirho])
+                    if !ExactTextChirho.equalChirho(wordChirho.spokenTextChirho,expectedChirho) { mismatchesChirho.append("spoken word \(wordChirho.idChirho)") }
+                }
+                let selectedChirho = AudioRulesChirho.selectChirho(byLessonChirho[rowChirho.lessonIdChirho] ?? [],verseChirho)
+                let actualWordsChirho = selectedChirho.wordClipsChirho.mapValues(\.sha256Chirho)
+                if actualWordsChirho != rowChirho.wordClipsChirho { mismatchesChirho.append("word clips \(rowChirho.lessonIdChirho)") }
+                if let expectedHumanChirho = rowChirho.humanSha256Chirho {
+                    if selectedChirho.verseClipChirho?.sha256Chirho != expectedHumanChirho { mismatchesChirho.append("human \(rowChirho.lessonIdChirho)") }
+                    else { checkedHumansChirho += 1 }
+                }
+                checkedWordsChirho += actualWordsChirho.count
+                checkedVersesChirho += 1
+            }
+        }
+        print("iOS spoken parity: \(checkedVersesChirho) verses; \(checkedHumansChirho)/\(indexChirho.humanReadingsChirho) human; \(checkedWordsChirho)/\(indexChirho.wordClipsChirho) words; mismatches \(mismatchesChirho)")
+        #expect(mismatchesChirho.isEmpty)
+        #expect(checkedVersesChirho == indexChirho.versesChirho)
+        #expect(checkedHumansChirho == indexChirho.humanReadingsChirho)
+        #expect(checkedWordsChirho == indexChirho.wordClipsChirho)
     }
 
     @Test func everyPublishedVerseValidatesAndPreservesItsVisibleSourceChirho() async throws {

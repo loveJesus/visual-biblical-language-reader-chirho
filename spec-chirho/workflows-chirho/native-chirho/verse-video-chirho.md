@@ -34,6 +34,11 @@ L.J.'s split on 2026-11-07 (GPT, DM #3384): Claude owns Android; GPT owns iOS, t
 - **Binding.** An AI verse reading must name a known recipe, and its pronunciation must match that recipe's profile. Android does not re-derive the model's input text; the publisher checks it (GPT, DM #2692).
 - **Local Chatterbox V3.** The recipe is `chatterbox-v3-modern-greek-verse-v1-chirho` (DM #3449). It is plain Modern with rough breathing silent, so it serves Modern, and serves Modern with Aspirates only when the verse has no rough breathing. It never serves Erasmian. `LocalGreekVerseTestChirho` checks this over real Matthew verses.
 - **Automatic rendition.** Until the reader saves a choice in Settings, each Greek verse uses Modern with Aspirates if it has an Aspirates verse reading, otherwise Modern, as the website does (`ReaderUiStateChirho.renditionChirho`, 0.1.1). A saved choice always wins.
+- **Reviewed spoken readings (0.1.2).** `SpokenChirho` follows the website's reading-continuation table through `assets/teaching-chirho/spoken-overrides-chirho.json`. GPT's exporter writes that asset byte-identically (DM #3545–#3567), and Android never edits it.
+  - A review applies only to its exact word: id, text, lemma, augment, morphology and qere.
+  - A word clip speaks that word's reading.
+  - A verse reading reads a reviewed written group once (Lam 4:3, כי ענים read as כַּיְעֵנִ֖ים), and only when the whole group and the exact verse text match. Anything else keeps the source words.
+  - Before 0.1.2, Android withheld 4 of 437,331 published entries: Lam 4:3's Be'eri reading and two words, and one word in Jer 48:44. The opt-in corpus walk (`PublishedClipsCorpusTestChirho`) now binds every one.
 - **Speed.** Playback starts at Normal for Hebrew and Greek, as on the website; a chosen speed is saved.
 
 ## Video contract

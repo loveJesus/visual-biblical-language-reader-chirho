@@ -2630,6 +2630,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/exodus-chirho/chapter-028-chirho/exod-028-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/9029278285ddf1176d281d198e3c6db1ba2d42161d1794263c08ae72aa2d65f2.webp",
+        "sha256_chirho": "9029278285ddf1176d281d198e3c6db1ba2d42161d1794263c08ae72aa2d65f2",
+        "bytes_chirho": 2518598,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-08T18:17:33.097Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/3baebc89d7a500cbd394a337308465ce06ded4b1c4b475a90a7fb514b2b34b7d.webp",
+        "sha256_chirho": "3baebc89d7a500cbd394a337308465ce06ded4b1c4b475a90a7fb514b2b34b7d",
+        "bytes_chirho": 236482,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-08T18:17:33.795Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/leviticus-chirho/chapter-014-chirho/lev-014-047-chirho.webp"
       ],
       "source_chirho": {

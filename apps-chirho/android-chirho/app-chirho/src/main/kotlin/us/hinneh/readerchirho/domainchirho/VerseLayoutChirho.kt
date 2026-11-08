@@ -1,7 +1,6 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 package us.hinneh.readerchirho.domainchirho
 
-import us.hinneh.readerchirho.contentchirho.HebrewWordChirho
 import us.hinneh.readerchirho.contentchirho.VerseChirho
 import us.hinneh.readerchirho.contentchirho.WHITESPACE_CLASS_CHIRHO
 import us.hinneh.readerchirho.contentchirho.WordChirho
@@ -63,24 +62,5 @@ object VerseLayoutChirho {
         if (textChirho.isEmpty()) return
         val lastChirho = groupChirho.lastOrNull() as? GroupElementChirho.WordElementChirho ?: return
         groupChirho[groupChirho.lastIndex] = lastChirho.copy(trailingChirho = lastChirho.trailingChirho + textChirho)
-    }
-}
-
-/** Spoken forms are separate from the immutable displayed source; a qere keeps its own words. */
-object SpokenChirho {
-    fun wordChirho(wordChirho: WordChirho): String {
-        val qereChirho = (wordChirho as? HebrewWordChirho)?.qereChirho
-        return if (!qereChirho.isNullOrEmpty()) qereChirho.joinToString(" ") { it.textChirho } else wordChirho.textChirho
-    }
-
-    fun verseChirho(verseChirho: VerseChirho): String {
-        val builderChirho = StringBuilder()
-        var cursorChirho = 0
-        for (wordChirho in verseChirho.wordsChirho) {
-            builderChirho.append(verseChirho.canonicalTextChirho, cursorChirho, wordChirho.startChirho)
-            builderChirho.append(wordChirho(wordChirho))
-            cursorChirho = wordChirho.endChirho
-        }
-        return builderChirho.append(verseChirho.canonicalTextChirho.substring(cursorChirho)).toString()
     }
 }

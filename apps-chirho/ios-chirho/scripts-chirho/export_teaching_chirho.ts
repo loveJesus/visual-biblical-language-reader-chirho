@@ -1,6 +1,6 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 
-// Exports the website's teaching tables and book identities for the native readers, so the
+// Exports the website's teaching tables, books and reviewed speech for the native readers, so the
 // website, iOS and Android share one source. Reads the web modules read-only and writes only the
 // apps' bundled copies: iOS resources and byte-identical Android assets. Unchanged files are left
 // untouched.
@@ -24,6 +24,7 @@ import {
 	legendRowTextChirho
 } from '../../../src/lib/i18n-chirho/legend-messages-chirho';
 import { termChirho } from '../../../src/lib/i18n-chirho/labels-chirho';
+import { spokenOverridesChirho } from './export_spoken_chirho';
 
 const hereChirho = dirname(fileURLToPath(import.meta.url));
 const repoChirho = join(hereChirho, '..', '..', '..');
@@ -169,6 +170,10 @@ const booksTextChirho = await formattedChirho(
 	join(resourcesChirho, 'books-fallback-chirho.json'),
 	booksChirho()
 );
+const spokenTextChirho = await formattedChirho(
+	join(resourcesChirho, 'spoken-overrides-chirho.json'),
+	spokenOverridesChirho(repoChirho)
+);
 // The Android reader bundles the same bytes: its reading key and its offline book list.
 const androidAssetsChirho = join(
 	hereChirho,
@@ -184,7 +189,9 @@ const outputsChirho = new Map<string, string>([
 	[join(resourcesChirho, 'teaching-chirho.json'), teachingTextChirho],
 	[join(resourcesChirho, 'books-fallback-chirho.json'), booksTextChirho],
 	[join(androidAssetsChirho, 'teaching-chirho', 'teaching-chirho.json'), teachingTextChirho],
-	[join(androidAssetsChirho, 'library-chirho', 'books-chirho.json'), booksTextChirho]
+	[join(androidAssetsChirho, 'library-chirho', 'books-chirho.json'), booksTextChirho],
+	[join(resourcesChirho, 'spoken-overrides-chirho.json'), spokenTextChirho],
+	[join(androidAssetsChirho, 'teaching-chirho', 'spoken-overrides-chirho.json'), spokenTextChirho]
 ]);
 
 function currentChirho(pathChirho: string): string | null {

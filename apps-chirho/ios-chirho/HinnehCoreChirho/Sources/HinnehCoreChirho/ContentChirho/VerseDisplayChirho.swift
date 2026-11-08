@@ -75,6 +75,7 @@ public struct VerseDisplayChirho: Sendable, Hashable {
     public let idChirho: String
     public let scriptChirho: ScriptChirho
     public let canonicalTextChirho: String
+    public let spokenTextChirho: String
     /// The words in reading order; source punctuation travels in each word's surface.
     public let wordsChirho: [WordDisplayChirho]
     public let translationChirho: String?
@@ -125,8 +126,7 @@ public struct VerseDisplayChirho: Sendable, Hashable {
                 idChirho: tokenChirho.idChirho, positionChirho: indexChirho,
                 startChirho: startChirho, endChirho: tokenChirho.endChirho ?? startChirho,
                 textChirho: tokenChirho.textChirho, surfaceChirho: surfacesChirho[indexChirho],
-                spokenTextChirho: qereChirho.isEmpty
-                    ? tokenChirho.textChirho : qereChirho.map(\.textChirho).joined(separator: " "),
+                spokenTextChirho: SpokenOverridesChirho.wordChirho(tokenChirho),
                 lemmaIdChirho: tokenChirho.lemmaIdChirho, lemmaAugmentChirho: tokenChirho.lemmaAugmentChirho,
                 lexicalFormChirho: tokenChirho.lexicalFormChirho, glossChirho: tokenChirho.glossChirho,
                 analysisChirho: tokenChirho.analysisChirho, sourceNoteChirho: tokenChirho.sourceNoteChirho,
@@ -152,7 +152,8 @@ public struct VerseDisplayChirho: Sendable, Hashable {
                   translationChirho: lessonChirho.translationChirho,
                   glossOriginChirho: lessonChirho.glossOriginChirho,
                   kjvVerseIdChirho: lessonChirho.kjvVerseIdChirho, sourcesChirho: lessonChirho.sourcesChirho,
-                  sourceNotesChirho: lessonChirho.sourceNotesChirho ?? [])
+                  sourceNotesChirho: lessonChirho.sourceNotesChirho ?? [],
+                  spokenTextChirho: SpokenOverridesChirho.verseChirho(lessonChirho))
     }
 
     private init(greekChirho lessonChirho: GreekLessonChirho, _ tablesChirho: TeachingTablesChirho) {
@@ -206,10 +207,11 @@ public struct VerseDisplayChirho: Sendable, Hashable {
     private init(idChirho: String, scriptChirho: ScriptChirho, canonicalTextChirho: String,
                  wordsChirho: [WordDisplayChirho], translationChirho: String?,
                  glossOriginChirho: String?, kjvVerseIdChirho: String?, sourcesChirho: [SourceRecordChirho],
-                 sourceNotesChirho: [SourceNoteChirho]) {
+                 sourceNotesChirho: [SourceNoteChirho], spokenTextChirho: String? = nil) {
         self.idChirho = idChirho
         self.scriptChirho = scriptChirho
         self.canonicalTextChirho = canonicalTextChirho
+        self.spokenTextChirho = spokenTextChirho ?? canonicalTextChirho
         self.wordsChirho = wordsChirho
         self.translationChirho = translationChirho
         self.glossOriginChirho = glossOriginChirho

@@ -180,9 +180,11 @@ enum AudioRulesChirho {
             wordClipsChirho[tokenIdChirho] = clipChirho
         }
         let spokenVerseChirho = spokenVerseTextChirho(verseChirho)
-        let verseClipChirho = verseChirho.hasAramaicChirho ? nil : usableChirho
+        let verseClipChirho = usableChirho
             .filter { clipChirho in
                 clipChirho.tokenIdChirho == nil
+                    // Only the already-validated human source may read an Aramaic/mixed verse.
+                    && (!verseChirho.hasAramaicChirho || clipChirho.readingSourceChirho != nil)
                     && profileFitsChirho(clipChirho, spokenVerseChirho, greekChirho, renditionChirho)
                     && ExactTextChirho.equalChirho(clipChirho.textChirho, spokenVerseChirho)
             }
@@ -236,16 +238,6 @@ enum AudioRulesChirho {
 
     /// The verse as read aloud: each written word with a read form (qere) is spoken as that form.
     static func spokenVerseTextChirho(_ verseChirho: VerseDisplayChirho) -> String {
-        guard verseChirho.scriptChirho == .hebrewChirho else { return verseChirho.canonicalTextChirho }
-        var textChirho = ""
-        var cursorChirho = 0
-        let canonicalChirho = verseChirho.canonicalTextChirho
-        for wordChirho in verseChirho.wordsChirho {
-            textChirho += ExactTextChirho.sliceChirho(canonicalChirho, cursorChirho, wordChirho.startChirho) ?? ""
-            textChirho += wordChirho.spokenTextChirho
-            cursorChirho = wordChirho.endChirho
-        }
-        return textChirho + (ExactTextChirho.sliceChirho(
-            canonicalChirho, cursorChirho, ExactTextChirho.lengthChirho(canonicalChirho)) ?? "")
+        verseChirho.spokenTextChirho
     }
 }
