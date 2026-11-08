@@ -7597,5 +7597,38 @@
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
     }
+  ],
+  "readings_chirho": [
+    {
+      "id_chirho": "beeri-deut-19-13-chirho",
+      "lesson_id_chirho": "Deut.19.13",
+      "token_id_chirho": null,
+      "text_chirho": "לֹא־תָח֥וֹס עֵֽינְךָ֖ עָלָ֑יו וּבִֽעַרְתָּ֧ דַֽם־הַנָּקִ֛י מִיִּשְׂרָאֵ֖ל וְט֥וֹב לָֽךְ׃",
+      "canonical_sha256_chirho": "794b5cab4fddbfe90ffee395f310baadb76b28c4b1da69e4eba6c02902bc9cfe",
+      "language_chirho": "he",
+      "pronunciation_chirho": "israeli_hebrew",
+      "voice_name_chirho": "Rabbi Dan Be'eri",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/087062b1f32eac20d83f774bb08af364baacfb4b13a77f03180edd2aaa1a84bd-chirho.mp3",
+      "sha256_chirho": "087062b1f32eac20d83f774bb08af364baacfb4b13a77f03180edd2aaa1a84bd",
+      "bytes_chirho": 74648,
+      "duration_chirho": 9.25,
+      "review_chirho": "audition",
+      "reading_source_chirho": {
+        "kind_chirho": "human",
+        "reader_id_chirho": "rdb-chirho",
+        "gbt_id_chirho": "OT/RDB/Deu",
+        "package_sha256_chirho": "5730f2bb037aebb3e32c130d710af2be405db316c73da9e75e63c04fbb535258",
+        "chapter_sha256_chirho": "b3ba56a9755d7371cfe376da5dbcfb9eedf0d51e33e1bb528a2eb488e9568e17",
+        "timings_sha256_chirho": "30ac16a8921d27771322f2f9dfa3a5f2bc39f1f122d29dd5a3a31ff635b9478a",
+        "start_chirho": 160.01,
+        "end_chirho": 169.26,
+        "chapter_duration_chirho": 241.92,
+        "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+        "license_chirho": "CC BY-SA 3.0",
+        "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "provider_chirho": "Global Bible Tools",
+      "license_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools https://creativecommons.org/licenses/by-sa/3.0/"
+    }
   ]
 }

@@ -3937,6 +3937,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/exodus-chirho/chapter-016-chirho/exod-016-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/9c652ee1c8ae3d3a006124715ccb95bfb8e9755bd3ba7d6b46a8f5ff4082f3b0.webp",
+        "sha256_chirho": "9c652ee1c8ae3d3a006124715ccb95bfb8e9755bd3ba7d6b46a8f5ff4082f3b0",
+        "bytes_chirho": 2550924,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-08T17:47:29.286Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/173eb64ce479776f79301a4db1e72597edb2cbc38e1812f048f582ad85c6432f.webp",
+        "sha256_chirho": "173eb64ce479776f79301a4db1e72597edb2cbc38e1812f048f582ad85c6432f",
+        "bytes_chirho": 241528,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-08T17:47:29.862Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-thessalonians-chirho/chapter-005-chirho/1thess-005-015-chirho.webp"
       ],
       "source_chirho": {

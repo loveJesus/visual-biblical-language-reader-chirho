@@ -400,5 +400,69 @@
       "model_chirho": "eleven_v4",
       "license_chirho": "Generated during a paid ElevenLabs subscription using licensed public-library voices. Source text public domain. Reusable pronunciation draft, awaiting listener review."
     }
+  ],
+  "readings_chirho": [
+    {
+      "id_chirho": "beeri-ps-117-1-chirho",
+      "lesson_id_chirho": "Ps.117.1",
+      "token_id_chirho": null,
+      "text_chirho": "הַֽלְל֣וּ אֶת־יְ֭הוָה כָּל־גּוֹיִ֑ם שַׁ֝בְּח֗וּהוּ כָּל־הָאֻמִּֽים׃",
+      "canonical_sha256_chirho": "e83629692cd22bd44564b16db7b56915b3250df78d05f63aaf1cccb261433309",
+      "language_chirho": "he",
+      "pronunciation_chirho": "israeli_hebrew",
+      "voice_name_chirho": "Rabbi Dan Be'eri",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/b31d0dd025e042089314393e98474536a2132e29afe347d3a0f23532c8b68626-chirho.mp3",
+      "sha256_chirho": "b31d0dd025e042089314393e98474536a2132e29afe347d3a0f23532c8b68626",
+      "bytes_chirho": 61692,
+      "duration_chirho": 7.64,
+      "review_chirho": "audition",
+      "reading_source_chirho": {
+        "kind_chirho": "human",
+        "reader_id_chirho": "rdb-chirho",
+        "gbt_id_chirho": "OT/RDB/Psa",
+        "package_sha256_chirho": "82017be0466eb3c8a7ee5cc19e557a7008e29b531718beb45b72d679b5bff389",
+        "chapter_sha256_chirho": "25e47261a075107d4b8200b710e2cb35852a7648e7ae8c37bbe6aff6325abe38",
+        "timings_sha256_chirho": "70ac49b20a0cc57018eb02f318741d81be258feb224f6d1a0536587617eba7fa",
+        "start_chirho": 0,
+        "end_chirho": 7.64,
+        "chapter_duration_chirho": 18.288,
+        "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+        "license_chirho": "CC BY-SA 3.0",
+        "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "provider_chirho": "Global Bible Tools",
+      "license_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "id_chirho": "beeri-ps-117-2-chirho",
+      "lesson_id_chirho": "Ps.117.2",
+      "token_id_chirho": null,
+      "text_chirho": "כִּ֥י גָ֘בַ֤ר עָלֵ֨ינוּ ׀ חַסְדּ֗וֹ וֶֽאֱמֶת־יְהוָ֥ה לְעוֹלָ֗ם הַֽלְלוּ־יָֽהּ׃",
+      "canonical_sha256_chirho": "0777aee630cc20abf0f779a5d99ad315d247d13ff4f8d2db34f592ff408a5538",
+      "language_chirho": "he",
+      "pronunciation_chirho": "israeli_hebrew",
+      "voice_name_chirho": "Rabbi Dan Be'eri",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/f0385001f879da10d054d4261bf433d8e8e1227259e793e74af1105689341751-chirho.mp3",
+      "sha256_chirho": "f0385001f879da10d054d4261bf433d8e8e1227259e793e74af1105689341751",
+      "bytes_chirho": 85724,
+      "duration_chirho": 10.648005,
+      "review_chirho": "audition",
+      "reading_source_chirho": {
+        "kind_chirho": "human",
+        "reader_id_chirho": "rdb-chirho",
+        "gbt_id_chirho": "OT/RDB/Psa",
+        "package_sha256_chirho": "82017be0466eb3c8a7ee5cc19e557a7008e29b531718beb45b72d679b5bff389",
+        "chapter_sha256_chirho": "25e47261a075107d4b8200b710e2cb35852a7648e7ae8c37bbe6aff6325abe38",
+        "timings_sha256_chirho": "70ac49b20a0cc57018eb02f318741d81be258feb224f6d1a0536587617eba7fa",
+        "start_chirho": 7.64,
+        "end_chirho": 18.288,
+        "chapter_duration_chirho": 18.288,
+        "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+        "license_chirho": "CC BY-SA 3.0",
+        "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "provider_chirho": "Global Bible Tools",
+      "license_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools https://creativecommons.org/licenses/by-sa/3.0/"
+    }
   ]
 }
