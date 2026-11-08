@@ -3,7 +3,6 @@
 import {
 	readFile as readFileChirho,
 	mkdir as mkdirChirho,
-	lstat as lstatChirho,
 	realpath as realpathChirho
 } from 'node:fs/promises';
 import { join as joinChirho, resolve as resolveChirho, dirname as dirnameChirho } from 'node:path';
@@ -27,14 +26,8 @@ import {
 } from './catalogue_commit_chirho';
 import { objectRequestChirho } from '../../publish-chirho/r2-chirho/object-store-chirho';
 import { hasMp3HeaderChirho } from '../../publish-chirho/audio_rules_chirho';
-import {
-	localGreekClipChirho,
-	RUN_HOME_CHIRHO,
-	PREPARED_HOME_CHIRHO,
-	MANIFEST_SHA_CHIRHO,
-	type DeliveryChirho,
-	type LocalGreekManifestChirho
-} from './manifest_chirho';
+import { RUN_HOME_CHIRHO, type DeliveryChirho } from './manifest_chirho';
+import { boundedReadChirho, legacyInputChirho, type ImportInputChirho } from './phase_chirho';
 import type { chapterRecipeChirho } from '../../../src/lib/domain-chirho/pronunciation-chirho/chapter-recipe-chirho';
 
 interface AudioChapterChirho {
@@ -58,55 +51,19 @@ interface OriginalReceiptChirho {
 	bytes_chirho: number;
 	readback_sha256_chirho: string;
 }
-async function boundedReadChirho(rootChirho: string, pathChirho: string, limitChirho: number) {
-	if (
-		pathChirho.startsWith('/') ||
-		pathChirho.split('/').some((partChirho) => ['..', '.'].includes(partChirho))
-	)
-		throw Error('Unowned audio path');
-	const fullChirho = joinChirho(rootChirho, pathChirho);
-	const infoChirho = await lstatChirho(fullChirho);
-	if (
-		!infoChirho.isFile() ||
-		infoChirho.isSymbolicLink() ||
-		infoChirho.size > limitChirho ||
-		(await realpathChirho(fullChirho)) !== fullChirho
-	)
-		throw Error('Redirected or oversized audio input');
-	const bytesChirho = await readFileChirho(fullChirho);
-	if (bytesChirho.length > limitChirho) throw Error('Audio input grew beyond bound');
-	return bytesChirho;
-}
-
-async function mainChirho() {
-	const argumentsChirho = process.argv.slice(2);
-	if (argumentsChirho.some((valueChirho) => valueChirho !== '--apply-chirho'))
-		throw Error('Expected only optional --apply-chirho');
-	const applyChirho = argumentsChirho.includes('--apply-chirho');
-	const rootChirho = await realpathChirho(resolveChirho('.'));
-	const homeChirho = joinChirho(rootChirho, PREPARED_HOME_CHIRHO);
-	const manifestBytesChirho = await boundedReadChirho(
-		rootChirho,
-		`${RUN_HOME_CHIRHO}/manifest-chirho.json`,
-		32 * 1024 ** 2
-	);
-	if (sha256Chirho(manifestBytesChirho) !== MANIFEST_SHA_CHIRHO)
-		throw Error('Frozen local manifest differs');
-	const manifestChirho = JSON.parse(manifestBytesChirho.toString()) as LocalGreekManifestChirho;
-	for (const [pathChirho, hashChirho] of [
-		['plan-chirho.json', manifestChirho.plan_sha256_chirho],
-		['journal-chirho.jsonl', manifestChirho.journal_sha256_chirho]
-	]) {
-		if (
-			sha256Chirho(
-				await boundedReadChirho(rootChirho, `${RUN_HOME_CHIRHO}/${pathChirho}`, 32 * 1024 ** 2)
-			) !== hashChirho
-		)
-			throw Error('Pinned producer evidence differs');
-	}
+/** One archive/recovery/catalogue implementation, supplied only with a validated immutable phase. */
+export async function installLocalGreekChirho(
+	inputChirho: ImportInputChirho,
+	applyChirho: boolean,
+	rootChirho: string
+) {
+	const homeChirho = joinChirho(rootChirho, inputChirho.prepared_home_chirho);
+	const manifestChirho = inputChirho.manifest_chirho;
+	const manifestShaChirho = inputChirho.manifest_sha256_chirho;
+	const expectedChirho = inputChirho.expected_jobs_chirho;
 	const preparedBytesChirho = await boundedReadChirho(
 		rootChirho,
-		`${PREPARED_HOME_CHIRHO}/prepared-chirho.json`,
+		`${inputChirho.prepared_home_chirho}/prepared-chirho.json`,
 		2 * 1024 ** 2
 	);
 	const preparedChirho = JSON.parse(preparedBytesChirho.toString()) as {
@@ -117,16 +74,16 @@ async function mainChirho() {
 		(rowChirho) => rowChirho.state_chirho === 'done'
 	);
 	if (
-		preparedChirho.manifest_sha256_chirho !== MANIFEST_SHA_CHIRHO ||
-		jobsChirho.length !== 1084 ||
-		preparedChirho.recordings_chirho.length !== 1084 ||
-		new Set(jobsChirho.map((rowChirho) => rowChirho.verse_id_chirho)).size !== 1084
+		preparedChirho.manifest_sha256_chirho !== manifestShaChirho ||
+		jobsChirho.length !== expectedChirho ||
+		preparedChirho.recordings_chirho.length !== expectedChirho ||
+		new Set(jobsChirho.map((rowChirho) => rowChirho.verse_id_chirho)).size !== expectedChirho
 	)
 		throw Error('Eligible partition differs');
 	const preparedByJobChirho = new Map(
 		preparedChirho.recordings_chirho.map((rowChirho) => [rowChirho.job_chirho, rowChirho])
 	);
-	if (preparedByJobChirho.size !== 1084) throw Error('Duplicate delivery job');
+	if (preparedByJobChirho.size !== expectedChirho) throw Error('Duplicate delivery job');
 	const sourceChirho = new Map<
 		string,
 		{ hash_chirho: string; verses_chirho: Parameters<typeof chapterRecipeChirho>[0][] }
@@ -148,7 +105,7 @@ async function mainChirho() {
 		);
 		const deliveryChirho = preparedByJobChirho.get(jobChirho.job_chirho);
 		if (!lessonChirho || !deliveryChirho) throw Error('Missing source or derivative');
-		const clipChirho = localGreekClipChirho(
+		const clipChirho = inputChirho.clip_chirho(
 			jobChirho,
 			deliveryChirho,
 			lessonChirho,
@@ -167,9 +124,7 @@ async function mainChirho() {
 		JSON.stringify({
 			eligible_chirho: rowsChirho.length,
 			chapters_chirho: sourceChirho.size,
-			flagged_excluded_chirho: manifestChirho.jobs_chirho.filter(
-				(rowChirho) => rowChirho.state_chirho === 'flagged'
-			).length,
+			flagged_excluded_chirho: inputChirho.flagged_excluded_chirho,
 			delivery_bytes_chirho: rowsChirho.reduce(
 				(totalChirho, rowChirho) => totalChirho + rowChirho.bytes_chirho.length,
 				0
@@ -224,10 +179,12 @@ async function mainChirho() {
 		async function originalChirho(
 			pathChirho: string,
 			expectedChirho: string,
-			extensionChirho: 'mp3' | 'flac' | 'json' | 'jsonl'
+			extensionChirho: 'mp3' | 'flac' | 'json' | 'jsonl',
+			frozenBytesChirho?: Buffer
 		) {
-			const bytesChirho = await boundedReadChirho(rootChirho, pathChirho, 16 * 1024 ** 2);
-			if (sha256Chirho(bytesChirho) !== expectedChirho)
+			const bytesChirho =
+				frozenBytesChirho ?? (await boundedReadChirho(rootChirho, pathChirho, 16 * 1024 ** 2));
+			if (bytesChirho.length > 16 * 1024 ** 2 || sha256Chirho(bytesChirho) !== expectedChirho)
 				throw Error('Original archive input differs');
 			const keyChirho = `provenance-audio-chirho/sha256-chirho/${expectedChirho}.${extensionChirho}`;
 			if (receiptsChirho.get(keyChirho)?.bytes_chirho === bytesChirho.length) return;
@@ -262,17 +219,13 @@ async function mainChirho() {
 			}
 			receiptsChirho.set(keyChirho, receiptChirho);
 		}
-		await originalChirho(`${RUN_HOME_CHIRHO}/manifest-chirho.json`, MANIFEST_SHA_CHIRHO, 'json');
-		await originalChirho(
-			`${RUN_HOME_CHIRHO}/plan-chirho.json`,
-			manifestChirho.plan_sha256_chirho,
-			'json'
-		);
-		await originalChirho(
-			`${RUN_HOME_CHIRHO}/journal-chirho.jsonl`,
-			manifestChirho.journal_sha256_chirho,
-			'jsonl'
-		);
+		for (const evidenceChirho of inputChirho.archive_inputs_chirho)
+			await originalChirho(
+				evidenceChirho.path_chirho,
+				evidenceChirho.sha256_chirho,
+				evidenceChirho.extension_chirho,
+				evidenceChirho.bytes_chirho
+			);
 		await runPoolChirho(rowsChirho, 4, async (rowChirho) => {
 			const takeChirho = rowChirho.job_chirho.chosen_chirho!;
 			await originalChirho(
@@ -331,7 +284,7 @@ async function mainChirho() {
 				chapterChirho.hash_chirho
 			)
 				throw Error('Canonical source changed during archive');
-		const bindingChirho = sha256Chirho(MANIFEST_SHA_CHIRHO + sha256Chirho(preparedBytesChirho));
+		const bindingChirho = sha256Chirho(manifestShaChirho + sha256Chirho(preparedBytesChirho));
 		const recoveredChirho = await recoverCatalogueChirho(rootChirho, homeChirho, bindingChirho);
 		if (recoveredChirho)
 			console.log('Reconciled partial catalogue commit from its exact archived input');
@@ -414,12 +367,12 @@ async function mainChirho() {
 			joinChirho(homeChirho, 'installed-chirho.json'),
 			JSON.stringify(
 				{
-					manifest_sha256_chirho: MANIFEST_SHA_CHIRHO,
+					manifest_sha256_chirho: manifestShaChirho,
 					prepared_sha256_chirho: sha256Chirho(preparedBytesChirho),
 					installed_chirho: rowsChirho.length,
 					chapters_chirho: outputsChirho.size,
 					originals_verified_chirho: receiptsChirho.size,
-					flagged_excluded_chirho: 25
+					flagged_excluded_chirho: inputChirho.flagged_excluded_chirho
 				},
 				null,
 				2
@@ -430,4 +383,17 @@ async function mainChirho() {
 		await releaseChirho();
 	}
 }
-if (import.meta.main) await mainChirho();
+if (import.meta.main) {
+	const argumentsChirho = process.argv.slice(2);
+	if (
+		argumentsChirho.some((valueChirho) => valueChirho !== '--apply-chirho') ||
+		argumentsChirho.length > 1
+	)
+		throw Error('Expected only optional --apply-chirho');
+	const rootChirho = await realpathChirho(resolveChirho('.'));
+	await installLocalGreekChirho(
+		await legacyInputChirho(rootChirho),
+		argumentsChirho.includes('--apply-chirho'),
+		rootChirho
+	);
+}

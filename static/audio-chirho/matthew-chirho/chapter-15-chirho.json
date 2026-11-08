@@ -13170,6 +13170,38 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.1967
       }
+    },
+    {
+      "id_chirho": "local-greek-v0482-chirho",
+      "lesson_id_chirho": "Matt.15.8",
+      "token_id_chirho": null,
+      "text_chirho": "Ὁ λαὸς οὗτος τοῖς χείλεσίν με τιμᾷ, ἡ δὲ καρδία αὐτῶν πόρρω ἀπέχει ἀπ’ ἐμοῦ·",
+      "synthesis_text_chirho": "Ο λαός ούτος τοις χείλεσίν με τιμά, η δε καρδία αυτών πόρρω απέχει απ’ εμού,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "facfb40ef1c3aea8eaaf1a36bb03f3cec1be6cd2ee0d0e38a8a81996402c6762",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "30bc742e47484613a15e75a0f69033bb87d4bf9a3e976d94442f71dacfb28224",
+      "raw_flac_sha256_chirho": "aa832d299ab7e436325a865369dbfee4f1fe744498c8256745a373cacde788ed",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/03f67d59b78ec9eabc3a3e841cf286d332552380d41fb95d2a0c92136a678daa-chirho.mp3",
+      "sha256_chirho": "03f67d59b78ec9eabc3a3e841cf286d332552380d41fb95d2a0c92136a678daa",
+      "bytes_chirho": 41838,
+      "duration_chirho": 5.172245,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1864
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
     }
   ]
 }

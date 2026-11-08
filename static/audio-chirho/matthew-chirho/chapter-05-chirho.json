@@ -17304,6 +17304,70 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.2963
       }
+    },
+    {
+      "id_chirho": "local-greek-v0121-chirho",
+      "lesson_id_chirho": "Matt.5.36",
+      "token_id_chirho": null,
+      "text_chirho": "μήτε ἐν τῇ κεφαλῇ σου ὀμόσῃς, ὅτι οὐ δύνασαι μίαν τρίχα λευκὴν ποιῆσαι ἢ μέλαιναν.",
+      "synthesis_text_chirho": "μήτε εν τη κεφαλή σου ομόσης, ότι ου δύνασαι μίαν τρίχα λευκήν ποιήσαι η μέλαιναν.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "9b8c237d9ed7a50aa1521e5e1f9fbc90a0eb293c5042a8aad9c9baa345c2ef19",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "70eafd7c3c0a4055ff8d5ff552a14f13909902b11b17eae58d93ef563ece3e8a",
+      "raw_flac_sha256_chirho": "c43eb8749ab091f7f7632f72a449549d57f965ea29ff6d8d0800af4636c2fe4e",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/d846e932bba76df0da4f207cab542bfcefa74de77aad1b392e246f598c74584e-chirho.mp3",
+      "sha256_chirho": "d846e932bba76df0da4f207cab542bfcefa74de77aad1b392e246f598c74584e",
+      "bytes_chirho": 36823,
+      "duration_chirho": 4.545306,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2576
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
+    },
+    {
+      "id_chirho": "local-greek-v0126-chirho",
+      "lesson_id_chirho": "Matt.5.41",
+      "token_id_chirho": null,
+      "text_chirho": "καὶ ὅστις σε ἀγγαρεύσει μίλιον ἕν, ὕπαγε μετ’ αὐτοῦ δύο.",
+      "synthesis_text_chirho": "και όστις σε αγγαρεύσει μίλιον εν, ύπαγε μετ’ αυτού δύο.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "656ca7dd3ecba143e878bd52840fe4caaf5bf3b5dc1ab4bfb83d8c3599ba683e",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "6626a988a42ab9e8920838c4a708dfc79cd94e87fb8c57b73e65964d382651f9",
+      "raw_flac_sha256_chirho": "23a9d4ccd0b0573f5bd9c74403c1f41bfb7e5b37ab5cd3d4bb56cc8379ebc42b",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/b6ce528bc419fb86edc73da99fbc5d63006cf143a37fcb9314350859f19f7947-chirho.mp3",
+      "sha256_chirho": "b6ce528bc419fb86edc73da99fbc5d63006cf143a37fcb9314350859f19f7947",
+      "bytes_chirho": 29091,
+      "duration_chirho": 3.578776,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.3409
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
     }
   ]
 }

@@ -14240,6 +14240,38 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.2273
       }
+    },
+    {
+      "id_chirho": "local-greek-v0233-chirho",
+      "lesson_id_chirho": "Matt.9.7",
+      "token_id_chirho": null,
+      "text_chirho": "καὶ ἐγερθεὶς ἀπῆλθεν εἰς τὸν οἶκον αὐτοῦ.",
+      "synthesis_text_chirho": "και εγερθείς απήλθεν εις τον οίκον αυτού.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "4cdfe62949e4269d1ade6a4bd7f2ee89ba7408ea3cc3917bf86b9a43dcfb8059",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "d860825a6fdddddd4dbc4806b388079ce90c9c86ec9e923e0bca70bf42181e43",
+      "raw_flac_sha256_chirho": "83b862e9ab810e4d54d96ea59c551ed68b2397ec78ab76a3aac9425653971dbd",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/47ab292bebddbd9bdb0a4fbfcdb0888496d5e340a723b0e922a1a214b430fb94-chirho.mp3",
+      "sha256_chirho": "47ab292bebddbd9bdb0a4fbfcdb0888496d5e340a723b0e922a1a214b430fb94",
+      "bytes_chirho": 21358,
+      "duration_chirho": 2.612245,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2941
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
     }
   ]
 }

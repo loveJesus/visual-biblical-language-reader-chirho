@@ -15850,6 +15850,70 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.1544
       }
+    },
+    {
+      "id_chirho": "local-greek-v1047-chirho",
+      "lesson_id_chirho": "Mark.1.8",
+      "token_id_chirho": null,
+      "text_chirho": "ἐγὼ ἐβάπτισα ὑμᾶς ὕδατι, αὐτὸς δὲ βαπτίσει ὑμᾶς Πνεύματι Ἁγίῳ.",
+      "synthesis_text_chirho": "εγώ εβάπτισα υμάς ύδατι, αυτός δε βαπτίσει υμάς Πνεύματι Αγίω.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "f646da5045fbb2ecf4d3be1f77013e4063993573e71bb3fb1e95b3c54b55b046",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "c56042bb7b76d861deadae6b034f83385d75acb694b47fef5374156f14abb253",
+      "raw_flac_sha256_chirho": "41b2387c386d4849eee16271ade8a4158f70a5f0071e1d866470dfe71db9b034",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/2fcd810bf597350224725c93fbefa4a1e08c72d5dc4d6a93422fc3c9ce7a4237-chirho.mp3",
+      "sha256_chirho": "2fcd810bf597350224725c93fbefa4a1e08c72d5dc4d6a93422fc3c9ce7a4237",
+      "bytes_chirho": 32643,
+      "duration_chirho": 4.022857,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.3137
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
+    },
+    {
+      "id_chirho": "local-greek-v1072-chirho",
+      "lesson_id_chirho": "Mark.1.33",
+      "token_id_chirho": null,
+      "text_chirho": "καὶ ἦν ὅλη ἡ πόλις ἐπισυνηγμένη πρὸς τὴν θύραν.",
+      "synthesis_text_chirho": "και ην όλη η πόλις επισυνηγμένη προς την θύραν.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "d5ff955ab158b3f8b9d745f748f49703883b234dfc4f380e49a0ad422672175e",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "8024e029f9a1f4c23dacc7aac6edc1a676796add223a8f6a7c1ce1aaf4da7b51",
+      "raw_flac_sha256_chirho": "e4dd1da87e111b30d99305f0145763885a0ece18bda230ea8e1d5f6bed2e62a1",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/6a354ae732f3af6bbf3147ca94d80256f3db72e77a00b2de8f223b898f4f2e1f-chirho.mp3",
+      "sha256_chirho": "6a354ae732f3af6bbf3147ca94d80256f3db72e77a00b2de8f223b898f4f2e1f",
+      "bytes_chirho": 28673,
+      "duration_chirho": 3.526531,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2632
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
     }
   ]
 }

@@ -18304,6 +18304,38 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.1596
       }
+    },
+    {
+      "id_chirho": "local-greek-v0814-chirho",
+      "lesson_id_chirho": "Matt.24.28",
+      "token_id_chirho": null,
+      "text_chirho": "ὅπου ἐὰν ᾖ τὸ πτῶμα, ἐκεῖ συναχθήσονται οἱ ἀετοί.",
+      "synthesis_text_chirho": "όπου εάν η το πτώμα, εκεί συναχθήσονται οι αετοί.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "8f5917c760dc4afc4d160e566c2b2803652e147b3180b8d61e6e576588368e8a",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "3663ba5bb0bee07aa7dacb3d1b837ae1a9b6e6ff18b9bd70bd1aa3f19e08daa4",
+      "raw_flac_sha256_chirho": "c404b2bec978c8c91c2483d373deb4dc598ed6f81ce547407dc2b7d5a5616ca4",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/ccd4fad3da4e225f6ff3ae89a5f3074859f136b4f5091aa21ba4a5b16ebdf846-chirho.mp3",
+      "sha256_chirho": "ccd4fad3da4e225f6ff3ae89a5f3074859f136b4f5091aa21ba4a5b16ebdf846",
+      "bytes_chirho": 29927,
+      "duration_chirho": 3.683265,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2564
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
     }
   ]
 }

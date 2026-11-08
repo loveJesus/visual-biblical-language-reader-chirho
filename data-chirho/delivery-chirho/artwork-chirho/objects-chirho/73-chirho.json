@@ -4184,6 +4184,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/psalms-chirho/chapter-135-chirho/ps-135-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7382bdaf1da75e944b465b92e07d54b8210a7f3048d1f3b65e96d5b2dfad7d28.webp",
+        "sha256_chirho": "7382bdaf1da75e944b465b92e07d54b8210a7f3048d1f3b65e96d5b2dfad7d28",
+        "bytes_chirho": 2568448,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-08T16:19:14.300Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/ebb52c82a91ee74d37345bce5316dd3603d9fed7e69349df64c5d878f9c812f1.webp",
+        "sha256_chirho": "ebb52c82a91ee74d37345bce5316dd3603d9fed7e69349df64c5d878f9c812f1",
+        "bytes_chirho": 238112,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-08T16:19:15.502Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/deuteronomy-chirho/chapter-008-chirho/deut-008-014-chirho.webp"
       ],
       "source_chirho": {

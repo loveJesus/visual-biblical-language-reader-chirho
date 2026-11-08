@@ -56,6 +56,26 @@ export function localGreekClipChirho(
 	lessonChirho: Parameters<typeof chapterRecipeChirho>[0],
 	contentShaChirho: string
 ) {
+	return localGreekClipForInputChirho(
+		jobChirho,
+		deliveryChirho,
+		lessonChirho,
+		contentShaChirho,
+		PREPARED_HOME_CHIRHO,
+		1
+	);
+}
+
+/** Shared source/lineage rules. The old wrapper remains seed-1-only; a fixed handoff phase
+ * must independently bind its selected take before using another explicitly recorded seed. */
+export function localGreekClipForInputChirho(
+	jobChirho: LocalGreekJobChirho,
+	deliveryChirho: DeliveryChirho,
+	lessonChirho: Parameters<typeof chapterRecipeChirho>[0],
+	contentShaChirho: string,
+	preparedHomeChirho: string,
+	seedChirho: 1 | 2
+) {
 	const takeChirho = jobChirho.chosen_chirho;
 	const recipeChirho = chapterRecipeChirho(lessonChirho, LOCAL_GREEK_VERSE_RECIPE_CHIRHO);
 	const bookChirho = bibleBookChirho(jobChirho.verse_id_chirho.split('.')[0]);
@@ -90,7 +110,7 @@ export function localGreekClipChirho(
 		deliveryChirho.job_chirho !== jobChirho.job_chirho ||
 		deliveryChirho.verse_id_chirho !== lessonChirho.id_chirho ||
 		deliveryChirho.path_chirho !==
-			`${PREPARED_HOME_CHIRHO}/delivery-chirho/${jobChirho.job_chirho}-chirho.mp3` ||
+			`${preparedHomeChirho}/delivery-chirho/${jobChirho.job_chirho}-chirho.mp3` ||
 		!/^[a-f0-9]{64}$/.test(deliveryChirho.sha256_chirho) ||
 		deliveryChirho.original_mp3_sha256_chirho !== takeChirho.sha256_chirho ||
 		deliveryChirho.raw_flac_sha256_chirho !== takeChirho.raw_sha256_chirho ||
@@ -102,7 +122,7 @@ export function localGreekClipChirho(
 		deliveryChirho.duration_chirho > 120 ||
 		Math.abs(deliveryChirho.duration_chirho - takeChirho.seconds_chirho) > 0.15 ||
 		takeChirho.sample_rate_chirho !== 24000 ||
-		takeChirho.seed_chirho !== 1
+		takeChirho.seed_chirho !== seedChirho
 	)
 		throw Error('Local Greek delivery or original identity differs');
 	return {

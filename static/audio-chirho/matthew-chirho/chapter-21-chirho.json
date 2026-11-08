@@ -19312,6 +19312,70 @@
         "kind_chirho": "automated text check; not listener acceptance",
         "cer_chirho": 0.1714
       }
+    },
+    {
+      "id_chirho": "local-greek-v0670-chirho",
+      "lesson_id_chirho": "Matt.21.11",
+      "token_id_chirho": null,
+      "text_chirho": "οἱ δὲ ὄχλοι ἔλεγον Οὗτός ἐστιν ὁ προφήτης Ἰησοῦς ὁ ἀπὸ Ναζαρὲθ τῆς Γαλιλαίας.",
+      "synthesis_text_chirho": "οι δε όχλοι έλεγον Ούτός εστιν ο προφήτης Ιησούς ο από Ναζαρέθ της Γαλιλαίας.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "c9e268b560bccea339b8efd0bdcc23792ea3e897e273068710ba47ebe8c81262",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "76bbdd56a81ebcedb8d7c9c16c78a93a8d5d7d87ee0a9a8bd2c304b42fd57998",
+      "raw_flac_sha256_chirho": "4c152006b2229615b5b670dd57de28f9618da2083d9f2047d73b101d94796502",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/59cb9b5df76b3884105b4e01458bbbd712614ef694ddd96048b6fe95f0130601-chirho.mp3",
+      "sha256_chirho": "59cb9b5df76b3884105b4e01458bbbd712614ef694ddd96048b6fe95f0130601",
+      "bytes_chirho": 36823,
+      "duration_chirho": 4.545306,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2222
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
+    },
+    {
+      "id_chirho": "local-greek-v0681-chirho",
+      "lesson_id_chirho": "Matt.21.22",
+      "token_id_chirho": null,
+      "text_chirho": "καὶ πάντα ὅσα ἂν αἰτήσητε ἐν τῇ προσευχῇ πιστεύοντες λήμψεσθε.",
+      "synthesis_text_chirho": "και πάντα όσα αν αιτήσητε εν τη προσευχή πιστεύοντες λήμψεσθε.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "29f42e614c481005efabad2c57f58d32fac1ce4c447a9ab8b225b794fbd719a0",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "9c26c2cc9c11e0a4d3a90806419fbabec3127b66d6618c7ea93b28f7244a504c",
+      "raw_flac_sha256_chirho": "c6a0c8902f6c3b4e660129d3762d26f1fea3aab25494f5f25608ae37ef88b292",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/ea017bb3ddfd1fd730473361a8b75222ddc8eec5815a89e2f29aa1710779e45e-chirho.mp3",
+      "sha256_chirho": "ea017bb3ddfd1fd730473361a8b75222ddc8eec5815a89e2f29aa1710779e45e",
+      "bytes_chirho": 32225,
+      "duration_chirho": 3.970612,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.3269
+      },
+      "generation_seed_chirho": 2,
+      "source_phase_sha256_chirho": "919cf4afe06b4e094b9fbc6c2f67c0105933b5027d5ba64672bcd8f8acb1db55"
     }
   ]
 }

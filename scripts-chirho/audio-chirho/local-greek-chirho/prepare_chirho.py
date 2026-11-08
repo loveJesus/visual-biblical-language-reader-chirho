@@ -200,7 +200,9 @@ def derive_chirho(job_chirho):
 
 
 def main_chirho():
-    manifest_bytes_chirho = (RUN_CHIRHO / "manifest-chirho.json").read_bytes()
+    manifest_bytes_chirho = (
+        OUTPUT_CHIRHO / "source-chirho/manifest-chirho.json"
+    ).read_bytes()
     if digest_chirho(manifest_bytes_chirho) != MANIFEST_SHA_CHIRHO:
         raise ValueError("Frozen manifest differs")
     manifest_chirho = json_chirho.loads(manifest_bytes_chirho)
@@ -208,10 +210,8 @@ def main_chirho():
         ("plan-chirho.json", "plan_sha256_chirho"),
         ("journal-chirho.jsonl", "journal_sha256_chirho"),
     ]:
-        if (
-            digest_chirho((RUN_CHIRHO / name_chirho).read_bytes())
-            != manifest_chirho[hash_key_chirho]
-        ):
+        bytes_chirho = (OUTPUT_CHIRHO / "source-chirho" / name_chirho).read_bytes()
+        if digest_chirho(bytes_chirho) != manifest_chirho[hash_key_chirho]:
             raise ValueError("Pinned producer evidence changed")
     jobs_chirho = [
         row_chirho
