@@ -2343,6 +2343,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/2-chronicles-chirho/chapter-031-chirho/2chr-031-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/1434e05376245204d943d4b32f95bd00b19bd2b5d9c063530895d35a81f917a9.webp",
+        "sha256_chirho": "1434e05376245204d943d4b32f95bd00b19bd2b5d9c063530895d35a81f917a9",
+        "bytes_chirho": 2681952,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T07:00:56.440Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/32892d3b1ff72706554aa19a1ed1d84afba0de1aeff603e35a3af8c6f8ec68d4.webp",
+        "sha256_chirho": "32892d3b1ff72706554aa19a1ed1d84afba0de1aeff603e35a3af8c6f8ec68d4",
+        "bytes_chirho": 292282,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T07:00:57.426Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/joshua-chirho/chapter-017-chirho/josh-017-006-chirho.webp"
       ],
       "source_chirho": {

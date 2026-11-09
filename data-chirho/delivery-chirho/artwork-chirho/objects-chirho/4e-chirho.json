@@ -2159,6 +2159,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/ezra-chirho/chapter-006-chirho/ezra-006-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/4e128b97165ec89c9220020faa09202669b6ff082ce9e74361de2448f0df39ee.webp",
+        "sha256_chirho": "4e128b97165ec89c9220020faa09202669b6ff082ce9e74361de2448f0df39ee",
+        "bytes_chirho": 2491610,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T07:18:55.854Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/170f38b2a87a370fdccc73016f9b439b75557135936c749d59f54bcea2296cd2.webp",
+        "sha256_chirho": "170f38b2a87a370fdccc73016f9b439b75557135936c749d59f54bcea2296cd2",
+        "bytes_chirho": 227762,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T07:18:56.969Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/job-chirho/chapter-037-chirho/job-037-010-chirho.webp"
       ],
       "source_chirho": {

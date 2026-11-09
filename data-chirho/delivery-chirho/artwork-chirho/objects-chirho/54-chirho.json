@@ -2720,6 +2720,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/song-of-songs-chirho/chapter-008-chirho/song-008-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/54288d9041be900e532ac9ad33a51a689509ad4e5f58ef45afa08ddf38ba4137.webp",
+        "sha256_chirho": "54288d9041be900e532ac9ad33a51a689509ad4e5f58ef45afa08ddf38ba4137",
+        "bytes_chirho": 2623068,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T10:05:18.558Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/489465288794e4b3e8d2b9113d801d968857fe39fb5e927e00aa5db00b449f82.webp",
+        "sha256_chirho": "489465288794e4b3e8d2b9113d801d968857fe39fb5e927e00aa5db00b449f82",
+        "bytes_chirho": 255428,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T10:05:19.659Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-corinthians-chirho/chapter-010-chirho/1cor-010-009-chirho.webp"
       ],
       "source_chirho": {

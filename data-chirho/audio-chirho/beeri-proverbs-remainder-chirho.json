@@ -1,0 +1,2607 @@
+{
+	"schema_version_chirho": 1,
+	"phase_chirho": "proverbs-remainder-v1-chirho",
+	"source_evidence_sha256_chirho": "81fe48d0ce938153a6c4ba121eee87e48b23bc0130bc08aa40208ce613d38eba",
+	"gbt_id_chirho": "OT/RDB/Pro",
+	"package_sha256_chirho": "69bd7e3492038996aa5fd7d71456f08a2ec4229757879eaa86a8a89dca505829",
+	"timings_sha256_chirho": "02a371d04eed801251d847d32341899187d12603984fcb13e1eacef44aa3aac5",
+	"manifest_sha256_chirho": "e175174a3dea3872dc63dd7a9813a47dc802e9e1538d17adcb8bbcba5a861f77",
+	"source_text_chirho": {
+		"path_chirho": "data-chirho/sources-chirho/morphhb-chirho/wlc/Prov.xml",
+		"sha256_chirho": "964f99c00239b53b854c4686c99490c8d1ac7664784a30afdfc23781a3abb161"
+	},
+	"prior_plan_path_chirho": "workspace-chirho/audio-chirho/beeri-verses-2026-11-07-chirho/install-prov-openings-v1-plan-chirho.json",
+	"prior_plan_sha256_chirho": "1a1656d7e58f318684291eb2c8ac33d84e41a2bb8eba65f0e73f9b4186b4c1b3",
+	"prior_proverbs_readings_chirho": 573,
+	"chapters_chirho": [
+		{
+			"lesson_id_chirho": "Prov.3.1",
+			"chapter_chirho": 3,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-03-chirho.json",
+			"content_sha256_chirho": "743d9c5ead9e4aa489d657eca469857ffb355ab437e62369cb08f8826d95b2a6",
+			"canonical_sha256_chirho": "9cdf73249d8bd25473e02d5cd2d5a4c175856f33eb2259b90c9155434dec4c4f",
+			"spoken_sha256_chirho": "9cdf73249d8bd25473e02d5cd2d5a4c175856f33eb2259b90c9155434dec4c4f",
+			"chapter_sha256_chirho": "56657e25a2ad851036175607e6d4e2cea7f64cf2d17ec6d7f9b4dba973688d87",
+			"chapter_duration_chirho": 228.276,
+			"source_verses_chirho": 35,
+			"timed_records_chirho": 34,
+			"start_chirho": 0,
+			"end_chirho": 6.77,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.3.2",
+					"start_chirho": 6.77,
+					"end_chirho": 13.16,
+					"canonical_sha256_chirho": "25c7df9fc0ac4b1f014055d9af2205d6cc714d40dc8597c0b42b96a3ce258b4b",
+					"spoken_sha256_chirho": "25c7df9fc0ac4b1f014055d9af2205d6cc714d40dc8597c0b42b96a3ce258b4b"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.3",
+					"start_chirho": 13.16,
+					"end_chirho": 21.87,
+					"canonical_sha256_chirho": "f00b4cd6bacadda6b69e7e51058d45dd2cbf621ba9480421dd83aafd7c38a9ad",
+					"spoken_sha256_chirho": "f00b4cd6bacadda6b69e7e51058d45dd2cbf621ba9480421dd83aafd7c38a9ad"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.4",
+					"start_chirho": 21.87,
+					"end_chirho": 27.6,
+					"canonical_sha256_chirho": "d29a706eaf0f36472e6248ba744e094aba2f482cdde14ae419c762ee71dcaec9",
+					"spoken_sha256_chirho": "d29a706eaf0f36472e6248ba744e094aba2f482cdde14ae419c762ee71dcaec9"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.5",
+					"start_chirho": 27.6,
+					"end_chirho": 34.67,
+					"canonical_sha256_chirho": "2d3a44ac7e35a5eb8c7ad90424f3a826e4e9e468691e269e564edde4bcd00f7b",
+					"spoken_sha256_chirho": "2d3a44ac7e35a5eb8c7ad90424f3a826e4e9e468691e269e564edde4bcd00f7b"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.6",
+					"start_chirho": 34.67,
+					"end_chirho": 41.14,
+					"canonical_sha256_chirho": "3a9b0fb6752d4c2f04f0fb207692d9297a1fb918aff4eac3616238346038d3fe",
+					"spoken_sha256_chirho": "3a9b0fb6752d4c2f04f0fb207692d9297a1fb918aff4eac3616238346038d3fe"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.7",
+					"start_chirho": 41.14,
+					"end_chirho": 48.25,
+					"canonical_sha256_chirho": "1c8a437d80f8f2d92b63847a407fa1311e1f0069fd7b8e2fc076df56401451c8",
+					"spoken_sha256_chirho": "1c8a437d80f8f2d92b63847a407fa1311e1f0069fd7b8e2fc076df56401451c8"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.8",
+					"start_chirho": 48.25,
+					"end_chirho": 54.19,
+					"canonical_sha256_chirho": "d3121a42a4abe0e60627b6f18468dc7a14b6954b3ee783b4153a51f3ae5f5d17",
+					"spoken_sha256_chirho": "d3121a42a4abe0e60627b6f18468dc7a14b6954b3ee783b4153a51f3ae5f5d17"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.9",
+					"start_chirho": 54.19,
+					"end_chirho": 60.88,
+					"canonical_sha256_chirho": "031613c1f804830bb7471f4ed42ee06428f76d2661c0abf697b9df74c28215a9",
+					"spoken_sha256_chirho": "031613c1f804830bb7471f4ed42ee06428f76d2661c0abf697b9df74c28215a9"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.10",
+					"start_chirho": 60.88,
+					"end_chirho": 67.9,
+					"canonical_sha256_chirho": "827beb3373e997b2554d671ddea4869920cbb6d50588606f17c8a40663f67f65",
+					"spoken_sha256_chirho": "827beb3373e997b2554d671ddea4869920cbb6d50588606f17c8a40663f67f65"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.11",
+					"start_chirho": 67.9,
+					"end_chirho": 74.91,
+					"canonical_sha256_chirho": "9f14084125cfc4e4687e5a91b0f51495a16e8b5e3196a162483ce118beee2d4e",
+					"spoken_sha256_chirho": "9f14084125cfc4e4687e5a91b0f51495a16e8b5e3196a162483ce118beee2d4e"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.12",
+					"start_chirho": 74.91,
+					"end_chirho": 82.36,
+					"canonical_sha256_chirho": "3288ccfd87f7d6e7b2bb83e7cff4690df527314b474a265b4dfd96eb7b4827fa",
+					"spoken_sha256_chirho": "3288ccfd87f7d6e7b2bb83e7cff4690df527314b474a265b4dfd96eb7b4827fa"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.13",
+					"start_chirho": 82.36,
+					"end_chirho": 88.3,
+					"canonical_sha256_chirho": "39d83f75bd7e1049ba71ed5944a4baefaa43a73ccc20cde5a12410f785b570b2",
+					"spoken_sha256_chirho": "39d83f75bd7e1049ba71ed5944a4baefaa43a73ccc20cde5a12410f785b570b2"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.14",
+					"start_chirho": 88.3,
+					"end_chirho": 94.39,
+					"canonical_sha256_chirho": "19fc781a1855e001a90280e0fd92d0c25762ceaac1884046c8d0634fb23620d5",
+					"spoken_sha256_chirho": "19fc781a1855e001a90280e0fd92d0c25762ceaac1884046c8d0634fb23620d5"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.15",
+					"start_chirho": 94.39,
+					"end_chirho": 100.91,
+					"canonical_sha256_chirho": "822ef21e5977fb403890b8f598d579623c33ab396da2704bde565a373fec0680",
+					"spoken_sha256_chirho": "f757f753663d53127d8ce2d3facde2c25f47462d3518b2bafd9efae6ff0a1bdf"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.16",
+					"start_chirho": 100.91,
+					"end_chirho": 106.71,
+					"canonical_sha256_chirho": "71afe0391234c60a2e1133fad444db93feebe740f184c5f4f36450ced34e95e1",
+					"spoken_sha256_chirho": "71afe0391234c60a2e1133fad444db93feebe740f184c5f4f36450ced34e95e1"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.17",
+					"start_chirho": 106.71,
+					"end_chirho": 112.92,
+					"canonical_sha256_chirho": "c9a4623396a19ee82899ea3b7f10588deed93b2f21d4908ff6e19958347673bd",
+					"spoken_sha256_chirho": "c9a4623396a19ee82899ea3b7f10588deed93b2f21d4908ff6e19958347673bd"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.18",
+					"start_chirho": 112.92,
+					"end_chirho": 119.61,
+					"canonical_sha256_chirho": "dc5d3aaecffb2b511e997728da517c02a4200ded320b5e6d745f1043b3c547c4",
+					"spoken_sha256_chirho": "dc5d3aaecffb2b511e997728da517c02a4200ded320b5e6d745f1043b3c547c4"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.19",
+					"start_chirho": 119.61,
+					"end_chirho": 126.42,
+					"canonical_sha256_chirho": "94af0b4afbb7a8520a9d134dced5bebcb6363d1cc5c8673ca3f8a5ba3a9c5671",
+					"spoken_sha256_chirho": "94af0b4afbb7a8520a9d134dced5bebcb6363d1cc5c8673ca3f8a5ba3a9c5671"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.20",
+					"start_chirho": 126.42,
+					"end_chirho": 132.55,
+					"canonical_sha256_chirho": "7a675b98ae516d5e397d0415387ba318273e040b470e4aee82b4ee1a08ced5de",
+					"spoken_sha256_chirho": "7a675b98ae516d5e397d0415387ba318273e040b470e4aee82b4ee1a08ced5de"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.21",
+					"start_chirho": 132.55,
+					"end_chirho": 139.61,
+					"canonical_sha256_chirho": "7e838d26a45e7fe73036323727923374500faaae21b11c3ee7e75501c4997c44",
+					"spoken_sha256_chirho": "7e838d26a45e7fe73036323727923374500faaae21b11c3ee7e75501c4997c44"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.22",
+					"start_chirho": 139.61,
+					"end_chirho": 145.67,
+					"canonical_sha256_chirho": "bf84c28549d035f4a4babca9b39fed6464561f4c711f8760db05db84e1ce5a41",
+					"spoken_sha256_chirho": "bf84c28549d035f4a4babca9b39fed6464561f4c711f8760db05db84e1ce5a41"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.23",
+					"start_chirho": 145.67,
+					"end_chirho": 152.08,
+					"canonical_sha256_chirho": "151f3fc16e97430ad4f1f9e98de5f98f3129995c8fcfe8174e15d8b65c8a558c",
+					"spoken_sha256_chirho": "151f3fc16e97430ad4f1f9e98de5f98f3129995c8fcfe8174e15d8b65c8a558c"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.24",
+					"start_chirho": 152.08,
+					"end_chirho": 158.82,
+					"canonical_sha256_chirho": "eae6086d446c7c9a828be2c4b6f0130a8238ecfd860a5d5d116c68bc786c01ac",
+					"spoken_sha256_chirho": "eae6086d446c7c9a828be2c4b6f0130a8238ecfd860a5d5d116c68bc786c01ac"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.25",
+					"start_chirho": 158.82,
+					"end_chirho": 165.21,
+					"canonical_sha256_chirho": "eaaf5515cb78da522e050f9c23b44c05c2d7340b0c21813ee004bb565e6a8826",
+					"spoken_sha256_chirho": "eaaf5515cb78da522e050f9c23b44c05c2d7340b0c21813ee004bb565e6a8826"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.26",
+					"start_chirho": 165.21,
+					"end_chirho": 171.92,
+					"canonical_sha256_chirho": "a974aa905bbc03454abe3d03315c544d4f63ce8b6bbb63e0dc560d0bb25417ba",
+					"spoken_sha256_chirho": "a974aa905bbc03454abe3d03315c544d4f63ce8b6bbb63e0dc560d0bb25417ba"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.27",
+					"start_chirho": 171.92,
+					"end_chirho": 178.67,
+					"canonical_sha256_chirho": "12936edc95ba3780338a1b6185b4dd0f4e3380b189c78e07b4c9e8953ff91292",
+					"spoken_sha256_chirho": "16a52ebc372e64a51efb65790c6930fe9211436285ed83ddde75fb9cfeb96760"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.28",
+					"start_chirho": 178.67,
+					"end_chirho": 185.88,
+					"canonical_sha256_chirho": "e8ffc65ba77c0c2fe5e6e2b71335021103f0819e53f6514de8e6ece888a6ba76",
+					"spoken_sha256_chirho": "f38f05590b8f0bfb0e7489d66303fcfa1a4d4abc8850c06dd4b3f16bb601e06b"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.29",
+					"start_chirho": 185.88,
+					"end_chirho": 192.19,
+					"canonical_sha256_chirho": "963e080467fdd70b53a8257d00bb002685e5b928c57278f48cc795cda01830db",
+					"spoken_sha256_chirho": "963e080467fdd70b53a8257d00bb002685e5b928c57278f48cc795cda01830db"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.30",
+					"start_chirho": 192.19,
+					"end_chirho": 197.84,
+					"canonical_sha256_chirho": "8cfa993fbb130bdc8eae2a190c17593be529c67e680e8a2c25a6aec5b4e1aee5",
+					"spoken_sha256_chirho": "824a79216e39ff0cf5fd385e87d30d7a145cfbeaf784ce0055d745c69ed33b1c"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.31",
+					"start_chirho": 197.84,
+					"end_chirho": 204.18,
+					"canonical_sha256_chirho": "edaed95955483e78717c17e19b603ba3cddb9962a643b33e8bc2325f0cb05ad8",
+					"spoken_sha256_chirho": "edaed95955483e78717c17e19b603ba3cddb9962a643b33e8bc2325f0cb05ad8"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.32",
+					"start_chirho": 204.18,
+					"end_chirho": 209.94,
+					"canonical_sha256_chirho": "248890149f73c091d4c2c6fee02d1883a53ef6bfe230b28b44dcf05d7c25e092",
+					"spoken_sha256_chirho": "248890149f73c091d4c2c6fee02d1883a53ef6bfe230b28b44dcf05d7c25e092"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.33",
+					"start_chirho": 209.94,
+					"end_chirho": 216.22,
+					"canonical_sha256_chirho": "808b00cfb6f6aa4af99c9c78c40f83674dccb3ac4f75e6284dad9bbbfb2e5cbb",
+					"spoken_sha256_chirho": "808b00cfb6f6aa4af99c9c78c40f83674dccb3ac4f75e6284dad9bbbfb2e5cbb"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.34",
+					"start_chirho": 216.22,
+					"end_chirho": 222.25,
+					"canonical_sha256_chirho": "7e76fb57a53fe0113b9f4b8948708949bd27d03524be204a09e82e357ef144c7",
+					"spoken_sha256_chirho": "93e8c1c392f6c3d7f953c677b27f46a6516fb64ba46831766d40642077d5cc92"
+				},
+				{
+					"lesson_id_chirho": "Prov.3.35",
+					"start_chirho": 222.25,
+					"end_chirho": 228.276,
+					"canonical_sha256_chirho": "3bbf0c160d22ceec07360bb2edba8b17163e79e3497f2b1778d74414f10b4537",
+					"spoken_sha256_chirho": "3bbf0c160d22ceec07360bb2edba8b17163e79e3497f2b1778d74414f10b4537"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.9.1",
+			"chapter_chirho": 9,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-09-chirho.json",
+			"content_sha256_chirho": "74ade3731a9757282a7e797f9986a85ce707ecf01d137cb46ad3accf657d216e",
+			"canonical_sha256_chirho": "52f03164836a28e3da01c1b207e648ee73126e381595f98b859dddd1b6d1c07b",
+			"spoken_sha256_chirho": "52f03164836a28e3da01c1b207e648ee73126e381595f98b859dddd1b6d1c07b",
+			"chapter_sha256_chirho": "961b88e86f0e6ea8042ac71854c58f3e7431663949c67d7b8afded7531e5c182",
+			"chapter_duration_chirho": 110.448,
+			"source_verses_chirho": 18,
+			"timed_records_chirho": 17,
+			"start_chirho": 0,
+			"end_chirho": 5.93,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.9.2",
+					"start_chirho": 5.93,
+					"end_chirho": 12.31,
+					"canonical_sha256_chirho": "2b47beee4065b1b8870385893e5d57fe3b961c9f2a1e0109212c63d6f1087d90",
+					"spoken_sha256_chirho": "2b47beee4065b1b8870385893e5d57fe3b961c9f2a1e0109212c63d6f1087d90"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.3",
+					"start_chirho": 12.31,
+					"end_chirho": 18.05,
+					"canonical_sha256_chirho": "359660caf4a3c154cce5c9288825e52fb1eac07691c22d2d98f18e06e2fe4fb5",
+					"spoken_sha256_chirho": "359660caf4a3c154cce5c9288825e52fb1eac07691c22d2d98f18e06e2fe4fb5"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.4",
+					"start_chirho": 18.05,
+					"end_chirho": 23.73,
+					"canonical_sha256_chirho": "37f991bdf021f86c202492f43102d84a86aee4a08fdfe7476ce19bf0cbddd643",
+					"spoken_sha256_chirho": "37f991bdf021f86c202492f43102d84a86aee4a08fdfe7476ce19bf0cbddd643"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.5",
+					"start_chirho": 23.73,
+					"end_chirho": 29.52,
+					"canonical_sha256_chirho": "1cd94f3e12766b9ac641a153329db4cfca9a521153eb4d069fe50240f0b28906",
+					"spoken_sha256_chirho": "1cd94f3e12766b9ac641a153329db4cfca9a521153eb4d069fe50240f0b28906"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.6",
+					"start_chirho": 29.52,
+					"end_chirho": 35.43,
+					"canonical_sha256_chirho": "5b2e35286a00c64cdd7eb841c25ce750c5222422dcf190b2f49e35832699dfa9",
+					"spoken_sha256_chirho": "5b2e35286a00c64cdd7eb841c25ce750c5222422dcf190b2f49e35832699dfa9"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.7",
+					"start_chirho": 35.43,
+					"end_chirho": 42.16,
+					"canonical_sha256_chirho": "a725c1a16ad5da159362da748117a15508e13de91ecbbc1e5148b59d62333080",
+					"spoken_sha256_chirho": "a725c1a16ad5da159362da748117a15508e13de91ecbbc1e5148b59d62333080"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.8",
+					"start_chirho": 42.16,
+					"end_chirho": 49.48,
+					"canonical_sha256_chirho": "5ed979077df84ba400639a8b52b8c5bdb47f4d572b6a4bcfe3bd1e9067de4d07",
+					"spoken_sha256_chirho": "5ed979077df84ba400639a8b52b8c5bdb47f4d572b6a4bcfe3bd1e9067de4d07"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.9",
+					"start_chirho": 49.48,
+					"end_chirho": 56.49,
+					"canonical_sha256_chirho": "342af5fbe76535085cfffa1899a4aa56d376c6dcf41b4f1217e0501360aff2a1",
+					"spoken_sha256_chirho": "342af5fbe76535085cfffa1899a4aa56d376c6dcf41b4f1217e0501360aff2a1"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.10",
+					"start_chirho": 56.49,
+					"end_chirho": 62.68,
+					"canonical_sha256_chirho": "5ef8f714202d10545507918d00d5326b2eb2d7a298e492ce9a6312ad7bb4df36",
+					"spoken_sha256_chirho": "5ef8f714202d10545507918d00d5326b2eb2d7a298e492ce9a6312ad7bb4df36"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.11",
+					"start_chirho": 62.68,
+					"end_chirho": 68.46,
+					"canonical_sha256_chirho": "d325d9feee3d964271191349e8b542f1f9404afb5d3a6fe09af4e45213547731",
+					"spoken_sha256_chirho": "d325d9feee3d964271191349e8b542f1f9404afb5d3a6fe09af4e45213547731"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.12",
+					"start_chirho": 68.46,
+					"end_chirho": 74.85,
+					"canonical_sha256_chirho": "49ac8ba5ea374e55cd28070053aef72ef91a375af71fd7de2a530dce46475a2c",
+					"spoken_sha256_chirho": "49ac8ba5ea374e55cd28070053aef72ef91a375af71fd7de2a530dce46475a2c"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.13",
+					"start_chirho": 74.85,
+					"end_chirho": 80.74,
+					"canonical_sha256_chirho": "5b23fa6a111bc3e6c30b80afaec906b3ff1c6daef43d870cd420533bbd63245d",
+					"spoken_sha256_chirho": "5b23fa6a111bc3e6c30b80afaec906b3ff1c6daef43d870cd420533bbd63245d"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.14",
+					"start_chirho": 80.74,
+					"end_chirho": 86.41,
+					"canonical_sha256_chirho": "6240ef87f7e9b654ff91c65ebfc0db8d94ebf411d1ff101e4416aef0c769d1e5",
+					"spoken_sha256_chirho": "6240ef87f7e9b654ff91c65ebfc0db8d94ebf411d1ff101e4416aef0c769d1e5"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.15",
+					"start_chirho": 86.41,
+					"end_chirho": 91.95,
+					"canonical_sha256_chirho": "e3d2130a64e31465573cd9307346500257bd9c6ed2727c479e124c2348efd6c8",
+					"spoken_sha256_chirho": "e3d2130a64e31465573cd9307346500257bd9c6ed2727c479e124c2348efd6c8"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.16",
+					"start_chirho": 91.95,
+					"end_chirho": 97.86,
+					"canonical_sha256_chirho": "c02f3a73ce9446eb4c5337a446290c91651180e7c6ea6c3b79cb4a9eeb678a0e",
+					"spoken_sha256_chirho": "c02f3a73ce9446eb4c5337a446290c91651180e7c6ea6c3b79cb4a9eeb678a0e"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.17",
+					"start_chirho": 97.86,
+					"end_chirho": 103.77,
+					"canonical_sha256_chirho": "4103172d568726894aaedda16de5654d22a9daad5cde43225b377ce4e185d100",
+					"spoken_sha256_chirho": "4103172d568726894aaedda16de5654d22a9daad5cde43225b377ce4e185d100"
+				},
+				{
+					"lesson_id_chirho": "Prov.9.18",
+					"start_chirho": 103.77,
+					"end_chirho": 110.448,
+					"canonical_sha256_chirho": "11168f9a78b940617abaf885b172227543bafaa639c7bb77ad45dd494258f6c6",
+					"spoken_sha256_chirho": "11168f9a78b940617abaf885b172227543bafaa639c7bb77ad45dd494258f6c6"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.11.1",
+			"chapter_chirho": 11,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-11-chirho.json",
+			"content_sha256_chirho": "b0d3f5fc9d81ce549ce7c11966ec19d81344b97e21b208ff5fca3d535f4e9910",
+			"canonical_sha256_chirho": "fc054959004d5336c0e638732bc360a9cfe588da0d46ca768a0b8f4f1c5eaeab",
+			"spoken_sha256_chirho": "fc054959004d5336c0e638732bc360a9cfe588da0d46ca768a0b8f4f1c5eaeab",
+			"chapter_sha256_chirho": "1f09b248bc0c3bf65f61353a6807c5097a67b2edce8e389cdea2a9e58780ff0b",
+			"chapter_duration_chirho": 197.676,
+			"source_verses_chirho": 31,
+			"timed_records_chirho": 30,
+			"start_chirho": 0,
+			"end_chirho": 6.37,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.11.2",
+					"start_chirho": 6.37,
+					"end_chirho": 11.99,
+					"canonical_sha256_chirho": "25f6cf887ea0f203e3019970708a2bf4880919e97dc5de5078ceba2b92763ef4",
+					"spoken_sha256_chirho": "25f6cf887ea0f203e3019970708a2bf4880919e97dc5de5078ceba2b92763ef4"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.3",
+					"start_chirho": 11.99,
+					"end_chirho": 18.05,
+					"canonical_sha256_chirho": "182ebe9963a96f67b6263bf6b1b597c0892cc0edd0cd140ab6b0a738e9f3814a",
+					"spoken_sha256_chirho": "bde77904de3fa478a7a69020f8a644ac02008b8662cdf3d03f1a572dbdb2886f"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.4",
+					"start_chirho": 18.05,
+					"end_chirho": 24.41,
+					"canonical_sha256_chirho": "c70d6d40fff8e75fa29e569eb13be52f10e45be5235a36071b1eca091208dd7b",
+					"spoken_sha256_chirho": "c70d6d40fff8e75fa29e569eb13be52f10e45be5235a36071b1eca091208dd7b"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.5",
+					"start_chirho": 24.41,
+					"end_chirho": 30.78,
+					"canonical_sha256_chirho": "c488f369915f13710a84d570d54fe9d68ab358e9dfb41c49fc68e5055911ef66",
+					"spoken_sha256_chirho": "c488f369915f13710a84d570d54fe9d68ab358e9dfb41c49fc68e5055911ef66"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.6",
+					"start_chirho": 30.78,
+					"end_chirho": 37.26,
+					"canonical_sha256_chirho": "b8c2d3fd1d5449fa75dd4c0de47003eb010e5c06cd036e41e8a2ceafd6df9946",
+					"spoken_sha256_chirho": "b8c2d3fd1d5449fa75dd4c0de47003eb010e5c06cd036e41e8a2ceafd6df9946"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.7",
+					"start_chirho": 37.26,
+					"end_chirho": 43.8,
+					"canonical_sha256_chirho": "1cb652792a541d03979f5593c36875cc71440e5e32066b4253dbb5c0fddc03cf",
+					"spoken_sha256_chirho": "1cb652792a541d03979f5593c36875cc71440e5e32066b4253dbb5c0fddc03cf"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.8",
+					"start_chirho": 43.8,
+					"end_chirho": 49.35,
+					"canonical_sha256_chirho": "98583f907b822a16ed55069973b98d8bad15c5c34dc1c435324f7a4ee5da37ca",
+					"spoken_sha256_chirho": "98583f907b822a16ed55069973b98d8bad15c5c34dc1c435324f7a4ee5da37ca"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.9",
+					"start_chirho": 49.35,
+					"end_chirho": 56.14,
+					"canonical_sha256_chirho": "2a83b7d7c24cb98973d27375965807682ede9a7d36cef066cc8125734f8407a9",
+					"spoken_sha256_chirho": "2a83b7d7c24cb98973d27375965807682ede9a7d36cef066cc8125734f8407a9"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.10",
+					"start_chirho": 56.14,
+					"end_chirho": 62.83,
+					"canonical_sha256_chirho": "4a16ec74ece93da1d1aeeee7b9144813d0d9789c387139f6f9993d508d6367cb",
+					"spoken_sha256_chirho": "4a16ec74ece93da1d1aeeee7b9144813d0d9789c387139f6f9993d508d6367cb"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.11",
+					"start_chirho": 62.83,
+					"end_chirho": 69.48,
+					"canonical_sha256_chirho": "36fb541e57992701df2addde31947e64028c501dd3d46a5c71d2e8cf18da924c",
+					"spoken_sha256_chirho": "36fb541e57992701df2addde31947e64028c501dd3d46a5c71d2e8cf18da924c"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.12",
+					"start_chirho": 69.48,
+					"end_chirho": 75.81,
+					"canonical_sha256_chirho": "7d4206e87a49e839b2da75f7ab51cfc777d58de176721e7dfa557250a1982673",
+					"spoken_sha256_chirho": "7d4206e87a49e839b2da75f7ab51cfc777d58de176721e7dfa557250a1982673"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.13",
+					"start_chirho": 75.81,
+					"end_chirho": 82.67,
+					"canonical_sha256_chirho": "5b368843325e5e2c84940e62a776289524388ca9d728414bfe5ec6fa8df52553",
+					"spoken_sha256_chirho": "5b368843325e5e2c84940e62a776289524388ca9d728414bfe5ec6fa8df52553"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.14",
+					"start_chirho": 82.67,
+					"end_chirho": 88.85,
+					"canonical_sha256_chirho": "f442e2288a2fb95cd1da2a7f80a3e3cd19fc04a024faf87b02016db33e2f2588",
+					"spoken_sha256_chirho": "f442e2288a2fb95cd1da2a7f80a3e3cd19fc04a024faf87b02016db33e2f2588"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.15",
+					"start_chirho": 88.85,
+					"end_chirho": 95.29,
+					"canonical_sha256_chirho": "636ae0001d826e93f18af58b65bee12e280d056f2b68176ab51b495cb2af2c29",
+					"spoken_sha256_chirho": "636ae0001d826e93f18af58b65bee12e280d056f2b68176ab51b495cb2af2c29"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.16",
+					"start_chirho": 95.29,
+					"end_chirho": 101.54,
+					"canonical_sha256_chirho": "4b70f5d951678a71c49540ea55887449adcb712cdce0d16bc17412cf7c27b5ba",
+					"spoken_sha256_chirho": "4b70f5d951678a71c49540ea55887449adcb712cdce0d16bc17412cf7c27b5ba"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.17",
+					"start_chirho": 101.54,
+					"end_chirho": 107.88,
+					"canonical_sha256_chirho": "28523bc5418933ff5ed14f01633fb55ae664a619256bfa379ecf69f162e120a4",
+					"spoken_sha256_chirho": "28523bc5418933ff5ed14f01633fb55ae664a619256bfa379ecf69f162e120a4"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.18",
+					"start_chirho": 107.88,
+					"end_chirho": 115.25,
+					"canonical_sha256_chirho": "73b52dbc9e6c0dc940ba26b3ffe7818fbcbb1b3be2656db30343282265a8873d",
+					"spoken_sha256_chirho": "73b52dbc9e6c0dc940ba26b3ffe7818fbcbb1b3be2656db30343282265a8873d"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.19",
+					"start_chirho": 115.25,
+					"end_chirho": 120.7,
+					"canonical_sha256_chirho": "a333fb46dce1ce7d52b03a2e8a309c2e413b28549b92735ccebdec1ba35d25c2",
+					"spoken_sha256_chirho": "a333fb46dce1ce7d52b03a2e8a309c2e413b28549b92735ccebdec1ba35d25c2"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.20",
+					"start_chirho": 120.7,
+					"end_chirho": 126.95,
+					"canonical_sha256_chirho": "fdd5ea847fd35dad073c1859b2ea99335cdecbd8ef520c9758aad87cd287f063",
+					"spoken_sha256_chirho": "fdd5ea847fd35dad073c1859b2ea99335cdecbd8ef520c9758aad87cd287f063"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.21",
+					"start_chirho": 126.95,
+					"end_chirho": 133.56,
+					"canonical_sha256_chirho": "487169ee051646e2686cf1ba1646a857d29c0dc151935a142157040b4d45969f",
+					"spoken_sha256_chirho": "487169ee051646e2686cf1ba1646a857d29c0dc151935a142157040b4d45969f"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.22",
+					"start_chirho": 133.56,
+					"end_chirho": 139.97,
+					"canonical_sha256_chirho": "41a6d18a631291a35cbdda6f0a1028342a04d65e220c47f9b0da5fa995113f32",
+					"spoken_sha256_chirho": "41a6d18a631291a35cbdda6f0a1028342a04d65e220c47f9b0da5fa995113f32"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.23",
+					"start_chirho": 139.97,
+					"end_chirho": 145.85,
+					"canonical_sha256_chirho": "2febd5979d914321e0eb2f4def661cef2e30677aef4b013ed87e6f9737c3a738",
+					"spoken_sha256_chirho": "2febd5979d914321e0eb2f4def661cef2e30677aef4b013ed87e6f9737c3a738"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.24",
+					"start_chirho": 145.85,
+					"end_chirho": 153.06,
+					"canonical_sha256_chirho": "67dec255df50c3dadb82cd4d5c33b3c1a3b85523e27c0a0e5f6aefd07b0b86fc",
+					"spoken_sha256_chirho": "67dec255df50c3dadb82cd4d5c33b3c1a3b85523e27c0a0e5f6aefd07b0b86fc"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.25",
+					"start_chirho": 153.06,
+					"end_chirho": 159.03,
+					"canonical_sha256_chirho": "8472d42259a5c177937cf9e2cb037680d9dcfe94aadb56305f6ba5a36e3ae04c",
+					"spoken_sha256_chirho": "8472d42259a5c177937cf9e2cb037680d9dcfe94aadb56305f6ba5a36e3ae04c"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.26",
+					"start_chirho": 159.03,
+					"end_chirho": 165.59,
+					"canonical_sha256_chirho": "b555729955698e88ca3fe9d60e9a9ceaa94bd4b58e56f7d6c1f89d33b277be03",
+					"spoken_sha256_chirho": "b555729955698e88ca3fe9d60e9a9ceaa94bd4b58e56f7d6c1f89d33b277be03"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.27",
+					"start_chirho": 165.59,
+					"end_chirho": 172.31,
+					"canonical_sha256_chirho": "fc6c1342a999d9138fffa73e080628bd87996ebc2641e1c499a3ff468d95ab07",
+					"spoken_sha256_chirho": "fc6c1342a999d9138fffa73e080628bd87996ebc2641e1c499a3ff468d95ab07"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.28",
+					"start_chirho": 172.31,
+					"end_chirho": 179.39,
+					"canonical_sha256_chirho": "48acfdcd78482ab3c442c3f3536d3d2c7fee0daf5ab51d1ee137316d08d0bda6",
+					"spoken_sha256_chirho": "48acfdcd78482ab3c442c3f3536d3d2c7fee0daf5ab51d1ee137316d08d0bda6"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.29",
+					"start_chirho": 179.39,
+					"end_chirho": 185.85,
+					"canonical_sha256_chirho": "e0e6e06df6288b942513251a0c51c934dab9fc22c46144818bf7739fb1f5d7d2",
+					"spoken_sha256_chirho": "e0e6e06df6288b942513251a0c51c934dab9fc22c46144818bf7739fb1f5d7d2"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.30",
+					"start_chirho": 185.85,
+					"end_chirho": 191.6,
+					"canonical_sha256_chirho": "57a01e534a850ad6bf97cddba266abb1a98c5d2f58597aea90574510453f916a",
+					"spoken_sha256_chirho": "57a01e534a850ad6bf97cddba266abb1a98c5d2f58597aea90574510453f916a"
+				},
+				{
+					"lesson_id_chirho": "Prov.11.31",
+					"start_chirho": 191.6,
+					"end_chirho": 197.676,
+					"canonical_sha256_chirho": "e1e77d667a71d527b44b26f7edbcde6b6c3a7d22199604f492f9d0801eda292d",
+					"spoken_sha256_chirho": "e1e77d667a71d527b44b26f7edbcde6b6c3a7d22199604f492f9d0801eda292d"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.12.1",
+			"chapter_chirho": 12,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-12-chirho.json",
+			"content_sha256_chirho": "3cec0d5796537bb9d5e4eedb7c23285f2268f158bdf33340266efb1dfbada469",
+			"canonical_sha256_chirho": "2259de22d49b156b9af37bd762dc7c9bb6da5373ad1fc99a100a02fadcd90455",
+			"spoken_sha256_chirho": "2259de22d49b156b9af37bd762dc7c9bb6da5373ad1fc99a100a02fadcd90455",
+			"chapter_sha256_chirho": "313f67620eea9dba63188cc8f9ada5f38e131ee962d7503217fe7ca30a47fa39",
+			"chapter_duration_chirho": 170.712,
+			"source_verses_chirho": 28,
+			"timed_records_chirho": 27,
+			"start_chirho": 0,
+			"end_chirho": 6.05,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.12.2",
+					"start_chirho": 6.05,
+					"end_chirho": 12.2,
+					"canonical_sha256_chirho": "19196b02dd49e5b8a362585c305fc7df83b7c1f532cf40021e9e7ea238c9ae25",
+					"spoken_sha256_chirho": "19196b02dd49e5b8a362585c305fc7df83b7c1f532cf40021e9e7ea238c9ae25"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.3",
+					"start_chirho": 12.2,
+					"end_chirho": 18.38,
+					"canonical_sha256_chirho": "1defc5527a4684443ab8014b4e46ed3f79ad6e35e843cb4a2b7c04e4a566a287",
+					"spoken_sha256_chirho": "1defc5527a4684443ab8014b4e46ed3f79ad6e35e843cb4a2b7c04e4a566a287"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.4",
+					"start_chirho": 18.38,
+					"end_chirho": 25.11,
+					"canonical_sha256_chirho": "de706f6f29a453de74667e0675b8b48f561bbfbd788a27d95685fe5a6e4faa95",
+					"spoken_sha256_chirho": "de706f6f29a453de74667e0675b8b48f561bbfbd788a27d95685fe5a6e4faa95"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.5",
+					"start_chirho": 25.11,
+					"end_chirho": 31.06,
+					"canonical_sha256_chirho": "1b0bde20fc239983256771042440d551c65daf53265cfa689c9eb585203a47b0",
+					"spoken_sha256_chirho": "1b0bde20fc239983256771042440d551c65daf53265cfa689c9eb585203a47b0"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.6",
+					"start_chirho": 31.06,
+					"end_chirho": 36.58,
+					"canonical_sha256_chirho": "8c603c07c7f3b953c9cdf0da85b74835ef4de2308197d396f43f1fbc4a783778",
+					"spoken_sha256_chirho": "8c603c07c7f3b953c9cdf0da85b74835ef4de2308197d396f43f1fbc4a783778"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.7",
+					"start_chirho": 36.58,
+					"end_chirho": 42.37,
+					"canonical_sha256_chirho": "dbc7fb8e84db14b42f7f9f272a23521cfe4918123ad37ef4a8c2effdde8fbf80",
+					"spoken_sha256_chirho": "dbc7fb8e84db14b42f7f9f272a23521cfe4918123ad37ef4a8c2effdde8fbf80"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.8",
+					"start_chirho": 42.37,
+					"end_chirho": 48.34,
+					"canonical_sha256_chirho": "219e37a2337424a0745f645aaf98ff3f2e6248e11250d9b387cf2fafe5d45f03",
+					"spoken_sha256_chirho": "219e37a2337424a0745f645aaf98ff3f2e6248e11250d9b387cf2fafe5d45f03"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.9",
+					"start_chirho": 48.34,
+					"end_chirho": 53.87,
+					"canonical_sha256_chirho": "5cbc5d94ddc1a496d063df51550b91ea9f44973cca46dbee3b25875a107fc7f1",
+					"spoken_sha256_chirho": "5cbc5d94ddc1a496d063df51550b91ea9f44973cca46dbee3b25875a107fc7f1"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.10",
+					"start_chirho": 53.87,
+					"end_chirho": 60.08,
+					"canonical_sha256_chirho": "b0e441f4e06dd88a50fd427b89132e8ce8e36f26b7dffeeac006174f9261b227",
+					"spoken_sha256_chirho": "b0e441f4e06dd88a50fd427b89132e8ce8e36f26b7dffeeac006174f9261b227"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.11",
+					"start_chirho": 60.08,
+					"end_chirho": 66.53,
+					"canonical_sha256_chirho": "1fe7732550648d032d98e9382dd3064ceba97fe09ee8e314d03709377d8dc47b",
+					"spoken_sha256_chirho": "1fe7732550648d032d98e9382dd3064ceba97fe09ee8e314d03709377d8dc47b"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.12",
+					"start_chirho": 66.53,
+					"end_chirho": 72.47,
+					"canonical_sha256_chirho": "1add70d6efb6691412e2b4ca5b67bd64188260d3d2e243cbde63c2b79b8ef09b",
+					"spoken_sha256_chirho": "1add70d6efb6691412e2b4ca5b67bd64188260d3d2e243cbde63c2b79b8ef09b"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.13",
+					"start_chirho": 72.47,
+					"end_chirho": 78.78,
+					"canonical_sha256_chirho": "1ab4308b647208efb9de9864705c37e97a0b663c69fe13db2371979a66fe872f",
+					"spoken_sha256_chirho": "1ab4308b647208efb9de9864705c37e97a0b663c69fe13db2371979a66fe872f"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.14",
+					"start_chirho": 78.78,
+					"end_chirho": 85.17,
+					"canonical_sha256_chirho": "520133a0f4cb4f1d993188b24e57a3eb6872831c3bcb7a9391cdbbdfee09e680",
+					"spoken_sha256_chirho": "74945170fbd1e059fad1e415ea57798e4ab74b5bfcd30a8c40751d58927f9f41"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.15",
+					"start_chirho": 85.17,
+					"end_chirho": 91.42,
+					"canonical_sha256_chirho": "cb1758a72cd660e7de0a40d6c7e4d2ebeac686f8b3311c7926dad36bdd4a93ec",
+					"spoken_sha256_chirho": "cb1758a72cd660e7de0a40d6c7e4d2ebeac686f8b3311c7926dad36bdd4a93ec"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.16",
+					"start_chirho": 91.42,
+					"end_chirho": 97.32,
+					"canonical_sha256_chirho": "5eb55f1f29207c46422a730ad420e73996272317e3e666e4f57a09194d222454",
+					"spoken_sha256_chirho": "5eb55f1f29207c46422a730ad420e73996272317e3e666e4f57a09194d222454"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.17",
+					"start_chirho": 97.32,
+					"end_chirho": 103.41,
+					"canonical_sha256_chirho": "50160c95ab2a60d93c69cf2889b247705a371ff52c38483e8f094d883251c688",
+					"spoken_sha256_chirho": "50160c95ab2a60d93c69cf2889b247705a371ff52c38483e8f094d883251c688"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.18",
+					"start_chirho": 103.41,
+					"end_chirho": 109.4,
+					"canonical_sha256_chirho": "59b00ccbf9c5b24286dfe7c1965c374ad2dc1fa94bedc91b3720f3a1f979db24",
+					"spoken_sha256_chirho": "59b00ccbf9c5b24286dfe7c1965c374ad2dc1fa94bedc91b3720f3a1f979db24"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.19",
+					"start_chirho": 109.4,
+					"end_chirho": 115.6,
+					"canonical_sha256_chirho": "a32a78ae5857bd749455ad44965c4a2ffd52069c7514206ce8defcb41d7646d8",
+					"spoken_sha256_chirho": "a32a78ae5857bd749455ad44965c4a2ffd52069c7514206ce8defcb41d7646d8"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.20",
+					"start_chirho": 115.6,
+					"end_chirho": 121.19,
+					"canonical_sha256_chirho": "652b1c907a4479fc9e8e094f6e9e11e221f8a61be1da50698b04aa7d65d181f1",
+					"spoken_sha256_chirho": "652b1c907a4479fc9e8e094f6e9e11e221f8a61be1da50698b04aa7d65d181f1"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.21",
+					"start_chirho": 121.19,
+					"end_chirho": 127.52,
+					"canonical_sha256_chirho": "cb9bbc8d7dd01938884f252b04694f703ceb383c9cca05b748f71f8ece5c5a71",
+					"spoken_sha256_chirho": "cb9bbc8d7dd01938884f252b04694f703ceb383c9cca05b748f71f8ece5c5a71"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.22",
+					"start_chirho": 127.52,
+					"end_chirho": 133.56,
+					"canonical_sha256_chirho": "81d28b76bce00a8235cbdce9148039b472495a9ebb11dd29422771487514c67c",
+					"spoken_sha256_chirho": "81d28b76bce00a8235cbdce9148039b472495a9ebb11dd29422771487514c67c"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.23",
+					"start_chirho": 133.56,
+					"end_chirho": 140.32,
+					"canonical_sha256_chirho": "50b1fb843361355373384ec84db2802e608eef700732778c4df19d43f610e624",
+					"spoken_sha256_chirho": "50b1fb843361355373384ec84db2802e608eef700732778c4df19d43f610e624"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.24",
+					"start_chirho": 140.32,
+					"end_chirho": 145.87,
+					"canonical_sha256_chirho": "93f000406e011dce42ae7c59ff17381a1c625ebf6afecd4f2c4ee22ef445c55d",
+					"spoken_sha256_chirho": "93f000406e011dce42ae7c59ff17381a1c625ebf6afecd4f2c4ee22ef445c55d"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.25",
+					"start_chirho": 145.87,
+					"end_chirho": 152.15,
+					"canonical_sha256_chirho": "f0265f9c7b03d8826615ed297ddac75e723f6f1a3f853012b86bfbdb0aa8466e",
+					"spoken_sha256_chirho": "f0265f9c7b03d8826615ed297ddac75e723f6f1a3f853012b86bfbdb0aa8466e"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.26",
+					"start_chirho": 152.15,
+					"end_chirho": 158.11,
+					"canonical_sha256_chirho": "e32917fa910ab1e0d4422630330ce965f722f63d163cd2d7425af950aabc33c1",
+					"spoken_sha256_chirho": "e32917fa910ab1e0d4422630330ce965f722f63d163cd2d7425af950aabc33c1"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.27",
+					"start_chirho": 158.11,
+					"end_chirho": 164.28,
+					"canonical_sha256_chirho": "9be321180a0812dffe52ed4c40d95cfd77306c0c279520dfb6b3da08262ec878",
+					"spoken_sha256_chirho": "9be321180a0812dffe52ed4c40d95cfd77306c0c279520dfb6b3da08262ec878"
+				},
+				{
+					"lesson_id_chirho": "Prov.12.28",
+					"start_chirho": 164.28,
+					"end_chirho": 170.712,
+					"canonical_sha256_chirho": "e2c682db5afb3bd1f9590e6aaf7b9f10b3850d01cea4b26b074a3b04384e9444",
+					"spoken_sha256_chirho": "e2c682db5afb3bd1f9590e6aaf7b9f10b3850d01cea4b26b074a3b04384e9444"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.13.1",
+			"chapter_chirho": 13,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-13-chirho.json",
+			"content_sha256_chirho": "3818f826b1629512fa1d87b7187cd9fdd95288675b72a70b36aa8ac9fc933756",
+			"canonical_sha256_chirho": "6bf6c8a3ddc1d81034f0e154d079db12b05ce9ce47ed1844ed60d00a6f266b66",
+			"spoken_sha256_chirho": "6bf6c8a3ddc1d81034f0e154d079db12b05ce9ce47ed1844ed60d00a6f266b66",
+			"chapter_sha256_chirho": "d043c087286ae21ee19502b73f5f3be8c200a07d5a8d5a015226a93afc588d29",
+			"chapter_duration_chirho": 152.892,
+			"source_verses_chirho": 25,
+			"timed_records_chirho": 24,
+			"start_chirho": 0,
+			"end_chirho": 5.86,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.13.2",
+					"start_chirho": 5.86,
+					"end_chirho": 12.03,
+					"canonical_sha256_chirho": "5cf64a9c0a5169bd6968c9ac54386848090c97f4b22d0745c23052aa27bc4b06",
+					"spoken_sha256_chirho": "5cf64a9c0a5169bd6968c9ac54386848090c97f4b22d0745c23052aa27bc4b06"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.3",
+					"start_chirho": 12.03,
+					"end_chirho": 18.01,
+					"canonical_sha256_chirho": "0016625f21e0d6963b50185a1727f4efd98ebab7a2a5561cbf440392f25f7819",
+					"spoken_sha256_chirho": "0016625f21e0d6963b50185a1727f4efd98ebab7a2a5561cbf440392f25f7819"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.4",
+					"start_chirho": 18.01,
+					"end_chirho": 24.95,
+					"canonical_sha256_chirho": "0f603248148020b6f97cbea216eab3676f20d9adc96476faaa699f011a8a9474",
+					"spoken_sha256_chirho": "0f603248148020b6f97cbea216eab3676f20d9adc96476faaa699f011a8a9474"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.5",
+					"start_chirho": 24.95,
+					"end_chirho": 31.14,
+					"canonical_sha256_chirho": "9d758dc0d3cf84896e105e0422e389f3d65db93db618477e4dd8a8b365a313a1",
+					"spoken_sha256_chirho": "9d758dc0d3cf84896e105e0422e389f3d65db93db618477e4dd8a8b365a313a1"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.6",
+					"start_chirho": 31.14,
+					"end_chirho": 37.25,
+					"canonical_sha256_chirho": "67512acf2ddd517f227da295da02d46c5fb63e62bc12819439f3b9b109a2d1da",
+					"spoken_sha256_chirho": "67512acf2ddd517f227da295da02d46c5fb63e62bc12819439f3b9b109a2d1da"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.7",
+					"start_chirho": 37.25,
+					"end_chirho": 43.27,
+					"canonical_sha256_chirho": "0356948521101178ea4d0ed54829627e266158f7c3555e3c229216af1d03aaef",
+					"spoken_sha256_chirho": "0356948521101178ea4d0ed54829627e266158f7c3555e3c229216af1d03aaef"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.8",
+					"start_chirho": 43.27,
+					"end_chirho": 49.25,
+					"canonical_sha256_chirho": "c80a9945a078bbbd6f078de4c32deca447ff4f362ed1ba2ecec2fcc576dad645",
+					"spoken_sha256_chirho": "c80a9945a078bbbd6f078de4c32deca447ff4f362ed1ba2ecec2fcc576dad645"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.9",
+					"start_chirho": 49.25,
+					"end_chirho": 54.81,
+					"canonical_sha256_chirho": "1780c9678794f079776ee29b213c3a7b8f017fee3988e17b4564c02bbe8200c1",
+					"spoken_sha256_chirho": "1780c9678794f079776ee29b213c3a7b8f017fee3988e17b4564c02bbe8200c1"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.10",
+					"start_chirho": 54.81,
+					"end_chirho": 60.56,
+					"canonical_sha256_chirho": "eaaf1615773cd1042dbf0b92e2ecb9809873e6fcff293e9f6bdc07fdcdd7e84a",
+					"spoken_sha256_chirho": "eaaf1615773cd1042dbf0b92e2ecb9809873e6fcff293e9f6bdc07fdcdd7e84a"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.11",
+					"start_chirho": 60.56,
+					"end_chirho": 65.85,
+					"canonical_sha256_chirho": "8d30e97ad3a6684d2b04b9fcad633b99198af9936c54c43670eceaac9134fbdf",
+					"spoken_sha256_chirho": "8d30e97ad3a6684d2b04b9fcad633b99198af9936c54c43670eceaac9134fbdf"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.12",
+					"start_chirho": 65.85,
+					"end_chirho": 72.49,
+					"canonical_sha256_chirho": "b056acdcc23b2f40c943eb2eebfefb4d391a5a491a63148dd4de4b429f0a0c3b",
+					"spoken_sha256_chirho": "b056acdcc23b2f40c943eb2eebfefb4d391a5a491a63148dd4de4b429f0a0c3b"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.13",
+					"start_chirho": 72.49,
+					"end_chirho": 78.62,
+					"canonical_sha256_chirho": "b3def24961fe79025888bfff669e8cbdb28cc1956690cce8533cc7be160704e4",
+					"spoken_sha256_chirho": "b3def24961fe79025888bfff669e8cbdb28cc1956690cce8533cc7be160704e4"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.14",
+					"start_chirho": 78.62,
+					"end_chirho": 84.67,
+					"canonical_sha256_chirho": "40bec77785a588fe67d66153363e751dbf7d8aeb48f97a9185c20c8d312cdc6b",
+					"spoken_sha256_chirho": "40bec77785a588fe67d66153363e751dbf7d8aeb48f97a9185c20c8d312cdc6b"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.15",
+					"start_chirho": 84.67,
+					"end_chirho": 90.2,
+					"canonical_sha256_chirho": "e3dfd5d344b6d4137ec02910ef38e1c35efffd44561a010e32c374b4a44eedfc",
+					"spoken_sha256_chirho": "e3dfd5d344b6d4137ec02910ef38e1c35efffd44561a010e32c374b4a44eedfc"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.16",
+					"start_chirho": 90.2,
+					"end_chirho": 96.25,
+					"canonical_sha256_chirho": "cb85b2f38acd4040bc2befe9be8c4e42712c785a9b0266277e4479fb72be6181",
+					"spoken_sha256_chirho": "cb85b2f38acd4040bc2befe9be8c4e42712c785a9b0266277e4479fb72be6181"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.17",
+					"start_chirho": 96.25,
+					"end_chirho": 102.1,
+					"canonical_sha256_chirho": "d72bc3fa20adeab69ce6f23b6e4d96249e93f77b3bb14dbeecbbaf8683421695",
+					"spoken_sha256_chirho": "d72bc3fa20adeab69ce6f23b6e4d96249e93f77b3bb14dbeecbbaf8683421695"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.18",
+					"start_chirho": 102.1,
+					"end_chirho": 108.7,
+					"canonical_sha256_chirho": "e0f87321eb4709d720836c574c4462795bede9efd39f94102a209cdaaacb3504",
+					"spoken_sha256_chirho": "e0f87321eb4709d720836c574c4462795bede9efd39f94102a209cdaaacb3504"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.19",
+					"start_chirho": 108.7,
+					"end_chirho": 116.02,
+					"canonical_sha256_chirho": "dfbc1fc6f563dcc1a21ab02f259436e3bf037f99e65e12f1ae7f871363fb3bea",
+					"spoken_sha256_chirho": "dfbc1fc6f563dcc1a21ab02f259436e3bf037f99e65e12f1ae7f871363fb3bea"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.20",
+					"start_chirho": 116.02,
+					"end_chirho": 122.08,
+					"canonical_sha256_chirho": "86a15e8602bee706b3bab7e17f60ce5b385e8644349b75a5ddb77c3ccf761b71",
+					"spoken_sha256_chirho": "02d89a4a77e25c14c827c7b9efc3f223571b26f923f6b339a738f2d592c9d531"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.21",
+					"start_chirho": 122.08,
+					"end_chirho": 128.12,
+					"canonical_sha256_chirho": "27aadc12ac58c03901ada3fd78ecd043359bf9cecc8e9cab22bebfff58ef6e77",
+					"spoken_sha256_chirho": "27aadc12ac58c03901ada3fd78ecd043359bf9cecc8e9cab22bebfff58ef6e77"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.22",
+					"start_chirho": 128.12,
+					"end_chirho": 134.26,
+					"canonical_sha256_chirho": "0442a249cf9f51ac1adecb270fdcd569c1cb364adec224e7fa1eae1ea50ac4c6",
+					"spoken_sha256_chirho": "0442a249cf9f51ac1adecb270fdcd569c1cb364adec224e7fa1eae1ea50ac4c6"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.23",
+					"start_chirho": 134.26,
+					"end_chirho": 140.4,
+					"canonical_sha256_chirho": "badaabfa50f8cb02cadad227e155eb251cf77f4178fe3fb8f88735e768e780e7",
+					"spoken_sha256_chirho": "badaabfa50f8cb02cadad227e155eb251cf77f4178fe3fb8f88735e768e780e7"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.24",
+					"start_chirho": 140.4,
+					"end_chirho": 146.59,
+					"canonical_sha256_chirho": "6c847b81661a9eb4cfa23da3e3f39d22b3a824167f81d499a0d8fd1bd14ae7ba",
+					"spoken_sha256_chirho": "6c847b81661a9eb4cfa23da3e3f39d22b3a824167f81d499a0d8fd1bd14ae7ba"
+				},
+				{
+					"lesson_id_chirho": "Prov.13.25",
+					"start_chirho": 146.59,
+					"end_chirho": 152.892,
+					"canonical_sha256_chirho": "21cb0dc0c0eb653489f9f4487d029be79d4aab3c2e80a71f4126258e5a700ff1",
+					"spoken_sha256_chirho": "21cb0dc0c0eb653489f9f4487d029be79d4aab3c2e80a71f4126258e5a700ff1"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.15.1",
+			"chapter_chirho": 15,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-15-chirho.json",
+			"content_sha256_chirho": "34a09298c2fc0b95c15c8a9bcf518f06759c180284954f84cda1bfce1c0caaaa",
+			"canonical_sha256_chirho": "7108c59b1c5d7fdda2ea9b2d84dfa52ba7181e91fc5947cca17d2c7dc5cfa40e",
+			"spoken_sha256_chirho": "7108c59b1c5d7fdda2ea9b2d84dfa52ba7181e91fc5947cca17d2c7dc5cfa40e",
+			"chapter_sha256_chirho": "d9c7b619417389666eaa9380f9031ba1d3c2250924e157a5dc1e45be40599809",
+			"chapter_duration_chirho": 210.096,
+			"source_verses_chirho": 33,
+			"timed_records_chirho": 32,
+			"start_chirho": 0,
+			"end_chirho": 6.35,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.15.2",
+					"start_chirho": 6.35,
+					"end_chirho": 13.03,
+					"canonical_sha256_chirho": "aebf541726bba323916ba6fcbf764042f7bb042e9cd8383942bf99698a2bd8f4",
+					"spoken_sha256_chirho": "aebf541726bba323916ba6fcbf764042f7bb042e9cd8383942bf99698a2bd8f4"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.3",
+					"start_chirho": 13.03,
+					"end_chirho": 18.98,
+					"canonical_sha256_chirho": "cdbef988f9015c482639a15b81b8a1d7334ced44110cc58ce4a518c27cd28bb1",
+					"spoken_sha256_chirho": "cdbef988f9015c482639a15b81b8a1d7334ced44110cc58ce4a518c27cd28bb1"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.4",
+					"start_chirho": 18.98,
+					"end_chirho": 25.35,
+					"canonical_sha256_chirho": "73a0fcbdc76765227d0a954be8db1e50bff449f3226d4de2bb04336387f2668a",
+					"spoken_sha256_chirho": "73a0fcbdc76765227d0a954be8db1e50bff449f3226d4de2bb04336387f2668a"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.5",
+					"start_chirho": 25.35,
+					"end_chirho": 31.7,
+					"canonical_sha256_chirho": "9395622ac5a927805dd23e683c982a42e706c3fcf491ea237472da81ef47a5a1",
+					"spoken_sha256_chirho": "9395622ac5a927805dd23e683c982a42e706c3fcf491ea237472da81ef47a5a1"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.6",
+					"start_chirho": 31.7,
+					"end_chirho": 38.01,
+					"canonical_sha256_chirho": "492eb723184848266b87ff04a84a5a7b830632038f13907ca3eb7b5e03081944",
+					"spoken_sha256_chirho": "492eb723184848266b87ff04a84a5a7b830632038f13907ca3eb7b5e03081944"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.7",
+					"start_chirho": 38.01,
+					"end_chirho": 44.53,
+					"canonical_sha256_chirho": "18c6d7bf7fc1c03448507d37d4dc4379ddf60926bc46b9f516c8ec5099beffaa",
+					"spoken_sha256_chirho": "18c6d7bf7fc1c03448507d37d4dc4379ddf60926bc46b9f516c8ec5099beffaa"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.8",
+					"start_chirho": 44.53,
+					"end_chirho": 51.05,
+					"canonical_sha256_chirho": "d94135f8b941c70949d1160ed96efcce1e5c8f6ec398af1071b5287c47036251",
+					"spoken_sha256_chirho": "d94135f8b941c70949d1160ed96efcce1e5c8f6ec398af1071b5287c47036251"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.9",
+					"start_chirho": 51.05,
+					"end_chirho": 57.26,
+					"canonical_sha256_chirho": "9923130a72845d180f47aab3108f09723a5a89dc76017cec884401c822241215",
+					"spoken_sha256_chirho": "9923130a72845d180f47aab3108f09723a5a89dc76017cec884401c822241215"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.10",
+					"start_chirho": 57.26,
+					"end_chirho": 63.6,
+					"canonical_sha256_chirho": "e0a2abd33a87d93f6550f83b3f1dfc8042dd743f61dce7d27606563c4ac1b9c3",
+					"spoken_sha256_chirho": "e0a2abd33a87d93f6550f83b3f1dfc8042dd743f61dce7d27606563c4ac1b9c3"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.11",
+					"start_chirho": 63.6,
+					"end_chirho": 70.21,
+					"canonical_sha256_chirho": "377f1ed52a4062f7b21cf7b685846604d768750a6019f583dbf2da1959628fda",
+					"spoken_sha256_chirho": "377f1ed52a4062f7b21cf7b685846604d768750a6019f583dbf2da1959628fda"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.12",
+					"start_chirho": 70.21,
+					"end_chirho": 76.19,
+					"canonical_sha256_chirho": "86c4a00f744f37733583de6d8b1360574f8b90f96abce16766791d8d594601a5",
+					"spoken_sha256_chirho": "86c4a00f744f37733583de6d8b1360574f8b90f96abce16766791d8d594601a5"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.13",
+					"start_chirho": 76.19,
+					"end_chirho": 82.87,
+					"canonical_sha256_chirho": "a6faee66acf48ce3ed2d98df7cf24b21a9a5523b30ebf7b35c86d08051f17650",
+					"spoken_sha256_chirho": "a6faee66acf48ce3ed2d98df7cf24b21a9a5523b30ebf7b35c86d08051f17650"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.14",
+					"start_chirho": 82.87,
+					"end_chirho": 89.48,
+					"canonical_sha256_chirho": "d25af93381adb90d0adb12484d4ee449d0e638d26b8204e9679889520578d06d",
+					"spoken_sha256_chirho": "b9d2b5187a045dbf7d08c1630df8dca4f7b46a34191245f50f1ff0f8dbd9bf3a"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.15",
+					"start_chirho": 89.48,
+					"end_chirho": 94.92,
+					"canonical_sha256_chirho": "57e84eede7681fe2e74b652df09b2c38da7e22175a53b27fa0bc9d38226b7a8e",
+					"spoken_sha256_chirho": "57e84eede7681fe2e74b652df09b2c38da7e22175a53b27fa0bc9d38226b7a8e"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.16",
+					"start_chirho": 94.92,
+					"end_chirho": 101.18,
+					"canonical_sha256_chirho": "e53fa9aa501863a7738ec19cb9e5d217af82b0b99d0672b9bc0f86437246e183",
+					"spoken_sha256_chirho": "e53fa9aa501863a7738ec19cb9e5d217af82b0b99d0672b9bc0f86437246e183"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.17",
+					"start_chirho": 101.18,
+					"end_chirho": 108.18,
+					"canonical_sha256_chirho": "949d0e8392b6f479c466724d2d182f39b27adfe0ab32d162d21de28d8a9b0d10",
+					"spoken_sha256_chirho": "949d0e8392b6f479c466724d2d182f39b27adfe0ab32d162d21de28d8a9b0d10"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.18",
+					"start_chirho": 108.18,
+					"end_chirho": 114.5,
+					"canonical_sha256_chirho": "957bcc9ce9c552758b28032d96f471dd1f36fab6621e10b34a9b09f60fc4bd01",
+					"spoken_sha256_chirho": "957bcc9ce9c552758b28032d96f471dd1f36fab6621e10b34a9b09f60fc4bd01"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.19",
+					"start_chirho": 114.5,
+					"end_chirho": 120.99,
+					"canonical_sha256_chirho": "31da7f10a25cf2c009e46939095c8d28aa766b732799a715b1bde4f64df5999c",
+					"spoken_sha256_chirho": "31da7f10a25cf2c009e46939095c8d28aa766b732799a715b1bde4f64df5999c"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.20",
+					"start_chirho": 120.99,
+					"end_chirho": 127.14,
+					"canonical_sha256_chirho": "b4b994aa37aece172a10fa2cee3fa2d86f0a06d2e61def318f4551a80e3cbc3b",
+					"spoken_sha256_chirho": "b4b994aa37aece172a10fa2cee3fa2d86f0a06d2e61def318f4551a80e3cbc3b"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.21",
+					"start_chirho": 127.14,
+					"end_chirho": 134.19,
+					"canonical_sha256_chirho": "17eec053c01c448ddcf3834fed49861f94de67db9bdffdd4d90fecbb055265f1",
+					"spoken_sha256_chirho": "17eec053c01c448ddcf3834fed49861f94de67db9bdffdd4d90fecbb055265f1"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.22",
+					"start_chirho": 134.19,
+					"end_chirho": 140.27,
+					"canonical_sha256_chirho": "b679344727352261f4d917e069f04099f88cab9fb77df95b5ca7f22e8542eeca",
+					"spoken_sha256_chirho": "b679344727352261f4d917e069f04099f88cab9fb77df95b5ca7f22e8542eeca"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.23",
+					"start_chirho": 140.27,
+					"end_chirho": 146.58,
+					"canonical_sha256_chirho": "02abdc8bf97e522141dc18cd810f021856d6a6bbb60832702f4016ce83f2289d",
+					"spoken_sha256_chirho": "02abdc8bf97e522141dc18cd810f021856d6a6bbb60832702f4016ce83f2289d"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.24",
+					"start_chirho": 146.58,
+					"end_chirho": 153.78,
+					"canonical_sha256_chirho": "dc988e3efc2683e2c9ec5823d42763840088698ccae2e772fd9b90d462f0d6d5",
+					"spoken_sha256_chirho": "dc988e3efc2683e2c9ec5823d42763840088698ccae2e772fd9b90d462f0d6d5"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.25",
+					"start_chirho": 153.78,
+					"end_chirho": 159.74,
+					"canonical_sha256_chirho": "9e0a1ed1648424ef434c55d140b723f5cedc85e2ac893849148ef33ce7f8de7b",
+					"spoken_sha256_chirho": "9e0a1ed1648424ef434c55d140b723f5cedc85e2ac893849148ef33ce7f8de7b"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.26",
+					"start_chirho": 159.74,
+					"end_chirho": 165.64,
+					"canonical_sha256_chirho": "f4ddceb67fccb10f0c3973b9f45d55effbac1efe4105295de0a2f625f9843460",
+					"spoken_sha256_chirho": "f4ddceb67fccb10f0c3973b9f45d55effbac1efe4105295de0a2f625f9843460"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.27",
+					"start_chirho": 165.64,
+					"end_chirho": 171.86,
+					"canonical_sha256_chirho": "15a5f23a1f97acb4575a8976488d161693981bef062aa0fab88918a1baba1459",
+					"spoken_sha256_chirho": "15a5f23a1f97acb4575a8976488d161693981bef062aa0fab88918a1baba1459"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.28",
+					"start_chirho": 171.86,
+					"end_chirho": 178.59,
+					"canonical_sha256_chirho": "b5fb0ac54f8bfd77e6381b980fe6cfb1c15d0343969169bec2a56d033cebe7dd",
+					"spoken_sha256_chirho": "b5fb0ac54f8bfd77e6381b980fe6cfb1c15d0343969169bec2a56d033cebe7dd"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.29",
+					"start_chirho": 178.59,
+					"end_chirho": 184.59,
+					"canonical_sha256_chirho": "afa71d8f6ca5a61890da3e2a50473e6c9ec1ded532d026d6bf52a918e77d6012",
+					"spoken_sha256_chirho": "afa71d8f6ca5a61890da3e2a50473e6c9ec1ded532d026d6bf52a918e77d6012"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.30",
+					"start_chirho": 184.59,
+					"end_chirho": 191.08,
+					"canonical_sha256_chirho": "5c806a9a2ab2d1aa576eebebff645bd923d37da71fa2aee1133e476ef1167f0c",
+					"spoken_sha256_chirho": "5c806a9a2ab2d1aa576eebebff645bd923d37da71fa2aee1133e476ef1167f0c"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.31",
+					"start_chirho": 191.08,
+					"end_chirho": 197.22,
+					"canonical_sha256_chirho": "4dfe1eaf84cd7ac746217c4c034fbb44e9f729f99e1445389cef1224e5c78dd4",
+					"spoken_sha256_chirho": "4dfe1eaf84cd7ac746217c4c034fbb44e9f729f99e1445389cef1224e5c78dd4"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.32",
+					"start_chirho": 197.22,
+					"end_chirho": 203.83,
+					"canonical_sha256_chirho": "dd653ed3da57a89ac88ec566ceae10f656e25244d18191d300d4c3aadbef91a5",
+					"spoken_sha256_chirho": "dd653ed3da57a89ac88ec566ceae10f656e25244d18191d300d4c3aadbef91a5"
+				},
+				{
+					"lesson_id_chirho": "Prov.15.33",
+					"start_chirho": 203.83,
+					"end_chirho": 210.096,
+					"canonical_sha256_chirho": "352436193c6b44bc74092ea82dc6ec8d020cff34d20a5e4b1114f1eb1923b76f",
+					"spoken_sha256_chirho": "352436193c6b44bc74092ea82dc6ec8d020cff34d20a5e4b1114f1eb1923b76f"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.16.1",
+			"chapter_chirho": 16,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-16-chirho.json",
+			"content_sha256_chirho": "4c8172d786de358bf44f324a47265dc7aa76997d615db1ff6a729a9ea14873e7",
+			"canonical_sha256_chirho": "84696db14c60e2469b16ee97d46e7c699ce6ddadea6d53c10e5f52cd16506213",
+			"spoken_sha256_chirho": "84696db14c60e2469b16ee97d46e7c699ce6ddadea6d53c10e5f52cd16506213",
+			"chapter_sha256_chirho": "3e5c51bed72d97c8f581431447e4ae0623512f281a82606f6958a7ba9cc99522",
+			"chapter_duration_chirho": 206.784,
+			"source_verses_chirho": 33,
+			"timed_records_chirho": 32,
+			"start_chirho": 0,
+			"end_chirho": 5.71,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.16.2",
+					"start_chirho": 5.71,
+					"end_chirho": 11.95,
+					"canonical_sha256_chirho": "8e17dc500d83aefc8b2e25e5bf76669abad1edc4d89d76d3ff1b7c67ad3c9ade",
+					"spoken_sha256_chirho": "8e17dc500d83aefc8b2e25e5bf76669abad1edc4d89d76d3ff1b7c67ad3c9ade"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.3",
+					"start_chirho": 11.95,
+					"end_chirho": 17.81,
+					"canonical_sha256_chirho": "5bbc9dfb657ef5ba0e65697b6efdbb2cd1d86fb4c872e71a7ed516a76389ed59",
+					"spoken_sha256_chirho": "5bbc9dfb657ef5ba0e65697b6efdbb2cd1d86fb4c872e71a7ed516a76389ed59"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.4",
+					"start_chirho": 17.81,
+					"end_chirho": 24.1,
+					"canonical_sha256_chirho": "7ab8adfbd6d56f4e91e200d110603a8b30595cf0a2bc5dade3a9aa9420c972c4",
+					"spoken_sha256_chirho": "7ab8adfbd6d56f4e91e200d110603a8b30595cf0a2bc5dade3a9aa9420c972c4"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.5",
+					"start_chirho": 24.1,
+					"end_chirho": 30.24,
+					"canonical_sha256_chirho": "98dd9370dce68d8924a3b3bf00a8899de1d8337123f38cb59627a80b0f2f4db2",
+					"spoken_sha256_chirho": "98dd9370dce68d8924a3b3bf00a8899de1d8337123f38cb59627a80b0f2f4db2"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.6",
+					"start_chirho": 30.24,
+					"end_chirho": 37.36,
+					"canonical_sha256_chirho": "d0687367b8ce47d8959965aa5ed8f7ab4eec314e1459cb537e79c8dc501d0186",
+					"spoken_sha256_chirho": "d0687367b8ce47d8959965aa5ed8f7ab4eec314e1459cb537e79c8dc501d0186"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.7",
+					"start_chirho": 37.36,
+					"end_chirho": 43.29,
+					"canonical_sha256_chirho": "4e91abc5f5f62f344c37e44304f478959c9372122786346b8ed63d87675b9642",
+					"spoken_sha256_chirho": "4e91abc5f5f62f344c37e44304f478959c9372122786346b8ed63d87675b9642"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.8",
+					"start_chirho": 43.29,
+					"end_chirho": 49.15,
+					"canonical_sha256_chirho": "952e1f6311617a55071eea622c87d5675f768a092d4211637bd9b5208c88c8a9",
+					"spoken_sha256_chirho": "952e1f6311617a55071eea622c87d5675f768a092d4211637bd9b5208c88c8a9"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.9",
+					"start_chirho": 49.15,
+					"end_chirho": 55.0,
+					"canonical_sha256_chirho": "e468635bd154145ff6dc62678455614544763cfa31d4a6f42c2923f8ccf65dfe",
+					"spoken_sha256_chirho": "e468635bd154145ff6dc62678455614544763cfa31d4a6f42c2923f8ccf65dfe"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.10",
+					"start_chirho": 55.0,
+					"end_chirho": 60.87,
+					"canonical_sha256_chirho": "364f85fffec3b9f47ce4234d62a0386dc6b025f3bac13bfb094853004c17f720",
+					"spoken_sha256_chirho": "364f85fffec3b9f47ce4234d62a0386dc6b025f3bac13bfb094853004c17f720"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.11",
+					"start_chirho": 60.87,
+					"end_chirho": 67.58,
+					"canonical_sha256_chirho": "9c4e70c4cd65c8187d1e4316a1d37ec5ff62d914edc1259e7dc4df822c76e743",
+					"spoken_sha256_chirho": "9c4e70c4cd65c8187d1e4316a1d37ec5ff62d914edc1259e7dc4df822c76e743"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.12",
+					"start_chirho": 67.58,
+					"end_chirho": 74.01,
+					"canonical_sha256_chirho": "66c934851610830a544503850a9dd2edb6be75defb1a5f92113ee4342a2432d5",
+					"spoken_sha256_chirho": "66c934851610830a544503850a9dd2edb6be75defb1a5f92113ee4342a2432d5"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.13",
+					"start_chirho": 74.01,
+					"end_chirho": 80.64,
+					"canonical_sha256_chirho": "557f8d5dbb32a1a7e63c62aef21084994d4c9478fef4802785a559a383338a86",
+					"spoken_sha256_chirho": "557f8d5dbb32a1a7e63c62aef21084994d4c9478fef4802785a559a383338a86"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.14",
+					"start_chirho": 80.64,
+					"end_chirho": 87.08,
+					"canonical_sha256_chirho": "9583b8578e8c7bcbf14aa059512dd09793e1174216f3333b63c2fe06644adf57",
+					"spoken_sha256_chirho": "9583b8578e8c7bcbf14aa059512dd09793e1174216f3333b63c2fe06644adf57"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.15",
+					"start_chirho": 87.08,
+					"end_chirho": 92.85,
+					"canonical_sha256_chirho": "552b98beb56fef9cc4b457690ebcc30b0adf13f24961b13c17084455ddcbd7ac",
+					"spoken_sha256_chirho": "552b98beb56fef9cc4b457690ebcc30b0adf13f24961b13c17084455ddcbd7ac"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.16",
+					"start_chirho": 92.85,
+					"end_chirho": 100.2,
+					"canonical_sha256_chirho": "290d492cdab978476577cda4ff613f4737f03f41a82cb802864c2c32c58bd9e7",
+					"spoken_sha256_chirho": "290d492cdab978476577cda4ff613f4737f03f41a82cb802864c2c32c58bd9e7"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.17",
+					"start_chirho": 100.2,
+					"end_chirho": 106.37,
+					"canonical_sha256_chirho": "10775a805cbacdb3cbf41a8c5bfb2501b9174127fd624128af4c7552b2b22f1d",
+					"spoken_sha256_chirho": "10775a805cbacdb3cbf41a8c5bfb2501b9174127fd624128af4c7552b2b22f1d"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.18",
+					"start_chirho": 106.37,
+					"end_chirho": 112.75,
+					"canonical_sha256_chirho": "b576ace4478bf9b53aa315a840465f5d647f5bb911ffdddac1960e29a713e909",
+					"spoken_sha256_chirho": "b576ace4478bf9b53aa315a840465f5d647f5bb911ffdddac1960e29a713e909"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.19",
+					"start_chirho": 112.75,
+					"end_chirho": 118.51,
+					"canonical_sha256_chirho": "1154ae9f7c78dceb04705634e79ebbf573930aea9261ccb5fdd3d16b68f6917c",
+					"spoken_sha256_chirho": "df5c9a8d9d1c4e39da0dbee59e152c01baec5cd3fbc46468c1843866fce96bc1"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.20",
+					"start_chirho": 118.51,
+					"end_chirho": 124.9,
+					"canonical_sha256_chirho": "860fec1a4b18647cbbbd567b43921632d234cf21fd7f472fa4b51456d6b3e1f3",
+					"spoken_sha256_chirho": "860fec1a4b18647cbbbd567b43921632d234cf21fd7f472fa4b51456d6b3e1f3"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.21",
+					"start_chirho": 124.9,
+					"end_chirho": 131.77,
+					"canonical_sha256_chirho": "4da6664da5a2b7fad834c0bd3ec26a89f8ec3dd69bf2f80805ebc328ac0ef18e",
+					"spoken_sha256_chirho": "4da6664da5a2b7fad834c0bd3ec26a89f8ec3dd69bf2f80805ebc328ac0ef18e"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.22",
+					"start_chirho": 131.77,
+					"end_chirho": 138.1,
+					"canonical_sha256_chirho": "2a7421994901628a7c0a7f136446f77d9a42e8a9177119d29fbbe4bf55381c6c",
+					"spoken_sha256_chirho": "2a7421994901628a7c0a7f136446f77d9a42e8a9177119d29fbbe4bf55381c6c"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.23",
+					"start_chirho": 138.1,
+					"end_chirho": 144.33,
+					"canonical_sha256_chirho": "e7b940091b3fabdf55721110c48f198ca78e94de6237e26e8cb9bcd4f7c9fe46",
+					"spoken_sha256_chirho": "e7b940091b3fabdf55721110c48f198ca78e94de6237e26e8cb9bcd4f7c9fe46"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.24",
+					"start_chirho": 144.33,
+					"end_chirho": 150.84,
+					"canonical_sha256_chirho": "a4527c20466226a969204c359f4fea20c52a914bfb7f2c77da0c8a9cb7d2f1f2",
+					"spoken_sha256_chirho": "a4527c20466226a969204c359f4fea20c52a914bfb7f2c77da0c8a9cb7d2f1f2"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.25",
+					"start_chirho": 150.84,
+					"end_chirho": 156.82,
+					"canonical_sha256_chirho": "b514ac93eab3908ff9ae4ed8def13153263b642a7c06436aa833c486e0ecda33",
+					"spoken_sha256_chirho": "b514ac93eab3908ff9ae4ed8def13153263b642a7c06436aa833c486e0ecda33"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.26",
+					"start_chirho": 156.82,
+					"end_chirho": 162.45,
+					"canonical_sha256_chirho": "395def098738f9b92976f7e44566f9f331975c42335213f8a5a3d201cbd51d14",
+					"spoken_sha256_chirho": "395def098738f9b92976f7e44566f9f331975c42335213f8a5a3d201cbd51d14"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.27",
+					"start_chirho": 162.45,
+					"end_chirho": 169.24,
+					"canonical_sha256_chirho": "e29ed7bedcf97262244e71905ff995b99d732028da062808b761a4c476d88a54",
+					"spoken_sha256_chirho": "4344b85fadcbf2daade42bef1baf9d192bbd2ba853dec4f58c7aa417eade2eab"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.28",
+					"start_chirho": 169.24,
+					"end_chirho": 175.52,
+					"canonical_sha256_chirho": "d26a41ad4ce945dc41cf6fe184263386e06d5adb991c44b34f753d2f1ea397e7",
+					"spoken_sha256_chirho": "d26a41ad4ce945dc41cf6fe184263386e06d5adb991c44b34f753d2f1ea397e7"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.29",
+					"start_chirho": 175.52,
+					"end_chirho": 181.59,
+					"canonical_sha256_chirho": "d430b73a4e7992720d767930488d426e45c3a27eee7405d9ede703f914743f19",
+					"spoken_sha256_chirho": "d430b73a4e7992720d767930488d426e45c3a27eee7405d9ede703f914743f19"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.30",
+					"start_chirho": 181.59,
+					"end_chirho": 188.54,
+					"canonical_sha256_chirho": "3762f8e6dcdc810e11478ae1ab43cb54f7cd8661c97fafb2cbeaa12173882d6e",
+					"spoken_sha256_chirho": "3762f8e6dcdc810e11478ae1ab43cb54f7cd8661c97fafb2cbeaa12173882d6e"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.31",
+					"start_chirho": 188.54,
+					"end_chirho": 194.3,
+					"canonical_sha256_chirho": "6c3cf621ccabd8fae53a64f9d027da56c15c1c35a860c3593b54fb1abeba6d76",
+					"spoken_sha256_chirho": "6c3cf621ccabd8fae53a64f9d027da56c15c1c35a860c3593b54fb1abeba6d76"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.32",
+					"start_chirho": 194.3,
+					"end_chirho": 201.09,
+					"canonical_sha256_chirho": "c5b9c8784ce55cfd77920ef7581f4967b6547cad31274cb0fa46e79f01c78218",
+					"spoken_sha256_chirho": "c5b9c8784ce55cfd77920ef7581f4967b6547cad31274cb0fa46e79f01c78218"
+				},
+				{
+					"lesson_id_chirho": "Prov.16.33",
+					"start_chirho": 201.09,
+					"end_chirho": 206.784,
+					"canonical_sha256_chirho": "69866755468b08f8e7e761db6767b47ca8fe50f4787168c1ecb408003d683215",
+					"spoken_sha256_chirho": "69866755468b08f8e7e761db6767b47ca8fe50f4787168c1ecb408003d683215"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.19.1",
+			"chapter_chirho": 19,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-19-chirho.json",
+			"content_sha256_chirho": "d1800543bf0d17c08e993f3e6a026c8698c03c2b02cd6effed9e9c7f573d56e7",
+			"canonical_sha256_chirho": "fea36548654f15b8e4c7851fc85bc4dae434a9c28a1eeb42561d9a4de60889da",
+			"spoken_sha256_chirho": "fea36548654f15b8e4c7851fc85bc4dae434a9c28a1eeb42561d9a4de60889da",
+			"chapter_sha256_chirho": "dfcd0f4f7d8872a2fd95d4e23039b04c7c10748a1a07a3d2e6eb5809f0615a3b",
+			"chapter_duration_chirho": 185.688,
+			"source_verses_chirho": 29,
+			"timed_records_chirho": 28,
+			"start_chirho": 0,
+			"end_chirho": 6.05,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.19.2",
+					"start_chirho": 6.05,
+					"end_chirho": 12.52,
+					"canonical_sha256_chirho": "8badb12058452eb9ba855c1ce5a3599529f798bc983f654271a00282185cfbc5",
+					"spoken_sha256_chirho": "8badb12058452eb9ba855c1ce5a3599529f798bc983f654271a00282185cfbc5"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.3",
+					"start_chirho": 12.52,
+					"end_chirho": 18.76,
+					"canonical_sha256_chirho": "e4263cd2d426cfbf9353593cabde1a4d394626a2778fad1f98365512c7e8f6f9",
+					"spoken_sha256_chirho": "e4263cd2d426cfbf9353593cabde1a4d394626a2778fad1f98365512c7e8f6f9"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.4",
+					"start_chirho": 18.76,
+					"end_chirho": 24.93,
+					"canonical_sha256_chirho": "983122ceeea3e0ca5b8a5af60f248a4265df35f599717416afab3d6cb9977eb7",
+					"spoken_sha256_chirho": "983122ceeea3e0ca5b8a5af60f248a4265df35f599717416afab3d6cb9977eb7"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.5",
+					"start_chirho": 24.93,
+					"end_chirho": 31.49,
+					"canonical_sha256_chirho": "be8617848b9de3420292c5699e05e18a905076b3a2d9895a0a084bc59ef04c27",
+					"spoken_sha256_chirho": "be8617848b9de3420292c5699e05e18a905076b3a2d9895a0a084bc59ef04c27"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.6",
+					"start_chirho": 31.49,
+					"end_chirho": 37.77,
+					"canonical_sha256_chirho": "515f9ec23ca59e18ff371264f7e15e36cd129e3e60c8a873e57083572f48d06d",
+					"spoken_sha256_chirho": "515f9ec23ca59e18ff371264f7e15e36cd129e3e60c8a873e57083572f48d06d"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.7",
+					"start_chirho": 37.77,
+					"end_chirho": 47.36,
+					"canonical_sha256_chirho": "c5da3635b4a100e75b04e0dc8fb69a437ae5bb7d4f4a542f1fd4f7110fa4c72c",
+					"spoken_sha256_chirho": "84dfb5a01ee7ca2b0219c8ff9adbd0fe8da783c4eb23c0d844dae9630cbf5769"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.8",
+					"start_chirho": 47.36,
+					"end_chirho": 53.15,
+					"canonical_sha256_chirho": "6812c293dba21338ded05479589679d292acc3371abe2f13f99255128378c191",
+					"spoken_sha256_chirho": "6812c293dba21338ded05479589679d292acc3371abe2f13f99255128378c191"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.9",
+					"start_chirho": 53.15,
+					"end_chirho": 59.18,
+					"canonical_sha256_chirho": "1cc95df5aa283e468d530a3318c1c1ee31a8d73b38d8f385ce89e999eaa7d45f",
+					"spoken_sha256_chirho": "1cc95df5aa283e468d530a3318c1c1ee31a8d73b38d8f385ce89e999eaa7d45f"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.10",
+					"start_chirho": 59.18,
+					"end_chirho": 65.76,
+					"canonical_sha256_chirho": "0f5e35e22e6559a475eba68f704a1eb770a60405e5d035f877aeedb19d2c1728",
+					"spoken_sha256_chirho": "0f5e35e22e6559a475eba68f704a1eb770a60405e5d035f877aeedb19d2c1728"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.11",
+					"start_chirho": 65.76,
+					"end_chirho": 72.17,
+					"canonical_sha256_chirho": "489ae677d47d88d48418db5e468fc6857225aa1b4902903519bb51deb9bf67e8",
+					"spoken_sha256_chirho": "489ae677d47d88d48418db5e468fc6857225aa1b4902903519bb51deb9bf67e8"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.12",
+					"start_chirho": 72.17,
+					"end_chirho": 78.65,
+					"canonical_sha256_chirho": "d2e271473214c9d36eb1a9ddb2ccf9504929956f5d67c763676c83172cfe0a64",
+					"spoken_sha256_chirho": "d2e271473214c9d36eb1a9ddb2ccf9504929956f5d67c763676c83172cfe0a64"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.13",
+					"start_chirho": 78.65,
+					"end_chirho": 85.46,
+					"canonical_sha256_chirho": "254aef8940733107dd2fedab3358236fad9a6dcaa4e9cc08387e59d741789154",
+					"spoken_sha256_chirho": "254aef8940733107dd2fedab3358236fad9a6dcaa4e9cc08387e59d741789154"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.14",
+					"start_chirho": 85.46,
+					"end_chirho": 91.78,
+					"canonical_sha256_chirho": "d0d1bb9531294a1e7653aabf8f4cbb6cc275d84d71070a37f3c38df83d641309",
+					"spoken_sha256_chirho": "d0d1bb9531294a1e7653aabf8f4cbb6cc275d84d71070a37f3c38df83d641309"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.15",
+					"start_chirho": 91.78,
+					"end_chirho": 97.72,
+					"canonical_sha256_chirho": "a928ea018177643f53ffcb870758fa92c0785458376ca1aba0ef95e0b9801b24",
+					"spoken_sha256_chirho": "a928ea018177643f53ffcb870758fa92c0785458376ca1aba0ef95e0b9801b24"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.16",
+					"start_chirho": 97.72,
+					"end_chirho": 103.53,
+					"canonical_sha256_chirho": "11617378b0cc0056888926e1737cd7d4a8428cfa8635188fb65e4fd49c28d914",
+					"spoken_sha256_chirho": "39c9fa073759f05c731b5601d630cddb79f80f719f2aff7be47fcc4f9ab4cd9b"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.17",
+					"start_chirho": 103.53,
+					"end_chirho": 109.11,
+					"canonical_sha256_chirho": "4ac00117c5e152becdfa91bb8dcf48a530beed0618f45b8fb4389f8057ed5c54",
+					"spoken_sha256_chirho": "4ac00117c5e152becdfa91bb8dcf48a530beed0618f45b8fb4389f8057ed5c54"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.18",
+					"start_chirho": 109.11,
+					"end_chirho": 115.64,
+					"canonical_sha256_chirho": "7faaab474f99b78919969f7b858ece79914c236955e3b8b51f6e14daba7a8481",
+					"spoken_sha256_chirho": "7faaab474f99b78919969f7b858ece79914c236955e3b8b51f6e14daba7a8481"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.19",
+					"start_chirho": 115.64,
+					"end_chirho": 122.03,
+					"canonical_sha256_chirho": "abef87e4e0a1903ba0b1077eb33b4cdd8bb78be16b7ab28573ef3c52e4054642",
+					"spoken_sha256_chirho": "fe61264064b57a8d2616419abd5349b69d335c0e23627ebde600a76348f628b3"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.20",
+					"start_chirho": 122.03,
+					"end_chirho": 128.85,
+					"canonical_sha256_chirho": "374feadc1ff643efffd3bd508b643d6aaeb8497ecdf6ad129bd2453c30598f3a",
+					"spoken_sha256_chirho": "374feadc1ff643efffd3bd508b643d6aaeb8497ecdf6ad129bd2453c30598f3a"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.21",
+					"start_chirho": 128.85,
+					"end_chirho": 135.13,
+					"canonical_sha256_chirho": "fd41dbd2abe6c9ae36205e71bd03a1409d105d3e948992c7740379435005ebde",
+					"spoken_sha256_chirho": "fd41dbd2abe6c9ae36205e71bd03a1409d105d3e948992c7740379435005ebde"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.22",
+					"start_chirho": 135.13,
+					"end_chirho": 140.67,
+					"canonical_sha256_chirho": "0b442b3f083825e728ca31b078b128a6a23c0f9885c3a22efc58d9ec7abf146c",
+					"spoken_sha256_chirho": "0b442b3f083825e728ca31b078b128a6a23c0f9885c3a22efc58d9ec7abf146c"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.23",
+					"start_chirho": 140.67,
+					"end_chirho": 147.33,
+					"canonical_sha256_chirho": "bbe54d33fdcc38e0d2f0e0cc8661922f31942ace49f117d0d1f5b1bf0b1b666a",
+					"spoken_sha256_chirho": "bbe54d33fdcc38e0d2f0e0cc8661922f31942ace49f117d0d1f5b1bf0b1b666a"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.24",
+					"start_chirho": 147.33,
+					"end_chirho": 153.93,
+					"canonical_sha256_chirho": "aab6870649e219e1ef7ac64bcc49956dadb3e5f31af3f5ef9819047a87c20b6b",
+					"spoken_sha256_chirho": "aab6870649e219e1ef7ac64bcc49956dadb3e5f31af3f5ef9819047a87c20b6b"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.25",
+					"start_chirho": 153.93,
+					"end_chirho": 160.74,
+					"canonical_sha256_chirho": "24270ba3e9ef88f21840ff15d6b55ac92035497ab5888bd7ead4c109bc530b20",
+					"spoken_sha256_chirho": "24270ba3e9ef88f21840ff15d6b55ac92035497ab5888bd7ead4c109bc530b20"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.26",
+					"start_chirho": 160.74,
+					"end_chirho": 166.67,
+					"canonical_sha256_chirho": "34b8920f50b53251979c8e01a460aadd3f2edf6475d4ebfd7285d7ee049a49d2",
+					"spoken_sha256_chirho": "34b8920f50b53251979c8e01a460aadd3f2edf6475d4ebfd7285d7ee049a49d2"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.27",
+					"start_chirho": 166.67,
+					"end_chirho": 172.49,
+					"canonical_sha256_chirho": "fc7053b8772f2a19e17767ecea00276244430dd64044e49f40f4601ef852705d",
+					"spoken_sha256_chirho": "fc7053b8772f2a19e17767ecea00276244430dd64044e49f40f4601ef852705d"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.28",
+					"start_chirho": 172.49,
+					"end_chirho": 179.4,
+					"canonical_sha256_chirho": "8a55f6829cb32045e9aacca5e3a18b411b5855e58259a145d5658a107091e0fe",
+					"spoken_sha256_chirho": "8a55f6829cb32045e9aacca5e3a18b411b5855e58259a145d5658a107091e0fe"
+				},
+				{
+					"lesson_id_chirho": "Prov.19.29",
+					"start_chirho": 179.4,
+					"end_chirho": 185.688,
+					"canonical_sha256_chirho": "95ea4b9cef96ae92b55050f0ee2ef423ef46086150ffc80d7b2512a58b2a42e1",
+					"spoken_sha256_chirho": "95ea4b9cef96ae92b55050f0ee2ef423ef46086150ffc80d7b2512a58b2a42e1"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.24.1",
+			"chapter_chirho": 24,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-24-chirho.json",
+			"content_sha256_chirho": "2f3f99548128974d43b89cffba7183b6f20a861bd73ef31fd519ec632f05e24a",
+			"canonical_sha256_chirho": "24c7d5baf9cc0d089ea2f51a52f26cc7e9cb31409fb2f61e11dd479043b41e73",
+			"spoken_sha256_chirho": "31ccb9f53dc990a925bdbe481559df091974cccaa26e3aa4ba80aab46cbe9c29",
+			"chapter_sha256_chirho": "2c34470cbd1135d94c184ed8bbe82c78da29a0aa76438c6a7518e363e854edda",
+			"chapter_duration_chirho": 218.34,
+			"source_verses_chirho": 34,
+			"timed_records_chirho": 33,
+			"start_chirho": 0,
+			"end_chirho": 6.01,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.24.2",
+					"start_chirho": 6.01,
+					"end_chirho": 12.02,
+					"canonical_sha256_chirho": "1cfd4fb099c2d00fedf546f2b6a883e13075e6be137deb3a2f99ef5a94500ddb",
+					"spoken_sha256_chirho": "1cfd4fb099c2d00fedf546f2b6a883e13075e6be137deb3a2f99ef5a94500ddb"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.3",
+					"start_chirho": 12.02,
+					"end_chirho": 17.47,
+					"canonical_sha256_chirho": "3b2799e0f62ab5667a8e9575867d134d98994c5ad0a97bdac637b20f86707a77",
+					"spoken_sha256_chirho": "3b2799e0f62ab5667a8e9575867d134d98994c5ad0a97bdac637b20f86707a77"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.4",
+					"start_chirho": 17.47,
+					"end_chirho": 23.04,
+					"canonical_sha256_chirho": "2a51bdd3d59fd329376e643decf1c48037f7a873c626e613b7e7b1b56b7d4725",
+					"spoken_sha256_chirho": "2a51bdd3d59fd329376e643decf1c48037f7a873c626e613b7e7b1b56b7d4725"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.5",
+					"start_chirho": 23.04,
+					"end_chirho": 28.95,
+					"canonical_sha256_chirho": "affc4b10393fa5b73ba76437f50ac9c428b54d943477a218e155f3977e19920e",
+					"spoken_sha256_chirho": "affc4b10393fa5b73ba76437f50ac9c428b54d943477a218e155f3977e19920e"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.6",
+					"start_chirho": 28.95,
+					"end_chirho": 35.26,
+					"canonical_sha256_chirho": "81771fc38245199211c5f3c8db56f2bead04f5f221562c7eee54725e39e2c363",
+					"spoken_sha256_chirho": "81771fc38245199211c5f3c8db56f2bead04f5f221562c7eee54725e39e2c363"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.7",
+					"start_chirho": 35.26,
+					"end_chirho": 41.05,
+					"canonical_sha256_chirho": "42cd1b0da1ec7af91df0fe1e90bc283c66feaa8b43e96d75d5952008ac3613f6",
+					"spoken_sha256_chirho": "42cd1b0da1ec7af91df0fe1e90bc283c66feaa8b43e96d75d5952008ac3613f6"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.8",
+					"start_chirho": 41.05,
+					"end_chirho": 46.37,
+					"canonical_sha256_chirho": "df36eb415c549cbd4349628c425abcd201aaa0c620eaacec3c47e1bcf97adc0e",
+					"spoken_sha256_chirho": "df36eb415c549cbd4349628c425abcd201aaa0c620eaacec3c47e1bcf97adc0e"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.9",
+					"start_chirho": 46.37,
+					"end_chirho": 52.19,
+					"canonical_sha256_chirho": "a47a058317f47e1a7607a905de214c4c8e0e056e39210d06d8b3825af1ff8912",
+					"spoken_sha256_chirho": "a47a058317f47e1a7607a905de214c4c8e0e056e39210d06d8b3825af1ff8912"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.10",
+					"start_chirho": 52.19,
+					"end_chirho": 56.66,
+					"canonical_sha256_chirho": "0b9a04c97bb5581d66ab584d104ff92ce3c05dd13df00bfb6069ae36bb062149",
+					"spoken_sha256_chirho": "0b9a04c97bb5581d66ab584d104ff92ce3c05dd13df00bfb6069ae36bb062149"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.11",
+					"start_chirho": 56.66,
+					"end_chirho": 62.98,
+					"canonical_sha256_chirho": "f3e57a91c71cd36df388dca9a102a49a3199f48a0f7c13ddf3fd2e50846fe4e2",
+					"spoken_sha256_chirho": "f3e57a91c71cd36df388dca9a102a49a3199f48a0f7c13ddf3fd2e50846fe4e2"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.12",
+					"start_chirho": 62.98,
+					"end_chirho": 75.19,
+					"canonical_sha256_chirho": "307ed2d7cdbd9d406d617a3e9bf2edb9457bdbee6a7cb4f729864a85ebb47219",
+					"spoken_sha256_chirho": "307ed2d7cdbd9d406d617a3e9bf2edb9457bdbee6a7cb4f729864a85ebb47219"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.13",
+					"start_chirho": 75.19,
+					"end_chirho": 81.0,
+					"canonical_sha256_chirho": "f920194b1649a232b8f5dc63793f8374c830039c5bc980be170628a6d4bb6d7f",
+					"spoken_sha256_chirho": "f920194b1649a232b8f5dc63793f8374c830039c5bc980be170628a6d4bb6d7f"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.14",
+					"start_chirho": 81.0,
+					"end_chirho": 89.96,
+					"canonical_sha256_chirho": "41d593c90ca37421ffba7440e60840991895782f4bb6ebf521a9c1d97e15799c",
+					"spoken_sha256_chirho": "41d593c90ca37421ffba7440e60840991895782f4bb6ebf521a9c1d97e15799c"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.15",
+					"start_chirho": 89.96,
+					"end_chirho": 95.63,
+					"canonical_sha256_chirho": "5ee41c74b6bee42430fb5e9038cb2d42f6ee4374a554e8ab84db33757c2718aa",
+					"spoken_sha256_chirho": "5ee41c74b6bee42430fb5e9038cb2d42f6ee4374a554e8ab84db33757c2718aa"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.16",
+					"start_chirho": 95.63,
+					"end_chirho": 102.78,
+					"canonical_sha256_chirho": "350ccf09fd64e3ef83e2821d78440e68cad08ba3d9f14805a10880fcbc27a60c",
+					"spoken_sha256_chirho": "350ccf09fd64e3ef83e2821d78440e68cad08ba3d9f14805a10880fcbc27a60c"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.17",
+					"start_chirho": 102.78,
+					"end_chirho": 109.39,
+					"canonical_sha256_chirho": "0c296510f723fc346c66050cb09040b9b6f22ace159d8b64882ea1a46634e91b",
+					"spoken_sha256_chirho": "b2f9303741d56bbb28aeb8839fd33a50976932a3891cf360b4fe5509627f2856"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.18",
+					"start_chirho": 109.39,
+					"end_chirho": 115.51,
+					"canonical_sha256_chirho": "bb0e58d901bdc12709e7d432087ded347045e530fb99a68aa35d17f25a6b4bc9",
+					"spoken_sha256_chirho": "bb0e58d901bdc12709e7d432087ded347045e530fb99a68aa35d17f25a6b4bc9"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.19",
+					"start_chirho": 115.51,
+					"end_chirho": 120.9,
+					"canonical_sha256_chirho": "95fcf89c868be2089173720f79ae52f655a11f01dc1673ea5dfe7f341f2ca397",
+					"spoken_sha256_chirho": "95fcf89c868be2089173720f79ae52f655a11f01dc1673ea5dfe7f341f2ca397"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.20",
+					"start_chirho": 120.9,
+					"end_chirho": 126.54,
+					"canonical_sha256_chirho": "8cbc79b065a41438f55ebf987470c718dfff9a30fdfb44f6cc3df3e88196e4ea",
+					"spoken_sha256_chirho": "8cbc79b065a41438f55ebf987470c718dfff9a30fdfb44f6cc3df3e88196e4ea"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.21",
+					"start_chirho": 126.54,
+					"end_chirho": 133.11,
+					"canonical_sha256_chirho": "744e03573605d9b5ce21d1e0c6bc8955b7f224fa70acfe6b22ec3cfb90e61b26",
+					"spoken_sha256_chirho": "744e03573605d9b5ce21d1e0c6bc8955b7f224fa70acfe6b22ec3cfb90e61b26"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.22",
+					"start_chirho": 133.11,
+					"end_chirho": 138.75,
+					"canonical_sha256_chirho": "951bb163ef4c2e04cc3abd73c238669201871956bd989933b6ed546369edb5f2",
+					"spoken_sha256_chirho": "951bb163ef4c2e04cc3abd73c238669201871956bd989933b6ed546369edb5f2"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.23",
+					"start_chirho": 138.75,
+					"end_chirho": 145.06,
+					"canonical_sha256_chirho": "3ceaca3d152a9ef5769e63f601a1adc11268861640e9d23bede09cb15b72cfba",
+					"spoken_sha256_chirho": "3ceaca3d152a9ef5769e63f601a1adc11268861640e9d23bede09cb15b72cfba"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.24",
+					"start_chirho": 145.06,
+					"end_chirho": 152.51,
+					"canonical_sha256_chirho": "df8fd428b07417071e7e8594f9d3b0ba3a15fb72ea5dadcd77ac8320059d9602",
+					"spoken_sha256_chirho": "df8fd428b07417071e7e8594f9d3b0ba3a15fb72ea5dadcd77ac8320059d9602"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.25",
+					"start_chirho": 152.51,
+					"end_chirho": 158.21,
+					"canonical_sha256_chirho": "90e9dbb1f37dc8528bd2d4ce6ea11da17a447bcfe353bb0e11698fe2a8c00143",
+					"spoken_sha256_chirho": "90e9dbb1f37dc8528bd2d4ce6ea11da17a447bcfe353bb0e11698fe2a8c00143"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.26",
+					"start_chirho": 158.21,
+					"end_chirho": 163.31,
+					"canonical_sha256_chirho": "03883bb8f20a3b40e4b27a98b473995d9450f69b703f8b53ce824cf4bedc4c8b",
+					"spoken_sha256_chirho": "03883bb8f20a3b40e4b27a98b473995d9450f69b703f8b53ce824cf4bedc4c8b"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.27",
+					"start_chirho": 163.31,
+					"end_chirho": 171.5,
+					"canonical_sha256_chirho": "b24d9b5d93ec34111eda659306409ab1d705609b6f1bc755830a1268eff1e312",
+					"spoken_sha256_chirho": "b24d9b5d93ec34111eda659306409ab1d705609b6f1bc755830a1268eff1e312"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.28",
+					"start_chirho": 171.5,
+					"end_chirho": 177.79,
+					"canonical_sha256_chirho": "2ff99c7e353adce968a426b750c56b3f253ef091e2afda430180a6b8b00c0938",
+					"spoken_sha256_chirho": "2ff99c7e353adce968a426b750c56b3f253ef091e2afda430180a6b8b00c0938"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.29",
+					"start_chirho": 177.79,
+					"end_chirho": 184.95,
+					"canonical_sha256_chirho": "cf0c359e36f71227af6641aff1610ae8a1eda1b12b23335c2886ad03960f38a9",
+					"spoken_sha256_chirho": "cf0c359e36f71227af6641aff1610ae8a1eda1b12b23335c2886ad03960f38a9"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.30",
+					"start_chirho": 184.95,
+					"end_chirho": 191.06,
+					"canonical_sha256_chirho": "31330d9d4667b925cd7b950a289da30a73b0751690805ec947beab336df3e174",
+					"spoken_sha256_chirho": "31330d9d4667b925cd7b950a289da30a73b0751690805ec947beab336df3e174"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.31",
+					"start_chirho": 191.06,
+					"end_chirho": 199.62,
+					"canonical_sha256_chirho": "5bdbed4507351ec3c2ec2e6239f2fcd1fd69a3263b0dcbeeb4645ec53772373c",
+					"spoken_sha256_chirho": "5bdbed4507351ec3c2ec2e6239f2fcd1fd69a3263b0dcbeeb4645ec53772373c"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.32",
+					"start_chirho": 199.62,
+					"end_chirho": 206.57,
+					"canonical_sha256_chirho": "bfec2842a04e238d1a8a25dbb2249de43b48e899a8aecda775dff662578d8bf6",
+					"spoken_sha256_chirho": "bfec2842a04e238d1a8a25dbb2249de43b48e899a8aecda775dff662578d8bf6"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.33",
+					"start_chirho": 206.57,
+					"end_chirho": 212.83,
+					"canonical_sha256_chirho": "3aa28a44223bf69210bd1b9251dec8859716016c6bfd86d47c64a7892984ea32",
+					"spoken_sha256_chirho": "3aa28a44223bf69210bd1b9251dec8859716016c6bfd86d47c64a7892984ea32"
+				},
+				{
+					"lesson_id_chirho": "Prov.24.34",
+					"start_chirho": 212.83,
+					"end_chirho": 218.34,
+					"canonical_sha256_chirho": "8c5e169789843f9acce375ea97fbf880993db647bc6ab8a63302a588e8eb9189",
+					"spoken_sha256_chirho": "8c5e169789843f9acce375ea97fbf880993db647bc6ab8a63302a588e8eb9189"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.25.1",
+			"chapter_chirho": 25,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-25-chirho.json",
+			"content_sha256_chirho": "9353c172d9fe71b9248aa62285de289a2603dfea1616e7194415774621a35dba",
+			"canonical_sha256_chirho": "1eb9ec61280e3c01c33eaa7901674d78142559cdbb5c534cbff1651963d3e703",
+			"spoken_sha256_chirho": "1eb9ec61280e3c01c33eaa7901674d78142559cdbb5c534cbff1651963d3e703",
+			"chapter_sha256_chirho": "497b831c2387f7b7bb100847a755828db2921c817475a238d413b198fc51a47e",
+			"chapter_duration_chirho": 185.292,
+			"source_verses_chirho": 28,
+			"timed_records_chirho": 27,
+			"start_chirho": 0,
+			"end_chirho": 7.1,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.25.2",
+					"start_chirho": 7.1,
+					"end_chirho": 13.27,
+					"canonical_sha256_chirho": "a718d81b72ae018c765f1ba4fb7e76161a0cc93e54ade96ad0bec0804d636952",
+					"spoken_sha256_chirho": "a718d81b72ae018c765f1ba4fb7e76161a0cc93e54ade96ad0bec0804d636952"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.3",
+					"start_chirho": 13.27,
+					"end_chirho": 20.08,
+					"canonical_sha256_chirho": "2859cd0dc8956747ec8c3bc7fe8dece8150e69765bcc6edb18ed201349b8ef63",
+					"spoken_sha256_chirho": "2859cd0dc8956747ec8c3bc7fe8dece8150e69765bcc6edb18ed201349b8ef63"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.4",
+					"start_chirho": 20.08,
+					"end_chirho": 25.57,
+					"canonical_sha256_chirho": "6e8133f0d461eb94d7f6f59c9ebe82a949199138eadabb4a1075f561ea51ea5a",
+					"spoken_sha256_chirho": "6e8133f0d461eb94d7f6f59c9ebe82a949199138eadabb4a1075f561ea51ea5a"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.5",
+					"start_chirho": 25.57,
+					"end_chirho": 31.02,
+					"canonical_sha256_chirho": "ed3e166b9029fb57589dd9eed30e289c9b204dcdcce7c17e6f495298b0f232da",
+					"spoken_sha256_chirho": "ed3e166b9029fb57589dd9eed30e289c9b204dcdcce7c17e6f495298b0f232da"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.6",
+					"start_chirho": 31.02,
+					"end_chirho": 37.23,
+					"canonical_sha256_chirho": "a83f5e54cb3b1f78372dd36ae18788ffdaa875a762f5a175f5fd7597889092ee",
+					"spoken_sha256_chirho": "a83f5e54cb3b1f78372dd36ae18788ffdaa875a762f5a175f5fd7597889092ee"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.7",
+					"start_chirho": 37.23,
+					"end_chirho": 45.48,
+					"canonical_sha256_chirho": "86aa8698c59592e825cde4584db4b2cbb1f22cb8e26783b2d947bef91d126970",
+					"spoken_sha256_chirho": "86aa8698c59592e825cde4584db4b2cbb1f22cb8e26783b2d947bef91d126970"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.8",
+					"start_chirho": 45.48,
+					"end_chirho": 53.72,
+					"canonical_sha256_chirho": "fc60418d3e870bbc3bdc8a7112a598e07a5f5cf5f4250749791f0c3ca681ba7c",
+					"spoken_sha256_chirho": "fc60418d3e870bbc3bdc8a7112a598e07a5f5cf5f4250749791f0c3ca681ba7c"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.9",
+					"start_chirho": 53.72,
+					"end_chirho": 59.59,
+					"canonical_sha256_chirho": "e66e6e61093f0ef5b0e6915149e102a2ff7c902ba75082688ba8818005a5bfaa",
+					"spoken_sha256_chirho": "e66e6e61093f0ef5b0e6915149e102a2ff7c902ba75082688ba8818005a5bfaa"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.10",
+					"start_chirho": 59.59,
+					"end_chirho": 65.12,
+					"canonical_sha256_chirho": "663cd00e648e878f947a166463fe89dc8be7408effbf2ed081d6c2e307623a33",
+					"spoken_sha256_chirho": "663cd00e648e878f947a166463fe89dc8be7408effbf2ed081d6c2e307623a33"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.11",
+					"start_chirho": 65.12,
+					"end_chirho": 71.39,
+					"canonical_sha256_chirho": "4246c41b981561bb4668b0da9fa4a9ed69b4623bef1246daa7405e05cf9ff1db",
+					"spoken_sha256_chirho": "4246c41b981561bb4668b0da9fa4a9ed69b4623bef1246daa7405e05cf9ff1db"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.12",
+					"start_chirho": 71.39,
+					"end_chirho": 78.33,
+					"canonical_sha256_chirho": "f628434b2acf19e5e0adfdbff623e16473c34ca589db37c7f15995feea9cd135",
+					"spoken_sha256_chirho": "f628434b2acf19e5e0adfdbff623e16473c34ca589db37c7f15995feea9cd135"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.13",
+					"start_chirho": 78.33,
+					"end_chirho": 86.41,
+					"canonical_sha256_chirho": "21699a5c61462b5b61feda4cc655db34e35ef0f28cf4fc83c8a3380ed058b8ff",
+					"spoken_sha256_chirho": "21699a5c61462b5b61feda4cc655db34e35ef0f28cf4fc83c8a3380ed058b8ff"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.14",
+					"start_chirho": 86.41,
+					"end_chirho": 93.45,
+					"canonical_sha256_chirho": "ad11f6efcafa5149fb575488633bdaaf8095898e014160f2f239154f3f05f728",
+					"spoken_sha256_chirho": "ad11f6efcafa5149fb575488633bdaaf8095898e014160f2f239154f3f05f728"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.15",
+					"start_chirho": 93.45,
+					"end_chirho": 100.14,
+					"canonical_sha256_chirho": "f5469a883b034793d7c58356267efe293fa332b6013a8696053175067a4b807e",
+					"spoken_sha256_chirho": "f5469a883b034793d7c58356267efe293fa332b6013a8696053175067a4b807e"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.16",
+					"start_chirho": 100.14,
+					"end_chirho": 106.53,
+					"canonical_sha256_chirho": "af7bfedf56c0ff984813a47e7d4bd3bfcfec6b9fb04e2cf007f5bf2f5cbec578",
+					"spoken_sha256_chirho": "af7bfedf56c0ff984813a47e7d4bd3bfcfec6b9fb04e2cf007f5bf2f5cbec578"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.17",
+					"start_chirho": 106.53,
+					"end_chirho": 113.02,
+					"canonical_sha256_chirho": "dcdd7fef80cfbbc677879b401ef291646edcafd2eb1ccffb5fac636f37d5b0cf",
+					"spoken_sha256_chirho": "dcdd7fef80cfbbc677879b401ef291646edcafd2eb1ccffb5fac636f37d5b0cf"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.18",
+					"start_chirho": 113.02,
+					"end_chirho": 119.99,
+					"canonical_sha256_chirho": "803c346856c2ff1dedf7e793acd49b484b0dca9c5c6fd0839adadcae650ea2a7",
+					"spoken_sha256_chirho": "803c346856c2ff1dedf7e793acd49b484b0dca9c5c6fd0839adadcae650ea2a7"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.19",
+					"start_chirho": 119.99,
+					"end_chirho": 126.14,
+					"canonical_sha256_chirho": "f4fb7cf445bfb3f3dbb500e9d013b8bef427548d68e42224d6262f012ad1fd5f",
+					"spoken_sha256_chirho": "f4fb7cf445bfb3f3dbb500e9d013b8bef427548d68e42224d6262f012ad1fd5f"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.20",
+					"start_chirho": 126.14,
+					"end_chirho": 133.78,
+					"canonical_sha256_chirho": "5e70d9c16c1a70a51a96d2f9c4030bf45161af8b2334744382a9ce412edc87d0",
+					"spoken_sha256_chirho": "5e70d9c16c1a70a51a96d2f9c4030bf45161af8b2334744382a9ce412edc87d0"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.21",
+					"start_chirho": 133.78,
+					"end_chirho": 141.16,
+					"canonical_sha256_chirho": "7dab8cd20d1bc7006362569e7bbb873ddd17445a07edeba4c93b7cc3695ded58",
+					"spoken_sha256_chirho": "7dab8cd20d1bc7006362569e7bbb873ddd17445a07edeba4c93b7cc3695ded58"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.22",
+					"start_chirho": 141.16,
+					"end_chirho": 147.27,
+					"canonical_sha256_chirho": "38a95c28689daf0df0cbe84c43f374b313a2270c2ff206a5826cf2db23f2cdb5",
+					"spoken_sha256_chirho": "38a95c28689daf0df0cbe84c43f374b313a2270c2ff206a5826cf2db23f2cdb5"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.23",
+					"start_chirho": 147.27,
+					"end_chirho": 153.86,
+					"canonical_sha256_chirho": "74f05b279b3b80966c0154d254ee5cd739b4ac269b3ee0067e5ec91624ea24bd",
+					"spoken_sha256_chirho": "74f05b279b3b80966c0154d254ee5cd739b4ac269b3ee0067e5ec91624ea24bd"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.24",
+					"start_chirho": 153.86,
+					"end_chirho": 160.19,
+					"canonical_sha256_chirho": "5710810b50b941a13d18fdfb2359c41085c003838ed5336210331d9742d32679",
+					"spoken_sha256_chirho": "2fb7a88e39f4a60c0dea947777c8274ac398381134a8db49491d6df0f7653d12"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.25",
+					"start_chirho": 160.19,
+					"end_chirho": 166.74,
+					"canonical_sha256_chirho": "405c3eb21cb17c79f05ba1f5a917759fdf36f3788ea250283a45e6e0935f073d",
+					"spoken_sha256_chirho": "405c3eb21cb17c79f05ba1f5a917759fdf36f3788ea250283a45e6e0935f073d"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.26",
+					"start_chirho": 166.74,
+					"end_chirho": 173.26,
+					"canonical_sha256_chirho": "f1b83f19fa701ce19948a09a76d8a4941637849bf0ad5744bef8f956d64c2dc9",
+					"spoken_sha256_chirho": "f1b83f19fa701ce19948a09a76d8a4941637849bf0ad5744bef8f956d64c2dc9"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.27",
+					"start_chirho": 173.26,
+					"end_chirho": 179.27,
+					"canonical_sha256_chirho": "d196c99f065d2cb2c35b88e83ffad3feb970c18643aeb06304519244bf7e9f82",
+					"spoken_sha256_chirho": "d196c99f065d2cb2c35b88e83ffad3feb970c18643aeb06304519244bf7e9f82"
+				},
+				{
+					"lesson_id_chirho": "Prov.25.28",
+					"start_chirho": 179.27,
+					"end_chirho": 185.292,
+					"canonical_sha256_chirho": "90579815421b2d8c4339269c0f2b63f5f358fedbf2558dbc82ea984c5a118d4c",
+					"spoken_sha256_chirho": "90579815421b2d8c4339269c0f2b63f5f358fedbf2558dbc82ea984c5a118d4c"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.27.1",
+			"chapter_chirho": 27,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-27-chirho.json",
+			"content_sha256_chirho": "72ebd09a04003d0bcaa5b7cd3dbae6be7cb0036775d399459f516aa6e783b627",
+			"canonical_sha256_chirho": "aae210eee04564b3dd62aea2ae0b3ec184490415ea702686480f3ae2cee54fa9",
+			"spoken_sha256_chirho": "aae210eee04564b3dd62aea2ae0b3ec184490415ea702686480f3ae2cee54fa9",
+			"chapter_sha256_chirho": "ce957637365d3a98994ac829a388a4ac95754213d80e1f590df49034b9801b02",
+			"chapter_duration_chirho": 175.212,
+			"source_verses_chirho": 27,
+			"timed_records_chirho": 26,
+			"start_chirho": 0,
+			"end_chirho": 5.77,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.27.2",
+					"start_chirho": 5.77,
+					"end_chirho": 11.77,
+					"canonical_sha256_chirho": "9e22a0a4c357cda951df73a6ad38da4d7d0e57f3cd4c9711862c3a387b8fad71",
+					"spoken_sha256_chirho": "9e22a0a4c357cda951df73a6ad38da4d7d0e57f3cd4c9711862c3a387b8fad71"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.3",
+					"start_chirho": 11.77,
+					"end_chirho": 18.54,
+					"canonical_sha256_chirho": "1a5037d786b1a894e41ee0f7bb81daacf1da0cea9528eb18c27416240051968a",
+					"spoken_sha256_chirho": "1a5037d786b1a894e41ee0f7bb81daacf1da0cea9528eb18c27416240051968a"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.4",
+					"start_chirho": 18.54,
+					"end_chirho": 24.92,
+					"canonical_sha256_chirho": "0c635e3bd4045fd99cf38286f0d08a96ea58312f6b7e54cb36055c593e502a4d",
+					"spoken_sha256_chirho": "0c635e3bd4045fd99cf38286f0d08a96ea58312f6b7e54cb36055c593e502a4d"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.5",
+					"start_chirho": 24.92,
+					"end_chirho": 30.27,
+					"canonical_sha256_chirho": "4a9075d200fbd9ef3c480945cff7f512ea70e3ccf40eb79038839bb9d1852f2a",
+					"spoken_sha256_chirho": "4a9075d200fbd9ef3c480945cff7f512ea70e3ccf40eb79038839bb9d1852f2a"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.6",
+					"start_chirho": 30.27,
+					"end_chirho": 36.02,
+					"canonical_sha256_chirho": "882371cf114dbd59900f5748f35019a8f602308112642002a4429d236a555edb",
+					"spoken_sha256_chirho": "882371cf114dbd59900f5748f35019a8f602308112642002a4429d236a555edb"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.7",
+					"start_chirho": 36.02,
+					"end_chirho": 42.9,
+					"canonical_sha256_chirho": "4f2b065617569d1ca184df13affe2501740ca3d35dc5c4afae55f5de48c6b8c8",
+					"spoken_sha256_chirho": "4f2b065617569d1ca184df13affe2501740ca3d35dc5c4afae55f5de48c6b8c8"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.8",
+					"start_chirho": 42.9,
+					"end_chirho": 48.84,
+					"canonical_sha256_chirho": "d32fec25c9d948388a762005c63e92c57ce8ea058434da855a70f59eb5f7b415",
+					"spoken_sha256_chirho": "d32fec25c9d948388a762005c63e92c57ce8ea058434da855a70f59eb5f7b415"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.9",
+					"start_chirho": 48.84,
+					"end_chirho": 55.89,
+					"canonical_sha256_chirho": "39f93fb88c82c8e9ef49b2b2cf6a2d9fb9e30f2f7bcb29d0c9f7323073fc627f",
+					"spoken_sha256_chirho": "39f93fb88c82c8e9ef49b2b2cf6a2d9fb9e30f2f7bcb29d0c9f7323073fc627f"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.10",
+					"start_chirho": 55.89,
+					"end_chirho": 67.43,
+					"canonical_sha256_chirho": "c35c44563ff559a267f03de1aeedeee7755d611d24801e567cfbafebb366070d",
+					"spoken_sha256_chirho": "cfe2ec176cab6164aa88d4ab32ddc47fb9a57553451bba5c949a38f9bc1194a3"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.11",
+					"start_chirho": 67.43,
+					"end_chirho": 73.45,
+					"canonical_sha256_chirho": "0777960329553e5a91d777964616e4c55f21534a915b7507f7a76929f95f49e2",
+					"spoken_sha256_chirho": "0777960329553e5a91d777964616e4c55f21534a915b7507f7a76929f95f49e2"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.12",
+					"start_chirho": 73.45,
+					"end_chirho": 79.82,
+					"canonical_sha256_chirho": "18fb369c7e3ee592c3e7892a59bc5c5bcc35822aa64d97ee165e259983df9fb1",
+					"spoken_sha256_chirho": "18fb369c7e3ee592c3e7892a59bc5c5bcc35822aa64d97ee165e259983df9fb1"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.13",
+					"start_chirho": 79.82,
+					"end_chirho": 85.45,
+					"canonical_sha256_chirho": "7368c9adcb510ad63dc68f727f1a17351ab0baf2579d88f6b9de5ee8bca0b7e2",
+					"spoken_sha256_chirho": "7368c9adcb510ad63dc68f727f1a17351ab0baf2579d88f6b9de5ee8bca0b7e2"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.14",
+					"start_chirho": 85.45,
+					"end_chirho": 92.42,
+					"canonical_sha256_chirho": "bf50b4b0df4fa897828ba2d443a2ebb458e70dcf637a45347ae6c3c69c1e1a23",
+					"spoken_sha256_chirho": "bf50b4b0df4fa897828ba2d443a2ebb458e70dcf637a45347ae6c3c69c1e1a23"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.15",
+					"start_chirho": 92.42,
+					"end_chirho": 98.36,
+					"canonical_sha256_chirho": "9b0dc4ceb03cc5c84971e3f2f024aadfc0814137a462c4ac58cf364b2414ff4f",
+					"spoken_sha256_chirho": "5340bab044b9a6384a3732863a4004c47f3a9a798530818a931bfcbad6d59efd"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.16",
+					"start_chirho": 98.36,
+					"end_chirho": 103.88,
+					"canonical_sha256_chirho": "ca999a1799b28df1351829c7ea98f2014d30db6f1c33e13b9492ab104a04a6fb",
+					"spoken_sha256_chirho": "ca999a1799b28df1351829c7ea98f2014d30db6f1c33e13b9492ab104a04a6fb"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.17",
+					"start_chirho": 103.88,
+					"end_chirho": 109.85,
+					"canonical_sha256_chirho": "eedeec43a725c3bb6f2e9b14b4c0c69a29a215e1149eb51a35d5c424a3cdf904",
+					"spoken_sha256_chirho": "eedeec43a725c3bb6f2e9b14b4c0c69a29a215e1149eb51a35d5c424a3cdf904"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.18",
+					"start_chirho": 109.85,
+					"end_chirho": 116.3,
+					"canonical_sha256_chirho": "372f9da820da1dbf78de028c5695f26c8c6b64d19a621b6e97ca7101e510590e",
+					"spoken_sha256_chirho": "372f9da820da1dbf78de028c5695f26c8c6b64d19a621b6e97ca7101e510590e"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.19",
+					"start_chirho": 116.3,
+					"end_chirho": 122.25,
+					"canonical_sha256_chirho": "da67bf5250e18d972b858a6e8386a36287921caf130cc0fbf95ec438fc7e86f6",
+					"spoken_sha256_chirho": "da67bf5250e18d972b858a6e8386a36287921caf130cc0fbf95ec438fc7e86f6"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.20",
+					"start_chirho": 122.25,
+					"end_chirho": 129.34,
+					"canonical_sha256_chirho": "8a6f62d8bbdced64350c424659d3769bb9fa63ce53a8ef41517869684f25595e",
+					"spoken_sha256_chirho": "0368888a60aa0f4374bd30d6f7c01d0ee9b9b1253620225c5942b2159b228c2f"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.21",
+					"start_chirho": 129.34,
+					"end_chirho": 135.58,
+					"canonical_sha256_chirho": "ed73f5246fb1138f1ec47a5c75eefecb2ea2668d3156cdf57e2e4ae41c742d30",
+					"spoken_sha256_chirho": "ed73f5246fb1138f1ec47a5c75eefecb2ea2668d3156cdf57e2e4ae41c742d30"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.22",
+					"start_chirho": 135.58,
+					"end_chirho": 144.2,
+					"canonical_sha256_chirho": "290bfc4ad35b2cc9363b9d959b15e13510fbdae1ad2843fc8d83bbe86ad2d9e1",
+					"spoken_sha256_chirho": "290bfc4ad35b2cc9363b9d959b15e13510fbdae1ad2843fc8d83bbe86ad2d9e1"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.23",
+					"start_chirho": 144.2,
+					"end_chirho": 149.98,
+					"canonical_sha256_chirho": "3d9965526d66e0095bfca4fceaeeaa2da9a41c9ed923f29c0aaf35783ef2cd76",
+					"spoken_sha256_chirho": "3d9965526d66e0095bfca4fceaeeaa2da9a41c9ed923f29c0aaf35783ef2cd76"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.24",
+					"start_chirho": 149.98,
+					"end_chirho": 155.88,
+					"canonical_sha256_chirho": "fd11b8d8a75712b958383085afd0a4d9bdd325927016f480213469102b0cdc2f",
+					"spoken_sha256_chirho": "5f3ac7ab057b5c740991e0221db32d1ec849d5fe1d89b52d11ecc4d7682bb869"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.25",
+					"start_chirho": 155.88,
+					"end_chirho": 162.05,
+					"canonical_sha256_chirho": "c47a5938c3baed546b47643a2b251f1afa553023b1fc2bf8e98b7d253e9c0fe7",
+					"spoken_sha256_chirho": "c47a5938c3baed546b47643a2b251f1afa553023b1fc2bf8e98b7d253e9c0fe7"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.26",
+					"start_chirho": 162.05,
+					"end_chirho": 167.41,
+					"canonical_sha256_chirho": "0122482f87b6c9dc593c40d93423f3f196e58a96ca677c33392dd7ebf09a20f2",
+					"spoken_sha256_chirho": "0122482f87b6c9dc593c40d93423f3f196e58a96ca677c33392dd7ebf09a20f2"
+				},
+				{
+					"lesson_id_chirho": "Prov.27.27",
+					"start_chirho": 167.41,
+					"end_chirho": 175.212,
+					"canonical_sha256_chirho": "bdc6899312b7d91d22c08e8bc8e05ce148913d13d7d0fd98358d52628d05fe49",
+					"spoken_sha256_chirho": "bdc6899312b7d91d22c08e8bc8e05ce148913d13d7d0fd98358d52628d05fe49"
+				}
+			]
+		},
+		{
+			"lesson_id_chirho": "Prov.30.1",
+			"chapter_chirho": 30,
+			"content_path_chirho": "/content-chirho/proverbs-chirho/chapter-30-chirho.json",
+			"content_sha256_chirho": "66e423b41b13747f6329f2ecb3d07632f78f8b5ceb6dd67834134955650d53d9",
+			"canonical_sha256_chirho": "22770126ea77194da9683458bd7c89faffe7899d4dc1efeabdbd9279c86180b6",
+			"spoken_sha256_chirho": "22770126ea77194da9683458bd7c89faffe7899d4dc1efeabdbd9279c86180b6",
+			"chapter_sha256_chirho": "665206f17d6b4bd9f92b16f2dc379171b95fd4c1cfe43ff2329119f9ed988287",
+			"chapter_duration_chirho": 245.916,
+			"source_verses_chirho": 33,
+			"timed_records_chirho": 32,
+			"start_chirho": 0,
+			"end_chirho": 9.32,
+			"windows_chirho": [
+				{
+					"lesson_id_chirho": "Prov.30.2",
+					"start_chirho": 9.32,
+					"end_chirho": 14.89,
+					"canonical_sha256_chirho": "2f7f05235ef880da0d2279ab13101861610de4493b858d6be59965d16f04c45e",
+					"spoken_sha256_chirho": "2f7f05235ef880da0d2279ab13101861610de4493b858d6be59965d16f04c45e"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.3",
+					"start_chirho": 14.89,
+					"end_chirho": 20.19,
+					"canonical_sha256_chirho": "731e3d44a309fe6e5e1097bad6f62110484bb58092d8633ae02fa959ae8bd054",
+					"spoken_sha256_chirho": "731e3d44a309fe6e5e1097bad6f62110484bb58092d8633ae02fa959ae8bd054"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.4",
+					"start_chirho": 20.19,
+					"end_chirho": 35.68,
+					"canonical_sha256_chirho": "1f0c8c260df54adf73b8880568fb5f90047810c87467503c177d7d8278865096",
+					"spoken_sha256_chirho": "1f0c8c260df54adf73b8880568fb5f90047810c87467503c177d7d8278865096"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.5",
+					"start_chirho": 35.68,
+					"end_chirho": 41.68,
+					"canonical_sha256_chirho": "fbea42d38b4bbbdb60c3c6bc12d9d3e1d17f17261552d3e3a02480e8b5f0594c",
+					"spoken_sha256_chirho": "fbea42d38b4bbbdb60c3c6bc12d9d3e1d17f17261552d3e3a02480e8b5f0594c"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.6",
+					"start_chirho": 41.68,
+					"end_chirho": 47.45,
+					"canonical_sha256_chirho": "a29c0872751d07f07d40ae797df618769763c4b4cc00d60b5c1ebc215f5cf031",
+					"spoken_sha256_chirho": "a29c0872751d07f07d40ae797df618769763c4b4cc00d60b5c1ebc215f5cf031"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.7",
+					"start_chirho": 47.45,
+					"end_chirho": 54.09,
+					"canonical_sha256_chirho": "afdabaf96f6ccc2f18e22a9e92e47f1dbd8dd97df0ee7402503ef4a18c09d4a8",
+					"spoken_sha256_chirho": "afdabaf96f6ccc2f18e22a9e92e47f1dbd8dd97df0ee7402503ef4a18c09d4a8"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.8",
+					"start_chirho": 54.09,
+					"end_chirho": 63.94,
+					"canonical_sha256_chirho": "7672b5350a964068a83d45dd8c1b3ca418dea6377434bfbc4e1eaf5265fc7114",
+					"spoken_sha256_chirho": "7672b5350a964068a83d45dd8c1b3ca418dea6377434bfbc4e1eaf5265fc7114"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.9",
+					"start_chirho": 63.94,
+					"end_chirho": 74.31,
+					"canonical_sha256_chirho": "35bf467fffcc6f973d935c6aab16ab530d85e10cf417bb1fbba255afebb93723",
+					"spoken_sha256_chirho": "35bf467fffcc6f973d935c6aab16ab530d85e10cf417bb1fbba255afebb93723"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.10",
+					"start_chirho": 74.31,
+					"end_chirho": 80.62,
+					"canonical_sha256_chirho": "cb7f8807a8294863f625f592fb99d8185dcbb39cbd13a79725830db4f18875bb",
+					"spoken_sha256_chirho": "6d78d14ecf75b99c8ec20ed6a48a1d82cc38ef2d24aedc5e13a0541edf72da9f"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.11",
+					"start_chirho": 80.62,
+					"end_chirho": 85.85,
+					"canonical_sha256_chirho": "43fc83c30bad159ad5c2b21d61f9fe789c2730052615a1b749a02aa989fe33d0",
+					"spoken_sha256_chirho": "43fc83c30bad159ad5c2b21d61f9fe789c2730052615a1b749a02aa989fe33d0"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.12",
+					"start_chirho": 85.85,
+					"end_chirho": 91.36,
+					"canonical_sha256_chirho": "b2e6d46213d6797b509232ad81fc4fdb75eb2af32e5cfed20ff8f04b3a8fc72f",
+					"spoken_sha256_chirho": "b2e6d46213d6797b509232ad81fc4fdb75eb2af32e5cfed20ff8f04b3a8fc72f"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.13",
+					"start_chirho": 91.36,
+					"end_chirho": 97.05,
+					"canonical_sha256_chirho": "b0974708deac6819d61f2cfee6ac5fa9a4d13df087034909ebbd3b46e17a898f",
+					"spoken_sha256_chirho": "b0974708deac6819d61f2cfee6ac5fa9a4d13df087034909ebbd3b46e17a898f"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.14",
+					"start_chirho": 97.05,
+					"end_chirho": 107.73,
+					"canonical_sha256_chirho": "0880472ab4e4aba6a87e8c528525cd8e86b29128f018a33d61b099555ebbcbdf",
+					"spoken_sha256_chirho": "0880472ab4e4aba6a87e8c528525cd8e86b29128f018a33d61b099555ebbcbdf"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.15",
+					"start_chirho": 107.73,
+					"end_chirho": 117.72,
+					"canonical_sha256_chirho": "2ccc5ce7d1a072d9dbc8d8d938270ec7b937e2b406fa836d85c903a5f4c32325",
+					"spoken_sha256_chirho": "2ccc5ce7d1a072d9dbc8d8d938270ec7b937e2b406fa836d85c903a5f4c32325"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.16",
+					"start_chirho": 117.72,
+					"end_chirho": 125.94,
+					"canonical_sha256_chirho": "12f437ace5253517ab57a32307d8d7e288a975f9cc8d15a28c34f51e3cb495b1",
+					"spoken_sha256_chirho": "12f437ace5253517ab57a32307d8d7e288a975f9cc8d15a28c34f51e3cb495b1"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.17",
+					"start_chirho": 125.94,
+					"end_chirho": 136.59,
+					"canonical_sha256_chirho": "608b1831383c3562745a73df4cdf0d22e9f231ae1127d88f619e3d2d2085198e",
+					"spoken_sha256_chirho": "608b1831383c3562745a73df4cdf0d22e9f231ae1127d88f619e3d2d2085198e"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.18",
+					"start_chirho": 136.59,
+					"end_chirho": 143.19,
+					"canonical_sha256_chirho": "35d76f766b8174d2060dbb5c2285f4ebcc7a765ba7dba7113d89cdbb0bba93d3",
+					"spoken_sha256_chirho": "26877ad5ad4616f49a5debf18a384e2771a75f4a574168ca194bf017c6a372a8"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.19",
+					"start_chirho": 143.19,
+					"end_chirho": 154.22,
+					"canonical_sha256_chirho": "3e522bc51caff5ee3e63fe233392b26597ee15eb2202117c888168b7fde6f43f",
+					"spoken_sha256_chirho": "3e522bc51caff5ee3e63fe233392b26597ee15eb2202117c888168b7fde6f43f"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.20",
+					"start_chirho": 154.22,
+					"end_chirho": 163.97,
+					"canonical_sha256_chirho": "03dda5cb9f90da11a88df740451f74db76850fcab152342d66e74787f184f4aa",
+					"spoken_sha256_chirho": "03dda5cb9f90da11a88df740451f74db76850fcab152342d66e74787f184f4aa"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.21",
+					"start_chirho": 163.97,
+					"end_chirho": 170.95,
+					"canonical_sha256_chirho": "70ce6691b5bc0e8925fcffe5517d0f86662d03842926169dc50b0b6d434f1f7a",
+					"spoken_sha256_chirho": "70ce6691b5bc0e8925fcffe5517d0f86662d03842926169dc50b0b6d434f1f7a"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.22",
+					"start_chirho": 170.95,
+					"end_chirho": 176.75,
+					"canonical_sha256_chirho": "f2a6f541c045195622797cb65b52ba31b1b2936172b4f965728b533054b62181",
+					"spoken_sha256_chirho": "f2a6f541c045195622797cb65b52ba31b1b2936172b4f965728b533054b62181"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.23",
+					"start_chirho": 176.75,
+					"end_chirho": 183.23,
+					"canonical_sha256_chirho": "b800bc5eda073537de8b2804f1837f5fa6fd9226414c29ef1c646e0b9964f13d",
+					"spoken_sha256_chirho": "b800bc5eda073537de8b2804f1837f5fa6fd9226414c29ef1c646e0b9964f13d"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.24",
+					"start_chirho": 183.23,
+					"end_chirho": 190.16,
+					"canonical_sha256_chirho": "e2262c653e9f612ce525de3c4ca853ad77e4bbc6f0aabcbce49c99ae7c11466a",
+					"spoken_sha256_chirho": "e2262c653e9f612ce525de3c4ca853ad77e4bbc6f0aabcbce49c99ae7c11466a"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.25",
+					"start_chirho": 190.16,
+					"end_chirho": 196.12,
+					"canonical_sha256_chirho": "c3231800245e171519c76338c0f161e746a6bffa7cea3e3a2f6ff59210ee6947",
+					"spoken_sha256_chirho": "c3231800245e171519c76338c0f161e746a6bffa7cea3e3a2f6ff59210ee6947"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.26",
+					"start_chirho": 196.12,
+					"end_chirho": 202.18,
+					"canonical_sha256_chirho": "ffbd615fa50ce522855aba5db5f46492c931f9215fab5a02fee302770132640f",
+					"spoken_sha256_chirho": "ffbd615fa50ce522855aba5db5f46492c931f9215fab5a02fee302770132640f"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.27",
+					"start_chirho": 202.18,
+					"end_chirho": 207.38,
+					"canonical_sha256_chirho": "39e7486f8c42a3425f5a7e5a662d1ec50aee83c2c32e2d49bda0cdc72a2c1f74",
+					"spoken_sha256_chirho": "39e7486f8c42a3425f5a7e5a662d1ec50aee83c2c32e2d49bda0cdc72a2c1f74"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.28",
+					"start_chirho": 207.38,
+					"end_chirho": 213.43,
+					"canonical_sha256_chirho": "59e6fa6cac0751ad87c9015475c90d00d4e50bb00af76fe7571138280c5c1acf",
+					"spoken_sha256_chirho": "59e6fa6cac0751ad87c9015475c90d00d4e50bb00af76fe7571138280c5c1acf"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.29",
+					"start_chirho": 213.43,
+					"end_chirho": 220.02,
+					"canonical_sha256_chirho": "705f30e78267f80134f5ea00b35c78b38f3a4d89ff5e48b79df1ba0200a98ea6",
+					"spoken_sha256_chirho": "705f30e78267f80134f5ea00b35c78b38f3a4d89ff5e48b79df1ba0200a98ea6"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.30",
+					"start_chirho": 220.02,
+					"end_chirho": 225.6,
+					"canonical_sha256_chirho": "ce981cffc782a17b241ac6ff78f7efb832c877e3f1229fd5fccc7cc77d3a19e5",
+					"spoken_sha256_chirho": "ce981cffc782a17b241ac6ff78f7efb832c877e3f1229fd5fccc7cc77d3a19e5"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.31",
+					"start_chirho": 225.6,
+					"end_chirho": 231.2,
+					"canonical_sha256_chirho": "a86d89881b64462a7980f210cd6705ee500cfec46280583e82fb66ec44d2a2ff",
+					"spoken_sha256_chirho": "a86d89881b64462a7980f210cd6705ee500cfec46280583e82fb66ec44d2a2ff"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.32",
+					"start_chirho": 231.2,
+					"end_chirho": 237.24,
+					"canonical_sha256_chirho": "b47a45aa473e32ae4e4f27daa7c77f0b4bf8923b3ee74821bb3e1008dcaa09ae",
+					"spoken_sha256_chirho": "b47a45aa473e32ae4e4f27daa7c77f0b4bf8923b3ee74821bb3e1008dcaa09ae"
+				},
+				{
+					"lesson_id_chirho": "Prov.30.33",
+					"start_chirho": 237.24,
+					"end_chirho": 245.916,
+					"canonical_sha256_chirho": "482e61d8932cce148908a4251a39599e3cf8b5730416e9b6270c40ac12520338",
+					"spoken_sha256_chirho": "482e61d8932cce148908a4251a39599e3cf8b5730416e9b6270c40ac12520338"
+				}
+			]
+		}
+	],
+	"opening_definition_sha256_chirho": "16daf1b1fadd6c4a73b4355f12e3a7365f4df848b3f33df76db88a14d5a2caa8",
+	"source_windows_sha256_chirho": "1736e98cee31ee199b52452031aa554e59cd32c01ddaa36849c4f27b3fd0a82a",
+	"added_readings_chirho": 342
+}

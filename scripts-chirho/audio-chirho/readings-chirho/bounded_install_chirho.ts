@@ -33,6 +33,14 @@ import {
 	type AudioIndexChirho
 } from './validation_chirho';
 
+import {
+	PROVERBS_PHASE_CHIRHO,
+	PROVERBS_HOME_CHIRHO,
+	readProverbsPhaseChirho,
+	loadProverbsDefinitionChirho,
+	verifyPriorProverbsChirho
+} from './proverbs_phase_chirho';
+
 interface ArchiveOptionsChirho {
 	target_chirho: TargetChirho;
 	fetch_chirho?: typeof fetch;
@@ -59,6 +67,10 @@ async function validatePhaseRowsChirho(
 	if (!phaseChirho.chapters_chirho.length || phaseChirho.chapters_chirho.length > 30)
 		throw Error('Bounded phase chapter count refused');
 	const contextChirho = await readingContextChirho(rootChirho);
+	const definitionChirho =
+		phaseChirho.id_chirho === PROVERBS_PHASE_CHIRHO
+			? (await loadProverbsDefinitionChirho(rootChirho)).definition_chirho
+			: null;
 	const groupsChirho: PhaseRowsChirho[] = [];
 	for (const chapterChirho of phaseChirho.chapters_chirho) {
 		const validatedChirho = await validatePreparedChapterChirho(
@@ -67,7 +79,7 @@ async function validatePhaseRowsChirho(
 			chapterChirho.book_id_chirho,
 			`${String(chapterChirho.chapter_chirho).padStart(3, '0')}-chirho`,
 			contextChirho,
-			null,
+			definitionChirho,
 			chapterChirho.prepared_manifest_sha256_chirho
 		);
 		if (
@@ -229,14 +241,20 @@ export async function installBoundedPhaseChirho(
 	applyChirho: boolean,
 	archiveChirho?: ArchiveOptionsChirho
 ) {
-	const planChirho = await readBoundedPlanChirho(rootChirho);
+	const remainderChirho = phaseIdChirho === PROVERBS_PHASE_CHIRHO;
+	const proverbsChirho = remainderChirho ? await loadProverbsDefinitionChirho(rootChirho) : null;
+	const planChirho = remainderChirho
+		? { phases_chirho: [await readProverbsPhaseChirho(rootChirho)] }
+		: await readBoundedPlanChirho(rootChirho);
 	const phaseIndexChirho = planChirho.phases_chirho.findIndex(
 		(rowChirho) => rowChirho.id_chirho === phaseIdChirho
 	);
 	if (phaseIndexChirho < 0) throw Error('Unknown finite Beeri phase');
 	const phaseChirho = planChirho.phases_chirho[phaseIndexChirho];
 	const bindingChirho = phaseBindingChirho(phaseChirho);
-	const homeRelativeChirho = phaseHomeChirho(phaseIdChirho);
+	const homeRelativeChirho = remainderChirho
+		? PROVERBS_HOME_CHIRHO
+		: phaseHomeChirho(phaseIdChirho);
 	const homeChirho = joinChirho(rootChirho, homeRelativeChirho);
 	const completePathChirho = `${homeRelativeChirho}/installed-chirho.json`;
 	const priorCompleteChirho = await optionalReadChirho(rootChirho, completePathChirho, 1024);
@@ -269,6 +287,8 @@ export async function installBoundedPhaseChirho(
 				completeChirho.readings_chirho !== phaseChirho.readings_chirho
 			)
 				throw Error('Completed phase binding differs');
+			if (proverbsChirho)
+				await verifyPriorProverbsChirho(rootChirho, groupsChirho, true, proverbsChirho);
 			await catalogueWritesChirho(rootChirho, groupsChirho, true);
 			await requireReceiptsChirho(rootChirho, uploadsChirho);
 			return {
@@ -286,6 +306,8 @@ export async function installBoundedPhaseChirho(
 		if (!applyChirho) {
 			if (journalChirho)
 				throw Error('Partial catalogue commit requires apply recovery before dry coherence check');
+			if (proverbsChirho)
+				await verifyPriorProverbsChirho(rootChirho, groupsChirho, false, proverbsChirho);
 			await catalogueWritesChirho(rootChirho, groupsChirho, false);
 			return {
 				readings_chirho: phaseChirho.readings_chirho,
@@ -300,6 +322,8 @@ export async function installBoundedPhaseChirho(
 			await requireReceiptsChirho(rootChirho, uploadsChirho);
 			await recoverCatalogueChirho(rootChirho, homeChirho, bindingChirho);
 		}
+		if (proverbsChirho)
+			await verifyPriorProverbsChirho(rootChirho, groupsChirho, false, proverbsChirho);
 		const writesChirho = await catalogueWritesChirho(rootChirho, groupsChirho, false);
 		if (!archiveChirho) throw Error('Explicit Hinneh archive target is required');
 		await stageAudioChirho(rootChirho, groupsChirho);
@@ -320,6 +344,8 @@ export async function installBoundedPhaseChirho(
 		await requireReceiptsChirho(rootChirho, uploadsChirho);
 		// Cold source/MP3/window recheck under the same lock, after the potentially long archive.
 		await validatePhaseRowsChirho(rootChirho, phaseChirho);
+		if (proverbsChirho)
+			await verifyPriorProverbsChirho(rootChirho, groupsChirho, false, proverbsChirho);
 		await commitCatalogueChirho(rootChirho, homeChirho, bindingChirho, writesChirho);
 		await writeChirho(
 			joinChirho(rootChirho, completePathChirho),
@@ -386,9 +412,10 @@ if (import.meta.main) {
 	if (!!phaseChirho === allChirho || (!applyChirho && confirmChirho))
 		throw Error('Choose one finite phase or --all-chirho; confirmation is apply-only');
 	const rootChirho = process.cwd();
-	const planChirho = await readBoundedPlanChirho(rootChirho);
 	const selectedChirho = allChirho
-		? planChirho.phases_chirho.map((rowChirho) => rowChirho.id_chirho)
+		? (await readBoundedPlanChirho(rootChirho)).phases_chirho.map(
+				(rowChirho) => rowChirho.id_chirho
+			)
 		: [phaseChirho];
 	const archiveChirho = applyChirho ? archiveTargetChirho(confirmChirho) : undefined;
 	for (const idChirho of selectedChirho)

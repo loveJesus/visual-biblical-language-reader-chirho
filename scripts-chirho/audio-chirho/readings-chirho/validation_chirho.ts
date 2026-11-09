@@ -17,6 +17,12 @@ import {
 	type ReadingSourceChirho
 } from '../../../src/lib/domain-chirho/pronunciation-chirho/reading-source-chirho';
 import { correctedOpeningWindowChirho, type OpeningDefinitionChirho } from './correction_chirho';
+import {
+	PROVERBS_PHASE_CHIRHO,
+	PROVERBS_HOME_CHIRHO,
+	verifyProverbsWindowChirho,
+	type ProverbsDefinitionChirho
+} from './proverbs_phase_chirho';
 import { boundedReadChirho } from '../local-greek-chirho/phase_chirho';
 export interface PreparedReadingChirho {
 	lesson_id_chirho: string;
@@ -105,7 +111,7 @@ export async function validatePreparedChapterChirho(
 	bookFolderChirho: string,
 	chapterFolderChirho: string,
 	contextChirho: ReadingContextChirho,
-	definitionChirho: OpeningDefinitionChirho | null = null,
+	definitionChirho: OpeningDefinitionChirho | ProverbsDefinitionChirho | null = null,
 	expectedManifestShaChirho?: string
 ): Promise<{ audio_path_chirho: string; rows_chirho: ValidatedRowChirho[] }> {
 	const bookChirhoIdentityChirho = bibleBookChirho(bookFolderChirho);
@@ -115,7 +121,20 @@ export async function validatePreparedChapterChirho(
 		!/^\d{3}-chirho$/.test(chapterFolderChirho)
 	)
 		throw Error('Prepared chapter identity differs');
-	const homeChirho = joinChirho(runChirho, 'books-chirho', bookChirhoIdentityChirho.slug_chirho);
+	const remainderChirho = definitionChirho?.phase_chirho === PROVERBS_PHASE_CHIRHO;
+	const sourceHomeChirho = joinChirho(
+		runChirho,
+		'books-chirho',
+		bookChirhoIdentityChirho.slug_chirho
+	);
+	const homeChirho = remainderChirho
+		? joinChirho(
+				rootChirho,
+				PROVERBS_HOME_CHIRHO,
+				'books-chirho',
+				bookChirhoIdentityChirho.slug_chirho
+			)
+		: sourceHomeChirho;
 	const manifestPathChirho = joinChirho(
 		homeChirho,
 		'chapters-chirho',
@@ -189,7 +208,7 @@ export async function validatePreparedChapterChirho(
 		)
 			throw Error('Prepared MP3 bytes changed');
 		const chapterSourcePathChirho = joinChirho(
-			homeChirho,
+			sourceHomeChirho,
 			'source-chirho',
 			`chapter-${chapterTextChirho.padStart(3, '0')}-chirho.mp3`
 		);
@@ -201,7 +220,7 @@ export async function validatePreparedChapterChirho(
 		}
 		const timingBytesChirho = await ownedReadChirho(
 			rootChirho,
-			joinChirho(homeChirho, 'source-chirho/timings-chirho.bin'),
+			joinChirho(sourceHomeChirho, 'source-chirho/timings-chirho.bin'),
 			4 * 1024 ** 2
 		);
 		if (
@@ -215,12 +234,20 @@ export async function validatePreparedChapterChirho(
 		)
 			throw Error('Human source evidence changed');
 		if (timingBytesChirho.length % 11) throw Error('Source timing record is torn');
-		const correctedWindowChirho = correctedOpeningWindowChirho(
-			openingPhaseChirho?.definition_chirho ?? null,
-			readingChirho,
-			timingBytesChirho,
-			sourceProbeChirho
-		);
+		const correctedWindowChirho = remainderChirho
+			? verifyProverbsWindowChirho(
+					definitionChirho as ProverbsDefinitionChirho,
+					readingChirho,
+					timingBytesChirho,
+					sourceProbeChirho,
+					spokenVerseChirho(sourceChapterChirho.verses_chirho[0])
+				)
+			: correctedOpeningWindowChirho(
+					openingPhaseChirho?.definition_chirho ?? null,
+					readingChirho,
+					timingBytesChirho,
+					sourceProbeChirho
+				);
 		if (!correctedWindowChirho) {
 			const verseNumberChirho = Number(readingChirho.lesson_id_chirho.split('.')[2]);
 			let timingOffsetChirho = -1;

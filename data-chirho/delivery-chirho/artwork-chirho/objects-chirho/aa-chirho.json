@@ -4373,6 +4373,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/ezra-chirho/chapter-007-chirho/ezra-007-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/aa74ced4dfaacd6919dc110352d816a7ba8c441a5c8f5c619b1cb1d3f59edc72.webp",
+        "sha256_chirho": "aa74ced4dfaacd6919dc110352d816a7ba8c441a5c8f5c619b1cb1d3f59edc72",
+        "bytes_chirho": 2373900,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T07:21:11.945Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/b262fdf1cf31be410c263de3d085814afa7669f50828ede1329dafc828d3088b.webp",
+        "sha256_chirho": "b262fdf1cf31be410c263de3d085814afa7669f50828ede1329dafc828d3088b",
+        "bytes_chirho": 190982,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T07:21:12.973Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-samuel-chirho/chapter-016-chirho/1sam-016-005-chirho.webp"
       ],
       "source_chirho": {

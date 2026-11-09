@@ -27,6 +27,13 @@ CORRECTION_CHIRHO = importlib_chirho.module_from_spec(CORRECTION_SPEC_CHIRHO)
 CORRECTION_SPEC_CHIRHO.loader.exec_module(CORRECTION_CHIRHO)
 
 
+PROVERBS_SPEC_CHIRHO = importlib_chirho.spec_from_file_location(
+    "beeri_proverbs_chirho", PathChirho(__file__).with_name("beeri_proverbs_chirho.py")
+)
+PROVERBS_CHIRHO = importlib_chirho.module_from_spec(PROVERBS_SPEC_CHIRHO)
+PROVERBS_SPEC_CHIRHO.loader.exec_module(PROVERBS_CHIRHO)
+
+
 def sha_chirho(bytes_chirho):
     return hashlib_chirho.sha256(bytes_chirho).hexdigest()
 
@@ -257,29 +264,42 @@ def package_chirho(home_chirho, entry_chirho):
 def prepare_chirho(
     run_chirho, book_chirho, entry_chirho, chapter_limit_chirho, correction_chirho=None
 ):
-    home_chirho = run_chirho / "books-chirho" / book_chirho["slug_chirho"]
-    snapshot_chirho = home_chirho / "snapshots-chirho"
-    subprocess_chirho.run(
-        [
-            "bun",
-            "scripts-chirho/audio-chirho/readings-chirho/snapshot_chirho.ts",
-            str(snapshot_chirho),
-            book_chirho["id_chirho"],
-        ],
-        cwd=ROOT_CHIRHO,
-        check=True,
-        capture_output=True,
+    remainder_chirho = bool(
+        correction_chirho
+        and correction_chirho.get("phase_chirho") == PROVERBS_CHIRHO.PHASE_CHIRHO
     )
+    source_home_chirho = run_chirho / "books-chirho" / book_chirho["slug_chirho"]
+    home_chirho = (
+        run_chirho
+        / PROVERBS_CHIRHO.PHASE_CHIRHO
+        / "books-chirho"
+        / book_chirho["slug_chirho"]
+        if remainder_chirho
+        else source_home_chirho
+    )
+    snapshot_chirho = source_home_chirho / "snapshots-chirho"
+    if not remainder_chirho:
+        subprocess_chirho.run(
+            [
+                "bun",
+                "scripts-chirho/audio-chirho/readings-chirho/snapshot_chirho.ts",
+                str(snapshot_chirho),
+                book_chirho["id_chirho"],
+            ],
+            cwd=ROOT_CHIRHO,
+            check=True,
+            capture_output=True,
+        )
     # The finite continuation is local-only: its preserved source must exist, never downloaded.
     source_chirho = (
         json_chirho.loads(
-            (home_chirho / "source-chirho/source-chirho.json").read_text()
+            (source_home_chirho / "source-chirho/source-chirho.json").read_text()
         )
         if correction_chirho
         else package_chirho(home_chirho, entry_chirho)
     )
     rows_by_chapter_chirho = timings_chirho(
-        (home_chirho / "source-chirho/timings-chirho.bin").read_bytes(),
+        (source_home_chirho / "source-chirho/timings-chirho.bin").read_bytes(),
         int(book_chirho["gbt_file_chirho"][:2]),
     )
     snapshot_index_chirho = json_chirho.loads(
@@ -316,15 +336,27 @@ def prepare_chirho(
             for value_chirho in values_chirho
         ]
         source_path_chirho = (
-            home_chirho / "source-chirho" / f"chapter-{chapter_chirho:03d}-chirho.mp3"
+            source_home_chirho
+            / "source-chirho"
+            / f"chapter-{chapter_chirho:03d}-chirho.mp3"
         )
-        if correction_chirho:
+        if remainder_chirho:
+            rows_chirho = PROVERBS_CHIRHO.aligned_rows_chirho(
+                correction_chirho,
+                chapter_value_chirho,
+                source_chirho,
+                source_path_chirho.read_bytes(),
+                (source_home_chirho / "source-chirho/timings-chirho.bin").read_bytes(),
+                rows_chirho,
+            )
+            values_chirho, numbers_chirho = values_chirho[1:], numbers_chirho[1:]
+        elif correction_chirho:
             rows_chirho = CORRECTION_CHIRHO.opening_rows_chirho(
                 correction_chirho,
                 chapter_value_chirho,
                 source_chirho,
                 source_path_chirho.read_bytes(),
-                (home_chirho / "source-chirho/timings-chirho.bin").read_bytes(),
+                (source_home_chirho / "source-chirho/timings-chirho.bin").read_bytes(),
             )
             values_chirho, numbers_chirho = values_chirho[:1], [1]
         elif numbers_chirho != [
@@ -391,9 +423,20 @@ def prepare_chirho(
                 if correction_chirho and (
                     record_chirho.get("source_correction_sha256_chirho")
                     != correction_chirho["source_evidence_sha256_chirho"]
-                    or record_chirho["source_chirho"]["start_chirho"] != 0
+                    or record_chirho["source_chirho"]["start_chirho"]
+                    != (
+                        rows_chirho[index_chirho]["start_chirho"]
+                        if remainder_chirho
+                        else 0
+                    )
                     or record_chirho["source_chirho"]["end_chirho"]
-                    != rows_chirho[1]["start_chirho"]
+                    != (
+                        rows_chirho[index_chirho + 1]["start_chirho"]
+                        if remainder_chirho and index_chirho + 1 < len(rows_chirho)
+                        else duration_chirho
+                        if remainder_chirho
+                        else rows_chirho[1]["start_chirho"]
+                    )
                     or record_chirho["source_chirho"]["chapter_sha256_chirho"]
                     != source_chirho["files_chirho"][source_path_chirho.name]
                     or record_chirho["source_chirho"]["timings_sha256_chirho"]
@@ -545,7 +588,11 @@ def main_chirho():
     if not run_chirho.is_relative_to(ROOT_CHIRHO / "workspace-chirho/audio-chirho"):
         raise ValueError("Run must live inside the audio workspace")
     correction_chirho = (
-        CORRECTION_CHIRHO.definition_chirho(
+        (
+            PROVERBS_CHIRHO
+            if arguments_chirho.phase_chirho == PROVERBS_CHIRHO.PHASE_CHIRHO
+            else CORRECTION_CHIRHO
+        ).definition_chirho(
             ROOT_CHIRHO,
             arguments_chirho.phase_chirho,
             run_chirho,
@@ -605,7 +652,12 @@ def main_chirho():
                     **(
                         {
                             "phase_chirho": correction_chirho["phase_chirho"],
-                            "opening_cuts_chirho": 12,
+                            **(
+                                {"remaining_cuts_chirho": 342}
+                                if correction_chirho.get("phase_chirho")
+                                == PROVERBS_CHIRHO.PHASE_CHIRHO
+                                else {"opening_cuts_chirho": 12}
+                            ),
                         }
                         if correction_chirho
                         else {}
@@ -615,7 +667,14 @@ def main_chirho():
         )
         return
     run_chirho.mkdir(parents=True, exist_ok=True)
-    with (run_chirho / "prepare-chirho.lock").open("a") as lock_chirho:
+    progress_home_chirho = (
+        run_chirho / PROVERBS_CHIRHO.PHASE_CHIRHO
+        if correction_chirho
+        and correction_chirho.get("phase_chirho") == PROVERBS_CHIRHO.PHASE_CHIRHO
+        else run_chirho
+    )
+    progress_home_chirho.mkdir(parents=True, exist_ok=True)
+    with (progress_home_chirho / "prepare-chirho.lock").open("a") as lock_chirho:
         fcntl_chirho.flock(lock_chirho, fcntl_chirho.LOCK_EX | fcntl_chirho.LOCK_NB)
         results_chirho = []
         for book_chirho, entry_chirho in selected_chirho:
@@ -634,7 +693,7 @@ def main_chirho():
                 if correction_chirho
                 else "progress-chirho.json"
             )
-            temporary_chirho = run_chirho / (progress_name_chirho + ".new")
+            temporary_chirho = progress_home_chirho / (progress_name_chirho + ".new")
             temporary_chirho.write_text(
                 json_chirho.dumps(
                     {
@@ -646,8 +705,8 @@ def main_chirho():
                 )
                 + "\n"
             )
-            temporary_chirho.replace(run_chirho / progress_name_chirho)
-        temporary_chirho = run_chirho / (progress_name_chirho + ".new")
+            temporary_chirho.replace(progress_home_chirho / progress_name_chirho)
+        temporary_chirho = progress_home_chirho / (progress_name_chirho + ".new")
         temporary_chirho.write_text(
             json_chirho.dumps(
                 {
@@ -661,7 +720,7 @@ def main_chirho():
             )
             + "\n"
         )
-        temporary_chirho.replace(run_chirho / progress_name_chirho)
+        temporary_chirho.replace(progress_home_chirho / progress_name_chirho)
 
 
 if __name__ == "__main__":

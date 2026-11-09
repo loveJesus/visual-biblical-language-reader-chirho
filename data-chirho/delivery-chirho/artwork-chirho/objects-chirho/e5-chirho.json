@@ -4186,6 +4186,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/nehemiah-chirho/chapter-002-chirho/neh-002-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/e5a5a2122c7521ebcdbbd5e6378f65357e320968aa03f5cfd8c47ef90f0322a3.webp",
+        "sha256_chirho": "e5a5a2122c7521ebcdbbd5e6378f65357e320968aa03f5cfd8c47ef90f0322a3",
+        "bytes_chirho": 2518410,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T07:28:20.230Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/5d585307d257404806f662900f56453b43de7201d98048f34d73507d84c2562d.webp",
+        "sha256_chirho": "5d585307d257404806f662900f56453b43de7201d98048f34d73507d84c2562d",
+        "bytes_chirho": 230130,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T07:28:21.240Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/deuteronomy-chirho/chapter-019-chirho/deut-019-002-chirho.webp"
       ],
       "source_chirho": {

@@ -2153,6 +2153,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/2-chronicles-chirho/chapter-017-chirho/2chr-017-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/32235116ac1e6c971fa5a69891852e407d6a4b7d045262dbc675de39e235b316.webp",
+        "sha256_chirho": "32235116ac1e6c971fa5a69891852e407d6a4b7d045262dbc675de39e235b316",
+        "bytes_chirho": 2546574,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T06:27:25.209Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/d340f52fa79e4bdf6bf07a772083076fc23121b73fdd5f3242c5eb86c87e7722.webp",
+        "sha256_chirho": "d340f52fa79e4bdf6bf07a772083076fc23121b73fdd5f3242c5eb86c87e7722",
+        "bytes_chirho": 229054,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T06:27:26.171Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/judges-chirho/chapter-021-chirho/judg-021-019-chirho.webp"
       ],
       "source_chirho": {

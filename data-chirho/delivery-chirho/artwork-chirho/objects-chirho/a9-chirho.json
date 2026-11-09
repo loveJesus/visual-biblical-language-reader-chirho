@@ -4635,6 +4635,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/song-of-songs-chirho/chapter-002-chirho/song-002-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/a9bacd8e9002f6e0816ace26add2161d3ffb225785097c8f5d5886def6dc1344.webp",
+        "sha256_chirho": "a9bacd8e9002f6e0816ace26add2161d3ffb225785097c8f5d5886def6dc1344",
+        "bytes_chirho": 2355782,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T09:53:46.905Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/ec09d2eaca0222acb32b5138c2ca86b32d8a19f4de357bb9bc947a0b4b5ee6c6.webp",
+        "sha256_chirho": "ec09d2eaca0222acb32b5138c2ca86b32d8a19f4de357bb9bc947a0b4b5ee6c6",
+        "bytes_chirho": 206024,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T09:53:47.906Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/high-quality-v1-chirho/psalms-chirho/chapter-082-chirho/ps-082-001-chirho.webp"
       ],
       "source_chirho": {

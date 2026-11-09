@@ -2057,6 +2057,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/1-chronicles-chirho/chapter-020-chirho/1chr-020-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/b80fca1bcff50f39cbc3f5ba560fecb7e535a94a3610bcb9f679d0c78efc1e4c.webp",
+        "sha256_chirho": "b80fca1bcff50f39cbc3f5ba560fecb7e535a94a3610bcb9f679d0c78efc1e4c",
+        "bytes_chirho": 2590150,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T05:40:03.608Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/4c30dd1b97a1923dc1a5d5e545f32ff03dcc012110e93637867dd28ed1eeb9ba.webp",
+        "sha256_chirho": "4c30dd1b97a1923dc1a5d5e545f32ff03dcc012110e93637867dd28ed1eeb9ba",
+        "bytes_chirho": 264478,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T05:40:04.622Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/nehemiah-chirho/chapter-003-chirho/neh-003-028-chirho.webp"
       ],
       "source_chirho": {

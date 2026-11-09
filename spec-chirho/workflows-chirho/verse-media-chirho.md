@@ -167,3 +167,34 @@ flowchart TD
 The default scope still replays the31Proverbs openings. Genesis3 requires the explicit fixed scope and accepts at most24records. There is no arbitrary producer-folder argument. Source MP4s stay private/R2 and are not re-encoded. The first handoff has23records, with3:3 deliberately absent until its corrected scene and replacement clip are ready. A changed canonical source, displayed scene, selected reading, file or foreign catalogue stops installation before publication. The catalogue remains bounded to1000entries and4MiB. Completed replay verifies the source and catalogue without object-store calls; an uncertain upload is reconciled by its content-addressed GET before any new PUT. No synthesis, generation, retry reset or paid spending belongs to this installer.
 
 Unattended browser and native playback proofs must be silent. The test harness sets native element volume0 before every attached or detached play, verifies the getter and forbids device speech; native emulators use no-audio output. Quiet timing/decoder/state checks do not establish audible output or listener acceptance. Product and system volume defaults remain unchanged.
+
+## Remaining verses in the twelve corrected Proverbs chapters
+
+The explicit `proverbs-remainder-v1-chirho` phase adds only verses 2 through the last verse in chapters 3, 9, 11, 12, 13, 15, 16, 19, 24, 25, 27 and 30: 342 recordings. The immutable definition embeds their canonical/spoken hashes and exact windows. It pins the earlier twelve-opening definition and the same chapter, package and timing hashes. The old opening evidence is checked before mapping label k to verse k+1. Count differences alone never authorize a shift. The final verse ends at the pinned decoded source duration.
+
+```mermaid
+flowchart TD
+    definitionChirho[Exact finite definition: twelve sources and342windows] --> oldProofChirho[Recheck old opening source identity and labels]
+    oldProofChirho --> windowsChirho[Align exact labels and require embedded canonical/spoken/window facts]
+    windowsChirho --> prepareChirho[Existing pause-checked MP3 cutter; new phase home only]
+    prepareChirho --> freezeChirho[Freeze twelve prepared manifest hashes]
+    freezeChirho --> validateChirho[Existing shared canonical/source/MP3/human selector validation]
+    validateChirho --> archiveChirho[Existing upload lock and exact delivery readback receipts]
+    archiveChirho --> coldChirho[Cold revalidation and573unchanged prior human objects]
+    coldChirho --> commitChirho[Existing recoverable transaction: twelve chapters and index last]
+    commitChirho --> replayChirho[Completed replay requires receipts and exact915readings; zero writes/fetches]
+```
+
+Outputs and transaction state live in `workspace-chirho/audio-chirho/beeri-verses-2026-11-07-chirho/proverbs-remainder-v1-chirho/`. The original source, snapshots, opening-only manifests, historical holds and receipts remain unchanged. Preparation reads the old source and snapshots; it creates only the new phase's chapter cuts and manifests. Existing archived source originals are reused without reupload. The install preserves every old human reading and all word/video metadata. The other-book `--all-chirho` command does not include this new phase.
+
+Root runs the following only after the candidate source is reviewed and landed. Preparation is local cutting, with no synthesis or catalogue change; the default commands remain dry. The immutable plan is frozen only after all twelve manifests are complete.
+
+```sh
+rtk proxy python3 -I -B scripts-chirho/audio-chirho/readings-chirho/beeri_prepare_chirho.py --run-chirho workspace-chirho/audio-chirho/beeri-verses-2026-11-07-chirho --manifest-chirho build-chirho/verse-media-2026-11-07-chirho/gbt-audio-manifest-chirho.jsonl --books-chirho Prov --phase-chirho proverbs-remainder-v1-chirho
+rtk proxy python3 -I -B scripts-chirho/audio-chirho/readings-chirho/beeri_prepare_chirho.py --run-chirho workspace-chirho/audio-chirho/beeri-verses-2026-11-07-chirho --manifest-chirho build-chirho/verse-media-2026-11-07-chirho/gbt-audio-manifest-chirho.jsonl --books-chirho Prov --phase-chirho proverbs-remainder-v1-chirho --apply-chirho
+rtk proxy bun scripts-chirho/audio-chirho/readings-chirho/proverbs_phase_chirho.ts --freeze-chirho
+rtk proxy bun scripts-chirho/audio-chirho/readings-chirho/bounded_install_chirho.ts --phase-chirho proverbs-remainder-v1-chirho
+rtk proxy bun scripts-chirho/audio-chirho/readings-chirho/bounded_install_chirho.ts --phase-chirho proverbs-remainder-v1-chirho --apply-chirho --confirm-chirho hinneh.us@84bd
+```
+
+The shared archive/transaction implementation retains its existing chapter, byte and recovery bounds. A partial commit is recovered from its durable before/after journal after checking archive receipts. Foreign edits or missing proof stop recovery; no unknown request is resent. Root separately verifies actual selection, unchanged prior bodies, publication and hosted delivery. Automated identity and decoder checks do not establish listener acceptance.
