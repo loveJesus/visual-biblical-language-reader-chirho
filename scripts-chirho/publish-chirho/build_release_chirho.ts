@@ -11,6 +11,8 @@
 // local review build in build-chirho/review-chirho. Exit 2: refused, nothing written.
 
 import { verifiedVideoFactsChirho } from './video_rules_chirho';
+import { addVerifiedTutorialFactsChirho } from './r2-chirho/tutorial-rules-chirho';
+import { readEffectiveMediaDocumentsChirho } from './r2-chirho/scene-corrections-chirho';
 import { spawnSync } from 'node:child_process';
 import { mkdir, readdir, readFile, realpath, rename, rm, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
@@ -143,25 +145,36 @@ function appVersionChirho(filesChirho: FilesChirho): string | null {
 	}
 }
 
-/** GPT-owned media manifests: every data-chirho/media-chirho/*.json, in name order. */
+/** Workflow: media-delivery-chirho.md. Effective media plus retained archive-only aliases. */
 export async function readMediaRecordsChirho(
 	rootChirho: string,
 	reasonsChirho: string[]
 ): Promise<MediaRecordChirho[]> {
-	const folderChirho = join(rootChirho, 'data-chirho', 'media-chirho');
 	const recordsChirho: MediaRecordChirho[] = [];
-	const namesChirho = (await readdir(folderChirho).catch(() => [] as string[]))
-		.filter((nameChirho) => nameChirho.endsWith('.json'))
-		.sort();
-	for (const nameChirho of namesChirho) {
-		const textChirho = await readFile(join(folderChirho, nameChirho), 'utf8');
+	const effectiveChirho = await readEffectiveMediaDocumentsChirho(rootChirho, reasonsChirho).catch(
+		(errorChirho: unknown) => {
+			reasonsChirho.push(
+				...(errorChirho instanceof RefusalChirho
+					? errorChirho.reasonsChirho
+					: [
+							`Media inputs refused: ${errorChirho instanceof Error ? errorChirho.message : 'invalid documents'}`
+						])
+			);
+			return null;
+		}
+	);
+	if (!effectiveChirho) return recordsChirho;
+	for (const {
+		name_chirho: nameChirho,
+		document_chirho: documentChirho
+	} of effectiveChirho.documents_chirho) {
 		try {
-			recordsChirho.push(...mediaRecordsChirho(nameChirho, JSON.parse(textChirho), reasonsChirho));
+			recordsChirho.push(...mediaRecordsChirho(nameChirho, documentChirho, reasonsChirho));
 		} catch {
 			reasonsChirho.push(`data-chirho/media-chirho/${nameChirho} is not valid JSON`);
 		}
 	}
-	return recordsChirho;
+	return [...recordsChirho, ...effectiveChirho.retained_aliases_chirho];
 }
 
 /** Validates the adapter output and writes the release; throws RefusalChirho before any write. */
@@ -248,6 +261,7 @@ export async function buildReleaseChirho(optionsChirho: BuildOptionsChirho): Pro
 		reasonsChirho,
 		optionsChirho.allow_pending_media_chirho || Boolean(optionsChirho.preview_chirho)
 	);
+	await addVerifiedTutorialFactsChirho(rootChirho, publicChirho, reasonsChirho, videoFactsChirho);
 	const previewChirho = optionsChirho.preview_chirho;
 	const secretTextsChirho: string[] = [];
 	for (const pathChirho of previewChirho?.secret_paths_chirho ?? [

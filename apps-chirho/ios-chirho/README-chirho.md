@@ -58,6 +58,14 @@ Launch arguments:
 - `-hinneh-open-chirho John.3.16` opens a passage.
 - `-hinneh-locale-chirho es` sets the interface language.
 
+## Launch and playback preferences
+
+Settings offers “Start with today’s Proverbs” (on by default) and “Play when I change verses” (off by default). Today applies only to a fresh app launch; switching back to the foreground keeps the current passage. With Today off, a fresh launch resumes the last passage whose text loaded and verified. An explicit passage request wins over either preference.
+
+Autoplay is opt-in and uses the same verified video or saved verse recording as manual Play after the reader chooses a different verse. Launch, restore, a delivered passage link, retry, changing pronunciation and dismissing welcome stay quiet. Stale navigation and backgrounding cancel pending playback. No device speech or generation fallback is added.
+
+One brief English/Spanish welcome appears for each new app version, with a primary Start reading action, an optional Watch quick tour link and optional Info. The tour can be reopened from Reading key or Info and opens the localized `https://hinneh.us/tutorial-chirho/?lang_chirho=en|es` page only after a tap; no welcome media is preloaded or played. Settings → Info remains available without a loaded verse and carries the explanation, license overview and Be'eri credit. The welcome version follows the semantic app version, not the build number or downloaded-media updates. See `docs-chirho/reader-session-chirho.md` for the workflow and verification limits.
+
 ## What the app trusts, and how
 
 - **Origin.** Only `https://hinneh.us` is used. Each resource kind has one path shape and one size

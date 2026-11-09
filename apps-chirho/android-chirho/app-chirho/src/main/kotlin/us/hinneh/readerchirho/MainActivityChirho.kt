@@ -12,6 +12,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalConfiguration
@@ -28,6 +29,7 @@ import us.hinneh.readerchirho.contentchirho.WordChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.statechirho.HinnehApplicationChirho
 import us.hinneh.readerchirho.statechirho.InterfaceLanguageChirho
+import us.hinneh.readerchirho.statechirho.LaunchChirho
 import us.hinneh.readerchirho.statechirho.PreferencesChirho
 import us.hinneh.readerchirho.statechirho.ReaderViewModelChirho
 import us.hinneh.readerchirho.uichirho.HinnehThemeChirho
@@ -35,6 +37,7 @@ import us.hinneh.readerchirho.uichirho.LocalTextScaleChirho
 import us.hinneh.readerchirho.uichirho.ProvideTextScaleChirho
 import us.hinneh.readerchirho.uichirho.ReaderActionsChirho
 import us.hinneh.readerchirho.uichirho.ReaderScreenChirho
+import us.hinneh.readerchirho.uichirho.WelcomeChirho
 import us.hinneh.readerchirho.videochirho.VideoPlayerChirho
 
 class MainActivityChirho : ComponentActivity() {
@@ -54,8 +57,9 @@ class MainActivityChirho : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val graphChirho = (application as HinnehApplicationChirho).graphChirho
-        // An explicit passage (for example from a test or a shared verse) takes precedence over the daily default.
-        val explicitChirho = intent.getStringExtra(EXTRA_PASSAGE_CHIRHO)?.let { PassageChirho.parseChirho(it) }
+        // An explicit passage (for example from a test or a shared verse) wins on a fresh launch (LaunchChirho);
+        // an activity Android restores keeps the verse it showed, even if it was first opened with one.
+        val explicitChirho = intent.getStringExtra(EXTRA_PASSAGE_CHIRHO)?.takeIf { savedInstanceState == null }?.let { PassageChirho.parseChirho(it) }
         setContent {
             HinnehThemeChirho {
                 val modelChirho: ReaderViewModelChirho = viewModel(
@@ -81,8 +85,19 @@ class MainActivityChirho : ComponentActivity() {
                 LifecycleEventEffect(Lifecycle.Event.ON_STOP) { modelChirho.stopAudioChirho() }
                 val spanishChirho = LocalConfiguration.current.locales[0].language == "es"
                 var textScaleChirho by remember { mutableFloatStateOf(graphChirho.preferencesChirho.textScaleChirho) }
+                // The welcome shows on a first run and once after each update, until it is closed (GPT, DM #3642).
+                var welcomeChirho by remember {
+                    mutableStateOf(LaunchChirho.welcomeDueChirho(graphChirho.preferencesChirho.welcomeSeenVersionChirho, BuildConfig.VERSION_CODE.toLong()))
+                }
                 CompositionLocalProvider(LocalTextScaleChirho provides textScaleChirho) {
                     ProvideTextScaleChirho {
+                        if (welcomeChirho) {
+                            WelcomeChirho(spanishChirho) {
+                                graphChirho.preferencesChirho.welcomeSeenVersionChirho = BuildConfig.VERSION_CODE.toLong()
+                                welcomeChirho = false
+                            }
+                            return@ProvideTextScaleChirho
+                        }
                         ReaderScreenChirho(
                             stateChirho = stateChirho,
                             playbackChirho = playbackChirho,
@@ -112,6 +127,8 @@ class MainActivityChirho : ComponentActivity() {
                                     graphChirho.preferencesChirho.textScaleChirho = scaleChirho
                                     textScaleChirho = scaleChirho
                                 }
+                                override fun onOpenTodayChirho(openTodayChirho: Boolean) = modelChirho.setOpenTodayChirho(openTodayChirho)
+                                override fun onAutoplayChirho(autoplayChirho: Boolean) = modelChirho.setAutoplayChirho(autoplayChirho)
                             },
                         )
                     }

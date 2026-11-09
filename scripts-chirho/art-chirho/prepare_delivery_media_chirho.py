@@ -462,7 +462,9 @@ def prepare_chirho(root_chirho, requested_chirho=None):
                     raise ValueError("Duplicate cached source and recipe")
                 cache_chirho[key_chirho] = row_chirho
         found_chirho = SHARDS_CHIRHO.collect_chirho(
-            root_chirho, include_fallbacks_chirho=True
+            root_chirho,
+            include_fallbacks_chirho=True,
+            include_correction_sources_chirho=True,
         )
         selected_chirho = (
             set(requested_chirho) if requested_chirho is not None else None
@@ -590,7 +592,9 @@ def prepare_chirho(root_chirho, requested_chirho=None):
                         asset_chirho
                     )
             next_chirho = SHARDS_CHIRHO.collect_chirho(
-                root_chirho, include_fallbacks_chirho=True
+                root_chirho,
+                include_fallbacks_chirho=True,
+                include_correction_sources_chirho=True,
             )
             if next_chirho == found_chirho:
                 # Hash equality preserves the already decoded size/alpha/format proof. Avoid
@@ -598,7 +602,9 @@ def prepare_chirho(root_chirho, requested_chirho=None):
                 for _kind_chirho, record_chirho in verified_chirho.values():
                     source_bytes_chirho(root_chirho, record_chirho)
                 next_chirho = SHARDS_CHIRHO.collect_chirho(
-                    root_chirho, include_fallbacks_chirho=True
+                    root_chirho,
+                    include_fallbacks_chirho=True,
+                    include_correction_sources_chirho=True,
                 )
                 if next_chirho == found_chirho:
                     break
@@ -637,7 +643,11 @@ def prepare_chirho(root_chirho, requested_chirho=None):
             ],
         }
         if (
-            SHARDS_CHIRHO.collect_chirho(root_chirho, include_fallbacks_chirho=True)
+            SHARDS_CHIRHO.collect_chirho(
+                root_chirho,
+                include_fallbacks_chirho=True,
+                include_correction_sources_chirho=True,
+            )
             != found_chirho
         ):
             raise ValueError("Media manifests changed during preparation")

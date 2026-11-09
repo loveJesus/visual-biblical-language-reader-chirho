@@ -21,6 +21,11 @@ import { dirname, join, resolve, sep } from 'node:path';
 import { readMediaRecordsChirho } from './build_release_chirho';
 import { r2ModeChirho } from './r2-chirho/release-artwork-chirho';
 import {
+	readEffectiveMediaDocumentsChirho,
+	sceneCorrectionInputPathsChirho,
+	SCENE_CORRECTIONS_PATH_CHIRHO
+} from './r2-chirho/scene-corrections-chirho';
+import {
 	RefusalChirho,
 	deliveryEntriesChirho,
 	deliveryProblemChirho,
@@ -29,7 +34,7 @@ import {
 
 // Inputs whose changes flow into previews automatically; every other input is code or content.
 export const MEDIA_INPUT_PATTERN_CHIRHO =
-	/^(?:data-chirho\/media-chirho\/|data-chirho\/video-chirho\/|data-chirho\/delivery-chirho\/artwork-chirho\/|static\/assets-chirho\/|static\/media-chirho\/|static\/audio-chirho\/|data-chirho\/reader-chirho\/icon-reuse-chirho\/[0-9]{4}-chirho\/[a-z0-9-]+-chirho\.json$)/;
+	/^(?:data-chirho\/media-chirho\/|data-chirho\/art-corrections-chirho\/|data-chirho\/video-chirho\/|data-chirho\/delivery-chirho\/artwork-chirho\/|static\/assets-chirho\/|static\/media-chirho\/|static\/audio-chirho\/|data-chirho\/reader-chirho\/icon-reuse-chirho\/[0-9]{4}-chirho\/[a-z0-9-]+-chirho\.json$)/;
 // Not build inputs: history, dependencies, outputs, private and fleet material, and tests/docs.
 const SKIPPED_TOP_CHIRHO = new Set([
 	'.git',
@@ -91,6 +96,16 @@ export async function snapshotArtworkInputsChirho(rootChirho: string) {
 		metadataChirho.set(pathChirho, bytesChirho);
 		return bytesChirho;
 	}
+	const correctionBytesChirho = await captureChirho(
+		SCENE_CORRECTIONS_PATH_CHIRHO,
+		512 * 1024
+	).catch((errorChirho: NodeJS.ErrnoException) => {
+		if (errorChirho.code === 'ENOENT') return null;
+		throw errorChirho;
+	});
+	if (correctionBytesChirho)
+		for (const inputPathChirho of sceneCorrectionInputPathsChirho(correctionBytesChirho))
+			await captureChirho(inputPathChirho, 4 * 1024 ** 2);
 	const manifestsChirho = (await readdir(join(homeChirho, 'data-chirho/media-chirho')))
 		.filter((nameChirho) => nameChirho.endsWith('.json'))
 		.sort();
@@ -125,6 +140,20 @@ export async function snapshotArtworkInputsChirho(rootChirho: string) {
 				'artwork proof changed during snapshot; retry from the completed index'
 			]);
 	}
+	const correctionAfterChirho = await captureChirho(
+		SCENE_CORRECTIONS_PATH_CHIRHO,
+		512 * 1024
+	).catch((errorChirho: NodeJS.ErrnoException) => {
+		if (errorChirho.code === 'ENOENT') return null;
+		throw errorChirho;
+	});
+	if (
+		(correctionBytesChirho === null) !== (correctionAfterChirho === null) ||
+		(correctionBytesChirho &&
+			correctionAfterChirho &&
+			!Buffer.from(correctionBytesChirho).equals(correctionAfterChirho))
+	)
+		throw new RefusalChirho(['scene correction changed during artwork snapshot']);
 	return metadataChirho;
 }
 
@@ -222,6 +251,7 @@ export async function copySnapshotChirho(
 	await mkdir(directoryChirho, { recursive: true });
 	const codeChirho: string[] = [];
 	const mediaChirho: string[] = [];
+	const copiedPathsChirho = new Set<string>();
 	const audioChirho = await snapshotAudioInputsChirho(rootChirho);
 	const remoteArtworkChirho = await r2ModeChirho(rootChirho);
 	const artworkChirho = remoteArtworkChirho ? await snapshotArtworkInputsChirho(rootChirho) : null;
@@ -247,7 +277,7 @@ export async function copySnapshotChirho(
 			} else if (entryChirho.isFile()) {
 				if (
 					artworkChirho &&
-					/^(?:data-chirho\/media-chirho\/.*\.json|data-chirho\/delivery-chirho\/artwork-chirho\/)/u.test(
+					/^(?:data-chirho\/media-chirho\/.*\.json|data-chirho\/art-corrections-chirho\/|data-chirho\/delivery-chirho\/artwork-chirho\/)/u.test(
 						pathChirho
 					) &&
 					!artworkChirho.has(pathChirho)
@@ -266,6 +296,7 @@ export async function copySnapshotChirho(
 					audioChirho?.metadata_chirho.get(pathChirho) ??
 					(await readFile(join(rootChirho, pathChirho)));
 				await writeFile(join(directoryChirho, pathChirho), bytesChirho);
+				copiedPathsChirho.add(pathChirho);
 				(MEDIA_INPUT_PATTERN_CHIRHO.test(pathChirho) ? mediaChirho : codeChirho).push(
 					`${pathChirho}\0${sha256Chirho(bytesChirho)}`
 				);
@@ -273,6 +304,17 @@ export async function copySnapshotChirho(
 		}
 	}
 	await walkChirho('');
+	// A captured correction/source/proof must survive even if its live directory changes later.
+	for (const [pathChirho, bytesChirho] of artworkChirho ?? []) {
+		if (copiedPathsChirho.has(pathChirho)) continue;
+		await mkdir(dirname(join(directoryChirho, pathChirho)), { recursive: true });
+		await writeFile(join(directoryChirho, pathChirho), bytesChirho);
+		(MEDIA_INPUT_PATTERN_CHIRHO.test(pathChirho) ? mediaChirho : codeChirho).push(
+			`${pathChirho}\0${sha256Chirho(bytesChirho)}`
+		);
+	}
+	codeChirho.sort();
+	mediaChirho.sort();
 	await symlink(join(rootChirho, 'node_modules'), join(directoryChirho, 'node_modules'));
 	return {
 		directory_chirho: directoryChirho,
@@ -339,16 +381,26 @@ export async function overlayDeliveryChirho(
 	const sizesChirho = new Map<string, [number, number]>();
 	const missingChirho: string[] = [];
 	const mediaFolderChirho = join(snapshotChirho, 'data-chirho', 'media-chirho');
-	const namesChirho = (await readdir(mediaFolderChirho).catch(() => [] as string[]))
-		.filter((nameChirho) => nameChirho.endsWith('.json'))
-		.sort();
-	for (const nameChirho of namesChirho) {
-		const manifestChirho = JSON.parse(await readFile(join(mediaFolderChirho, nameChirho), 'utf8'));
+	const effectiveChirho = await readEffectiveMediaDocumentsChirho(snapshotChirho);
+	const documentsChirho = effectiveChirho.documents_chirho.map((documentChirho) => ({
+		path_chirho: join(mediaFolderChirho, documentChirho.name_chirho) as string | null,
+		document_chirho: documentChirho.document_chirho
+	}));
+	if (effectiveChirho.retained_scenes_chirho.length)
+		documentsChirho.push({
+			path_chirho: null,
+			document_chirho: { scenes_chirho: effectiveChirho.retained_scenes_chirho }
+		});
+	for (const documentChirho of documentsChirho) {
+		const manifestChirho = documentChirho.document_chirho;
 		for (const [keyChirho, kindChirho] of [
 			['icons_chirho', 'icon'],
 			['scenes_chirho', 'scene']
 		] as const) {
-			for (const itemChirho of manifestChirho[keyChirho] ?? []) {
+			const itemsChirho = manifestChirho[keyChirho];
+			if (itemsChirho !== undefined && !Array.isArray(itemsChirho))
+				throw new Error('Media collection is not an array');
+			for (const itemChirho of Array.isArray(itemsChirho) ? itemsChirho : []) {
 				reportChirho.records_chirho++;
 				const entryChirho = entriesChirho.get(`${kindChirho}:${itemChirho.sha256_chirho}`);
 				if (!entryChirho) {
@@ -411,10 +463,11 @@ export async function overlayDeliveryChirho(
 				]);
 			}
 		}
-		await writeFile(
-			join(mediaFolderChirho, nameChirho),
-			`${JSON.stringify(manifestChirho, null, '\t')}\n`
-		);
+		if (documentChirho.path_chirho)
+			await writeFile(
+				documentChirho.path_chirho,
+				`${JSON.stringify(manifestChirho, null, '\t')}\n`
+			);
 	}
 	if (missingChirho.length)
 		reasonsChirho.push(

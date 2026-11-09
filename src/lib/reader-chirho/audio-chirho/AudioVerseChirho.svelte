@@ -24,7 +24,9 @@
 		lessonChirho,
 		verseNavigationChirho,
 		videoChirho = null,
-		onHumanReadingChirho
+		onHumanReadingChirho,
+		navigationGenerationChirho = 0,
+		onReadyChirho
 	}: {
 		lessonChirho: LessonChirho | GreekLessonChirho;
 		verseNavigationChirho?: Snippet<[Snippet]>;
@@ -32,6 +34,8 @@
 		videoChirho?: unknown;
 		/** Reports the verse's validated human reading (or null), so its credit can be shown in the Sources fold. */
 		onHumanReadingChirho?: (readingChirho: RecordingChirho | null) => void;
+		navigationGenerationChirho?: number;
+		onReadyChirho?: (lessonIdChirho: string, generationChirho: number) => void;
 	} = $props();
 	let recordingsChirho = $state<RecordingChirho[]>([]);
 	// Workflow: verse-media-chirho.md. The verse button plays this reading first; its credit is shown by
@@ -62,6 +66,14 @@
 			return null;
 		return { video_chirho: candidateChirho.sha256_chirho, clip_chirho: clipChirho.sha256_chirho };
 	});
+	// Human source-bound readings may include Aramaic; AI and assembled-word Aramaic stay unavailable.
+	const aramaicUnavailableChirho = $derived(
+		!humanReadingChirho &&
+			lessonChirho.tokens_chirho.some(
+				(tokenChirho) =>
+					'source_language_chirho' in tokenChirho && tokenChirho.source_language_chirho === 'arc'
+			)
+	);
 	let renditionChirho = $state('modern_aspirates');
 	let explicitRenditionChirho = $state(false);
 	let speedChirho = $state('1');
@@ -90,6 +102,7 @@
 	}
 	$effect(() => {
 		const currentLessonChirho = lessonChirho;
+		const generationChirho = navigationGenerationChirho;
 		let currentChirho = true;
 		recordingsChirho = [];
 		const refreshChirho = () =>
@@ -108,9 +121,12 @@
 							)
 								? 'modern_aspirates'
 								: 'modern';
+						// The captured generation prevents an older A callback from starting a later A visit.
+						onReadyChirho?.(currentLessonChirho.id_chirho, generationChirho);
 					}
 				},
 				() => {
+					if (currentChirho) onReadyChirho?.(currentLessonChirho.id_chirho, generationChirho);
 					/* Optional recordings never remove the source or device fallback. */
 				}
 			);
@@ -123,7 +139,7 @@
 	});
 </script>
 
-{#if lessonChirho.tokens_chirho.some((tokenChirho) => 'source_language_chirho' in tokenChirho && tokenChirho.source_language_chirho === 'arc')}
+{#if aramaicUnavailableChirho}
 	<p class="audio-note-chirho">
 		{localeStateChirho.currentChirho === 'es'
 			? 'Se está preparando la pronunciación aramea.'
@@ -136,10 +152,7 @@
 			textChirho={spokenVerseChirho(lessonChirho)}
 			languageChirho={lessonChirho.language_chirho}
 			savedOnlyChirho
-			unavailableChirho={lessonChirho.tokens_chirho.some(
-				(tokenChirho) =>
-					'source_language_chirho' in tokenChirho && tokenChirho.source_language_chirho === 'arc'
-			)}
+			unavailableChirho={aramaicUnavailableChirho}
 		/>
 		<small class="verse-development-chirho">{audioTChirho('under_development_chirho')}</small></span
 	>
@@ -277,5 +290,47 @@
 	.ipa-toggle-chirho input:checked {
 		background-color: #355443;
 		border-color: #355443;
+	}
+	@container (max-width: 420px) {
+		.audio-playback-chirho {
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-bottom: 0;
+		}
+		.verse-transport-chirho {
+			flex: 1 1 100%;
+			min-width: 0;
+			width: 100%;
+		}
+		.verse-transport-chirho > :global(.verse-step-chirho) {
+			flex: 0 0 44px;
+			width: 44px;
+			min-width: 44px;
+			min-height: 44px;
+		}
+		.verse-play-chirho {
+			flex: 1 1 0;
+			min-width: 0;
+			flex-direction: column;
+			align-items: stretch;
+			gap: 3px;
+		}
+		.verse-play-chirho :global(.speech-button-chirho) {
+			width: 100%;
+			min-height: 44px;
+			padding-inline: 6px;
+		}
+		.verse-development-chirho {
+			position: static;
+			transform: none;
+			white-space: normal;
+			max-width: none;
+			text-align: center;
+		}
+		.speech-stop-chirho:disabled,
+		.audio-playback-chirho:has(:global(.verse-play-chirho [aria-busy='true']))
+			> .speech-stop-chirho {
+			display: none;
+		}
 	}
 </style>

@@ -2262,6 +2262,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/deuteronomy-chirho/chapter-034-chirho/deut-034-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/494baf8a46ae235f0702b757e360283e4c382c8cfe43e6fd313a6622dbceed38.webp",
+        "sha256_chirho": "494baf8a46ae235f0702b757e360283e4c382c8cfe43e6fd313a6622dbceed38",
+        "bytes_chirho": 2521080,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-08T23:12:57.991Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/cb7592aa8f46f583615af57e629975e720e92d9ec9389ed877045cd44576e350.webp",
+        "sha256_chirho": "cb7592aa8f46f583615af57e629975e720e92d9ec9389ed877045cd44576e350",
+        "bytes_chirho": 231812,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-08T23:12:59.151Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/genesis-ordered-v1-chirho/chapter-19-chirho/genesis-19-013-chirho.webp"
       ],
       "source_chirho": {
@@ -4843,6 +4877,40 @@
         "height_chirho": 900,
         "lossy_chirho": true,
         "verified_at_chirho": "2026-11-01T19:03:14.850Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/leviticus-chirho/chapter-010-chirho/lev-010-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/49eb92575b69aef6c7ffac441d2219d37e66aa84fd38a46c91236b2fe465780d.webp",
+        "sha256_chirho": "49eb92575b69aef6c7ffac441d2219d37e66aa84fd38a46c91236b2fe465780d",
+        "bytes_chirho": 2456096,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-08T19:46:09.203Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/0202318c3772a68a9288d5043f8df784208ec1bc3cad68d7d2e3dc97b1956437.webp",
+        "sha256_chirho": "0202318c3772a68a9288d5043f8df784208ec1bc3cad68d7d2e3dc97b1956437",
+        "bytes_chirho": 208830,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-08T19:46:10.441Z"
       },
       "recipe_chirho": {
         "format_chirho": "webp",

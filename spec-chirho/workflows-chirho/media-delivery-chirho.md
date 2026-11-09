@@ -138,3 +138,30 @@ A flag grants no image request, spend, provider change, retry reset or artwork a
 Content-addressed MP3s, exact pronunciation/source bindings, credit reservations, unknown-result holds and listener-review states are unchanged. `audition_chirho.ts` and reusable-word workers never synthesize during playback. R2 recording uploads require the existing exact account/bucket confirmation and identical readback before a release receipt.
 
 These are local Mac processes, not Cloudflare cron jobs. They do not survive a reboot automatically. Drain and reconcile producers before restoring uploads or a periodic release cycle. The independent art-progress monitor is described in `art-recovery-chirho.md`; it cannot renew leases, generate art, clear holds or deploy.
+
+## Exact-base scene corrections
+
+A targeted correction lives in `data-chirho/art-corrections-chirho/catalogue-chirho.json`, outside the ordinary `data-chirho/media-chirho/*.json` scan. The v1 catalogue is bounded to 64 entries and 512 KiB. Each entry names one source document, lesson and variant; preserves the full exact original record and its sorted-JSON SHA-256; pins the chapter bytes and canonical verse; and supplies one pending replacement with a distinct versioned asset path and source hash. Duplicate targets/aliases, fallback substitutions, correction chains, changed originals, foreign source bindings and changed canonical scalars refuse. This mechanism does not approve artwork or alter an original provider request, prepared job, installed receipt or worker checkpoint.
+
+The TypeScript and Python helpers share one small hermetic fixture. They return effective document copies plus explicit retained original assets. Ordinary sharding validates and selects the effective scene alongside the existing fallback. Delivery preparation explicitly requests the extra historical source assets, so its cached-alias guard and the archival catalogue keep old source/delivery identities. TypeScript archive-only aliases have no `scene_record_chirho` and cannot become another visible scene tier. No old source document is rewritten by either helper.
+
+```mermaid
+flowchart TD
+    originalChirho[Immutable provider record and checkpoint] --> matchChirho[Exact full base and source/canonical checks]
+    correctionChirho[Bounded external correction catalogue] --> matchChirho
+    matchChirho --> effectiveChirho[Effective replacement document copy]
+    matchChirho --> retainedChirho[Explicit historical archive-only alias]
+    effectiveChirho --> invariantsChirho[Existing scene and fallback invariants]
+    invariantsChirho --> prepareChirho[Delivery preparation]
+    retainedChirho --> prepareChirho
+    prepareChirho --> archiveChirho[Existing archive and exact readback proofs]
+    archiveChirho --> snapshotChirho[Freeze correction, original base, source and proof index/shards]
+    snapshotChirho --> deliveryChirho[Materialize only the frozen release copy]
+    deliveryChirho --> shardsChirho[Effective chapter shards and retained asset URLs]
+```
+
+The release builder, raw-document R2/local overlays and Python collector use the same effective-document view. Only three exact record states are recognized: the full pinned base, the full replacement source, or the full replacement with SHA/dimensions derived from its corresponding verified archive entry. The materialized case must also retain the original base's exact archive entry; a filename, partial field match or another object's delivery proof is insufficient. Re-reading a materialized correction does not reinterpret its derivative as a new original. Existing unrelated delivery transforms keep their prior contract.
+
+Artwork snapshots capture the correction catalogue and its source chapter/manifest before the archive proof index/shards, then recheck the catalogue bytes. The frozen input map preserves the original base and source facts even if the live filesystem advances. The correction is a media fingerprint input. Both the sharding and R2 upload watchers hash the small overlay itself, so a correction-only change triggers normal validation without a retry/cap reset. With no correction catalogue, ordinary media and missing-folder/parse-reason behavior remain unchanged.
+
+The first intended consumer is the pending 1 Corinthians 1:1 hand correction. Its root-owned PNG, lossless source, visual review and final installation/publication remain separate from this implementation. A focused test executes cached delivery preparation with encoding forbidden and retains every prior alias; other tests cover source/base/canonical drift, chain/foreign targets, archive-bound materialized replay, cross-language parity, actual release-builder selection, coherent snapshot/R2 overlay and old URL/fallback preservation. Fixture archive facts are synthetic and are never evidence of a production upload, image review or hosted release.

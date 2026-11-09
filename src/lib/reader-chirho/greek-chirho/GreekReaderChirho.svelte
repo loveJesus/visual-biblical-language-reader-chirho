@@ -43,10 +43,14 @@
 		iconsChirho = {},
 		spanishChirho = null,
 		videoChirho = null,
-		artProgressChirho = null
+		artProgressChirho = null,
+		navigationGenerationChirho = 0,
+		onRecordingsReadyChirho
 	}: {
 		/** This book's artwork counts, listed in the Sources fold. */
 		artProgressChirho?: string | null;
+		navigationGenerationChirho?: number;
+		onRecordingsReadyChirho?: (lessonIdChirho: string, generationChirho: number) => void;
 		/** The chapter catalogue's record for this verse, unvalidated; the scene and player check it. */
 		videoChirho?: unknown;
 		introVisibleChirho?: boolean;
@@ -113,6 +117,8 @@
 					{lessonChirho}
 					{verseNavigationChirho}
 					{videoChirho}
+					{navigationGenerationChirho}
+					onReadyChirho={onRecordingsReadyChirho}
 					onHumanReadingChirho={(readingChirho) => (humanReadingChirho = readingChirho)}
 				/>
 				{#key lessonChirho.id_chirho}<GreekPassageChirho

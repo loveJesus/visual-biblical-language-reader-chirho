@@ -5822,6 +5822,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/1-samuel-chirho/chapter-013-chirho/1sam-013-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/41ebd38849f70b358f0af4c63eefe9e1866aac9ec23a843fee5418c326adc260.webp",
+        "sha256_chirho": "41ebd38849f70b358f0af4c63eefe9e1866aac9ec23a843fee5418c326adc260",
+        "bytes_chirho": 2433942,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T01:10:02.964Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/6cec34cc6db5fdf0f2372a420c45c1bf5d484d14bea87d52629a4a17ed0910b6.webp",
+        "sha256_chirho": "6cec34cc6db5fdf0f2372a420c45c1bf5d484d14bea87d52629a4a17ed0910b6",
+        "bytes_chirho": 224866,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T01:10:04.218Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/exodus-chirho/chapter-034-chirho/exod-034-014-chirho.webp"
       ],
       "source_chirho": {

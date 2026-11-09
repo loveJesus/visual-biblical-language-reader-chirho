@@ -29,6 +29,12 @@ REMOTE_SPEC_CHIRHO = importlib.util.spec_from_file_location(
 )
 REMOTE_ARTWORK_CHIRHO = importlib.util.module_from_spec(REMOTE_SPEC_CHIRHO)
 REMOTE_SPEC_CHIRHO.loader.exec_module(REMOTE_ARTWORK_CHIRHO)
+CORRECTIONS_SPEC_CHIRHO = importlib.util.spec_from_file_location(
+    "scene_corrections_chirho",
+    Path(__file__).with_name("recovery-chirho") / "scene_corrections_chirho.py",
+)
+CORRECTIONS_CHIRHO = importlib.util.module_from_spec(CORRECTIONS_SPEC_CHIRHO)
+CORRECTIONS_SPEC_CHIRHO.loader.exec_module(CORRECTIONS_CHIRHO)
 BOOKS_CHIRHO = {
     book_chirho["id_chirho"]: (
         book_chirho["slug_chirho"],
@@ -390,15 +396,26 @@ def webp_size_chirho(path_chirho):
     raise RefusalChirho(f"{path_chirho.name} has an unsupported WebP header")
 
 
-def collect_chirho(root_chirho, include_fallbacks_chirho=False):
+def collect_chirho(
+    root_chirho, include_fallbacks_chirho=False, include_correction_sources_chirho=False
+):
     """All public scene and icon records with their (book, chapter, verse), fail-closed."""
     verses_chirho = verse_counts_chirho(root_chirho)
     presentations_chirho = presentation_texts_chirho(root_chirho)
     found_chirho = {"scene": [], "icon": []}
-    for path_chirho in sorted(
-        (root_chirho / "data-chirho/media-chirho").glob("*.json")
-    ):
-        manifest_chirho = read_json_chirho(path_chirho)
+    try:
+        effective_chirho = CORRECTIONS_CHIRHO.read_effective_media_documents_chirho(
+            root_chirho
+        )
+    except (TypeError, ValueError, OSError) as error_chirho:
+        raise RefusalChirho(str(error_chirho)) from error_chirho
+    for document_chirho in effective_chirho["documents_chirho"]:
+        path_chirho = (
+            root_chirho / "data-chirho/media-chirho" / document_chirho["name_chirho"]
+        )
+        manifest_chirho = document_chirho["document_chirho"]
+        if not isinstance(manifest_chirho, dict):
+            raise RefusalChirho(f"{path_chirho.name} is not a JSON object")
         version_chirho = manifest_chirho.get("schema_version_chirho")
         if type(version_chirho) is not int or version_chirho != 1:
             raise RefusalChirho(f"{path_chirho.name} is not schema version 1")
@@ -452,6 +469,18 @@ def collect_chirho(root_chirho, include_fallbacks_chirho=False):
                 ):
                     raise RefusalChirho("too many media records")
     check_invariants_chirho(root_chirho, found_chirho, include_fallbacks_chirho)
+    # Historic aliases are archive inputs, never a second visible scene/fallback tier.
+    if include_correction_sources_chirho:
+        for item_chirho in effective_chirho["retained_scenes_chirho"]:
+            label_chirho = "retained scene correction source"
+            record_chirho = sanitize_chirho(
+                item_chirho, "scene", SCENE_FIELDS_CHIRHO, 4096, label_chirho
+            )
+            location_chirho = lesson_chirho(
+                record_chirho["lesson_id_chirho"], verses_chirho, label_chirho
+            )
+            source_artwork_fact_chirho(root_chirho, record_chirho, "scene")
+            found_chirho["scene"].append((location_chirho, record_chirho))
     return found_chirho
 
 
@@ -967,7 +996,7 @@ def signature_chirho(root_chirho):
             ),
         ]
     )
-    return tuple(
+    signature_chirho = tuple(
         (
             str(path_chirho),
             info_chirho.st_ino,
@@ -977,6 +1006,13 @@ def signature_chirho(root_chirho):
         for path_chirho, info_chirho in (
             (path_chirho, path_chirho.stat()) for path_chirho in paths_chirho
         )
+    )
+    correction_sha_chirho = CORRECTIONS_CHIRHO.correction_signature_chirho(root_chirho)
+    return (
+        signature_chirho
+        + ((CORRECTIONS_CHIRHO.CATALOGUE_CHIRHO, correction_sha_chirho),)
+        if correction_sha_chirho is not None
+        else signature_chirho
     )
 
 

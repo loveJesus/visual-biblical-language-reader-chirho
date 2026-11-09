@@ -9,10 +9,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,17 +28,25 @@ import us.hinneh.readerchirho.R
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.statechirho.InterfaceLanguageChirho
 
+/**
+ * Reading settings. The two switches L.J. confirmed come first (GPT, DM #3642): today's Proverbs on each fresh
+ * launch, and autoplay for each verse the reader moves to. About Hinneh is one entry that opens Info.
+ */
 @Composable
 fun SettingsSheetChirho(
     languageChirho: InterfaceLanguageChirho,
-    spanishChirho: Boolean,
     textScaleChirho: Float,
     renditionChirho: GreekRenditionChirho,
     speedChirho: Float,
+    openTodayChirho: Boolean,
+    autoplayChirho: Boolean,
     onLanguageChirho: (InterfaceLanguageChirho) -> Unit,
     onTextScaleChirho: (Float) -> Unit,
     onRenditionChirho: (GreekRenditionChirho) -> Unit,
     onSpeedChirho: (Float) -> Unit,
+    onOpenTodayChirho: (Boolean) -> Unit,
+    onAutoplayChirho: (Boolean) -> Unit,
+    onInfoChirho: () -> Unit,
     onDismissChirho: () -> Unit,
 ) {
     ClosableSheetChirho(
@@ -45,6 +56,9 @@ fun SettingsSheetChirho(
         },
     ) {
         Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(bottom = 32.dp)) {
+            GroupHeadingChirho(stringResource(R.string.opening_heading_chirho))
+            SwitchRowChirho(stringResource(R.string.open_today_chirho), stringResource(R.string.open_today_hint_chirho), openTodayChirho, onOpenTodayChirho)
+            SwitchRowChirho(stringResource(R.string.autoplay_chirho), stringResource(R.string.autoplay_hint_chirho), autoplayChirho, onAutoplayChirho)
             ChoiceGroupChirho(
                 stringResource(R.string.interface_language_chirho),
                 listOf(
@@ -83,14 +97,38 @@ fun SettingsSheetChirho(
                 ),
                 speedChirho, onSpeedChirho,
             )
-            AboutSectionChirho(spanishChirho)
+            GroupHeadingChirho(stringResource(R.string.about_heading_chirho))
+            TextButton(onClick = onInfoChirho) { Text(stringResource(R.string.info_link_chirho)) }
         }
     }
 }
 
 @Composable
-private fun <T> ChoiceGroupChirho(titleChirho: String, optionsChirho: List<Pair<T, String>>, selectedChirho: T, onChooseChirho: (T) -> Unit) {
+private fun GroupHeadingChirho(titleChirho: String) {
     Text(titleChirho, style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 18.dp, bottom = 4.dp).semantics { heading() })
+}
+
+/** A labelled switch; the whole row toggles it, and TalkBack hears it as one switch. */
+@Composable
+private fun SwitchRowChirho(labelChirho: String, hintChirho: String, checkedChirho: Boolean, onChangeChirho: (Boolean) -> Unit) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .toggleable(value = checkedChirho, role = Role.Switch, onValueChange = onChangeChirho)
+            .padding(vertical = 6.dp),
+    ) {
+        Column(Modifier.weight(1f).padding(end = 12.dp)) {
+            Text(labelChirho, style = MaterialTheme.typography.bodyLarge)
+            Text(hintChirho, style = MaterialTheme.typography.bodySmall)
+        }
+        Switch(checked = checkedChirho, onCheckedChange = null)
+    }
+}
+
+@Composable
+private fun <T> ChoiceGroupChirho(titleChirho: String, optionsChirho: List<Pair<T, String>>, selectedChirho: T, onChooseChirho: (T) -> Unit) {
+    GroupHeadingChirho(titleChirho)
     Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(2.dp)) {
         for ((valueChirho, labelChirho) in optionsChirho) {
             Row(

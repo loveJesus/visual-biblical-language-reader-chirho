@@ -19,6 +19,12 @@ struct ReadingKeyViewChirho: View {
             List {
                 Section {
                     Text(modelChirho.messagesChirho.readingKeyHintChirho).font(.callout)
+                    if let tourLinkChirho = PolicyLinksViewChirho.pageLinkChirho("tutorial-chirho", modelChirho.localeChirho) {
+                        Link(destination: tourLinkChirho) {
+                            Label(modelChirho.messagesChirho.watchTourChirho, systemImage: "play.rectangle")
+                        }
+                        .accessibilityHint(modelChirho.messagesChirho.opensBrowserChirho)
+                    }
                 }
                 ForEach(rowsChirho) { rowChirho in
                     Section(rowChirho.labelChirho(modelChirho.localeChirho)) {

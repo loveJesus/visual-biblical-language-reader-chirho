@@ -27,6 +27,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.layout.Measurable
+import androidx.compose.ui.layout.MeasurePolicy
+import androidx.compose.ui.layout.MeasureResult
+import androidx.compose.ui.layout.MeasureScope
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -34,6 +39,7 @@ import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import us.hinneh.readerchirho.R
 import us.hinneh.readerchirho.contentchirho.BookChirho
@@ -101,6 +107,9 @@ fun PassageControlsChirho(
 /**
  * Previous verse, the reference and next verse. The row sits above the verse and again below it,
  * so a reader never has to scroll back up to move on; only the upper reference is a heading.
+ * When the reference's longest word no longer fits between the two buttons (a narrow phone or large
+ * text), the complete reference takes its own centered line above them instead of breaking inside a
+ * word, as "Prove/rbs" did at 320 dp (GPT, DM #3656). The buttons keep their order and targets.
  */
 @Composable
 fun VerseStepRowChirho(
@@ -111,18 +120,59 @@ fun VerseStepRowChirho(
 ) {
     val passageChirho = stateChirho.passageChirho
     val bookTextChirho = bookLabelChirho(stateChirho.catalogueChirho?.bookChirho(passageChirho.bookIdChirho), passageChirho.bookIdChirho, spanishChirho)
-    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-        StepButtonChirho("← " + stringResource(R.string.previous_verse_chirho), stateChirho.canStepChirho(forwardChirho = false)) {
-            onStepChirho(false)
+    // A no-break space keeps each arrow with its word, so a wrapped label never leaves an arrow alone on a line.
+    Layout(
+        content = {
+            StepButtonChirho("← " + stringResource(R.string.previous_verse_chirho), stateChirho.canStepChirho(forwardChirho = false)) {
+                onStepChirho(false)
+            }
+            Text(
+                "$bookTextChirho ${passageChirho.chapterChirho}:${passageChirho.verseChirho}",
+                style = MaterialTheme.typography.titleMedium,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.semantics { if (headingChirho) heading() },
+            )
+            StepButtonChirho(stringResource(R.string.next_verse_chirho) + " →", stateChirho.canStepChirho(forwardChirho = true)) {
+                onStepChirho(true)
+            }
+        },
+        modifier = Modifier.fillMaxWidth(),
+        measurePolicy = StepRowLayoutChirho,
+    )
+}
+
+/**
+ * Previous, the reference and Next on one row while the reference's longest word (the text's minimum
+ * intrinsic width) fits between the measured buttons; otherwise the reference spans the width above
+ * them. Placement is relative, so a right-to-left layout mirrors it as the row did.
+ */
+private object StepRowLayoutChirho : MeasurePolicy {
+    override fun MeasureScope.measure(measurables: List<Measurable>, constraints: Constraints): MeasureResult {
+        val (previousChirho, referenceChirho, nextChirho) = measurables
+        val looseChirho = constraints.copy(minWidth = 0, minHeight = 0)
+        val previousPlaceableChirho = previousChirho.measure(looseChirho)
+        val nextPlaceableChirho = nextChirho.measure(looseChirho)
+        val buttonsWidthChirho = previousPlaceableChirho.width + nextPlaceableChirho.width
+        val widthChirho = if (constraints.hasBoundedWidth) {
+            constraints.maxWidth
+        } else {
+            buttonsWidthChirho + referenceChirho.maxIntrinsicWidth(Constraints.Infinity)
         }
-        Text(
-            "$bookTextChirho ${passageChirho.chapterChirho}:${passageChirho.verseChirho}",
-            style = MaterialTheme.typography.titleMedium,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.weight(1f).semantics { if (headingChirho) heading() },
-        )
-        StepButtonChirho(stringResource(R.string.next_verse_chirho) + " →", stateChirho.canStepChirho(forwardChirho = true)) {
-            onStepChirho(true)
+        val roomChirho = (widthChirho - buttonsWidthChirho).coerceAtLeast(0)
+        val stackedChirho = referenceChirho.minIntrinsicWidth(Constraints.Infinity) > roomChirho
+        val referencePlaceableChirho = referenceChirho.measure(Constraints.fixedWidth(if (stackedChirho) widthChirho else roomChirho))
+        val buttonsHeightChirho = maxOf(previousPlaceableChirho.height, nextPlaceableChirho.height)
+        val rowHeightChirho = if (stackedChirho) buttonsHeightChirho else maxOf(buttonsHeightChirho, referencePlaceableChirho.height)
+        val rowTopChirho = if (stackedChirho) referencePlaceableChirho.height else 0
+        return layout(widthChirho, rowTopChirho + rowHeightChirho) {
+            fun centredChirho(heightChirho: Int) = rowTopChirho + (rowHeightChirho - heightChirho) / 2
+            previousPlaceableChirho.placeRelative(0, centredChirho(previousPlaceableChirho.height))
+            nextPlaceableChirho.placeRelative(widthChirho - nextPlaceableChirho.width, centredChirho(nextPlaceableChirho.height))
+            if (stackedChirho) {
+                referencePlaceableChirho.placeRelative(0, 0)
+            } else {
+                referencePlaceableChirho.placeRelative(previousPlaceableChirho.width, centredChirho(referencePlaceableChirho.height))
+            }
         }
     }
 }

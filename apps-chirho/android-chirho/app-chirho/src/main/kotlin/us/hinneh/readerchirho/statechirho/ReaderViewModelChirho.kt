@@ -16,10 +16,12 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.launch
 import us.hinneh.readerchirho.audiochirho.AudioPlaybackChirho
 import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
 import us.hinneh.readerchirho.audiochirho.AudioSelectionChirho
+import us.hinneh.readerchirho.audiochirho.ClipChirho
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.audiochirho.PlaybackChirho
 import us.hinneh.readerchirho.contentchirho.AbsentVerseChirho
@@ -28,12 +30,15 @@ import us.hinneh.readerchirho.contentchirho.WordChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.mediachirho.MediaRepositoryChirho
 import us.hinneh.readerchirho.videochirho.VideoPlaybackChirho
+import us.hinneh.readerchirho.videochirho.VideoRecordChirho
 import java.time.LocalDate
 
 /**
  * Loads one passage at a time. A new selection cancels the previous passage's requests and stops
  * its audio and video; verified text appears first, then optional pictures and recordings beside it.
  * Only one sound plays at a time: a verse video (with its own reading), a verse recording or a word.
+ * With autoplay chosen, a verse the reader moves to presses its own Play once; the first verse a
+ * launch shows never does (GPT, DM #3642).
  */
 class ReaderViewModelChirho(
     private val contentChirho: ContentRepositoryChirho,
@@ -49,17 +54,29 @@ class ReaderViewModelChirho(
     private val playbackChirho: AudioPlaybackChirho = playbackFactoryChirho(viewModelScope)
     private val videoChirho: VideoPlaybackChirho = videoFactoryChirho(viewModelScope)
 
-    private data class RequestChirho(val passageChirho: PassageChirho, val snapChirho: Boolean, val attemptChirho: Int = 0)
+    /** [autoplayChirho] is set only for a verse change the reader makes, never for the launch's first verse. */
+    private data class RequestChirho(
+        val passageChirho: PassageChirho,
+        val snapChirho: Boolean,
+        val attemptChirho: Int = 0,
+        val autoplayChirho: Boolean = false,
+    )
 
-    private val initialChirho = explicitPassageChirho
-        ?: savedChirho.get<String>(SAVED_PASSAGE_CHIRHO)?.let { PassageChirho.parseChirho(it) }
-        ?: PassageChirho.dailyChirho(todayChirho())
+    private val initialChirho = LaunchChirho.passageChirho(
+        explicitChirho = explicitPassageChirho,
+        restoredChirho = savedChirho.get<String>(SAVED_PASSAGE_CHIRHO)?.let { PassageChirho.parseChirho(it) },
+        openTodayChirho = preferencesChirho.openTodayChirho,
+        lastShownChirho = preferencesChirho.lastShownChirho,
+        todayChirho = todayChirho(),
+    )
     private val requestChirho = MutableStateFlow(RequestChirho(initialChirho, snapChirho = explicitPassageChirho == null))
     private val stateChirho = MutableStateFlow(
         ReaderUiStateChirho(
             passageChirho = initialChirho,
             renditionChoiceChirho = preferencesChirho.renditionChirho,
             speedChoiceChirho = preferencesChirho.speedChirho,
+            openTodayChirho = preferencesChirho.openTodayChirho,
+            autoplayChirho = preferencesChirho.autoplayChirho,
         ),
     )
     val uiStateChirho: StateFlow<ReaderUiStateChirho> = stateChirho.asStateFlow()
@@ -99,9 +116,10 @@ class ReaderViewModelChirho(
 
     fun retryChirho() = requestChirho.update { it.copy(attemptChirho = it.attemptChirho + 1) }
 
+    /** Every caller is a choice the reader made: a book, chapter or verse, Previous/Next or a swipe. */
     private fun requestPassageChirho(passageChirho: PassageChirho, snapChirho: Boolean) {
         savedChirho[SAVED_PASSAGE_CHIRHO] = passageChirho.idChirho
-        requestChirho.value = RequestChirho(passageChirho, snapChirho)
+        requestChirho.value = RequestChirho(passageChirho, snapChirho, autoplayChirho = stateChirho.value.autoplayChirho)
     }
 
     private suspend fun loadChirho(requestChirho: RequestChirho): Unit = coroutineScope {
@@ -137,7 +155,9 @@ class ReaderViewModelChirho(
             return@coroutineScope failChirho(FailureChirho.VERSE_CHIRHO)
         }
         stateChirho.update { it.copy(verseChirho = VerseLoadChirho.ReadyChirho(loadedChirho)) }
-        launch {
+        // Only a verse that loaded and verified is resumed by a later launch with today's Proverbs off.
+        preferencesChirho.lastShownChirho = passageChirho
+        val mediaJobChirho = launch {
             val mediaResultChirho = attemptChirho { mediaChirho.verseMediaChirho(loadedChirho, catalogueChirho) }
             stateChirho.update { stateNowChirho ->
                 stateNowChirho.copy(
@@ -146,7 +166,7 @@ class ReaderViewModelChirho(
                 )
             }
         }
-        launch {
+        val audioJobChirho = launch {
             val audioResultChirho = attemptChirho { audioChirho.recordingsChirho(loadedChirho) }
             stateChirho.update { stateNowChirho ->
                 stateNowChirho.copy(
@@ -155,6 +175,34 @@ class ReaderViewModelChirho(
                 )
             }
         }
+        // Play decides between the video and the recording only once both are known. A newer selection
+        // cancels this whole load, so a superseded verse never starts.
+        if (requestChirho.autoplayChirho) {
+            joinAll(mediaJobChirho, audioJobChirho)
+            autoplayChirho()
+        }
+    }
+
+    /**
+     * One automatic press of Play: the verse's playable video with its reading, otherwise its best recording,
+     * under the speed and reading now in effect. A sound the reader started meanwhile is never interrupted,
+     * and a verse with nothing to play stays silent.
+     */
+    private fun autoplayChirho() {
+        if (playbackChirho.playbackChirho.value != PlaybackChirho.IdleChirho ||
+            videoChirho.playbackChirho.value != PlaybackChirho.IdleChirho
+        ) {
+            return
+        }
+        val stateNowChirho = stateChirho.value
+        val keyChirho = "verse:${stateNowChirho.passageChirho.idChirho}"
+        val verseVideoChirho = currentVideoChirho()
+        if (verseVideoChirho != null) {
+            startVideoChirho(keyChirho, verseVideoChirho, stateNowChirho.speedChirho)
+            return
+        }
+        AudioSelectionChirho.bestChirho(currentRecordingsChirho()?.versesChirho, stateNowChirho.greekChirho, stateNowChirho.renditionChirho)
+            ?.let { startClipChirho(keyChirho, it, stateNowChirho.speedChirho) }
     }
 
     private fun failChirho(failureChirho: FailureChirho) {
@@ -185,14 +233,12 @@ class ReaderViewModelChirho(
             currentRecordingsChirho()?.wordsChirho?.get(wordChirho.idChirho), stateNowChirho.greekChirho, stateNowChirho.renditionChirho,
         ) ?: return
         toggleChirho("word:${stateNowChirho.passageChirho.idChirho}:${wordChirho.idChirho}") { keyChirho ->
-            videoChirho.stopChirho()
-            playbackChirho.playChirho(keyChirho, clipChirho, stateNowChirho.speedChirho)
+            startClipChirho(keyChirho, clipChirho, stateNowChirho.speedChirho)
         }
     }
 
-    fun verseClipAvailableChirho(): Boolean = currentVideoChirho() != null || currentRecordingsChirho()?.let {
-        AudioSelectionChirho.bestChirho(it.versesChirho, stateChirho.value.greekChirho, stateChirho.value.renditionChirho) != null
-    } == true
+    /** Whether Play has something to play: the verse's playable video, or its recording (ReaderUiStateChirho.versePlayChirho). */
+    fun verseClipAvailableChirho(): Boolean = stateChirho.value.versePlayChirho != VersePlayChirho.NONE_CHIRHO
 
     /**
      * A verse with a video plays the video, whose sound is the verse's reading; otherwise, or after its video
@@ -208,19 +254,25 @@ class ReaderViewModelChirho(
             ) {
                 videoChirho.stopChirho()
             } else {
-                playbackChirho.stopChirho()
-                // The video and its reading follow the Speed setting, pitch kept (L.J., 2026-11-06: "change video speed").
-                videoChirho.playChirho(keyChirho, verseVideoChirho, stateNowChirho.speedChirho)
+                startVideoChirho(keyChirho, verseVideoChirho, stateNowChirho.speedChirho)
             }
             return
         }
         val clipChirho = AudioSelectionChirho.bestChirho(
             currentRecordingsChirho()?.versesChirho, stateNowChirho.greekChirho, stateNowChirho.renditionChirho,
         ) ?: return
-        toggleChirho(keyChirho) { verseKeyChirho ->
-            videoChirho.stopChirho()
-            playbackChirho.playChirho(verseKeyChirho, clipChirho, stateNowChirho.speedChirho)
-        }
+        toggleChirho(keyChirho) { verseKeyChirho -> startClipChirho(verseKeyChirho, clipChirho, stateNowChirho.speedChirho) }
+    }
+
+    /** The video and its reading follow the Speed setting, pitch kept (L.J., 2026-11-06: "change video speed"). */
+    private fun startVideoChirho(keyChirho: String, verseVideoChirho: VideoRecordChirho, speedChirho: Float) {
+        playbackChirho.stopChirho()
+        videoChirho.playChirho(keyChirho, verseVideoChirho, speedChirho)
+    }
+
+    private fun startClipChirho(keyChirho: String, clipChirho: ClipChirho, speedChirho: Float) {
+        videoChirho.stopChirho()
+        playbackChirho.playChirho(keyChirho, clipChirho, speedChirho)
     }
 
     private fun toggleChirho(keyChirho: String, startChirho: (String) -> Unit) {
@@ -244,6 +296,18 @@ class ReaderViewModelChirho(
     fun setSpeedChirho(speedChirho: Float?) {
         preferencesChirho.speedChirho = speedChirho
         stateChirho.update { it.copy(speedChoiceChirho = speedChirho) }
+    }
+
+    /** Applies from the next fresh launch; the verse being read stays. */
+    fun setOpenTodayChirho(openTodayChirho: Boolean) {
+        preferencesChirho.openTodayChirho = openTodayChirho
+        stateChirho.update { it.copy(openTodayChirho = openTodayChirho) }
+    }
+
+    /** Applies from the next verse the reader moves to; nothing starts for the verse being read. */
+    fun setAutoplayChirho(autoplayChirho: Boolean) {
+        preferencesChirho.autoplayChirho = autoplayChirho
+        stateChirho.update { it.copy(autoplayChirho = autoplayChirho) }
     }
 
     /** The verse video's drawing surface, lent by the screen while it is shown. */

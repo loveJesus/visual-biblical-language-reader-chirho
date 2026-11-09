@@ -45,10 +45,10 @@
 
     <string name="pronounce_word_chirho">Pronunciar %1$s</string>
     <string name="hear_word_chirho">Oír la palabra</string>
-    <string name="listen_verse_chirho">Escuchar este versículo</string>
+    <string name="listen_verse_chirho">Escuchar el versículo</string>
     <string name="stop_chirho">Detener</string>
     <string name="recorded_failed_chirho">No se pudo reproducir la grabación. Inténtalo de nuevo.</string>
-    <string name="play_verse_video_chirho">Reproducir este versículo</string>
+    <string name="play_verse_video_chirho">Reproducir video del versículo</string>
     <string name="verse_video_chirho">Video del versículo</string>
     <string name="license_link_chirho">Licencia</string>
     <string name="recording_credit_chirho">La grabación de este versículo</string>
@@ -92,8 +92,38 @@
     <string name="about_support_chirho">Acerca de y soporte</string>
     <string name="contact_chirho">Contacto</string>
     <string name="source_code_chirho">Código fuente</string>
+    <string name="sources_page_chirho">Fuentes</string>
+
+    <!-- Información: las licencias siguen «Software libre y archivos compartidos» del sitio web, en el registro de usted de la app. -->
+    <string name="info_chirho">Información</string>
+    <string name="info_link_chirho">Información: privacidad, licencias y créditos</string>
+    <string name="licenses_heading_chirho">Software libre y archivos compartidos</string>
+    <string name="license_code_chirho">El código original de Hinneh y sus aplicaciones nativas es abierto bajo la Licencia Pública General de GNU, versión 3 o cualquier versión posterior. Puede estudiarlo, compartirlo y mejorarlo conforme a esa licencia.</string>
+    <string name="license_art_chirho">Las ilustraciones, imágenes de palabras y obras de identidad visual creadas para Hinneh se dedican al dominio público bajo CC0 1.0 Universal, hasta donde permiten nuestros derechos. Puede copiarlas, adaptarlas y compartirlas, incluso comercialmente, sin permiso ni atribución obligatoria. Se agradece el crédito, pero es opcional.</string>
+    <string name="license_recordings_chirho">Los derechos que poseemos sobre las grabaciones de pronunciación se comparten bajo Creative Commons Atribución 4.0. Acredite «Hinneh — L.J. (Love Jesus), https://hinneh.us/», enlace esa licencia e indique los cambios al reutilizar grabaciones.</string>
+    <string name="license_beeri_chirho">Las lecturas hebreas de versículos completos de Rabbi Dan Be’eri son obra suya, no nuestra. Conservan su licencia CC BY-SA 3.0 y el crédito «Hebrew reading by Rabbi Dan Be\'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools». Comparta una lectura reutilizada o adaptada bajo la misma licencia.</string>
+    <string name="license_sources_chirho">Los textos bíblicos, datos y ayudas gramaticales adaptadas conservan sus propias condiciones. La dedicación de las obras y la licencia de grabaciones cubren solo nuestros derechos; no conceden derechos sobre el modelo de voz ni sobre la identidad de otra persona. El material de dominio público sigue siendo de dominio público.</string>
+    <string name="license_gpl_chirho">GPLv3 o posterior</string>
+    <string name="license_cc0_chirho">Ilustraciones: CC0 1.0</string>
+    <string name="license_cc_by_chirho">Grabaciones: CC BY 4.0</string>
+    <string name="license_cc_by_sa_chirho">Lecturas de Be’eri: CC BY-SA 3.0</string>
+    <string name="credits_heading_chirho">Textos, gramática y lecturas</string>
+    <string name="version_chirho">Versión %1$s</string>
+
+    <string name="welcome_title_chirho">Le damos la bienvenida a Hinneh</string>
+    <string name="welcome_what_chirho">Lea la Biblia en su hebreo y griego originales, palabra por palabra. Colores, pequeños símbolos, imágenes y sonido ayudan a que cada palabra se aclare.</string>
+    <string name="welcome_open_chirho">Se planean más idiomas. Hinneh es gratuito, y su código fuente y sus materiales de estudio tienen licencias abiertas: en Información están las licencias y los créditos.</string>
+    <string name="welcome_tour_chirho">Puede abrir el recorrido rápido cuando quiera desde Ayuda (?).</string>
+    <string name="welcome_start_chirho">Empezar a leer</string>
+    <string name="tour_chirho">Ver el recorrido rápido</string>
+    <string name="help_chirho">Ayuda y clave de lectura</string>
 
     <string name="settings_chirho">Ajustes de lectura</string>
+    <string name="opening_heading_chirho">Inicio y reproducción</string>
+    <string name="open_today_chirho">Abrir Proverbios del día</string>
+    <string name="open_today_hint_chirho">Cada inicio abre el capítulo de Proverbios del día de hoy. Desactivado: Hinneh abre el último versículo que leyó.</string>
+    <string name="autoplay_chirho">Reproducir cada versículo al que pase</string>
+    <string name="autoplay_hint_chirho">Su video o su lectura empieza automáticamente. Al abrir Hinneh no suena nada.</string>
     <string name="interface_language_chirho">Idioma de la interfaz</string>
     <string name="device_language_chirho">Idioma del dispositivo</string>
     <string name="text_size_chirho">Tamaño del texto</string>

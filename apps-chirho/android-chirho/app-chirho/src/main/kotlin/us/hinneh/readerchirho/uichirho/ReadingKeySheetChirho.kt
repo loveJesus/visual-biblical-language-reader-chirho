@@ -27,15 +27,13 @@ import us.hinneh.readerchirho.contentchirho.VerseValidationChirho
 import us.hinneh.readerchirho.domainchirho.LegendItemChirho
 import us.hinneh.readerchirho.domainchirho.ReadingKeyChirho
 
-private const val HEBREW_GRAMMAR_URL_CHIRHO = "https://uhg.readthedocs.io/en/stable/"
-private const val CC_BY_SA_URL_CHIRHO = "https://creativecommons.org/licenses/by-sa/4.0/"
-
 /**
- * How to read the marks: the reading key for the passage's language, from the same teaching tables
- * as the website and the iOS reader (export_teaching_chirho.ts writes this app's copy). The Hebrew
- * explanations adapt unfoldingWord Hebrew Grammar under CC BY-SA 4.0, so its credit goes with them.
- * Its last section says once how meanings, grammar and pictures are made, with the source credits,
- * instead of repeating that under every verse and word (L.J., 2026-11-06).
+ * Help: first the quick tour, always here (GPT, DM #3645; the welcome says it opens from Help), then how to read
+ * the marks: the reading key for the passage's language, from the same teaching tables as the website and the
+ * iOS reader (export_teaching_chirho.ts writes this app's copy). The Hebrew explanations adapt unfoldingWord
+ * Hebrew Grammar under CC BY-SA 4.0, so its credit goes with them. Its last section says once how meanings,
+ * grammar and pictures are made, with the source credits, instead of repeating that under every verse and word
+ * (L.J., 2026-11-06).
  */
 @Composable
 fun ReadingKeySheetChirho(greekChirho: Boolean, spanishChirho: Boolean, onDismissChirho: () -> Unit) {
@@ -60,6 +58,7 @@ fun ReadingKeySheetChirho(greekChirho: Boolean, spanishChirho: Boolean, onDismis
             Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(bottom = 32.dp),
             verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
+            LinkChirho(R.string.tour_chirho) { openLinkChirho(uriHandlerChirho, tourUrlChirho(spanishChirho)) }
             Text(stringResource(R.string.reading_key_hint_chirho), style = MaterialTheme.typography.bodyMedium)
             for (rowChirho in keyChirho?.rowsChirho(greekChirho).orEmpty()) {
                 Text(

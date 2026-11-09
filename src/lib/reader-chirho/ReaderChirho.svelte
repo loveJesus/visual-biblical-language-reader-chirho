@@ -53,10 +53,14 @@
 		verseNavigationChirho,
 		spanishChirho = null,
 		videoChirho = null,
-		artProgressChirho = null
+		artProgressChirho = null,
+		navigationGenerationChirho = 0,
+		onRecordingsReadyChirho
 	}: {
 		/** This book's artwork counts, listed in the Sources fold. */
 		artProgressChirho?: string | null;
+		navigationGenerationChirho?: number;
+		onRecordingsReadyChirho?: (lessonIdChirho: string, generationChirho: number) => void;
 		/** The chapter catalogue's record for this verse, unvalidated; the scene and player check it. */
 		videoChirho?: unknown;
 		spanishChirho?: SpanishLayerResultChirho | null;
@@ -160,6 +164,8 @@
 					{lessonChirho}
 					{verseNavigationChirho}
 					{videoChirho}
+					{navigationGenerationChirho}
+					onReadyChirho={onRecordingsReadyChirho}
 					onHumanReadingChirho={(readingChirho) => (humanReadingChirho = readingChirho)}
 				/>
 				<SourceNotesChirho notesChirho={lessonChirho.source_notes_chirho} />

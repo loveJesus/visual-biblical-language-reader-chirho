@@ -14,6 +14,9 @@ import us.hinneh.readerchirho.videochirho.VideoRecordChirho
 
 enum class FailureChirho { BOOK_CHIRHO, VERSE_CHIRHO, ABSENT_CHIRHO }
 
+/** What a verse's Play plays: its video with the video's own reading, its recording alone, or nothing. */
+enum class VersePlayChirho { VIDEO_CHIRHO, RECORDING_CHIRHO, NONE_CHIRHO }
+
 sealed interface VerseLoadChirho {
     data object LoadingChirho : VerseLoadChirho
     data class ReadyChirho(val loadedChirho: LoadedVerseChirho) : VerseLoadChirho
@@ -39,6 +42,10 @@ data class ReaderUiStateChirho(
     val speedChoiceChirho: Float? = null,
     /** This visit's verse video failed to play; cleared when another passage loads. */
     val videoFailedChirho: Boolean = false,
+    /** Whether a fresh launch opens today's Proverbs (on) or the last verse shown (off). */
+    val openTodayChirho: Boolean = ReaderPreferencesChirho.DEFAULT_OPEN_TODAY_CHIRHO,
+    /** Whether a verse the reader moves to starts its Play by itself. */
+    val autoplayChirho: Boolean = ReaderPreferencesChirho.DEFAULT_AUTOPLAY_CHIRHO,
 ) {
     val greekChirho: Boolean get() = catalogueChirho?.bookChirho(passageChirho.bookIdChirho)?.greekChirho == true
 
@@ -69,6 +76,18 @@ data class ReaderUiStateChirho(
             return if (videoFailedChirho && verseClipChirho != null) null else videoChirho
         }
 
+    /**
+     * What the verse's Play plays now, and so what its label names (L.J., via GPT DM #3653): the playable video,
+     * which is verified, selected for this verse and scene, and not failed on this visit while a recording can
+     * stand in; otherwise the verse's recording.
+     */
+    val versePlayChirho: VersePlayChirho
+        get() = when {
+            playableVideoChirho != null -> VersePlayChirho.VIDEO_CHIRHO
+            verseClipChirho != null -> VersePlayChirho.RECORDING_CHIRHO
+            else -> VersePlayChirho.NONE_CHIRHO
+        }
+
     /** Whether Previous/Next (button or swipe) has a verse to go to; a manifest of another book does not count. */
     fun canStepChirho(forwardChirho: Boolean): Boolean {
         val currentManifestChirho = manifestChirho?.takeIf { it.bookIdChirho == passageChirho.bookIdChirho } ?: return false
@@ -90,10 +109,22 @@ data class ReaderUiStateChirho(
     }
 }
 
-/** Saved reading choices; the passage itself is never persisted across fresh launches. Null means not chosen. */
+/** Saved reading choices. Null means not chosen. */
 interface ReaderPreferencesChirho {
     var renditionChirho: GreekRenditionChirho?
     var speedChirho: Float?
+    /** Whether a fresh launch opens today's Proverbs; off, it opens [lastShownChirho]. */
+    var openTodayChirho: Boolean
+    /** Whether a verse change the reader makes starts that verse's Play by itself. */
+    var autoplayChirho: Boolean
+    /** The last verse shown, for a fresh launch with [openTodayChirho] off. */
+    var lastShownChirho: PassageChirho?
+
+    companion object {
+        /** Root's defaults (GPT, DM #3642): today's Proverbs on, autoplay off. */
+        const val DEFAULT_OPEN_TODAY_CHIRHO = true
+        const val DEFAULT_AUTOPLAY_CHIRHO = false
+    }
 }
 
 /** Previous/next by the published verse numbering, crossing chapters but not books. */

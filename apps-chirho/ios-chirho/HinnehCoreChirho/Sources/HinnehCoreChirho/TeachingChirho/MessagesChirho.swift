@@ -31,6 +31,23 @@ public struct MessagesChirho: Sendable {
     public let languageChirho: String
     public let settingsChirho: String
     public let speedChirho: String
+    public let startTodayChirho: String
+    public let startTodayHintChirho: String
+    public let autoplayVerseChirho: String
+    public let autoplayVerseHintChirho: String
+    public let infoChirho: String
+    public let welcomeChirho: String
+    public let welcomeIntroChirho: String
+    public let welcomeUseChirho: String
+    public let openMaterialsChirho: String
+    public let startReadingChirho: String
+    public let watchTourChirho: String
+    public let reopenTourChirho: String
+    public let licenseOverviewChirho: String
+    public let codeLicenseChirho: String
+    public let artLicenseChirho: String
+    public let recordingLicenseChirho: String
+    public let upstreamLicenseChirho: String
     public let studyAidsChirho: String
     public let studyAidsHelpChirho: String
     public let oldTestamentChirho: String
@@ -86,6 +103,7 @@ public struct MessagesChirho: Sendable {
     public let sceneCaptionChirho: String
     public let playWordChirho: String
     public let playVerseChirho: String
+    public let playVerseVideoChirho: String
     public let stopChirho: String
     public let audioAuditionChirho: String
     public let audioApprovedChirho: String
@@ -165,6 +183,23 @@ public struct MessagesChirho: Sendable {
         languageChirho: "Language",
         settingsChirho: "Settings",
         speedChirho: "Playback speed",
+        startTodayChirho: "Start with today’s Proverbs",
+        startTodayHintChirho: "On a fresh launch, open the chapter for today’s date. Turn off to resume your last passage.",
+        autoplayVerseChirho: "Play when I change verses",
+        autoplayVerseHintChirho: "Play an available recording or video after choosing a different verse. Off on launch.",
+        infoChirho: "Info",
+        welcomeChirho: "Welcome to Hinneh",
+        welcomeIntroChirho: "Read Scripture in Hebrew and Greek, one verse at a time, with pictures and word meanings. More languages are planned.",
+        welcomeUseChirho: "Tap a word to look closer or its speaker to hear it. Play the verse when a recording or video is available.",
+        openMaterialsChirho: "Open-source code and openly licensed study materials. Licenses and credits are in Info.",
+        startReadingChirho: "Start reading",
+        watchTourChirho: "Watch quick tour",
+        reopenTourChirho: "Return to this tour any time from Reading key or Info.",
+        licenseOverviewChirho: "Licenses and credits",
+        codeLicenseChirho: "Code: GPL-3.0-or-later.",
+        artLicenseChirho: "Hinneh artwork: CC0.",
+        recordingLicenseChirho: "Hinneh’s authored synthesized recordings: CC BY 4.0. Underlying voices and models retain their own terms.",
+        upstreamLicenseChirho: "Bible text, word data and grammar retain their credited source licenses. Exact sources and recording credits are available under each verse’s Sources and licenses.",
         studyAidsChirho: "About meanings & study aids",
         studyAidsHelpChirho: "Word meanings and grammar come from the credited editions. Pictures illustrate a possible sense, not an etymological root. Artwork and synthesized recordings are AI-assisted study aids that may contain errors and are still being reviewed. Human Hebrew readings are by Rabbi Dan Be’eri under CC BY-SA 3.0; the exact recording credit and license are in each verse’s Sources. About explains coverage, sources and corrections.",
         oldTestamentChirho: "Old Testament · Hebrew",
@@ -219,7 +254,8 @@ public struct MessagesChirho: Sendable {
         sceneUnavailableChirho: "The illustration is unavailable right now.",
         sceneCaptionChirho: "An imaginative learning aid: a visual reflection on the verse.",
         playWordChirho: "Play {word_chirho}",
-        playVerseChirho: "Listen to the verse",
+        playVerseChirho: "Listen to verse",
+        playVerseVideoChirho: "Play verse video",
         stopChirho: "Stop",
         audioAuditionChirho: "AI voice recording, pronunciation awaiting review.",
         audioApprovedChirho: "Recording reviewed.",
@@ -269,6 +305,23 @@ public struct MessagesChirho: Sendable {
         languageChirho: "Idioma",
         settingsChirho: "Ajustes",
         speedChirho: "Velocidad de reproducción",
+        startTodayChirho: "Abrir Proverbios de hoy",
+        startTodayHintChirho: "Al iniciar la aplicación, abre el capítulo de la fecha de hoy. Desactívalo para volver al último pasaje.",
+        autoplayVerseChirho: "Reproducir al cambiar de versículo",
+        autoplayVerseHintChirho: "Reproduce una grabación o un video disponible al elegir otro versículo. No se inicia al abrir la aplicación.",
+        infoChirho: "Información",
+        welcomeChirho: "Bienvenido a Hinneh",
+        welcomeIntroChirho: "Lee las Escrituras en hebreo y griego, un versículo a la vez, con imágenes y significados de palabras. Se planean más idiomas.",
+        welcomeUseChirho: "Toca una palabra para verla más de cerca o su altavoz para escucharla. Reproduce el versículo cuando haya una grabación o un video.",
+        openMaterialsChirho: "Código abierto y materiales de estudio con licencias abiertas. Las licencias y los créditos están en Información.",
+        startReadingChirho: "Comenzar a leer",
+        watchTourChirho: "Ver recorrido breve",
+        reopenTourChirho: "Vuelve a este recorrido cuando quieras desde Clave de lectura o Información.",
+        licenseOverviewChirho: "Licencias y créditos",
+        codeLicenseChirho: "Código: GPL-3.0-or-later.",
+        artLicenseChirho: "Ilustraciones de Hinneh: CC0.",
+        recordingLicenseChirho: "Grabaciones sintetizadas creadas por Hinneh: CC BY 4.0. Las voces y los modelos conservan sus propias condiciones.",
+        upstreamLicenseChirho: "El texto bíblico, los datos de palabras y la gramática conservan las licencias de sus fuentes acreditadas. Las fuentes exactas y los créditos de las grabaciones están en Fuentes y licencias de cada versículo.",
         studyAidsChirho: "Significados y ayudas de estudio",
         studyAidsHelpChirho: "Los significados y la gramática proceden de las ediciones acreditadas. Las imágenes ilustran un sentido posible, no una raíz etimológica. Las ilustraciones y grabaciones sintetizadas son ayudas con IA que pueden contener errores y siguen en revisión. Las lecturas hebreas humanas son del rabino Dan Be’eri bajo CC BY-SA 3.0; el crédito exacto y la licencia están en las Fuentes de cada versículo. Acerca de explica la cobertura, las fuentes y las correcciones.",
         oldTestamentChirho: "Antiguo Testamento · Hebreo",
@@ -324,6 +377,7 @@ public struct MessagesChirho: Sendable {
         sceneCaptionChirho: "Una ayuda imaginativa para aprender: una reflexión visual sobre el versículo.",
         playWordChirho: "Reproducir {word_chirho}",
         playVerseChirho: "Escuchar el versículo",
+        playVerseVideoChirho: "Reproducir video del versículo",
         stopChirho: "Detener",
         audioAuditionChirho: "Grabación con voz de IA; la pronunciación está pendiente de revisión.",
         audioApprovedChirho: "Grabación revisada.",

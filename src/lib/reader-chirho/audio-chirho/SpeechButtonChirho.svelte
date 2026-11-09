@@ -53,5 +53,23 @@
 				: 'M11 4 6 8H3v8h3l5 4V4Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14'}
 		/></svg
 	>
-	{#if !compactChirho}{audioTChirho(wordChirho ? 'hear_word_chirho' : 'play_verse_chirho')}{/if}
+	{#if !compactChirho}{#if wordChirho}{audioTChirho('hear_word_chirho')}{:else}<span
+				data-verse-action-label-chirho>{audioTChirho('play_verse_chirho')}</span
+			>{/if}{/if}
 </button>
+
+<style>
+	[data-verse-action-label-chirho] {
+		display: block;
+		min-width: 0;
+		white-space: normal;
+		line-height: 1.2;
+		text-align: center;
+	}
+	.speech-button-chirho:not(.word-speech-chirho) {
+		min-width: 0;
+	}
+	.speech-button-chirho:not(.word-speech-chirho) svg {
+		flex-shrink: 0;
+	}
+</style>

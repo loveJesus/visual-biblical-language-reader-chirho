@@ -14,25 +14,15 @@ struct HinnehAppChirho: App {
     }
 }
 
-/// A fresh launch opens Proverbs at today's chapter. An explicitly requested passage (the
-/// `-hinneh-open-chirho John.3.16` launch argument) or one the reader chose, restored with the
-/// scene, takes precedence over the daily default.
+/// Launch preferences apply once per app lifetime; an explicit passage link always wins.
 struct RootViewChirho: View {
     let modelChirho: ReaderModelChirho
-    @SceneStorage("hinneh-passage-chirho") private var savedPassageChirho = ""
 
     var body: some View {
         ReaderViewChirho(modelChirho: modelChirho)
-            .task {
-                let booksChirho = modelChirho.booksChirho
-                let requestedChirho = UserDefaults.standard.string(forKey: "hinneh-open-chirho")
-                    .flatMap { PassageChirho.parseChirho($0, booksChirho) }
-                let restoredChirho = PassageChirho.parseChirho(savedPassageChirho, booksChirho)
-                modelChirho.openChirho(requestedChirho ?? restoredChirho ?? modelChirho.passageChirho)
-                await modelChirho.refreshBooksChirho()
-            }
-            .onChange(of: modelChirho.passageChirho) { _, passageChirho in
-                savedPassageChirho = passageChirho.idChirho
+            .task { await modelChirho.launchChirho() }
+            .onOpenURL { urlChirho in
+                Task { await modelChirho.openLinkChirho(urlChirho) }
             }
     }
 }

@@ -9,6 +9,7 @@ import {
 import { render as renderChirho } from 'vitest-browser-svelte';
 import AudioVerseChirho from './AudioVerseChirho.svelte';
 import type { RecordingChirho } from './recordings-chirho';
+import { installSpeechChirho } from './speech-controls-chirho';
 import { syntheticLessonChirho } from '../../../../tests-chirho/fixtures-chirho/synthetic-chirho';
 import { spokenVerseChirho } from '$lib/domain-chirho/pronunciation-chirho';
 import {
@@ -21,6 +22,16 @@ const lessonForChirho = (chapterChirho: number) => ({
 	...syntheticLessonChirho(),
 	id_chirho: `Prov.${chapterChirho}.1`
 });
+const aramaicLessonChirho = (chapterChirho: number) => {
+	const lessonChirho = lessonForChirho(chapterChirho);
+	return {
+		...lessonChirho,
+		tokens_chirho: lessonChirho.tokens_chirho.map((tokenChirho) => ({
+			...tokenChirho,
+			source_language_chirho: 'arc' as const
+		}))
+	};
+};
 const hexChirho = async (bytesChirho: Uint8Array<ArrayBuffer>) =>
 	Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytesChirho)), (byteChirho) =>
 		byteChirho.toString(16).padStart(2, '0')
@@ -100,10 +111,27 @@ beforeAllChirho(async () => {
 		voice_name_chirho: 'Itamar',
 		duration_chirho: 5
 	});
+	const aramaicHumanChirho = await clipChirho(3, '3', {
+		voice_name_chirho: "Rabbi Dan Be'eri",
+		duration_chirho: 4.95,
+		reading_source_chirho: sourceChirho
+	});
+	const aramaicAiChirho = await clipChirho(4, '4', {
+		voice_name_chirho: 'Itamar',
+		duration_chirho: 5
+	});
+	const invalidHumanChirho = await clipChirho(5, '5', {
+		voice_name_chirho: "Rabbi Dan Be'eri",
+		duration_chirho: 4.95,
+		reading_source_chirho: { ...sourceChirho, reader_id_chirho: 'unverified-chirho' }
+	});
 	// Human readings travel only in readings_chirho, which released apps ignore (GPT DM 3409).
 	const chaptersChirho = [
 		{ clips_chirho: [], readings_chirho: [humanChirho] },
-		{ clips_chirho: [synthesizedChirho] }
+		{ clips_chirho: [synthesizedChirho] },
+		{ clips_chirho: [], readings_chirho: [aramaicHumanChirho] },
+		{ clips_chirho: [aramaicAiChirho] },
+		{ clips_chirho: [], readings_chirho: [invalidHumanChirho] }
 	].map((arraysChirho, indexChirho) =>
 		encodeChirho({
 			schema_version_chirho: 1,
@@ -203,3 +231,41 @@ testChirho(
 		}
 	}
 );
+
+// A genuine human reading bypasses only the whole-verse Aramaic hold, never AI or invalid sources.
+for (const [chapterChirho, enabledChirho, countChirho] of [
+	[3, true, 1],
+	[4, false, 1],
+	[5, false, 0]
+] as const) {
+	testChirho(
+		`Aramaic whole-verse playback: chapter ${chapterChirho} is ${enabledChirho ? 'enabled' : 'withheld'}`,
+		async () => {
+			let readyChirho = false;
+			const { container: containerChirho, unmount: unmountChirho } = renderChirho(
+				AudioVerseChirho,
+				{
+					lessonChirho: aramaicLessonChirho(chapterChirho),
+					onReadyChirho: () => {
+						readyChirho = true;
+					}
+				}
+			);
+			await viChirho.waitFor(() => {
+				expectChirho(readyChirho).toBe(true);
+				expectChirho(recordingsLoadedChirho(containerChirho)).toBe(countChirho);
+			});
+			const disposeChirho = installSpeechChirho(containerChirho);
+			const buttonChirho = containerChirho.querySelector<HTMLButtonElement>(
+				'[data-speech-saved-only-chirho]'
+			)!;
+			expectChirho(buttonChirho.disabled).toBe(!enabledChirho);
+			expectChirho(buttonChirho.dataset.speechUnavailableChirho === 'true').toBe(!enabledChirho);
+			expectChirho(buttonChirho.dataset.pronounceChirho).toBe(
+				spokenVerseChirho(aramaicLessonChirho(chapterChirho))
+			);
+			disposeChirho.destroyChirho();
+			unmountChirho();
+		}
+	);
+}

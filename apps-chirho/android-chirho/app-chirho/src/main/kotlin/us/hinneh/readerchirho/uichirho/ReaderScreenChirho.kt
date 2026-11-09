@@ -54,6 +54,7 @@ import us.hinneh.readerchirho.statechirho.InterfaceLanguageChirho
 import us.hinneh.readerchirho.statechirho.OptionalChirho
 import us.hinneh.readerchirho.statechirho.ReaderUiStateChirho
 import us.hinneh.readerchirho.statechirho.VerseLoadChirho
+import us.hinneh.readerchirho.statechirho.VersePlayChirho
 import us.hinneh.readerchirho.videochirho.VideoRecordChirho
 
 /** Everything the reader screen can ask for; the view model and tests both implement it. */
@@ -70,6 +71,8 @@ interface ReaderActionsChirho {
     fun onSpeedChirho(speedChirho: Float)
     fun onLanguageChirho(languageChirho: InterfaceLanguageChirho)
     fun onTextScaleChirho(scaleChirho: Float)
+    fun onOpenTodayChirho(openTodayChirho: Boolean)
+    fun onAutoplayChirho(autoplayChirho: Boolean)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -85,6 +88,7 @@ fun ReaderScreenChirho(
 ) {
     var settingsOpenChirho by rememberSaveable { mutableStateOf(false) }
     var readingKeyOpenChirho by rememberSaveable { mutableStateOf(false) }
+    var infoOpenChirho by rememberSaveable { mutableStateOf(false) }
     val scrollChirho = rememberScrollState()
     val scopeChirho = rememberCoroutineScope()
     // Stepping from below the verse or by swiping returns to the top, so the next verse starts at its heading.
@@ -104,8 +108,9 @@ fun ReaderScreenChirho(
                     }
                 },
                 actions = {
+                    // The welcome says the quick tour opens from Help, so TalkBack hears Help here too (GPT, DM #3650).
                     IconButton(onClick = { readingKeyOpenChirho = true }) {
-                        Icon(painterResource(R.drawable.ic_help_chirho), contentDescription = stringResource(R.string.reading_key_chirho))
+                        Icon(painterResource(R.drawable.ic_help_chirho), contentDescription = stringResource(R.string.help_chirho))
                     }
                     IconButton(onClick = { settingsOpenChirho = true }) {
                         Icon(painterResource(R.drawable.ic_settings_chirho), contentDescription = stringResource(R.string.settings_chirho))
@@ -147,17 +152,25 @@ fun ReaderScreenChirho(
     if (settingsOpenChirho) {
         SettingsSheetChirho(
             languageChirho = languageChirho,
-            spanishChirho = spanishChirho,
             textScaleChirho = textScaleChirho,
             renditionChirho = stateChirho.renditionChirho,
             speedChirho = stateChirho.speedChirho,
+            openTodayChirho = stateChirho.openTodayChirho,
+            autoplayChirho = stateChirho.autoplayChirho,
             onLanguageChirho = actionsChirho::onLanguageChirho,
             onTextScaleChirho = actionsChirho::onTextScaleChirho,
             onRenditionChirho = actionsChirho::onRenditionChirho,
             onSpeedChirho = actionsChirho::onSpeedChirho,
+            onOpenTodayChirho = actionsChirho::onOpenTodayChirho,
+            onAutoplayChirho = actionsChirho::onAutoplayChirho,
+            onInfoChirho = {
+                settingsOpenChirho = false
+                infoOpenChirho = true
+            },
             onDismissChirho = { settingsOpenChirho = false },
         )
     }
+    if (infoOpenChirho) InfoSheetChirho(spanishChirho, onDismissChirho = { infoOpenChirho = false })
 }
 
 @Composable
@@ -191,7 +204,10 @@ private fun FailedChirho(failureChirho: FailureChirho, onRetryChirho: () -> Unit
             style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite },
         )
-        if (failureChirho != FailureChirho.ABSENT_CHIRHO) Button(onClick = onRetryChirho) { Text(stringResource(R.string.retry_chirho)) }
+        // White on teal: the colorless label style keeps the theme's ink body color off the filled button (as WelcomeChirho).
+        if (failureChirho != FailureChirho.ABSENT_CHIRHO) {
+            Button(onClick = onRetryChirho) { Text(stringResource(R.string.retry_chirho), style = MaterialTheme.typography.labelLarge) }
+        }
     }
 }
 
@@ -260,7 +276,7 @@ private fun ReadyVerseChirho(
         }
         if (translationOpenChirho) Text(englishDataChirho(translationChirho), style = MaterialTheme.typography.bodyLarge)
     }
-    VerseAudioChirho(stateChirho, verseChirho.idChirho, recordingsChirho, stateChirho.playableVideoChirho != null, greekChirho, playbackChirho, actionsChirho)
+    VerseAudioChirho(stateChirho, verseChirho.idChirho, recordingsChirho, greekChirho, playbackChirho, actionsChirho)
     VerseStepRowChirho(stateChirho, spanishChirho, onStepFromBelowChirho, headingChirho = false)
     SourcesViewChirho(
         verseChirho, greekChirho,
@@ -306,22 +322,23 @@ private fun VerseAudioChirho(
     stateChirho: ReaderUiStateChirho,
     verseIdChirho: String,
     recordingsChirho: VerseRecordingsChirho?,
-    hasVideoChirho: Boolean,
     greekChirho: Boolean,
     playbackChirho: PlaybackChirho,
     actionsChirho: ReaderActionsChirho,
 ) {
-    val verseClipChirho = AudioSelectionChirho.bestChirho(recordingsChirho?.versesChirho, greekChirho, stateChirho.renditionChirho)
     val anyWordChirho = recordingsChirho?.wordsChirho?.values?.any {
         AudioSelectionChirho.bestChirho(it, greekChirho, stateChirho.renditionChirho) != null
     } == true
     val keyChirho = "verse:$verseIdChirho"
     val activeChirho = playbackChirho.keyChirho == keyChirho &&
         (playbackChirho is PlaybackChirho.PlayingChirho || playbackChirho is PlaybackChirho.LoadingChirho)
-    if (hasVideoChirho || verseClipChirho != null) {
-        // With a video, Play plays the video, whose sound is the verse's reading (L.J., 2026-11-06).
-        val idleIconChirho = if (hasVideoChirho) R.drawable.ic_play_chirho else R.drawable.ic_speaker_chirho
-        val idleLabelChirho = if (hasVideoChirho) R.string.play_verse_video_chirho else R.string.listen_verse_chirho
+    val playChirho = stateChirho.versePlayChirho
+    if (playChirho != VersePlayChirho.NONE_CHIRHO) {
+        // The label names what Play plays: the video, whose sound is the verse's reading (L.J., 2026-11-06), or the
+        // recording alone, as after a failed video (L.J., via GPT DM #3653). Stop is the same for both.
+        val videoChirho = playChirho == VersePlayChirho.VIDEO_CHIRHO
+        val idleIconChirho = if (videoChirho) R.drawable.ic_play_chirho else R.drawable.ic_speaker_chirho
+        val idleLabelChirho = if (videoChirho) R.string.play_verse_video_chirho else R.string.listen_verse_chirho
         OutlinedButton(onClick = actionsChirho::onToggleVerseChirho) {
             Icon(painterResource(if (activeChirho) R.drawable.ic_stop_chirho else idleIconChirho), contentDescription = null)
             Text(stringResource(if (activeChirho) R.string.stop_chirho else idleLabelChirho), modifier = Modifier.padding(start = 8.dp))

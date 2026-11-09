@@ -138,6 +138,9 @@ export function classifyPathChirho(pathChirho: string): FileAreaChirho | string 
 		pathChirho === 'sitemap.xml' ||
 		pathChirho === 'library-chirho/books-chirho.json' ||
 		pathChirho === 'media-index-chirho.json' ||
+		/^tutorial-chirho\/(?:quick-tour-chirho\.json|(?:en|es)-(?:poster-chirho\.webp|captions-chirho\.vtt))$/.test(
+			pathChirho
+		) ||
 		isGlossPathChirho(pathChirho) ||
 		isAudioPathChirho(pathChirho) ||
 		SHARD_PATH_CHIRHO.test(pathChirho)

@@ -28,6 +28,7 @@ import {
 	type UploadChirho
 } from './r2_media_sync_chirho';
 import { readMediaRecordsChirho } from './build_release_chirho';
+import { sceneCorrectionSignatureChirho } from './r2-chirho/scene-corrections-chirho';
 import {
 	RefusalChirho,
 	deliveryEntriesChirho,
@@ -438,6 +439,8 @@ export async function manifestSignatureChirho(rootChirho: string): Promise<strin
 		if (infoChirho)
 			partsChirho.push(`${pathChirho}:${infoChirho.ino}:${infoChirho.size}:${infoChirho.mtimeMs}`);
 	}
+	const correctionShaChirho = await sceneCorrectionSignatureChirho(rootChirho);
+	if (correctionShaChirho) partsChirho.push('scene-corrections-chirho:' + correctionShaChirho);
 	return partsChirho.join('|');
 }
 

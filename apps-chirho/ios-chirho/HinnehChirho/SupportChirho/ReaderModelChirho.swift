@@ -26,7 +26,7 @@ final class ReaderModelChirho {
     private(set) var nextPassageChirho: PassageChirho?
     var playbackSpeedChirho: PlaybackSpeedChirho {
         didSet {
-            UserDefaults.standard.set(playbackSpeedChirho.rawValue, forKey: Self.speedKeyChirho)
+            defaultsChirho.set(playbackSpeedChirho.rawValue, forKey: Self.speedKeyChirho)
             playerChirho.speedChirho = playbackSpeedChirho
         }
     }
@@ -35,17 +35,19 @@ final class ReaderModelChirho {
         didSet {
             if selectingAutomaticallyChirho { return }
             hasRenditionPreferenceChirho = true
-            UserDefaults.standard.set(greekRenditionChirho.rawValue, forKey: Self.renditionKeyChirho)
+            defaultsChirho.set(greekRenditionChirho.rawValue, forKey: Self.renditionKeyChirho)
             reselectAudioChirho()
         }
     }
     var localeChirho: LocaleChirho {
         didSet {
-            UserDefaults.standard.set(localeChirho.rawValue, forKey: Self.localeKeyChirho)
+            defaultsChirho.set(localeChirho.rawValue, forKey: Self.localeKeyChirho)
             if localeChirho == .spanishChirho, spanishChirho == nil { loadSpanishChirho() }
         }
     }
 
+    let sessionChirho: ReaderSessionChirho
+    @ObservationIgnored private let defaultsChirho: UserDefaults
     let remoteChirho: RemoteChirho
     let playerChirho: AudioPlayerChirho
     let artworkChirho: ArtworkStoreChirho
@@ -67,16 +69,19 @@ final class ReaderModelChirho {
     static let speedKeyChirho = "hinneh-playback-speed-chirho"
 
     init(passageChirho: PassageChirho = .dailyChirho(), remoteChirho: RemoteChirho = RemoteChirho(
-        transportChirho: URLSessionTransportChirho(cacheDirectoryChirho: ReaderModelChirho.cacheDirectoryChirho))) {
+        transportChirho: URLSessionTransportChirho(cacheDirectoryChirho: ReaderModelChirho.cacheDirectoryChirho)),
+         defaultsChirho: UserDefaults = .standard) {
         self.passageChirho = passageChirho
         self.remoteChirho = remoteChirho
-        let storedChirho = UserDefaults.standard.string(forKey: Self.localeKeyChirho).flatMap(LocaleChirho.init)
+        self.defaultsChirho = defaultsChirho
+        sessionChirho = ReaderSessionChirho(defaultsChirho: defaultsChirho)
+        let storedChirho = defaultsChirho.string(forKey: Self.localeKeyChirho).flatMap(LocaleChirho.init)
         localeChirho = storedChirho ?? .preferredChirho()
-        let renditionChirho = UserDefaults.standard.string(forKey: Self.renditionKeyChirho)
+        let renditionChirho = defaultsChirho.string(forKey: Self.renditionKeyChirho)
             .flatMap(GreekRenditionChirho.init)
         greekRenditionChirho = renditionChirho ?? .modernAspiratesChirho
         hasRenditionPreferenceChirho = renditionChirho != nil
-        playbackSpeedChirho = UserDefaults.standard.string(forKey: Self.speedKeyChirho)
+        playbackSpeedChirho = defaultsChirho.string(forKey: Self.speedKeyChirho)
             .flatMap(PlaybackSpeedChirho.init) ?? .normalChirho
         playerChirho = AudioPlayerChirho(remoteChirho: remoteChirho)
         artworkChirho = ArtworkStoreChirho(remoteChirho: remoteChirho)
@@ -102,8 +107,33 @@ final class ReaderModelChirho {
         booksChirho = await BookListChirho.loadChirho(remoteChirho)
     }
 
+    /// A single cold launch chooses its passage before loading. Foreground activation never calls it again.
+    func launchChirho(requestedChirho: String? = nil,
+                      versionChirho: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "") async {
+        let requestedPassageChirho = (requestedChirho ?? defaultsChirho.string(forKey: "hinneh-open-chirho"))
+            .flatMap { PassageChirho.parseChirho($0, booksChirho) }
+        guard let launchPassageChirho = sessionChirho.launchChirho(
+            requestedChirho: requestedPassageChirho, booksChirho: booksChirho, versionChirho: versionChirho)
+        else { return }
+        openChirho(launchPassageChirho, reasonChirho: .launchChirho)
+        await refreshBooksChirho()
+    }
+
+    func openLinkChirho(_ urlChirho: URL) async {
+        guard let linkedChirho = ReaderSessionChirho.linkedPassageChirho(urlChirho, booksChirho: booksChirho)
+        else { return }
+        if !sessionChirho.startedChirho { await launchChirho(requestedChirho: linkedChirho.idChirho) }
+        else { openChirho(linkedChirho, reasonChirho: .deepLinkChirho) }
+    }
+
+    func pauseChirho() {
+        sessionChirho.cancelAutoplayChirho()
+        playerChirho.stopChirho()
+    }
+
     /// Opens a passage, cancelling every request and recording still running for the last one.
-    func openChirho(_ nextChirho: PassageChirho) {
+    func openChirho(_ nextChirho: PassageChirho, reasonChirho: PassageOpenReasonChirho = .navigationChirho) {
+        let intentChirho = sessionChirho.beginOpenChirho(reasonChirho, changedChirho: passageChirho != nextChirho)
         loadTaskChirho?.cancel()
         spanishTaskChirho?.cancel()
         navigationTaskChirho?.cancel()
@@ -129,21 +159,35 @@ final class ReaderModelChirho {
             previousPassageChirho = neighboursChirho.0
             nextPassageChirho = neighboursChirho.1
         }
-        loadTaskChirho = Task { await loadChirho(nextChirho) }
+        loadTaskChirho = Task { await loadChirho(nextChirho, intentChirho: intentChirho) }
     }
 
-    func retryChirho() { openChirho(passageChirho) }
+    func retryChirho() { openChirho(passageChirho, reasonChirho: .retryChirho) }
 
     /// Current original-language baseline uses one embedded soundtrack/clock. A different selected
     /// reading keeps the still until a separately reviewed replacement pair is available.
     func toggleVerseChirho() {
+        sessionChirho.cancelAutoplayChirho()
         if playerChirho.activeIdChirho == "verse" { playerChirho.stopChirho(); return }
-        let clipChirho = audioChirho.verseClipChirho
-        if let videoChirho = mediaChirho.videoChirho,
-           playerChirho.failedVideoShaChirho != videoChirho.sha256Chirho,
-           clipChirho.map(videoChirho.carriesChirho) ?? true {
-            playerChirho.playVideoChirho(videoChirho)
-        } else if let clipChirho { playerChirho.playChirho(clipChirho, idChirho: "verse") }
+        playPreferredVerseChirho()
+    }
+
+    /// The displayed Play label and actual player share this verified, failure-aware choice.
+    var preferredVerseVideoChirho: VerseVideoChirho? {
+        guard let videoChirho = mediaChirho.videoChirho,
+              playerChirho.failedVideoShaChirho != videoChirho.sha256Chirho,
+              audioChirho.verseClipChirho.map(videoChirho.carriesChirho) ?? true else { return nil }
+        return videoChirho
+    }
+
+    var versePlayLabelChirho: String {
+        preferredVerseVideoChirho != nil ? messagesChirho.playVerseVideoChirho : messagesChirho.playVerseChirho
+    }
+
+    /// Manual and opted-in navigation playback share the same verified clip/video choice.
+    private func playPreferredVerseChirho() {
+        if let videoChirho = preferredVerseVideoChirho { playerChirho.playVideoChirho(videoChirho) }
+        else if let clipChirho = audioChirho.verseClipChirho { playerChirho.playChirho(clipChirho, idChirho: "verse") }
     }
 
     func stepChirho(_ stepChirho: StepChirho) async {
@@ -164,7 +208,7 @@ final class ReaderModelChirho {
         return entriesChirho[chapterChirho - 1].versesChirho
     }
 
-    private func loadChirho(_ targetChirho: PassageChirho) async {
+    private func loadChirho(_ targetChirho: PassageChirho, intentChirho: UUID) async {
         guard let bookChirho = booksChirho.bookChirho(targetChirho.bookIdChirho) else {
             phaseChirho = .failedChirho
             return
@@ -181,6 +225,7 @@ final class ReaderModelChirho {
         guard !Task.isCancelled else { return }
         chapterChirho = verifiedChirho
         verseChirho = verseValueChirho
+        sessionChirho.rememberChirho(targetChirho)
         phaseChirho = .readyChirho
         if localeChirho == .spanishChirho { loadSpanishChirho() }
         // Recordings are chosen for the rendition in force now; a later choice re-selects them.
@@ -214,11 +259,13 @@ final class ReaderModelChirho {
             greekRenditionChirho = chosenRenditionChirho
             selectingAutomaticallyChirho = false
             audioChirho = audioResultChirho ?? .emptyChirho
+            if sessionChirho.consumeAutoplayChirho(intentChirho) { playPreferredVerseChirho() }
         }
     }
 
     /// A new Greek rendition re-selects recordings from the already verified catalogue.
     private func reselectAudioChirho() {
+        sessionChirho.cancelAutoplayChirho()
         playerChirho.stopChirho()
         audioTaskChirho?.cancel()
         let selectionIdChirho = UUID()

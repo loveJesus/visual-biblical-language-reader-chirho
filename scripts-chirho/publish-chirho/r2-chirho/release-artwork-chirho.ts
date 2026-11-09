@@ -15,6 +15,7 @@ import { sha256Chirho, type MediaRecordChirho, type FilesChirho } from '../relea
 import type { MediaCatalogueChirho } from '../../../workers-chirho/artwork-chirho/types-chirho';
 import { SITE_HOSTNAME_CHIRHO, SITE_HOSTNAMES_CHIRHO } from '../../../src/lib/site-chirho';
 import { readBrandingChirho } from '../../site-chirho/branding-chirho';
+import { readEffectiveMediaDocumentsChirho } from './scene-corrections-chirho';
 
 export interface RemoteReleaseChirho {
 	schema_version_chirho: 1;
@@ -48,16 +49,27 @@ export async function overlayRemoteArtworkChirho(
 	};
 	const byPathChirho = new Map<string, ArtworkEntryChirho>();
 	const homeChirho = joinChirho(snapshotChirho, 'data-chirho/media-chirho');
-	for (const nameChirho of (await readdirChirho(homeChirho))
-		.filter((nameChirho) => nameChirho.endsWith('.json'))
-		.sort()) {
-		const pathChirho = joinChirho(homeChirho, nameChirho),
-			recordChirho = JSON.parse(await readFileChirho(pathChirho, 'utf8'));
+	const effectiveChirho = await readEffectiveMediaDocumentsChirho(snapshotChirho);
+	const documentsChirho = effectiveChirho.documents_chirho.map((documentChirho) => ({
+		path_chirho: joinChirho(homeChirho, documentChirho.name_chirho) as string | null,
+		document_chirho: documentChirho.document_chirho
+	}));
+	if (effectiveChirho.retained_scenes_chirho.length)
+		documentsChirho.push({
+			path_chirho: null,
+			document_chirho: { scenes_chirho: effectiveChirho.retained_scenes_chirho }
+		});
+	for (const documentChirho of documentsChirho) {
+		const pathChirho = documentChirho.path_chirho,
+			recordChirho = documentChirho.document_chirho;
 		for (const [arrayChirho, kindChirho] of [
 			['icons_chirho', 'icon'],
 			['scenes_chirho', 'scene']
 		] as const) {
-			for (const itemChirho of recordChirho[arrayChirho] ?? []) {
+			const itemsChirho = recordChirho[arrayChirho];
+			if (itemsChirho !== undefined && !Array.isArray(itemsChirho))
+				throw new Error('Media collection is not an array');
+			for (const itemChirho of Array.isArray(itemsChirho) ? itemsChirho : []) {
 				const entryChirho = checkedArtworkChirho(catalogueChirho, {
 					...itemChirho,
 					kind_chirho: kindChirho
@@ -75,7 +87,7 @@ export async function overlayRemoteArtworkChirho(
 				reportChirho.records_chirho++;
 			}
 		}
-		await writeFileChirho(pathChirho, JSON.stringify(recordChirho, null, 2) + '\n');
+		if (pathChirho) await writeFileChirho(pathChirho, JSON.stringify(recordChirho, null, 2) + '\n');
 	}
 	for (const [pathChirho, entryChirho] of byPathChirho) {
 		reportChirho.source_bytes_chirho += entryChirho.source_chirho.bytes_chirho;

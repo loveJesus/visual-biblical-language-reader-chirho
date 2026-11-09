@@ -20,6 +20,7 @@ import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -84,6 +85,9 @@ private class FakeVideoPlaybackChirho : VideoPlaybackChirho {
 private class MemoryPreferencesChirho : ReaderPreferencesChirho {
     override var renditionChirho: GreekRenditionChirho? = null
     override var speedChirho: Float? = null
+    override var openTodayChirho: Boolean = ReaderPreferencesChirho.DEFAULT_OPEN_TODAY_CHIRHO
+    override var autoplayChirho: Boolean = ReaderPreferencesChirho.DEFAULT_AUTOPLAY_CHIRHO
+    override var lastShownChirho: PassageChirho? = null
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -268,6 +272,7 @@ class ReaderViewModelTestChirho {
         val versesChirho = (stateChirho.recordingsChirho as OptionalChirho.ReadyChirho).valueChirho.versesChirho
         assertEquals(listOf(AudioSelectionChirho.LOCAL_GREEK_VERSE_RECIPE_CHIRHO), versesChirho.map { it.recipeIdChirho })
         assertTrue(viewModelChirho.verseClipAvailableChirho())
+        assertEquals("no video here: Play's label names the recording", VersePlayChirho.RECORDING_CHIRHO, stateChirho.versePlayChirho)
         val roughChirho = (stateChirho.verseChirho as VerseLoadChirho.ReadyChirho).loadedChirho.verseChirho.wordsChirho.first { it.textChirho == "ὁ" }
         assertTrue("a plain Modern word clip plays under Modern", viewModelChirho.wordClipAvailableChirho(roughChirho))
         viewModelChirho.toggleVerseChirho()
@@ -277,6 +282,7 @@ class ReaderViewModelTestChirho {
         assertEquals("a switch stops the old reading at once", PlaybackChirho.IdleChirho, playbackChirho.playbackChirho.value)
         assertEquals(GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO, preferencesChirho.renditionChirho)
         assertTrue("a silent rough breathing never stands for Aspirates", !viewModelChirho.verseClipAvailableChirho())
+        assertEquals(VersePlayChirho.NONE_CHIRHO, viewModelChirho.uiStateChirho.value.versePlayChirho)
         assertTrue(!viewModelChirho.wordClipAvailableChirho(roughChirho))
 
         storeChirho.clear()
@@ -296,12 +302,14 @@ class ReaderViewModelTestChirho {
         val viewModelChirho = viewModelChirho(explicitChirho = "Prov.1.1")
         settleChirho()
         assertEquals(sampleVideoChirho(), viewModelChirho.uiStateChirho.value.playableVideoChirho)
+        assertEquals("Play's label names the video it will play", VersePlayChirho.VIDEO_CHIRHO, viewModelChirho.uiStateChirho.value.versePlayChirho)
         viewModelChirho.toggleVerseChirho()
         videoChirho.failChirho("verse:Prov.1.1")
         settleChirho()
         val failedChirho = viewModelChirho.uiStateChirho.value
         assertTrue(failedChirho.videoFailedChirho)
         assertNull("the still returns in the video's place", failedChirho.playableVideoChirho)
+        assertEquals("then the label names the recording Play will read", VersePlayChirho.RECORDING_CHIRHO, failedChirho.versePlayChirho)
         assertTrue(viewModelChirho.verseClipAvailableChirho())
 
         viewModelChirho.toggleVerseChirho()
@@ -314,6 +322,7 @@ class ReaderViewModelTestChirho {
         settleChirho()
         assertEquals("Prov.1.1", viewModelChirho.shownChirho())
         assertEquals("a new visit may try the video again", sampleVideoChirho(), viewModelChirho.uiStateChirho.value.playableVideoChirho)
+        assertEquals(VersePlayChirho.VIDEO_CHIRHO, viewModelChirho.uiStateChirho.value.versePlayChirho)
     }
 
     @Test
@@ -326,5 +335,155 @@ class ReaderViewModelTestChirho {
             videoFailedChirho = true,
         )
         assertEquals(videoRecordChirho, stateChirho.playableVideoChirho)
+        assertEquals("with no recording to read, the label still names the video", VersePlayChirho.VIDEO_CHIRHO, stateChirho.versePlayChirho)
+        val nothingChirho = stateChirho.copy(mediaChirho = OptionalChirho.ReadyChirho(VerseMediaChirho.EMPTY_CHIRHO))
+        assertEquals("with neither, Play has nothing to name", VersePlayChirho.NONE_CHIRHO, nothingChirho.versePlayChirho)
+    }
+
+    /** Root's launch rules (GPT, DM #3642): a verse is kept once it loads, and resumed only with today's Proverbs off. */
+    @Test
+    fun aFreshLaunchOpensTodaysProverbsOrWithThatSwitchOffTheLastVerseShown() = runTest(dispatcherChirho) {
+        val readerChirho = viewModelChirho(explicitChirho = "John.1.1")
+        settleChirho()
+        readerChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        assertEquals(PassageChirho("John", 1, 2), preferencesChirho.lastShownChirho)
+        storeChirho.clear()
+
+        val todayChirho = viewModelChirho()
+        settleChirho()
+        assertEquals("today's Proverbs is on by default", "Prov.3.1", todayChirho.shownChirho())
+        todayChirho.setOpenTodayChirho(false)
+        assertFalse(preferencesChirho.openTodayChirho)
+        assertEquals("the verse being read stays", "Prov.3.1", todayChirho.shownChirho())
+        todayChirho.selectBookChirho("John")
+        settleChirho()
+        storeChirho.clear()
+
+        preferencesChirho.autoplayChirho = true
+        val resumedChirho = viewModelChirho()
+        settleChirho()
+        assertEquals("with it off, a fresh launch opens the last verse shown", "John.1.1", resumedChirho.shownChirho())
+        assertTrue("a launch's first verse never plays by itself", playbackChirho.playedChirho.isEmpty() && videoChirho.playedChirho.isEmpty())
+    }
+
+    @Test
+    fun aVerseThatFailsToLoadIsNeverKeptForALaterLaunch() = runTest(dispatcherChirho) {
+        worldChirho.transportChirho.failingChirho += "/content-chirho/proverbs-chirho/chapter-04-chirho.json"
+        viewModelChirho(explicitChirho = "Prov.4.1")
+        settleChirho()
+        assertNull("a launch's failed first verse is not kept", preferencesChirho.lastShownChirho)
+        storeChirho.clear()
+
+        val readerChirho = viewModelChirho(explicitChirho = "Prov.3.1")
+        settleChirho()
+        readerChirho.selectChapterChirho(4)
+        settleChirho()
+        assertEquals(VerseLoadChirho.FailedChirho(FailureChirho.VERSE_CHIRHO), readerChirho.uiStateChirho.value.verseChirho)
+        assertEquals("a verse the reader moved to but which failed is not kept either", PassageChirho("Prov", 3, 1), preferencesChirho.lastShownChirho)
+    }
+
+    @Test
+    fun withAutoplayOffMovingToAVersePlaysNothing() = runTest(dispatcherChirho) {
+        val viewModelChirho = viewModelChirho(explicitChirho = "Prov.26.1")
+        settleChirho()
+        assertFalse("off by default", viewModelChirho.uiStateChirho.value.autoplayChirho)
+        viewModelChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        assertEquals("Prov.26.2", viewModelChirho.shownChirho())
+        assertTrue(playbackChirho.playedChirho.isEmpty() && videoChirho.playedChirho.isEmpty())
+    }
+
+    /** A verse the reader moves to presses its own Play once, at the saved speed; the launch's first verse never does (GPT, DM #3642). */
+    @Test
+    fun withAutoplayOnOnlyAVerseTheReaderMovesToPlaysByItself() = runTest(dispatcherChirho) {
+        preferencesChirho.speedChirho = 0.85f
+        val firstChirho = viewModelChirho(explicitChirho = "Prov.26.1")
+        settleChirho()
+        firstChirho.setAutoplayChirho(true)
+        assertTrue(preferencesChirho.autoplayChirho)
+        assertTrue("choosing autoplay starts nothing for the verse being read", playbackChirho.playedChirho.isEmpty())
+        storeChirho.clear()
+
+        val relaunchedChirho = viewModelChirho(explicitChirho = "Prov.26.1")
+        settleChirho()
+        assertTrue("the launch's first verse never plays by itself", playbackChirho.playedChirho.isEmpty() && videoChirho.playedChirho.isEmpty())
+        relaunchedChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        assertEquals("Prov.26.2", relaunchedChirho.shownChirho())
+        assertEquals("Be'eri's reading of the new verse, at the saved speed", listOf("verse:Prov.26.2" to 0.85f), playbackChirho.playedChirho)
+        relaunchedChirho.selectVerseChirho(5)
+        settleChirho()
+        assertEquals("a verse chosen from the list plays too", listOf("verse:Prov.26.2" to 0.85f, "verse:Prov.26.5" to 0.85f), playbackChirho.playedChirho)
+    }
+
+    @Test
+    fun aNewerSelectionCancelsAPendingAutoplay() = runTest(dispatcherChirho) {
+        preferencesChirho.autoplayChirho = true
+        val viewModelChirho = viewModelChirho(explicitChirho = "Prov.26.28")
+        settleChirho()
+        val gateChirho = CompletableDeferred<Unit>()
+        worldChirho.transportChirho.gatesChirho["/audio-chirho/proverbs-chirho/chapter-27-chirho.json"] = gateChirho
+        viewModelChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        assertEquals("Prov.27.1", viewModelChirho.shownChirho())
+        assertTrue("Play waits until it can choose between a video and a recording", playbackChirho.playedChirho.isEmpty())
+        viewModelChirho.stepChirho(forwardChirho = false)
+        settleChirho()
+        gateChirho.complete(Unit)
+        settleChirho()
+        assertEquals("Prov.26.28", viewModelChirho.shownChirho())
+        assertEquals("only the newest verse plays", listOf("verse:Prov.26.28" to 1f), playbackChirho.playedChirho)
+    }
+
+    @Test
+    fun autoplayNeverInterruptsASoundTheReaderStarted() = runTest(dispatcherChirho) {
+        preferencesChirho.autoplayChirho = true
+        val viewModelChirho = viewModelChirho(explicitChirho = "Prov.26.28")
+        settleChirho()
+        val gateChirho = CompletableDeferred<Unit>()
+        worldChirho.transportChirho.gatesChirho["/media-chirho/proverbs-chirho/chapter-27-chirho.json"] = gateChirho
+        viewModelChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        val wordChirho = (viewModelChirho.uiStateChirho.value.verseChirho as VerseLoadChirho.ReadyChirho).loadedChirho.verseChirho
+            .wordsChirho.first { viewModelChirho.wordClipAvailableChirho(it) }
+        viewModelChirho.toggleWordChirho(wordChirho)
+        gateChirho.complete(Unit)
+        settleChirho()
+        assertEquals("the reader's word plays; the verse never starts over it", listOf("word:Prov.27.1:${wordChirho.idChirho}" to 1f), playbackChirho.playedChirho)
+        assertTrue(videoChirho.playedChirho.isEmpty())
+    }
+
+    @Test
+    fun withAutoplayAVerseVideoPlaysInTheScenesPlace() = runTest(dispatcherChirho) {
+        worldChirho = PublishedWorldChirho.orSkipChirho(dispatcherChirho, FixedStagedVideosChirho(sampleVideoChirho()))
+        preferencesChirho.autoplayChirho = true
+        val viewModelChirho = viewModelChirho(explicitChirho = "Prov.1.2")
+        settleChirho()
+        viewModelChirho.stepChirho(forwardChirho = false)
+        settleChirho()
+        assertEquals("Prov.1.1", viewModelChirho.shownChirho())
+        assertEquals(listOf("verse:Prov.1.1" to 1f), videoChirho.playedChirho)
+        assertTrue("its reading is the video's own sound, not a second recording", playbackChirho.playedChirho.isEmpty())
+    }
+
+    /** Matthew 1:16 has rough breathing and only a plain Modern reading (theAutomaticRenditionFollowsTheVerseUntilAChoiceIsSaved). */
+    @Test
+    fun autoplayFollowsTheReadingInEffect() = runTest(dispatcherChirho) {
+        preferencesChirho.autoplayChirho = true
+        val automaticChirho = viewModelChirho(explicitChirho = "Matt.1.15")
+        settleChirho()
+        automaticChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        assertEquals("with nothing saved, the verse's automatic Modern reading plays", listOf("verse:Matt.1.16" to 1f), playbackChirho.playedChirho)
+        storeChirho.clear()
+
+        preferencesChirho.renditionChirho = GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO
+        val aspiratesChirho = viewModelChirho(explicitChirho = "Matt.1.15")
+        settleChirho()
+        aspiratesChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        assertEquals("Matt.1.16", aspiratesChirho.shownChirho())
+        assertEquals("a saved Aspirates choice never borrows that plain Modern reading", 1, playbackChirho.playedChirho.size)
     }
 }

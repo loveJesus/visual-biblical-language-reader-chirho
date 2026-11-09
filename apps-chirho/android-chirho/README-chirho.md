@@ -38,7 +38,7 @@ ANDROID_SERIAL=<device> ./gradlew :app-chirho:connectedDebugAndroidTest   # live
 
 ## Verse video
 
-When a verse has a video, it takes the scene picture's place, and Play plays it with its reading (L.J., 2026-11-06). Without one, Play plays the verse's best saved reading over the scene. A human reading by Rabbi Dan Be'eri comes first (GPT, DM #3390). Videos and recordings follow the Speed setting, with pitch kept.
+When a verse has a video, it takes the scene picture's place, and Play plays it with its reading (L.J., 2026-11-06). Play's label says what it will play (L.J., via GPT DM #3653): "Play verse video" ("Reproducir video del versículo") for the verse's playable video, and "Listen to verse" ("Escuchar el versículo") for a recording alone, including after a video failed on this visit. Both follow `ReaderUiStateChirho.versePlayChirho`, the same choice Play makes. Without one, Play plays the verse's best saved reading over the scene. A human reading by Rabbi Dan Be'eri comes first (GPT, DM #3390). Videos and recordings follow the Speed setting, with pitch kept.
 
 The credit of what Play plays, a video's own or a human reading's, is in the verse's folded Sources list: the exact published attribution and a License link, once. L.J., 2026-11-07: "credits etc can just show in like an info screen, not have the main user interface littered with dev notes" (agreed with GPT, DM #3486). The reading key's credits also name the Be'eri readings.
 
@@ -60,7 +60,7 @@ python3 -I tools-chirho/stage_videos_chirho.py <videos folder> --serial emulator
 adb shell am start -n us.hinneh.readerchirho/.MainActivityChirho --es us.hinneh.readerchirho.PASSAGE_CHIRHO John.1.1
 ```
 
-Without that extra, a fresh launch opens Proverbs at the local day of the month, verse 1.
+Without that extra, a fresh launch opens Proverbs at the local day of the month, verse 1. With Settings › Open today's Proverbs off, it opens the last verse shown instead. The extra counts only on a fresh launch: an activity that Android restores keeps the verse it showed.
 
 ## Layout
 
@@ -73,8 +73,8 @@ Packages under `app-chirho/src/main/kotlin/us/hinneh/readerchirho/`:
 | `domainchirho/` | Passages, grammar cues, verb forms, word grouping, spoken text, morphology labels and the bundled reading key. |
 | `mediachirho/` | Scene and word-picture selection, verified image decoding. |
 | `audiochirho/` | Recording binding and selection, Greek reading rules, playback from verified bytes. |
-| `statechirho/` | Reader state, the ViewModel and preferences. |
-| `uichirho/` | Compose screens: passage controls, verse, Look closer, reading key, sources, settings and About. |
+| `statechirho/` | Reader state, the launch rules, the ViewModel and preferences. |
+| `uichirho/` | Compose screens: the welcome, passage controls, verse, Look closer, Help and the reading key, sources, settings and Info. |
 
 JVM tests live in `app-chirho/src/test/`; device tests in `app-chirho/src/androidTest/`. Build output, IDE files, `local.properties` and `evidence-chirho/` are ignored.
 
@@ -82,7 +82,7 @@ JVM tests live in `app-chirho/src/test/`; device tests in `app-chirho/src/androi
 
 ```mermaid
 flowchart TD
-    A[Passage: explicit link, restored state, or Proverbs day-of-month] --> B[Book list: live /library-chirho/books-chirho.json, else bundled identities]
+    A[Passage: explicit link, restored state, then today's Proverbs or with that switch off the last verse shown] --> B[Book list: live /library-chirho/books-chirho.json, else bundled identities]
     B --> C[Book manifest: identity, chapter count, paths, hashes, source verse numbers]
     C --> D[Chapter: SHA-256 must match the manifest]
     D --> E[Verse: decode and validate exact source Unicode]
@@ -115,21 +115,83 @@ A newer selection cancels the older passage's requests and stops its audio. A fa
   - A word clip speaks that word's reading. In a verse reading, a reviewed written group (Lam 4:3, כי ענים read as one word) is read once, and only when the whole group and the exact verse text match. Anything changed keeps the source words.
   - A missing or invalid asset gives no reviews.
   - The opt-in corpus walk (`PublishedClipsCorpusTestChirho`) checks that every published clip and reading binds. It reads one audio chapter at a time.
-- Pictures and recordings carry no per-item AI or review notes (L.J., 2026-11-05). Settings → About Hinneh states once that they are AI-generated study aids still awaiting review, and links the privacy policy (which Google Play requires inside the app), About and support, Contact and the source code. Missing meanings, pictures and recordings stay visibly unavailable.
+- Pictures and recordings carry no per-item AI or review notes (L.J., 2026-11-05). Info, opened from Settings › About Hinneh and from the welcome, states once that they are AI-generated study aids still awaiting review. Missing meanings, pictures and recordings stay visibly unavailable. Info also holds:
+  - links to the quick tour, the privacy policy (Google Play requires it inside the app), About and support, Sources, Contact and the source code;
+  - the licenses of Hinneh's code and media, mirroring the website's "Free software and shared media" (the Spanish uses the app's usted);
+  - the credits of the texts, grammar and readings, from the same strings as the reading key;
+  - the version.
 - Word cards carry no per-word source or review notes either (L.J., 2026-11-06): no gloss-source label, root status, importer note or raw OSHB code.
   - Look closer puts the word on Close's row, then shows its lexical form and Strong's number, the recording, the picture, the meaning and one grammar line. The grammar line is the source's English description, or the translated labels in Spanish.
   - A root appears only once one has been reviewed (no published word has one yet). Only a gloss written for Hinneh itself is labelled, so it never blends with the approved Global Bible Tools or Berean glosses.
   - The reading key ends with "About meanings & study aids": how meanings, grammar, roots and pictures are made, then the OSHB or Nestle 1904 credit, and for Hebrew the Be'eri readings' credit.
   - Under the verse are only its English numbering (when it differs), the exact source text, the folded sources list (the recording's or video's credit, the sources and the source-edition notes), and the link to the verse on hinneh.us.
 - Previous and next verse appear above the verse and again below it; stepping from below returns to the top of the new verse.
+  - The reference stays between the two buttons while its longest word fits there.
+  - On a narrow phone or with large text, the whole reference takes its own centered line above the buttons instead of breaking inside a word (GPT, DM #3656).
+  - Either way the buttons keep their order, targets and disabled state (`StepRowLayoutChirho`).
 - Swiping the page steps the same way (`uichirho/VerseSwipeChirho.kt`). The next verse comes in from the Next button's side: a leftward swipe in English and Spanish, flipped in a mirrored right-to-left layout.
   - A swipe steps after 80dp, or sooner on a quick flick. The page follows the finger and springs back, and a haptic tick marks the threshold.
   - It never steps where the buttons are disabled; both use `ReaderUiStateChirho.canStepChirho`.
   - The buttons remain for TalkBack users, whose swipes navigate.
-- The help button opens the reading key for the passage's language: the website's legend in English or Spanish, with the unfoldingWord Hebrew Grammar CC BY-SA 4.0 credit beside the Hebrew explanations. `app-chirho/src/main/assets/teaching-chirho/teaching-chirho.json` and `assets/library-chirho/books-chirho.json` are byte-identical exports of the website's tables; from the repository root, `bun apps-chirho/ios-chirho/scripts-chirho/export_teaching_chirho.ts` rewrites them and `--check` fails on drift.
+- The help button (TalkBack: "Help and reading key") opens the quick tour link first, then the reading key for the passage's language: the website's legend in English or Spanish, with the unfoldingWord Hebrew Grammar CC BY-SA 4.0 credit beside the Hebrew explanations. `app-chirho/src/main/assets/teaching-chirho/teaching-chirho.json` and `assets/library-chirho/books-chirho.json` are byte-identical exports of the website's tables; from the repository root, `bun apps-chirho/ios-chirho/scripts-chirho/export_teaching_chirho.ts` rewrites them and `--check` fails on drift.
 - English and Spanish interface, chosen in Settings or from the device language.
 - Settings › Text size scales all text: Small 80%, Medium 90% (the default since L.J.'s 2026-11-05 request), Large 100% (the original size) and Extra large 115%. It multiplies the device's own font size and is reapplied inside sheets, which have their own window.
 - Image reports stay in the website's protected flow: the app links to the verse on hinneh.us.
+- **Opening and playing.** L.J. confirmed both switches; root set the defaults (GPT, DM #3642).
+  - **Settings › Open today's Proverbs** (on by default). Each fresh launch opens today's Proverbs; off, the last verse that loaded and verified. An explicit link wins either way. Coming back from the background, or a restore by Android, keeps the verse being read (`statechirho/LaunchChirho.kt`).
+  - **Settings › Play each verse you move to** (off by default). After Previous/Next, a swipe, or a book, chapter or verse choice, Play is pressed once, as soon as the new verse's pictures and recordings are known. It plays the verse's video with its reading, otherwise its best recording, under the speed and reading in effect.
+    - Never for a launch's first verse or behind the welcome, even when saved on.
+    - Never over a sound the reader has started.
+    - A newer choice cancels it.
+    - A verse with nothing to play stays silent; Android has no assembled word-by-word reading yet.
+  - Both choices stay on the device; Hinneh has no accounts.
+- **Welcome** (GPT, DM #3642 and #3645). A first run, and the first launch after each update (a higher versionCode), shows one short screen.
+  - It says what Hinneh is, that it covers Hebrew and Greek now with more languages planned, that its code and study materials are openly licensed, and that the quick tour opens any time from Help.
+  - Start reading, or Back, records the version and opens the reader.
+  - Watch quick tour opens the website's shared tour, https://hinneh.us/tutorial-chirho/, in the browser and in the interface language (root row 170). Help and Info always link it too.
+  - Nothing is fetched or played on the welcome.
+
+## Status (0.1.3 candidate, versionCode 4, 2026-11-08; not released)
+
+Version 0.1.3 adds the welcome, Info, the quick-tour links and the two switches (root unit 169; GPT, DM #3642, #3645 and #3650).
+It also names what Play will play: "Play verse video" or "Listen to verse" (L.J., via GPT DM #3653).
+- It was made in an isolated copy. The public 0.1.2 and its frozen artifacts are untouched.
+- Its release waits for root's review, and for root's proof that the hosted tour and its media work, so the app never links a dead tour.
+
+Checks on this Mac, against the local static tree:
+- A clean build. Kotlin has no warnings, and lint finds no issues in release or debug.
+- JVM: 78 tests. All pass except the opt-in live test, which is skipped by default. The new ones cover:
+  - the launch rules and the welcome (`LaunchTestChirho`);
+  - the device-only defaults (`PreferencesTestChirho`);
+  - autoplay and resuming through the real ViewModel (`ReaderViewModelTestChirho`).
+- The full-corpus walk refuses 0 of 437,587 entries, including the 256 new Greek chapter openings. The corpus contract covers 31,156 verses.
+  - Its bound count is distinct pairs. Three published word entries repeat the same token and MP3: one in Prov 1:13 and two in Prov 26:1.
+- Mutations, each in a throwaway copy. Each of these makes the new tests fail:
+  - autoplay on a launch's first verse;
+  - today's Proverbs off being ignored;
+  - no welcome after an update;
+  - autoplay over a sound the reader started;
+  - keeping a verse before it has loaded;
+  - a label that reads the raw video record, ignoring the failed-video fallback;
+  - a step row that never stacks (a device test).
+- Device: 10 connected tests pass on emulator-5556 (API 36), booted headless with `-no-audio` and software rendering. All checks are silent.
+  - The 5 live smoke tests.
+  - The reader flow, now passing through the welcome.
+  - The new launch flow:
+    - the welcome, Info's licenses and Start reading;
+    - Play verse video on today's chapter opening, which has a video;
+    - in Settings, autoplay on and today's Proverbs off;
+    - a Next step whose reading starts by itself and stops;
+    - a relaunch that opens the verse shown last, with no welcome and nothing playing.
+  - The step row (`StepRowLayoutTestChirho`):
+    - at 320 dp in Spanish at Extra large, the whole reference sits above the two steps with no word broken;
+    - at an ordinary width in English at Medium, it keeps one row;
+    - Previous and Next keep their order, targets and disabled state.
+    - With the row forced to stay a row (a mutation), the narrow test fails.
+- Phone width: screenshots at 320 dp, in English and Spanish, at Medium and Extra large text.
+  - Every Play label fits on one line, except "Reproducir video del versículo" at Extra large, which wraps to two lines at a word boundary.
+  - The welcome wraps at word boundaries. Its Start reading is white on teal (4.5:1), as is Retry. The theme's ink body color had drawn both labels at 2.6:1.
+  - The reference between Previous and Next used to break inside the book name at 320 dp ("Prove/rbs"), and at Extra large one letter per line. It now moves above the buttons when it cannot fit whole (`StepRowLayoutTestChirho`).
 
 ## Status (0.1.2, versionCode 3, 2026-11-08)
 

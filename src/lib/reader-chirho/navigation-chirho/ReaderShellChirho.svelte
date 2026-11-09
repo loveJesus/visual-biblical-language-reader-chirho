@@ -21,6 +21,12 @@
 		verseNumbersChirho
 	} from '$lib/bible-chirho/content-client-chirho';
 	import { openingPassageChirho } from './opening-passage-chirho';
+	import {
+		ReaderSessionChirho,
+		type OpenReasonChirho
+	} from '../session-chirho/reader-session-chirho';
+	import { sessionMessagesChirho } from '../session-chirho/session-messages-chirho';
+	import ReaderWelcomeChirho from '../session-chirho/ReaderWelcomeChirho.svelte';
 	import type { ChapterEntryChirho } from './corpus-client-chirho';
 	import { fetchChapterMediaChirho, videosByLessonChirho } from './media-client-chirho';
 	import { verseSwipeChirho } from './verse-swipe-chirho';
@@ -90,6 +96,15 @@
 	let loadingChirho = $state(false);
 	let errorChirho = $state<ReaderKeyChirho | ''>('');
 	let requestChirho = 0;
+	let readerRootChirho = $state<HTMLDivElement>();
+	let sessionChirho: ReaderSessionChirho | null = null;
+	let welcomeChirho = $state(false);
+	let startTodayChirho = $state(true);
+	let autoplayChirho = $state(false);
+	let navigationGenerationChirho = $state(0);
+	let audioReadyChirho: { lesson_chirho: string; generation_chirho: number } | null = null;
+	let mediaSettledChirho = '';
+	const sessionCopyChirho = $derived(sessionMessagesChirho(localeStateChirho.currentChirho));
 	let curatedChirho = $derived(lessonChirho.id_chirho === 'Prov.26.1');
 	let workerScenesChirho = $state<Record<string, ScenePresentationChirho>>({});
 	let workerIconsChirho = $state<unknown>({ schema_version_chirho: 1, icons_chirho: [] });
@@ -164,37 +179,149 @@
 			errorChirho = 'error_chapters_chirho';
 		}
 	}
+	// Workflow: reader-session-chirho.md. The only automatic play request is consumed after all
+	// three independently loaded identities belong to this explicit navigation generation.
+	async function maybeAutoplayChirho() {
+		const generationChirho = navigationGenerationChirho;
+		const passageChirho = `${bookChirho}.${chapterChirho}.${verseChirho}`;
+		const audioChirho = audioReadyChirho;
+		if (
+			!sessionChirho ||
+			!restoredChirho ||
+			loadingChirho ||
+			errorChirho ||
+			welcomeChirho ||
+			document.visibilityState !== 'visible' ||
+			mediaSettledChirho !== `${bookChirho}.${chapterChirho}` ||
+			audioChirho?.lesson_chirho !== passageChirho ||
+			audioChirho.generation_chirho !== generationChirho
+		)
+			return;
+		await tickChirho();
+		await new Promise<void>((readyChirho) => requestAnimationFrame(() => readyChirho()));
+		if (generationChirho !== navigationGenerationChirho || loadingChirho || welcomeChirho) return;
+		const playChirho = readerRootChirho?.querySelector<HTMLButtonElement>(
+			'[data-audio-controls-chirho] .speech-button-chirho:not(.word-speech-chirho)'
+		);
+		// A settled but unavailable verse is a completed attempt, not a future refresh trigger.
+		if (!sessionChirho.consumeAutoplayChirho(generationChirho, passageChirho)) return;
+		if (
+			!playChirho ||
+			playChirho.disabled ||
+			readerRootChirho?.querySelector('[data-pronounce-chirho][aria-busy="true"]')
+		)
+			return;
+		playChirho.click();
+	}
+	function recordingsReadyChirho(lessonIdChirho: string, generationChirho: number) {
+		if (generationChirho !== navigationGenerationChirho) return;
+		audioReadyChirho = { lesson_chirho: lessonIdChirho, generation_chirho: generationChirho };
+		void maybeAutoplayChirho();
+	}
+	function preferencesChangedChirho() {
+		sessionChirho?.preferencesChirho(startTodayChirho, autoplayChirho);
+	}
+	function closeWelcomeChirho() {
+		sessionChirho?.acknowledgeWelcomeChirho();
+		welcomeChirho = false;
+		void tickChirho().then(() =>
+			document
+				.getElementById('reader-chirho')
+				?.scrollIntoView({ block: 'start', behavior: 'instant' })
+		);
+	}
+	function showKeyChirho() {
+		const headingChirho = document.getElementById(
+			bibleBookChirho(bookChirho).language_chirho === 'grc'
+				? 'greek-grammar-heading-chirho'
+				: 'grammar-heading-chirho'
+		);
+		if (headingChirho) {
+			headingChirho.tabIndex = -1;
+			headingChirho.focus({ preventScroll: true });
+			headingChirho.scrollIntoView({ block: 'start', behavior: 'instant' });
+		}
+	}
 	onMount(() => {
 		initLocaleChirho(new URL(window.location.href));
-		async function restoreChirho() {
-			const openingChirho = openingPassageChirho(window.location.hash);
+		let storeChirho: Storage | undefined;
+		try {
+			storeChirho = window.localStorage;
+		} catch {
+			/* Reading does not require storage. */
+		}
+		sessionChirho = new ReaderSessionChirho(storeChirho);
+		startTodayChirho = sessionChirho.startTodayChirho;
+		autoplayChirho = sessionChirho.autoplayChirho;
+		const initialChirho = sessionChirho.launchChirho(window.location.hash);
+		welcomeChirho = sessionChirho.welcomeChirho;
+		async function restoreChirho(initialChirho = false) {
+			const openingChirho = initialChirho
+				? initialPassageChirho
+				: openingPassageChirho(window.location.hash);
 			if (!openingChirho) return;
 			const bookFromUrlChirho = openingChirho.book_chirho;
 			const chapterFromUrlChirho = openingChirho.chapter_chirho;
 			const verseFromUrlChirho = openingChirho.verse_chirho;
+			const reasonChirho = initialChirho ? 'launch-chirho' : 'restore-chirho';
 			if (bookFromUrlChirho !== bookChirho) {
-				await changeBookChirho(bookFromUrlChirho, chapterFromUrlChirho, verseFromUrlChirho);
+				await changeBookChirho(
+					bookFromUrlChirho,
+					chapterFromUrlChirho,
+					verseFromUrlChirho,
+					false,
+					reasonChirho
+				);
 				return;
 			}
 			const entryChirho = chaptersChirho[chapterFromUrlChirho - 1];
-			if (
-				entryChirho &&
-				verseFromUrlChirho >= 1 &&
-				verseNumbersChirho(entryChirho).includes(verseFromUrlChirho) &&
-				(chapterFromUrlChirho !== chapterChirho || verseFromUrlChirho !== verseChirho)
-			)
-				await selectChirho(chapterFromUrlChirho, verseFromUrlChirho, Boolean(window.location.hash));
-			else void refreshMediaChirho();
+			if (entryChirho && verseNumbersChirho(entryChirho).includes(verseFromUrlChirho)) {
+				await selectChirho(
+					chapterFromUrlChirho,
+					verseFromUrlChirho,
+					Boolean(window.location.hash),
+					false,
+					reasonChirho
+				);
+			}
 		}
-		window.addEventListener('hashchange', restoreChirho);
+		const initialPassageChirho = initialChirho;
+		const hashChangedChirho = () => {
+			// Hashes written by selectChirho already have their own user-navigation intent.
+			if (window.location.hash === `#${bookChirho}.${chapterChirho}.${verseChirho}`) return;
+			void restoreChirho();
+		};
+		const cancelManualChirho = (eventChirho: Event) => {
+			const targetChirho = eventChirho.target;
+			if (
+				targetChirho instanceof Element &&
+				targetChirho.closest(
+					'[data-pronounce-chirho], [data-speech-stop-chirho], [data-greek-rendition-chirho]'
+				)
+			)
+				sessionChirho?.cancelAutoplayChirho();
+		};
+		const visibilityChirho = () => {
+			if (document.visibilityState !== 'visible') sessionChirho?.cancelAutoplayChirho();
+		};
+		window.addEventListener('hashchange', hashChangedChirho);
+		document.addEventListener('click', cancelManualChirho, true);
+		document.addEventListener('change', cancelManualChirho, true);
+		document.addEventListener('visibilitychange', visibilityChirho);
 		void prepareChirho()
-			.then(restoreChirho)
-			.finally(() => (restoredChirho = true));
+			.then(() => restoreChirho(true))
+			.finally(() => {
+				restoredChirho = true;
+			});
 		const timerChirho = window.setInterval(() => {
 			if (document.visibilityState === 'visible') void refreshMediaChirho();
 		}, 30000);
 		return () => {
-			window.removeEventListener('hashchange', restoreChirho);
+			sessionChirho?.cancelAutoplayChirho();
+			window.removeEventListener('hashchange', hashChangedChirho);
+			document.removeEventListener('click', cancelManualChirho, true);
+			document.removeEventListener('change', cancelManualChirho, true);
+			document.removeEventListener('visibilitychange', visibilityChirho);
 			window.clearInterval(timerChirho);
 		};
 	});
@@ -204,6 +331,7 @@
 	) {
 		const keyChirho = `${nextBookChirho}.${nextChapterChirho}`;
 		if (keyChirho === mediaKeyChirho && Date.now() - mediaFetchedAtChirho < 5000) return;
+		mediaSettledChirho = ''; // A previous visit to this chapter cannot settle the new fetch.
 		mediaKeyChirho = keyChirho;
 		mediaFetchedAtChirho = Date.now();
 		const requestIdChirho = ++mediaRequestChirho;
@@ -219,14 +347,26 @@
 			mediaReadyChirho = true;
 		} catch {
 			// The text stays usable if the optional artwork index is unavailable.
+		} finally {
+			if (requestIdChirho === mediaRequestChirho) {
+				mediaSettledChirho = keyChirho;
+				void maybeAutoplayChirho();
+			}
 		}
 	}
 	async function selectChirho(
 		nextChapterChirho: number,
 		nextVerseChirho: number,
 		persistHashChirho = true,
-		revealChirho = false
+		revealChirho = false,
+		reasonChirho: OpenReasonChirho = 'navigation-chirho'
 	) {
+		navigationGenerationChirho =
+			sessionChirho?.beginChirho(
+				`${bookChirho}.${nextChapterChirho}.${nextVerseChirho}`,
+				reasonChirho
+			) ?? navigationGenerationChirho + 1;
+		audioReadyChirho = null;
 		void refreshMediaChirho(bookChirho, nextChapterChirho);
 		const selectedBookChirho = bookChirho;
 		const fragmentChirho = `#${selectedBookChirho}.${nextChapterChirho}.${nextVerseChirho}`;
@@ -249,11 +389,15 @@
 			if (requestIdChirho === requestChirho) {
 				if (nextLessonChirho.language_chirho === 'grc') greekLessonChirho = nextLessonChirho;
 				else lessonChirho = nextLessonChirho;
+				sessionChirho?.rememberChirho(nextLessonChirho.id_chirho);
 			}
 		} catch {
 			if (requestIdChirho === requestChirho) errorChirho = 'error_verse_chirho';
 		} finally {
-			if (requestIdChirho === requestChirho) loadingChirho = false;
+			if (requestIdChirho === requestChirho) {
+				loadingChirho = false;
+				void maybeAutoplayChirho();
+			}
 		}
 		// Visitor passage changes reveal the newly rendered card; an older slow load cannot scroll it.
 		if (revealChirho && requestIdChirho === requestChirho && !errorChirho) {
@@ -271,8 +415,10 @@
 		nextBookChirho: BookChirho,
 		nextChapterChirho = 1,
 		nextVerseChirho = 1,
-		revealChirho = false
+		revealChirho = false,
+		reasonChirho: OpenReasonChirho = 'navigation-chirho'
 	) {
+		sessionChirho?.cancelAutoplayChirho();
 		const requestIdChirho = ++requestChirho;
 		bookChirho = nextBookChirho;
 		workerScenesChirho = {};
@@ -292,7 +438,7 @@
 			)
 				throw new Error('Invalid passage.');
 			chaptersChirho = entriesChirho;
-			await selectChirho(nextChapterChirho, nextVerseChirho, true, revealChirho);
+			await selectChirho(nextChapterChirho, nextVerseChirho, true, revealChirho, reasonChirho);
 		} catch {
 			if (requestIdChirho === requestChirho) {
 				loadingChirho = false;
@@ -333,6 +479,55 @@
 		<h2 class="reader-entry-chirho">
 			{siteTChirho('start_chirho')}
 		</h2>
+		<div class="reader-tools-chirho">
+			<details class="reader-settings-chirho">
+				<summary>{sessionCopyChirho.settings_chirho}</summary>
+				<div class="settings-options-chirho">
+					<label
+						><input
+							type="checkbox"
+							checked={startTodayChirho}
+							onchange={(eventChirho) => {
+								startTodayChirho = eventChirho.currentTarget.checked;
+								preferencesChangedChirho();
+							}}
+						/><span
+							>{sessionCopyChirho.today_chirho}<small>{sessionCopyChirho.today_hint_chirho}</small
+							></span
+						></label
+					>
+					<label
+						><input
+							type="checkbox"
+							checked={autoplayChirho}
+							onchange={(eventChirho) => {
+								autoplayChirho = eventChirho.currentTarget.checked;
+								preferencesChangedChirho();
+							}}
+						/><span
+							>{sessionCopyChirho.autoplay_chirho}<small
+								>{sessionCopyChirho.autoplay_hint_chirho}</small
+							></span
+						></label
+					>
+				</div>
+			</details>
+			<details class="reader-help-chirho">
+				<summary>{sessionCopyChirho.help_chirho}</summary>
+				<div class="help-links-chirho">
+					<a
+						href={resolveChirho(`/tutorial-chirho/?lang_chirho=${localeStateChirho.currentChirho}`)}
+						>{sessionCopyChirho.tour_chirho}</a
+					>
+					<button type="button" onclick={showKeyChirho}>{sessionCopyChirho.key_chirho}</button>
+					<a
+						href={resolveChirho(
+							`/about-chirho/?lang_chirho=${localeStateChirho.currentChirho}#study-aids-chirho`
+						)}>{sessionCopyChirho.info_chirho}</a
+					>
+				</div>
+			</details>
+		</div>
 		<div class="fields-chirho">
 			<label
 				>{readerTChirho('book_chirho')}<select
@@ -414,8 +609,9 @@
 					type="button"
 					onclick={() =>
 						chaptersChirho.length
-							? selectChirho(chapterChirho, verseChirho)
-							: changeBookChirho(bookChirho)}>{readerTChirho('retry_chirho')}</button
+							? selectChirho(chapterChirho, verseChirho, true, false, 'retry-chirho')
+							: changeBookChirho(bookChirho, chapterChirho, verseChirho, false, 'retry-chirho')}
+					>{readerTChirho('retry_chirho')}</button
 				>{/if}
 		</p>
 	</nav>
@@ -439,7 +635,12 @@
 		>{readerTChirho('next_chirho')} <span aria-hidden="true">→</span></button
 	>
 {/snippet}
+{#if welcomeChirho}<ReaderWelcomeChirho
+		localeChirho={localeStateChirho.currentChirho}
+		onCloseChirho={closeWelcomeChirho}
+	/>{/if}
 <div
+	bind:this={readerRootChirho}
 	data-speech-pending-chirho={!restoredChirho || loadingChirho}
 	use:verseSwipeChirho={{
 		canStepChirho: canMoveChirho,
@@ -457,6 +658,8 @@
 			videoChirho={workerVideosChirho[greekLessonChirho.id_chirho] ?? null}
 			{spanishChirho}
 			{artProgressChirho}
+			{navigationGenerationChirho}
+			onRecordingsReadyChirho={recordingsReadyChirho}
 		/>
 	{:else}<ReaderChirho
 			{introVisibleChirho}
@@ -476,11 +679,87 @@
 			{verseNavigationChirho}
 			{spanishChirho}
 			{artProgressChirho}
+			{navigationGenerationChirho}
+			onRecordingsReadyChirho={recordingsReadyChirho}
 		/>
 	{/if}
 </div>
 
 <style>
+	.reader-tools-chirho {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 8px;
+		margin: 0 0 12px;
+	}
+	.reader-tools-chirho details {
+		flex: 0 1 auto;
+		min-width: 0;
+		border-radius: 8px;
+	}
+	.reader-tools-chirho summary {
+		padding: 6px 10px;
+		border: 1px solid #ded5c3;
+		border-radius: 7px;
+		font-size: 12px;
+		font-weight: 600;
+		cursor: pointer;
+		background: #fffdf7;
+	}
+	.reader-tools-chirho details[open] {
+		flex-basis: 100%;
+		border: 1px solid #ded5c3;
+		background: #fffdf7;
+	}
+	.reader-tools-chirho details[open] summary {
+		border: 0;
+		background: transparent;
+		padding: 9px 12px;
+	}
+	.settings-options-chirho {
+		display: grid;
+		gap: 14px;
+		padding: 6px 12px 15px;
+	}
+	.settings-options-chirho label {
+		display: flex;
+		align-items: flex-start;
+		gap: 10px;
+		font-size: 13px;
+		font-weight: 500;
+	}
+	.settings-options-chirho input {
+		width: 18px;
+		height: 18px;
+		margin: 2px 0 0;
+		accent-color: #31503a;
+		color: #31503a;
+		flex: none;
+	}
+	.settings-options-chirho small {
+		display: block;
+		margin-top: 4px;
+		color: #63705e;
+		font-size: 11px;
+		line-height: 1.5;
+		font-weight: 400;
+	}
+	.help-links-chirho {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		padding: 4px 12px 15px;
+		font-size: 13px;
+	}
+	.navigation-chirho .help-links-chirho button {
+		padding: 0;
+		border: 0;
+		background: transparent;
+		text-decoration: underline;
+	}
+
 	.reader-entry-chirho {
 		margin: 0 0 16px;
 		font: 400 25px/1.2 var(--serif-chirho);

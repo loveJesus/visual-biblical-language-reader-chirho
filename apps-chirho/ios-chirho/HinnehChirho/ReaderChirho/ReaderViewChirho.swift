@@ -10,6 +10,7 @@ struct ReaderViewChirho: View {
     @State private var selectedWordChirho: WordDisplayChirho?
     @State private var choosingChirho = false
     @State private var showingKeyChirho = false
+    @State private var showingInfoChirho = false
     @State private var sceneFrameChirho = CGRect.zero
     @State private var readerFrameChirho = CGRect.zero
     @Environment(\.scenePhase) private var scenePhaseChirho
@@ -68,11 +69,16 @@ struct ReaderViewChirho: View {
                 ReadingKeyViewChirho(scriptChirho: modelChirho.bookChirho?.scriptChirho ?? .hebrewChirho,
                                      modelChirho: modelChirho)
             }
+            .sheet(isPresented: $showingInfoChirho) { InfoViewChirho(modelChirho: modelChirho) }
+            .sheet(isPresented: Binding(
+                get: { modelChirho.sessionChirho.welcomePresentedChirho },
+                set: { if !$0 { modelChirho.sessionChirho.finishWelcomeChirho() } }
+            )) { InfoViewChirho(modelChirho: modelChirho, welcomeChirho: true) }
             }
         }
         .environment(\.locale, Locale(identifier: modelChirho.localeChirho.rawValue))
         .onChange(of: scenePhaseChirho) { _, phaseChirho in
-            if phaseChirho != .active { modelChirho.playerChirho.stopChirho() }
+            if phaseChirho != .active { modelChirho.pauseChirho() }
         }
     }
 
@@ -98,6 +104,21 @@ struct ReaderViewChirho: View {
                         Text(localeChirho.nativeNameChirho).tag(localeChirho)
                     }
                 }
+                Toggle(messagesChirho.startTodayChirho, isOn: Binding(
+                    get: { modelChirho.sessionChirho.startTodayChirho },
+                    set: { modelChirho.sessionChirho.startTodayChirho = $0 }
+                ))
+                .accessibilityHint(messagesChirho.startTodayHintChirho)
+                Toggle(messagesChirho.autoplayVerseChirho, isOn: Binding(
+                    get: { modelChirho.sessionChirho.autoplayChirho },
+                    set: { modelChirho.sessionChirho.autoplayChirho = $0 }
+                ))
+                .accessibilityHint(messagesChirho.autoplayVerseHintChirho)
+                Button {
+                    modelChirho.pauseChirho()
+                    showingInfoChirho = true
+                } label: { Label(messagesChirho.infoChirho, systemImage: "info.circle") }
+                Divider()
                 Picker(messagesChirho.speedChirho, selection: $modelChirho.playbackSpeedChirho) {
                     ForEach(PlaybackSpeedChirho.allCases) { speedChirho in
                         Text(speedChirho.labelChirho(modelChirho.localeChirho)).tag(speedChirho)
@@ -191,7 +212,7 @@ struct ReaderViewChirho: View {
             let activeChirho = modelChirho.playerChirho.activeIdChirho == "verse"
             VStack(alignment: .leading, spacing: 4) {
                 Button { modelChirho.toggleVerseChirho() } label: {
-                    Label(activeChirho ? messagesChirho.stopChirho : messagesChirho.playVerseChirho,
+                    Label(activeChirho ? messagesChirho.stopChirho : modelChirho.versePlayLabelChirho,
                           systemImage: activeChirho ? "stop.fill" : "play.fill")
                 }
                 .buttonStyle(.bordered)
@@ -281,8 +302,14 @@ struct SceneViewChirho: View {
                 .overlay(alignment: .bottomTrailing) {
                     if modelChirho.mediaChirho.videoChirho != nil {
                         Button { modelChirho.toggleVerseChirho() } label: {
-                            Label(modelChirho.playerChirho.activeIdChirho == "verse" ? modelChirho.messagesChirho.stopChirho : modelChirho.messagesChirho.playVerseChirho,
-                                  systemImage: modelChirho.playerChirho.activeIdChirho == "verse" ? "stop.fill" : "play.fill")
+                            HStack(spacing: 8) {
+                                Image(systemName: modelChirho.playerChirho.activeIdChirho == "verse" ? "stop.fill" : "play.fill")
+                                    .accessibilityHidden(true)
+                                Text(modelChirho.playerChirho.activeIdChirho == "verse" ? modelChirho.messagesChirho.stopChirho : modelChirho.versePlayLabelChirho)
+                                    .multilineTextAlignment(.center)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            .frame(maxWidth: .infinity, minHeight: 44)
                         }
                         .buttonStyle(.borderedProminent)
                         .padding(12)

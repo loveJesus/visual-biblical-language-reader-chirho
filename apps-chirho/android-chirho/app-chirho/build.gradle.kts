@@ -15,8 +15,8 @@ android {
         applicationId = "us.hinneh.readerchirho"
         minSdk = 26
         targetSdk = 37
-        versionCode = 3
-        versionName = "0.1.2"
+        versionCode = 4
+        versionName = "0.1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -34,6 +34,8 @@ android {
 
     buildFeatures {
         compose = true
+        // VERSION_CODE decides when the new-version welcome shows; VERSION_NAME is shown in Info.
+        buildConfig = true
     }
 
     lint {

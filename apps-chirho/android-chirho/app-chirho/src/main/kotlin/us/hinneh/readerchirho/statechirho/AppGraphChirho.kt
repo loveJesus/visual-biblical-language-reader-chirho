@@ -8,6 +8,7 @@ import androidx.core.content.edit
 import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.contentchirho.ContentRepositoryChirho
+import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.domainchirho.SpokenOverridesChirho
 import us.hinneh.readerchirho.mediachirho.ImageLoaderChirho
 import us.hinneh.readerchirho.mediachirho.MediaRepositoryChirho
@@ -22,8 +23,9 @@ import java.io.IOException
 /** Interface language: follow the device, or a choice made in Hinneh. */
 enum class InterfaceLanguageChirho(val tagChirho: String?) { SYSTEM_CHIRHO(null), ENGLISH_CHIRHO("en"), SPANISH_CHIRHO("es") }
 
-class PreferencesChirho(contextChirho: Context) : ReaderPreferencesChirho {
-    private val storeChirho: SharedPreferences = contextChirho.getSharedPreferences("reader_chirho", Context.MODE_PRIVATE)
+/** Choices kept on this device only; Hinneh has no accounts or sign-in. */
+class PreferencesChirho(private val storeChirho: SharedPreferences) : ReaderPreferencesChirho {
+    constructor(contextChirho: Context) : this(contextChirho.getSharedPreferences(STORE_CHIRHO, Context.MODE_PRIVATE))
 
     /** Stored only when the reader chooses in Settings; until then the reading follows the verse (ReaderUiStateChirho). */
     override var renditionChirho: GreekRenditionChirho?
@@ -53,7 +55,31 @@ class PreferencesChirho(contextChirho: Context) : ReaderPreferencesChirho {
             storeChirho.edit { putString(LANGUAGE_CHIRHO, valueChirho.name) }
         }
 
+    override var openTodayChirho: Boolean
+        get() = storeChirho.getBoolean(OPEN_TODAY_CHIRHO, ReaderPreferencesChirho.DEFAULT_OPEN_TODAY_CHIRHO)
+        set(valueChirho) = storeChirho.edit { putBoolean(OPEN_TODAY_CHIRHO, valueChirho) }
+
+    override var autoplayChirho: Boolean
+        get() = storeChirho.getBoolean(AUTOPLAY_CHIRHO, ReaderPreferencesChirho.DEFAULT_AUTOPLAY_CHIRHO)
+        set(valueChirho) = storeChirho.edit { putBoolean(AUTOPLAY_CHIRHO, valueChirho) }
+
+    /** Kept as the published id; a value that no longer parses is ignored. */
+    override var lastShownChirho: PassageChirho?
+        get() = storeChirho.getString(LAST_SHOWN_CHIRHO, null)?.let { PassageChirho.parseChirho(it) }
+        set(valueChirho) {
+            storeChirho.edit { if (valueChirho == null) remove(LAST_SHOWN_CHIRHO) else putString(LAST_SHOWN_CHIRHO, valueChirho.idChirho) }
+        }
+
+    /** The versionCode whose welcome the reader last closed; null before the first (LaunchChirho.welcomeDueChirho). */
+    var welcomeSeenVersionChirho: Long?
+        get() = if (storeChirho.contains(WELCOME_SEEN_CHIRHO)) storeChirho.getLong(WELCOME_SEEN_CHIRHO, 0L) else null
+        set(valueChirho) {
+            storeChirho.edit { if (valueChirho == null) remove(WELCOME_SEEN_CHIRHO) else putLong(WELCOME_SEEN_CHIRHO, valueChirho) }
+        }
+
     companion object {
+        /** The one preferences file, kept on this device only (backup is off in the manifest). */
+        const val STORE_CHIRHO = "reader_chirho"
         val ALLOWED_SPEEDS_CHIRHO = listOf(0.65f, 0.85f, 0.88f, 1f)
         /** Small, Medium (the default), Large (the original size) and Extra large. */
         val ALLOWED_TEXT_SCALES_CHIRHO = listOf(0.8f, 0.9f, 1f, 1.15f)
@@ -62,6 +88,10 @@ class PreferencesChirho(contextChirho: Context) : ReaderPreferencesChirho {
         private const val RENDITION_CHIRHO = "greek_rendition_chirho"
         private const val SPEED_CHIRHO = "speed_chirho"
         private const val LANGUAGE_CHIRHO = "interface_language_chirho"
+        private const val OPEN_TODAY_CHIRHO = "open_today_chirho"
+        private const val AUTOPLAY_CHIRHO = "autoplay_verse_change_chirho"
+        private const val LAST_SHOWN_CHIRHO = "last_shown_passage_chirho"
+        private const val WELCOME_SEEN_CHIRHO = "welcome_seen_version_chirho"
     }
 }
 

@@ -316,6 +316,27 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			name_chirho: selectedChirho.name
 		});
 	}
+	// Label the action the next click will actually take, using the same selected reading/video
+	// predicate as playback. A raw or failed video record cannot advertise motion.
+	function refreshVerseLabelsChirho() {
+		for (const labelChirho of rootChirho.querySelectorAll<HTMLElement>(
+			'[data-verse-action-label-chirho]'
+		)) {
+			const buttonChirho = labelChirho.closest<HTMLButtonElement>(buttonSelectorChirho);
+			if (!buttonChirho) continue;
+			const clipChirho = recordingChirho(buttonChirho);
+			const keyChirho =
+				activeButtonChirho === buttonChirho
+					? 'stop_chirho'
+					: clipChirho && verseVideoChirho(clipChirho)
+						? 'play_verse_video_chirho'
+						: 'listen_verse_chirho';
+			const textChirho = messageChirho(keyChirho);
+			if (labelChirho.textContent !== textChirho) labelChirho.textContent = textChirho;
+			if (buttonChirho.getAttribute('aria-label') !== textChirho)
+				buttonChirho.setAttribute('aria-label', textChirho);
+		}
+	}
 	function refreshChirho() {
 		if (disposedChirho) return;
 		for (const buttonChirho of rootChirho.querySelectorAll<HTMLButtonElement>(
@@ -331,6 +352,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 						typeof SpeechSynthesisUtterance === 'undefined' ||
 						!voiceChirho(languageChirho(buttonChirho))));
 		}
+		refreshVerseLabelsChirho();
 		if (!activeButtonChirho) statusChirho(idleMessageChirho());
 	}
 	function stopChirho() {
@@ -370,7 +392,10 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			'[data-speech-stop-chirho]'
 		))
 			buttonChirho.disabled = true;
-		if (!disposedChirho) statusChirho(idleMessageChirho());
+		if (!disposedChirho) {
+			refreshVerseLabelsChirho();
+			statusChirho(idleMessageChirho());
+		}
 	}
 	function playVideoChirho(
 		videoChirho: HTMLVideoElement,
@@ -394,6 +419,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		videoChirho.preservesPitch = true;
 		activeButtonChirho = buttonChirho;
 		buttonChirho.setAttribute('aria-busy', 'true');
+		refreshVerseLabelsChirho();
 		for (const stopButtonChirho of rootChirho.querySelectorAll<HTMLButtonElement>(
 			'[data-speech-stop-chirho]'
 		))
@@ -453,6 +479,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			audioChirho.preservesPitch = true;
 			activeButtonChirho = buttonChirho;
 			buttonChirho.setAttribute('aria-busy', 'true');
+			refreshVerseLabelsChirho();
 			for (const stopButtonChirho of rootChirho.querySelectorAll<HTMLButtonElement>(
 				'[data-speech-stop-chirho]'
 			))
@@ -499,6 +526,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			});
 			activeButtonChirho = buttonChirho;
 			buttonChirho.setAttribute('aria-busy', 'true');
+			refreshVerseLabelsChirho();
 			for (const stopButtonChirho of rootChirho.querySelectorAll<HTMLButtonElement>(
 				'[data-speech-stop-chirho]'
 			))
@@ -552,6 +580,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			: 1;
 		activeButtonChirho = buttonChirho;
 		buttonChirho.setAttribute('aria-busy', 'true');
+		refreshVerseLabelsChirho();
 		for (const stopButtonChirho of rootChirho.querySelectorAll<HTMLButtonElement>(
 			'[data-speech-stop-chirho]'
 		))
@@ -566,6 +595,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 				'[data-speech-stop-chirho]'
 			))
 				stopButtonChirho.disabled = true;
+			refreshVerseLabelsChirho();
 			statusChirho(errorChirho ? messageChirho('failed_chirho') : idleMessageChirho());
 		};
 		utteranceChirho.onend = () => finishChirho();
@@ -605,18 +635,47 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 	const localeObserverChirho =
 		typeof MutationObserver === 'undefined'
 			? undefined
-			: new MutationObserver(() => {
-					if (pendingChirho()) stopChirho();
-					refreshChirho();
+			: new MutationObserver((changesChirho) => {
+					const controlsChangedChirho = changesChirho.some(
+						(changeChirho) =>
+							changeChirho.type === 'attributes' &&
+							[
+								'data-speech-messages-chirho',
+								'data-speech-recordings-chirho',
+								'data-speech-words-chirho',
+								'data-speech-pending-chirho'
+							].includes(changeChirho.attributeName ?? '')
+					);
+					if (controlsChangedChirho) {
+						if (pendingChirho()) stopChirho();
+						refreshChirho();
+						return;
+					}
+					const videoChangedChirho = changesChirho.some(
+						(changeChirho) =>
+							changeChirho.type === 'attributes' ||
+							[...changeChirho.addedNodes, ...changeChirho.removedNodes].some(
+								(nodeChirho) =>
+									nodeChirho instanceof Element &&
+									(nodeChirho.matches('video[data-scene-video-chirho]') ||
+										nodeChirho.querySelector('video[data-scene-video-chirho]'))
+							)
+					);
+					// Our own text writes are ignored, and video updates must not replace an error status.
+					if (videoChangedChirho) refreshVerseLabelsChirho();
 				});
 	localeObserverChirho?.observe(rootChirho, {
 		subtree: true,
+		childList: true,
 		attributes: true,
 		attributeFilter: [
 			'data-speech-messages-chirho',
 			'data-speech-recordings-chirho',
 			'data-speech-words-chirho',
-			'data-speech-pending-chirho'
+			'data-speech-pending-chirho',
+			'data-verse-video-sha-chirho',
+			'data-verse-video-clip-sha-chirho',
+			'data-video-failed-chirho'
 		]
 	});
 	rootChirho.addEventListener('click', clickChirho);
