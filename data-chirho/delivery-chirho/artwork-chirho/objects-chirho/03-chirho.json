@@ -4246,6 +4246,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/amos-chirho/chapter-009-chirho/amos-009-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/036800efbc9f860af77dea01a4cf8e87e1e14422b6f0084b325ca8bf0fdd2373.webp",
+        "sha256_chirho": "036800efbc9f860af77dea01a4cf8e87e1e14422b6f0084b325ca8bf0fdd2373",
+        "bytes_chirho": 2584842,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T21:50:40.064Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/74f1d24d8d808f8ceab7ecb740ccaba035aa3fc52327ca75e470bb64793c5190.webp",
+        "sha256_chirho": "74f1d24d8d808f8ceab7ecb740ccaba035aa3fc52327ca75e470bb64793c5190",
+        "bytes_chirho": 240650,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T21:50:41.005Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/deuteronomy-chirho/chapter-016-chirho/deut-016-010-chirho.webp"
       ],
       "source_chirho": {
