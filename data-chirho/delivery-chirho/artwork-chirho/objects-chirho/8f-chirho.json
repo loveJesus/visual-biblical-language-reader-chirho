@@ -1769,6 +1769,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/ezekiel-chirho/chapter-020-chirho/ezek-020-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/8f087ee8ab82e1e70983a3c6c1d9d47a7e479e42c191c731c73f88eed83f51f1.webp",
+        "sha256_chirho": "8f087ee8ab82e1e70983a3c6c1d9d47a7e479e42c191c731c73f88eed83f51f1",
+        "bytes_chirho": 2530102,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T19:13:14.783Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/e7ae019418e0033c6fa119132b2c047b0b5b99594ecb352b6e1401a4b04435fb.webp",
+        "sha256_chirho": "e7ae019418e0033c6fa119132b2c047b0b5b99594ecb352b6e1401a4b04435fb",
+        "bytes_chirho": 235096,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T19:13:15.636Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/isaiah-chirho/chapter-049-chirho/isa-049-009-chirho.webp"
       ],
       "source_chirho": {
