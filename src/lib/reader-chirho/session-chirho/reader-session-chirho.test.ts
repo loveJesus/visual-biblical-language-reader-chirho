@@ -17,14 +17,17 @@ function storeChirho() {
 	};
 }
 describe('local reader session', () => {
-	it('defaults today on and playback off, persists choices, and works when storage refuses', () => {
+	it('defaults today and playback on, preserves each saved choice, and works when storage refuses', () => {
 		const memoryChirho = storeChirho(),
 			firstChirho = new ReaderSessionChirho(memoryChirho);
 		expect(firstChirho.startTodayChirho).toBe(true);
-		expect(firstChirho.autoplayChirho).toBe(false);
-		firstChirho.preferencesChirho(false, true);
+		expect(firstChirho.autoplayChirho).toBe(true);
+		expect(new ReaderSessionChirho().autoplayChirho).toBe(true);
+		firstChirho.preferencesChirho(false, false);
 		const secondChirho = new ReaderSessionChirho(memoryChirho);
-		expect([secondChirho.startTodayChirho, secondChirho.autoplayChirho]).toEqual([false, true]);
+		expect([secondChirho.startTodayChirho, secondChirho.autoplayChirho]).toEqual([false, false]);
+		secondChirho.preferencesChirho(false, true);
+		expect(new ReaderSessionChirho(memoryChirho).autoplayChirho).toBe(true);
 		const blockedChirho = new ReaderSessionChirho({
 			getItem() {
 				throw Error('blocked');
@@ -33,8 +36,11 @@ describe('local reader session', () => {
 				throw Error('blocked');
 			}
 		});
+		expect(blockedChirho.autoplayChirho).toBe(true);
 		expect(blockedChirho.launchChirho('', new Date(2026, 10, 8))?.chapter_chirho).toBe(8);
 		expect(() => blockedChirho.acknowledgeWelcomeChirho()).not.toThrow();
+		blockedChirho.preferencesChirho(false, false);
+		expect(blockedChirho.autoplayChirho).toBe(false);
 	});
 	it('chooses cold daily or verified saved passage, with explicit links first and no foreground jump', () => {
 		const memoryChirho = storeChirho(),

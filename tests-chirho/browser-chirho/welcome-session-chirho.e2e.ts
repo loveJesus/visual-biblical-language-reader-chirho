@@ -134,3 +134,126 @@ testChirho(
 			.toBe(0);
 	}
 );
+
+for (const platformChirho of [
+	{
+		id_chirho: 'iphone-chirho',
+		user_agent_chirho: 'Mozilla/5.0 (iPhone)',
+		platform_chirho: 'iPhone',
+		touches_chirho: 5,
+		host_chirho: 'apps.apple.com',
+		width_chirho: 320
+	},
+	{
+		id_chirho: 'android-chirho',
+		user_agent_chirho: 'Mozilla/5.0 (Linux; Android 16)',
+		platform_chirho: 'Linux armv8l',
+		touches_chirho: 5,
+		host_chirho: 'play.google.com',
+		width_chirho: 320
+	},
+	{
+		id_chirho: 'desktop-chirho',
+		user_agent_chirho: 'Mozilla/5.0 (Macintosh)',
+		platform_chirho: 'MacIntel',
+		touches_chirho: 0,
+		host_chirho: null,
+		width_chirho: 1440
+	}
+])
+	for (const localeChirho of ['en', 'es']) {
+		testChirho(
+			`${platformChirho.id_chirho} ${localeChirho}: matching optional install link, quiet default on, saved off`,
+			async ({ page: pageChirho }) => {
+				await pageChirho.setViewportSize({ width: platformChirho.width_chirho, height: 844 });
+				await pageChirho.addInitScript((valuesChirho) => {
+					Object.defineProperties(navigator, {
+						userAgent: { get: () => valuesChirho.user_agent_chirho },
+						platform: { get: () => valuesChirho.platform_chirho },
+						maxTouchPoints: { get: () => valuesChirho.touches_chirho }
+					});
+				}, platformChirho);
+				await pageChirho.goto(`${readerOriginChirho}/?lang_chirho=${localeChirho}#Prov.1.1`);
+				const installChirho = pageChirho.locator('.welcome-install-chirho a');
+				await expectChirho(installChirho).toHaveCount(platformChirho.host_chirho ? 1 : 0);
+				const hrefChirho = platformChirho.host_chirho
+					? await installChirho.getAttribute('href')
+					: null;
+				if (hrefChirho) expectChirho(new URL(hrefChirho).hostname).toBe(platformChirho.host_chirho);
+				await expectChirho(pageChirho.locator('.welcome-tour-chirho')).toHaveAttribute(
+					'href',
+					new RegExp(`lang_chirho=${localeChirho}$`, 'u')
+				);
+				await pageChirho.locator('.welcome-start-chirho').click();
+				await pageChirho.locator('.reader-help-chirho summary').click();
+				if (hrefChirho)
+					await expectChirho(
+						pageChirho.locator('.reader-help-chirho a').filter({ hasText: 'Hinneh' })
+					).toHaveAttribute('href', hrefChirho);
+				else
+					await expectChirho(
+						pageChirho.locator('.reader-help-chirho a').filter({ hasText: 'Hinneh' })
+					).toHaveCount(0);
+				await pageChirho.locator('.reader-settings-chirho summary').click();
+				const autoplayChirho = pageChirho.locator('.reader-settings-chirho input').nth(1);
+				await expectChirho(autoplayChirho).toBeChecked();
+				await autoplayChirho.uncheck();
+				expectChirho(
+					await pageChirho.evaluate(() => localStorage.getItem('hinneh-autoplay-verse-chirho'))
+				).toBe('false');
+				await pageChirho.reload();
+				await pageChirho.locator('.reader-settings-chirho summary').click();
+				await expectChirho(autoplayChirho).not.toBeChecked();
+				expectChirho(
+					await pageChirho.evaluate(() => document.documentElement.scrollWidth <= innerWidth)
+				).toBe(true);
+				expectChirho(
+					await pageChirho.evaluate(
+						() => (window as typeof window & { __readerPlaysChirho: number }).__readerPlaysChirho
+					)
+				).toBe(0);
+			}
+		);
+	}
+
+testChirho(
+	'policy-blocked navigation keeps its verified video for a successful manual retry',
+	async ({ page: pageChirho }) => {
+		await pageChirho.goto(`${readerOriginChirho}/?lang_chirho=en#Prov.1.2`);
+		await pageChirho.locator('.welcome-start-chirho').click();
+		await expectChirho(pageChirho.locator('.lesson-heading-chirho')).toContainText('1:2');
+		await expectChirho(pageChirho.locator('[data-speech-pending-chirho="true"]')).toHaveCount(0);
+		await pageChirho.evaluate(() => {
+			const nativePlayChirho = HTMLMediaElement.prototype.play;
+			const stateChirho = window as typeof window & { __blockedVideoAttemptsChirho: number };
+			stateChirho.__blockedVideoAttemptsChirho = 0;
+			HTMLMediaElement.prototype.play = function () {
+				if (this instanceof HTMLVideoElement && stateChirho.__blockedVideoAttemptsChirho++ === 0)
+					return Promise.reject(new DOMException('User gesture required', 'NotAllowedError'));
+				return nativePlayChirho.call(this);
+			};
+		});
+		await pageChirho.locator('.verse-step-chirho').first().click();
+		await expectChirho
+			.poll(() =>
+				pageChirho.evaluate(
+					() =>
+						(window as typeof window & { __blockedVideoAttemptsChirho: number })
+							.__blockedVideoAttemptsChirho
+				)
+			)
+			.toBe(1);
+		const buttonChirho = pageChirho.locator('[data-audio-controls-chirho] .speech-button-chirho');
+		await expectChirho(buttonChirho).toBeEnabled();
+		await expectChirho(buttonChirho).not.toHaveAttribute('aria-busy', 'true');
+		await expectChirho(pageChirho.locator('video[data-scene-video-chirho]')).not.toHaveAttribute(
+			'data-video-failed-chirho',
+			'true'
+		);
+		await buttonChirho.click();
+		await expectChirho(pageChirho.locator('video[data-scene-video-chirho]')).toBeVisible();
+		await expectChirho(buttonChirho).toHaveAttribute('aria-busy', 'true');
+		await buttonChirho.click();
+		await expectChirho(pageChirho.locator('video[data-scene-video-chirho]')).toBeHidden();
+	}
+);

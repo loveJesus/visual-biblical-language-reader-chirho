@@ -27,6 +27,7 @@
 	} from '../session-chirho/reader-session-chirho';
 	import { sessionMessagesChirho } from '../session-chirho/session-messages-chirho';
 	import ReaderWelcomeChirho from '../session-chirho/ReaderWelcomeChirho.svelte';
+	import { mobileStoreChirho, type MobileStoreChirho } from '../session-chirho/mobile-store-chirho';
 	import type { ChapterEntryChirho } from './corpus-client-chirho';
 	import { fetchChapterMediaChirho, videosByLessonChirho } from './media-client-chirho';
 	import { verseSwipeChirho } from './verse-swipe-chirho';
@@ -100,7 +101,8 @@
 	let sessionChirho: ReaderSessionChirho | null = null;
 	let welcomeChirho = $state(false);
 	let startTodayChirho = $state(true);
-	let autoplayChirho = $state(false);
+	let autoplayChirho = $state(true);
+	let installStoreChirho = $state<MobileStoreChirho>(null);
 	let navigationGenerationChirho = $state(0);
 	let audioReadyChirho: { lesson_chirho: string; generation_chirho: number } | null = null;
 	let mediaSettledChirho = '';
@@ -243,6 +245,7 @@
 		}
 	}
 	onMount(() => {
+		installStoreChirho = mobileStoreChirho(navigator);
 		initLocaleChirho(new URL(window.location.href));
 		let storeChirho: Storage | undefined;
 		try {
@@ -525,6 +528,11 @@
 							`/about-chirho/?lang_chirho=${localeStateChirho.currentChirho}#study-aids-chirho`
 						)}>{sessionCopyChirho.info_chirho}</a
 					>
+					{#if installStoreChirho?.url_chirho}
+						<a href={installStoreChirho.url_chirho} rel="external noreferrer"
+							>{sessionCopyChirho.install_chirho} {installStoreChirho.name_chirho}</a
+						>
+					{/if}
 				</div>
 			</details>
 		</div>
@@ -636,6 +644,7 @@
 	>
 {/snippet}
 {#if welcomeChirho}<ReaderWelcomeChirho
+		mobileStoreChirho={installStoreChirho}
 		localeChirho={localeStateChirho.currentChirho}
 		onCloseChirho={closeWelcomeChirho}
 	/>{/if}

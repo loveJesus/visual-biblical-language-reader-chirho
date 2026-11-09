@@ -211,10 +211,18 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 	let sequenceAudiosChirho: HTMLAudioElement[] = [];
 	let gapTimerChirho: ReturnType<typeof setTimeout> | null = null;
 	let cancelClipChirho: (() => void) | null = null;
+	function playbackFailureChirho(errorChirho: unknown): 'blocked' | 'failed' {
+		return errorChirho !== null &&
+			typeof errorChirho === 'object' &&
+			'name' in errorChirho &&
+			errorChirho.name === 'NotAllowedError'
+			? 'blocked'
+			: 'failed';
+	}
 	function playClipChirho(
 		audioChirho: HTMLAudioElement,
 		clipChirho: SavedClipChirho,
-		finishedChirho: (failedChirho?: boolean) => void,
+		finishedChirho: (failureChirho?: 'blocked' | 'failed') => void,
 		trimChirho = true
 	) {
 		cancelClipChirho?.();
@@ -235,11 +243,11 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			if (cancelClipChirho === cancelChirho) cancelClipChirho = null;
 		};
 		cancelClipChirho = cancelChirho;
-		const finishChirho = (failedChirho = false) => {
+		const finishChirho = (failureChirho?: 'blocked' | 'failed') => {
 			if (doneChirho || disposedChirho || currentRecordingChirho !== audioChirho) return;
 			cancelChirho();
 			audioChirho.pause();
-			finishedChirho(failedChirho);
+			finishedChirho(failureChirho);
 		};
 		const scheduleChirho = () => {
 			if (doneChirho || disposedChirho || currentRecordingChirho !== audioChirho) return;
@@ -267,10 +275,12 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 				clipChirho.start_offset_chirho > 0
 			)
 				audioChirho.currentTime = clipChirho.start_offset_chirho;
-			void audioChirho.play().catch(() => finishChirho(true));
+			void audioChirho
+				.play()
+				.catch((errorChirho: unknown) => finishChirho(playbackFailureChirho(errorChirho)));
 		};
 		audioChirho.onended = () => finishChirho();
-		audioChirho.onerror = () => finishChirho(true);
+		audioChirho.onerror = () => finishChirho('failed');
 		audioChirho.onplaying = scheduleChirho;
 		audioChirho.onratechange = scheduleChirho;
 		audioChirho.onloadedmetadata = startChirho;
@@ -427,16 +437,23 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		statusChirho(
 			messageChirho('video_playing_chirho', { name_chirho: readerNameChirho(clipChirho) })
 		);
-		const finishChirho = (failedChirho: boolean) => {
+		const finishChirho = (failureChirho?: 'blocked' | 'failed') => {
 			if (disposedChirho || sequenceChirho !== requestChirho) return;
 			// A failed video is not tried again on this page; the next Play reads over the still.
-			if (failedChirho) videoChirho.dataset.videoFailedChirho = 'true';
+			if (failureChirho === 'failed') videoChirho.dataset.videoFailedChirho = 'true';
 			stopChirho();
-			if (failedChirho) statusChirho(messageChirho('video_failed_chirho'));
+			if (failureChirho)
+				statusChirho(
+					messageChirho(
+						failureChirho === 'blocked' ? 'playback_blocked_chirho' : 'video_failed_chirho'
+					)
+				);
 		};
-		videoChirho.onended = () => finishChirho(false);
-		videoChirho.onerror = () => finishChirho(true);
-		void videoChirho.play().catch(() => finishChirho(true));
+		videoChirho.onended = () => finishChirho();
+		videoChirho.onerror = () => finishChirho('failed');
+		void videoChirho
+			.play()
+			.catch((errorChirho: unknown) => finishChirho(playbackFailureChirho(errorChirho)));
 	}
 	function clickChirho(eventChirho: Event) {
 		if (!(eventChirho.target instanceof Element)) return;
@@ -492,10 +509,15 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 					}
 				)
 			);
-			const finishedChirho = (errorChirho = false) => {
+			const finishedChirho = (failureChirho?: 'blocked' | 'failed') => {
 				if (disposedChirho || sequenceChirho !== requestChirho) return;
 				stopChirho();
-				if (errorChirho) statusChirho(messageChirho('recorded_failed_chirho'));
+				if (failureChirho)
+					statusChirho(
+						messageChirho(
+							failureChirho === 'blocked' ? 'playback_blocked_chirho' : 'recorded_failed_chirho'
+						)
+					);
 			};
 			// A word audition plays the full authored file. Joining windows only remove quiet
 			// between verse words; early pause/seek is unnecessary for an isolated pronunciation.
@@ -532,32 +554,33 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			))
 				stopButtonChirho.disabled = false;
 			statusChirho(messageChirho('assembled_playing_chirho'));
-			const finishChirho = (failedChirho = false) => {
+			const finishChirho = (failureChirho?: 'blocked' | 'failed') => {
 				if (disposedChirho || sequenceChirho !== requestChirho) return;
 				stopChirho();
-				if (failedChirho) statusChirho(messageChirho('recorded_failed_chirho'));
+				if (failureChirho)
+					statusChirho(
+						messageChirho(
+							failureChirho === 'blocked' ? 'playback_blocked_chirho' : 'recorded_failed_chirho'
+						)
+					);
 			};
 			const playWordChirho = (indexChirho: number) => {
 				if (disposedChirho || sequenceChirho !== requestChirho) return;
 				const audioChirho = sequenceAudiosChirho[indexChirho];
 				currentRecordingChirho = audioChirho;
-				playClipChirho(
-					audioChirho,
-					wordsChirho[indexChirho].clip_chirho,
-					(failedChirho = false) => {
-						if (disposedChirho || sequenceChirho !== requestChirho) return;
-						if (failedChirho) {
-							finishChirho(true);
-							return;
-						}
-						if (indexChirho + 1 === wordsChirho.length) finishChirho();
-						else
-							gapTimerChirho = setTimeout(
-								() => playWordChirho(indexChirho + 1),
-								wordsChirho[indexChirho].pause_after_chirho / audioChirho.playbackRate
-							);
+				playClipChirho(audioChirho, wordsChirho[indexChirho].clip_chirho, (failureChirho) => {
+					if (disposedChirho || sequenceChirho !== requestChirho) return;
+					if (failureChirho) {
+						finishChirho(failureChirho);
+						return;
 					}
-				);
+					if (indexChirho + 1 === wordsChirho.length) finishChirho();
+					else
+						gapTimerChirho = setTimeout(
+							() => playWordChirho(indexChirho + 1),
+							wordsChirho[indexChirho].pause_after_chirho / audioChirho.playbackRate
+						);
+				});
 			};
 			playWordChirho(0);
 			return;

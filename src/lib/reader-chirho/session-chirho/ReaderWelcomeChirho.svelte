@@ -4,8 +4,16 @@
 	import { resolve as resolveChirho } from '$app/paths';
 	import type { LocaleChirho } from '$lib/i18n-chirho/locale-chirho';
 	import { sessionMessagesChirho } from './session-messages-chirho';
-	let { localeChirho, onCloseChirho }: { localeChirho: LocaleChirho; onCloseChirho: () => void } =
-		$props();
+	import type { MobileStoreChirho } from './mobile-store-chirho';
+	let {
+		localeChirho,
+		onCloseChirho,
+		mobileStoreChirho = null
+	}: {
+		localeChirho: LocaleChirho;
+		onCloseChirho: () => void;
+		mobileStoreChirho?: MobileStoreChirho;
+	} = $props();
 	let dialogChirho: HTMLDialogElement;
 	const copyChirho = $derived(sessionMessagesChirho(localeChirho));
 	onMount(() => {
@@ -41,6 +49,13 @@
 			href={resolveChirho(`/about-chirho/?lang_chirho=${localeChirho}#study-aids-chirho`)}
 			onclick={onCloseChirho}>{copyChirho.info_chirho}</a
 		>
+		{#if mobileStoreChirho?.url_chirho}
+			<p class="welcome-install-chirho">
+				<a href={mobileStoreChirho.url_chirho} rel="external noreferrer" onclick={onCloseChirho}
+					>{copyChirho.install_chirho} {mobileStoreChirho.name_chirho}</a
+				>
+			</p>
+		{/if}
 	</div>
 </dialog>
 
@@ -127,6 +142,14 @@
 	}
 	.welcome-info-chirho {
 		font-size: 12px;
+		color: #4a604d;
+		text-underline-offset: 3px;
+	}
+	.welcome-install-chirho {
+		margin: 14px 0 0;
+		font-size: 12px;
+	}
+	.welcome-install-chirho a {
 		color: #4a604d;
 		text-underline-offset: 3px;
 	}

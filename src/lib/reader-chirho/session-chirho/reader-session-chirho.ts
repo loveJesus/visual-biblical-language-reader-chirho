@@ -16,7 +16,7 @@ export type OpenReasonChirho =
 /** Local preferences and finite navigation intents, independent of a deployment/media hash. */
 export class ReaderSessionChirho {
 	startTodayChirho = true;
-	autoplayChirho = false;
+	autoplayChirho = true;
 	welcomeChirho = false;
 	private startedChirho = false;
 	private generationChirho = 0;
@@ -24,7 +24,7 @@ export class ReaderSessionChirho {
 	private pendingChirho: { generation_chirho: number; passage_chirho: string } | null = null;
 	constructor(private storeChirho?: StoreChirho) {
 		this.startTodayChirho = this.readChirho(SESSION_KEYS_CHIRHO.today_chirho) !== 'false';
-		this.autoplayChirho = this.readChirho(SESSION_KEYS_CHIRHO.autoplay_chirho) === 'true';
+		this.autoplayChirho = this.readChirho(SESSION_KEYS_CHIRHO.autoplay_chirho) !== 'false';
 	}
 	private readChirho(keyChirho: string): string | null {
 		try {

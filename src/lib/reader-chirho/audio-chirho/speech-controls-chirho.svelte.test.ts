@@ -466,3 +466,57 @@ testChirho('without a same-reading match, the reading plays over the still', asy
 	expectChirho(videoChirho.hidden).toBe(true);
 	expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.src).toContain('4'.repeat(64));
 });
+
+testChirho(
+	'a browser policy refusal keeps the matching video available for manual retry',
+	async () => {
+		const { buttonChirho, statusChirho, videoChirho, playedChirho, stillChirho } =
+			await setupVideoChirho();
+		buttonChirho.innerHTML = '<span data-verse-action-label-chirho></span>';
+		playedChirho.mockRejectedValueOnce(
+			new DOMException('User gesture required', 'NotAllowedError')
+		);
+		buttonChirho.click();
+		await viChirho.advanceTimersByTimeAsync(0);
+		expectChirho(videoChirho.dataset.videoFailedChirho).toBeUndefined();
+		expectChirho([videoChirho.hidden, stillChirho.hidden]).toEqual([true, false]);
+		expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
+		expectChirho(buttonChirho.textContent).toBe(AUDIO_MESSAGES_CHIRHO.en.play_verse_video_chirho);
+		expectChirho(statusChirho.textContent).toBe(AUDIO_MESSAGES_CHIRHO.en.playback_blocked_chirho);
+		buttonChirho.click();
+		expectChirho(playedChirho).toHaveBeenCalledTimes(2);
+		expectChirho(ControlledAudioChirho.instancesChirho).toHaveLength(0);
+		expectChirho([videoChirho.hidden, videoChirho.paused]).toEqual([false, false]);
+	}
+);
+
+testChirho('a non-policy video rejection retains the failed-video reading fallback', async () => {
+	const { buttonChirho, statusChirho, videoChirho, playedChirho } = await setupVideoChirho();
+	playedChirho.mockRejectedValueOnce(new DOMException('Unsupported source', 'NotSupportedError'));
+	buttonChirho.click();
+	await viChirho.advanceTimersByTimeAsync(0);
+	expectChirho(videoChirho.dataset.videoFailedChirho).toBe('true');
+	expectChirho(statusChirho.textContent).toBe(AUDIO_MESSAGES_CHIRHO.en.video_failed_chirho);
+	buttonChirho.click();
+	expectChirho(playedChirho).toHaveBeenCalledTimes(1);
+	expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.src).toContain('4'.repeat(64));
+});
+
+testChirho('a policy-blocked recording is idle and can be retried manually', async () => {
+	const { buttonChirho, statusChirho } = await setupVideoChirho(false);
+	const nativePlayChirho = ControlledAudioChirho.prototype.play;
+	const deniedPlayChirho = viChirho
+		.spyOn(ControlledAudioChirho.prototype, 'play')
+		.mockRejectedValueOnce(new DOMException('User gesture required', 'NotAllowedError'));
+	try {
+		buttonChirho.click();
+		await viChirho.advanceTimersByTimeAsync(0);
+		expectChirho(buttonChirho.hasAttribute('aria-busy')).toBe(false);
+		expectChirho(statusChirho.textContent).toBe(AUDIO_MESSAGES_CHIRHO.en.playback_blocked_chirho);
+		deniedPlayChirho.mockImplementation(nativePlayChirho);
+		buttonChirho.click();
+		expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.paused).toBe(false);
+	} finally {
+		deniedPlayChirho.mockRestore();
+	}
+});

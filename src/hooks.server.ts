@@ -1,6 +1,6 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 import type { Handle } from '@sveltejs/kit';
-import { LEGACY_HOSTNAME_CHIRHO } from '$lib/site-chirho';
+import { SITE_ORIGIN_CHIRHO } from '$lib/site-chirho';
 import configurationChirho from '../config-chirho/media-library-chirho.json';
 
 // Workflow: hosting-chirho/domain-chirho.md. Local adapter previews have no permanent image
@@ -20,7 +20,7 @@ export const handle: Handle = async ({ event: eventChirho, resolve: resolveChirh
 	if (!['GET', 'HEAD'].includes(eventChirho.request.method))
 		return new Response(null, { status: 405, headers: { Allow: 'GET, HEAD' } });
 	try {
-		const responseChirho = await fetch(`https://${LEGACY_HOSTNAME_CHIRHO}${pathChirho}`, {
+		const responseChirho = await fetch(`${SITE_ORIGIN_CHIRHO}${pathChirho}`, {
 			method: eventChirho.request.method,
 			redirect: 'manual',
 			signal: AbortSignal.timeout(15000)

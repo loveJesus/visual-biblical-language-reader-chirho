@@ -2292,6 +2292,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/2-samuel-chirho/chapter-008-chirho/2sam-008-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/7d1fcb4e0f9afa10d819bcca9c620da5d9e2830b93134784126e85d05b4a01a6.webp",
+        "sha256_chirho": "7d1fcb4e0f9afa10d819bcca9c620da5d9e2830b93134784126e85d05b4a01a6",
+        "bytes_chirho": 2681296,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T02:28:07.331Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/fe729cf4d1887ec3e8a6e272764b2cb2e7365b8ae5239ffb065a4125df372b09.webp",
+        "sha256_chirho": "fe729cf4d1887ec3e8a6e272764b2cb2e7365b8ae5239ffb065a4125df372b09",
+        "bytes_chirho": 272900,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T02:28:08.527Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-05-chirho/mark-05-018-chirho.webp"
       ],
       "source_chirho": {
