@@ -269,6 +269,119 @@ class SceneUpgradesChirho(unittest_chirho.TestCase):
         )
         self_chirho.assertEqual(command_chirho.call_count, 1)
         self_chirho.assertNotIn("retire", str(command_chirho.call_args))
+        self_chirho.assertEqual(
+            runner_chirho.catalogue_chirho(self_chirho.root_chirho)[
+                "archive_ready_count_chirho"
+            ],
+            0,
+        )
+
+    def test_ready_prefix_advances_only_after_all_archive_stages_chirho(self_chirho):
+        row_chirho = self_chirho.record_chirho()
+        mock_chirho.patch.object(
+            runner_chirho.BASE_CHIRHO, "remote_record_chirho"
+        ).start()
+
+        def stage_chirho(_root_chirho, _command_chirho, _log_chirho):
+            self_chirho.assertEqual(
+                runner_chirho.catalogue_chirho(self_chirho.root_chirho)[
+                    "archive_ready_count_chirho"
+                ],
+                0,
+            )
+
+        mock_chirho.patch.object(
+            runner_chirho, "command_chirho", side_effect=stage_chirho
+        ).start()
+        runner_chirho.install_chirho(
+            self_chirho.root_chirho,
+            "Matt",
+            self_chirho.job_chirho,
+            self_chirho.attempt_chirho,
+            row_chirho,
+        )
+        path_chirho = self_chirho.root_chirho / sources_chirho.CATALOGUE_CHIRHO
+        self_chirho.assertEqual(
+            runner_chirho.catalogue_chirho(self_chirho.root_chirho)[
+                "archive_ready_count_chirho"
+            ],
+            1,
+        )
+        self_chirho.assertEqual(
+            sources_chirho.read_chirho(
+                runner_chirho.manifest_path_chirho(self_chirho.root_chirho, "Matt")
+            )["scenes_chirho"],
+            [row_chirho],
+        )
+        before_chirho = path_chirho.read_bytes()
+        runner_chirho.advance_archive_ready_chirho(self_chirho.root_chirho, row_chirho)
+        self_chirho.assertEqual(path_chirho.read_bytes(), before_chirho)
+
+    def test_refused_archive_does_not_advance_the_prefix_chirho(self_chirho):
+        row_chirho = self_chirho.record_chirho()
+
+        def stage_chirho(_root_chirho, command_chirho, _log_chirho):
+            if any(
+                "archive-artwork-chirho.ts" in str(item_chirho)
+                for item_chirho in command_chirho
+            ):
+                raise OSError("archive readback refused")
+
+        mock_chirho.patch.object(
+            runner_chirho, "command_chirho", side_effect=stage_chirho
+        ).start()
+        with self_chirho.assertRaises(OSError):
+            runner_chirho.install_chirho(
+                self_chirho.root_chirho,
+                "Matt",
+                self_chirho.job_chirho,
+                self_chirho.attempt_chirho,
+                row_chirho,
+            )
+        self_chirho.assertEqual(
+            runner_chirho.catalogue_chirho(self_chirho.root_chirho)[
+                "archive_ready_count_chirho"
+            ],
+            0,
+        )
+        self_chirho.assertFalse(
+            (self_chirho.attempt_chirho / "installed-chirho.json").exists()
+        )
+        self_chirho.assertTrue(
+            (self_chirho.attempt_chirho / "scene-chirho.webp").exists()
+        )
+
+    def test_invalid_ready_marker_or_skipped_pending_scene_is_refused_chirho(
+        self_chirho,
+    ):
+        row_chirho = self_chirho.record_chirho()
+        path_chirho = self_chirho.root_chirho / sources_chirho.CATALOGUE_CHIRHO
+        for marker_chirho in [-1, 2, True, 0.5, "0"]:
+            sources_chirho.write_chirho(
+                path_chirho,
+                {
+                    "schema_version_chirho": 1,
+                    "scenes_chirho": [row_chirho],
+                    "archive_ready_count_chirho": marker_chirho,
+                },
+            )
+            with self_chirho.assertRaises(ValueError):
+                runner_chirho.catalogue_chirho(self_chirho.root_chirho)
+        next_chirho = {**row_chirho, "lesson_id_chirho": "Matt.1.2"}
+        sources_chirho.write_chirho(
+            path_chirho,
+            {
+                "schema_version_chirho": 1,
+                "scenes_chirho": [row_chirho, next_chirho],
+                "archive_ready_count_chirho": 0,
+            },
+        )
+        before_chirho = path_chirho.read_bytes()
+        with self_chirho.assertRaises(ValueError):
+            runner_chirho.advance_archive_ready_chirho(
+                self_chirho.root_chirho, next_chirho
+            )
+        self_chirho.assertEqual(path_chirho.read_bytes(), before_chirho)
 
     def test_resume_received_installation_never_renders_again_chirho(self_chirho):
         row_chirho = self_chirho.record_chirho()
@@ -353,6 +466,60 @@ class SceneUpgradesChirho(unittest_chirho.TestCase):
             runner_chirho.verified_completed_chirho(self_chirho.root_chirho), 1
         )
         remote_chirho.assert_called_once_with(self_chirho.root_chirho, row_chirho)
+
+    def test_restart_recovers_only_a_checkpoint_with_exact_archive_facts_chirho(
+        self_chirho,
+    ):
+        row_chirho = self_chirho.record_chirho()
+        path_chirho = self_chirho.root_chirho / sources_chirho.CATALOGUE_CHIRHO
+        sources_chirho.write_chirho(
+            path_chirho,
+            {
+                "schema_version_chirho": 1,
+                "archive_ready_count_chirho": 0,
+                "scenes_chirho": [row_chirho],
+            },
+        )
+        remote_chirho = mock_chirho.patch.object(
+            runner_chirho.BASE_CHIRHO, "remote_record_chirho"
+        ).start()
+        renderer_chirho = mock_chirho.patch.object(
+            runner_chirho, "GeneratorJobChirho"
+        ).start()
+        self_chirho.assertEqual(
+            runner_chirho.verified_completed_chirho(self_chirho.root_chirho), 0
+        )
+        self_chirho.assertEqual(
+            runner_chirho.catalogue_chirho(self_chirho.root_chirho)[
+                "archive_ready_count_chirho"
+            ],
+            0,
+        )
+        sources_chirho.write_chirho(
+            runner_chirho.manifest_path_chirho(self_chirho.root_chirho, "Matt"),
+            {"book_id_chirho": "Matt", "scenes_chirho": [row_chirho]},
+        )
+        before_chirho = path_chirho.read_bytes()
+        remote_chirho.side_effect = ValueError("archive identity changed")
+        with self_chirho.assertRaises(ValueError):
+            runner_chirho.verified_completed_chirho(self_chirho.root_chirho)
+        self_chirho.assertEqual(path_chirho.read_bytes(), before_chirho)
+        remote_chirho.side_effect = None
+        self_chirho.assertEqual(
+            runner_chirho.verified_completed_chirho(self_chirho.root_chirho), 1
+        )
+        self_chirho.assertEqual(
+            runner_chirho.catalogue_chirho(self_chirho.root_chirho)[
+                "archive_ready_count_chirho"
+            ],
+            1,
+        )
+        ready_chirho = path_chirho.read_bytes()
+        self_chirho.assertEqual(
+            runner_chirho.verified_completed_chirho(self_chirho.root_chirho), 1
+        )
+        self_chirho.assertEqual(path_chirho.read_bytes(), ready_chirho)
+        self_chirho.assertFalse(renderer_chirho.called)
 
     def test_large_stage_output_is_bounded_and_hash_bound_chirho(self_chirho):
         log_chirho = self_chirho.attempt_chirho / "stage-log-chirho.txt"

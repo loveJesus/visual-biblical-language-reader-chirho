@@ -60,7 +60,11 @@ def catalogue_chirho(root_chirho):
     value_chirho = (
         sources_chirho.read_chirho(path_chirho)
         if path_chirho.exists()
-        else {"schema_version_chirho": 1, "scenes_chirho": []}
+        else {
+            "schema_version_chirho": 1,
+            "archive_ready_count_chirho": 0,
+            "scenes_chirho": [],
+        }
     )
     rows_chirho = value_chirho["scenes_chirho"]
     if (
@@ -70,13 +74,40 @@ def catalogue_chirho(root_chirho):
         != len(rows_chirho)
     ):
         raise ValueError("High-quality scene catalogue scope differs")
+    ready_chirho = value_chirho.get("archive_ready_count_chirho", len(rows_chirho))
+    if type(ready_chirho) is not int or not 0 <= ready_chirho <= len(rows_chirho):
+        raise ValueError("High-quality scene archive-ready prefix differs")
     return value_chirho
 
 
+def advance_archive_ready_chirho(root_chirho, record_chirho):
+    """Workflow: media-delivery-chirho.md. Advance only after archive and checkpoint completion."""
+    document_chirho = catalogue_chirho(root_chirho)
+    rows_chirho = document_chirho["scenes_chirho"]
+    ready_chirho = document_chirho.get("archive_ready_count_chirho", len(rows_chirho))
+    positions_chirho = [
+        index_chirho
+        for index_chirho, row_chirho in enumerate(rows_chirho)
+        if row_chirho == record_chirho
+    ]
+    if len(positions_chirho) != 1:
+        raise ValueError("Archive-ready scene identity differs")
+    position_chirho = positions_chirho[0]
+    if position_chirho < ready_chirho:
+        return
+    if position_chirho != ready_chirho or ready_chirho != len(rows_chirho) - 1:
+        raise ValueError("Earlier scene archive is still pending")
+    document_chirho["archive_ready_count_chirho"] = ready_chirho + 1
+    sources_chirho.write_chirho(
+        root_chirho / sources_chirho.CATALOGUE_CHIRHO, document_chirho
+    )
+
+
 def verified_completed_chirho(root_chirho):
+    document_chirho = catalogue_chirho(root_chirho)
     records_chirho = {
         row_chirho["lesson_id_chirho"]: row_chirho
-        for row_chirho in catalogue_chirho(root_chirho)["scenes_chirho"]
+        for row_chirho in document_chirho["scenes_chirho"]
     }
     seen_chirho = set()
     for path_chirho in (root_chirho / MASTER_HOME_CHIRHO / "books-chirho").glob(
@@ -88,6 +119,20 @@ def verified_completed_chirho(root_chirho):
                 raise ValueError("Verified scene checkpoint differs from its catalogue")
             BASE_CHIRHO.remote_record_chirho(root_chirho, row_chirho)
             seen_chirho.add(id_chirho)
+    # Recover a crash after checkpoint fsync but before the publication frontier fsync.
+    if "archive_ready_count_chirho" in document_chirho:
+        ready_chirho = document_chirho["archive_ready_count_chirho"]
+        rows_chirho = document_chirho["scenes_chirho"]
+        while (
+            ready_chirho < len(rows_chirho)
+            and rows_chirho[ready_chirho]["lesson_id_chirho"] in seen_chirho
+        ):
+            ready_chirho += 1
+        if ready_chirho != document_chirho["archive_ready_count_chirho"]:
+            document_chirho["archive_ready_count_chirho"] = ready_chirho
+            sources_chirho.write_chirho(
+                root_chirho / sources_chirho.CATALOGUE_CHIRHO, document_chirho
+            )
     return len(seen_chirho)
 
 
@@ -495,6 +540,12 @@ def install_chirho(
             ):
                 raise ValueError("Existing raster cannot be overwritten")
         if not matches_chirho:
+            ready_chirho = document_chirho.get(
+                "archive_ready_count_chirho", len(document_chirho["scenes_chirho"])
+            )
+            if ready_chirho != len(document_chirho["scenes_chirho"]):
+                raise ValueError("Earlier scene archive is still pending")
+            document_chirho["archive_ready_count_chirho"] = ready_chirho
             document_chirho["scenes_chirho"].append(record_value_chirho)
             sources_chirho.write_chirho(
                 root_chirho / sources_chirho.CATALOGUE_CHIRHO, document_chirho
@@ -574,6 +625,7 @@ def install_chirho(
             "sha256_chirho": record_value_chirho["sha256_chirho"],
         },
     )
+    advance_archive_ready_chirho(root_chirho, record_value_chirho)
     (attempt_chirho / "prepared-chirho.json").unlink(missing_ok=True)
 
 

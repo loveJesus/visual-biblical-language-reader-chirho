@@ -2,6 +2,29 @@
 
 # Hinneh media delivery
 
+## November 9: parallel archive readiness and R2 audio snapshots
+
+The HQ producer's append-only catalogue has `archive_ready_count_chirho`. A new source row can exist while delivery/archive/checkpoint stages run, but it stays beyond that prefix. Only the completed installer advances the prefix, after every stage succeeds. Failure keeps the original and the old prefix; replay cannot skip an earlier pending row. The initial migration verified all existing rows against installed checkpoints and archive facts without rewriting their source objects.
+
+Snapshot capture freezes only the ready prefix of this one HQ catalogue before reading the proof index. Every included scene must still pass the exact source/path/dimensions archive check. The marker grants no proof or human review. Unmarked legacy catalogues retain the prior strict behavior. New source rows stay in the working catalogue for the next release, without blocking independently ready audio.
+
+In R2 storage mode, content-addressed MP3 bodies are not copied into the build snapshot. Before the unchanged byte/hash/MPEG-header validator runs, the recorded-preview builder reads only missing bodies referenced by the frozen, hash-checked audio manifest and chapters from the original source directory. Four bounded readers refuse linked, missing, oversized or changing files and insert unique paths in sorted order. No unreferenced take is read. The verified bytes populate the same Worker allowlist and are excluded from the output as before; exact object facts and receipt gates remain. Local storage mode still copies referenced MP3 files and excludes incoming unpublished takes. Hosted full-body checks and silent playback remain separate acceptance evidence.
+
+Restart reconciliation can advance a lagging frontier only through consecutive installed checkpoints whose complete scene objects and archive facts match. A crash between checkpoint fsync and frontier fsync therefore needs no new image request. Missing or mismatched facts keep the old frontier.
+
+```mermaid
+flowchart TD
+    original_chirho[Verified original and source-bound scene] --> pending_chirho[Append pending HQ row behind ready prefix]
+    pending_chirho --> archive_ready_chirho[Encode, archive and verify exact remote bytes]
+    archive_ready_chirho --> checkpoint_ready_chirho[Complete installation and recovery checkpoints]
+    checkpoint_ready_chirho --> frontier_chirho[Advance archive-ready prefix]
+    frontier_chirho --> snapshot_ready_chirho[Freeze only completed prefix and exact proof index]
+    audio_metadata_chirho[Hash-bound audio chapters and verified R2 receipts] --> snapshot_ready_chirho
+    snapshot_ready_chirho --> remote_build_chirho[Build metadata and R2 allowlist without MP3 body copies]
+    remote_build_chirho --> strict_checks_chirho[Exact proof, serving probes and hosted checks]
+    archive_ready_chirho -->|failure| preserve_pending_chirho[Preserve original and old prefix; no new request]
+```
+
 ## November 1: R2 is the artwork store
 
 L.J. directs R2 storage without permanent local artwork copies. The existing private `hinneh-media-chirho` bucket retains exact source evidence and compressed public delivery objects. Source/review/request metadata remains local. No new bucket, domain or D1 is introduced. This replaces the earlier static artwork mirror and permanent external artwork-copy policy. Audio remains static MP3 delivery; this migration concerns artwork.

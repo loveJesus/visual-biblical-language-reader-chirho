@@ -21,6 +21,7 @@ import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { verifyGlossesChirho } from './gloss_rules_chirho';
 import { verifyAudioChirho } from './audio_rules_chirho';
+import { loadAudioSourceBodiesChirho } from './r2-chirho/audio-source-chirho';
 import {
 	LIBRARY_PATH_CHIRHO,
 	SITEMAP_PATH_CHIRHO,
@@ -284,6 +285,11 @@ export async function buildReleaseChirho(optionsChirho: BuildOptionsChirho): Pro
 	)
 		reasonsChirho.push('Sitemap differs from the public route registry');
 	verifyGlossesChirho(publicChirho, reasonsChirho);
+	if (remoteModeChirho && optionsChirho.preview_chirho)
+		await loadAudioSourceBodiesChirho(
+			publicChirho,
+			optionsChirho.preview_chirho.output_root_chirho
+		);
 	verifyAudioChirho(
 		publicChirho,
 		optionsChirho.allow_pending_media_chirho || Boolean(optionsChirho.preview_chirho),

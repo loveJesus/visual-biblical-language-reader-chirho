@@ -79,6 +79,29 @@ export interface OverlayReportChirho {
 	}[];
 }
 
+/** Workflow: media-delivery-chirho.md. Pending append-only scenes wait for their archive checkpoint. */
+export function archiveReadyScenesChirho(bytesChirho: Uint8Array): Uint8Array {
+	const documentChirho = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytesChirho));
+	if (!Object.hasOwn(documentChirho, 'archive_ready_count_chirho')) return bytesChirho;
+	const countChirho = documentChirho.archive_ready_count_chirho;
+	if (
+		!Array.isArray(documentChirho.scenes_chirho) ||
+		documentChirho.scenes_chirho.length > 32_000 ||
+		!Number.isSafeInteger(countChirho) ||
+		countChirho < 0 ||
+		countChirho > documentChirho.scenes_chirho.length
+	)
+		throw new RefusalChirho(['high-quality scene archive-ready prefix is invalid']);
+	if (countChirho === documentChirho.scenes_chirho.length) return bytesChirho;
+	return Buffer.from(
+		JSON.stringify(
+			{ ...documentChirho, scenes_chirho: documentChirho.scenes_chirho.slice(0, countChirho) },
+			null,
+			'\t'
+		) + '\n'
+	);
+}
+
 /** Freeze authoring records before their proof index; later producer additions wait for the next release. */
 export async function snapshotArtworkInputsChirho(rootChirho: string) {
 	const homeChirho = await realpath(rootChirho);
@@ -114,7 +137,10 @@ export async function snapshotArtworkInputsChirho(rootChirho: string) {
 	for (const nameChirho of manifestsChirho) {
 		if (!/^[a-z0-9][a-z0-9-]*\.json$/u.test(nameChirho))
 			throw new RefusalChirho(['artwork manifest path is invalid']);
-		await captureChirho('data-chirho/media-chirho/' + nameChirho, 64 * 1024 ** 2);
+		const pathChirho = 'data-chirho/media-chirho/' + nameChirho;
+		const bytesChirho = await captureChirho(pathChirho, 64 * 1024 ** 2);
+		if (nameChirho === 'bible-high-quality-scenes-chirho.json')
+			metadataChirho.set(pathChirho, archiveReadyScenesChirho(bytesChirho));
 	}
 	const prefixChirho = 'data-chirho/delivery-chirho/artwork-chirho/';
 	const indexChirho = JSON.parse(
@@ -269,6 +295,12 @@ export async function copySnapshotChirho(
 				? `${relativeChirho}/${entryChirho.name}`
 				: entryChirho.name;
 			if (remoteArtworkChirho && pathChirho === 'static/assets-chirho') continue;
+			// R2 serves these immutable bodies; only their hash-bound chapter metadata enters a build.
+			if (
+				remoteArtworkChirho &&
+				/^static\/audio-chirho\/sha256-chirho\/[a-f0-9]{64}-chirho\.mp3$/u.test(pathChirho)
+			)
+				continue;
 			// Cold acquisition/production inventories are not application inputs; chapters carry provenance.
 			if (pathChirho === 'data-chirho/bible-chirho') continue;
 			if (entryChirho.isDirectory()) {
