@@ -2292,6 +2292,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/daniel-chirho/chapter-006-chirho/dan-006-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/ff124998d24fe1d309aff75d163bea0267e3d459fc01ba5d890d1f900a1a8473.webp",
+        "sha256_chirho": "ff124998d24fe1d309aff75d163bea0267e3d459fc01ba5d890d1f900a1a8473",
+        "bytes_chirho": 2493318,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T20:22:56.234Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/821300f95e4dc36c5e99e97f23ae92962ef276a534c5046b4b640570333ac179.webp",
+        "sha256_chirho": "821300f95e4dc36c5e99e97f23ae92962ef276a534c5046b4b640570333ac179",
+        "bytes_chirho": 228664,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T20:22:56.985Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/romans-chirho/chapter-002-chirho/rom-002-029-chirho.webp"
       ],
       "source_chirho": {

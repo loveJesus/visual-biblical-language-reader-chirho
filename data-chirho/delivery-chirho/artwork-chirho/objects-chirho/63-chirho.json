@@ -2835,6 +2835,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/ezekiel-chirho/chapter-041-chirho/ezek-041-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/6353220cfb4bce76692e2f8f7d613fa282a5cd1aa6f39e5e7a43d7b9231d367b.webp",
+        "sha256_chirho": "6353220cfb4bce76692e2f8f7d613fa282a5cd1aa6f39e5e7a43d7b9231d367b",
+        "bytes_chirho": 2327272,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T19:58:13.283Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/2ed1c9b9ae3104d9674a71e29fa503f68da8a71cd663dc521ca985d865d7548a.webp",
+        "sha256_chirho": "2ed1c9b9ae3104d9674a71e29fa503f68da8a71cd663dc521ca985d865d7548a",
+        "bytes_chirho": 174136,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T19:58:13.975Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ecclesiastes-chirho/chapter-005-chirho/eccl-005-003-chirho.webp"
       ],
       "source_chirho": {
