@@ -2,6 +2,21 @@
 
 # Hinneh media delivery
 
+## November 9: same-take ASR opinions in finite Greek handoffs
+
+An ASR entry records a second opinion by the presence of `second_cer_chirho`, including zero. It has no `second_opinion_chirho` flag; that flag belongs to the finite handoff row. The adapter derives the flag from the frozen screen and requires complete, finite nonnegative first/second scores, the approved second model/transcript, and `cer_chirho = round(min(first, second), 4)`. The existing 0.35 limit and exact MP3/job/request/result identities remain unchanged. `heard_chirho` stays the first transcript; the second transcript remains separately archived. A second opinion is a new automated reading of the same audio, not a new take or listener acceptance. Malformed or still-over-limit rows stay held.
+
+```mermaid
+flowchart TD
+    first_screen_chirho[Frozen first screen and exact MP3 identity] --> second_score_chirho{Second score present?}
+    second_score_chirho -->|no| first_gate_chirho[Use unchanged first-pass source and threshold checks]
+    second_score_chirho -->|yes| paired_screen_chirho[Verify both scores, second transcript and approved model]
+    paired_screen_chirho --> minimum_gate_chirho[Verify rounded minimum and unchanged threshold]
+    first_gate_chirho --> received_take_chirho[Exact received take, canonical source and immutable handoff]
+    minimum_gate_chirho --> received_take_chirho
+    received_take_chirho --> archive_take_chirho[Shared derive, archive, bounded commit and hosted proof]
+```
+
 ## November 9: parallel archive readiness and R2 audio snapshots
 
 The HQ producer's append-only catalogue has `archive_ready_count_chirho`. A new source row can exist while delivery/archive/checkpoint stages run, but it stays beyond that prefix. Only the completed installer advances the prefix, after every stage succeeds. Failure keeps the original and the old prefix; replay cannot skip an earlier pending row. The initial migration verified all existing rows against installed checkpoints and archive facts without rewriting their source objects.

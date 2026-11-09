@@ -86,7 +86,10 @@ export interface HandoffAsrChirho {
 		string,
 		NonNullable<LocalGreekJobChirho['chosen_chirho']>['asr_chirho'] & {
 			heard_chirho: string;
-			second_opinion_chirho?: unknown;
+			first_cer_chirho?: number;
+			second_cer_chirho?: number;
+			second_heard_chirho?: string;
+			second_model_chirho?: string;
 		}
 	>;
 }
@@ -98,6 +101,33 @@ export interface HandoffOptionsChirho {
 export interface HandoffInputChirho extends ImportInputChirho {
 	manifest_bytes_chirho: Buffer;
 	handoff_sha256_chirho: string;
+}
+
+/** Workflow: spec-chirho/workflows-chirho/media-delivery-chirho.md (same-take ASR opinions).
+ * The producer retains the first transcript and records a second score separately, including zero. */
+function secondOpinionChirho(screenChirho: HandoffAsrChirho['takes_chirho'][string]): boolean {
+	const fieldsChirho = ['first_cer_chirho', 'second_heard_chirho', 'second_model_chirho'] as const;
+	if (!Object.hasOwn(screenChirho, 'second_cer_chirho')) {
+		if (fieldsChirho.some((fieldChirho) => Object.hasOwn(screenChirho, fieldChirho)))
+			throw Error('Incomplete second-opinion evidence');
+		return false;
+	}
+	const firstChirho = screenChirho.first_cer_chirho;
+	const secondChirho = screenChirho.second_cer_chirho;
+	if (
+		typeof firstChirho !== 'number' ||
+		!Number.isFinite(firstChirho) ||
+		firstChirho < 0 ||
+		typeof secondChirho !== 'number' ||
+		!Number.isFinite(secondChirho) ||
+		secondChirho < 0 ||
+		typeof screenChirho.second_heard_chirho !== 'string' ||
+		!screenChirho.second_heard_chirho.trim() ||
+		screenChirho.second_model_chirho !== 'openai-whisper large-v3, beam 5' ||
+		screenChirho.cer_chirho !== Number(Math.min(firstChirho, secondChirho).toFixed(4))
+	)
+		throw Error('Second-opinion evidence or minimum score differs');
+	return true;
 }
 
 /** Reconstruct the received take from a frozen plan/request/result/screen, never handoff assertions alone. */
@@ -182,7 +212,7 @@ export function reconstructHandoffJobsChirho(
 			task_uuid_chirho: rowChirho.task_uuid_chirho,
 			cer_chirho: screenChirho.cer_chirho,
 			heard_chirho: screenChirho.heard_chirho,
-			second_opinion_chirho: Boolean(screenChirho.second_opinion_chirho),
+			second_opinion_chirho: secondOpinionChirho(screenChirho),
 			content_path_chirho: plannedChirho.content_path_chirho,
 			content_sha256_chirho: plannedChirho.content_sha256_chirho,
 			canonical_sha256_chirho: plannedChirho.canonical_sha256_chirho,

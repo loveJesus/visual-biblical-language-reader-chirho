@@ -6131,6 +6131,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/zechariah-chirho/chapter-004-chirho/zech-004-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/17f419f878989ce4929ee5f7f9098cc97de91a45b40f8d2f7e4ba7b6c0fe1880.webp",
+        "sha256_chirho": "17f419f878989ce4929ee5f7f9098cc97de91a45b40f8d2f7e4ba7b6c0fe1880",
+        "bytes_chirho": 2403074,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T22:29:22.314Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/abfc45988c12251e2cb95fa22ed6e668de9e07bde4572b3daffdac0bd4901f57.webp",
+        "sha256_chirho": "abfc45988c12251e2cb95fa22ed6e668de9e07bde4572b3daffdac0bd4901f57",
+        "bytes_chirho": 200376,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T22:29:23.020Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/proverbs-worker-v1-chirho/chapter-22-chirho/prov-22-028-chirho.webp"
       ],
       "source_chirho": {

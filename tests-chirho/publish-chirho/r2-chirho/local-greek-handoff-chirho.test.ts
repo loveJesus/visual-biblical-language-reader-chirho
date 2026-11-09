@@ -262,6 +262,102 @@ const mutationsChirho = [
 	'model'
 ] as const;
 describe('finite screened handoff admission', () => {
+	it.each([0, 0.3457])('accepts an exact same-take second opinion with score %s', (scoreChirho) => {
+		const rowChirho = fixtureChirho();
+		const selectedChirho = rowChirho.handoffChirho.ready_jobs_chirho[0];
+		const screenChirho = rowChirho.asrChirho.takes_chirho[selectedChirho.task_uuid_chirho];
+		Object.assign(screenChirho, {
+			first_cer_chirho: 0.358,
+			second_cer_chirho: scoreChirho,
+			second_heard_chirho: 'synthetic second-pass fixture',
+			second_model_chirho: 'openai-whisper large-v3, beam 5',
+			cer_chirho: scoreChirho
+		});
+		selectedChirho.cer_chirho = scoreChirho;
+		selectedChirho.second_opinion_chirho = true;
+		const jobsChirho = reconstructHandoffJobsChirho(
+			rowChirho.handoffChirho,
+			rowChirho.planChirho,
+			rowChirho.journalChirho,
+			rowChirho.asrChirho,
+			new Set()
+		);
+		expect(jobsChirho[0].chosen_chirho!.asr_chirho).toMatchObject({
+			sha256_chirho: selectedChirho.take_sha256_chirho,
+			cer_chirho: scoreChirho,
+			heard_chirho: selectedChirho.heard_chirho,
+			second_heard_chirho: 'synthetic second-pass fixture'
+		});
+	});
+	it.each([
+		'missing-first',
+		'missing-second-transcript',
+		'wrong-second-model',
+		'non-finite-first',
+		'negative-second',
+		'forged-minimum',
+		'still-over-limit',
+		'concealed-second-opinion',
+		'flag-without-second-score',
+		'partial-second-evidence'
+	] as const)('refuses %s before any archive action', (mutationChirho) => {
+		const rowChirho = fixtureChirho();
+		const selectedChirho = rowChirho.handoffChirho.ready_jobs_chirho[0];
+		const screenChirho = rowChirho.asrChirho.takes_chirho[selectedChirho.task_uuid_chirho];
+		Object.assign(screenChirho, {
+			first_cer_chirho: 0.4,
+			second_cer_chirho: 0.1,
+			second_heard_chirho: 'synthetic second-pass fixture',
+			second_model_chirho: 'openai-whisper large-v3, beam 5'
+		});
+		selectedChirho.second_opinion_chirho = true;
+		switch (mutationChirho) {
+			case 'missing-first':
+				delete screenChirho.first_cer_chirho;
+				break;
+			case 'missing-second-transcript':
+				delete screenChirho.second_heard_chirho;
+				break;
+			case 'wrong-second-model':
+				screenChirho.second_model_chirho = 'another model';
+				break;
+			case 'non-finite-first':
+				screenChirho.first_cer_chirho = NaN;
+				break;
+			case 'negative-second':
+				screenChirho.second_cer_chirho = -0.1;
+				break;
+			case 'forged-minimum':
+				screenChirho.second_cer_chirho = 0.2;
+				break;
+			case 'still-over-limit':
+				screenChirho.second_cer_chirho = screenChirho.cer_chirho = selectedChirho.cer_chirho = 0.36;
+				break;
+			case 'concealed-second-opinion':
+				selectedChirho.second_opinion_chirho = false;
+				break;
+			case 'flag-without-second-score':
+				delete screenChirho.first_cer_chirho;
+				delete screenChirho.second_cer_chirho;
+				delete screenChirho.second_heard_chirho;
+				delete screenChirho.second_model_chirho;
+				Object.assign(screenChirho, { second_opinion_chirho: true });
+				break;
+			case 'partial-second-evidence':
+				delete screenChirho.second_cer_chirho;
+				selectedChirho.second_opinion_chirho = false;
+				break;
+		}
+		expect(() =>
+			reconstructHandoffJobsChirho(
+				rowChirho.handoffChirho,
+				rowChirho.planChirho,
+				rowChirho.journalChirho,
+				rowChirho.asrChirho,
+				new Set()
+			)
+		).toThrow();
+	});
 	it('reconstructs source-bound seed1 work without the mutable producer manifest or networking', () => {
 		const rowChirho = fixtureChirho(),
 			fetchChirho = vi.fn();
