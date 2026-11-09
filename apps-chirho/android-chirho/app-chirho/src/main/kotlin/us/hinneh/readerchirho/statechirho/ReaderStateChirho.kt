@@ -3,11 +3,15 @@ package us.hinneh.readerchirho.statechirho
 
 import us.hinneh.readerchirho.audiochirho.AudioSelectionChirho
 import us.hinneh.readerchirho.audiochirho.ClipChirho
+import us.hinneh.readerchirho.audiochirho.GreekIpaRowChirho
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.audiochirho.VerseRecordingsChirho
 import us.hinneh.readerchirho.contentchirho.BookCatalogueChirho
 import us.hinneh.readerchirho.contentchirho.BookManifestChirho
+import us.hinneh.readerchirho.contentchirho.GreekWordChirho
+import us.hinneh.readerchirho.contentchirho.HebrewWordChirho
 import us.hinneh.readerchirho.contentchirho.LoadedVerseChirho
+import us.hinneh.readerchirho.contentchirho.WordChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.mediachirho.VerseMediaChirho
 import us.hinneh.readerchirho.videochirho.VideoRecordChirho
@@ -46,6 +50,10 @@ data class ReaderUiStateChirho(
     val openTodayChirho: Boolean = ReaderPreferencesChirho.DEFAULT_OPEN_TODAY_CHIRHO,
     /** Whether a verse the reader moves to starts its Play by itself. */
     val autoplayChirho: Boolean = ReaderPreferencesChirho.DEFAULT_AUTOPLAY_CHIRHO,
+    /** Whether word boxes show the IPA line (Show IPA in Settings). */
+    val showIpaChirho: Boolean = ReaderPreferencesChirho.DEFAULT_SHOW_IPA_CHIRHO,
+    /** A Greek verse's guide rows by word id, looked up once Show IPA is on; null until then or with no guide. */
+    val greekIpaChirho: Map<String, GreekIpaRowChirho?>? = null,
 ) {
     val greekChirho: Boolean get() = catalogueChirho?.bookChirho(passageChirho.bookIdChirho)?.greekChirho == true
 
@@ -59,6 +67,31 @@ data class ReaderUiStateChirho(
 
     /** Normal for Hebrew and Greek, as on the website since 2026-11-03 (L.J.: "let's start at normal"). */
     val speedChirho: Float get() = speedChoiceChirho ?: DEFAULT_SPEED_CHIRHO
+
+    /**
+     * The one clip a word's speaker plays under the reading now in effect. The speaker, the view model's word play
+     * and the IPA line all read it here, so a word's IPA can never come from a different recording.
+     */
+    fun wordClipChirho(wordIdChirho: String): ClipChirho? =
+        (recordingsChirho as? OptionalChirho.ReadyChirho)?.valueChirho
+            ?.let { AudioSelectionChirho.bestChirho(it.wordsChirho[wordIdChirho], greekChirho, renditionChirho) }
+
+    /**
+     * Whether word boxes carry an IPA line: Show IPA is on and the passage has an IPA source. Hebrew takes IPA from
+     * its accepted word recordings; Greek from root's bundled draft guide, once its rows for this verse are looked up.
+     */
+    val ipaLineChirho: Boolean get() = showIpaChirho && (!greekChirho || greekIpaChirho != null)
+
+    /**
+     * A word's IPA for that line (GPT, DM #3669). A Hebrew word's comes only from the clip its speaker plays, which
+     * already passed every identity, recipe and IPA check, so Aramaic, held and unbound words have none. A Greek word's
+     * is the guide's value for the Greek pronunciation in effect, never another profile's. Null means the line shows
+     * that none is available; no reading is inferred here.
+     */
+    fun wordIpaChirho(wordChirho: WordChirho): String? = when (wordChirho) {
+        is HebrewWordChirho -> wordClipChirho(wordChirho.idChirho)?.ipaChirho
+        is GreekWordChirho -> greekIpaChirho?.get(wordChirho.idChirho)?.valueChirho(renditionChirho)
+    }
 
     /** The verse recording Play would play under the reading now in effect, if any. */
     val verseClipChirho: ClipChirho?
@@ -119,11 +152,21 @@ interface ReaderPreferencesChirho {
     var autoplayChirho: Boolean
     /** The last verse shown, for a fresh launch with [openTodayChirho] off. */
     var lastShownChirho: PassageChirho?
+    /** Whether word boxes show the IPA line. */
+    var showIpaChirho: Boolean
 
     companion object {
-        /** Root's defaults (GPT, DM #3642): today's Proverbs on, autoplay off. */
+        /** Today's Proverbs is on by default (root, GPT DM #3642). */
         const val DEFAULT_OPEN_TODAY_CHIRHO = true
-        const val DEFAULT_AUTOPLAY_CHIRHO = false
+
+        /**
+         * Autoplay is on for a new install (L.J., 2026-11-08, via GPT DM #3664: "our app should default to audio/video
+         * autoplay on for new installs etc"). A choice saved in Settings, on or off, always wins.
+         */
+        const val DEFAULT_AUTOPLAY_CHIRHO = true
+
+        /** Show IPA is an optional view, off until the reader turns it on (L.J. via GPT DM #3665 and #3669). */
+        const val DEFAULT_SHOW_IPA_CHIRHO = false
     }
 }
 

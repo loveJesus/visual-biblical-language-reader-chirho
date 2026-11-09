@@ -2,20 +2,25 @@
 package us.hinneh.readerchirho.uichirho
 
 import android.view.Surface
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -23,8 +28,6 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -33,11 +36,13 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 import us.hinneh.readerchirho.R
@@ -73,9 +78,9 @@ interface ReaderActionsChirho {
     fun onTextScaleChirho(scaleChirho: Float)
     fun onOpenTodayChirho(openTodayChirho: Boolean)
     fun onAutoplayChirho(autoplayChirho: Boolean)
+    fun onShowIpaChirho(showIpaChirho: Boolean)
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReaderScreenChirho(
     stateChirho: ReaderUiStateChirho,
@@ -99,26 +104,7 @@ fun ReaderScreenChirho(
     val swipeChirho = rememberVerseSwipeChirho(stateChirho::canStepChirho, stepToTopChirho)
     Scaffold(
         containerColor = InkChirho.PAPER_CHIRHO,
-        topBar = {
-            TopAppBar(
-                title = {
-                    Column {
-                        Text(stringResource(R.string.app_name_chirho), style = MaterialTheme.typography.headlineSmall)
-                        Text(stringResource(R.string.tagline_chirho), style = MaterialTheme.typography.bodySmall)
-                    }
-                },
-                actions = {
-                    // The welcome says the quick tour opens from Help, so TalkBack hears Help here too (GPT, DM #3650).
-                    IconButton(onClick = { readingKeyOpenChirho = true }) {
-                        Icon(painterResource(R.drawable.ic_help_chirho), contentDescription = stringResource(R.string.help_chirho))
-                    }
-                    IconButton(onClick = { settingsOpenChirho = true }) {
-                        Icon(painterResource(R.drawable.ic_settings_chirho), contentDescription = stringResource(R.string.settings_chirho))
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = InkChirho.PAPER_CHIRHO),
-            )
-        },
+        topBar = { ReaderTopBarChirho(onHelpChirho = { readingKeyOpenChirho = true }, onSettingsChirho = { settingsOpenChirho = true }) },
     ) { paddingChirho ->
         Box(Modifier.fillMaxSize().padding(paddingChirho).verseSwipeChirho(swipeChirho), contentAlignment = Alignment.TopCenter) {
             Column(
@@ -157,12 +143,14 @@ fun ReaderScreenChirho(
             speedChirho = stateChirho.speedChirho,
             openTodayChirho = stateChirho.openTodayChirho,
             autoplayChirho = stateChirho.autoplayChirho,
+            showIpaChirho = stateChirho.showIpaChirho,
             onLanguageChirho = actionsChirho::onLanguageChirho,
             onTextScaleChirho = actionsChirho::onTextScaleChirho,
             onRenditionChirho = actionsChirho::onRenditionChirho,
             onSpeedChirho = actionsChirho::onSpeedChirho,
             onOpenTodayChirho = actionsChirho::onOpenTodayChirho,
             onAutoplayChirho = actionsChirho::onAutoplayChirho,
+            onShowIpaChirho = actionsChirho::onShowIpaChirho,
             onInfoChirho = {
                 settingsOpenChirho = false
                 infoOpenChirho = true
@@ -211,6 +199,56 @@ private fun FailedChirho(failureChirho: FailureChirho, onRetryChirho: () -> Unit
     }
 }
 
+/**
+ * Hinneh's name and tagline with Help and Settings. The name sits beside the two icons while its longest word fits
+ * there; with very large text it takes its own full-width line under them instead of breaking inside "Hinneh" (font
+ * scale 2.0, GPT DM #3698). It keeps clear of the status bar as the Material top app bar did.
+ */
+@Composable
+internal fun ReaderTopBarChirho(onHelpChirho: () -> Unit, onSettingsChirho: () -> Unit) {
+    Layout(
+        content = {
+            Column {
+                Text(stringResource(R.string.app_name_chirho), style = MaterialTheme.typography.headlineSmall)
+                Text(stringResource(R.string.tagline_chirho), style = MaterialTheme.typography.bodySmall)
+            }
+            Row {
+                // The welcome says the quick tour opens from Help, so TalkBack hears Help here too (GPT, DM #3650).
+                IconButton(onClick = onHelpChirho) {
+                    Icon(painterResource(R.drawable.ic_help_chirho), contentDescription = stringResource(R.string.help_chirho))
+                }
+                IconButton(onClick = onSettingsChirho) {
+                    Icon(painterResource(R.drawable.ic_settings_chirho), contentDescription = stringResource(R.string.settings_chirho))
+                }
+            }
+        },
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(InkChirho.PAPER_CHIRHO)
+            .windowInsetsPadding(WindowInsets.systemBars.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top))
+            .padding(start = 16.dp, end = 4.dp, top = 8.dp, bottom = 8.dp),
+    ) { measurablesChirho, constraintsChirho ->
+        val (titleChirho, actionsChirho) = measurablesChirho
+        val widthChirho = constraintsChirho.maxWidth
+        val actionsPlaceableChirho = actionsChirho.measure(constraintsChirho.copy(minWidth = 0, minHeight = 0))
+        val roomChirho = (widthChirho - actionsPlaceableChirho.width).coerceAtLeast(0)
+        val besideChirho = titleChirho.minIntrinsicWidth(Constraints.Infinity) <= roomChirho
+        val titlePlaceableChirho = titleChirho.measure(Constraints(maxWidth = if (besideChirho) roomChirho else widthChirho))
+        if (besideChirho) {
+            val heightChirho = maxOf(titlePlaceableChirho.height, actionsPlaceableChirho.height)
+            layout(widthChirho, heightChirho) {
+                titlePlaceableChirho.placeRelative(0, (heightChirho - titlePlaceableChirho.height) / 2)
+                actionsPlaceableChirho.placeRelative(widthChirho - actionsPlaceableChirho.width, (heightChirho - actionsPlaceableChirho.height) / 2)
+            }
+        } else {
+            layout(widthChirho, actionsPlaceableChirho.height + titlePlaceableChirho.height) {
+                actionsPlaceableChirho.placeRelative(widthChirho - actionsPlaceableChirho.width, 0)
+                titlePlaceableChirho.placeRelative(0, actionsPlaceableChirho.height)
+            }
+        }
+    }
+}
+
 @Composable
 private fun ReadyVerseChirho(
     stateChirho: ReaderUiStateChirho,
@@ -231,8 +269,8 @@ private fun ReadyVerseChirho(
     val playingWordChirho = playbackChirho.keyChirho?.takeIf {
         it.startsWith(wordPrefixChirho) && (playbackChirho is PlaybackChirho.PlayingChirho || playbackChirho is PlaybackChirho.LoadingChirho)
     }?.removePrefix(wordPrefixChirho)
-    fun bestWordChirho(wordChirho: WordChirho) =
-        AudioSelectionChirho.bestChirho(recordingsChirho?.wordsChirho?.get(wordChirho.idChirho), greekChirho, stateChirho.renditionChirho)
+    // The speaker, Look closer and the IPA line share the one clip the view model plays (ReaderUiStateChirho).
+    fun bestWordChirho(wordChirho: WordChirho) = stateChirho.wordClipChirho(wordChirho.idChirho)
 
     // AI and review status is stated once in About, never as a note under each picture (L.J., 2026-11-05).
     when (stateChirho.mediaChirho) {
@@ -258,6 +296,9 @@ private fun ReadyVerseChirho(
             }
         }
     }
+    // The verse's one Play sits directly below the scene or video, in the same place whether it plays the video or a
+    // recording (L.J., via GPT DM #3673 and #3677), so an audio-only verse never sends the reader hunting for Listen.
+    VerseAudioChirho(stateChirho, verseChirho.idChirho, recordingsChirho, greekChirho, playbackChirho, actionsChirho)
     Text(stringResource(if (greekChirho) R.string.read_ltr_chirho else R.string.read_rtl_chirho), style = MaterialTheme.typography.bodySmall)
     VerseViewChirho(
         verseChirho = verseChirho,
@@ -266,6 +307,7 @@ private fun ReadyVerseChirho(
         picturesChirho = mediaChirho?.picturesChirho.orEmpty(),
         imagesChirho = imagesChirho,
         hasRecordingChirho = { bestWordChirho(it) != null },
+        ipaChirho = if (stateChirho.ipaLineChirho) stateChirho::wordIpaChirho else null,
         playingWordChirho = playingWordChirho,
         onWordChirho = { selectedWordChirho = it.idChirho },
         onSpeakChirho = actionsChirho::onToggleWordChirho,
@@ -276,7 +318,6 @@ private fun ReadyVerseChirho(
         }
         if (translationOpenChirho) Text(englishDataChirho(translationChirho), style = MaterialTheme.typography.bodyLarge)
     }
-    VerseAudioChirho(stateChirho, verseChirho.idChirho, recordingsChirho, greekChirho, playbackChirho, actionsChirho)
     VerseStepRowChirho(stateChirho, spanishChirho, onStepFromBelowChirho, headingChirho = false)
     SourcesViewChirho(
         verseChirho, greekChirho,

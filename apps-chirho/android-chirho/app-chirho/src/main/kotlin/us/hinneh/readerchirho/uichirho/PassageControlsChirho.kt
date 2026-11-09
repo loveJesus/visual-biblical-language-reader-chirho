@@ -4,10 +4,8 @@ package us.hinneh.readerchirho.uichirho
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -32,6 +30,7 @@ import androidx.compose.ui.layout.Measurable
 import androidx.compose.ui.layout.MeasurePolicy
 import androidx.compose.ui.layout.MeasureResult
 import androidx.compose.ui.layout.MeasureScope
+import androidx.compose.ui.layout.Placeable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -68,17 +67,21 @@ fun PassageControlsChirho(
     val bookTextChirho = bookLabelChirho(bookChirho, passageChirho.bookIdChirho, spanishChirho)
 
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-            PickerButtonChirho(stringResource(R.string.book_chirho), bookTextChirho, catalogueChirho != null, Modifier.weight(2f)) {
-                pickerChirho = PickerChirho.BOOK_CHIRHO
-            }
-            PickerButtonChirho(stringResource(R.string.chapter_chirho), passageChirho.chapterChirho.toString(), bookChirho != null, Modifier.weight(1f)) {
-                pickerChirho = PickerChirho.CHAPTER_CHIRHO
-            }
-            PickerButtonChirho(stringResource(R.string.verse_chirho), passageChirho.verseChirho.toString(), versesChirho.isNotEmpty(), Modifier.weight(1f)) {
-                pickerChirho = PickerChirho.VERSE_CHIRHO
-            }
-        }
+        Layout(
+            content = {
+                PickerButtonChirho(stringResource(R.string.book_chirho), bookTextChirho, catalogueChirho != null) {
+                    pickerChirho = PickerChirho.BOOK_CHIRHO
+                }
+                PickerButtonChirho(stringResource(R.string.chapter_chirho), passageChirho.chapterChirho.toString(), bookChirho != null) {
+                    pickerChirho = PickerChirho.CHAPTER_CHIRHO
+                }
+                PickerButtonChirho(stringResource(R.string.verse_chirho), passageChirho.verseChirho.toString(), versesChirho.isNotEmpty()) {
+                    pickerChirho = PickerChirho.VERSE_CHIRHO
+                }
+            },
+            modifier = Modifier.fillMaxWidth(),
+            measurePolicy = PickerRowLayoutChirho,
+        )
         VerseStepRowChirho(stateChirho, spanishChirho, onStepChirho)
     }
 
@@ -109,7 +112,10 @@ fun PassageControlsChirho(
  * so a reader never has to scroll back up to move on; only the upper reference is a heading.
  * When the reference's longest word no longer fits between the two buttons (a narrow phone or large
  * text), the complete reference takes its own centered line above them instead of breaking inside a
- * word, as "Prove/rbs" did at 320 dp (GPT, DM #3656). The buttons keep their order and targets.
+ * word, as "Prove/rbs" did at 320 dp (GPT, DM #3656). At very large text a button widens to its own
+ * longest word, and if the two no longer fit side by side, Previous and Next stack, Previous first,
+ * rather than breaking "Previous" in two (font scale 2.0, GPT DM #3698). The buttons keep their order
+ * and targets.
  */
 @Composable
 fun VerseStepRowChirho(
@@ -144,35 +150,95 @@ fun VerseStepRowChirho(
 /**
  * Previous, the reference and Next on one row while the reference's longest word (the text's minimum
  * intrinsic width) fits between the measured buttons; otherwise the reference spans the width above
- * them. Placement is relative, so a right-to-left layout mirrors it as the row did.
+ * them. Each button is at most [STEP_LABEL_MAX_CHIRHO] wide, or its own longest word if that is wider;
+ * when the two buttons then exceed the width they stack, Previous at the start and Next at the end of
+ * the line below. Placement is relative, so a right-to-left layout mirrors it as the row did.
  */
 private object StepRowLayoutChirho : MeasurePolicy {
     override fun MeasureScope.measure(measurables: List<Measurable>, constraints: Constraints): MeasureResult {
         val (previousChirho, referenceChirho, nextChirho) = measurables
-        val looseChirho = constraints.copy(minWidth = 0, minHeight = 0)
-        val previousPlaceableChirho = previousChirho.measure(looseChirho)
-        val nextPlaceableChirho = nextChirho.measure(looseChirho)
+        val capChirho = STEP_LABEL_MAX_CHIRHO.roundToPx()
+        fun measureButtonChirho(buttonChirho: Measurable, limitChirho: Int): Placeable {
+            val widestChirho = maxOf(capChirho, buttonChirho.minIntrinsicWidth(Constraints.Infinity)).coerceAtMost(limitChirho)
+            return buttonChirho.measure(Constraints(maxWidth = widestChirho))
+        }
+        val limitChirho = if (constraints.hasBoundedWidth) constraints.maxWidth else Constraints.Infinity
+        val previousPlaceableChirho = measureButtonChirho(previousChirho, limitChirho)
+        val nextPlaceableChirho = measureButtonChirho(nextChirho, limitChirho)
         val buttonsWidthChirho = previousPlaceableChirho.width + nextPlaceableChirho.width
         val widthChirho = if (constraints.hasBoundedWidth) {
             constraints.maxWidth
         } else {
             buttonsWidthChirho + referenceChirho.maxIntrinsicWidth(Constraints.Infinity)
         }
+        val buttonsStackedChirho = buttonsWidthChirho > widthChirho
         val roomChirho = (widthChirho - buttonsWidthChirho).coerceAtLeast(0)
-        val stackedChirho = referenceChirho.minIntrinsicWidth(Constraints.Infinity) > roomChirho
+        val stackedChirho = buttonsStackedChirho || referenceChirho.minIntrinsicWidth(Constraints.Infinity) > roomChirho
         val referencePlaceableChirho = referenceChirho.measure(Constraints.fixedWidth(if (stackedChirho) widthChirho else roomChirho))
-        val buttonsHeightChirho = maxOf(previousPlaceableChirho.height, nextPlaceableChirho.height)
+        val buttonsHeightChirho = if (buttonsStackedChirho) {
+            previousPlaceableChirho.height + nextPlaceableChirho.height
+        } else {
+            maxOf(previousPlaceableChirho.height, nextPlaceableChirho.height)
+        }
         val rowHeightChirho = if (stackedChirho) buttonsHeightChirho else maxOf(buttonsHeightChirho, referencePlaceableChirho.height)
         val rowTopChirho = if (stackedChirho) referencePlaceableChirho.height else 0
         return layout(widthChirho, rowTopChirho + rowHeightChirho) {
             fun centredChirho(heightChirho: Int) = rowTopChirho + (rowHeightChirho - heightChirho) / 2
-            previousPlaceableChirho.placeRelative(0, centredChirho(previousPlaceableChirho.height))
-            nextPlaceableChirho.placeRelative(widthChirho - nextPlaceableChirho.width, centredChirho(nextPlaceableChirho.height))
+            if (buttonsStackedChirho) {
+                previousPlaceableChirho.placeRelative(0, rowTopChirho)
+                nextPlaceableChirho.placeRelative(widthChirho - nextPlaceableChirho.width, rowTopChirho + previousPlaceableChirho.height)
+            } else {
+                previousPlaceableChirho.placeRelative(0, centredChirho(previousPlaceableChirho.height))
+                nextPlaceableChirho.placeRelative(widthChirho - nextPlaceableChirho.width, centredChirho(nextPlaceableChirho.height))
+            }
             if (stackedChirho) {
                 referencePlaceableChirho.placeRelative(0, 0)
             } else {
                 referencePlaceableChirho.placeRelative(previousPlaceableChirho.width, centredChirho(referencePlaceableChirho.height))
             }
+        }
+    }
+}
+
+/**
+ * Book, chapter and verse on one row (2:1:1) while every label fits its share whole; otherwise the book takes its own
+ * row with chapter and verse sharing the next, and at the very largest text each takes a row of its own. A label is
+ * never cut to an ellipsis, as "Ch…" and "Ve…" were at font scale 2.0 (GPT, DM #3698). Buttons in a row share its height.
+ */
+private object PickerRowLayoutChirho : MeasurePolicy {
+    private val PLANS_CHIRHO = listOf(
+        listOf(listOf(0 to 2, 1 to 1, 2 to 1)),
+        listOf(listOf(0 to 1), listOf(1 to 1, 2 to 1)),
+        listOf(listOf(0 to 1), listOf(1 to 1), listOf(2 to 1)),
+    )
+
+    override fun MeasureScope.measure(measurables: List<Measurable>, constraints: Constraints): MeasureResult {
+        val gapChirho = 8.dp.roundToPx()
+        val widthChirho = constraints.maxWidth
+        val needsChirho = measurables.map { it.minIntrinsicWidth(Constraints.Infinity) }
+        fun sharesChirho(rowChirho: List<Pair<Int, Int>>): List<Int> {
+            val freeChirho = widthChirho - gapChirho * (rowChirho.size - 1)
+            val totalChirho = rowChirho.sumOf { it.second }
+            return rowChirho.map { freeChirho * it.second / totalChirho }
+        }
+        val planChirho = PLANS_CHIRHO.firstOrNull { planChirho ->
+            planChirho.all { rowChirho -> rowChirho.zip(sharesChirho(rowChirho)).all { (cellChirho, shareChirho) -> needsChirho[cellChirho.first] <= shareChirho } }
+        } ?: PLANS_CHIRHO.last()
+        val placedChirho = mutableListOf<Triple<Placeable, Int, Int>>()
+        var topChirho = 0
+        for (rowChirho in planChirho) {
+            val sharesChirho = sharesChirho(rowChirho)
+            val heightChirho = rowChirho.zip(sharesChirho).maxOf { (cellChirho, shareChirho) -> measurables[cellChirho.first].maxIntrinsicHeight(shareChirho) }
+            var leftChirho = 0
+            for ((cellChirho, shareChirho) in rowChirho.zip(sharesChirho)) {
+                val placeableChirho = measurables[cellChirho.first].measure(Constraints.fixed(shareChirho, heightChirho))
+                placedChirho += Triple(placeableChirho, leftChirho, topChirho)
+                leftChirho += shareChirho + gapChirho
+            }
+            topChirho += heightChirho + gapChirho
+        }
+        return layout(widthChirho, (topChirho - gapChirho).coerceAtLeast(0)) {
+            for ((placeableChirho, xChirho, yChirho) in placedChirho) placeableChirho.placeRelative(xChirho, yChirho)
         }
     }
 }
@@ -188,21 +254,21 @@ private fun StepButtonChirho(labelChirho: String, enabledChirho: Boolean, onClic
         onClick = onClickChirho,
         enabled = enabledChirho,
         colors = ButtonDefaults.textButtonColors(contentColor = InkChirho.INK_CHIRHO),
-        modifier = Modifier.widthIn(max = STEP_LABEL_MAX_CHIRHO),
     ) { Text(labelChirho, style = MaterialTheme.typography.labelLarge, textAlign = TextAlign.Center) }
 }
 
 // Long labels (Spanish "Versículo siguiente") wrap inside their buttons instead of squeezing the
-// reference until a book name breaks mid-word; English labels still fit on one line.
+// reference until a book name breaks mid-word; English labels still fit on one line. StepRowLayoutChirho
+// applies this cap, widening a button only as far as its longest word needs.
 private val STEP_LABEL_MAX_CHIRHO = 140.dp
 
 @Composable
-private fun PickerButtonChirho(labelChirho: String, valueChirho: String, enabledChirho: Boolean, modifier: Modifier, onClickChirho: () -> Unit) {
+private fun PickerButtonChirho(labelChirho: String, valueChirho: String, enabledChirho: Boolean, onClickChirho: () -> Unit) {
     OutlinedButton(
         onClick = onClickChirho,
         enabled = enabledChirho,
         contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
-        modifier = modifier.semantics(mergeDescendants = true) { contentDescription = "$labelChirho, $valueChirho" },
+        modifier = Modifier.semantics(mergeDescendants = true) { contentDescription = "$labelChirho, $valueChirho" },
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(labelChirho, style = MaterialTheme.typography.labelSmall, maxLines = 1, softWrap = false, overflow = TextOverflow.Ellipsis)

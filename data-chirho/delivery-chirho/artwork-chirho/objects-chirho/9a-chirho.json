@@ -5083,6 +5083,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/1-kings-chirho/chapter-016-chirho/1kgs-016-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/9abb00b1d9d391b5e8267a9063d10f5e4a2b3e26da3ae44938aed7f779130ff7.webp",
+        "sha256_chirho": "9abb00b1d9d391b5e8267a9063d10f5e4a2b3e26da3ae44938aed7f779130ff7",
+        "bytes_chirho": 2543020,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T03:46:50.316Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/c69176b655267cd7d99127f6c6f75fee3ef6f6468a8bbc6dc1ed5f50e56246bb.webp",
+        "sha256_chirho": "c69176b655267cd7d99127f6c6f75fee3ef6f6468a8bbc6dc1ed5f50e56246bb",
+        "bytes_chirho": 241636,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T03:46:51.675Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/numbers-chirho/chapter-008-chirho/num-008-025-chirho.webp"
       ],
       "source_chirho": {

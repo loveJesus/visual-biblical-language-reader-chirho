@@ -18,6 +18,7 @@ public enum PassageOpenReasonChirho: Sendable {
 public final class ReaderSessionChirho {
     public static let todayKeyChirho = "hinneh-start-today-chirho"
     public static let autoplayKeyChirho = "hinneh-autoplay-verse-chirho"
+    public static let showIpaKeyChirho = "hinneh-show-ipa-chirho"
     public static let passageKeyChirho = "hinneh-last-passage-chirho"
     public static let welcomeVersionKeyChirho = "hinneh-welcome-version-chirho"
 
@@ -30,6 +31,9 @@ public final class ReaderSessionChirho {
             if !autoplayChirho { pendingAutoplayChirho = nil }
         }
     }
+    public var showIpaChirho: Bool {
+        didSet { defaultsChirho.set(showIpaChirho, forKey: Self.showIpaKeyChirho) }
+    }
     public private(set) var welcomePresentedChirho = false
     public private(set) var startedChirho = false
     @ObservationIgnored private let defaultsChirho: UserDefaults
@@ -39,7 +43,8 @@ public final class ReaderSessionChirho {
     public init(defaultsChirho: UserDefaults = .standard) {
         self.defaultsChirho = defaultsChirho
         startTodayChirho = defaultsChirho.object(forKey: Self.todayKeyChirho) as? Bool ?? true
-        autoplayChirho = defaultsChirho.object(forKey: Self.autoplayKeyChirho) as? Bool ?? false
+        autoplayChirho = defaultsChirho.object(forKey: Self.autoplayKeyChirho) as? Bool ?? true
+        showIpaChirho = defaultsChirho.object(forKey: Self.showIpaKeyChirho) as? Bool ?? false
     }
 
     /// Runs once for this app/model lifetime, never again on foreground activation or view reappearance.

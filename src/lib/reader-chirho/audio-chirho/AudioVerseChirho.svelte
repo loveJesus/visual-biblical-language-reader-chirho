@@ -154,8 +154,7 @@
 			savedOnlyChirho
 			unavailableChirho={aramaicUnavailableChirho}
 		/>
-		<small class="verse-development-chirho">{audioTChirho('under_development_chirho')}</small></span
-	>
+	</span>
 {/snippet}
 {#snippet ipaToggleChirho()}
 	<label class="ipa-toggle-chirho"
@@ -177,6 +176,20 @@
 	data-verse-video-clip-sha-chirho={videoReadingChirho?.clip_chirho}
 >
 	<div class="audio-actions-chirho">
+		<div class="audio-playback-chirho">
+			<div
+				class="verse-transport-chirho"
+				role="group"
+				aria-label={audioTChirho('navigation_chirho')}
+			>
+				{#if verseNavigationChirho}{@render verseNavigationChirho(
+						playbackChirho
+					)}{:else}{@render playbackChirho()}{/if}
+			</div>
+			<button type="button" class="speech-stop-chirho" data-speech-stop-chirho disabled
+				>{audioTChirho('stop_chirho')}</button
+			>
+		</div>
 		<div class="audio-settings-chirho">
 			{#if lessonChirho.language_chirho === 'grc'}
 				<label class="audio-speed-chirho audio-pronunciation-field-chirho">
@@ -209,20 +222,6 @@
 			{#if lessonChirho.language_chirho !== 'grc'}{@render ipaToggleChirho()}{/if}
 		</div>
 		{#if lessonChirho.language_chirho === 'grc'}{@render ipaToggleChirho()}{/if}
-		<div class="audio-playback-chirho">
-			<div
-				class="verse-transport-chirho"
-				role="group"
-				aria-label={audioTChirho('navigation_chirho')}
-			>
-				{#if verseNavigationChirho}{@render verseNavigationChirho(
-						playbackChirho
-					)}{:else}{@render playbackChirho()}{/if}
-			</div>
-			<button type="button" class="speech-stop-chirho" data-speech-stop-chirho disabled
-				>{audioTChirho('stop_chirho')}</button
-			>
-		</div>
 	</div>
 	<p class="small-note-chirho" id="audio-status-chirho" data-audio-status-chirho aria-live="polite">
 		{audioTChirho('checking_chirho')}
@@ -240,30 +239,47 @@
 </div>
 
 <style>
+	.audio-actions-chirho {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 12px;
+	}
+	.audio-playback-chirho {
+		width: 100%;
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.verse-transport-chirho {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 8px;
+		width: 100%;
+	}
+	.verse-transport-chirho > :global(.verse-step-chirho) {
+		width: 100%;
+		min-height: 38px;
+		font-size: 12px;
+	}
+	.verse-transport-chirho .verse-play-chirho {
+		grid-column: 1 / -1;
+		grid-row: 1;
+	}
+	.verse-play-chirho :global(.speech-button-chirho) {
+		width: 100%;
+		min-height: 48px;
+	}
+	.speech-stop-chirho:disabled,
+	.audio-playback-chirho:has(:global(.verse-play-chirho [aria-busy='true'])) > .speech-stop-chirho {
+		display: none;
+	}
+
 	.verse-play-chirho {
 		display: inline-flex;
 		align-items: center;
 		gap: 6px;
 		position: relative;
 	}
-	@container (max-width: 420px) {
-		.verse-development-chirho {
-			position: absolute;
-			top: calc(100% + 3px);
-			left: 50%;
-			transform: translateX(-50%);
-			white-space: nowrap;
-		}
-		.audio-playback-chirho {
-			margin-bottom: 15px;
-		}
-	}
-	.verse-development-chirho {
-		color: #64715e;
-		font-size: 11px;
-		line-height: 1.3;
-		max-width: 7rem;
-	}
+
 	.ipa-toggle-chirho {
 		display: inline-flex;
 		align-items: center;
@@ -303,13 +319,11 @@
 			width: 100%;
 		}
 		.verse-transport-chirho > :global(.verse-step-chirho) {
-			flex: 0 0 44px;
-			width: 44px;
-			min-width: 44px;
+			width: 100%;
+			min-width: 0;
 			min-height: 44px;
 		}
 		.verse-play-chirho {
-			flex: 1 1 0;
 			min-width: 0;
 			flex-direction: column;
 			align-items: stretch;
@@ -319,13 +333,6 @@
 			width: 100%;
 			min-height: 44px;
 			padding-inline: 6px;
-		}
-		.verse-development-chirho {
-			position: static;
-			transform: none;
-			white-space: normal;
-			max-width: none;
-			text-align: center;
 		}
 		.speech-stop-chirho:disabled,
 		.audio-playback-chirho:has(:global(.verse-play-chirho [aria-busy='true']))

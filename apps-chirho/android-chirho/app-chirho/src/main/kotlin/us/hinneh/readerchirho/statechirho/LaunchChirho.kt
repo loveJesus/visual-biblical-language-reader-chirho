@@ -6,8 +6,8 @@ import java.time.LocalDate
 
 /**
  * Where a launch opens and when the welcome shows. L.J. confirmed the "today's Proverbs" and autoplay
- * switches and a first-run and new-version welcome; root set today's Proverbs on and autoplay off by
- * default, with explicit links winning (GPT, DM #3642).
+ * switches and a first-run and new-version welcome, with explicit links winning (GPT, DM #3642). Both
+ * switches start on: today's Proverbs by root's choice, autoplay by L.J.'s (GPT, DM #3664).
  */
 object LaunchChirho {
     /**

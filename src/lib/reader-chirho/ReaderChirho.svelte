@@ -158,16 +158,25 @@
 				)}</span
 			>
 		</div>
+		{#snippet mediaControlsChirho()}
+			<AudioVerseChirho
+				{lessonChirho}
+				{verseNavigationChirho}
+				{videoChirho}
+				{navigationGenerationChirho}
+				onReadyChirho={onRecordingsReadyChirho}
+				onHumanReadingChirho={(readingChirho) => (humanReadingChirho = readingChirho)}
+			/>
+		{/snippet}
 		<section class="reading-grid-chirho" aria-label={readerTChirho('reading_grid_hebrew_chirho')}>
+			<SceneChirho
+				{presentationChirho}
+				verseIdChirho={lessonChirho.id_chirho}
+				{videoChirho}
+				canonicalTextChirho={lessonChirho.canonical_text_chirho}
+				controlsChirho={mediaControlsChirho}
+			/>
 			<div class="verse-panel-chirho">
-				<AudioVerseChirho
-					{lessonChirho}
-					{verseNavigationChirho}
-					{videoChirho}
-					{navigationGenerationChirho}
-					onReadyChirho={onRecordingsReadyChirho}
-					onHumanReadingChirho={(readingChirho) => (humanReadingChirho = readingChirho)}
-				/>
 				<SourceNotesChirho notesChirho={lessonChirho.source_notes_chirho} />
 				<VerseChirho {lessonChirho} {iconsChirho} />
 				<div class="verse-bottom-chirho">
@@ -221,12 +230,6 @@
 					</details>
 				</div>
 			</div>
-			<SceneChirho
-				{presentationChirho}
-				verseIdChirho={lessonChirho.id_chirho}
-				{videoChirho}
-				canonicalTextChirho={lessonChirho.canonical_text_chirho}
-			/>
 		</section>
 		<GrammarChirho
 			lessonNoteChirho={(presentationChirho?.representation_reduced_chirho

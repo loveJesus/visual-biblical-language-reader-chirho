@@ -25,6 +25,7 @@ import {
 } from '../../../src/lib/i18n-chirho/legend-messages-chirho';
 import { termChirho } from '../../../src/lib/i18n-chirho/labels-chirho';
 import { spokenOverridesChirho } from './export_spoken_chirho';
+import { nativeGreekGuideChirho } from './export_greek_ipa_chirho';
 
 const hereChirho = dirname(fileURLToPath(import.meta.url));
 const repoChirho = join(hereChirho, '..', '..', '..');
@@ -193,6 +194,15 @@ const outputsChirho = new Map<string, string>([
 	[join(resourcesChirho, 'spoken-overrides-chirho.json'), spokenTextChirho],
 	[join(androidAssetsChirho, 'teaching-chirho', 'spoken-overrides-chirho.json'), spokenTextChirho]
 ]);
+
+// Existing-helper Greek IPA is a distinct teaching-guide bundle, byte-identical in both native apps.
+for (const [nameChirho, textChirho] of nativeGreekGuideChirho(repoChirho)) {
+	outputsChirho.set(join(resourcesChirho, 'greek-ipa-chirho', nameChirho), textChirho);
+	outputsChirho.set(
+		join(androidAssetsChirho, 'teaching-chirho', 'greek-ipa-chirho', nameChirho),
+		textChirho
+	);
+}
 
 function currentChirho(pathChirho: string): string | null {
 	try {

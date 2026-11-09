@@ -71,6 +71,8 @@ fun InfoSheetChirho(spanishChirho: Boolean, onDismissChirho: () -> Unit) {
         Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = 20.dp).padding(bottom = 32.dp)) {
             InfoHeadingChirho(R.string.about_heading_chirho)
             Text(stringResource(R.string.about_aids_chirho), style = MaterialTheme.typography.bodyMedium)
+            // Show IPA's two sources, said once here so the reading view stays clean (GPT, DM #3669).
+            Text(stringResource(R.string.about_ipa_chirho), style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(top = 8.dp))
             LinkChirho(R.string.tour_chirho) { openChirho(tourUrlChirho(spanishChirho)) }
             for ((labelChirho, slugChirho) in SITE_PAGES_CHIRHO) {
                 LinkChirho(labelChirho) { openChirho(TrustedOriginChirho.sitePageChirho(slugChirho, spanishChirho)) }

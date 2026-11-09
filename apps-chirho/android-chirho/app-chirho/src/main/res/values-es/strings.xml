@@ -88,6 +88,7 @@
 
     <string name="about_heading_chirho">Acerca de Hinneh</string>
     <string name="about_aids_chirho">Las imágenes, los videos, las grabaciones de palabras y las lecturas sintetizadas de versículos de Hinneh son ayudas de estudio generadas con IA, aún pendientes de revisión. Las lecturas hebreas de versículos de Rabbi Dan Be’eri son grabaciones humanas, usadas bajo CC BY-SA 3.0. El texto original y sus fuentes guían la lectura. Para informar un problema con una imagen, abra su versículo en hinneh.us.</string>
+    <string name="about_ipa_chirho">Mostrar AFI: el hebreo muestra el AFI con el que se hizo la grabación de cada palabra. El griego usa la guía didáctica amplia de Hinneh para la pronunciación que elija, un borrador y no una grabación.</string>
     <string name="privacy_policy_chirho">Política de privacidad</string>
     <string name="about_support_chirho">Acerca de y soporte</string>
     <string name="contact_chirho">Contacto</string>
@@ -110,10 +111,11 @@
     <string name="credits_heading_chirho">Textos, gramática y lecturas</string>
     <string name="version_chirho">Versión %1$s</string>
 
-    <string name="welcome_title_chirho">Le damos la bienvenida a Hinneh</string>
-    <string name="welcome_what_chirho">Lea la Biblia en su hebreo y griego originales, palabra por palabra. Colores, pequeños símbolos, imágenes y sonido ayudan a que cada palabra se aclare.</string>
-    <string name="welcome_open_chirho">Se planean más idiomas. Hinneh es gratuito, y su código fuente y sus materiales de estudio tienen licencias abiertas: en Información están las licencias y los créditos.</string>
-    <string name="welcome_tour_chirho">Puede abrir el recorrido rápido cuando quiera desde Ayuda (?).</string>
+    <string name="welcome_title_chirho">Abra la Palabra.</string>
+    <string name="welcome_what_chirho">Explore la Biblia en hebreo y griego con imágenes, sonido y palabras que puede tocar.</string>
+    <string name="welcome_sample_chirho">Los colores y las pequeñas marcas muestran la gramática de cada palabra.</string>
+    <string name="welcome_open_chirho">Gratuito, con código y materiales de estudio de licencia abierta. Se planean más idiomas.</string>
+    <string name="welcome_tour_chirho">La Ayuda (?) y el recorrido rápido están siempre a mano.</string>
     <string name="welcome_start_chirho">Empezar a leer</string>
     <string name="tour_chirho">Ver el recorrido rápido</string>
     <string name="help_chirho">Ayuda y clave de lectura</string>
@@ -124,6 +126,10 @@
     <string name="open_today_hint_chirho">Cada inicio abre el capítulo de Proverbios del día de hoy. Desactivado: Hinneh abre el último versículo que leyó.</string>
     <string name="autoplay_chirho">Reproducir cada versículo al que pase</string>
     <string name="autoplay_hint_chirho">Su video o su lectura empieza automáticamente. Al abrir Hinneh no suena nada.</string>
+    <string name="show_ipa_chirho">Mostrar AFI</string>
+    <string name="show_ipa_hint_chirho">Una guía en borrador bajo cada palabra. El hebreo muestra el AFI con el que se hizo su grabación; el griego sigue su pronunciación griega. Un guion indica que no hay ninguno.</string>
+    <string name="ipa_unavailable_chirho">AFI no disponible para esta lectura</string>
+    <string name="ipa_label_chirho">AFI: %1$s</string>
     <string name="interface_language_chirho">Idioma de la interfaz</string>
     <string name="device_language_chirho">Idioma del dispositivo</string>
     <string name="text_size_chirho">Tamaño del texto</string>

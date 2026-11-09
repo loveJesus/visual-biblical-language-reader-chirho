@@ -86,9 +86,8 @@ testChirho(
 		expectChirho(captionsChirho).toBe(
 			`WEBVTT\n\n00:00:00.000 --> 00:00:04.958\n${canonicalChirho}\n`
 		);
-		expectChirho(
-			containerChirho.querySelector('button[data-verse-video-play-chirho]')!.textContent
-		).toContain('Play verse video');
+		// The parent's shared verse transport is the only primary action below the media.
+		expectChirho(containerChirho.querySelector('button[data-verse-video-play-chirho]')).toBeNull();
 	}
 );
 

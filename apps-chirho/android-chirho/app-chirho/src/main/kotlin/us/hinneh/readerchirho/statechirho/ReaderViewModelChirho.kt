@@ -22,10 +22,12 @@ import us.hinneh.readerchirho.audiochirho.AudioPlaybackChirho
 import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
 import us.hinneh.readerchirho.audiochirho.AudioSelectionChirho
 import us.hinneh.readerchirho.audiochirho.ClipChirho
+import us.hinneh.readerchirho.audiochirho.GreekIpaSourceChirho
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.audiochirho.PlaybackChirho
 import us.hinneh.readerchirho.contentchirho.AbsentVerseChirho
 import us.hinneh.readerchirho.contentchirho.ContentRepositoryChirho
+import us.hinneh.readerchirho.contentchirho.LoadedVerseChirho
 import us.hinneh.readerchirho.contentchirho.WordChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.mediachirho.MediaRepositoryChirho
@@ -50,6 +52,8 @@ class ReaderViewModelChirho(
     private val savedChirho: SavedStateHandle,
     explicitPassageChirho: PassageChirho?,
     todayChirho: () -> LocalDate = LocalDate::now,
+    /** Root's bundled draft Greek IPA guide (unit 175); none means Greek passages carry no IPA line. */
+    private val greekIpaChirho: GreekIpaSourceChirho = GreekIpaSourceChirho.NONE_CHIRHO,
 ) : ViewModel() {
     private val playbackChirho: AudioPlaybackChirho = playbackFactoryChirho(viewModelScope)
     private val videoChirho: VideoPlaybackChirho = videoFactoryChirho(viewModelScope)
@@ -77,6 +81,7 @@ class ReaderViewModelChirho(
             speedChoiceChirho = preferencesChirho.speedChirho,
             openTodayChirho = preferencesChirho.openTodayChirho,
             autoplayChirho = preferencesChirho.autoplayChirho,
+            showIpaChirho = preferencesChirho.showIpaChirho,
         ),
     )
     val uiStateChirho: StateFlow<ReaderUiStateChirho> = stateChirho.asStateFlow()
@@ -132,6 +137,7 @@ class ReaderViewModelChirho(
                 mediaChirho = OptionalChirho.LoadingChirho,
                 recordingsChirho = OptionalChirho.LoadingChirho,
                 videoFailedChirho = false,
+                greekIpaChirho = null,
             )
         }
         val catalogueChirho = attemptChirho { contentChirho.catalogueChirho() } ?: return@coroutineScope failChirho(FailureChirho.BOOK_CHIRHO)
@@ -175,6 +181,8 @@ class ReaderViewModelChirho(
                 )
             }
         }
+        // The Greek IPA guide is looked up beside them and never holds back Play or autoplay.
+        launch { lookUpGreekIpaChirho(loadedChirho) }
         // Play decides between the video and the recording only once both are known. A newer selection
         // cancels this whole load, so a superseded verse never starts.
         if (requestChirho.autoplayChirho) {
@@ -222,16 +230,12 @@ class ReaderViewModelChirho(
 
     private fun currentVideoChirho() = stateChirho.value.playableVideoChirho
 
-    fun wordClipAvailableChirho(wordChirho: WordChirho): Boolean = currentRecordingsChirho()?.let {
-        AudioSelectionChirho.bestChirho(it.wordsChirho[wordChirho.idChirho], stateChirho.value.greekChirho, stateChirho.value.renditionChirho) != null
-    } == true
+    fun wordClipAvailableChirho(wordChirho: WordChirho): Boolean = stateChirho.value.wordClipChirho(wordChirho.idChirho) != null
 
     /** Plays a word's complete recording, or stops it when it is already playing. */
     fun toggleWordChirho(wordChirho: WordChirho) {
         val stateNowChirho = stateChirho.value
-        val clipChirho = AudioSelectionChirho.bestChirho(
-            currentRecordingsChirho()?.wordsChirho?.get(wordChirho.idChirho), stateNowChirho.greekChirho, stateNowChirho.renditionChirho,
-        ) ?: return
+        val clipChirho = stateNowChirho.wordClipChirho(wordChirho.idChirho) ?: return
         toggleChirho("word:${stateNowChirho.passageChirho.idChirho}:${wordChirho.idChirho}") { keyChirho ->
             startClipChirho(keyChirho, clipChirho, stateNowChirho.speedChirho)
         }
@@ -308,6 +312,26 @@ class ReaderViewModelChirho(
     fun setAutoplayChirho(autoplayChirho: Boolean) {
         preferencesChirho.autoplayChirho = autoplayChirho
         stateChirho.update { it.copy(autoplayChirho = autoplayChirho) }
+    }
+
+    /** Shows or hides the IPA line at once; nothing that is playing stops. */
+    fun setShowIpaChirho(showIpaChirho: Boolean) {
+        preferencesChirho.showIpaChirho = showIpaChirho
+        stateChirho.update { it.copy(showIpaChirho = showIpaChirho) }
+        val loadedChirho = (stateChirho.value.verseChirho as? VerseLoadChirho.ReadyChirho)?.loadedChirho ?: return
+        if (stateChirho.value.greekIpaChirho == null) viewModelScope.launch { lookUpGreekIpaChirho(loadedChirho) }
+    }
+
+    /**
+     * With Show IPA on, a Greek verse's rows from the bundled guide, looked up off the main thread. They are kept only
+     * while that same verse is still the one shown; an unavailable guide leaves the line off.
+     */
+    private suspend fun lookUpGreekIpaChirho(loadedChirho: LoadedVerseChirho) {
+        if (!stateChirho.value.showIpaChirho || !loadedChirho.bookChirho.greekChirho) return
+        val rowsChirho = attemptChirho { greekIpaChirho.wordsChirho(loadedChirho.verseChirho) } ?: return
+        stateChirho.update {
+            if ((it.verseChirho as? VerseLoadChirho.ReadyChirho)?.loadedChirho === loadedChirho) it.copy(greekIpaChirho = rowsChirho) else it
+        }
     }
 
     /** The verse video's drawing surface, lent by the screen while it is shown. */

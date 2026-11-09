@@ -18,36 +18,55 @@ import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.contentOrNull
+import kotlinx.serialization.json.jsonPrimitive
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import us.hinneh.readerchirho.PublishedWorldChirho
 import us.hinneh.readerchirho.audiochirho.AudioPlaybackChirho
+import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
+import us.hinneh.readerchirho.audiochirho.GreekIpaGuideChirho
+import us.hinneh.readerchirho.audiochirho.GreekIpaSourceChirho
 import us.hinneh.readerchirho.audiochirho.AudioSelectionChirho
 import us.hinneh.readerchirho.audiochirho.ClipChirho
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.audiochirho.PlaybackChirho
 import us.hinneh.readerchirho.audiochirho.VerseRecordingsChirho
 import us.hinneh.readerchirho.FixedStagedVideosChirho
+import us.hinneh.readerchirho.contentchirho.HebrewVerseChirho
+import us.hinneh.readerchirho.contentchirho.WordChirho
+import us.hinneh.readerchirho.SPOKEN_OVERRIDES_CHIRHO
 import us.hinneh.readerchirho.domainchirho.PassageChirho
+import us.hinneh.readerchirho.domainchirho.SpokenChirho
+import us.hinneh.readerchirho.domainchirho.SpokenOverridesChirho
 import us.hinneh.readerchirho.mediachirho.VerseMediaChirho
+import us.hinneh.readerchirho.publishedRecordsChirho
+import us.hinneh.readerchirho.remotechirho.sha256HexChirho
 import us.hinneh.readerchirho.sampleVideoChirho
 import us.hinneh.readerchirho.videochirho.VideoPlaybackChirho
 import us.hinneh.readerchirho.videochirho.VideoRecordChirho
+import us.hinneh.readerchirho.withChirho
+import java.io.File
 import java.time.LocalDate
 
 private class FakePlaybackChirho : AudioPlaybackChirho {
     private val stateChirho = MutableStateFlow<PlaybackChirho>(PlaybackChirho.IdleChirho)
     override val playbackChirho: StateFlow<PlaybackChirho> = stateChirho
     val playedChirho = mutableListOf<Pair<String, Float>>()
+    /** The clips themselves, in play order, so a test can compare a word's IPA with what its speaker played. */
+    val clipsChirho = mutableListOf<ClipChirho>()
     var stopsChirho = 0
 
     override fun playChirho(keyChirho: String, clipChirho: ClipChirho, speedChirho: Float) {
         playedChirho += keyChirho to speedChirho
+        clipsChirho += clipChirho
         stateChirho.value = PlaybackChirho.PlayingChirho(keyChirho)
     }
 
@@ -88,6 +107,7 @@ private class MemoryPreferencesChirho : ReaderPreferencesChirho {
     override var openTodayChirho: Boolean = ReaderPreferencesChirho.DEFAULT_OPEN_TODAY_CHIRHO
     override var autoplayChirho: Boolean = ReaderPreferencesChirho.DEFAULT_AUTOPLAY_CHIRHO
     override var lastShownChirho: PassageChirho? = null
+    override var showIpaChirho: Boolean = ReaderPreferencesChirho.DEFAULT_SHOW_IPA_CHIRHO
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -115,13 +135,14 @@ class ReaderViewModelTestChirho {
         explicitChirho: String? = null,
         savedChirho: String? = null,
         todayChirho: LocalDate = LocalDate.of(2026, 11, 3),
+        greekIpaChirho: GreekIpaSourceChirho = GreekIpaSourceChirho.NONE_CHIRHO,
     ): ReaderViewModelChirho {
         val factoryChirho = viewModelFactory {
             initializer {
                 ReaderViewModelChirho(
                     worldChirho.contentChirho, worldChirho.mediaChirho, worldChirho.audioChirho, { playbackChirho }, { videoChirho }, preferencesChirho,
                     SavedStateHandle(savedChirho?.let { mapOf(ReaderViewModelChirho.SAVED_PASSAGE_CHIRHO to it) } ?: emptyMap()),
-                    explicitChirho?.let { PassageChirho.parseChirho(it) }, { todayChirho },
+                    explicitChirho?.let { PassageChirho.parseChirho(it) }, { todayChirho }, greekIpaChirho = greekIpaChirho,
                 )
             }
         }
@@ -132,6 +153,9 @@ class ReaderViewModelTestChirho {
         (uiStateChirho.value.verseChirho as? VerseLoadChirho.ReadyChirho)?.loadedChirho?.verseChirho?.idChirho
 
     private fun TestScope.settleChirho() = advanceUntilIdle()
+
+    private fun ReaderViewModelChirho.wordsChirho(): List<WordChirho> =
+        (uiStateChirho.value.verseChirho as VerseLoadChirho.ReadyChirho).loadedChirho.verseChirho.wordsChirho
 
     @Test
     fun freshVisitOpensTheLocalDaysProverbsChapter() = runTest(dispatcherChirho) {
@@ -218,6 +242,140 @@ class ReaderViewModelTestChirho {
         viewModelChirho.toggleWordChirho(articleChirho)
         assertEquals(stopsChirho + 1, playbackChirho.stopsChirho)
         assertEquals(1, playbackChirho.playedChirho.size)
+    }
+
+    /** Unit 175 (GPT, DM #3669): Show IPA is off until chosen, is kept for a fresh launch, and stops nothing playing. */
+    @Test
+    fun showIpaIsOffUntilChosenIsKeptAndStopsNothing() = runTest(dispatcherChirho) {
+        val viewModelChirho = viewModelChirho(explicitChirho = "Prov.26.1")
+        settleChirho()
+        assertFalse(viewModelChirho.uiStateChirho.value.showIpaChirho)
+        assertFalse("no IPA line until the reader turns it on", viewModelChirho.uiStateChirho.value.ipaLineChirho)
+        viewModelChirho.toggleWordChirho(viewModelChirho.wordsChirho().first { viewModelChirho.wordClipAvailableChirho(it) })
+        val stopsChirho = playbackChirho.stopsChirho
+        viewModelChirho.setShowIpaChirho(true)
+        assertTrue(preferencesChirho.showIpaChirho)
+        assertTrue(viewModelChirho.uiStateChirho.value.ipaLineChirho)
+        assertEquals("the word keeps playing", stopsChirho, playbackChirho.stopsChirho)
+        assertTrue(playbackChirho.playbackChirho.value is PlaybackChirho.PlayingChirho)
+
+        storeChirho.clear()
+        val relaunchedChirho = viewModelChirho(explicitChirho = "Prov.26.1")
+        settleChirho()
+        assertTrue("kept for a fresh launch", relaunchedChirho.uiStateChirho.value.ipaLineChirho)
+    }
+
+    /** A Hebrew word's IPA is exactly the IPA of the clip its speaker plays; nothing else supplies one. */
+    @Test
+    fun aHebrewWordsIpaIsTheIpaOfTheClipItsSpeakerPlays() = runTest(dispatcherChirho) {
+        val viewModelChirho = viewModelChirho(explicitChirho = "Prov.26.1")
+        settleChirho()
+        viewModelChirho.setShowIpaChirho(true)
+        val wordsChirho = viewModelChirho.wordsChirho()
+        for (wordChirho in wordsChirho) {
+            val ipaChirho = viewModelChirho.uiStateChirho.value.wordIpaChirho(wordChirho)
+            assertNotNull("every word of Proverbs 26:1 has a recording made from IPA: ${wordChirho.textChirho}", ipaChirho)
+            viewModelChirho.toggleWordChirho(wordChirho)
+            assertEquals(wordChirho.textChirho, playbackChirho.clipsChirho.last().ipaChirho, ipaChirho)
+            viewModelChirho.toggleWordChirho(wordChirho)
+        }
+        assertEquals("each word played its own clip once", wordsChirho.size, playbackChirho.clipsChirho.size)
+    }
+
+    private val overridesChirho by lazy { SpokenOverridesChirho.decodeChirho(File(SPOKEN_OVERRIDES_CHIRHO).readBytes()) }
+
+    private fun bundledGuideChirho() = GreekIpaGuideChirho.loadChirho { nameChirho ->
+        File("src/main/assets/${GreekIpaGuideChirho.DIRECTORY_CHIRHO}", nameChirho).takeIf { it.isFile }?.readBytes()
+    }
+
+    /** The app's Greek source over the bundled guide, on the test's dispatcher so lookups settle with the rest. */
+    private fun bundledSourceChirho() = GreekIpaSourceChirho(::bundledGuideChirho, { overridesChirho }, dispatcherChirho)
+
+    /**
+     * A Greek word's IPA is the bundled guide's value for the Greek pronunciation in effect (GPT, DM #3669): it follows
+     * the reader's choice, never borrows another profile, and is looked up again for the next verse.
+     */
+    @Test
+    fun aGreekWordsIpaFollowsThePronunciationInEffect() = runTest(dispatcherChirho) {
+        val viewModelChirho = viewModelChirho(explicitChirho = "John.1.1", greekIpaChirho = bundledSourceChirho())
+        settleChirho()
+        assertFalse("off until chosen", viewModelChirho.uiStateChirho.value.ipaLineChirho)
+        assertNull("nothing is looked up while Show IPA is off", viewModelChirho.uiStateChirho.value.greekIpaChirho)
+        viewModelChirho.setShowIpaChirho(true)
+        settleChirho()
+        val guideChirho = requireNotNull(bundledGuideChirho())
+        fun assertGuideValuesChirho() {
+            val stateChirho = viewModelChirho.uiStateChirho.value
+            assertTrue(stateChirho.ipaLineChirho)
+            for (wordChirho in viewModelChirho.wordsChirho()) {
+                val rowChirho = requireNotNull(guideChirho.rowChirho(SpokenChirho.wordChirho(wordChirho, overridesChirho)))
+                assertEquals(wordChirho.textChirho, rowChirho.valueChirho(stateChirho.renditionChirho), stateChirho.wordIpaChirho(wordChirho))
+                assertNotNull(stateChirho.wordIpaChirho(wordChirho))
+            }
+        }
+        assertEquals(GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO, viewModelChirho.uiStateChirho.value.renditionChirho)
+        assertGuideValuesChirho()
+        val aspiratesChirho = viewModelChirho.wordsChirho().map { viewModelChirho.uiStateChirho.value.wordIpaChirho(it) }
+        viewModelChirho.setRenditionChirho(GreekRenditionChirho.ERASMIAN_CHIRHO)
+        assertGuideValuesChirho()
+        assertTrue(
+            "Erasmian gives other values for some words",
+            viewModelChirho.wordsChirho().map { viewModelChirho.uiStateChirho.value.wordIpaChirho(it) } != aspiratesChirho,
+        )
+        viewModelChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        assertEquals("John.1.2", viewModelChirho.shownChirho())
+        assertGuideValuesChirho()
+    }
+
+    /** Without the guide (missing or changed assets), Greek passages carry no IPA line, quietly; nothing is guessed. */
+    @Test
+    fun withoutTheGuideGreekPassagesHaveNoIpaLine() = runTest(dispatcherChirho) {
+        val viewModelChirho = viewModelChirho(explicitChirho = "John.1.1")
+        settleChirho()
+        viewModelChirho.setShowIpaChirho(true)
+        val stateChirho = viewModelChirho.uiStateChirho.value
+        assertTrue(stateChirho.showIpaChirho)
+        assertFalse(stateChirho.ipaLineChirho)
+        assertTrue(viewModelChirho.wordsChirho().all { stateChirho.wordIpaChirho(it) == null })
+    }
+
+    /**
+     * The IPA line inherits every binding rule: an Aramaic word, or a word whose published clip no longer matches its
+     * text, binds no clip and so has no IPA, while the other words keep theirs.
+     */
+    @Test
+    fun aWordWithoutAnAcceptedClipHasNoIpa() = runTest(dispatcherChirho) {
+        val loadedChirho = worldChirho.loadedChirho("Prov.26.1")
+        val verseChirho = loadedChirho.verseChirho as HebrewVerseChirho
+        val rawChirho = publishedRecordsChirho("audio-chirho/proverbs-chirho/chapter-26-chirho.json", "clips_chirho", "Prov.26.1")
+        fun stateChirho(versionChirho: HebrewVerseChirho, clipsChirho: List<JsonObject>) = ReaderUiStateChirho(
+            passageChirho = loadedChirho.passageChirho,
+            recordingsChirho = OptionalChirho.ReadyChirho(
+                AudioSelectionChirho.recordingsChirho(
+                    clipsChirho, versionChirho, greekChirho = false,
+                    canonicalSha256Chirho = sha256HexChirho(versionChirho.canonicalTextChirho.encodeToByteArray()),
+                    decodeChirho = AudioRepositoryChirho::decodeClipChirho,
+                ),
+            ),
+            showIpaChirho = true,
+        )
+        val targetChirho = verseChirho.tokensChirho.first()
+        val otherChirho = verseChirho.tokensChirho.last()
+        val publishedChirho = stateChirho(verseChirho, rawChirho)
+        assertNotNull(publishedChirho.wordIpaChirho(targetChirho))
+
+        val aramaicChirho = verseChirho.copy(
+            tokensChirho = verseChirho.tokensChirho.map { if (it.idChirho == targetChirho.idChirho) it.copy(sourceLanguageChirho = "arc") else it },
+        )
+        val aramaicStateChirho = stateChirho(aramaicChirho, rawChirho)
+        assertNull("an Aramaic word never takes a Hebrew recording's IPA", aramaicStateChirho.wordIpaChirho(aramaicChirho.tokensChirho.first()))
+        assertEquals(publishedChirho.wordIpaChirho(otherChirho), aramaicStateChirho.wordIpaChirho(otherChirho))
+
+        val changedChirho = rawChirho.map {
+            if (it["token_id_chirho"]?.jsonPrimitive?.contentOrNull == targetChirho.idChirho) it.withChirho("text_chirho", "שָׁלוֹם") else it
+        }
+        assertNull("a clip made for other text binds nothing", stateChirho(verseChirho, changedChirho).wordIpaChirho(targetChirho))
     }
 
     @Test
@@ -361,10 +519,11 @@ class ReaderViewModelTestChirho {
         storeChirho.clear()
 
         preferencesChirho.autoplayChirho = true
+        val playedBeforeChirho = playbackChirho.playedChirho.size to videoChirho.playedChirho.size
         val resumedChirho = viewModelChirho()
         settleChirho()
         assertEquals("with it off, a fresh launch opens the last verse shown", "John.1.1", resumedChirho.shownChirho())
-        assertTrue("a launch's first verse never plays by itself", playbackChirho.playedChirho.isEmpty() && videoChirho.playedChirho.isEmpty())
+        assertEquals("a launch's first verse never plays by itself", playedBeforeChirho, playbackChirho.playedChirho.size to videoChirho.playedChirho.size)
     }
 
     @Test
@@ -383,15 +542,29 @@ class ReaderViewModelTestChirho {
         assertEquals("a verse the reader moved to but which failed is not kept either", PassageChirho("Prov", 3, 1), preferencesChirho.lastShownChirho)
     }
 
+    /** A reader who turned autoplay off keeps it off: moving to a verse plays nothing (GPT, DM #3664). */
     @Test
-    fun withAutoplayOffMovingToAVersePlaysNothing() = runTest(dispatcherChirho) {
+    fun withAutoplaySavedOffMovingToAVersePlaysNothing() = runTest(dispatcherChirho) {
+        preferencesChirho.autoplayChirho = false
         val viewModelChirho = viewModelChirho(explicitChirho = "Prov.26.1")
         settleChirho()
-        assertFalse("off by default", viewModelChirho.uiStateChirho.value.autoplayChirho)
+        assertFalse("the saved choice wins over the default", viewModelChirho.uiStateChirho.value.autoplayChirho)
         viewModelChirho.stepChirho(forwardChirho = true)
         settleChirho()
         assertEquals("Prov.26.2", viewModelChirho.shownChirho())
         assertTrue(playbackChirho.playedChirho.isEmpty() && videoChirho.playedChirho.isEmpty())
+    }
+
+    /** With nothing saved, as on a new install, a verse the reader moves to plays by itself; the launch's first verse stays quiet. */
+    @Test
+    fun withNothingSavedAVerseTheReaderMovesToPlaysByItself() = runTest(dispatcherChirho) {
+        val viewModelChirho = viewModelChirho(explicitChirho = "Prov.26.1")
+        settleChirho()
+        assertTrue("on by default (L.J., via GPT DM #3664)", viewModelChirho.uiStateChirho.value.autoplayChirho)
+        assertTrue("the launch's first verse stays quiet", playbackChirho.playedChirho.isEmpty() && videoChirho.playedChirho.isEmpty())
+        viewModelChirho.stepChirho(forwardChirho = true)
+        settleChirho()
+        assertEquals(listOf("verse:Prov.26.2" to 1f), playbackChirho.playedChirho)
     }
 
     /** A verse the reader moves to presses its own Play once, at the saved speed; the launch's first verse never does (GPT, DM #3642). */

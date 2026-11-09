@@ -28,9 +28,12 @@ import java.time.LocalDate
 class ReaderFlowTestChirho {
     private val composeChirho = createAndroidComposeRule<MainActivityChirho>()
 
-    /** The preferences are cleared before the activity starts, so every run begins as a first run. */
+    /**
+     * The preferences are cleared before the activity starts, so every run begins as a first run. This flow checks the
+     * manual Listen and Stop, so the reader here has turned autoplay off; LaunchFlowTestChirho covers the default.
+     */
     @get:Rule
-    val chainChirho: RuleChain = RuleChain.outerRule(FirstRunRuleChirho()).around(composeChirho)
+    val chainChirho: RuleChain = RuleChain.outerRule(FirstRunRuleChirho(autoplayChirho = false)).around(composeChirho)
 
     private fun textChirho(@StringRes idChirho: Int) = composeChirho.activity.getString(idChirho)
 
@@ -44,7 +47,8 @@ class ReaderFlowTestChirho {
     fun readerOpensTodayThenReadsLooksCloserListensAndSteps() {
         // A first run shows the short welcome; Start reading opens the reader.
         waitForChirho(hasText(textChirho(R.string.welcome_title_chirho)) and isHeading())
-        composeChirho.onNode(hasText(textChirho(R.string.welcome_start_chirho)) and hasClickAction()).performScrollTo().performClick()
+        // Start reading is pinned below the welcome's scrolling content (unit 176), so it is tapped where it is.
+        composeChirho.onNode(hasText(textChirho(R.string.welcome_start_chirho)) and hasClickAction()).performClick()
 
         // A fresh visit opens Proverbs at the local day of the month.
         waitForChirho(hasText(" ${LocalDate.now().dayOfMonth}:1", substring = true) and isHeading())

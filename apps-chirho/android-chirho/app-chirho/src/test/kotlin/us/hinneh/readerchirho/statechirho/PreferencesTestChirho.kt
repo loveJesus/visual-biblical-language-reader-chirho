@@ -51,11 +51,13 @@ private class MemoryStoreChirho : SharedPreferences {
 }
 
 class PreferencesTestChirho {
+    /** Nothing saved, as on a new install: today's Proverbs and autoplay both start on (GPT, DM #3642 and #3664). */
     @Test
-    fun rootsDefaultsAreTodaysProverbsOnAndAutoplayOff() {
+    fun withNothingSavedTodaysProverbsAndAutoplayAreOn() {
         val preferencesChirho = PreferencesChirho(MemoryStoreChirho())
         assertTrue(preferencesChirho.openTodayChirho)
-        assertFalse(preferencesChirho.autoplayChirho)
+        assertTrue("absent means on", preferencesChirho.autoplayChirho)
+        assertFalse("Show IPA is an optional view: absent means off", preferencesChirho.showIpaChirho)
         assertNull("no verse is saved before one is shown", preferencesChirho.lastShownChirho)
         assertNull("a first run has seen no welcome", preferencesChirho.welcomeSeenVersionChirho)
     }
@@ -65,15 +67,38 @@ class PreferencesTestChirho {
         val storeChirho = MemoryStoreChirho()
         PreferencesChirho(storeChirho).apply {
             openTodayChirho = false
-            autoplayChirho = true
+            autoplayChirho = false
             lastShownChirho = PassageChirho("John", 1, 14)
             welcomeSeenVersionChirho = 4L
         }
         val relaunchedChirho = PreferencesChirho(storeChirho)
         assertFalse(relaunchedChirho.openTodayChirho)
-        assertTrue(relaunchedChirho.autoplayChirho)
+        assertFalse("a saved off stays off", relaunchedChirho.autoplayChirho)
         assertEquals(PassageChirho("John", 1, 14), relaunchedChirho.lastShownChirho)
         assertEquals(4L, relaunchedChirho.welcomeSeenVersionChirho)
+    }
+
+    /** A choice saved in Settings wins over the default, either way. */
+    @Test
+    fun aSavedAutoplayChoiceAlwaysWins() {
+        val storeChirho = MemoryStoreChirho()
+        PreferencesChirho(storeChirho).autoplayChirho = false
+        assertFalse("saved off reads off on a fresh launch", PreferencesChirho(storeChirho).autoplayChirho)
+        PreferencesChirho(storeChirho).autoplayChirho = true
+        assertTrue("saved on reads on", PreferencesChirho(storeChirho).autoplayChirho)
+        assertEquals("and is recorded, so it stays on whatever the default", listOf(true), storeChirho.all.values.toList())
+    }
+
+    /** Show IPA stays off until the reader turns it on, and a choice either way survives a fresh launch (GPT, DM #3669). */
+    @Test
+    fun showIpaIsOffUntilChosenAndThenKept() {
+        val storeChirho = MemoryStoreChirho()
+        assertFalse(PreferencesChirho(storeChirho).showIpaChirho)
+        PreferencesChirho(storeChirho).showIpaChirho = true
+        assertTrue("saved on reads on after a fresh launch", PreferencesChirho(storeChirho).showIpaChirho)
+        PreferencesChirho(storeChirho).showIpaChirho = false
+        assertFalse("saved off reads off", PreferencesChirho(storeChirho).showIpaChirho)
+        assertEquals("one key of its own, beside the other choices", mapOf("show_ipa_chirho" to false), storeChirho.all)
     }
 
     @Test

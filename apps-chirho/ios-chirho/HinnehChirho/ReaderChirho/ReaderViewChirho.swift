@@ -114,6 +114,10 @@ struct ReaderViewChirho: View {
                     set: { modelChirho.sessionChirho.autoplayChirho = $0 }
                 ))
                 .accessibilityHint(messagesChirho.autoplayVerseHintChirho)
+                Toggle(messagesChirho.showIpaChirho, isOn: Binding(
+                    get: { modelChirho.sessionChirho.showIpaChirho },
+                    set: { modelChirho.sessionChirho.showIpaChirho = $0 }
+                ))
                 Button {
                     modelChirho.pauseChirho()
                     showingInfoChirho = true
@@ -208,19 +212,7 @@ struct ReaderViewChirho: View {
             .pickerStyle(.menu)
             .tint(PaletteChirho.quietChirho)
         }
-        if modelChirho.audioChirho.verseClipChirho != nil {
-            let activeChirho = modelChirho.playerChirho.activeIdChirho == "verse"
-            VStack(alignment: .leading, spacing: 4) {
-                Button { modelChirho.toggleVerseChirho() } label: {
-                    Label(activeChirho ? messagesChirho.stopChirho : modelChirho.versePlayLabelChirho,
-                          systemImage: activeChirho ? "stop.fill" : "play.fill")
-                }
-                .buttonStyle(.bordered)
-                if modelChirho.playerChirho.failedIdChirho == "verse" {
-                    Text(messagesChirho.audioFailedChirho).font(.caption).foregroundStyle(.red)
-                }
-            }
-        } else if verseChirho.hasAramaicChirho {
+        if modelChirho.audioChirho.verseClipChirho == nil && verseChirho.hasAramaicChirho {
             Text(messagesChirho.aramaicAudioChirho).font(.caption).foregroundStyle(.secondary)
         }
     }
@@ -282,8 +274,8 @@ struct SceneViewChirho: View {
     let modelChirho: ReaderModelChirho
 
     var body: some View {
-        if let sceneChirho {
-            VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 8) {
+            if let sceneChirho {
                 if let playerChirho = modelChirho.playerChirho.videoPlayerChirho,
                    let videoChirho = modelChirho.mediaChirho.videoChirho {
                     VideoPlayer(player: playerChirho)
@@ -299,23 +291,25 @@ struct SceneViewChirho: View {
                 .aspectRatio(CGFloat(sceneChirho.widthChirho) / CGFloat(max(1, sceneChirho.heightChirho)),
                              contentMode: .fit)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
-                .overlay(alignment: .bottomTrailing) {
-                    if modelChirho.mediaChirho.videoChirho != nil {
-                        Button { modelChirho.toggleVerseChirho() } label: {
-                            HStack(spacing: 8) {
-                                Image(systemName: modelChirho.playerChirho.activeIdChirho == "verse" ? "stop.fill" : "play.fill")
-                                    .accessibilityHidden(true)
-                                Text(modelChirho.playerChirho.activeIdChirho == "verse" ? modelChirho.messagesChirho.stopChirho : modelChirho.versePlayLabelChirho)
-                                    .multilineTextAlignment(.center)
-                                    .fixedSize(horizontal: false, vertical: true)
-                            }
-                            .frame(maxWidth: .infinity, minHeight: 44)
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .padding(12)
+                }
+            }
+            if modelChirho.preferredVerseVideoChirho != nil || modelChirho.audioChirho.verseClipChirho != nil
+                || modelChirho.playerChirho.activeIdChirho == "verse" {
+                Button { modelChirho.toggleVerseChirho() } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: modelChirho.playerChirho.activeIdChirho == "verse" ? "stop.fill" : "play.fill")
+                            .accessibilityHidden(true)
+                        Text(modelChirho.playerChirho.activeIdChirho == "verse" ? modelChirho.messagesChirho.stopChirho : modelChirho.versePlayLabelChirho)
+                            .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
+                    .frame(maxWidth: .infinity, minHeight: 44)
                 }
-                }
+                .buttonStyle(.borderedProminent)
+                .tint(PaletteChirho.nounChirho)
+            }
+            if modelChirho.playerChirho.failedIdChirho == "verse" {
+                Text(modelChirho.messagesChirho.audioFailedChirho).font(.caption).foregroundStyle(.red)
             }
         }
     }

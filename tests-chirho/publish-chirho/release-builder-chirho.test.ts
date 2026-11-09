@@ -1,16 +1,18 @@
 // For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV)
 
-import { lstat, readdir, readFile, rm, symlink, writeFile } from 'node:fs/promises';
+import { lstat, mkdir, readdir, readFile, rm, symlink, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 import {
 	buildReleaseChirho,
+	verifyWelcomeHeroChirho,
 	verifyReleaseChirho,
 	type BuildOptionsChirho,
 	type GitStateChirho
 } from '../../scripts-chirho/publish-chirho/build_release_chirho';
 import {
 	RELEASE_HEADERS_CHIRHO,
+	classifyPathChirho,
 	RefusalChirho,
 	sha256Chirho
 } from '../../scripts-chirho/publish-chirho/release_rules_chirho';
@@ -429,5 +431,33 @@ describe('release builder boundary', () => {
 			join(projectChirho.root_chirho, '.svelte-kit', 'cloudflare', 'hosts.html')
 		);
 		expect(await refusalChirho(buildChirho(projectChirho))).toMatch(/link or special file/);
+	});
+});
+
+describe('adopted welcome artwork boundary', () => {
+	it('refuses a welcome build with no adopted asset before writing a release', async () => {
+		const projectChirho = await makeProjectChirho();
+		const directoryChirho = join(projectChirho.root_chirho, 'src/lib/reader-chirho/session-chirho');
+		await mkdir(directoryChirho, { recursive: true });
+		await writeFile(
+			join(directoryChirho, 'ReaderWelcomeChirho.svelte'),
+			'<dialog>Welcome</dialog>'
+		);
+		expect(await refusalChirho(buildChirho(projectChirho))).toMatch(/Welcome artwork is missing/u);
+		await missingChirho(join(projectChirho.root_chirho, 'build-chirho'));
+	});
+
+	it('allows only the exact onboarding path and refuses missing or substituted bytes', () => {
+		expect(classifyPathChirho('onboarding-chirho/welcome-hero-v1-chirho.webp')).toBe('static');
+		expect(classifyPathChirho('onboarding-chirho/welcome-hero-v2-chirho.webp')).not.toBe('static');
+		const missingChirho: string[] = [];
+		verifyWelcomeHeroChirho(new Map(), missingChirho);
+		expect(missingChirho).not.toHaveLength(0);
+		const substitutedChirho: string[] = [];
+		verifyWelcomeHeroChirho(
+			new Map([['onboarding-chirho/welcome-hero-v1-chirho.webp', webpChirho(1200, 800)]]),
+			substitutedChirho
+		);
+		expect(substitutedChirho).not.toHaveLength(0);
 	});
 });

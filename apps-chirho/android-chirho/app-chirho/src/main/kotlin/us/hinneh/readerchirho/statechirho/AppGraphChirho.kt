@@ -6,6 +6,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
+import us.hinneh.readerchirho.audiochirho.GreekIpaGuideChirho
+import us.hinneh.readerchirho.audiochirho.GreekIpaSourceChirho
 import us.hinneh.readerchirho.audiochirho.GreekRenditionChirho
 import us.hinneh.readerchirho.contentchirho.ContentRepositoryChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
@@ -63,6 +65,10 @@ class PreferencesChirho(private val storeChirho: SharedPreferences) : ReaderPref
         get() = storeChirho.getBoolean(AUTOPLAY_CHIRHO, ReaderPreferencesChirho.DEFAULT_AUTOPLAY_CHIRHO)
         set(valueChirho) = storeChirho.edit { putBoolean(AUTOPLAY_CHIRHO, valueChirho) }
 
+    override var showIpaChirho: Boolean
+        get() = storeChirho.getBoolean(SHOW_IPA_CHIRHO, ReaderPreferencesChirho.DEFAULT_SHOW_IPA_CHIRHO)
+        set(valueChirho) = storeChirho.edit { putBoolean(SHOW_IPA_CHIRHO, valueChirho) }
+
     /** Kept as the published id; a value that no longer parses is ignored. */
     override var lastShownChirho: PassageChirho?
         get() = storeChirho.getString(LAST_SHOWN_CHIRHO, null)?.let { PassageChirho.parseChirho(it) }
@@ -90,6 +96,7 @@ class PreferencesChirho(private val storeChirho: SharedPreferences) : ReaderPref
         private const val LANGUAGE_CHIRHO = "interface_language_chirho"
         private const val OPEN_TODAY_CHIRHO = "open_today_chirho"
         private const val AUTOPLAY_CHIRHO = "autoplay_verse_change_chirho"
+        private const val SHOW_IPA_CHIRHO = "show_ipa_chirho"
         private const val LAST_SHOWN_CHIRHO = "last_shown_passage_chirho"
         private const val WELCOME_SEEN_CHIRHO = "welcome_seen_version_chirho"
     }
@@ -115,15 +122,25 @@ class AppGraphChirho(contextChirho: Context) {
         stagedVideosChirho,
     )
     /** Reviewed spoken readings exported from the website (GPT, DM #3551); a missing or invalid asset gives none. */
-    val audioChirho = AudioRepositoryChirho(remoteChirho, spokenOverridesChirho = {
-        try {
-            appContextChirho.assets.open(SpokenOverridesChirho.ASSET_PATH_CHIRHO).use { SpokenOverridesChirho.decodeChirho(it.readBytes()) }
-        } catch (missingChirho: IOException) {
-            SpokenOverridesChirho.NONE_CHIRHO
-        }
-    })
+    private val spokenOverridesChirho: SpokenOverridesChirho by lazy {
+        assetChirho(SpokenOverridesChirho.ASSET_PATH_CHIRHO)?.let { SpokenOverridesChirho.decodeChirho(it) } ?: SpokenOverridesChirho.NONE_CHIRHO
+    }
+    val audioChirho = AudioRepositoryChirho(remoteChirho, spokenOverridesChirho = { spokenOverridesChirho })
+
+    /** Root's draft Greek IPA guide bundled with the app (unit 175); a missing or changed asset leaves it unavailable. */
+    val greekIpaChirho = GreekIpaSourceChirho(
+        guideChirho = { GreekIpaGuideChirho.loadChirho { nameChirho -> assetChirho("${GreekIpaGuideChirho.DIRECTORY_CHIRHO}/$nameChirho") } },
+        overridesChirho = { spokenOverridesChirho },
+    )
     val imagesChirho = ImageLoaderChirho(remoteChirho, minOf(32L * 1024 * 1024, Runtime.getRuntime().maxMemory() / 8))
     val preferencesChirho = PreferencesChirho(appContextChirho)
+
+    /** A bundled asset's bytes, or null when it is missing. */
+    private fun assetChirho(pathChirho: String): ByteArray? = try {
+        appContextChirho.assets.open(pathChirho).use { it.readBytes() }
+    } catch (missingChirho: IOException) {
+        null
+    }
 }
 
 class HinnehApplicationChirho : Application() {

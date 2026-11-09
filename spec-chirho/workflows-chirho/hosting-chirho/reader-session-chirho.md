@@ -39,3 +39,21 @@ Unattended playback tests force the native media gain to zero before every play 
 The main verse action uses the same selected reading and matching visible-video predicate as playback. It says Play verse video only when the next Play uses that video, Listen to verse for audio/assembled words, and Stop while active. A failed visit-local video changes the next action to audio without replacing the failure status. Labels-only observer updates notice matching video insertion/hash changes, ignore their own text writes, and preserve the controller's self-contained offline form.
 
 A NotAllowedError from the browser restores idle controls and offers a short localized prompt to tap Play. It does not mark a verified video as failed: manual Play retries that same video. Other playback or media errors retain the existing visit-local video failure and next-Play audio fallback. Stale rejection callbacks cannot change a newer play.
+
+## Welcoming artwork and one media transport
+
+The welcome uses one adopted CC0 watercolor hero, a short introduction, two read-only source-bound word examples from the existing home preview, and an always reachable Start reading action. Only Start reading is pinned in the footer. The hero, examples, optional tour, Info, matching mobile store link and license note scroll together on small-height or enlarged-text screens. The examples are text, never inactive buttons or automatic speaker requests.
+
+The hero's sole static path, bytes, SHA-256 and dimensions live in the shared welcome-hero constants. The release classifier accepts only that exact onboarding path. A real source tree containing the welcome requires the adopted WebP; byte substitution or different dimensions refuse the release. Root preserves originals and derivatives before publication. The hero is UI artwork, never a canonical verse scene, chapter video or permission to expand a provider budget.
+
+```mermaid
+flowchart TD
+  SourceChirho[Verified verse and selected reading] --> MediaChirho[One fixed scene or video slot]
+  MediaChirho --> PrimaryChirho[One primary verse control directly below art]
+  PrimaryChirho --> VideoChirho{Matching valid video?}
+  VideoChirho -->|Yes| PlayVideoChirho[Existing synchronized video selector]
+  VideoChirho -->|No| PlayAudioChirho[Existing recorded or complete-word reading selector]
+  PrimaryChirho --> OptionsChirho[Existing speed pronunciation IPA and status]
+```
+
+The same AudioVerse instance supplies the one primary action for either media path, with selectors and status retained. Scene has no duplicate caption Play. Below-art placement is shared by Hebrew and Greek; on narrow screens artwork and its transport precede the source words. The visible action keeps its selected-media label and Stop behavior. Scene/reading validation, failure fallback, cancellation, word speakers and pronunciation choices are unchanged.

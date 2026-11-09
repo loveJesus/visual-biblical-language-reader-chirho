@@ -18,12 +18,24 @@ struct WordBoxChirho: View {
 
     private var messagesChirho: MessagesChirho { modelChirho.messagesChirho }
     private var cuesChirho: CueSetChirho { wordChirho.cuesChirho }
+    private var ipaChirho: String? {
+        guard modelChirho.sessionChirho.showIpaChirho, let verseChirho = modelChirho.verseChirho else { return nil }
+        return WordIpaChirho.valueChirho(wordChirho, verseChirho: verseChirho,
+            audioChirho: modelChirho.audioChirho, renditionChirho: modelChirho.greekRenditionChirho)
+    }
 
     var body: some View {
         VStack(spacing: 3) {
             cueRowChirho
             wordTextChirho
                 .overlay(alignment: .topTrailing) { speakerChirho }
+            if let ipaChirho {
+                Text("/\(ipaChirho)/")
+                    .font(.footnote)
+                    .foregroundStyle(PaletteChirho.quietChirho)
+                    .environment(\.layoutDirection, .leftToRight)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
             pictureFrameChirho
         }
         .padding(.trailing, clipChirho == nil ? 0 : Self.speakerRadiusChirho)
@@ -34,7 +46,8 @@ struct WordBoxChirho: View {
         .onTapGesture(perform: openChirho)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(accessibleWordChirho) + Text(", " + MorphologyChirho.summaryChirho(
-            wordChirho, modelChirho.localeChirho)))
+            wordChirho, modelChirho.localeChirho)
+            + (ipaChirho.map { ", \(messagesChirho.ipaChirho): /\($0)/" } ?? "")))
         .accessibilityHint(Text(messagesChirho.lookCloserChirho))
         .accessibilityAddTraits(.isButton)
         .accessibilityAction { openChirho() }

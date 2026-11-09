@@ -2,7 +2,7 @@
 
 # Native reader development and verification
 
-GPT coordinates the shared remote contract, authored launcher vectors and integration evidence. Claude owns only the SwiftUI iOS lane; Claude2 owns only the Kotlin/Compose Android lane. Their packages are excluded from the website's release inputs, fingerprint, watcher and formatter. They add no visitor-time generation, credentials, D1 or new paid service. Local build/run proof is separate from device signing and store distribution.
+Root coordinates the shared remote contract, authored launcher vectors and integration evidence. The active handoffs assign one implementation owner to each SwiftUI iOS and Kotlin/Compose Android lane. Their packages are excluded from the website's release inputs, fingerprint, watcher and formatter. They add no visitor-time generation, credentials, D1 or new paid service. Local build/run proof is separate from device signing and store distribution.
 
 ```mermaid
 flowchart TD
@@ -47,3 +47,33 @@ The active tasklist owns completion. The initial independent iOS proof exposed s
 Android's initial four disabled advisory classes hid eight version/target errors. Their unsuppressed report was preserved, the stable platform 37.0 was installed, and the lane moved to security-patched Gradle 9.8.2/AGP 9.5.0 plus the mature API 37 dependencies with no lint disables. Fresh root checks passed 34 JVM tests, six connected API 36 tests, the debug build, unsuppressed lint and the full corpus. The extra isolated API 37 emulator crashed before Android boot and app installation; it supplies no app/runtime acceptance. The shared old emulator stayed unchanged, and the owned temporary runtime copies were retired after process exit.
 
 Scoped proofs, source cuts and artifact hashes are in `workspace-chirho/native-apps-chirho/integration-chirho/2026-11-03-chirho/`. Both native lanes handed off and their Claude windows were closed; GPT now owns integration. Local v1 proof does not close physical/minimum-API devices, VoiceOver/TalkBack listening, complete web-feature parity, signing or store gates. Optional unavailable layers remain explicit rather than silently downgraded.
+
+## Shared bundled Greek IPA teaching guide
+
+```mermaid
+flowchart TD
+  manifests_chirho[27 Greek book manifests] --> verify_chirho[Verify260 canonical chapter byte hashes and exact source lessons]
+  verify_chirho --> spoken_chirho[Existing spokenWordChirho, unchanged raw Unicode]
+  spoken_chirho --> dedupe_chirho[Deduplicate exact UTF8 inputs, SHA256 keys]
+  dedupe_chirho --> helper_chirho[Existing greekWordIpaChirho, three existing profiles]
+  helper_chirho --> parts_chirho[Eight bounded parts with exact text and nullable profile values]
+  dedupe_chirho --> parts_chirho
+  pins_chirho[Function file hashes and full corpus pins] --> manifest_chirho[Part SHA, byte and row-count manifest]
+  parts_chirho --> manifest_chirho
+  manifest_chirho --> ios_chirho[Bundled iOS guide]
+  manifest_chirho --> android_chirho[Byte-identical Android guide]
+  manifest_chirho --> check_chirho[Existing exporter --check compares bytes without writing]
+  ios_chirho --> lookup_chirho[Exact raw UTF8 SHA key and selected profile lookup]
+  android_chirho --> lookup_chirho
+  lookup_chirho --> show_chirho[Optional teaching IPA or unavailable]
+```
+
+`apps-chirho/ios-chirho/scripts-chirho/export_teaching_chirho.ts` remains the one shared native export entrypoint. Its `export_greek_ipa_chirho.ts` helper verifies every Greek canonical chapter before calling the existing `spokenWordChirho` and `greekWordIpaChirho` functions. It exports those helper results unchanged; it neither implements native phonology nor calls a speech/provider service. The data is a broad word-level teaching guide, not recorded or acoustic IPA, reconstructed pitch or listener acceptance. The recorded clip IPA, chiefly Hebrew, is a separate existing source and is not generated, altered or inferred by this export. No transliteration is exported.
+
+The resource group is `greek-ipa-chirho/`, under iOS `ResourcesChirho/` and Android `assets/teaching-chirho/`. Both groups contain the same nine files: `greek-ipa-manifest-chirho.json` and `greek-ipa-part-00-chirho.json` through `greek-ipa-part-07-chirho.json`. Names are globally Greek-prefixed to avoid resource-name collisions; native loaders must resolve the actual packaged bundle layout. Existing teaching, book and reviewed-spoken assets remain unchanged.
+
+A key is lowercase SHA256 of the original spoken-text UTF8 bytes, without trimming, case conversion or Unicode normalization. The part index is the first raw digest byte bitwise AND 7. Each row retains `text_chirho` and `ipa_chirho` values for exactly `modern`, `modern_aspirates` and `erasmian`. Native lookup checks exact row-text UTF8 equality before returning the selected profile. Hash dictionaries use ASCII keys, avoiding Swift String's canonical-equivalence identity behavior. A null helper result, missing form, invalid bundle or unsupported profile remains unavailable; another profile is never substituted. Any NFD/lowercase analysis remains entirely inside the existing shared helper.
+
+The manifest binds the recipe, helper/exporter function-file SHA256s, the book-registry hash, all 27 book manifests and 260 chapter paths/hashes, aggregate corpus/input identities and per-part SHA256/bytes/counts. Fixed ceilings are 25,000 forms, 4,096 forms per part, 1 MiB per part, 128 KiB manifest and 9 MiB total, with 1,024 UTF8 bytes per input and 2,048 per IPA value. A native reader can validate/load this finite bundle once and use constant-time hash dictionary lookup thereafter; visitor-time synthesis and independent phonological inference are unnecessary.
+
+The existing export command writes only changed bundled files; `--check` rederives the expected bytes and exits nonzero on drift without regenerating output. Actual-corpus tests compare every exact form/profile with the same shared helper and both bundled copies. Negative controls cover composed/decomposed identities, helper-null and invalid-profile results, stale canonical bytes, altered part identity/length/hash, unknown schema and a cold real-exporter `--check` run over deliberately changed scratch data. Scratch copies, not shared content or recordings, own mutations in these tests.

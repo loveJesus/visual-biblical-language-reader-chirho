@@ -47,18 +47,39 @@
 		fill="none"
 		stroke="currentColor"
 		stroke-width="1.7"
-		><path
-			d={wordChirho
-				? 'M3 10h9l6-5v14l-6-5H3v-4Zm3 4v5h4v-5M21 8v8'
-				: 'M11 4 6 8H3v8h3l5 4V4Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14'}
-		/></svg
+		>{#if wordChirho}<path d="M3 10h9l6-5v14l-6-5H3v-4Zm3 4v5h4v-5M21 8v8" />{:else}<path
+				class="verse-start-glyph-chirho"
+				d="M8 5 19 12 8 19Z"
+				fill="currentColor"
+				stroke="none"
+			/><rect
+				class="verse-stop-glyph-chirho"
+				x="7"
+				y="7"
+				width="10"
+				height="10"
+				rx="1"
+				fill="currentColor"
+				stroke="none"
+			/>{/if}</svg
 	>
+
 	{#if !compactChirho}{#if wordChirho}{audioTChirho('hear_word_chirho')}{:else}<span
 				data-verse-action-label-chirho>{audioTChirho('play_verse_chirho')}</span
 			>{/if}{/if}
 </button>
 
 <style>
+	.verse-stop-glyph-chirho {
+		display: none;
+	}
+	.speech-button-chirho:global([aria-busy='true']) .verse-start-glyph-chirho {
+		display: none;
+	}
+	.speech-button-chirho:global([aria-busy='true']) .verse-stop-glyph-chirho {
+		display: block;
+	}
+
 	[data-verse-action-label-chirho] {
 		display: block;
 		min-width: 0;

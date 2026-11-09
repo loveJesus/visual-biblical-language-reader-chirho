@@ -139,7 +139,7 @@ A newer selection cancels the older passage's requests and stops its audio. A fa
 - Image reports stay in the website's protected flow: the app links to the verse on hinneh.us.
 - **Opening and playing.** L.J. confirmed both switches; root set the defaults (GPT, DM #3642).
   - **Settings › Open today's Proverbs** (on by default). Each fresh launch opens today's Proverbs; off, the last verse that loaded and verified. An explicit link wins either way. Coming back from the background, or a restore by Android, keeps the verse being read (`statechirho/LaunchChirho.kt`).
-  - **Settings › Play each verse you move to** (off by default). After Previous/Next, a swipe, or a book, chapter or verse choice, Play is pressed once, as soon as the new verse's pictures and recordings are known. It plays the verse's video with its reading, otherwise its best recording, under the speed and reading in effect.
+  - **Settings › Play each verse you move to** (on by default for a new install since 0.1.4; L.J., via GPT DM #3664: "our app should default to audio/video autoplay on for new installs etc"). A choice saved in Settings, on or off, always wins. After Previous/Next, a swipe, or a book, chapter or verse choice, Play is pressed once, as soon as the new verse's pictures and recordings are known. It plays the verse's video with its reading, otherwise its best recording, under the speed and reading in effect.
     - Never for a launch's first verse or behind the welcome, even when saved on.
     - Never over a sound the reader has started.
     - A newer choice cancels it.
@@ -151,7 +151,38 @@ A newer selection cancels the older passage's requests and stops its audio. A fa
   - Watch quick tour opens the website's shared tour, https://hinneh.us/tutorial-chirho/, in the browser and in the interface language (root row 170). Help and Info always link it too.
   - Nothing is fetched or played on the welcome.
 
-## Status (0.1.3 candidate, versionCode 4, 2026-11-08; not released)
+## Status (0.1.4 candidate, versionCode 5, 2026-11-08; not released)
+
+Version 0.1.4 combines three units, each its own checkpoint in the isolated copy.
+
+**174: autoplay on when nothing is saved** (L.J., via GPT DM #3664).
+- A verse the reader moves to plays by itself. A choice saved in Settings, on or off, always wins. 0.1.3 saved the switch only when the reader flipped it, so an updated install that never touched it becomes on too.
+- Unchanged: autoplay presses Play once, only after a move, never for a launch's first verse or behind the welcome; it never plays over a sound the reader started, a newer move cancels it, and it plays under the speed and reading in effect.
+
+**175: Show IPA** (L.J., via GPT DM #3665 and #3669: "the apps should also have the option to show the IPA").
+- **Settings › Show IPA**, under the pronunciation choice, is off until the reader turns it on, and is kept. It puts a small IPA line under each word, reading left to right inside a Hebrew line. A dash, heard by TalkBack as "IPA unavailable for this reading", marks a word without one.
+- **Hebrew**: only the IPA of the very clip the word's speaker plays (`ReaderUiStateChirho.wordClipChirho`, shared by the speaker, Look closer and the IPA line). It has passed every identity, recipe and IPA check, so Aramaic, held and unbound words have none. Nothing is inferred; the website's in-browser fallback phonetics are not ported.
+- **Greek**: root's draft broad teaching guide, the website's `greekWordIpaChirho` values exported unchanged for all 19,448 spoken forms and bundled under `assets/teaching-chirho/greek-ipa-chirho/` (one manifest and eight parts, 4,723,622 bytes; contract `build-chirho/native-greek-ipa-2026-11-08-chirho/contract-chirho.json`). `GreekIpaGuideChirho`:
+  - checks the manifest's shape, recipe and fixed bounds, and each part's index, length and SHA-256 when first read;
+  - looks a word up by the SHA-256 of its exact UTF-8 spoken bytes (`SpokenChirho.wordChirho` with the bundled reviewed readings), with no normalization;
+  - answers only for a row whose own text has the same bytes, with the value for the pronunciation in effect and never another profile's.
+  A failure leaves the guide, the part or the value unavailable, quietly. The lookup runs off the main thread only while Show IPA is on, and never touches audio selection, autoplay or holds.
+- Settings' hint and one sentence in Info say what the line is; the reading view stays clean. There is no transliteration: no supported per-language table exists, and dictionary headword spellings are not one.
+
+**176: the welcome and the verse's one Play** (L.J., via GPT DM #3673: "the 0.1.3 android welcome text is very uninviting nothing like the polished apps with beautiful onboarding"; "when no video is available the listen to verse button should be in the same place as the view video button").
+- **Welcome** (`WelcomeChirho.kt`), still one quick screen and never a wizard:
+  - root's watercolor (`res/drawable-nodpi/welcome_hero_chirho.webp`, CC0, pinned in `workspace-chirho/onboarding-chirho/2026-11-08-chirho/hero-manifest-chirho.json`), cropped about the open book and fading into the paper;
+  - a small brand line and the headline "Open the Word." / "Abra la Palabra.", with one sentence;
+  - a reader-example card with two real words drawn by the reader's own `WordSurfaceChirho`: Genesis 1:1 בְּרֵאשִׁית and John 1:1 Λόγος, with their published English and approved Spanish meanings (`WelcomeSampleTestChirho` checks every field against the static content and gloss files);
+  - one quiet line on the free, openly licensed code and materials and the planned languages, and one on Help and the tour.
+  - the picture takes about a third of the height above the pinned bar (about 170 dp on a narrow phone, as on iOS) and never more than its 3:2 shape, so the card shows before scrolling.
+  Start reading is pinned at the bottom with the quick tour and Info, in ink rather than faint teal, so the art and words scroll above it. Info stays in the bar only when it and the tour fit on one row (measured from their own labels); otherwise it is a quiet link right after the open-materials line (GPT, DM #3702). At an effective text scale of 1.5 or more only Start reading stays pinned and the tour and Info follow the words at full width, so the bar never grows over the screen (root's iOS XXXL lesson, GPT DM #3692). Nothing is fetched or played; Back still starts reading.
+- **Very large text** (font scale 2.0, GPT DM #3698): no label breaks inside a word or ends in an ellipsis. Previous/Next widen to their longest word and stack when they no longer fit side by side; Book, Chapter and Verse move to two rows, or one each; the reader's name takes its own line under Help and Settings. Text is never shrunk.
+- **One Play below the picture** (`ReaderScreenChirho.kt`): the verse's Play verse video / Listen to verse / Stop control, with its reading and failure notes, sits directly below the scene or video, in the same place for both, and is no longer repeated under the words. The video keeps its own tap-to-play surface. Its label and target still come from `versePlayChirho`, so after a failed video the same control reads the recording over the still.
+
+**Release note:** see `evidence-chirho/` for the exact EN/ES text sent with the candidate.
+
+## Status (0.1.3, versionCode 4, 2026-11-08; committed to Google Play production 02:23Z on 11-09)
 
 Version 0.1.3 adds the welcome, Info, the quick-tour links and the two switches (root unit 169; GPT, DM #3642, #3645 and #3650).
 It also names what Play will play: "Play verse video" or "Listen to verse" (L.J., via GPT DM #3653).

@@ -35,10 +35,16 @@ public struct MessagesChirho: Sendable {
     public let startTodayHintChirho: String
     public let autoplayVerseChirho: String
     public let autoplayVerseHintChirho: String
+    public let showIpaChirho: String
+    public let ipaChirho: String
+    public let ipaGuideChirho: String
     public let infoChirho: String
     public let welcomeChirho: String
+    public let welcomeHeadlineChirho: String
     public let welcomeIntroChirho: String
     public let welcomeUseChirho: String
+    public let welcomeFutureChirho: String
+    public let readerPreviewChirho: String
     public let openMaterialsChirho: String
     public let startReadingChirho: String
     public let watchTourChirho: String
@@ -186,12 +192,18 @@ public struct MessagesChirho: Sendable {
         startTodayChirho: "Start with today’s Proverbs",
         startTodayHintChirho: "On a fresh launch, open the chapter for today’s date. Turn off to resume your last passage.",
         autoplayVerseChirho: "Play when I change verses",
-        autoplayVerseHintChirho: "Play an available recording or video after choosing a different verse. Off on launch.",
+        autoplayVerseHintChirho: "Play an available recording or video after choosing a different verse. Opening the app stays quiet.",
+        showIpaChirho: "Show IPA",
+        ipaChirho: "IPA",
+        ipaGuideChirho: "Show IPA in Settings adds phonetic symbols below words where available. Hebrew uses the saved word recording’s IPA. Greek is a draft teaching guide for your selected pronunciation, not a transcription of the recording. The symbols are the same in English and Spanish; some forms have no guide yet.",
         infoChirho: "Info",
         welcomeChirho: "Welcome to Hinneh",
-        welcomeIntroChirho: "Read Scripture in Hebrew and Greek, one verse at a time, with pictures and word meanings. More languages are planned.",
-        welcomeUseChirho: "Tap a word to look closer or its speaker to hear it. Play the verse when a recording or video is available.",
-        openMaterialsChirho: "Open-source code and openly licensed study materials. Licenses and credits are in Info.",
+        welcomeHeadlineChirho: "Open the Word.",
+        welcomeIntroChirho: "Explore the Bible in Hebrew and Greek through pictures, sound, and words you can touch.",
+        welcomeUseChirho: "Tap a word to look closer. Hear a word or play a verse where a recording is available.",
+        welcomeFutureChirho: "More languages are planned.",
+        readerPreviewChirho: "Reader preview",
+        openMaterialsChirho: "Open-source code and openly licensed study materials.",
         startReadingChirho: "Start reading",
         watchTourChirho: "Watch quick tour",
         reopenTourChirho: "Return to this tour any time from Reading key or Info.",
@@ -309,11 +321,17 @@ public struct MessagesChirho: Sendable {
         startTodayHintChirho: "Al iniciar la aplicación, abre el capítulo de la fecha de hoy. Desactívalo para volver al último pasaje.",
         autoplayVerseChirho: "Reproducir al cambiar de versículo",
         autoplayVerseHintChirho: "Reproduce una grabación o un video disponible al elegir otro versículo. No se inicia al abrir la aplicación.",
+        showIpaChirho: "Mostrar AFI",
+        ipaChirho: "AFI",
+        ipaGuideChirho: "Mostrar AFI en Ajustes añade símbolos fonéticos debajo de las palabras cuando están disponibles. El hebreo usa el AFI de la grabación guardada de cada palabra. El griego es una guía didáctica provisional para la pronunciación elegida, no una transcripción de la grabación. Los símbolos son iguales en inglés y español; algunas formas aún no tienen guía.",
         infoChirho: "Información",
         welcomeChirho: "Bienvenido a Hinneh",
-        welcomeIntroChirho: "Lee las Escrituras en hebreo y griego, un versículo a la vez, con imágenes y significados de palabras. Se planean más idiomas.",
-        welcomeUseChirho: "Toca una palabra para verla más de cerca o su altavoz para escucharla. Reproduce el versículo cuando haya una grabación o un video.",
-        openMaterialsChirho: "Código abierto y materiales de estudio con licencias abiertas. Las licencias y los créditos están en Información.",
+        welcomeHeadlineChirho: "Abre la Palabra.",
+        welcomeIntroChirho: "Explora la Biblia en hebreo y griego con imágenes, sonido y palabras que puedes tocar.",
+        welcomeUseChirho: "Toca una palabra para verla de cerca. Escucha una palabra o un versículo cuando haya una grabación.",
+        welcomeFutureChirho: "Se planean más idiomas.",
+        readerPreviewChirho: "Vista previa del lector",
+        openMaterialsChirho: "Código abierto y materiales de estudio con licencias abiertas.",
         startReadingChirho: "Comenzar a leer",
         watchTourChirho: "Ver recorrido breve",
         reopenTourChirho: "Vuelve a este recorrido cuando quieras desde Clave de lectura o Información.",

@@ -232,6 +232,22 @@ testChirho(
 	}
 );
 
+testChirho('one primary transport retains the speed, IPA and live status controls', async () => {
+	const { container: containerChirho, unmount: unmountChirho } = renderChirho(AudioVerseChirho, {
+		lessonChirho: lessonForChirho(1)
+	});
+	await viChirho.waitFor(() => expectChirho(recordingsLoadedChirho(containerChirho)).toBe(1));
+	expectChirho(
+		containerChirho.querySelectorAll('.verse-play-chirho [data-pronounce-chirho]')
+	).toHaveLength(1);
+	expectChirho(containerChirho.querySelectorAll('[data-speech-rate-chirho]')).toHaveLength(1);
+	expectChirho(containerChirho.querySelectorAll('[data-show-ipa-chirho]')).toHaveLength(1);
+	expectChirho(
+		containerChirho.querySelector('[data-audio-status-chirho]')?.getAttribute('aria-live')
+	).toBe('polite');
+	unmountChirho();
+});
+
 // A genuine human reading bypasses only the whole-verse Aramaic hold, never AI or invalid sources.
 for (const [chapterChirho, enabledChirho, countChirho] of [
 	[3, true, 1],

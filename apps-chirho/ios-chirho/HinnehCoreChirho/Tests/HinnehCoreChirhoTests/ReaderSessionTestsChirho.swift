@@ -15,20 +15,41 @@ struct ReaderSessionTestsChirho {
         return (try #require(UserDefaults(suiteName: nameChirho)), nameChirho)
     }
 
-    @Test func todayDefaultsOnAutoplayOffAndPreferencesSurviveANewSessionChirho() throws {
+    @Test func ipaStartsHiddenAndKeepsAnExplicitDeviceChoiceChirho() throws {
+        let (storeChirho, nameChirho) = try defaultsChirho()
+        defer { storeChirho.removePersistentDomain(forName: nameChirho) }
+        let firstChirho = ReaderSessionChirho(defaultsChirho: storeChirho)
+        #expect(!firstChirho.showIpaChirho)
+        #expect(firstChirho.autoplayChirho)
+        firstChirho.showIpaChirho = true
+        let secondChirho = ReaderSessionChirho(defaultsChirho: storeChirho)
+        #expect(secondChirho.showIpaChirho)
+        secondChirho.showIpaChirho = false
+        #expect(!ReaderSessionChirho(defaultsChirho: storeChirho).showIpaChirho)
+        #expect(ReaderSessionChirho(defaultsChirho: storeChirho).autoplayChirho)
+    }
+
+    @Test func todayAndAutoplayDefaultOnWhileExplicitChoicesSurviveANewSessionChirho() throws {
         let (storeChirho, nameChirho) = try defaultsChirho()
         defer { storeChirho.removePersistentDomain(forName: nameChirho) }
         let firstChirho = ReaderSessionChirho(defaultsChirho: storeChirho)
         #expect(firstChirho.startTodayChirho)
-        #expect(!firstChirho.autoplayChirho)
+        #expect(firstChirho.autoplayChirho)
         _ = firstChirho.launchChirho(requestedChirho: nil, booksChirho: booksChirho, versionChirho: "0.1.2")
-        firstChirho.finishWelcomeChirho()
+        #expect(!firstChirho.consumeAutoplayChirho(firstChirho.beginOpenChirho(.launchChirho, changedChirho: true)))
         #expect(!firstChirho.consumeAutoplayChirho(firstChirho.beginOpenChirho(.navigationChirho, changedChirho: true)))
+        firstChirho.finishWelcomeChirho()
+        #expect(firstChirho.consumeAutoplayChirho(firstChirho.beginOpenChirho(.navigationChirho, changedChirho: true)))
         firstChirho.startTodayChirho = false
-        firstChirho.autoplayChirho = true
+        firstChirho.autoplayChirho = false
         let secondChirho = ReaderSessionChirho(defaultsChirho: storeChirho)
         #expect(!secondChirho.startTodayChirho)
-        #expect(secondChirho.autoplayChirho)
+        #expect(!secondChirho.autoplayChirho)
+        _ = secondChirho.launchChirho(requestedChirho: nil, booksChirho: booksChirho, versionChirho: "0.1.2")
+        #expect(!secondChirho.consumeAutoplayChirho(secondChirho.beginOpenChirho(.navigationChirho, changedChirho: true)))
+        secondChirho.autoplayChirho = true
+        let thirdChirho = ReaderSessionChirho(defaultsChirho: storeChirho)
+        #expect(thirdChirho.autoplayChirho)
     }
 
     @Test func dailyAndResumeAreColdLaunchOnlyAndExplicitPassageWinsChirho() throws {
@@ -77,10 +98,9 @@ struct ReaderSessionTestsChirho {
         let (storeChirho, nameChirho) = try defaultsChirho()
         defer { storeChirho.removePersistentDomain(forName: nameChirho) }
         let sessionChirho = ReaderSessionChirho(defaultsChirho: storeChirho)
-        sessionChirho.autoplayChirho = true
         _ = sessionChirho.launchChirho(requestedChirho: lastChirho, booksChirho: booksChirho, versionChirho: "0.1.2")
         let welcomeIntentChirho = sessionChirho.beginOpenChirho(.navigationChirho, changedChirho: true)
-        #expect(!sessionChirho.consumeAutoplayChirho(welcomeIntentChirho), "the welcome must stay silent even with autoplay opted in")
+        #expect(!sessionChirho.consumeAutoplayChirho(welcomeIntentChirho), "the welcome stays silent with the new-install autoplay default on")
         sessionChirho.finishWelcomeChirho()
         #expect(!sessionChirho.consumeAutoplayChirho(welcomeIntentChirho), "dismissing welcome never starts an old intent")
         for reasonChirho in [PassageOpenReasonChirho.launchChirho, .deepLinkChirho, .retryChirho] {

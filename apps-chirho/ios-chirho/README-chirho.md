@@ -2,8 +2,8 @@
 
 # Hinneh for iOS
 
-A native SwiftUI reader for the original-language Bible text at <https://hinneh.us/>. It is not a
-WebView or a wrapper, and the corpus is not bundled.
+A native SwiftUI reader for the original-language Bible text at <https://hinneh.us/>. Bible chapters
+load on demand; the teaching keys and Greek pronunciation guide are bundled.
 
 The app reads one verified chapter at a time and shows:
 
@@ -13,6 +13,7 @@ The app reads one verified chapter at a time and shows:
 - individual word recordings and available whole-verse readings;
 - source-bound verse videos where supplied, with one matching soundtrack;
 - previous/next navigation and horizontal swipes, plus saved playback speed.
+- optional IPA below words, with a saved display preference.
 
 The shared remote contract is in [../README-chirho.md](../README-chirho.md).
 
@@ -60,11 +61,15 @@ Launch arguments:
 
 ## Launch and playback preferences
 
-Settings offers “Start with today’s Proverbs” (on by default) and “Play when I change verses” (off by default). Today applies only to a fresh app launch; switching back to the foreground keeps the current passage. With Today off, a fresh launch resumes the last passage whose text loaded and verified. An explicit passage request wins over either preference.
+Settings offers “Start with today’s Proverbs” and “Play when I change verses”, both on by default for a new install. A saved On or Off choice is kept. Today applies only to a fresh app launch; switching back to the foreground keeps the current passage. With Today off, a fresh launch resumes the last passage whose text loaded and verified. An explicit passage request wins over either preference.
 
-Autoplay is opt-in and uses the same verified video or saved verse recording as manual Play after the reader chooses a different verse. Launch, restore, a delivered passage link, retry, changing pronunciation and dismissing welcome stay quiet. Stale navigation and backgrounding cancel pending playback. No device speech or generation fallback is added.
+Autoplay uses the same verified video or saved verse recording as manual Play after the reader chooses a different verse. Launch, restore, a delivered passage link, retry, changing pronunciation and dismissing welcome stay quiet, even with the new-install autoplay default on. Stale navigation and backgrounding cancel pending playback. No device speech or generation fallback is added.
 
-One brief English/Spanish welcome appears for each new app version, with a primary Start reading action, an optional Watch quick tour link and optional Info. The tour can be reopened from Reading key or Info and opens the localized `https://hinneh.us/tutorial-chirho/?lang_chirho=en|es` page only after a tap; no welcome media is preloaded or played. Settings → Info remains available without a loaded verse and carries the explanation, license overview and Be'eri credit. The welcome version follows the semantic app version, not the build number or downloaded-media updates. See `docs-chirho/reader-session-chirho.md` for the workflow and verification limits.
+One brief English/Spanish welcome appears for each new app version, with a watercolor illustration, concise purpose and a read-only word/gloss preview from the verified passage. Start reading remains pinned at the bottom, with optional tour and Info access. The preview adds no speaker, image request or inactive word button. The tour can be reopened from Reading key or Info and opens the localized `https://hinneh.us/tutorial-chirho/?lang_chirho=en|es` page only after a tap; no welcome media is preloaded or played. Settings → Info remains available without a loaded verse and carries the explanation, license overview and Be'eri credit. The welcome version follows the semantic app version, not the build number or downloaded-media updates. See `docs-chirho/reader-session-chirho.md` for the workflow and verification limits.
+
+Settings → Show IPA is off until chosen and remembers the device’s choice. Hebrew displays the IPA from that exact accepted word recording; a held, missing or Aramaic form gets none. Greek uses a bundled draft teaching guide from the existing shared pronunciation helper, keyed to the exact spoken form and selected Modern, Modern with Aspirates or Erasmian rendition. It does not transcribe the saved recording. Symbols remain the same in English and Spanish; only the interface explanation changes. Source words stay unchanged, and no transliteration is inferred.
+
+One primary control immediately below the scene or video uses “Play verse video” or “Listen to verse” according to the same verified preferred-media selection used by playback. A failed video leaves the standalone accepted recording available there on the next explicit Play. Stop occupies that same position while active; the Greek pronunciation picker remains beside the source text.
 
 ## What the app trusts, and how
 

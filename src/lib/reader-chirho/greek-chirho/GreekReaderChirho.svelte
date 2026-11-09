@@ -111,16 +111,25 @@
 				)}</span
 			>
 		</div>
+		{#snippet mediaControlsChirho()}
+			<AudioVerseChirho
+				{lessonChirho}
+				{verseNavigationChirho}
+				{videoChirho}
+				{navigationGenerationChirho}
+				onReadyChirho={onRecordingsReadyChirho}
+				onHumanReadingChirho={(readingChirho) => (humanReadingChirho = readingChirho)}
+			/>
+		{/snippet}
 		<section class="reading-grid-chirho" aria-label={readerTChirho('reading_grid_greek_chirho')}>
+			<SceneChirho
+				{presentationChirho}
+				verseIdChirho={lessonChirho.id_chirho}
+				{videoChirho}
+				canonicalTextChirho={lessonChirho.canonical_text_chirho}
+				controlsChirho={mediaControlsChirho}
+			/>
 			<div class="verse-panel-chirho">
-				<AudioVerseChirho
-					{lessonChirho}
-					{verseNavigationChirho}
-					{videoChirho}
-					{navigationGenerationChirho}
-					onReadyChirho={onRecordingsReadyChirho}
-					onHumanReadingChirho={(readingChirho) => (humanReadingChirho = readingChirho)}
-				/>
 				{#key lessonChirho.id_chirho}<GreekPassageChirho
 						{lessonChirho}
 						{iconsChirho}
@@ -130,12 +139,6 @@
 					<span class="small-note-chirho">{readerTChirho('read_ltr_chirho')}</span>
 				</div>
 			</div>
-			<SceneChirho
-				{presentationChirho}
-				verseIdChirho={lessonChirho.id_chirho}
-				{videoChirho}
-				canonicalTextChirho={lessonChirho.canonical_text_chirho}
-			/>
 		</section>
 
 		<GreekGrammarChirho />

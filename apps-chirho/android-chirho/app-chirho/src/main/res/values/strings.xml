@@ -92,6 +92,7 @@
 
     <string name="about_heading_chirho">About Hinneh</string>
     <string name="about_aids_chirho">Hinneh’s pictures, videos, word recordings and synthesized verse readings are AI-generated study aids, still awaiting review. Hebrew verse readings by Rabbi Dan Be’eri are human recordings, used under CC BY-SA 3.0. The original text and its sources guide the reading. To report a problem with a picture, open its verse on hinneh.us.</string>
+    <string name="about_ipa_chirho">Show IPA: Hebrew shows the IPA each word’s recording was made from. Greek uses Hinneh’s broad teaching guide for the pronunciation you choose, a draft rather than a recording.</string>
     <string name="privacy_policy_chirho">Privacy policy</string>
     <string name="about_support_chirho">About and support</string>
     <string name="contact_chirho">Contact</string>
@@ -115,10 +116,12 @@
     <string name="version_chirho">Version %1$s</string>
 
     <!-- The first-run and new-version welcome (GPT, DM #3642 and #3645): short, with Start reading first. -->
-    <string name="welcome_title_chirho">Welcome to Hinneh</string>
-    <string name="welcome_what_chirho">Read the Bible in its original Hebrew and Greek, word by word. Colors, small symbols, pictures and sound help each word come clear.</string>
-    <string name="welcome_open_chirho">More languages are planned. Hinneh is free, and its source code and study materials are openly licensed: Info lists the licenses and credits.</string>
-    <string name="welcome_tour_chirho">You can open the quick tour any time from Help (?).</string>
+    <string name="welcome_title_chirho">Open the Word.</string>
+    <string name="brand_hebrew_chirho" translatable="false">הִנֵּה</string>
+    <string name="welcome_what_chirho">Explore the Bible in Hebrew and Greek through pictures, sound, and words you can touch.</string>
+    <string name="welcome_sample_chirho">Colors and small marks show each word’s grammar.</string>
+    <string name="welcome_open_chirho">Free, with openly licensed code and study materials. More languages are planned.</string>
+    <string name="welcome_tour_chirho">Help (?) and the quick tour are always at hand.</string>
     <string name="welcome_start_chirho">Start reading</string>
     <string name="tour_chirho">Watch quick tour</string>
     <string name="help_chirho">Help and reading key</string>
@@ -129,6 +132,10 @@
     <string name="open_today_hint_chirho">Each new launch opens the Proverbs chapter for today’s date. Off: Hinneh opens the last verse you read.</string>
     <string name="autoplay_chirho">Play each verse you move to</string>
     <string name="autoplay_hint_chirho">Its video or reading starts by itself. Nothing plays when Hinneh opens.</string>
+    <string name="show_ipa_chirho">Show IPA</string>
+    <string name="show_ipa_hint_chirho">A draft guide under each word. Hebrew shows the IPA its recording was made from; Greek follows your Greek pronunciation. A dash means none is available.</string>
+    <string name="ipa_unavailable_chirho">IPA unavailable for this reading</string>
+    <string name="ipa_label_chirho">IPA: %1$s</string>
     <string name="interface_language_chirho">Interface language</string>
     <string name="device_language_chirho">Device language</string>
     <string name="text_size_chirho">Text size</string>

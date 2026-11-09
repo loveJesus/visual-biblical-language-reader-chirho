@@ -30,7 +30,9 @@ import us.hinneh.readerchirho.statechirho.InterfaceLanguageChirho
 
 /**
  * Reading settings. The two switches L.J. confirmed come first (GPT, DM #3642): today's Proverbs on each fresh
- * launch, and autoplay for each verse the reader moves to. About Hinneh is one entry that opens Info.
+ * launch, and autoplay for each verse the reader moves to. Show IPA sits under the pronunciation choice it follows,
+ * and its hint says what the guide is, so the reading view stays clean (GPT, DM #3669). About Hinneh is one entry
+ * that opens Info.
  */
 @Composable
 fun SettingsSheetChirho(
@@ -40,12 +42,14 @@ fun SettingsSheetChirho(
     speedChirho: Float,
     openTodayChirho: Boolean,
     autoplayChirho: Boolean,
+    showIpaChirho: Boolean,
     onLanguageChirho: (InterfaceLanguageChirho) -> Unit,
     onTextScaleChirho: (Float) -> Unit,
     onRenditionChirho: (GreekRenditionChirho) -> Unit,
     onSpeedChirho: (Float) -> Unit,
     onOpenTodayChirho: (Boolean) -> Unit,
     onAutoplayChirho: (Boolean) -> Unit,
+    onShowIpaChirho: (Boolean) -> Unit,
     onInfoChirho: () -> Unit,
     onDismissChirho: () -> Unit,
 ) {
@@ -87,6 +91,7 @@ fun SettingsSheetChirho(
                 ),
                 renditionChirho, onRenditionChirho,
             )
+            SwitchRowChirho(stringResource(R.string.show_ipa_chirho), stringResource(R.string.show_ipa_hint_chirho), showIpaChirho, onShowIpaChirho)
             ChoiceGroupChirho(
                 stringResource(R.string.speed_chirho),
                 listOf(

@@ -10,6 +10,8 @@
 // build-chirho/public-chirho, the one directory the publish config deploys. Anything else is a
 // local review build in build-chirho/review-chirho. Exit 2: refused, nothing written.
 
+import { WELCOME_HERO_CHIRHO } from '../../src/lib/site-chirho/apps-chirho/welcome-hero-chirho';
+import { readWebpChirho } from './webp_chirho';
 import { verifiedVideoFactsChirho } from './video_rules_chirho';
 import { addVerifiedTutorialFactsChirho } from './r2-chirho/tutorial-rules-chirho';
 import { readEffectiveMediaDocumentsChirho } from './r2-chirho/scene-corrections-chirho';
@@ -177,6 +179,30 @@ export async function readMediaRecordsChirho(
 	return [...recordsChirho, ...effectiveChirho.retained_aliases_chirho];
 }
 
+/** Workflow: hosting-chirho/reader-session-chirho.md. Exactly one adopted CC0 welcome artwork. */
+export function verifyWelcomeHeroChirho(filesChirho: FilesChirho, reasonsChirho: string[]): void {
+	const bytesChirho = filesChirho.get(WELCOME_HERO_CHIRHO.asset_path_chirho.slice(1));
+	if (!bytesChirho) {
+		reasonsChirho.push('Welcome artwork is missing');
+		return;
+	}
+	if (
+		bytesChirho.byteLength !== WELCOME_HERO_CHIRHO.bytes_chirho ||
+		sha256Chirho(bytesChirho) !== WELCOME_HERO_CHIRHO.sha256_chirho
+	)
+		reasonsChirho.push('Welcome artwork differs from the adopted image');
+	try {
+		const dimensionsChirho = readWebpChirho(bytesChirho);
+		if (
+			dimensionsChirho.width_chirho !== WELCOME_HERO_CHIRHO.width_chirho ||
+			dimensionsChirho.height_chirho !== WELCOME_HERO_CHIRHO.height_chirho
+		)
+			reasonsChirho.push('Welcome artwork dimensions differ');
+	} catch {
+		reasonsChirho.push('Welcome artwork is not a valid WebP');
+	}
+}
+
 /** Validates the adapter output and writes the release; throws RefusalChirho before any write. */
 export async function buildReleaseChirho(optionsChirho: BuildOptionsChirho): Promise<{
 	manifest_chirho: ReleaseManifestChirho;
@@ -218,6 +244,14 @@ export async function buildReleaseChirho(optionsChirho: BuildOptionsChirho): Pro
 		reasonsChirho.push(
 			`${publicChirho.size} files exceed the ${ASSET_FILE_LIMIT_CHIRHO}-file limit`
 		);
+	// Legacy fixtures without a welcome remain valid; an actual welcome build requires its adopted asset.
+	if (
+		publicChirho.has(WELCOME_HERO_CHIRHO.asset_path_chirho.slice(1)) ||
+		(await readOptionalChirho(
+			join(rootChirho, 'src/lib/reader-chirho/session-chirho/ReaderWelcomeChirho.svelte')
+		))
+	)
+		verifyWelcomeHeroChirho(publicChirho, reasonsChirho);
 	const declaredMediaChirho = await readMediaRecordsChirho(rootChirho, reasonsChirho);
 	const remoteChirho = remoteModeChirho
 		? await remoteMediaChirho(

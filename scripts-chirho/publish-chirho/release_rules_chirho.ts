@@ -4,6 +4,7 @@
 // Workflow (spec-chirho/research-chirho/26-10-27-publication-readiness-chirho.md): adapter
 // output → path allowlist → declared media and content → private-material scan → release.
 
+import { WELCOME_HERO_CHIRHO } from '../../src/lib/site-chirho/apps-chirho/welcome-hero-chirho';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { readWebpChirho } from './webp_chirho';
@@ -134,6 +135,7 @@ export function classifyPathChirho(pathChirho: string): FileAreaChirho | string 
 	if (segmentsChirho[0] === 'content-chirho' && extensionChirho === 'json') return 'content';
 	if (segmentsChirho[0] === 'assets-chirho' && extensionChirho === 'webp') return 'media';
 	if (
+		pathChirho === WELCOME_HERO_CHIRHO.asset_path_chirho.slice(1) ||
 		pathChirho === 'robots.txt' ||
 		pathChirho === 'sitemap.xml' ||
 		pathChirho === 'library-chirho/books-chirho.json' ||

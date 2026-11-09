@@ -174,7 +174,7 @@ for (const platformChirho of [
 					});
 				}, platformChirho);
 				await pageChirho.goto(`${readerOriginChirho}/?lang_chirho=${localeChirho}#Prov.1.1`);
-				const installChirho = pageChirho.locator('.welcome-install-chirho a');
+				const installChirho = pageChirho.locator('.welcome-install-chirho');
 				await expectChirho(installChirho).toHaveCount(platformChirho.host_chirho ? 1 : 0);
 				const hrefChirho = platformChirho.host_chirho
 					? await installChirho.getAttribute('href')
@@ -188,11 +188,15 @@ for (const platformChirho of [
 				await pageChirho.locator('.reader-help-chirho summary').click();
 				if (hrefChirho)
 					await expectChirho(
-						pageChirho.locator('.reader-help-chirho a').filter({ hasText: 'Hinneh' })
+						pageChirho.locator(
+							'.reader-help-chirho a[href^="https://apps.apple.com/"], .reader-help-chirho a[href^="https://play.google.com/"]'
+						)
 					).toHaveAttribute('href', hrefChirho);
 				else
 					await expectChirho(
-						pageChirho.locator('.reader-help-chirho a').filter({ hasText: 'Hinneh' })
+						pageChirho.locator(
+							'.reader-help-chirho a[href^="https://apps.apple.com/"], .reader-help-chirho a[href^="https://play.google.com/"]'
+						)
 					).toHaveCount(0);
 				await pageChirho.locator('.reader-settings-chirho summary').click();
 				const autoplayChirho = pageChirho.locator('.reader-settings-chirho input').nth(1);
@@ -255,5 +259,41 @@ testChirho(
 		await expectChirho(buttonChirho).toHaveAttribute('aria-busy', 'true');
 		await buttonChirho.click();
 		await expectChirho(pageChirho.locator('video[data-scene-video-chirho]')).toBeHidden();
+	}
+);
+
+testChirho(
+	'the single verse action stays directly below the same-sized media slot for video and audio',
+	async ({ page: pageChirho }) => {
+		await pageChirho.addInitScript(() =>
+			localStorage.setItem('hinneh-autoplay-verse-chirho', 'false')
+		);
+		await pageChirho.goto(`${readerOriginChirho}/?lang_chirho=en#Prov.1.1`);
+		await pageChirho.locator('.welcome-start-chirho').click();
+		const buttonChirho = pageChirho.locator('.verse-play-chirho .speech-button-chirho');
+		await expectChirho(buttonChirho).toHaveCount(1);
+		await expectChirho(pageChirho.locator('button[data-verse-video-play-chirho]')).toHaveCount(0);
+		const measureChirho = () =>
+			pageChirho.evaluate(() => {
+				const mediaChirho = document.querySelector('.scene-media-chirho')!.getBoundingClientRect();
+				const playChirho = document
+					.querySelector('.verse-play-chirho .speech-button-chirho')!
+					.getBoundingClientRect();
+				return {
+					gap_chirho: playChirho.top - mediaChirho.bottom,
+					left_chirho: playChirho.left - mediaChirho.left,
+					width_chirho: playChirho.width
+				};
+			});
+		await expectChirho(buttonChirho).toBeEnabled();
+		const videoPositionChirho = await measureChirho();
+		await pageChirho.locator('.verse-step-chirho').last().click();
+		await expectChirho(pageChirho.locator('.lesson-heading-chirho')).toContainText('1:2');
+		await expectChirho(buttonChirho).toBeEnabled();
+		const audioPositionChirho = await measureChirho();
+		for (const keyChirho of ['gap_chirho', 'left_chirho', 'width_chirho'] as const)
+			expectChirho(
+				Math.abs(videoPositionChirho[keyChirho] - audioPositionChirho[keyChirho])
+			).toBeLessThanOrEqual(1);
 	}
 );

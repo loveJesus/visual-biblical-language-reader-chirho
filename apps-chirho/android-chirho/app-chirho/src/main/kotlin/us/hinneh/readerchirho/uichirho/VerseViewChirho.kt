@@ -45,6 +45,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.intl.LocaleList
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.LayoutDirection
@@ -96,6 +97,8 @@ fun VerseViewChirho(
     playingWordChirho: String?,
     onWordChirho: (WordChirho) -> Unit,
     onSpeakChirho: (WordChirho) -> Unit,
+    /** With Show IPA on, a word's IPA (null: none available); null itself means no IPA line at all. */
+    ipaChirho: ((WordChirho) -> String?)? = null,
 ) {
     val groupsChirho = VerseLayoutChirho.groupsChirho(verseChirho)
     val directionChirho = if (greekChirho) LayoutDirection.Ltr else LayoutDirection.Rtl
@@ -120,6 +123,8 @@ fun VerseViewChirho(
                                     pictureChirho = picturesChirho[wordChirho.idChirho],
                                     imagesChirho = imagesChirho,
                                     hasRecordingChirho = hasRecordingChirho(wordChirho),
+                                    ipaLineChirho = ipaChirho != null,
+                                    ipaChirho = ipaChirho?.invoke(wordChirho),
                                     playingChirho = playingWordChirho == wordChirho.idChirho,
                                     onWordChirho = { onWordChirho(wordChirho) },
                                     onSpeakChirho = { onSpeakChirho(wordChirho) },
@@ -155,6 +160,8 @@ private fun WordBoxChirho(
     pictureChirho: WordPictureChirho?,
     imagesChirho: ImageLoaderChirho?,
     hasRecordingChirho: Boolean,
+    ipaLineChirho: Boolean,
+    ipaChirho: String?,
     playingChirho: Boolean,
     onWordChirho: () -> Unit,
     onSpeakChirho: () -> Unit,
@@ -189,6 +196,7 @@ private fun WordBoxChirho(
                 )
             }
         }
+        if (ipaLineChirho) WordIpaChirho(ipaChirho)
         StickerChirho(
             imagesChirho = imagesChirho,
             assetPathChirho = pictureChirho?.recordChirho?.assetPathChirho,
@@ -241,9 +249,29 @@ private fun SpeakerChirho(labelChirho: String, playingChirho: Boolean, onSpeakCh
     }
 }
 
-/** The colored word surface: gender background, number underline, form-pattern line, cue marks. */
+/**
+ * The IPA line under a word, as on the website (WordIpaChirho.svelte): the IPA between slashes, or a dash when none
+ * is available. It reads left to right even inside a Hebrew line, and TalkBack hears "IPA: …" or that none is
+ * available rather than the symbols' names.
+ */
 @Composable
-private fun WordSurfaceChirho(wordChirho: WordChirho, greekChirho: Boolean, cueChirho: WordCueChirho, speakerChirho: Boolean, modifier: Modifier) {
+private fun WordIpaChirho(ipaChirho: String?) {
+    val labelChirho = if (ipaChirho != null) stringResource(R.string.ipa_label_chirho, ipaChirho) else stringResource(R.string.ipa_unavailable_chirho)
+    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+        Text(
+            text = if (ipaChirho != null) "/$ipaChirho/" else "—",
+            fontSize = 13.sp,
+            color = InkChirho.MARKER_CHIRHO,
+            textAlign = TextAlign.Center,
+            style = TextStyle(textDirection = TextDirection.Ltr),
+            modifier = Modifier.widthIn(max = 150.dp).padding(top = 2.dp).clearAndSetSemantics { contentDescription = labelChirho },
+        )
+    }
+}
+
+/** The colored word surface: gender background, number underline, form-pattern line, cue marks. The welcome's example card draws its words with it too. */
+@Composable
+internal fun WordSurfaceChirho(wordChirho: WordChirho, greekChirho: Boolean, cueChirho: WordCueChirho, speakerChirho: Boolean, modifier: Modifier) {
     val underlineChirho = cueChirho.underlineChirho?.let { Color(it) }
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,

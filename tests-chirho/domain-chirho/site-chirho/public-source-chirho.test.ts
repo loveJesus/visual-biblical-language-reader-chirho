@@ -16,6 +16,7 @@ import {
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import {
+	ESSENTIAL_UI_RASTERS_CHIRHO,
 	GITHUB_FILE_LIMIT_CHIRHO,
 	classifyPublicPathChirho,
 	createPublicCutChirho,
@@ -50,6 +51,16 @@ async function writeTreeChirho(rootChirho: string, filesChirho: Record<string, s
 	}
 }
 const BINDINGS_CHIRHO = '# Intentionally empty.\n\n# Non-secret local bindings only.\n';
+/** Fixtures are the bundled public resources themselves, never a private workspace path. */
+async function bundledUiChirho(rootChirho: string) {
+	for (const assetChirho of ESSENTIAL_UI_RASTERS_CHIRHO) {
+		const bytesChirho = await readFile(
+			new URL('../../../' + assetChirho.path_chirho, import.meta.url)
+		);
+		await mkdir(dirname(join(rootChirho, assetChirho.path_chirho)), { recursive: true });
+		await writeFile(join(rootChirho, assetChirho.path_chirho), bytesChirho);
+	}
+}
 /** A small Git project: some files staged, others untracked, one ignored output tree. */
 async function projectChirho(extraChirho: Record<string, string> = {}) {
 	const rootChirho = await temporaryChirho();
@@ -172,6 +183,102 @@ describe('public source path boundary', () => {
 });
 
 describe('public source plan and cut', () => {
+	it('publishes only the three pinned bundled UI resources with exact bytes', async () => {
+		const rootChirho = await projectChirho();
+		await bundledUiChirho(rootChirho);
+		const planChirho = await planPublicSourceChirho(rootChirho);
+		expect(planChirho.blockers_chirho).toEqual([]);
+		const manifestChirho = await createPublicCutChirho(rootChirho, planChirho, 'ui-cut-chirho');
+		for (const assetChirho of ESSENTIAL_UI_RASTERS_CHIRHO) {
+			expect(
+				manifestChirho.files_chirho.find(
+					(fileChirho) => fileChirho.path_chirho === assetChirho.path_chirho
+				)
+			).toMatchObject(assetChirho);
+			const bytesChirho = await readFile(
+				join(cutPathsChirho(rootChirho, 'ui-cut-chirho').target_chirho, assetChirho.path_chirho)
+			);
+			expect(bytesChirho.length).toBe(assetChirho.bytes_chirho);
+			expect(createHash('sha256').update(bytesChirho).digest('hex')).toBe(
+				assetChirho.sha256_chirho
+			);
+		}
+	});
+
+	it('refuses substituted bundled bytes before a cut and after planning', async () => {
+		const rootChirho = await projectChirho();
+		await bundledUiChirho(rootChirho);
+		const assetChirho = ESSENTIAL_UI_RASTERS_CHIRHO[0];
+		const filePathChirho = join(rootChirho, assetChirho.path_chirho);
+		const originalChirho = await readFile(filePathChirho);
+		const changedChirho = Buffer.from(originalChirho);
+		changedChirho[changedChirho.length - 1] ^= 1;
+		await writeFile(filePathChirho, changedChirho);
+		const refusedChirho = await planPublicSourceChirho(rootChirho);
+		expect(
+			refusedChirho.files_chirho.some(
+				(fileChirho) => fileChirho.path_chirho === assetChirho.path_chirho
+			)
+		).toBe(false);
+		expect(refusedChirho.excluded_chirho.essential_ui_asset_mismatch).toBe(1);
+		await expect(createPublicCutChirho(rootChirho, refusedChirho, 'bad-ui-chirho')).rejects.toThrow(
+			/blocked/
+		);
+		await writeFile(filePathChirho, originalChirho);
+		const plannedChirho = await planPublicSourceChirho(rootChirho);
+		await writeFile(filePathChirho, changedChirho);
+		await expect(
+			publicManifestChirho(rootChirho, plannedChirho, 'changed-ui-chirho')
+		).rejects.toThrow(/Essential UI source changed/);
+		await expect(
+			createPublicCutChirho(rootChirho, plannedChirho, 'changed-ui-chirho')
+		).rejects.toThrow(/Essential UI source changed/);
+	});
+
+	it('keeps size, symlink and adjacent Bible-media boundaries around the UI exception', async () => {
+		for (const assetChirho of ESSENTIAL_UI_RASTERS_CHIRHO) {
+			expect(
+				classifyPublicPathChirho(assetChirho.path_chirho, {
+					kind_chirho: 'file',
+					bytes_chirho: assetChirho.bytes_chirho
+				}).include_chirho
+			).toBe(true);
+			for (const bytesChirho of [assetChirho.bytes_chirho + 1, GITHUB_FILE_LIMIT_CHIRHO])
+				expect(
+					classifyPublicPathChirho(assetChirho.path_chirho, {
+						kind_chirho: 'file',
+						bytes_chirho: bytesChirho
+					}).include_chirho
+				).toBe(false);
+			expect(
+				reasonChirho(assetChirho.path_chirho, {
+					kind_chirho: 'symlink',
+					bytes_chirho: assetChirho.bytes_chirho
+				})
+			).toBe('symlink');
+		}
+		for (const pathChirho of [
+			'static/onboarding-chirho/welcome-hero-v2-chirho.webp',
+			'static/assets-chirho/scenes-chirho/welcome-hero-v1-chirho.webp',
+			'apps-chirho/android-chirho/app-chirho/src/main/res/drawable-nodpi/verse_chirho.webp',
+			'apps-chirho/ios-chirho/HinnehChirho/WelcomeChirho.xcassets/WelcomeHeroChirho.imageset/verse-chirho.png',
+			'static/audio-chirho/verse-chirho.mp3',
+			'static/video-chirho/verse-chirho.mp4'
+		])
+			expect(reasonChirho(pathChirho)).toBe('generated_media');
+		const rootChirho = await projectChirho();
+		const assetChirho = ESSENTIAL_UI_RASTERS_CHIRHO[0];
+		await mkdir(dirname(join(rootChirho, assetChirho.path_chirho)), { recursive: true });
+		await symlink(join(rootChirho, 'src/app-chirho.ts'), join(rootChirho, assetChirho.path_chirho));
+		const planChirho = await planPublicSourceChirho(rootChirho);
+		expect(
+			planChirho.files_chirho.some(
+				(fileChirho) => fileChirho.path_chirho === assetChirho.path_chirho
+			)
+		).toBe(false);
+		expect(planChirho.excluded_chirho.symlink).toBeGreaterThan(0);
+	});
+
 	it('plans from Git listings, keeping modes and refusing escapes through linked folders', async () => {
 		const rootChirho = await projectChirho();
 		const planChirho = await planPublicSourceChirho(rootChirho);

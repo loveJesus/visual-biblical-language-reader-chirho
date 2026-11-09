@@ -3,20 +3,19 @@ import type { LocaleChirho } from '$lib/i18n-chirho/locale-chirho';
 
 const SESSION_MESSAGES_CHIRHO = {
 	en: {
-		welcome_chirho: 'Welcome to Hinneh',
-		intro_chirho:
-			'Explore the Bible in Hebrew and Greek with pictures, word meanings, and recordings.',
+		welcome_chirho: 'Open the Word.',
+		hero_alt_chirho: 'An open Bible among olive trees above a sunlit lake.',
+		intro_chirho: 'Read the Bible in Hebrew and Greek with pictures, word meanings and recordings.',
 		use_chirho:
 			'Tap a word to look closer. Play a verse to hear it, with video when available. More languages are planned.',
-		open_chirho:
-			'Open-source code and openly licensed study materials. See Info for licenses and credits.',
+		open_chirho: 'Open source · Licensed study materials',
 		start_chirho: 'Start reading',
 		tour_chirho: 'Watch quick tour',
-		install_chirho: 'Get Hinneh on',
+		install_chirho: 'Get it on',
 		reopen_chirho: 'You can open the tutorial at any time from Help.',
 		settings_chirho: 'Settings',
 		help_chirho: 'Help',
-		info_chirho: 'Info: licenses and credits',
+		info_chirho: 'Info',
 		today_chirho: "Open today's Proverbs",
 		today_hint_chirho: 'At the start of a visit. Turn off to resume your last passage.',
 		autoplay_chirho: 'Play after changing verse',
@@ -31,20 +30,19 @@ const SESSION_MESSAGES_CHIRHO = {
 		video_chirho: 'Hinneh quick tour'
 	},
 	es: {
-		welcome_chirho: 'Bienvenido a Hinneh',
-		intro_chirho:
-			'Explore la Biblia en hebreo y griego con imágenes, significados de palabras y grabaciones.',
+		welcome_chirho: 'Abra la Palabra.',
+		hero_alt_chirho: 'Una Biblia abierta entre olivos junto a un lago iluminado.',
+		intro_chirho: 'Lea la Biblia en hebreo y griego con imágenes, significados y grabaciones.',
 		use_chirho:
 			'Toque una palabra para verla de cerca. Reproduzca un versículo para escucharlo, con video cuando esté disponible. Se planean más idiomas.',
-		open_chirho:
-			'Código abierto y materiales de estudio con licencias abiertas. Consulte Información para ver las licencias y los créditos.',
+		open_chirho: 'Código abierto · Materiales con licencia',
 		start_chirho: 'Empezar a leer',
 		tour_chirho: 'Ver el recorrido breve',
-		install_chirho: 'Descargar Hinneh en',
+		install_chirho: 'Instalar desde',
 		reopen_chirho: 'Puede abrir el tutorial en cualquier momento desde Ayuda.',
 		settings_chirho: 'Configuración',
 		help_chirho: 'Ayuda',
-		info_chirho: 'Información: licencias y créditos',
+		info_chirho: 'Info',
 		today_chirho: 'Abrir los Proverbios de hoy',
 		today_hint_chirho: 'Al comenzar una visita. Desactívelo para volver a su último pasaje.',
 		autoplay_chirho: 'Reproducir al cambiar de versículo',

@@ -76,6 +76,7 @@ class MainActivityChirho : ComponentActivity() {
                                 preferencesChirho = graphChirho.preferencesChirho,
                                 savedChirho = createSavedStateHandle(),
                                 explicitPassageChirho = explicitChirho,
+                                greekIpaChirho = graphChirho.greekIpaChirho,
                             )
                         }
                     },
@@ -129,6 +130,7 @@ class MainActivityChirho : ComponentActivity() {
                                 }
                                 override fun onOpenTodayChirho(openTodayChirho: Boolean) = modelChirho.setOpenTodayChirho(openTodayChirho)
                                 override fun onAutoplayChirho(autoplayChirho: Boolean) = modelChirho.setAutoplayChirho(autoplayChirho)
+                                override fun onShowIpaChirho(showIpaChirho: Boolean) = modelChirho.setShowIpaChirho(showIpaChirho)
                             },
                         )
                     }

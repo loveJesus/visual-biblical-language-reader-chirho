@@ -1,0 +1,2327 @@
+{
+	"schema_version_chirho": 1,
+	"recipe_id_chirho": "greek-word-ipa-guide-v1-chirho",
+	"kind_chirho": "teaching_guide",
+	"language_chirho": "grc",
+	"profiles_chirho": [
+		"modern",
+		"modern_aspirates",
+		"erasmian"
+	],
+	"key_algorithm_chirho": "sha256-utf8-exact-chirho",
+	"shard_algorithm_chirho": "first-sha256-byte-and-7-chirho",
+	"part_count_chirho": 8,
+	"form_count_chirho": 19448,
+	"input_sha256_chirho": "e8a11d46d5d2461c900e7d993c7d53feac9da77b0d7f4664526e4193986c0909",
+	"source_functions_chirho": [
+		{
+			"function_chirho": "greekWordIpaChirho",
+			"path_chirho": "src/lib/domain-chirho/pronunciation-chirho/greek-ipa-chirho.ts",
+			"sha256_chirho": "963a3cfe90b04a23612d3b97e9efe6b84e7083d77454cbfbac7002df9a52a142"
+		},
+		{
+			"function_chirho": "spokenWordChirho",
+			"path_chirho": "src/lib/domain-chirho/pronunciation-chirho.ts",
+			"sha256_chirho": "783288a987a6ea4a805dd87516c13da284d1854c4cfb4f696020cae5e9adb7f2"
+		},
+		{
+			"function_chirho": "nativeGreekGuideChirho",
+			"path_chirho": "apps-chirho/ios-chirho/scripts-chirho/export_greek_ipa_chirho.ts",
+			"sha256_chirho": "9863f003318cd13faf8504379bdd1c3659922db37f6909a20ad584f5828a75b6"
+		}
+	],
+	"corpus_chirho": {
+		"registry_sha256_chirho": "09ba80e309dc31879286190bbb5943150097b869ea5db0ae074f882b5c457595",
+		"manifest_pins_chirho": [
+			{
+				"book_id_chirho": "Matt",
+				"path_chirho": "/content-chirho/matthew-chirho/manifest-chirho.json",
+				"sha256_chirho": "a304d7a617175c80af4dae6dfa717735be3949b3fd7fd87260c4a37adeddc697"
+			},
+			{
+				"book_id_chirho": "Mark",
+				"path_chirho": "/content-chirho/mark-chirho/manifest-chirho.json",
+				"sha256_chirho": "7164a91cc0a4eb9fae38d504fa31a7851ca69c1fe84a3e50ff128fc120706790"
+			},
+			{
+				"book_id_chirho": "Luke",
+				"path_chirho": "/content-chirho/luke-chirho/manifest-chirho.json",
+				"sha256_chirho": "3805fc011a5ba8300a400ae85b8854683af6fafb40d3981fb60b0a868c360d9b"
+			},
+			{
+				"book_id_chirho": "John",
+				"path_chirho": "/content-chirho/john-chirho/manifest-chirho.json",
+				"sha256_chirho": "b0c4b95e4e3bd5c79d845445e86c3f8cf143fc49be58926728d9e3f83eecc91e"
+			},
+			{
+				"book_id_chirho": "Acts",
+				"path_chirho": "/content-chirho/acts-chirho/manifest-chirho.json",
+				"sha256_chirho": "e47e5e608ae27d1971b26eed2cc16a787ec65b7380560731d08be7e4dc842f74"
+			},
+			{
+				"book_id_chirho": "Rom",
+				"path_chirho": "/content-chirho/romans-chirho/manifest-chirho.json",
+				"sha256_chirho": "e117ea2f40f99921c94f2455d0278b2ae7f5453d7c9b0844f7266b2bd21a07df"
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"path_chirho": "/content-chirho/1-corinthians-chirho/manifest-chirho.json",
+				"sha256_chirho": "c79c4834ac1a097f8f3a73db3d8cf14ff2acfc7e3c32c1b138fe8b5c06c10a84"
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"path_chirho": "/content-chirho/2-corinthians-chirho/manifest-chirho.json",
+				"sha256_chirho": "d623428ad4994e5a903e6fa1e118e7854b8cd618198d94b22cac601c19b0a0a2"
+			},
+			{
+				"book_id_chirho": "Gal",
+				"path_chirho": "/content-chirho/galatians-chirho/manifest-chirho.json",
+				"sha256_chirho": "5fc0233c88d7f64db5bba03d302d3814f144258aa7d7ccdf05ae97f53e9c3da0"
+			},
+			{
+				"book_id_chirho": "Eph",
+				"path_chirho": "/content-chirho/ephesians-chirho/manifest-chirho.json",
+				"sha256_chirho": "e3c214c9969ef4c1afc04b6fb80d5a81a91dc4ec3819992acb998d7f28d7d129"
+			},
+			{
+				"book_id_chirho": "Phil",
+				"path_chirho": "/content-chirho/philippians-chirho/manifest-chirho.json",
+				"sha256_chirho": "86fb0570d8a8b93ca8c7a6c2b549e5dfdb4e99cb32cd1579ee2ec84595b3c6fd"
+			},
+			{
+				"book_id_chirho": "Col",
+				"path_chirho": "/content-chirho/colossians-chirho/manifest-chirho.json",
+				"sha256_chirho": "4dcb8178226602013e653efd3c28896800ab0d4b63d8791fbd529acf76189fa1"
+			},
+			{
+				"book_id_chirho": "1Thess",
+				"path_chirho": "/content-chirho/1-thessalonians-chirho/manifest-chirho.json",
+				"sha256_chirho": "a4a121ec71228919c85a4c9569cc80e31a84bf837c34999244cd03e5c195e71c"
+			},
+			{
+				"book_id_chirho": "2Thess",
+				"path_chirho": "/content-chirho/2-thessalonians-chirho/manifest-chirho.json",
+				"sha256_chirho": "5e22e38c3bc235091c636a0541f7809ddbb666cc3c440f38e95eb7a196c16292"
+			},
+			{
+				"book_id_chirho": "1Tim",
+				"path_chirho": "/content-chirho/1-timothy-chirho/manifest-chirho.json",
+				"sha256_chirho": "dca9a074719849da1a3c601dc60618ff0763514d242401ee92e80ad464deb996"
+			},
+			{
+				"book_id_chirho": "2Tim",
+				"path_chirho": "/content-chirho/2-timothy-chirho/manifest-chirho.json",
+				"sha256_chirho": "626fbe3c0e68b7fad0a062612b62e07ae7bd16042000b7c36aee5979186d0403"
+			},
+			{
+				"book_id_chirho": "Titus",
+				"path_chirho": "/content-chirho/titus-chirho/manifest-chirho.json",
+				"sha256_chirho": "fc096cf407213db5e8685414a0837f79e45070c035ed4d57f91ee94f31837897"
+			},
+			{
+				"book_id_chirho": "Phlm",
+				"path_chirho": "/content-chirho/philemon-chirho/manifest-chirho.json",
+				"sha256_chirho": "6e79606d34a60233180001bd04b6d331bd2722d3fd3addfff9e83c4cf90d5524"
+			},
+			{
+				"book_id_chirho": "Heb",
+				"path_chirho": "/content-chirho/hebrews-chirho/manifest-chirho.json",
+				"sha256_chirho": "b09e1c72fa59c73032e7c9cc657d3cdb50905f6bebeca8ce4b60d48df6c11143"
+			},
+			{
+				"book_id_chirho": "Jas",
+				"path_chirho": "/content-chirho/james-chirho/manifest-chirho.json",
+				"sha256_chirho": "5e301af9a7fd3931ec653bcb48e16c0b3dbcd81a3b455efd4a07dbecd09c10e9"
+			},
+			{
+				"book_id_chirho": "1Pet",
+				"path_chirho": "/content-chirho/1-peter-chirho/manifest-chirho.json",
+				"sha256_chirho": "e668c0fda6ac2599678f2a89d8f84430f58038db5e5ad21fb20b36533b478804"
+			},
+			{
+				"book_id_chirho": "2Pet",
+				"path_chirho": "/content-chirho/2-peter-chirho/manifest-chirho.json",
+				"sha256_chirho": "a5d90a80ffba66bb67533179c707246e826889d3d426bbc2fa5aab35fa27fb21"
+			},
+			{
+				"book_id_chirho": "1John",
+				"path_chirho": "/content-chirho/1-john-chirho/manifest-chirho.json",
+				"sha256_chirho": "42a7fbc9a831b4b55abb6e2766723c136f2aaca2dfc870e475b03ef255ea0bc8"
+			},
+			{
+				"book_id_chirho": "2John",
+				"path_chirho": "/content-chirho/2-john-chirho/manifest-chirho.json",
+				"sha256_chirho": "15ab7669a389c2fb3023cae8b0c872244c34c9691e915793d4b69c4ab5851b7b"
+			},
+			{
+				"book_id_chirho": "3John",
+				"path_chirho": "/content-chirho/3-john-chirho/manifest-chirho.json",
+				"sha256_chirho": "4efa9982fde22d040bf2dfa9e3650538fd7c8deb22e50b1f9ffeffeae63365a7"
+			},
+			{
+				"book_id_chirho": "Jude",
+				"path_chirho": "/content-chirho/jude-chirho/manifest-chirho.json",
+				"sha256_chirho": "46474b712702646a29cb99e6f163d8e69861a72b1a42534f6a7cdabf90527d42"
+			},
+			{
+				"book_id_chirho": "Rev",
+				"path_chirho": "/content-chirho/revelation-chirho/manifest-chirho.json",
+				"sha256_chirho": "ea526b2caaa26b2b22fbc82966274306869c2bfe03f50a6b7d652b90b7f05e4d"
+			}
+		],
+		"chapter_pins_chirho": [
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "062b4869e177759558cd8aceb63814aafc45922f44156fd3607111ab221b66ca",
+				"bytes_chirho": 543810,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "c3cbf0eb43f422760ce48dc23615854bc2de0893d47796286fa670186b5b8181",
+				"bytes_chirho": 558301,
+				"verses_chirho": 23
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "8f08b21bcb1044fdcfa3a26580afec95f275c5ce3c4f83ab93415e714190bfaf",
+				"bytes_chirho": 401006,
+				"verses_chirho": 17
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "5bf554daaf036f6f47f52a82e101af30c9d0267cab4009a7d680f687debffe9c",
+				"bytes_chirho": 538610,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "f8af673a8ec8325e32067c6bd779f0d60e2a0f79f12a96775584491d25e784a8",
+				"bytes_chirho": 1031364,
+				"verses_chirho": 48
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "224b22a90559b6e827bae5df494ce6bdebb29c7b697b50542a7be4c4c2b02f59",
+				"bytes_chirho": 796190,
+				"verses_chirho": 34
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "a924a8836915ea81094dae16ebeef682425494bbfcb1f64a0893b6f9cf26544e",
+				"bytes_chirho": 642628,
+				"verses_chirho": 29
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "63e7f1050146695f04cfcb46ea8412ef802f0f3cd046a0c674bdf3be2563aec9",
+				"bytes_chirho": 735779,
+				"verses_chirho": 34
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "d35a7731f4429088bfb3bcef35753beb77bcc9c707ae707ad58c9441f50c4358",
+				"bytes_chirho": 816009,
+				"verses_chirho": 38
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "baad8b5d92bd6479ead0ff1a5f856a7f1aec750c8ba95c5964ed2937a61e935d",
+				"bytes_chirho": 904520,
+				"verses_chirho": 42
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "1bef552c574245e5e0d843151b3b71258c8457a628ab205b5e020c6af019b8e1",
+				"bytes_chirho": 626408,
+				"verses_chirho": 30
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "bbae713d877ddf364b841f9e393e31436b4771ba1e3c4977a3073279288c3dc3",
+				"bytes_chirho": 1123812,
+				"verses_chirho": 50
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "9d03f91e1876b81bc1e78954b0d0607b0d186e63618e2ce3e2a34eb090102201",
+				"bytes_chirho": 1328241,
+				"verses_chirho": 58
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 14,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-14-chirho.json",
+				"sha256_chirho": "c75ef3b20d366a94535fd639ab7b4b4f900c3e73366dc11dc8f1df48d006c1fd",
+				"bytes_chirho": 717709,
+				"verses_chirho": 36
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 15,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-15-chirho.json",
+				"sha256_chirho": "4ebe6ac5741bdacf93628ef3380e20980b0509aa9d1db162940869e7b5339906",
+				"bytes_chirho": 786298,
+				"verses_chirho": 39
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 16,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-16-chirho.json",
+				"sha256_chirho": "c8fda8afd4a2f33507b3f43a5ab0e8cd119d0a5701582e96ddf1fb536dd2212a",
+				"bytes_chirho": 648406,
+				"verses_chirho": 28
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 17,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-17-chirho.json",
+				"sha256_chirho": "4b422183579ff037cc3157ff4788afe7cc97e8651f3a629a44d02e84e250283d",
+				"bytes_chirho": 609425,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 18,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-18-chirho.json",
+				"sha256_chirho": "197398e3e88683e1fd464ac2d5120c7825a3bbd2c8fcc17930fdff592915ddda",
+				"bytes_chirho": 815346,
+				"verses_chirho": 34
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 19,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-19-chirho.json",
+				"sha256_chirho": "4fe2a2f4cb1f3be225be25321b07ceaa1dd31e54a216a23517e3791fd5628dd3",
+				"bytes_chirho": 661782,
+				"verses_chirho": 30
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 20,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-20-chirho.json",
+				"sha256_chirho": "f3b0ad73c3ed9676a2fa44a9e7c2ac2b5c8b87ce18df1d7e595db9160862336f",
+				"bytes_chirho": 693077,
+				"verses_chirho": 34
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 21,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-21-chirho.json",
+				"sha256_chirho": "a9ff9da66c837875573073e9c3b2a25e94b6641e28761c60836c9e6ab4c97b25",
+				"bytes_chirho": 1069667,
+				"verses_chirho": 46
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 22,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-22-chirho.json",
+				"sha256_chirho": "38a7c78d77eb52355daa0d40bed85d715760133bd6db9bb45c15a7b6594c5b07",
+				"bytes_chirho": 863347,
+				"verses_chirho": 46
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 23,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-23-chirho.json",
+				"sha256_chirho": "1baa7e11a043ed84026385cedc0e686225f9395964257299c78b466a2610ab8c",
+				"bytes_chirho": 815417,
+				"verses_chirho": 38
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 24,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-24-chirho.json",
+				"sha256_chirho": "25d326632630cfbc73029d6ecb9bf0d3c3222bf982ad9e1fcef0733a6394b403",
+				"bytes_chirho": 1043592,
+				"verses_chirho": 51
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 25,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-25-chirho.json",
+				"sha256_chirho": "b8ff10cd1e8590def6d0f062d4cd75b5bd1d67037b7a4e9ebaa00669247e0216",
+				"bytes_chirho": 955427,
+				"verses_chirho": 46
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 26,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-26-chirho.json",
+				"sha256_chirho": "57f79e0a8a8afdbdf20127544e46a4ba135e2c051450f7d01329e0452f8349e7",
+				"bytes_chirho": 1575464,
+				"verses_chirho": 75
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 27,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-27-chirho.json",
+				"sha256_chirho": "767657a38329e3d0bba3c2f8f5921b1120843c12d0554f42eaefe1a343eb10d0",
+				"bytes_chirho": 1301921,
+				"verses_chirho": 66
+			},
+			{
+				"book_id_chirho": "Matt",
+				"chapter_chirho": 28,
+				"path_chirho": "/content-chirho/matthew-chirho/chapter-28-chirho.json",
+				"sha256_chirho": "837cc5098220241c53676edf19fffdb431c1818899193906cb0e47bf8040ec26",
+				"bytes_chirho": 417659,
+				"verses_chirho": 20
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "6aaeb7aae0951a6ce1823b452bf542f535882a657a6cc83c4361aa4020f63c94",
+				"bytes_chirho": 900875,
+				"verses_chirho": 45
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "31a7007fbee47934345069ad0fe75484299c451c203af01a183026ac29f9fd70",
+				"bytes_chirho": 664053,
+				"verses_chirho": 28
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "31957bbd787b87f0abac841debe73ee9a8327fcbcc4d7ce2f4ca94e47733074f",
+				"bytes_chirho": 692318,
+				"verses_chirho": 35
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "1ea59d357c6e92f01d9f2ab06328a5b101fcced2374b8cab42d04063f556980e",
+				"bytes_chirho": 866764,
+				"verses_chirho": 41
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "5bf612d8e68ad43e5639c6e9de6b609f810adc7e5b3407497f8df4f29bdda25d",
+				"bytes_chirho": 890081,
+				"verses_chirho": 43
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "398ac86935ab4827c694fd7d441d8adadcdbf6cf0ba9fcea361fb8ffd13f8731",
+				"bytes_chirho": 1228513,
+				"verses_chirho": 56
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "424fa65c88389ac4f4d8b4569dcc181d3126f5dcad0d0d251ab195375a6d04f0",
+				"bytes_chirho": 761890,
+				"verses_chirho": 36
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "cce9c07b5a5153e4b89557a157aefc0989d641fccfb725f828e8e8325261b1cb",
+				"bytes_chirho": 799006,
+				"verses_chirho": 38
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "4f71e090809252129983813487af41ffaac7c1aada00d3906c4ae3b2d7fb3ffb",
+				"bytes_chirho": 1074541,
+				"verses_chirho": 48
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "1335725a843c8116992d08b8dce8887a3b2ca93398f16a6cf186d279c365f11a",
+				"bytes_chirho": 1112285,
+				"verses_chirho": 52
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "c14531987bc03c46a55fa948c102afe7d9020b87c8e3764619eed8edfcb1596b",
+				"bytes_chirho": 705310,
+				"verses_chirho": 32
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "01d43e862ad6224140f492c945cf05f975d242e52ccc809bbb320fa004f30a9e",
+				"bytes_chirho": 987007,
+				"verses_chirho": 44
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "214498008e34a87077cfb9b5a2d7d7e23c825ba618dd5fca3d118cb9173b927b",
+				"bytes_chirho": 763438,
+				"verses_chirho": 37
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 14,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-14-chirho.json",
+				"sha256_chirho": "d502d141676f22cf42909f4de3bb92e5c91606ab49c1f62fdc7b8d116a0c8d63",
+				"bytes_chirho": 1518837,
+				"verses_chirho": 72
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 15,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-15-chirho.json",
+				"sha256_chirho": "4588a9ff206ee8ca6ee739d4cd33ae638db93eeb6a8002c55481cf46c98089fd",
+				"bytes_chirho": 875467,
+				"verses_chirho": 46
+			},
+			{
+				"book_id_chirho": "Mark",
+				"chapter_chirho": 16,
+				"path_chirho": "/content-chirho/mark-chirho/chapter-16-chirho.json",
+				"sha256_chirho": "c5dff50f1824ae1361549eee0032570d592e0ff3a5b84828b78890344014756e",
+				"bytes_chirho": 431738,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "cc409c69c30532d4252de4014f7dcf8c0858e9acd5d5ff5f7ad8989b15388318",
+				"bytes_chirho": 1534708,
+				"verses_chirho": 80
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "6c63caa2bb7cf0d2bddbb667d1627af78a52630350fa9419cadac2be7744a36c",
+				"bytes_chirho": 1073780,
+				"verses_chirho": 52
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "7a7203a83a782fd1f19f1c04be1d32dd0401f4a7835d2a63a7320978bb5f3342",
+				"bytes_chirho": 752135,
+				"verses_chirho": 38
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "dd7204a548e654c5eceaee447ba71c000b1708d0e4a03108da3f7ac921c5eda7",
+				"bytes_chirho": 962413,
+				"verses_chirho": 44
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "50dd566b56a6eeaa76a1b2fd03247594fa9857f7bdc17c3a783d6c966fd6dd3f",
+				"bytes_chirho": 924107,
+				"verses_chirho": 39
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "958b9717b5f02f465dabd9582c3644d462587043d997c872df3c6a366e9971fa",
+				"bytes_chirho": 1140781,
+				"verses_chirho": 49
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "0a34be1cc574ca6348fdb69787bf351795108070789e8b8a3c88cf13b5a89c37",
+				"bytes_chirho": 1118109,
+				"verses_chirho": 50
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "a8abf7a989045deaa1d379e011732515bea38752c1a8ee8fbc8264d274407ff8",
+				"bytes_chirho": 1327745,
+				"verses_chirho": 56
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "12b233ece25e65dc4377744ba1c58f2de193ead7212b66d67969aaf7282b4d87",
+				"bytes_chirho": 1425046,
+				"verses_chirho": 62
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "2b6071dac1b0e9a8b72a6eed04d41067d7e40a168a215069e85e8277a235384e",
+				"bytes_chirho": 971049,
+				"verses_chirho": 42
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "1ee1e13d5dfbf68afc3ac860afa22492f509a8825aa4b1677026334b1b8e12fb",
+				"bytes_chirho": 1219952,
+				"verses_chirho": 54
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "34ac694628a5e6f2863492ae69ff48765c49cdf1e5585117d93ca826029a28c7",
+				"bytes_chirho": 1301740,
+				"verses_chirho": 59
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "67c26d50913511a86299467e20c7bb63fca59e1c74b13b9120346b3b08ade619",
+				"bytes_chirho": 820530,
+				"verses_chirho": 35
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 14,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-14-chirho.json",
+				"sha256_chirho": "9ad15063ca619d353d2ebb0504576c278a041437e9b2da07515ed90fbb6dadef",
+				"bytes_chirho": 768849,
+				"verses_chirho": 35
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 15,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-15-chirho.json",
+				"sha256_chirho": "a3493a12a65f3923873408729c31ac5004fe79942456d0b8b5284c3caf87c682",
+				"bytes_chirho": 707545,
+				"verses_chirho": 32
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 16,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-16-chirho.json",
+				"sha256_chirho": "01740aff3ef1c951b345b2b540e11ff379ccb034949a0c4c926a27401e64ce37",
+				"bytes_chirho": 732250,
+				"verses_chirho": 31
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 17,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-17-chirho.json",
+				"sha256_chirho": "b647882c9d4d6021dbceb9eb243f5304c3328eb2de0d784cdf34f7dc52c98a42",
+				"bytes_chirho": 730166,
+				"verses_chirho": 36
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 18,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-18-chirho.json",
+				"sha256_chirho": "2d7e031a1f4449d288af449416635e01dbe5c2649b14c4448b5ec54fbdc080b4",
+				"bytes_chirho": 874569,
+				"verses_chirho": 43
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 19,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-19-chirho.json",
+				"sha256_chirho": "ef4ef710511c9c5a6100aff07525dd03d322be73ee05591ef8142a8431acf3e3",
+				"bytes_chirho": 971448,
+				"verses_chirho": 48
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 20,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-20-chirho.json",
+				"sha256_chirho": "2db3423675563369d9b2a901242212db712b87989bb54c5e790e7f060698f459",
+				"bytes_chirho": 911577,
+				"verses_chirho": 47
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 21,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-21-chirho.json",
+				"sha256_chirho": "7054a4e879a4c30bd5425bbcf900238022d8f00922a91386ad5846c662fd8a9a",
+				"bytes_chirho": 753684,
+				"verses_chirho": 38
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 22,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-22-chirho.json",
+				"sha256_chirho": "8845759db7268f10dfaa1e7fe2838db44b58e500de0b968928b1b06b4f258624",
+				"bytes_chirho": 1401530,
+				"verses_chirho": 71
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 23,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-23-chirho.json",
+				"sha256_chirho": "470e33544faf2d25e0e13d1ba2973a714585cfc815a35c94cfe5fd818c2d4cf9",
+				"bytes_chirho": 1092501,
+				"verses_chirho": 55
+			},
+			{
+				"book_id_chirho": "Luke",
+				"chapter_chirho": 24,
+				"path_chirho": "/content-chirho/luke-chirho/chapter-24-chirho.json",
+				"sha256_chirho": "5a6089359ce58c2588358e0c5bce743580df562f34d4a92592129ea0f7ec1ff0",
+				"bytes_chirho": 1051663,
+				"verses_chirho": 53
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/john-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "80defa55138462833d25846ced30d6ad751a60b39ced092e2a504d44d1c30daf",
+				"bytes_chirho": 1054984,
+				"verses_chirho": 51
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/john-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "8a5e2aa2a0044d3d4b6d43ede136876bd2fd963257fc58cf7163361437d33c3c",
+				"bytes_chirho": 536772,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/john-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "8ccc0d176ba492046f78e6e2c22343a2c8212fc37af3024ce09851fd88608118",
+				"bytes_chirho": 809402,
+				"verses_chirho": 36
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/john-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "c603027a33d573dd5d546d8f6bc9c604e11b46d78c7441ed68aa1dfcd2d8ab30",
+				"bytes_chirho": 1167394,
+				"verses_chirho": 54
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/john-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "26f049c03a3047a39ab9d28b815ea146ffd25d7d2ec1ee057c5ee1c091bcecb5",
+				"bytes_chirho": 1029552,
+				"verses_chirho": 47
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/john-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "ba7e4bff9009ab4419b58cb4169750b5577bfb594bb1c0e82db34381ffefd7ae",
+				"bytes_chirho": 1549339,
+				"verses_chirho": 71
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/john-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "66baf1e6d90d2fb3806758045eaf0044cd50d9966c6f3df53b0fd5ffe05481cb",
+				"bytes_chirho": 1095962,
+				"verses_chirho": 53
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/john-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "a4a288a3bd62439791960197e1597687f114f597b87bf40d91eb925bc27db04b",
+				"bytes_chirho": 1352441,
+				"verses_chirho": 59
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/john-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "270b7797e87d9dccb84c5994728a625fb0262b767e2def4262414501088678ca",
+				"bytes_chirho": 877431,
+				"verses_chirho": 41
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/john-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "44f502098346628b1f3f8ee2d581b6df1d3bee474791cc95469b774a4db76f40",
+				"bytes_chirho": 880064,
+				"verses_chirho": 42
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/john-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "7b08ff82ac572634706226ec65f771a2b824a8987a311105c6df88b485a708ff",
+				"bytes_chirho": 1192248,
+				"verses_chirho": 57
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/john-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "d41b998638b62e38ca885f64489171b3f6a315a8672e85d9f675b5a91ddb77c5",
+				"bytes_chirho": 1109447,
+				"verses_chirho": 50
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/john-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "4b9a7c9f01cd75815887feaef95ef6b954eb91ec9ef8d65a9882cab59f2a71ad",
+				"bytes_chirho": 829112,
+				"verses_chirho": 38
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 14,
+				"path_chirho": "/content-chirho/john-chirho/chapter-14-chirho.json",
+				"sha256_chirho": "09ef76b35fbaa2697cfbcf22c36857a8abac1e946c8e06cc9d0bf29a257716bc",
+				"bytes_chirho": 713545,
+				"verses_chirho": 31
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 15,
+				"path_chirho": "/content-chirho/john-chirho/chapter-15-chirho.json",
+				"sha256_chirho": "84e65b30d0b6f86953c3c039bdf2a694a26707d56b7ef2cfe78108550063c6fe",
+				"bytes_chirho": 618342,
+				"verses_chirho": 27
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 16,
+				"path_chirho": "/content-chirho/john-chirho/chapter-16-chirho.json",
+				"sha256_chirho": "47cadf646e9d4202d97aed7f2e37e72319be8bf02ed81f4e3f7977320bdf33fd",
+				"bytes_chirho": 727142,
+				"verses_chirho": 33
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 17,
+				"path_chirho": "/content-chirho/john-chirho/chapter-17-chirho.json",
+				"sha256_chirho": "39746f843fffcd73b3e77393f521dfa8201fcb4076221cca335a9e85c6e738d0",
+				"bytes_chirho": 611245,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 18,
+				"path_chirho": "/content-chirho/john-chirho/chapter-18-chirho.json",
+				"sha256_chirho": "9beaf82688fcc7ff6ec062f888f9a415ce50447cbbd9745dd935db5abb4e55bd",
+				"bytes_chirho": 965775,
+				"verses_chirho": 40
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 19,
+				"path_chirho": "/content-chirho/john-chirho/chapter-19-chirho.json",
+				"sha256_chirho": "f8ed0df9cdef8b107ca5b4bc5e7edd90de3f90153266d4044446d04bbddb1374",
+				"bytes_chirho": 999700,
+				"verses_chirho": 42
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 20,
+				"path_chirho": "/content-chirho/john-chirho/chapter-20-chirho.json",
+				"sha256_chirho": "50b149f3042979f30245bfbfd5f9377a2216196334e0118c71898b6195520d00",
+				"bytes_chirho": 750179,
+				"verses_chirho": 31
+			},
+			{
+				"book_id_chirho": "John",
+				"chapter_chirho": 21,
+				"path_chirho": "/content-chirho/john-chirho/chapter-21-chirho.json",
+				"sha256_chirho": "122b0581d4490a64a09b9de679241f3dbe8f74a632e0e31458f1b49e1e71af48",
+				"bytes_chirho": 653903,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "4802286b9ffc317e1d962cb5472153ad7c80d890576251835b54caa1ba53fa9b",
+				"bytes_chirho": 618955,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "0961165a14afa3d9e32ab0a2b47719908065009f98e2853d146cf92de8914dc3",
+				"bytes_chirho": 1034680,
+				"verses_chirho": 47
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "60b79d340b1fb23660770ad60958303911004a2ba35a5e11e9ecf79d221f925f",
+				"bytes_chirho": 608682,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "e046a64684692dd8ef67ce914ed4e02df807b59d6f201f704242f89829ef677a",
+				"bytes_chirho": 843465,
+				"verses_chirho": 37
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "b46850353e95cd6405540161fb5696fdc09c5d4421f2ae7ceab962357b596c72",
+				"bytes_chirho": 957436,
+				"verses_chirho": 42
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "bea4f64e4b21ef00b85a1270977ddbc8840f0237b3d0415797e50d6d87dfbd4d",
+				"bytes_chirho": 343062,
+				"verses_chirho": 15
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "a85983df11d952ec07297c90cc82ca81f3410a02c6753cfc11b28f26cfeb979d",
+				"bytes_chirho": 1376423,
+				"verses_chirho": 60
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "bb394e1bbe3dbc9e06d4c877f70a3dfc3c7f4b210834edc8c05264270265ddd0",
+				"bytes_chirho": 866536,
+				"verses_chirho": 39
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "e80122fe960a2ce38ab75a65341d8a9e42d8e0f34fef35d3937e370f180a987c",
+				"bytes_chirho": 973565,
+				"verses_chirho": 43
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "6e636c975bbf993048343310ff732fa5fd80d19e7c034dbb6780c4da13587a6a",
+				"bytes_chirho": 1052608,
+				"verses_chirho": 48
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "ddb0133a310fe7fd98ad95c509f1bf757b8cf51f07ed0f5b942c29caf2e0f6d6",
+				"bytes_chirho": 657387,
+				"verses_chirho": 30
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "a65fa0c03aafafbf513067f9d9562be7ed726c8c8e9ff2c3ce55f9ecf7a0a177",
+				"bytes_chirho": 603185,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "add6b56900e14df70ba631927ef5ea20a36808912a35c50df66ad8e8ee197cef",
+				"bytes_chirho": 1160364,
+				"verses_chirho": 52
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 14,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-14-chirho.json",
+				"sha256_chirho": "ffc4315487a015ab38b51dc9d1a74be8dac442940b5720346cf06f14f9041cf6",
+				"bytes_chirho": 598031,
+				"verses_chirho": 28
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 15,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-15-chirho.json",
+				"sha256_chirho": "13e513e6a3dfff0db06f4927bad7661d17846fc152e11e79784aeedb147f51ea",
+				"bytes_chirho": 867090,
+				"verses_chirho": 40
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 16,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-16-chirho.json",
+				"sha256_chirho": "929d760ced9809cf9f361c11a9f418558a2197d899954fb4211a5be908b75c96",
+				"bytes_chirho": 897764,
+				"verses_chirho": 40
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 17,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-17-chirho.json",
+				"sha256_chirho": "33f277f3a72b0429971f84d61df7f8331601ac0cce5d584890f1e9fa800ca502",
+				"bytes_chirho": 823085,
+				"verses_chirho": 34
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 18,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-18-chirho.json",
+				"sha256_chirho": "be97bdb2e54d2ccfb4f222538334a3b14d3446e74f117d3a9de5ef4a8ef9e7da",
+				"bytes_chirho": 634606,
+				"verses_chirho": 28
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 19,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-19-chirho.json",
+				"sha256_chirho": "478cb9113a0f9aa190a24e7bf272febc824b81a1aec20c3e016e7fe72f2b20f4",
+				"bytes_chirho": 931467,
+				"verses_chirho": 40
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 20,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-20-chirho.json",
+				"sha256_chirho": "b0cbf5a9161e09ad0a724621a27aa52cd7bb8e604e9ada0f19b4c5d65d542cdd",
+				"bytes_chirho": 845970,
+				"verses_chirho": 38
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 21,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-21-chirho.json",
+				"sha256_chirho": "c615e77c5a0a5f7f57dfbcc2bef0041fadbbe2b09762f3f576155cbea36c99b4",
+				"bytes_chirho": 977488,
+				"verses_chirho": 40
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 22,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-22-chirho.json",
+				"sha256_chirho": "4b945cecec21aba1653b63a4cb53aa64cb7431e1300bd51295fd4f80168dc40a",
+				"bytes_chirho": 705127,
+				"verses_chirho": 30
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 23,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-23-chirho.json",
+				"sha256_chirho": "55b9d824a0c92c0c541bee9edd7bfe928a265e68893498a67a9f2c31232107b3",
+				"bytes_chirho": 819617,
+				"verses_chirho": 35
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 24,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-24-chirho.json",
+				"sha256_chirho": "7d2d21decc2ec1a035f6055b70b23a270124a21af61161d37c79aba5c4bbd86d",
+				"bytes_chirho": 574856,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 25,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-25-chirho.json",
+				"sha256_chirho": "7d53088060481da040db50b6a6246329b92240f979b87d9a586cefa392eefa8a",
+				"bytes_chirho": 652438,
+				"verses_chirho": 27
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 26,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-26-chirho.json",
+				"sha256_chirho": "dd2cf96951623f87c875096f095e0cb858d75ceb1ca54b65aeb1389d6157c140",
+				"bytes_chirho": 731307,
+				"verses_chirho": 32
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 27,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-27-chirho.json",
+				"sha256_chirho": "eee8b353352b27f5afa87729e41b8a8b12a9f21c659564e93da6942de41cbd0d",
+				"bytes_chirho": 951599,
+				"verses_chirho": 44
+			},
+			{
+				"book_id_chirho": "Acts",
+				"chapter_chirho": 28,
+				"path_chirho": "/content-chirho/acts-chirho/chapter-28-chirho.json",
+				"sha256_chirho": "a5c6ca8a7349c13d30c824d7f9d705ff3c2e519b017bcf64e84a83c48e1eb5f4",
+				"bytes_chirho": 732488,
+				"verses_chirho": 30
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "a9c3d823860dc7cbbe7839d76c1d708ee06f00982360ac152df6c826bfe8d03c",
+				"bytes_chirho": 678618,
+				"verses_chirho": 32
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "c94ecc4c9ce35f9b5ee818d404a2c3e7e6e782016253ac24b9460def7d62dba4",
+				"bytes_chirho": 572600,
+				"verses_chirho": 29
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "73ccd619dc4ec70ddb94ed93f7396946b4d1d895b5652947c82e79149385e2b2",
+				"bytes_chirho": 560932,
+				"verses_chirho": 31
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "230123272412ca11202a6e6b76b11f16201fbdc00336d8723d84159d92d0dd62",
+				"bytes_chirho": 506305,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "58c3dc1f278abf33e9e8049655c1909e47e94e1301477d3f72a64bbdc6988af1",
+				"bytes_chirho": 515006,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "a455b39ec78c09fafa44173cdc65fadc4d520c95b42fcf5060ade96001f00990",
+				"bytes_chirho": 464698,
+				"verses_chirho": 23
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "96071026d93c60902a47942b416381954919fef12b60cfbd10367bcc7fa0cf34",
+				"bytes_chirho": 573469,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "8b378f55f6f40935be09d6c6a3b0f4676768bfa8a57106fe8ce950a1209aa344",
+				"bytes_chirho": 816269,
+				"verses_chirho": 39
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "cda82f8edbfcbc16e6fb3fa748af553886c7624d19a326f35bd1f38c8cc6e78f",
+				"bytes_chirho": 662787,
+				"verses_chirho": 33
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "f8e1c7e368cbe54e2b2f720d49175850e2c7a5867a4cb00754e67124f53cc45f",
+				"bytes_chirho": 426180,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "2135e4e6f6742ae8433f7c09f9021798eb5df65a71f7bc8ae311208baa600faa",
+				"bytes_chirho": 731239,
+				"verses_chirho": 36
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "c08db3ef6cdf99c52a3b99fc71117c0ffed4bee9f9e7d27d43501eaceb712037",
+				"bytes_chirho": 396992,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "15f2b81b4fbe1156b41a6b267c95966049eb761f1cc7455b54f742c17c785a10",
+				"bytes_chirho": 328694,
+				"verses_chirho": 14
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 14,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-14-chirho.json",
+				"sha256_chirho": "03c035bb9e4599c48c2ba85988e991ef3937477231346d2d4ea21ac07a934db6",
+				"bytes_chirho": 478862,
+				"verses_chirho": 23
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 15,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-15-chirho.json",
+				"sha256_chirho": "1da1a118623ef6eb3320c43140de69d8d32921b3b2679d0d82a2f0f48dca74b7",
+				"bytes_chirho": 684493,
+				"verses_chirho": 33
+			},
+			{
+				"book_id_chirho": "Rom",
+				"chapter_chirho": 16,
+				"path_chirho": "/content-chirho/romans-chirho/chapter-16-chirho.json",
+				"sha256_chirho": "626c2be7241294a2f074190c9f231391128669c19662c0a4d4ef52c123ff34fc",
+				"bytes_chirho": 536765,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "0c484fc2b11c0740fe168ee3f877dc1759017149e9c78bafdb0696b9f7eb0133",
+				"bytes_chirho": 627050,
+				"verses_chirho": 31
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "aefb9b30b1911123a640509082f6b4d7adfd412115179f3bf2e9969bc932f2cc",
+				"bytes_chirho": 354844,
+				"verses_chirho": 16
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "a213b197c90e81ad64ab2d782de22cc0138ec1f6859f4779fbd83e87907e30c3",
+				"bytes_chirho": 440451,
+				"verses_chirho": 23
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "aabf4f859a7b22b457f0ce63f949315e6cba572467cfcfc7312d0acb555de578",
+				"bytes_chirho": 438280,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "19fe9db47db59d6cc46db183cc870c1787f4cb411b411aff2f9be4595b699394",
+				"bytes_chirho": 274663,
+				"verses_chirho": 13
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "1c7effdf1a699c60e25846ffdf03c995e798d0d8e0df447f362fbe34a907d081",
+				"bytes_chirho": 421067,
+				"verses_chirho": 20
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "a04e2ccbaea1d19e26d98c304777e3a48d6eb66b4c7196ae4bd5420672ad9a17",
+				"bytes_chirho": 859321,
+				"verses_chirho": 40
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "087462bab34c3ba62329c77436fa41a2ee92a4833cd8751a60a03364344d9dbd",
+				"bytes_chirho": 280513,
+				"verses_chirho": 13
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "c2942cee154d3f2ae7619e8068ca70131da41613daabad3a577f1b7ca380da9d",
+				"bytes_chirho": 568624,
+				"verses_chirho": 27
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "80dc1d0a32895733c37ae603222acd27819354da73890daf963a22e23a60f2dd",
+				"bytes_chirho": 610874,
+				"verses_chirho": 33
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "6d10be90dfb00ee47fbbbb3ef76f15664c203c4eef2c877b660b523cdb96fff9",
+				"bytes_chirho": 679164,
+				"verses_chirho": 34
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "c8f7743de81f5fdbb384d701f9e4626e331326d736cf3cc84911490fe8cefbed",
+				"bytes_chirho": 600741,
+				"verses_chirho": 31
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "058ff2e5326214c5b4cba7d379aaff4e92adb195d750847d7c1639ce698beebe",
+				"bytes_chirho": 255108,
+				"verses_chirho": 13
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 14,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-14-chirho.json",
+				"sha256_chirho": "72252e091e3211f46817c6df58c273079a0c1496c89d79644797d92c99209c0f",
+				"bytes_chirho": 782860,
+				"verses_chirho": 40
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 15,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-15-chirho.json",
+				"sha256_chirho": "c69d8cd8b9aad4aabb7f722363d7dee4ee1f08158b476827cf05aac3d0e693dc",
+				"bytes_chirho": 1096372,
+				"verses_chirho": 58
+			},
+			{
+				"book_id_chirho": "1Cor",
+				"chapter_chirho": 16,
+				"path_chirho": "/content-chirho/1-corinthians-chirho/chapter-16-chirho.json",
+				"sha256_chirho": "f4b574e0800df4ce5491bbf31916823221ae40028be8217efedb4cec3f145eb1",
+				"bytes_chirho": 429526,
+				"verses_chirho": 24
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "d4247323e79207799fce2462f8b3a396462e0bd0a542b5a29c04b49eabc1bc14",
+				"bytes_chirho": 585194,
+				"verses_chirho": 24
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "a178088791f6eee566ff012a2d511106c74e7492cffa4103b4319f8a9c28ec77",
+				"bytes_chirho": 356500,
+				"verses_chirho": 17
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "92d3c56c915f159afff59690be032dad9ff955fbf30dc321f4a999493637ce44",
+				"bytes_chirho": 373589,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "1117e8a5b8d50e81e2ab421ab0d0a7629e15b4d282b31ac8c8174d915de6b4e2",
+				"bytes_chirho": 398093,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "b654783507b5d0b0dd9574da58b3aab0e778253e33cd4f6c7d91a24e7f0df972",
+				"bytes_chirho": 429929,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "27acb30f45c80fd346e1f1eb270bc2e3e08585a62c8b3b7bf565923731aaf069",
+				"bytes_chirho": 344305,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "dc26090ab37ce0af604c3702d7ebb59eab5e1e9833b694b38629d0dbb673d11a",
+				"bytes_chirho": 395881,
+				"verses_chirho": 16
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "4cad94ae68c95356dac20e75310a0c747866cd7caa7bb41ebca06ee2a8d61e0d",
+				"bytes_chirho": 510229,
+				"verses_chirho": 24
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "b944958f1367eda24eb36d4471bebffe711eec84bfd1ec902ff250ff143e5a1f",
+				"bytes_chirho": 348324,
+				"verses_chirho": 15
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "64a53760e4d3b4b2bcdcb319deef1bbf3f64ae82324c0f69a8d30761fd7fb8eb",
+				"bytes_chirho": 389855,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "4052bb07fce0093ad7663736119df423de88f826558fa95015e174bc259f8268",
+				"bytes_chirho": 644352,
+				"verses_chirho": 33
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "de45743ac461ebf7e3f297ad5a516fbdf2f295c32f9e47f3a427242f081276b6",
+				"bytes_chirho": 503092,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "2Cor",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/2-corinthians-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "9634598df2177b1821a765f05e5c837719b579b6929939b07b6e889193482274",
+				"bytes_chirho": 292758,
+				"verses_chirho": 13
+			},
+			{
+				"book_id_chirho": "Gal",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/galatians-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "7697f9dea8989eddf20f36833fea8953b3c9427f7168b505908cf07a50616b3c",
+				"bytes_chirho": 464584,
+				"verses_chirho": 24
+			},
+			{
+				"book_id_chirho": "Gal",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/galatians-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "9e82538b5c52f2aadbe8a6991691405f37aca7ed33f8dff2a405e05b5e7b1776",
+				"bytes_chirho": 476958,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Gal",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/galatians-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "1d5ee27efb5a337db907981009f3cc3f9241d83a357988a05b7cf0eadc9782a6",
+				"bytes_chirho": 578555,
+				"verses_chirho": 29
+			},
+			{
+				"book_id_chirho": "Gal",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/galatians-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "828917dc5b96a9b23176a68e359ee5c5c95c074e0c164a20203fe3416802eca8",
+				"bytes_chirho": 578198,
+				"verses_chirho": 31
+			},
+			{
+				"book_id_chirho": "Gal",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/galatians-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "40e02f9a93b367c0477440b5bf182fc69361a76248f478acbc4bf5738a2d18bc",
+				"bytes_chirho": 429129,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "Gal",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/galatians-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "b9dbae92483e551153eb3911f99a3b24a0ddc079e8fd7c4b29fde3e208ea8d1e",
+				"bytes_chirho": 346192,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "Eph",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/ephesians-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "8be1203b1e6d97edb1fc9a8646d103ce09b2d992d80ab8a734458a9ede3efa34",
+				"bytes_chirho": 496362,
+				"verses_chirho": 23
+			},
+			{
+				"book_id_chirho": "Eph",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/ephesians-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "2cd71d5df88ccefe7f6b04daa6f2ff6894bfb520c664352ee61b75ff8a7fe76d",
+				"bytes_chirho": 454218,
+				"verses_chirho": 22
+			},
+			{
+				"book_id_chirho": "Eph",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/ephesians-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "081ba3c87a5657d5bcfb1b5500994072c1f6121de8dc4ceaedb613e867d2a256",
+				"bytes_chirho": 411754,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Eph",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/ephesians-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "1e7a7ab73a5e304f09a6fe21139d6a8af93f82d66b9b6c96345a0f0edd97da55",
+				"bytes_chirho": 618830,
+				"verses_chirho": 32
+			},
+			{
+				"book_id_chirho": "Eph",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/ephesians-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "e2ffd5be23414129f409326cceb237f0d3567f32f8ef6ba7522435480700caa3",
+				"bytes_chirho": 596916,
+				"verses_chirho": 33
+			},
+			{
+				"book_id_chirho": "Eph",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/ephesians-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "4ad420cfe72e1daec371ff7e2763f24407cc5bf4ad670e2ebc037983dadaea0f",
+				"bytes_chirho": 494240,
+				"verses_chirho": 24
+			},
+			{
+				"book_id_chirho": "Phil",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/philippians-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "941a587e253c9687ea8f192bc8b5f7350bd072aa50201c34c26fe9edbd475eaa",
+				"bytes_chirho": 626899,
+				"verses_chirho": 30
+			},
+			{
+				"book_id_chirho": "Phil",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/philippians-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "76e2014d8be1cb71b4ac9fc8f1b866212be59c7bcd91372c124a4847cfb4231c",
+				"bytes_chirho": 561009,
+				"verses_chirho": 30
+			},
+			{
+				"book_id_chirho": "Phil",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/philippians-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "d781bcfca57a4838d8533bca8581e44118de8c338279e3681a95268e3902ccd5",
+				"bytes_chirho": 430222,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Phil",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/philippians-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "3473abff0d85ca6cea4db81ddedebed8f8f21777236c514686b851dec68d0e50",
+				"bytes_chirho": 455429,
+				"verses_chirho": 23
+			},
+			{
+				"book_id_chirho": "Col",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/colossians-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "63e47f04ebc0e996f7f47d805f3d22107f50ac3946478dafe5e8967f81af65a3",
+				"bytes_chirho": 658775,
+				"verses_chirho": 29
+			},
+			{
+				"book_id_chirho": "Col",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/colossians-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "c7bb0cb5e4da4e73120884c84ca6aba27cd195c79660e5085873a632bc83f3d9",
+				"bytes_chirho": 485052,
+				"verses_chirho": 23
+			},
+			{
+				"book_id_chirho": "Col",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/colossians-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "960156d9969bf6867766c30ce5186b8071e33c8fb3d4cb5404a27fa3e09f731c",
+				"bytes_chirho": 470790,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Col",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/colossians-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "c8c56db0672c03b76f23ee1ef6d3fc946321b40c4b9d67af63a364db729c75db",
+				"bytes_chirho": 363846,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "1Thess",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/1-thessalonians-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "f2f37f27d8c3ae5ef9eb96f2925f475823e92e50d91d6d726d448747bebd5fb6",
+				"bytes_chirho": 251804,
+				"verses_chirho": 10
+			},
+			{
+				"book_id_chirho": "1Thess",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/1-thessalonians-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "f097534a9e042886e61027d12517d6c2a9e8bcfa33719f70ccfe274f0710bb17",
+				"bytes_chirho": 474632,
+				"verses_chirho": 20
+			},
+			{
+				"book_id_chirho": "1Thess",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/1-thessalonians-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "6524249c006b117034b2878e3c3581060f37028543f3120fb67423ce1e80e2f5",
+				"bytes_chirho": 302395,
+				"verses_chirho": 13
+			},
+			{
+				"book_id_chirho": "1Thess",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/1-thessalonians-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "856c14db19cd0271d50042358c746b7046c1117df027ad14b2b40be0bb5bf187",
+				"bytes_chirho": 385746,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "1Thess",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/1-thessalonians-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "866fb0550f01d3f390e296c1de5c3c73988a0fb262b88ad3be7423e65c5df465",
+				"bytes_chirho": 441742,
+				"verses_chirho": 28
+			},
+			{
+				"book_id_chirho": "2Thess",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/2-thessalonians-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "70631472563a891d9d5dfae0cf2655223e740ed00a9365c5d4e750eb280b1736",
+				"bytes_chirho": 283959,
+				"verses_chirho": 12
+			},
+			{
+				"book_id_chirho": "2Thess",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/2-thessalonians-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "86e0980193f85f27cbe752173789116fab75b3dc0bb0714ad287aa34634f0044",
+				"bytes_chirho": 386890,
+				"verses_chirho": 17
+			},
+			{
+				"book_id_chirho": "2Thess",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/2-thessalonians-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "29ec9823acfebcd0f1233ebccf805f1b28830640214dcfab703573ca59d81a2c",
+				"bytes_chirho": 351889,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "1Tim",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/1-timothy-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "b557324149355f37258c6d79f7a4b9e5c2a907036654024788c2904c670bae92",
+				"bytes_chirho": 394309,
+				"verses_chirho": 20
+			},
+			{
+				"book_id_chirho": "1Tim",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/1-timothy-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "fa20139a77a75fdc0363284221323021e2872c19721d6dba5a57853f4aa1da66",
+				"bytes_chirho": 249866,
+				"verses_chirho": 15
+			},
+			{
+				"book_id_chirho": "1Tim",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/1-timothy-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "255391fb010a1a5fc1a6dd3381813bded6a191dad11dddee22e92ecea257f102",
+				"bytes_chirho": 277445,
+				"verses_chirho": 16
+			},
+			{
+				"book_id_chirho": "1Tim",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/1-timothy-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "57248be618b19135d8270d712b1341c7480a1524354271f3133748f2c4d37c16",
+				"bytes_chirho": 292560,
+				"verses_chirho": 16
+			},
+			{
+				"book_id_chirho": "1Tim",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/1-timothy-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "7a1bf60c8c6a197031f9e7cb2f5ee97cf22c46c54490b7f08e0b2072daa531ce",
+				"bytes_chirho": 440449,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "1Tim",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/1-timothy-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "c7992f1efd0fb9e5e0bc66c9a4222525d47472ef7cda65a220293abab3519f56",
+				"bytes_chirho": 437257,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "2Tim",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/2-timothy-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "86aab082451bfb4f6f99d9bf85bb8dbba8aa304eba8f5b340b1937cb92916896",
+				"bytes_chirho": 393386,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "2Tim",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/2-timothy-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "fc1f2c1cc03380eb16f5db1c3511d6de68391d215a5ad633f8477b1fa7419935",
+				"bytes_chirho": 474662,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "2Tim",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/2-timothy-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "ca3552785ad4b09f8cc80c01786dd4c7a11eb33790f07c236747a21774831dd0",
+				"bytes_chirho": 310835,
+				"verses_chirho": 17
+			},
+			{
+				"book_id_chirho": "2Tim",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/2-timothy-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "70ed01ce9eea362a49bb8e53b4c781af8787b6af894bd731cd4088db036d72e6",
+				"bytes_chirho": 424791,
+				"verses_chirho": 22
+			},
+			{
+				"book_id_chirho": "Titus",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/titus-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "4e73e62b2b8a22748911895283d07021dbbfc51d90c8ae2159c68599e4e7e45a",
+				"bytes_chirho": 320066,
+				"verses_chirho": 16
+			},
+			{
+				"book_id_chirho": "Titus",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/titus-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "5841d9bfb11aeeb967d4e5908a3d0ccb0b04207495686b9a0fb8e772f603e925",
+				"bytes_chirho": 257491,
+				"verses_chirho": 15
+			},
+			{
+				"book_id_chirho": "Titus",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/titus-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "0a5f31c3851c244b7de497102b7f22fdd0d219579a242e0a103af3f17cc26df4",
+				"bytes_chirho": 286778,
+				"verses_chirho": 15
+			},
+			{
+				"book_id_chirho": "Phlm",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/philemon-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "6643e16edd58fa5a2255ad5074e17fae1218a3ffdeb5afde4833765ca48b167e",
+				"bytes_chirho": 442306,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "bc2c070451470616bdee1bbddbc6cdd18441d9a7a357b027e44b960674ef63f7",
+				"bytes_chirho": 315876,
+				"verses_chirho": 14
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "0ec9152b4dbcc9c1920fa5bf2ec63f2401dbbc201117f9789dfe4bd7ea186da1",
+				"bytes_chirho": 393467,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "65fdd68cee1912a2e54431e4675a821d5fcc8b90f3ff8cbc2ab45f59f0e49996",
+				"bytes_chirho": 368507,
+				"verses_chirho": 19
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "beb66bb9f6d89c09b0dbd2ef6da8342f4bdbcee01c828bd4881daf59c2d52705",
+				"bytes_chirho": 360586,
+				"verses_chirho": 16
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "54065b9442572f9e5e81cd5fa3c20e24031e33cade8b0cba7c260b0803f747d5",
+				"bytes_chirho": 291422,
+				"verses_chirho": 14
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "a4591475b31e9b0cdb2f1b15c7d44204cf54180054c6fc1a396fad6b24d1f9b5",
+				"bytes_chirho": 387852,
+				"verses_chirho": 20
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "ac8fbe6e2f7b3fed5b4cd4e6a4bc2e8abe7ef945c5e06e9b96cd42839a40ddaf",
+				"bytes_chirho": 576741,
+				"verses_chirho": 28
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "c77706332cfc8841b0c515d8400ba1209615a3ac866c2620c43c561db8e294c7",
+				"bytes_chirho": 330682,
+				"verses_chirho": 13
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "898d61a807b64f43678990acc6770def928be7d6ae604359a8e6ed7c0369effa",
+				"bytes_chirho": 630669,
+				"verses_chirho": 28
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "d60df2a61e0fd8ad95d029ea4ddae15668bb2e2f2aba0fe0fd61babf2eb10700",
+				"bytes_chirho": 723987,
+				"verses_chirho": 39
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "59b7f8089d38958ba1a28a2a6e29e7332d27f93a4459167dab6e4c93028d2318",
+				"bytes_chirho": 815525,
+				"verses_chirho": 40
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "2e52267baf6263fa4667d9238187b604589905e31a6ee614afaa513dc3a84a2c",
+				"bytes_chirho": 603839,
+				"verses_chirho": 29
+			},
+			{
+				"book_id_chirho": "Heb",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/hebrews-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "847d6742a7b08e2684091dcacab55d8cda5415c7d2747d4c5e65e3b41243de69",
+				"bytes_chirho": 488627,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Jas",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/james-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "b515a2b84f9bebfa991dad672c1398580e9a2cc1631e4bf08ab971816e5f7b23",
+				"bytes_chirho": 526817,
+				"verses_chirho": 27
+			},
+			{
+				"book_id_chirho": "Jas",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/james-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "e9fb95841a470b407d6ce3d072d8d36310d1856db5caec0e5e0d73145277ca69",
+				"bytes_chirho": 529040,
+				"verses_chirho": 26
+			},
+			{
+				"book_id_chirho": "Jas",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/james-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "991aa33e5149c68050ff59625238849b31fdb89443bd4e57a3d4bbe13a2fdf43",
+				"bytes_chirho": 372379,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "Jas",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/james-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "a8d0e800f61e9e9ae5a846dcfded8f320c70604f536071afd71072a1fa78c43b",
+				"bytes_chirho": 351069,
+				"verses_chirho": 17
+			},
+			{
+				"book_id_chirho": "Jas",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/james-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "32cfba6f78acb77b44f5a22b950801d49e3a5683374302d52149e5058cbc45a1",
+				"bytes_chirho": 436469,
+				"verses_chirho": 20
+			},
+			{
+				"book_id_chirho": "1Pet",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/1-peter-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "2ef1697f65b5ce8228dc236f1f39e6fedc8dfd409dfaa0700a4e6e84b6525cf8",
+				"bytes_chirho": 512823,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "1Pet",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/1-peter-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "bfb4caa010b34df38cb454714a026266d9aff7442b6b7bb2f5357482cf0e0c02",
+				"bytes_chirho": 502135,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "1Pet",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/1-peter-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "c4e938d08eebba332bf191dbba632854496aac46b9cc1a4e9191652685ac201e",
+				"bytes_chirho": 463571,
+				"verses_chirho": 22
+			},
+			{
+				"book_id_chirho": "1Pet",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/1-peter-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "726a77d6e0057f49df60c0b750b27e8ff6b8840f2a237ab223703fbeefc239a5",
+				"bytes_chirho": 386207,
+				"verses_chirho": 19
+			},
+			{
+				"book_id_chirho": "1Pet",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/1-peter-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "a0ecc0ed49a665e721e3c57ae1a0402f612652516b0205b333c0ef99327fed74",
+				"bytes_chirho": 269890,
+				"verses_chirho": 14
+			},
+			{
+				"book_id_chirho": "2Pet",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/2-peter-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "8c2309536f38b9bad4916b0f05d223c6f70640907aa7082ac7e92c80791a088d",
+				"bytes_chirho": 475278,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "2Pet",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/2-peter-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "baf8fef1067177485aea2fb6670e56ad8f5c3d2b521ca347b4a454a734979093",
+				"bytes_chirho": 475413,
+				"verses_chirho": 22
+			},
+			{
+				"book_id_chirho": "2Pet",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/2-peter-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "3c99263ba38178dbbec6be6302f8815237295b2bfaa5a211beb4edee23faa33a",
+				"bytes_chirho": 417972,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "1John",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/1-john-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "cd9d5eb3ae633b57d1105af9f2ecf90a2878e0aef4be70a74bedba3317ff2c9a",
+				"bytes_chirho": 250472,
+				"verses_chirho": 10
+			},
+			{
+				"book_id_chirho": "1John",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/1-john-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "f8df4290a33755c4b52d5c650ee5600b603b175dc080bbd5cc2caed714c727f2",
+				"bytes_chirho": 710097,
+				"verses_chirho": 29
+			},
+			{
+				"book_id_chirho": "1John",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/1-john-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "893d1989e1a52478e55c26303545b79e88eab8393422a62ae38ff1d64cc34dda",
+				"bytes_chirho": 569754,
+				"verses_chirho": 24
+			},
+			{
+				"book_id_chirho": "1John",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/1-john-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "afab167ea58a9fbe9b74d72ffe2b9d14ab2cfe0a1a41d2125224c0c84453e6a6",
+				"bytes_chirho": 537239,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "1John",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/1-john-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "b24b530bc9ab54449b85fbf75a91cee683dc1b48d229b148a812001e39ab32d0",
+				"bytes_chirho": 515859,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "2John",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/2-john-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "3fc684c89263b6306f770c9a9a1658c6d2bf6cc3577db587903d6058fc8f22e5",
+				"bytes_chirho": 300614,
+				"verses_chirho": 13
+			},
+			{
+				"book_id_chirho": "3John",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/3-john-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "383c6be0abe0f5facb506417bc73c77cc0c31d69fc40c1c437ea533a79cb0902",
+				"bytes_chirho": 287167,
+				"verses_chirho": 15
+			},
+			{
+				"book_id_chirho": "Jude",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/jude-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "e2365db5c8a2de22c129ee921a2af3b0def431c1ad7469c8691779043990c948",
+				"bytes_chirho": 569040,
+				"verses_chirho": 25
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 1,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-01-chirho.json",
+				"sha256_chirho": "32ff3e36d7b9f721bdb08c25f239d4f47d9dab66d3f674a7786da2ad4793e038",
+				"bytes_chirho": 548735,
+				"verses_chirho": 20
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 2,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-02-chirho.json",
+				"sha256_chirho": "efe79e39a09e64b9fb1c7c9868a1d47ae68bf3d4f9c491e85f06c63d0481d187",
+				"bytes_chirho": 745658,
+				"verses_chirho": 29
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 3,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-03-chirho.json",
+				"sha256_chirho": "9f55237c3aa493311252800b14fc0ecb3c7e66b958919f9778b21c007c9cda28",
+				"bytes_chirho": 617685,
+				"verses_chirho": 22
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 4,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-04-chirho.json",
+				"sha256_chirho": "388973db53bbfbb1b46053b137a2a6a8bb39b09eaebe654403c75c5c7535b3e7",
+				"bytes_chirho": 337235,
+				"verses_chirho": 11
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 5,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-05-chirho.json",
+				"sha256_chirho": "53c0cc5f1ab7ef2fc37ea1848b49f972645db8737bfa2314acf2b875a22bb69d",
+				"bytes_chirho": 395295,
+				"verses_chirho": 14
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 6,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-06-chirho.json",
+				"sha256_chirho": "02a8632af685a9fb820f0a0e5c00937fc08ca02873662f1cd20816e54b6bcb11",
+				"bytes_chirho": 486594,
+				"verses_chirho": 17
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 7,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-07-chirho.json",
+				"sha256_chirho": "48c9443bdf6311fef18e1a4699f034f4f726f74149f16a3581737349e74bde1b",
+				"bytes_chirho": 467154,
+				"verses_chirho": 17
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 8,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-08-chirho.json",
+				"sha256_chirho": "d3950ce961bdf98c2d20645e92ba66b9b139d428ae13b389e2978317947c1714",
+				"bytes_chirho": 371713,
+				"verses_chirho": 13
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 9,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-09-chirho.json",
+				"sha256_chirho": "e1d7bcd69adde3265e56cc5908033515d431a983b40118c3cd21859c92d9297f",
+				"bytes_chirho": 577873,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 10,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-10-chirho.json",
+				"sha256_chirho": "9cbb0ce6623943057cc04d6f54cf6794f7494e85781dd74b81c6b85e142c7352",
+				"bytes_chirho": 335785,
+				"verses_chirho": 11
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 11,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-11-chirho.json",
+				"sha256_chirho": "44d69ff5a081f5ceb052706d2cc852da23863f48efb6fb0dfab2394bdfa7386f",
+				"bytes_chirho": 573150,
+				"verses_chirho": 19
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 12,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-12-chirho.json",
+				"sha256_chirho": "52b659135970c2f6cbbabd44f2eb9c5b5e49ea39bb2770a77fd1788eaffabf42",
+				"bytes_chirho": 509634,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 13,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-13-chirho.json",
+				"sha256_chirho": "7a6d46b362cc808d446c1093e5e9f6d44a3ad5d9512b9c7769fb8d2477b41f4e",
+				"bytes_chirho": 519227,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 14,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-14-chirho.json",
+				"sha256_chirho": "c5d30afc6301ab520da72c5e1af9ce6acd32d2767636104811821cc6273b7be4",
+				"bytes_chirho": 627010,
+				"verses_chirho": 20
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 15,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-15-chirho.json",
+				"sha256_chirho": "4c7e91ce6aa338a1fb28dd747465e2da906151bc192ebdb1bd151198662adc5b",
+				"bytes_chirho": 248339,
+				"verses_chirho": 8
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 16,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-16-chirho.json",
+				"sha256_chirho": "5967c784b8436d5a09bd1981929d6b19ea16e3baac369a792e1b74562c691ada",
+				"bytes_chirho": 555700,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 17,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-17-chirho.json",
+				"sha256_chirho": "40bcedbc5605ea9cbd9a658d317766442bc7634d3fa86fe48b4189c798d15ca6",
+				"bytes_chirho": 516337,
+				"verses_chirho": 18
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 18,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-18-chirho.json",
+				"sha256_chirho": "9300817f30ea79723887d5318c630d5d94e13fee000768d842dd318233a93f26",
+				"bytes_chirho": 716651,
+				"verses_chirho": 24
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 19,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-19-chirho.json",
+				"sha256_chirho": "5e217b0c10962af6bfce9c807c573ac9960c54f3c34123882dfbead81b071a99",
+				"bytes_chirho": 610790,
+				"verses_chirho": 21
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 20,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-20-chirho.json",
+				"sha256_chirho": "b13a3d4509540f6757e47dee0368c620e77dd3efd4acfed55ba5eb662a5f15be",
+				"bytes_chirho": 463889,
+				"verses_chirho": 15
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 21,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-21-chirho.json",
+				"sha256_chirho": "d7cb7ab3750fdbf5b6d84a0eec6869739bf413e7fab356f91c609f26646d86e8",
+				"bytes_chirho": 714511,
+				"verses_chirho": 27
+			},
+			{
+				"book_id_chirho": "Rev",
+				"chapter_chirho": 22,
+				"path_chirho": "/content-chirho/revelation-chirho/chapter-22-chirho.json",
+				"sha256_chirho": "59970a6fcf4aa6bd7d04b4e8150742e95f0df09d6307e658ca01e58e7382e8b6",
+				"bytes_chirho": 538904,
+				"verses_chirho": 21
+			}
+		],
+		"chapter_count_chirho": 260,
+		"verse_count_chirho": 7943,
+		"token_count_chirho": 137779,
+		"sha256_chirho": "6af315eda86a0880f2d5beb0509cdf6001680065e98c8992450a9fa120b691c1"
+	},
+	"limits_chirho": {
+		"part_count_chirho": 8,
+		"max_forms_chirho": 25000,
+		"max_part_forms_chirho": 4096,
+		"max_part_bytes_chirho": 1048576,
+		"max_manifest_bytes_chirho": 131072,
+		"max_total_bytes_chirho": 9437184,
+		"max_text_bytes_chirho": 1024,
+		"max_ipa_bytes_chirho": 2048
+	},
+	"parts_chirho": [
+		{
+			"part_index_chirho": 0,
+			"file_chirho": "greek-ipa-part-00-chirho.json",
+			"sha256_chirho": "6f5579735da52115b6642090ae13885a57693ea11bc3af9172a213a5d638a0a1",
+			"bytes_chirho": 570144,
+			"count_chirho": 2386
+		},
+		{
+			"part_index_chirho": 1,
+			"file_chirho": "greek-ipa-part-01-chirho.json",
+			"sha256_chirho": "ae6ecbddc38042d5d2b83280b4c573f81a8dc03e74ee61db02373cd399bf477e",
+			"bytes_chirho": 585856,
+			"count_chirho": 2461
+		},
+		{
+			"part_index_chirho": 2,
+			"file_chirho": "greek-ipa-part-02-chirho.json",
+			"sha256_chirho": "71bdef66bf8c78fa1a83ac6d16add1cc35039db17ac4d160f1a070c29fc413da",
+			"bytes_chirho": 594761,
+			"count_chirho": 2494
+		},
+		{
+			"part_index_chirho": 3,
+			"file_chirho": "greek-ipa-part-03-chirho.json",
+			"sha256_chirho": "a09948ebd7ae5d113a23073e639fb334e5b67d4647c6f71f91a2e319430d3476",
+			"bytes_chirho": 585039,
+			"count_chirho": 2450
+		},
+		{
+			"part_index_chirho": 4,
+			"file_chirho": "greek-ipa-part-04-chirho.json",
+			"sha256_chirho": "33100a0da8f656885be46372254ababbc8170779083ac489da8cbf4741bc48cf",
+			"bytes_chirho": 576740,
+			"count_chirho": 2419
+		},
+		{
+			"part_index_chirho": 5,
+			"file_chirho": "greek-ipa-part-05-chirho.json",
+			"sha256_chirho": "55ee7f0a0937dd4343305ec835224a2f09e2a0ab0eb9202b3d0373251a2458de",
+			"bytes_chirho": 566873,
+			"count_chirho": 2374
+		},
+		{
+			"part_index_chirho": 6,
+			"file_chirho": "greek-ipa-part-06-chirho.json",
+			"sha256_chirho": "a6a8929876045f864e1f73ca3b47989b703835527f148a291c6cbc3a0115a6d1",
+			"bytes_chirho": 581025,
+			"count_chirho": 2433
+		},
+		{
+			"part_index_chirho": 7,
+			"file_chirho": "greek-ipa-part-07-chirho.json",
+			"sha256_chirho": "7dbc0d6de0887bd775366cfdc7a5443ea7e2df1c67e8a6b9965614e6beb9b46d",
+			"bytes_chirho": 580282,
+			"count_chirho": 2431
+		}
+	]
+}

@@ -86,7 +86,30 @@ const EXCLUDED_SEGMENTS_CHIRHO = new Set([
 	'workspace-chirho',
 	'xcuserdata'
 ]);
-/** Generated artwork and audio bytes are delivered from private storage, never from source. */
+/** Exact bundled UI resources needed by offline web/native builds; all Bible media stay excluded. */
+export const ESSENTIAL_UI_RASTERS_CHIRHO = [
+	{
+		path_chirho: 'static/onboarding-chirho/welcome-hero-v1-chirho.webp',
+		bytes_chirho: 334984,
+		sha256_chirho: '31ba32a9278f99020ddf6ce3424d9867e293bd05bf599ee061b8ef97aab2eb2c'
+	},
+	{
+		path_chirho:
+			'apps-chirho/android-chirho/app-chirho/src/main/res/drawable-nodpi/welcome_hero_chirho.webp',
+		bytes_chirho: 334984,
+		sha256_chirho: '31ba32a9278f99020ddf6ce3424d9867e293bd05bf599ee061b8ef97aab2eb2c'
+	},
+	{
+		path_chirho:
+			'apps-chirho/ios-chirho/HinnehChirho/WelcomeChirho.xcassets/WelcomeHeroChirho.imageset/welcome-hero-chirho.png',
+		bytes_chirho: 1856156,
+		sha256_chirho: '1e3c07023b245d7d8895b7e9d6ad7dde73703e460bd073ba72d0c864e5b67ffe'
+	}
+] as const;
+const ESSENTIAL_UI_BY_PATH_CHIRHO = new Map<string, (typeof ESSENTIAL_UI_RASTERS_CHIRHO)[number]>(
+	ESSENTIAL_UI_RASTERS_CHIRHO.map((assetChirho) => [assetChirho.path_chirho, assetChirho])
+);
+/** Other generated artwork and audio bytes use delivery storage, never source history. */
 const MEDIA_EXTENSIONS_CHIRHO = new Set([
 	'.aac',
 	'.avif',
@@ -139,6 +162,7 @@ export type ExclusionChirho =
 	| 'build_or_cache'
 	| 'redistribution_boundary'
 	| 'generated_media'
+	| 'essential_ui_asset_mismatch'
 	| 'database'
 	| 'oversized';
 export interface PathFactsChirho {
@@ -194,8 +218,15 @@ export function classifyPublicPathChirho(
 		return excludeChirho('build_or_cache');
 	if (REDISTRIBUTION_PATTERN_CHIRHO.test(pathChirho))
 		return excludeChirho('redistribution_boundary');
+	const essentialUiChirho = ESSENTIAL_UI_BY_PATH_CHIRHO.get(pathChirho);
+	if (essentialUiChirho && factsChirho.bytes_chirho !== essentialUiChirho.bytes_chirho)
+		return excludeChirho('essential_ui_asset_mismatch');
 	const dotChirho = nameChirho.lastIndexOf('.');
-	if (dotChirho > 0 && MEDIA_EXTENSIONS_CHIRHO.has(nameChirho.slice(dotChirho).toLowerCase()))
+	if (
+		!essentialUiChirho &&
+		dotChirho > 0 &&
+		MEDIA_EXTENSIONS_CHIRHO.has(nameChirho.slice(dotChirho).toLowerCase())
+	)
 		return excludeChirho('generated_media');
 	if (DATABASE_PATTERN_CHIRHO.test(nameChirho)) return excludeChirho('database');
 	if (factsChirho.bytes_chirho >= GITHUB_FILE_LIMIT_CHIRHO) return excludeChirho('oversized');
@@ -253,7 +284,7 @@ async function factsChirho(fullPathChirho: string) {
 	}
 }
 
-/** Classifies every listed path; it reads only metadata and the binding file. */
+/** Workflow: public-site-chirho.md. Verify bundled UI bytes while keeping generated Bible media out. */
 export async function planPublicSourceChirho(
 	rootChirho: string,
 	listChirho: (rootChirho: string) => string[] = gitListedPathsChirho
@@ -283,12 +314,25 @@ export async function planPublicSourceChirho(
 		const classChirho = classifyPublicPathChirho(pathChirho, pathFactsChirho);
 		if (!classChirho.include_chirho) {
 			excludeChirho(pathChirho, classChirho.reason_chirho);
+			if (classChirho.reason_chirho === 'essential_ui_asset_mismatch')
+				planChirho.blockers_chirho.push(`Essential UI resource size differs: ${pathChirho}`);
 			continue;
 		}
 		// A symlinked parent directory could still lead outside the project root.
 		const realChirho = await realpathChirho(joinChirho(rootChirho, pathChirho));
 		if (realChirho.normalize('NFC') !== joinChirho(realRootChirho, pathChirho).normalize('NFC')) {
 			excludeChirho(pathChirho, 'escapes_root');
+			continue;
+		}
+		if (
+			ESSENTIAL_UI_BY_PATH_CHIRHO.has(pathChirho) &&
+			!essentialUiBytesMatchChirho(
+				pathChirho,
+				await readFileChirho(joinChirho(rootChirho, pathChirho))
+			)
+		) {
+			excludeChirho(pathChirho, 'essential_ui_asset_mismatch');
+			planChirho.blockers_chirho.push(`Essential UI resource bytes differ: ${pathChirho}`);
 			continue;
 		}
 		planChirho.files_chirho.push({
@@ -347,6 +391,15 @@ export interface PublicManifestChirho {
 const sha256Chirho = (bytesChirho: Uint8Array) =>
 	createHashChirho('sha256').update(bytesChirho).digest('hex');
 
+function essentialUiBytesMatchChirho(pathChirho: string, bytesChirho: Uint8Array): boolean {
+	const expectedChirho = ESSENTIAL_UI_BY_PATH_CHIRHO.get(pathChirho);
+	return (
+		!expectedChirho ||
+		(bytesChirho.length === expectedChirho.bytes_chirho &&
+			sha256Chirho(bytesChirho) === expectedChirho.sha256_chirho)
+	);
+}
+
 /** Reads one planned file, refusing it if its kind or size changed after planning. */
 async function plannedBytesChirho(rootChirho: string, fileChirho: PublicFileChirho) {
 	const fullChirho = joinChirho(rootChirho, fileChirho.path_chirho);
@@ -356,6 +409,8 @@ async function plannedBytesChirho(rootChirho: string, fileChirho: PublicFileChir
 	const bytesChirho = await readFileChirho(fullChirho);
 	if (bytesChirho.length !== fileChirho.bytes_chirho)
 		throw new Error(`Planned source changed: ${fileChirho.path_chirho}`);
+	if (!essentialUiBytesMatchChirho(fileChirho.path_chirho, bytesChirho))
+		throw new Error(`Essential UI source changed: ${fileChirho.path_chirho}`);
 	return bytesChirho;
 }
 

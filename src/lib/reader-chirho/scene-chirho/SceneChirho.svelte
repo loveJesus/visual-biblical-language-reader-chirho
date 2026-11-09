@@ -2,7 +2,7 @@
 <script lang="ts">
 	import { artworkUrlChirho } from '$lib/media-review-chirho/artwork-url-chirho';
 	import ReportArtworkChirho from '$lib/media-review-chirho/ReportArtworkChirho.svelte';
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import type { ScenePresentationChirho } from '$lib/domain-chirho/media-chirho';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
 	import { readerTChirho } from '$lib/i18n-chirho/reader-messages-chirho';
@@ -12,13 +12,15 @@
 		presentationChirho,
 		verseIdChirho,
 		videoChirho = null,
-		canonicalTextChirho = ''
+		canonicalTextChirho = '',
+		controlsChirho
 	}: {
 		presentationChirho: ScenePresentationChirho | null;
 		verseIdChirho: string;
 		/** The catalogue's record for this verse; shown only if it starts from the scene displayed here. */
 		videoChirho?: unknown;
 		canonicalTextChirho?: string;
+		controlsChirho?: Snippet;
 	} = $props();
 	let canonicalShaChirho = $state('');
 	$effect(() => {
@@ -40,14 +42,12 @@
 	});
 	const messagesChirho = defineCatalogueChirho({
 		en: {
-			play_video_chirho: 'Play verse video',
 			captions_chirho: 'Verse text',
 			image_version_chirho: 'Illustration',
 			standard_chirho: 'Standard',
 			reduced_chirho: 'Representation reduced'
 		},
 		es: {
-			play_video_chirho: 'Reproducir video del versículo',
 			captions_chirho: 'Texto del versículo',
 			image_version_chirho: 'Ilustración',
 			standard_chirho: 'Estándar',
@@ -143,64 +143,67 @@
 			</select>
 		</label>
 	{/if}
-	{#if sceneChirho}
-		<img
-			src={artworkUrlChirho(sceneChirho.asset_path_chirho)}
-			alt={sceneChirho.alt_chirho}
-			lang="en"
-			width={sceneChirho.width_chirho}
-			height={sceneChirho.height_chirho}
-			data-scene-chirho
-			hidden={failedPathChirho === sceneChirho.asset_path_chirho}
-			onerror={() => (failedPathChirho = sceneChirho?.asset_path_chirho ?? null)}
-			onload={() => (failedPathChirho = null)}
-		/>
-		{#if verseVideoChirho}
-			<!-- Loads nothing until Play; the verse player shows it in the scene's place and restores the still. -->
-			<video
-				data-scene-video-chirho
-				data-verse-video-play-chirho
-				data-video-sha-chirho={verseVideoChirho.sha256_chirho}
-				src={verseVideoChirho.asset_path_chirho}
-				poster={artworkUrlChirho(sceneChirho.asset_path_chirho)}
-				width={verseVideoChirho.width_chirho}
-				height={verseVideoChirho.height_chirho}
-				preload="none"
-				playsinline
-				hidden
-				aria-label={sceneChirho.alt_chirho}
+	<div class="scene-media-chirho">
+		{#if sceneChirho}
+			<img
+				src={artworkUrlChirho(sceneChirho.asset_path_chirho)}
+				alt={sceneChirho.alt_chirho}
 				lang="en"
-				onerror={() => (failedVideoChirho = verseVideoChirho?.sha256_chirho ?? null)}
-				><track
-					kind="captions"
-					src={captionsChirho}
-					srclang={verseVideoChirho.reading_language_chirho ?? 'he'}
-					label={translateChirho(
-						messagesChirho,
-						localeStateChirho.currentChirho,
-						'captions_chirho'
-					)}
-				/></video
+				width={sceneChirho.width_chirho}
+				height={sceneChirho.height_chirho}
+				data-scene-chirho
+				hidden={failedPathChirho === sceneChirho.asset_path_chirho}
+				onerror={() => (failedPathChirho = sceneChirho?.asset_path_chirho ?? null)}
+				onload={() => (failedPathChirho = null)}
+			/>
+			{#if verseVideoChirho}
+				<!-- Loads nothing until Play; the verse player shows it in the scene's place and restores the still. -->
+				<video
+					data-scene-video-chirho
+					data-verse-video-play-chirho
+					data-video-sha-chirho={verseVideoChirho.sha256_chirho}
+					src={verseVideoChirho.asset_path_chirho}
+					poster={artworkUrlChirho(sceneChirho.asset_path_chirho)}
+					width={verseVideoChirho.width_chirho}
+					height={verseVideoChirho.height_chirho}
+					preload="none"
+					playsinline
+					hidden
+					aria-label={sceneChirho.alt_chirho}
+					lang="en"
+					onerror={() => (failedVideoChirho = verseVideoChirho?.sha256_chirho ?? null)}
+					><track
+						kind="captions"
+						src={captionsChirho}
+						srclang={verseVideoChirho.reading_language_chirho ?? 'he'}
+						label={translateChirho(
+							messagesChirho,
+							localeStateChirho.currentChirho,
+							'captions_chirho'
+						)}
+					/></video
+				>
+			{/if}
+			<p
+				class="scene-missing-chirho"
+				data-scene-missing-chirho
+				hidden={failedPathChirho !== sceneChirho.asset_path_chirho}
 			>
-		{/if}
-		<p
-			class="scene-missing-chirho"
-			data-scene-missing-chirho
-			hidden={failedPathChirho !== sceneChirho.asset_path_chirho}
-		>
-			{readerTChirho('scene_missing_chirho')}
-		</p>
-	{:else}
-		<div class="scene-awaiting-chirho">
-			<span aria-hidden="true">✧</span>
-			<p>
-				{readerTChirho('scene_awaiting_1_chirho')}<br />{readerTChirho(
-					'scene_awaiting_passage_chirho'
-				)}
+				{readerTChirho('scene_missing_chirho')}
 			</p>
-			<small>{readerTChirho('scene_awaiting_note_chirho')}</small>
-		</div>
-	{/if}
+		{:else}
+			<div class="scene-awaiting-chirho">
+				<span aria-hidden="true">✧</span>
+				<p>
+					{readerTChirho('scene_awaiting_1_chirho')}<br />{readerTChirho(
+						'scene_awaiting_passage_chirho'
+					)}
+				</p>
+				<small>{readerTChirho('scene_awaiting_note_chirho')}</small>
+			</div>
+		{/if}
+	</div>
+	{#if controlsChirho}<div class="scene-controls-chirho">{@render controlsChirho()}</div>{/if}
 	<figcaption>
 		<span class="scene-caption-mark-chirho" aria-hidden="true">✧</span>
 		{readerTChirho('scene_caption_chirho')}
@@ -209,16 +212,6 @@
 			<p class="scene-reading-note-chirho" lang="en">{sceneChirho.reading_note_chirho}</p>
 		{/if}
 		{#if sceneChirho}<div>
-				{#if verseVideoChirho}<button
-						type="button"
-						class="scene-video-play-chirho"
-						data-verse-video-play-chirho
-						>▶ {translateChirho(
-							messagesChirho,
-							localeStateChirho.currentChirho,
-							'play_video_chirho'
-						)}</button
-					>{/if}
 				<ReportArtworkChirho
 					assetPathChirho={sceneChirho.asset_path_chirho}
 					sha256Chirho={sceneChirho.sha256_chirho}
@@ -229,12 +222,39 @@
 </figure>
 
 <style>
+	.scene-media-chirho {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		overflow: hidden;
+	}
+	.scene-media-chirho > img,
+	.scene-media-chirho > video {
+		display: block;
+		width: 100%;
+		height: 100%;
+		min-height: 0;
+		object-fit: cover;
+	}
+	.scene-media-chirho > [hidden] {
+		display: none;
+	}
+	.scene-controls-chirho {
+		padding: 16px 18px 6px;
+		background: #fcfcf7;
+	}
+	.scene-controls-chirho :global(.audio-controls-chirho) {
+		margin: 0;
+		padding-bottom: 10px;
+		border-bottom: 0;
+	}
+
 	/* The playing video takes the still's exact slot (layout.css sizes .scene-panel-chirho img). */
 	video[data-scene-video-chirho] {
 		display: block;
 		width: 100%;
 		height: 100%;
-		min-height: 340px;
+		min-height: 0;
 		object-fit: cover;
 		flex: 1;
 		background: #efeadd;
@@ -243,28 +263,7 @@
 	video[data-scene-video-chirho][hidden] {
 		display: none;
 	}
-	@media (max-width: 640px) {
-		video[data-scene-video-chirho] {
-			min-height: 0;
-			height: auto;
-			aspect-ratio: 3 / 2;
-		}
-	}
-	.scene-video-play-chirho {
-		font: inherit;
-		font-size: 12px;
-		padding: 5px 9px;
-		margin: 10px 8px 0 0;
-		border: 1px solid #9fb29a;
-		border-radius: 7px;
-		color: #2f4a36;
-		background: #fffefa;
-		cursor: pointer;
-	}
-	.scene-video-play-chirho:focus-visible {
-		outline: 2px solid #405a89;
-		outline-offset: 2px;
-	}
+
 	.scene-choice-chirho {
 		display: flex;
 		align-items: center;
