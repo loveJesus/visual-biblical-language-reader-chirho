@@ -3652,6 +3652,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/jeremiah-chirho/chapter-022-chirho/jer-022-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/79660a5ea33d79a67517fa6ae986d89a8095cb60cd65fb51e2ea13e7e857417f.webp",
+        "sha256_chirho": "79660a5ea33d79a67517fa6ae986d89a8095cb60cd65fb51e2ea13e7e857417f",
+        "bytes_chirho": 2561426,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T13:19:15.657Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/145a9fae999a430358354e4b9c1b9cd4b06d5033a929ce4bc766d272e556fa5d.webp",
+        "sha256_chirho": "145a9fae999a430358354e4b9c1b9cd4b06d5033a929ce4bc766d272e556fa5d",
+        "bytes_chirho": 241672,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T13:19:16.716Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ezekiel-chirho/chapter-008-chirho/ezek-008-004-chirho.webp"
       ],
       "source_chirho": {

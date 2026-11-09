@@ -3222,6 +3222,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/lamentations-chirho/chapter-004-chirho/lam-004-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/9b5c37dbe2816d39d4fc7d6d5e4f591284fd8b8df1e73e85f8e9d62163f395d5.webp",
+        "sha256_chirho": "9b5c37dbe2816d39d4fc7d6d5e4f591284fd8b8df1e73e85f8e9d62163f395d5",
+        "bytes_chirho": 2485738,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T14:27:41.172Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/de586458ffeb8a104d00a2f4948f40c0b49387112537b8eef70a5d91ff8c6e9c.webp",
+        "sha256_chirho": "de586458ffeb8a104d00a2f4948f40c0b49387112537b8eef70a5d91ff8c6e9c",
+        "bytes_chirho": 232286,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T14:27:42.268Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/1-corinthians-chirho/chapter-015-chirho/1cor-015-012-chirho.webp"
       ],
       "source_chirho": {

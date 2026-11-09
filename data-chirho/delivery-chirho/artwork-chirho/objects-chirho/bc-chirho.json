@@ -4868,6 +4868,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/jeremiah-chirho/chapter-052-chirho/jer-052-001-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/bce64227930e9fc3cff31d008e597e0d42515ea7fa4535ec85a57a4cda418eec.webp",
+        "sha256_chirho": "bce64227930e9fc3cff31d008e597e0d42515ea7fa4535ec85a57a4cda418eec",
+        "bytes_chirho": 2436090,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T14:23:35.006Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/51f89d32eaa1010f3ec84aac20cf21e4d6c4cf2d0a12dbda037bd36c29cfff6d.webp",
+        "sha256_chirho": "51f89d32eaa1010f3ec84aac20cf21e4d6c4cf2d0a12dbda037bd36c29cfff6d",
+        "bytes_chirho": 205746,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T14:23:36.226Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/mark-schnell-v1-chirho/chapter-12-chirho/mark-12-035-chirho.webp"
       ],
       "source_chirho": {

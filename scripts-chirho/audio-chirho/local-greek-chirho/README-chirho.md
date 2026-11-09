@@ -73,3 +73,33 @@ rtk proxy bun scripts-chirho/audio-chirho/local-greek-chirho/install_openings_ch
 The same archive-before-reference DAG applies. All accepted original MP3s, FLACs and five evidence files receive private content-addressed preservation; delivery uses the existing 44.1 kHz MPEG-1 derivative. The catalogue transaction, conflict checks and completed replay remain shared. No Fish recording, voice clone, provider request, synthesis, retry-cap change or pronunciation-policy change belongs to this phase.
 
 Catalogue application is partitioned into at most six chapters per part, each with its own immutable prepared subset and recovery directory. This keeps both the existing 31-write transaction limit and 32 MiB recovery-input limit intact, even with near-limit chapter files. The full batch is validated before applying a part. Exact original readback receipts may be reused across these parts; they do not authorize a different take. The first whole-batch attempt completed archive readbacks but was refused by the transaction bound before changing any catalogue file; its intent and log remain preserved separately. Never replay that oversized top-level intent or increase a bound to accept it. The generic installer also refuses more than 30 chapters before starting archive work.
+
+## Finite main-plan screened handoffs
+
+The reusable handoff adapter accepts an explicit immutable file and SHA, not the producer's changing manifest. Each invocation admits at most500 canonical-order seed1 jobs from the original `46307439` plan. It independently rebuilds their request/result pairs and separately hash-bound screens, rejects other/unknown attempts and prior handoffs, verifies every source/canonical/spoken/sent/token identity and original byte hash, and refuses a conflicting whole-verse reading in either catalogue array before archive. Historical uncertainty, held rows, pronunciation and generation deadlines stay unchanged.
+
+```mermaid
+flowchart TD
+    A[Explicit immutable handoff and SHA] --> B[Frozen plan, journal, screen and prior handoffs]
+    B --> C[Reconstruct received seed1 jobs and verify current source]
+    C --> D[Two workers: decode originals and derive from FLAC]
+    D --> E[Exact manifest, delivery files and parts of at most six chapters]
+    E --> F[Preflight every part and delivery byte]
+    F --> G[Recover existing bounded transactions]
+    G --> H[Refuse conflicting verse readings]
+    H --> I[Shared original archive and MP3 uploader]
+    I --> J[Shared chapter and index transaction]
+    J --> K[Root freezes, publishes and verifies hosted selection]
+```
+
+Use the same explicit arguments for each finite handoff; a later batch needs no new source pin or code edit:
+
+```sh
+bun --no-env-file scripts-chirho/audio-chirho/local-greek-chirho/handoff_chirho.ts --describe-chirho --handoff-chirho <contained-handoff-path> --handoff-sha256-chirho <sha256> --prepared-home-chirho <fresh-build-home>
+python3 scripts-chirho/audio-chirho/local-greek-chirho/prepare_handoff_chirho.py --handoff-chirho <contained-handoff-path> --handoff-sha256-chirho <sha256> --prepared-home-chirho <fresh-build-home> --apply-chirho
+bun scripts-chirho/audio-chirho/local-greek-chirho/install_handoff_chirho.ts --handoff-chirho <contained-handoff-path> --handoff-sha256-chirho <sha256> --prepared-home-chirho <fresh-build-home>
+```
+
+All commands accept `--root-chirho` for an isolated operator. Preparation defaults to full original verification only. Its apply mode uses the unchanged full decoder/MPEG1 encoder, with two workers per phase, deterministic result order and progress to stderr every50rows; stdout remains one JSON summary. Existing derivatives are independently re-derived and must match byte-for-byte. Preparation freezes the exact derived manifest and all part descriptions. The installer defaults to dry-run; only its separate `--apply-chirho` performs private archive/readbacks, delivery upload and existing recoverable catalogue commits. The shared31-write and32MiB recovery bounds remain. An interrupted transaction is reconciled through that same writer before catalogue hash-chain admission; foreign edits fail closed. A completed replay may rewrite identical local status/delivery files but must not upload or repurpose its completed catalogue transaction.
+
+`flagged_excluded_chirho` reports the handoff's recorded within-range skipped rows, not the total producer hold count. Screening is an automated text check, not listener or pronunciation acceptance. Root owns progress logging, actual storage/catalogue changes, immutable release capture and hosted verification; isolated preparation does not authorize synthesis, retries or a new generation deadline.
