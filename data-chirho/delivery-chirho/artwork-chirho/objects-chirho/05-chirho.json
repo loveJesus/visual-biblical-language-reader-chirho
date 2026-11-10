@@ -3420,6 +3420,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-019-chirho/matt-019-005-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/057488cdf1f2be4aeb45df5a40a32dc495041956de462c455ccbbc9c90b6a51b.webp",
+        "sha256_chirho": "057488cdf1f2be4aeb45df5a40a32dc495041956de462c455ccbbc9c90b6a51b",
+        "bytes_chirho": 2652614,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-10T02:35:23.832Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/505de313197aa70978dcac99c1427d3e909a044ee311598ccbf4c8a782f2543c.webp",
+        "sha256_chirho": "505de313197aa70978dcac99c1427d3e909a044ee311598ccbf4c8a782f2543c",
+        "bytes_chirho": 267370,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-10T02:35:25.117Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/ephesians-chirho/chapter-006-chirho/eph-006-007-chirho.webp"
       ],
       "source_chirho": {

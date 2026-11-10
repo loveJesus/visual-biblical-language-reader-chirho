@@ -14,6 +14,7 @@ import org.junit.Assume.assumeTrue
 import org.junit.Test
 import us.hinneh.readerchirho.BUNDLED_BOOKS_CHIRHO
 import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
+import us.hinneh.readerchirho.audiochirho.AudioSelectionChirho
 import us.hinneh.readerchirho.audiochirho.HumanReadingChirho
 import us.hinneh.readerchirho.contentchirho.ContentRepositoryChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
@@ -21,17 +22,20 @@ import us.hinneh.readerchirho.mediachirho.MediaRepositoryChirho
 import us.hinneh.readerchirho.remotechirho.HttpTransportChirho
 import us.hinneh.readerchirho.remotechirho.RemoteClientChirho
 import us.hinneh.readerchirho.remotechirho.ResourceKindChirho
+import us.hinneh.readerchirho.statechirho.OptionalChirho
+import us.hinneh.readerchirho.statechirho.ReaderUiStateChirho
 import us.hinneh.readerchirho.staticRootChirho
 import java.io.File
 
 /**
  * The live site, read by the app's own network path (opt in: -Phinneh.liveChirho=true). Android shows a video for exactly
- * the verses root published (data-chirho/video-chirho/catalogue-chirho.json), each in place of the scene now shown, with
- * its sound the human reading the verse plays first, and with bytes that verify (GPT, DM #3431).
+ * the verses root published (data-chirho/video-chirho/catalogue-chirho.json), each in place of the scene now shown, and
+ * with bytes that verify (GPT, DM #3431). A Be'eri video's sound is the human reading the verse plays first; a synthesized
+ * Greek video's sound (unit 194) is exactly the recording its verse's automatic reading chooses, whose MP3 verifies too.
  */
 class LivePublishedVideosTestChirho {
     @Test
-    fun everyPublishedVerseVideoMatchesItsSceneAndItsHumanReading() = runBlocking {
+    fun everyPublishedVerseVideoMatchesItsSceneAndTheReadingItsVersePlays() = runBlocking {
         assumeTrue("live check: run with -Phinneh.liveChirho=true", System.getProperty("hinneh.liveChirho") == "true")
         val catalogueFileChirho = File(requireNotNull(staticRootChirho()).parentFile, "data-chirho/video-chirho/catalogue-chirho.json")
         val publishedChirho = Json.parseToJsonElement(catalogueFileChirho.readText()).jsonObject.getValue("entries_chirho").jsonArray
@@ -51,9 +55,24 @@ class LivePublishedVideosTestChirho {
             shownChirho += verseIdChirho
             assertFalse(verseIdChirho, verseMediaChirho.videoStagedChirho)
             assertEquals(verseIdChirho, verseMediaChirho.sceneChirho?.standardChirho?.sha256Chirho, videoChirho.sceneSha256Chirho)
-            val firstChirho = audioChirho.recordingsChirho(loadedChirho).versesChirho.first()
-            assertEquals(verseIdChirho, HumanReadingChirho.BEERI_VOICE_CHIRHO, firstChirho.voiceNameChirho)
-            assertTrue("$verseIdChirho: the video's sound is the reading played first", VideoSelectionChirho.sameEmbeddedReadingChirho(videoChirho, firstChirho))
+            val recordingsChirho = audioChirho.recordingsChirho(loadedChirho)
+            if (videoChirho.embeddedClipChirho == null) {
+                val firstChirho = recordingsChirho.versesChirho.first()
+                assertEquals(verseIdChirho, HumanReadingChirho.BEERI_VOICE_CHIRHO, firstChirho.voiceNameChirho)
+                assertTrue("$verseIdChirho: the video's sound is the reading played first", VideoSelectionChirho.sameEmbeddedReadingChirho(videoChirho, firstChirho))
+            } else {
+                val greekChirho = requireNotNull(catalogueChirho.bookChirho(passageChirho.bookIdChirho)).greekChirho
+                val automaticChirho = ReaderUiStateChirho.automaticRenditionChirho(OptionalChirho.ReadyChirho(recordingsChirho))
+                val chosenChirho = requireNotNull(AudioSelectionChirho.bestChirho(recordingsChirho.versesChirho, greekChirho, automaticChirho)) { verseIdChirho }
+                assertTrue(
+                    "$verseIdChirho: the video's sound is the recording its automatic reading chooses",
+                    VideoSelectionChirho.sameEmbeddedReadingChirho(videoChirho, chosenChirho),
+                )
+                val clipChirho = remoteChirho.fetchVerifiedChirho(
+                    chosenChirho.assetPathChirho, ResourceKindChirho.AUDIO_CLIP_CHIRHO, chosenChirho.sha256Chirho, chosenChirho.bytesChirho.toInt(),
+                )
+                assertEquals(verseIdChirho, chosenChirho.bytesChirho.toInt(), clipChirho.size)
+            }
             val bytesChirho = remoteChirho.fetchVerifiedChirho(
                 videoChirho.assetPathChirho, ResourceKindChirho.VERSE_VIDEO_CHIRHO, videoChirho.sha256Chirho, videoChirho.bytesChirho.toInt(),
             )

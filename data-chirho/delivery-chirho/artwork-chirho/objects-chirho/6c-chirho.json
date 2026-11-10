@@ -4882,6 +4882,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-016-chirho/matt-016-025-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/6cc8d69c46b849ace818f381dadd2a9d8c2ff6f7b0db0110a5552ab62ff400e7.webp",
+        "sha256_chirho": "6cc8d69c46b849ace818f381dadd2a9d8c2ff6f7b0db0110a5552ab62ff400e7",
+        "bytes_chirho": 2597756,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-10T00:28:13.144Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/39101e9a0cbb94e9821e8bae3333d2234937cb83b573d5703302d6711151d0d9.webp",
+        "sha256_chirho": "39101e9a0cbb94e9821e8bae3333d2234937cb83b573d5703302d6711151d0d9",
+        "bytes_chirho": 245840,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-10T00:28:14.501Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/psalms-chirho/chapter-119-chirho/ps-119-100-chirho.webp"
       ],
       "source_chirho": {

@@ -8,6 +8,11 @@ import {
 	type VerseVideoChirho
 } from '../../src/lib/domain-chirho/verse-video-chirho';
 import { bibleBookChirho } from '../../src/lib/bible-chirho/books-chirho';
+import { spokenVerseChirho } from '../../src/lib/domain-chirho/pronunciation-chirho';
+import {
+	chapterRecipeChirho,
+	greekPronunciationChirho
+} from '../../src/lib/domain-chirho/pronunciation-chirho/chapter-recipe-chirho';
 import { sha256Chirho, type FilesChirho } from './release_rules_chirho';
 export const VIDEO_CATALOGUE_CHIRHO = 'data-chirho/video-chirho/catalogue-chirho.json';
 export interface VideoEntryChirho {
@@ -98,6 +103,47 @@ function matchesChirho(
 		)
 	);
 }
+/** Workflow: verse-media-chirho.md. A null human source never bypasses a synthetic source check. */
+function soundtrackMatchesChirho(
+	videoChirho: VerseVideoChirho,
+	contentChirho: Record<string, unknown>,
+	audioChirho: Record<string, unknown>
+): boolean {
+	if (videoChirho.embedded_reading_chirho)
+		return (
+			Array.isArray(audioChirho.readings_chirho) &&
+			audioChirho.readings_chirho.some(
+				(clipChirho: Parameters<typeof sameEmbeddedReadingChirho>[1]) =>
+					sameEmbeddedReadingChirho(videoChirho, clipChirho)
+			)
+		);
+	if (!videoChirho.embedded_clip_chirho) return true;
+	const verseChirho = (
+		contentChirho.verses_chirho as Parameters<typeof chapterRecipeChirho>[0][]
+	).find((verseChirho) => verseChirho.id_chirho === videoChirho.lesson_id_chirho);
+	if (
+		!verseChirho ||
+		!Array.isArray(verseChirho.tokens_chirho) ||
+		!Array.isArray(audioChirho.clips_chirho)
+	)
+		return false;
+	return audioChirho.clips_chirho.some((clipChirho) => {
+		if (
+			!clipChirho ||
+			typeof clipChirho !== 'object' ||
+			!sameEmbeddedReadingChirho(videoChirho, clipChirho)
+		)
+			return false;
+		const recipeChirho = chapterRecipeChirho(verseChirho, clipChirho.recipe_id_chirho);
+		return (
+			recipeChirho !== null &&
+			clipChirho.text_chirho === spokenVerseChirho(verseChirho) &&
+			recipeChirho.synthesis_text_chirho === clipChirho.synthesis_text_chirho &&
+			recipeChirho.ipa_chirho === clipChirho.ipa_chirho &&
+			clipChirho.pronunciation_chirho === greekPronunciationChirho(clipChirho.recipe_id_chirho)
+		);
+	});
+}
 export async function overlayVerseVideosChirho(rootChirho: string) {
 	const entriesChirho = await readVideoCatalogueChirho(rootChirho),
 		heldChirho: string[] = [];
@@ -112,11 +158,7 @@ export async function overlayVerseVideosChirho(rootChirho: string) {
 			audioChirho = await readChirho(pathsValueChirho.audio_chirho);
 		if (
 			!matchesChirho(videoChirho, contentChirho, mediaChirho) ||
-			(videoChirho.embedded_reading_chirho &&
-				!audioChirho.readings_chirho?.some(
-					(clipChirho: Parameters<typeof sameEmbeddedReadingChirho>[1]) =>
-						sameEmbeddedReadingChirho(videoChirho, clipChirho)
-				))
+			!soundtrackMatchesChirho(videoChirho, contentChirho, audioChirho)
 		) {
 			heldChirho.push(videoChirho.lesson_id_chirho);
 			continue;
@@ -188,15 +230,17 @@ export async function verifiedVideoFactsChirho(
 					throw Error('Video source or archive binding differs');
 				if (videoChirho.review_chirho !== 'approved' && !allowPendingChirho)
 					throw Error('Video remains pending review');
-				if (videoChirho.embedded_reading_chirho) {
+				if (videoChirho.embedded_reading_chirho || videoChirho.embedded_clip_chirho) {
 					const audioBytesChirho = filesChirho.get(pathsValueChirho.audio_chirho);
 					const audioChirho = audioBytesChirho
 						? JSON.parse(new TextDecoder().decode(audioBytesChirho))
 						: null;
 					if (
-						!audioChirho?.readings_chirho?.some(
-							(clipChirho: Parameters<typeof sameEmbeddedReadingChirho>[1]) =>
-								sameEmbeddedReadingChirho(videoChirho, clipChirho)
+						!audioChirho ||
+						!soundtrackMatchesChirho(
+							videoChirho,
+							JSON.parse(new TextDecoder().decode(sourceChirho)),
+							audioChirho
 						)
 					)
 						throw Error('Video reading differs');

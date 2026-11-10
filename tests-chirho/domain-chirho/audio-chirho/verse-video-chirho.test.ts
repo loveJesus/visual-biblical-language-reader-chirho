@@ -103,3 +103,108 @@ itChirho('keeps a silent CC0 visual separate from a claimed human soundtrack', (
 	expectChirho(validChirho({ ...silentChirho, reading_language_chirho: 'he' })).toBe(false);
 	expectChirho(validChirho({ ...videoChirho, license_chirho: 'CC0' })).toBe(false);
 });
+
+const syntheticClipChirho = {
+	lesson_id_chirho: 'Matt.1.1',
+	canonical_sha256_chirho: 'a'.repeat(64),
+	token_id_chirho: null,
+	language_chirho: 'el',
+	sha256_chirho: '9'.repeat(64),
+	asset_path_chirho: '/audio-chirho/sha256-chirho/' + '9'.repeat(64) + '-chirho.mp3',
+	bytes_chirho: 1000,
+	duration_chirho: 5,
+	recipe_id_chirho: 'chatterbox-v3-modern-greek-verse-v1-chirho',
+	pronunciation_chirho: 'modern_greek' as const,
+	review_chirho: 'audition'
+};
+const syntheticVideoChirho: VerseVideoChirho = {
+	...videoChirho,
+	lesson_id_chirho: syntheticClipChirho.lesson_id_chirho,
+	reading_language_chirho: 'el',
+	embedded_reading_chirho: null,
+	embedded_clip_chirho: {
+		sha256_chirho: syntheticClipChirho.sha256_chirho,
+		bytes_chirho: 1000,
+		duration_chirho: 5,
+		recipe_id_chirho: syntheticClipChirho.recipe_id_chirho,
+		pronunciation_chirho: 'modern_greek'
+	},
+	attribution_chirho: 'Hinneh / Love Jesus Software',
+	license_chirho: 'CC BY 4.0',
+	license_url_chirho: 'https://creativecommons.org/licenses/by/4.0/'
+};
+const validSyntheticChirho = (valueChirho: unknown) =>
+	validVerseVideoChirho(valueChirho, 'Matt.1.1', 'a'.repeat(64), 'b'.repeat(64));
+itChirho(
+	'admits one declared synthetic soundtrack and matches only the whole admitted delivery clip',
+	() => {
+		expectChirho(validSyntheticChirho(syntheticVideoChirho)).toBe(true);
+		expectChirho(sameEmbeddedReadingChirho(syntheticVideoChirho, syntheticClipChirho)).toBe(true);
+		for (const [keyChirho, valueChirho] of [
+			['sha256_chirho', '8'.repeat(64)],
+			['bytes_chirho', 999],
+			['duration_chirho', 5.01],
+			['recipe_id_chirho', 'other-chirho'],
+			['pronunciation_chirho', 'erasmian_greek'],
+			['lesson_id_chirho', 'Matt.1.2'],
+			['canonical_sha256_chirho', '8'.repeat(64)],
+			['token_id_chirho', 'word-chirho'],
+			['language_chirho', 'he'],
+			['start_offset_chirho', 0],
+			['end_offset_chirho', 5],
+			['review_chirho', 'rejected'],
+			['reading_source_chirho', sourceChirho],
+			['asset_path_chirho', '/other-chirho.mp3']
+		] as const)
+			expectChirho(
+				sameEmbeddedReadingChirho(syntheticVideoChirho, {
+					...syntheticClipChirho,
+					[keyChirho]: valueChirho
+				})
+			).toBe(false);
+		for (const [keyChirho, valueChirho] of [
+			['embedded_reading_chirho', sourceChirho],
+			['embedded_clip_chirho', null],
+			['reading_language_chirho', null],
+			['license_chirho', 'CC0'],
+			['duration_chirho', 5.31]
+		] as const)
+			expectChirho(
+				validSyntheticChirho({ ...syntheticVideoChirho, [keyChirho]: valueChirho })
+			).toBe(false);
+		const { embedded_reading_chirho: missingChirho, ...undeclaredChirho } = syntheticVideoChirho;
+		void missingChirho;
+		expectChirho(validSyntheticChirho(undeclaredChirho)).toBe(false);
+	}
+);
+itChirho(
+	'refuses malformed synthetic descriptors, held bytes and a descriptor attached to a human source',
+	() => {
+		for (const [keyChirho, valueChirho] of [
+			['sha256_chirho', 'bad'],
+			['bytes_chirho', 0],
+			['bytes_chirho', 4_000_001],
+			['duration_chirho', NaN],
+			['duration_chirho', Infinity],
+			['duration_chirho', 0],
+			['recipe_id_chirho', 'unbounded'],
+			['pronunciation_chirho', 'israeli_hebrew'],
+			['sha256_chirho', '6a404d94c40e869718b48a3aa3c2083cb42ecd1596d720465fb2d7dac9d8975e']
+		] as const)
+			expectChirho(
+				validSyntheticChirho({
+					...syntheticVideoChirho,
+					embedded_clip_chirho: {
+						...syntheticVideoChirho.embedded_clip_chirho,
+						[keyChirho]: valueChirho
+					}
+				})
+			).toBe(false);
+		expectChirho(
+			validChirho({
+				...videoChirho,
+				embedded_clip_chirho: syntheticVideoChirho.embedded_clip_chirho
+			})
+		).toBe(false);
+	}
+);

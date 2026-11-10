@@ -5647,6 +5647,39 @@
       "generation_seed_chirho": 1,
       "source_phase_sha256_chirho": "10b5d434d2b652654884fb9ec8cf7e1b1c9c6080173e0d5dc58407f67c1a4103",
       "source_asr_sha256_chirho": "050a8531dd9df043a31946ff6f789569585a424d7ab9dfa6176768b07f8f40e4"
+    },
+    {
+      "id_chirho": "local-greek-v5824-chirho",
+      "lesson_id_chirho": "Gal.6.14",
+      "token_id_chirho": null,
+      "text_chirho": "ἐμοὶ δὲ μὴ γένοιτο καυχᾶσθαι εἰ μὴ ἐν τῷ σταυρῷ τοῦ Κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, δι’ οὗ ἐμοὶ κόσμος ἐσταύρωται κἀγὼ κόσμῳ.",
+      "synthesis_text_chirho": "εμοί δε μη γένοιτο καυχάσθαι ει μη εν τω σταυρώ του Κυρίου ημών Ιησού Χριστού, δι’ ου εμοί κόσμος εσταύρωται καγώ κόσμω.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "e55be47a29d25fceedbdd14b5402dfda14b9e3b87580c2dfedf3a350e3c2a7fe",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "396e18aa0698d2314287531bfd75d5354895ca0e8e196bd166ed62225011522f",
+      "raw_flac_sha256_chirho": "27f3a78ade5d59162c4ec8140c0fbb9b63785373297d4b834e49214f7886fe04",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/dec5c2f8047c897c3eace66a4c06ff0f987fa2366ef37f80f4cbfc8c60e9149d-chirho.mp3",
+      "sha256_chirho": "dec5c2f8047c897c3eace66a4c06ff0f987fa2366ef37f80f4cbfc8c60e9149d",
+      "bytes_chirho": 49571,
+      "duration_chirho": 6.138776,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2188
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "4a3b8b51ae60d4985116f7647ef108166ddab2a8f64c19697c46212d756f6cca",
+      "source_asr_sha256_chirho": "10dc6649009876548b8d55a60bebc6da3ce8ea45e6466e6d46d2e7cfc474a23b"
     }
   ]
 }

@@ -30,6 +30,30 @@ Video originals remain in the producer's folder and are archived without re-enco
 
 Website swipes share the Previous/Next availability rule and existing passage-loading cancellation path. The touch-only action leaves vertical scrolling, pinch and browser edge gestures available, and tracks one finger identity. New touches, multi-touch interruption, cancel and destroy retire transforms and old settle callbacks; the compatibility-click guard is limited to the lift position and never consumes keyboard activation or a new deliberate tap. The native Safari check uses a dedicated simulator and the frozen website, with existing video playback stopped by the same passage change.
 
+## Synthetic verse soundtracks
+
+```mermaid
+flowchart TD
+    SceneChirho[Exact archived high-quality scene] --> MotionChirho[Root's bounded motion preparation]
+    ClipChirho[Source-validated whole-verse MP3] --> IdentityChirho[Pin SHA, bytes, duration, recipe and pronunciation]
+    MotionChirho --> PairChirho[Canonical verse and current scene bind the visual]
+    IdentityChirho --> PairChirho
+    PairChirho --> PublishChirho[Publisher rechecks source text, recipe and exact clip identity]
+    PublishChirho --> ChoiceChirho[Existing audio selector chooses current rendition first]
+    ChoiceChirho --> MatchChirho{Selected full clip exactly matches embedded identity?}
+    MatchChirho -->|Yes| VideoChirho[One VIDEO with its own soundtrack and clock]
+    MatchChirho -->|No or unavailable| StillChirho[Keep still and selected audio; no synthetic video fallback]
+    VideoChirho --> CancelChirho[Stop / navigation / word speaker / rendition change cancels old play]
+```
+
+The additive `embedded_clip_chirho` contains only the published delivery MP3's `sha256_chirho`, `bytes_chirho`, `duration_chirho`, `recipe_id_chirho` and `pronunciation_chirho`. A Greek synthetic record keeps media schema1, declares `reading_language_chirho: "el"` and explicitly sets `embedded_reading_chirho: null`. It carries CC BY4.0 with its exact license link and truthful project attribution. The human CC BY-SA3.0 and silent CC0 branches remain separate, and mixed soundtrack declarations refuse. Existing human records do not need a new key.
+
+Both publisher gates bind synthetic audio to `clips_chirho`, its exact spoken verse, re-derived source recipe, canonical hash and five-field identity. Only an admitted full-verse clip without offsets can supply the soundtrack. The web component exposes the validated pair; the self-contained offline speech controller first selects the compatible current rendition, then compares its MP3 SHA. A Modern video never overrides a saved Erasmian or unavailable rough-breathing choice. Existing allowed non-rough Modern compatibility is preserved. Encoding tolerance stays at0.3seconds; exact soundtrack proof remains the producer/release check.
+
+Old Android0.1.4 and iOS0.1.2 DTOs ignore the additive key and withhold the unsupported Greek video, preserving scene, pictures and audio. Never put a synthetic object inside the old human-source field: the old iOS decoder would reject the chapter. Updated native implementations must make the new descriptor optional/default-null and require resolved selected audio for synthetic playback; their historical human-only fallback does not admit synthetic audio.
+
+Root owns the new HQ-first queue, bounded installer scopes and catalogue sharding. This shared contract does not alter the old Proverbs/Genesis installer scopes,1000-entry/4MiB catalogue cap, retry holds, generation budgets or voice policy. No new video is authorized merely by a valid descriptor.
+
 ## Local Greek verse recordings
 
 ```mermaid
@@ -198,3 +222,63 @@ rtk proxy bun scripts-chirho/audio-chirho/readings-chirho/bounded_install_chirho
 ```
 
 The shared archive/transaction implementation retains its existing chapter, byte and recovery bounds. A partial commit is recovered from its durable before/after journal after checking archive receipts. Foreign edits or missing proof stop recovery; no unknown request is resent. Root separately verifies actual selection, unchanged prior bodies, publication and hosted delivery. Automated identity and decoder checks do not establish listener acceptance.
+
+## Explicit finite chapter-opening video installation
+
+```mermaid
+flowchart TD
+    BatchChirho[Caller pins private batch path and SHA] --> PinsChirho[Read exact plan, HQ inventory, producer index and build proofs]
+    PinsChirho --> BoundChirho[One to30 unique chapter-v1 entries; use parts of6 or fewer operationally]
+    BoundChirho --> HQChirho[Empty job holds; HQ source/delivery lineage and picture/frame review agree]
+    HQChirho --> SourceChirho[Current canonical/index/scene/audio and selected full-verse recording agree]
+    SourceChirho --> BytesChirho[Hash raw take and local MP3; probe and fully decode final MP4 and MP3]
+    BytesChirho --> CapacityChirho[Keep1000-entry and4MiB catalogue limits before archive]
+    CapacityChirho --> DryChirho[Dry returns without transport or lock]
+    CapacityChirho --> ApplyChirho[Explicit apply takes existing one-writer lock and repeats preflight]
+    ApplyChirho --> ExistingChirho{Exact prior entry or received object?}
+    ExistingChirho -->|Completed| ReplayChirho[Zero remote calls and zero catalogue writes]
+    ExistingChirho -->|Received only| ReadbackChirho[GET/hash existing object; no repeated PUT]
+    ExistingChirho -->|Absent| UploadChirho[Existing GET404 then PUT and exact readback]
+    UploadChirho --> ColdChirho[Recheck all pinned sources and foreign catalogue state]
+    ReadbackChirho --> ColdChirho
+    ColdChirho --> AppendChirho[Existing atomic one-entry append]
+```
+
+The generic `--batch-chirho <relative-json-path> --batch-sha256-chirho <sha256>` mode is separate from the unchanged default Proverbs and explicit Genesis3 modes; flags cannot be mixed. A batch has schema1 and `source_plan_chirho`, `source_inventory_chirho`, `source_records_chirho` pins (each path plus SHA), then `entries_chirho`. Each entry names `lesson_id_chirho`, `mp4_path_chirho`, `audio_path_chirho` and a `build_proof_chirho` path/SHA. Source plan jobs and original video records are read without modification; no private plan, provider job ID or budget is built into public source.
+
+Every selected position must have exactly one planned job, inventory row and producer video. It must be verse1 of a valid existing chapter. The source/delivery HQ identity, accepted picture review, empty generation holds, selected audio and accepted raw-frame composition proof must agree. The build proof pins the original raw clip and whole MP3 bytes, the exact video object, full decode and the measured soundtrack match (correlation at least0.998 with absolute lag at most10ms). Installation checks those bytes and current catalogue sources again; a new silent placeholder, changed source or incompatible rendition refuses before archive. Human composites retain CC BY-SA3.0, synthetic composites CC BY4.0. Automated/frame checks remain distinct from L.J.'s acceptance.
+
+At most30 distinct chapter openings enter one invocation, with source indices and metadata independently bounded. Root should prepare immutable parts of at most6 entries when running beside other workers. The existing per-entry atomic append already recovers partial completion; a completed replay makes no archive call, and an object received before a source-change refusal is reconciled by GET. The1000-entry/4MiB catalogue limits remain unchanged. Sharding is required before the later OT tail crosses either cap and is outside this installer change. No speech synthesis, paid motion request, catalogue regeneration or provider retry belongs to this mode.
+
+### Shared admission for finite video and money preflight
+
+The network reader and finite video installer use `recordingsFromChapterChirho` for the same admission and ordering. The automatic full-verse choice is made after admission and before the stricter embedded-video match. A valid preferred legacy clip without a recipe may therefore cause a recipe-bound video candidate to be refused; the installer never chooses another recording merely to fit that video. Profile-scoped verse claims remain withheld.
+
+The bounded Bun bridge `scripts-chirho/video-chirho/selected_recording_chirho.ts` accepts one `lesson_id_chirho`, exact UTF-8 `content_chapter_json_chirho` and `audio_chapter_json_chirho` strings, and their `content_sha256_chirho` / `audio_sha256_chirho` pins on stdin (four MiB maximum, at most 2,000 audio rows). It hashes and parses those two bounded chapter bodies, checks their content/audio binding, selects the one raw verse, and outputs one selected delivery/window identity or null using those same rules. `raw_whole_verse_shape_chirho` also records explicit `token_id_chirho:null` and absent human-source/offset keys. It performs no fetch, provider request, credential lookup or source-file read. The caller must first verify the chapter/content bytes and compare the planned audio's delivery/window identity exactly. It is a source-selection check, not permission to generate or publish.
+
+### Saved chapter-opening composition
+
+`compose_opening_chirho.ts` composes one explicit pinned subset of at most six jobs. It has no fetch, provider-client or credential path. Inputs name the immutable plan/inventory, original requested/received/saved journal snapshot, local original clip, accepted all-frame review, pinned content/audio/media chapters, exact local copies of the hosted scene and whole-verse MP3, and a dedicated private output part. The selected source must still be the reader's automatic choice. A missing or held source is refused without a substitute.
+
+```mermaid
+flowchart TD
+    SavedChirho[Original saved clip and pinned journal] --> SourceChirho[Match plan, HQ scene, canonical text and selected audio]
+    SourceChirho --> ReviewChirho[Require accepted review of every raw frame]
+    ReviewChirho --> EncodeChirho[24 fps interpolation and explicit retime; full source MP3 to AAC]
+    EncodeChirho --> VerifyChirho[Full decodes, H264/AAC, exact frames and source soundtrack correlation]
+    VerifyChirho --> ProofChirho[Shared validators and finite installer authority gate]
+    ProofChirho --> LocalChirho[Local MP4, video record and immutable build proof]
+    LocalChirho --> RootChirho[Root separately reviews, archives and installs]
+    EncodeChirho -->|failure| PartialChirho[Keep partial output for Root recovery; no automatic rerender]
+    LocalChirho -->|same input replay| ReplayChirho[Verify exact stored bytes; no encoder call]
+```
+
+The picture uses the existing `minterpolate`/`setpts=N/(24*TB)` method and H264 settings. Audio is the complete selected hosted MP3, with no offsets, trim, speed change or silent fallback. The synthetic descriptor copies the original MP3 duration verbatim and carries CC BY4; the human branch copies the original Be'eri source/window and CC BY-SA3. All source byte hashes are rechecked before completion. A completed composition replays only when its input identity and files remain exact. An incomplete or changed directory is retained and refused. The free Genesis1:1 reuse remains a separately preserved candidate and is never rebuilt by this workflow.
+
+An explicitly reviewed retained range may be declared in the pinned raw-frame review as `retained_frame_range_chirho: { start_chirho, end_chirho }`, using zero-based `[start, end)` frame indices. Both are integers within the actual original frame count, with at least two retained frames. `all_frames_chirho` continues to identify the complete original raw clip, which is never overwritten. Without this field the complete clip is used; no range is chosen automatically.
+
+The range branch trims those exact source frames before interpolation and retimes their first-to-last timestamp span to the verse target. Two explicitly recorded cloned context frames follow the last endpoint beyond the target time for the motion estimator; the fixed output frame count prevents that context from becoming a visible freeze extension. There is no alternative freeze-frame or provider fallback if encoding or validation fails. The build proof records the full raw SHA/count, retained range/count/span and interpolation context. The selected whole MP3, runtime video contract and licensing rules remain unchanged. Root alone approves a retained range; late visual defects do not authorize replacement calls.
+
+The same pinned review may explicitly declare `retained_crop_chirho: { x_chirho, y_chirho, width_chirho, height_chirho }` and/or `camera_end_zoom_chirho`. Crop values are even integers inside the fully decoded original dimensions, with both retained dimensions at least two pixels. The crop is applied before retiming and scaled back to the original output dimensions. Camera zoom is a finite number from1 through1.08; after retiming, centered deterministic24fps `zoompan` advances from1 to the declared endpoint over the exact target frame count (`d=1`). There is no arbitrary filter field, inferred crop, newly generated picture or automatic repair. Root reviews the resulting transformed video before accepting it. The proof preserves full original raw SHA/count/range and the declared crop/zoom. Explicit transforms use the v3 composition identity; absent crop/zoom retains the v2 identity, replay and exact rendering chain. Existing completed outputs and all earlier frozen snapshots stay unchanged.
+
+Earlier HTTP400 refusals remain refused by default. An optional pinned `reconciliation_chirho` document may attest `kind_chirho: original_uuid_completion_after_http400_chirho` for later completion of the exact original UUID. It pins the original journal, lesson/plan/scene/UUID, requested event hash, ordered refused-event hashes, later received/saved hashes and raw SHA/bytes. Each event hash is SHA-256 of UTF-8 `JSON.stringify(parsedEvent)` with the parsed event's key order. The combined snapshot must retain the complete original journal as a byte-for-byte prefix and keep one original request, the earlier HTTP400 `concurrentRequestLimitExceeded` history, one strictly later received and one saved event in order. Any new UUID, omitted refusal or changed fact is refused. This is original-result reconciliation, never authority for another inference or retry; the proof preserves both journal identities.

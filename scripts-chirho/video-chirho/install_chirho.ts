@@ -19,6 +19,13 @@ import { validHumanRecordingChirho } from '../../src/lib/domain-chirho/pronuncia
 import { spokenVerseChirho } from '../../src/lib/domain-chirho/pronunciation-chirho';
 import { isRejectedAudioChirho } from '../../src/lib/domain-chirho/pronunciation-chirho/audio-reviews-chirho';
 import type { LessonChirho } from '../../src/lib/domain-chirho/lesson-chirho';
+import type { GreekLessonChirho } from '../../src/lib/domain-chirho/greek-chirho';
+import { bibleBookChirho } from '../../src/lib/bible-chirho/books-chirho';
+import {
+	readFiniteVideoBatchChirho,
+	selectedSyntheticVerseChirho,
+	FINITE_VIDEO_BATCH_LIMIT_CHIRHO
+} from './finite_batch_chirho';
 import type { RecordingChirho } from '../../src/lib/reader-chirho/audio-chirho/recordings-chirho';
 import {
 	readVideoCatalogueChirho,
@@ -36,7 +43,9 @@ export const GENESIS_VIDEO_RUN_CHIRHO =
 export const GENESIS_VIDEO_HOME_CHIRHO = `${GENESIS_VIDEO_RUN_CHIRHO}/videos-chirho`;
 export interface VideoInstallOptionsChirho {
 	root_chirho: string;
-	scope_chirho?: 'proverbs_openings_chirho' | 'genesis_three_chirho';
+	scope_chirho?: 'proverbs_openings_chirho' | 'genesis_three_chirho' | 'finite_batch_chirho';
+	/** Explicit caller-pinned private batch; never a built-in plan or provider permission. */
+	batch_chirho?: { path_chirho: string; sha256_chirho: string };
 	apply_chirho?: boolean;
 	object_chirho?: (
 		methodChirho: 'GET' | 'PUT',
@@ -55,6 +64,7 @@ interface PreflightChirho {
 	entries_chirho: VideoEntryChirho[];
 	hashes_chirho: Map<string, string>;
 	catalogue_sha256_chirho: string | null;
+	source_limits_chirho: Map<string, number>;
 }
 function relativeChirho(pathChirho: string) {
 	if (
@@ -119,7 +129,10 @@ async function directoriesChirho(rootChirho: string, pathChirho: string) {
 	}
 }
 /** Human-only selection mirrors the web's human branch; invalid claims are never AI fallbacks. */
-function humanChirho(clipsChirho: RecordingChirho[], lessonChirho: LessonChirho) {
+function humanChirho(
+	clipsChirho: RecordingChirho[],
+	lessonChirho: LessonChirho | GreekLessonChirho
+) {
 	const canonicalChirho = digestChirho(lessonChirho.canonical_text_chirho),
 		spokenChirho = spokenVerseChirho(lessonChirho);
 	return clipsChirho
@@ -149,16 +162,22 @@ function humanChirho(clipsChirho: RecordingChirho[], lessonChirho: LessonChirho)
 }
 function scopeChirho(optionsChirho: VideoInstallOptionsChirho) {
 	const genesisChirho = optionsChirho.scope_chirho === 'genesis_three_chirho';
+	const finiteChirho = optionsChirho.scope_chirho === 'finite_batch_chirho';
 	if (
 		optionsChirho.scope_chirho !== undefined &&
-		!['genesis_three_chirho', 'proverbs_openings_chirho'].includes(optionsChirho.scope_chirho)
+		!['genesis_three_chirho', 'proverbs_openings_chirho', 'finite_batch_chirho'].includes(
+			optionsChirho.scope_chirho
+		)
 	)
 		throw Error('Unowned video scope');
+	if (finiteChirho !== Boolean(optionsChirho.batch_chirho))
+		throw Error('A finite batch needs its explicit pinned input and cannot use a legacy scope');
 	const homeChirho = genesisChirho ? GENESIS_VIDEO_HOME_CHIRHO : PROVERBS_VIDEO_HOME_CHIRHO;
 	return {
 		genesis_chirho: genesisChirho,
+		finite_chirho: finiteChirho,
 		home_chirho: homeChirho,
-		limit_chirho: genesisChirho ? 24 : 31,
+		limit_chirho: finiteChirho ? FINITE_VIDEO_BATCH_LIMIT_CHIRHO : genesisChirho ? 24 : 31,
 		slug_chirho: genesisChirho ? 'genesis-chirho' : 'proverbs-chirho',
 		book_chirho: genesisChirho ? 'Gen' : 'Prov'
 	};
@@ -166,22 +185,36 @@ function scopeChirho(optionsChirho: VideoInstallOptionsChirho) {
 async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promise<PreflightChirho> {
 	const rootChirho = optionsChirho.root_chirho,
 		scopeValueChirho = scopeChirho(optionsChirho),
-		hashesChirho = new Map<string, string>();
-	const jsonChirho = async (pathChirho: string, deliveryChirho = false) =>
-		JSON.parse(
+		hashesChirho = new Map<string, string>(),
+		limitsChirho = new Map<string, number>();
+	const jsonChirho = async (
+		pathChirho: string,
+		deliveryChirho = false,
+		limitChirho = 4 * 1024 ** 2
+	) => {
+		limitsChirho.set(pathChirho, limitChirho);
+		return JSON.parse(
 			(
-				await readChirho(rootChirho, pathChirho, 4 * 1024 ** 2, hashesChirho, deliveryChirho)
+				await readChirho(rootChirho, pathChirho, limitChirho, hashesChirho, deliveryChirho)
 			).toString()
 		);
-	const sourceBytesChirho = await readChirho(
-		rootChirho,
-		`${scopeValueChirho.home_chirho}/videos-records-chirho.json`,
-		256 * 1024,
-		hashesChirho
-	);
-	const sourceChirho = JSON.parse(sourceBytesChirho.toString()) as {
-		videos_chirho: VerseVideoChirho[];
 	};
+	const batchValueChirho = scopeValueChirho.finite_chirho
+		? await readFiniteVideoBatchChirho(optionsChirho.batch_chirho!, jsonChirho, hashesChirho)
+		: null;
+	const sourceBytesChirho = batchValueChirho
+		? null
+		: await readChirho(
+				rootChirho,
+				`${scopeValueChirho.home_chirho}/videos-records-chirho.json`,
+				256 * 1024,
+				hashesChirho
+			);
+	const sourceChirho =
+		batchValueChirho ??
+		(JSON.parse(sourceBytesChirho!.toString()) as {
+			videos_chirho: VerseVideoChirho[];
+		});
 	if (
 		!Array.isArray(sourceChirho.videos_chirho) ||
 		sourceChirho.videos_chirho.length < 1 ||
@@ -190,9 +223,11 @@ async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promis
 		throw Error('Bounded video record count differs');
 	const seenChirho = new Set<string>();
 	for (const videoChirho of sourceChirho.videos_chirho) {
-		const matchChirho = scopeValueChirho.genesis_chirho
-			? /^Gen\.3\.([1-9]|1[0-9]|2[0-4])$/.exec(videoChirho.lesson_id_chirho)
-			: /^Prov\.([1-9]|[12][0-9]|3[01])\.1$/.exec(videoChirho.lesson_id_chirho);
+		const matchChirho = scopeValueChirho.finite_chirho
+			? /^([1-3]?[A-Za-z]+)\.([1-9][0-9]{0,2})\.1$/.exec(videoChirho.lesson_id_chirho)
+			: scopeValueChirho.genesis_chirho
+				? /^Gen\.3\.([1-9]|1[0-9]|2[0-4])$/.exec(videoChirho.lesson_id_chirho)
+				: /^Prov\.([1-9]|[12][0-9]|3[01])\.1$/.exec(videoChirho.lesson_id_chirho);
 		if (!matchChirho || seenChirho.has(videoChirho.lesson_id_chirho))
 			throw Error('Unowned or duplicate verse video');
 		seenChirho.add(videoChirho.lesson_id_chirho);
@@ -202,23 +237,30 @@ async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promis
 		rowsChirho: InputChirho[] = [];
 	if ((await optionalCatalogueChirho(rootChirho))?.toString() !== catalogueBytesChirho?.toString())
 		throw Error('Video catalogue changed during preflight');
-	const contentManifestChirho = await jsonChirho(
-		`static/content-chirho/${scopeValueChirho.slug_chirho}/manifest-chirho.json`
-	);
 	const audioManifestChirho = await jsonChirho('static/audio-chirho/manifest-chirho.json');
-	const mediaSummaryChirho = await jsonChirho(
-		`build-chirho/preview-chirho/public-chirho/media-chirho/${scopeValueChirho.slug_chirho}/summary-chirho.json`,
-		true
-	);
 	for (const videoChirho of sourceChirho.videos_chirho) {
+		const bookChirho = scopeValueChirho.finite_chirho
+			? bibleBookChirho(videoChirho.lesson_id_chirho.split('.')[0])
+			: null;
+		const slugChirho = bookChirho?.slug_chirho ?? scopeValueChirho.slug_chirho,
+			bookIdChirho = bookChirho?.id_chirho ?? scopeValueChirho.book_chirho;
+		const contentManifestChirho = await jsonChirho(
+			`static/content-chirho/${slugChirho}/manifest-chirho.json`
+		);
+		const mediaSummaryChirho = await jsonChirho(
+			`build-chirho/preview-chirho/public-chirho/media-chirho/${slugChirho}/summary-chirho.json`,
+			true
+		);
 		const chapterChirho = scopeValueChirho.genesis_chirho
 				? 3
 				: Number(videoChirho.lesson_id_chirho.split('.')[1]),
 			verseNumberChirho = Number(videoChirho.lesson_id_chirho.split('.')[2]),
 			suffixChirho = String(chapterChirho).padStart(2, '0');
-		const contentPathChirho = `/content-chirho/${scopeValueChirho.slug_chirho}/chapter-${suffixChirho}-chirho.json`,
-			audioPathChirho = `/audio-chirho/${scopeValueChirho.slug_chirho}/chapter-${suffixChirho}-chirho.json`,
-			mediaPathChirho = `/media-chirho/${scopeValueChirho.slug_chirho}/chapter-${suffixChirho}-chirho.json`;
+		if (bookChirho && chapterChirho > bookChirho.chapter_count_chirho)
+			throw Error('Finite video chapter exceeds its book');
+		const contentPathChirho = `/content-chirho/${slugChirho}/chapter-${suffixChirho}-chirho.json`,
+			audioPathChirho = `/audio-chirho/${slugChirho}/chapter-${suffixChirho}-chirho.json`,
+			mediaPathChirho = `/media-chirho/${slugChirho}/chapter-${suffixChirho}-chirho.json`;
 		const contentChirho = await jsonChirho('static' + contentPathChirho),
 			audioChirho = await jsonChirho('static' + audioPathChirho),
 			mediaChirho = await jsonChirho(
@@ -228,9 +270,7 @@ async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promis
 		const contentEntryChirho = contentManifestChirho.chapters_chirho.find(
 				(rowChirho: { path_chirho: string }) => rowChirho.path_chirho === contentPathChirho
 			),
-			audioEntryChirho = audioManifestChirho.books_chirho[
-				scopeValueChirho.book_chirho
-			]?.chapters_chirho.find(
+			audioEntryChirho = audioManifestChirho.books_chirho[bookIdChirho]?.chapters_chirho.find(
 				(rowChirho: { path_chirho: string; number_chirho: number }) =>
 					rowChirho.path_chirho === audioPathChirho && rowChirho.number_chirho === chapterChirho
 			),
@@ -242,7 +282,7 @@ async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promis
 			audioEntryChirho?.sha256_chirho !== hashesChirho.get('static' + audioPathChirho) ||
 			mediaEntryChirho?.sha256_chirho !==
 				hashesChirho.get('build-chirho/preview-chirho/public-chirho' + mediaPathChirho) ||
-			audioChirho.book_id_chirho !== scopeValueChirho.book_chirho ||
+			audioChirho.book_id_chirho !== bookIdChirho ||
 			audioChirho.chapter_chirho !== chapterChirho ||
 			audioChirho.content_path_chirho !== contentPathChirho ||
 			audioChirho.content_sha256_chirho !== contentEntryChirho.sha256_chirho ||
@@ -252,7 +292,7 @@ async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promis
 			throw Error('Video source chapter/index binding differs');
 		const verseChirho = contentChirho.verses_chirho.find(
 			(rowChirho: LessonChirho) => rowChirho.id_chirho === videoChirho.lesson_id_chirho
-		) as LessonChirho | undefined;
+		) as LessonChirho | GreekLessonChirho | undefined;
 		const scenesChirho = mediaChirho.scenes_chirho.filter(
 			(rowChirho: { lesson_id_chirho: string; variant_chirho?: string }) =>
 				rowChirho.lesson_id_chirho === videoChirho.lesson_id_chirho &&
@@ -277,7 +317,19 @@ async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promis
 		const filenameChirho = scopeValueChirho.genesis_chirho
 			? `gen-003-${String(verseNumberChirho).padStart(3, '0')}-chirho.mp4`
 			: `prov-${String(chapterChirho).padStart(3, '0')}-001-chirho.mp4`;
-		const localPathChirho = `${scopeValueChirho.home_chirho}/${filenameChirho}`,
+		const finiteRowChirho = batchValueChirho?.selected_chirho.get(videoChirho.lesson_id_chirho);
+		if (
+			finiteRowChirho &&
+			(finiteRowChirho.inventory_chirho.content_path_chirho !== contentPathChirho ||
+				finiteRowChirho.inventory_chirho.content_sha256_chirho !==
+					hashesChirho.get('static' + contentPathChirho) ||
+				(finiteRowChirho.job_chirho.scene_chirho as { asset_path_chirho: string })
+					.asset_path_chirho !== scenesChirho[0].asset_path_chirho)
+		)
+			throw Error('Finite canonical chapter or delivered picture changed');
+		const localPathChirho =
+				finiteRowChirho?.entry_chirho.mp4_path_chirho ??
+				`${scopeValueChirho.home_chirho}/${filenameChirho}`,
 			bytesChirho = await readChirho(
 				rootChirho,
 				localPathChirho,
@@ -338,7 +390,52 @@ async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promis
 			{ encoding: 'utf8', timeout: 30000 }
 		);
 		if (decodeChirho.status !== 0) throw Error('Video full decode failed');
-		const selectedChirho = humanChirho(audioChirho.readings_chirho ?? [], verseChirho);
+		const selectedChirho =
+			humanChirho(audioChirho.readings_chirho ?? [], verseChirho) ??
+			(scopeValueChirho.finite_chirho
+				? selectedSyntheticVerseChirho(audioChirho.clips_chirho, verseChirho)
+				: undefined);
+		if (finiteRowChirho) {
+			const plannedChirho = finiteRowChirho.job_chirho.audio_chirho as RecordingChirho;
+			if (
+				!selectedChirho ||
+				!equalChirho(selectedChirho, plannedChirho) ||
+				!sameEmbeddedReadingChirho(videoChirho, selectedChirho)
+			)
+				throw Error('Finite selected verse soundtrack changed');
+			const sourceAudioChirho = await readChirho(
+				rootChirho,
+				finiteRowChirho.entry_chirho.audio_path_chirho,
+				4_000_000,
+				hashesChirho
+			);
+			const rawPathChirho = finiteRowChirho.proof_chirho.raw_clip_path_chirho;
+			if (
+				typeof rawPathChirho !== 'string' ||
+				sourceAudioChirho.length !== selectedChirho.bytes_chirho ||
+				digestChirho(sourceAudioChirho) !== selectedChirho.sha256_chirho ||
+				digestChirho(
+					await readChirho(rootChirho, rawPathChirho, VERSE_VIDEO_LIMIT_CHIRHO, hashesChirho)
+				) !== finiteRowChirho.proof_chirho.raw_clip_sha256_chirho
+			)
+				throw Error('Finite soundtrack/raw take bytes differ');
+			const audioDecodeChirho = spawnSyncChirho(
+				'ffmpeg',
+				[
+					'-v',
+					'error',
+					'-xerror',
+					'-nostdin',
+					'-i',
+					joinChirho(rootChirho, finiteRowChirho.entry_chirho.audio_path_chirho),
+					'-f',
+					'null',
+					'-'
+				],
+				{ encoding: 'utf8', timeout: 30000 }
+			);
+			if (audioDecodeChirho.status !== 0) throw Error('Finite soundtrack full decode failed');
+		}
 		rowsChirho.push({
 			video_chirho: videoChirho,
 			bytes_chirho: new Uint8Array(bytesChirho),
@@ -370,7 +467,8 @@ async function preflightChirho(optionsChirho: VideoInstallOptionsChirho): Promis
 		rows_chirho: rowsChirho,
 		entries_chirho: entriesChirho,
 		hashes_chirho: hashesChirho,
-		catalogue_sha256_chirho: catalogueBytesChirho ? digestChirho(catalogueBytesChirho) : null
+		catalogue_sha256_chirho: catalogueBytesChirho ? digestChirho(catalogueBytesChirho) : null,
+		source_limits_chirho: limitsChirho
 	};
 }
 async function coldChirho(
@@ -384,7 +482,8 @@ async function coldChirho(
 				await readChirho(
 					rootChirho,
 					pathChirho,
-					pathChirho.endsWith('.mp4') ? VERSE_VIDEO_LIMIT_CHIRHO : 4 * 1024 ** 2,
+					preflightValueChirho.source_limits_chirho.get(pathChirho) ??
+						(pathChirho.endsWith('.mp4') ? VERSE_VIDEO_LIMIT_CHIRHO : 4 * 1024 ** 2),
 					undefined,
 					pathChirho.startsWith('build-chirho/preview-chirho/')
 				)
@@ -511,21 +610,49 @@ export async function installVideosChirho(optionsChirho: VideoInstallOptionsChir
 		await releaseChirho?.();
 	}
 }
-if (import.meta.main) {
-	const argumentsChirho = process.argv.slice(2);
+/** Parse authority before any filesystem or archive work; legacy defaults remain unchanged. */
+export function videoInstallArgumentsChirho(
+	argumentsChirho: string[]
+): Omit<VideoInstallOptionsChirho, 'root_chirho' | 'object_chirho'> {
 	let applyChirho = false,
-		genesisChirho = false;
-	for (const valueChirho of argumentsChirho) {
+		genesisChirho = false,
+		batchPathChirho: string | undefined,
+		batchShaChirho: string | undefined;
+	for (let indexChirho = 0; indexChirho < argumentsChirho.length; indexChirho++) {
+		const valueChirho = argumentsChirho[indexChirho];
 		if (valueChirho === '--apply-chirho' && !applyChirho) applyChirho = true;
 		else if (valueChirho === '--genesis3-chirho' && !genesisChirho) genesisChirho = true;
-		else throw Error('Expected only optional apply and explicit Genesis3 mode');
+		else if (valueChirho === '--batch-chirho' && batchPathChirho === undefined) {
+			batchPathChirho = argumentsChirho[++indexChirho];
+			if (!batchPathChirho) throw Error('Missing finite batch path');
+			relativeChirho(batchPathChirho);
+		} else if (valueChirho === '--batch-sha256-chirho' && batchShaChirho === undefined) {
+			batchShaChirho = argumentsChirho[++indexChirho];
+			if (!batchShaChirho || !/^[a-f0-9]{64}$/.test(batchShaChirho))
+				throw Error('Missing exact finite batch hash');
+		} else
+			throw Error('Expected legacy mode or one explicit batch path/hash pair, with optional apply');
 	}
+	if (Boolean(batchPathChirho) !== Boolean(batchShaChirho) || (genesisChirho && batchPathChirho))
+		throw Error('Finite batch and legacy scopes cannot be mixed');
+	return {
+		scope_chirho: batchPathChirho
+			? 'finite_batch_chirho'
+			: genesisChirho
+				? 'genesis_three_chirho'
+				: 'proverbs_openings_chirho',
+		apply_chirho: applyChirho,
+		...(batchPathChirho && batchShaChirho
+			? { batch_chirho: { path_chirho: batchPathChirho, sha256_chirho: batchShaChirho } }
+			: {})
+	};
+}
+if (import.meta.main) {
 	console.log(
 		JSON.stringify(
 			await installVideosChirho({
 				root_chirho: process.cwd(),
-				scope_chirho: genesisChirho ? 'genesis_three_chirho' : 'proverbs_openings_chirho',
-				apply_chirho: applyChirho
+				...videoInstallArgumentsChirho(process.argv.slice(2))
 			})
 		)
 	);

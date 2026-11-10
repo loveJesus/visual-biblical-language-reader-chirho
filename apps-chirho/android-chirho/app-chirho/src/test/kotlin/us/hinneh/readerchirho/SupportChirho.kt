@@ -7,8 +7,11 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.double
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.long
 import org.junit.Assume.assumeTrue
 import us.hinneh.readerchirho.audiochirho.AudioRepositoryChirho
 import us.hinneh.readerchirho.audiochirho.HumanReadingChirho
@@ -28,8 +31,10 @@ import us.hinneh.readerchirho.contentchirho.SourceChirho
 import us.hinneh.readerchirho.remotechirho.RemoteFailureChirho
 import us.hinneh.readerchirho.remotechirho.TransportChirho
 import us.hinneh.readerchirho.remotechirho.sha256HexChirho
+import us.hinneh.readerchirho.videochirho.EmbeddedClipChirho
 import us.hinneh.readerchirho.videochirho.StagedVideosChirho
 import us.hinneh.readerchirho.videochirho.VideoRecordChirho
+import us.hinneh.readerchirho.videochirho.VideoSelectionChirho
 import java.io.File
 import java.io.IOException
 import java.net.URL
@@ -196,9 +201,12 @@ class FileTransportChirho(private val rootChirho: File) : TransportChirho {
 }
 
 /** A Proverbs verse's canonical-text hash and current standard scene hash in the static tree (placeholders without it). */
-fun proverbsVerseIdentityChirho(lessonIdChirho: String): Pair<String, String> {
+fun proverbsVerseIdentityChirho(lessonIdChirho: String): Pair<String, String> = verseIdentityChirho("proverbs-chirho", lessonIdChirho)
+
+/** Any verse's canonical-text hash and current standard scene hash, from its book folder in the static tree. */
+fun verseIdentityChirho(folderChirho: String, lessonIdChirho: String): Pair<String, String> {
     val rootChirho = staticRootChirho() ?: return "a".repeat(64) to "c".repeat(64)
-    val fileChirho = "proverbs-chirho/chapter-%02d-chirho.json".format(lessonIdChirho.split(".")[1].toInt())
+    val fileChirho = "$folderChirho/chapter-%02d-chirho.json".format(lessonIdChirho.split(".")[1].toInt())
     fun listChirho(folderChirho: String, keyChirho: String) =
         Json.parseToJsonElement(File(rootChirho, "$folderChirho/$fileChirho").readText()).jsonObject.getValue(keyChirho).jsonArray.map { it.jsonObject }
     val verseChirho = listChirho("content-chirho", "verses_chirho").first { (it["id_chirho"] as JsonPrimitive).content == lessonIdChirho }
@@ -237,6 +245,47 @@ fun sampleVideoChirho(lessonIdChirho: String = "Prov.1.1", sha256Chirho: String 
         licenseChirho = HumanReadingChirho.BEERI_LICENSE_CHIRHO,
         licenseUrlChirho = HumanReadingChirho.BEERI_LICENSE_URL_CHIRHO,
         reviewChirho = "pending",
+    )
+}
+
+/** How LICENSES-chirho credits the project's recordings, and so a video whose sound is one (GPT, DM #3812). */
+const val RECORDING_ATTRIBUTION_CHIRHO = "Hinneh — L.J. (Love Jesus), https://hinneh.us/"
+
+/** One published whole-verse recording of a verse in the static tree, as its clips_chirho row has it. */
+fun publishedVerseClipChirho(folderChirho: String, lessonIdChirho: String, pronunciationChirho: String): JsonObject =
+    publishedAudioEntriesChirho("audio-chirho/$folderChirho/chapter-%02d-chirho.json".format(lessonIdChirho.split(".")[1].toInt()), lessonIdChirho)
+        .first { it["token_id_chirho"] == JsonNull && it["pronunciation_chirho"]?.jsonPrimitive?.content == pronunciationChirho }
+
+/**
+ * A video whose sound is a synthesized Greek verse recording (unit 194 contract, frozen 8c33593f): bound to the verse's
+ * real text and scene, with embedded_reading_chirho explicitly null and the five fields of one published verse clip.
+ */
+fun sampleGreekVideoChirho(folderChirho: String, lessonIdChirho: String, clipRowChirho: JsonObject, sha256Chirho: String = "e".repeat(64)): VideoRecordChirho {
+    val (canonicalChirho, sceneChirho) = verseIdentityChirho(folderChirho, lessonIdChirho)
+    val durationChirho = clipRowChirho.getValue("duration_chirho").jsonPrimitive.double
+    return VideoRecordChirho(
+        lessonIdChirho = lessonIdChirho,
+        assetPathChirho = "/video-chirho/sha256-chirho/$sha256Chirho-chirho.mp4",
+        sha256Chirho = sha256Chirho,
+        bytesChirho = 1_208_331,
+        durationChirho = durationChirho + 0.05,
+        widthChirho = 1108,
+        heightChirho = 832,
+        sceneSha256Chirho = sceneChirho,
+        canonicalSha256Chirho = canonicalChirho,
+        readingLanguageChirho = "el",
+        embeddedReadingChirho = null,
+        attributionChirho = RECORDING_ATTRIBUTION_CHIRHO,
+        licenseChirho = VideoSelectionChirho.CC_BY_CHIRHO,
+        licenseUrlChirho = VideoSelectionChirho.CC_BY_URL_CHIRHO,
+        reviewChirho = "pending",
+        embeddedClipChirho = EmbeddedClipChirho(
+            sha256Chirho = clipRowChirho.getValue("sha256_chirho").jsonPrimitive.content,
+            bytesChirho = clipRowChirho.getValue("bytes_chirho").jsonPrimitive.long,
+            durationChirho = durationChirho,
+            recipeIdChirho = clipRowChirho.getValue("recipe_id_chirho").jsonPrimitive.content,
+            pronunciationChirho = clipRowChirho.getValue("pronunciation_chirho").jsonPrimitive.content,
+        ),
     )
 }
 

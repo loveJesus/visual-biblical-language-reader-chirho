@@ -10234,6 +10234,39 @@
       "generation_seed_chirho": 1,
       "source_phase_sha256_chirho": "0fa79612726fd12e3e56e5daa0b970509cf9fae09480b525e73d863c547970ad",
       "source_asr_sha256_chirho": "f0aa39ca6a57f09807c0acd26306fdb521ce2617107830df989838a572f0d31e"
+    },
+    {
+      "id_chirho": "local-greek-v7176-chirho",
+      "lesson_id_chirho": "1John.4.17",
+      "token_id_chirho": null,
+      "text_chirho": "Ἐν τούτῳ τετελείωται ἡ ἀγάπη μεθ’ ἡμῶν, ἵνα παρρησίαν ἔχωμεν ἐν τῇ ἡμέρᾳ τῆς κρίσεως, ὅτι καθὼς ἐκεῖνός ἐστιν καὶ ἡμεῖς ἐσμεν ἐν τῷ κόσμῳ τούτῳ.",
+      "synthesis_text_chirho": "Εν τούτω τετελείωται η αγάπη μεθ’ ημών, ίνα παρρησίαν έχωμεν εν τη ημέρα της κρίσεως, ότι καθώς εκείνός εστιν και ημείς εσμεν εν τω κόσμω τούτω.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "4df35f9ab618c2e30245820056c7f6cdddb91650f95469ae5f2a25d123bf6832",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "d99444d188a8a77e0240c96413557b1a40a8ac2faa5d0fb16b7f1714ee671cc6",
+      "raw_flac_sha256_chirho": "011b3d48acd4e3b3b10708e3ebb2efdc46ff090f278dcb7f1d5e579261b2010f",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/09a232408300837fcf2dd84c502ae958ac3a850ae68da7cde9bd1e94e2441b01-chirho.mp3",
+      "sha256_chirho": "09a232408300837fcf2dd84c502ae958ac3a850ae68da7cde9bd1e94e2441b01",
+      "bytes_chirho": 72976,
+      "duration_chirho": 9.06449,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1739
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "4a3b8b51ae60d4985116f7647ef108166ddab2a8f64c19697c46212d756f6cca",
+      "source_asr_sha256_chirho": "10dc6649009876548b8d55a60bebc6da3ce8ea45e6466e6d46d2e7cfc474a23b"
     }
   ]
 }

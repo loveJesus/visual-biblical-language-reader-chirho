@@ -11730,6 +11730,39 @@
       "generation_seed_chirho": 1,
       "source_phase_sha256_chirho": "17963e92e32b90ec8e1e4874b30310dd89c905d065e6a9cae31b959581fbe2ef",
       "source_asr_sha256_chirho": "c3dba84df55a46f44d7e68b7c7537833f03434509699ddaa00ec93fd0e98bc9e"
+    },
+    {
+      "id_chirho": "local-greek-v4413-chirho",
+      "lesson_id_chirho": "Acts.22.26",
+      "token_id_chirho": null,
+      "text_chirho": "ἀκούσας δὲ ὁ ἑκατοντάρχης προσελθὼν τῷ χιλιάρχῳ ἀπήγγειλεν λέγων Τί μέλλεις ποιεῖν; ὁ γὰρ ἄνθρωπος οὗτος Ῥωμαῖός ἐστιν.",
+      "synthesis_text_chirho": "ακούσας δε ο εκατοντάρχης προσελθών τω χιλιάρχω απήγγειλεν λέγων Τι μέλλεις ποιείν; ο γαρ άνθρωπος ούτος Ρωμαίός εστιν.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "56344e70ee9ed89290605d9213948c026509bac71af3a6c0d1323816f51967ab",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "b7780200d0e344fa5847aa6ba4944b67953712fc46ca0e80a67a86e1e16285e8",
+      "raw_flac_sha256_chirho": "b9d9c534cb185a5dfee95f38c818bdf19d268ee1be62f54dec2ddaf782286342",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/ef6031c454148efcdc2680012d1a0bfb8b5470df8b4c17e4fd29aa38cace1b3e-chirho.mp3",
+      "sha256_chirho": "ef6031c454148efcdc2680012d1a0bfb8b5470df8b4c17e4fd29aa38cace1b3e",
+      "bytes_chirho": 50198,
+      "duration_chirho": 6.217143,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.26
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "4a3b8b51ae60d4985116f7647ef108166ddab2a8f64c19697c46212d756f6cca",
+      "source_asr_sha256_chirho": "10dc6649009876548b8d55a60bebc6da3ce8ea45e6466e6d46d2e7cfc474a23b"
     }
   ]
 }

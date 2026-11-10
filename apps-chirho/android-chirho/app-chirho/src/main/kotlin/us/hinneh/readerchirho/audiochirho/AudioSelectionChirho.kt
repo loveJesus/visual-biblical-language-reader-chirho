@@ -3,6 +3,7 @@ package us.hinneh.readerchirho.audiochirho
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.Transient
 import kotlinx.serialization.json.JsonObject
 import us.hinneh.readerchirho.contentchirho.HebrewWordChirho
 import us.hinneh.readerchirho.contentchirho.VerseChirho
@@ -61,6 +62,13 @@ data class ClipChirho(
     @SerialName("review_chirho") val reviewChirho: String,
     /** Present only on a human reading; see HumanReadingChirho. */
     @SerialName("reading_source_chirho") val readingSourceChirho: ReadingSourceChirho? = null,
+    /**
+     * Never read from JSON: AudioRepositoryChirho.decodeClipChirho sets it from the published row's own keys. True only for
+     * a row that names token_id_chirho as null and has no reading_source_chirho, start_offset_chirho or end_offset_chirho
+     * key at all, not even a null one. Only a synthesized verse video's match reads it (unit 194, GPT DM #3813); audio
+     * admission and selection never do.
+     */
+    @Transient val rawWholeVerseShapeChirho: Boolean = false,
 )
 
 /** The website's Greek reading choices; Modern with Aspirates is the preferred default. */
@@ -96,8 +104,14 @@ object AudioSelectionChirho {
         LOCAL_GREEK_VERSE_RECIPE_CHIRHO to "modern_greek",
     )
 
-    /** audio-reviews-chirho.json: exact rejected bytes never regain playback (also publisher-excluded). */
-    private val REJECTED_CHIRHO = setOf("6a404d94c40e869718b48a3aa3c2083cb42ecd1596d720465fb2d7dac9d8975e")
+    /**
+     * audio-reviews-chirho.json: exact rejected bytes never regain playback (also publisher-excluded). A verse video's
+     * embedded clip is checked against the same list (VideoSelectionChirho).
+     */
+    internal val REJECTED_CHIRHO = setOf("6a404d94c40e869718b48a3aa3c2083cb42ecd1596d720465fb2d7dac9d8975e")
+
+    /** The review states a published recording may play in; a verse video's embedded clip must be one of them too. */
+    internal val ADMITTED_REVIEWS_CHIRHO = setOf("audition", "approved")
     private val IPA_CHIRHO = Regex("[\\p{L}\\p{M}${WHITESPACE_CLASS_CHIRHO}ˈˌ]+")
     private val SHA_CHIRHO = Regex("[a-f0-9]{64}")
     private const val ROUGH_BREATHING_CHIRHO = '̔'
@@ -167,7 +181,7 @@ object AudioSelectionChirho {
             val identityChirho = clipChirho.lessonIdChirho == verseChirho.idChirho &&
                 clipChirho.canonicalSha256Chirho == canonicalSha256Chirho &&
                 clipChirho.languageChirho == (if (greekChirho) "el" else "he") &&
-                clipChirho.reviewChirho in setOf("audition", "approved") &&
+                clipChirho.reviewChirho in ADMITTED_REVIEWS_CHIRHO &&
                 clipChirho.sha256Chirho !in REJECTED_CHIRHO &&
                 validWindowChirho(clipChirho) &&
                 clipChirho.voiceNameChirho.isNotEmpty() &&

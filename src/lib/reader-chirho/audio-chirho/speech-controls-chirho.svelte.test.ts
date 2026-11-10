@@ -342,7 +342,7 @@ testChirho(
 );
 
 // Workflow: verse-media-chirho.md. A same-reading verse video is the shared player's clock.
-async function setupVideoChirho(matchChirho = true) {
+async function setupVideoChirho(matchChirho = true, syntheticChirho = false) {
 	const parts = await setupVerseChirho(true);
 	const { buttonChirho, hostChirho, rootChirho } = parts;
 	const wrapChirho = document.createElement('span');
@@ -371,13 +371,22 @@ async function setupVideoChirho(matchChirho = true) {
 	clipsChirho.push({
 		text_chirho: 'first second',
 		token_id_chirho: null,
-		language_chirho: 'he',
+		language_chirho: syntheticChirho ? 'el' : 'he',
+		pronunciation_chirho: syntheticChirho ? 'modern_greek' : 'israeli_hebrew',
 		asset_path_chirho: '/audio-chirho/sha256-chirho/' + '4'.repeat(64) + '-chirho.mp3',
 		sha256_chirho: '4'.repeat(64),
 		voice_name_chirho: "Rabbi Dan Be'eri",
 		bytes_chirho: 100,
-		reading_source_chirho: { kind_chirho: 'human' }
+		...(syntheticChirho ? {} : { reading_source_chirho: { kind_chirho: 'human' } })
 	});
+	if (syntheticChirho) {
+		buttonChirho.dataset.speechLanguageChirho = 'grc';
+		const renditionChirho = document.createElement('select');
+		renditionChirho.dataset.greekRenditionChirho = '';
+		renditionChirho.innerHTML =
+			'<option value="modern">Modern</option><option value="modern_aspirates">Aspirates</option><option value="erasmian">Erasmian</option>';
+		rootChirho.appendChild(renditionChirho);
+	}
 	hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
 	hostChirho.setAttribute('data-verse-video-sha-chirho', 'v'.repeat(64));
 	hostChirho.setAttribute('data-verse-video-clip-sha-chirho', (matchChirho ? '4' : '5').repeat(64));
@@ -520,3 +529,99 @@ testChirho('a policy-blocked recording is idle and can be retried manually', asy
 		deniedPlayChirho.mockRestore();
 	}
 });
+
+testChirho(
+	'a synthetic video uses the selected compatible clip, and a rendition switch stops its clock',
+	async () => {
+		const { buttonChirho, hostChirho, rootChirho, videoChirho, playedChirho, stillChirho } =
+			await setupVideoChirho(true, true);
+		const renditionChirho = rootChirho.querySelector(
+			'[data-greek-rendition-chirho]'
+		) as unknown as HTMLSelectElement;
+		buttonChirho.click();
+		expectChirho(playedChirho).toHaveBeenCalledTimes(1);
+		expectChirho(ControlledAudioChirho.instancesChirho).toHaveLength(0);
+		videoChirho.onended?.(new Event('ended'));
+		expectChirho([
+			videoChirho.hidden,
+			stillChirho.hidden,
+			buttonChirho.hasAttribute('aria-busy')
+		]).toEqual([true, false, false]);
+		renditionChirho.value = 'modern_aspirates';
+		renditionChirho.dispatchEvent(new Event('change', { bubbles: true }));
+		buttonChirho.click();
+		expectChirho(playedChirho).toHaveBeenCalledTimes(2); // Non-rough Modern remains the same permitted recording.
+		const clipsChirho = JSON.parse(hostChirho.getAttribute('data-speech-recordings-chirho')!);
+		clipsChirho.push({
+			...clipsChirho.at(-1),
+			sha256_chirho: '5'.repeat(64),
+			asset_path_chirho: '/audio-chirho/sha256-chirho/' + '5'.repeat(64) + '-chirho.mp3',
+			pronunciation_chirho: 'erasmian_greek'
+		});
+		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+		renditionChirho.value = 'erasmian';
+		renditionChirho.dispatchEvent(new Event('change', { bubbles: true }));
+		expectChirho(videoChirho.hidden).toBe(true);
+		buttonChirho.click();
+		expectChirho(playedChirho).toHaveBeenCalledTimes(2);
+		expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.src).toContain('5'.repeat(64));
+	}
+);
+testChirho(
+	'a synthetic video never supplies a held rough rendition or missing source clip',
+	async () => {
+		const { buttonChirho, hostChirho, rootChirho, playedChirho } = await setupVideoChirho(
+			true,
+			true
+		);
+		const clipsChirho = JSON.parse(hostChirho.getAttribute('data-speech-recordings-chirho')!);
+		clipsChirho.at(-1).text_chirho = 'ὁ λόγος';
+		buttonChirho.dataset.pronounceChirho = 'ὁ λόγος';
+		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+		const renditionChirho = rootChirho.querySelector(
+			'[data-greek-rendition-chirho]'
+		) as unknown as HTMLSelectElement;
+		renditionChirho.value = 'modern_aspirates';
+		renditionChirho.dispatchEvent(new Event('change', { bubbles: true }));
+		buttonChirho.click();
+		expectChirho(playedChirho).not.toHaveBeenCalled();
+		renditionChirho.value = 'modern';
+		renditionChirho.dispatchEvent(new Event('change', { bubbles: true }));
+		buttonChirho.click();
+		expectChirho(playedChirho).toHaveBeenCalledTimes(1);
+		rootChirho.querySelector<HTMLButtonElement>('[data-speech-stop-chirho]')!.click();
+		hostChirho.setAttribute('data-speech-recordings-chirho', '[]');
+		await viChirho.advanceTimersByTimeAsync(0);
+		buttonChirho.click();
+		expectChirho(playedChirho).toHaveBeenCalledTimes(1);
+	}
+);
+testChirho('a failed synthetic video returns to its same MP3 without retrying motion', async () => {
+	const { buttonChirho, videoChirho, playedChirho, stillChirho } = await setupVideoChirho(
+		true,
+		true
+	);
+	buttonChirho.click();
+	videoChirho.onerror?.(new Event('error'));
+	expectChirho([videoChirho.hidden, stillChirho.hidden]).toEqual([true, false]);
+	buttonChirho.click();
+	expectChirho(playedChirho).toHaveBeenCalledTimes(1);
+	expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.src).toContain('4'.repeat(64));
+});
+
+testChirho(
+	'a word sharing verse MP3 bytes still plays as a word rather than starting the video',
+	async () => {
+		const { hostChirho, wordButtonsChirho, playedChirho } = await setupVideoChirho(true, true);
+		const clipsChirho = JSON.parse(hostChirho.getAttribute('data-speech-recordings-chirho')!);
+		delete clipsChirho[0].start_offset_chirho;
+		delete clipsChirho[0].end_offset_chirho;
+		clipsChirho[0].sha256_chirho = '4'.repeat(64);
+		clipsChirho[0].asset_path_chirho =
+			'/audio-chirho/sha256-chirho/' + '4'.repeat(64) + '-chirho.mp3';
+		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
+		wordButtonsChirho[0].click();
+		expectChirho(playedChirho).not.toHaveBeenCalled();
+		expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.src).toContain('4'.repeat(64));
+	}
+);

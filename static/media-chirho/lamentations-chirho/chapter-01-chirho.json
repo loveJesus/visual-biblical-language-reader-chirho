@@ -4969,5 +4969,37 @@
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
       "selected_chirho": true
     }
+  ],
+  "videos_chirho": [
+    {
+      "lesson_id_chirho": "Lam.1.1",
+      "asset_path_chirho": "/video-chirho/sha256-chirho/f6b238e303c93a12ba17de640040a52f12beac0e951897e982b660034385f239-chirho.mp4",
+      "sha256_chirho": "f6b238e303c93a12ba17de640040a52f12beac0e951897e982b660034385f239",
+      "bytes_chirho": 3266806,
+      "duration_chirho": 13.583333333333334,
+      "width_chirho": 1108,
+      "height_chirho": 832,
+      "scene_sha256_chirho": "5871d25ee386ad545692d8ca99be33f872d18f2328c8fae15edef9e39da9084e",
+      "canonical_sha256_chirho": "a469538ce2109e16dd0c2a4d950d5bd332c266bd3b23311ebb456b3f0eef3c4a",
+      "reading_language_chirho": "he",
+      "embedded_reading_chirho": {
+        "kind_chirho": "human",
+        "reader_id_chirho": "rdb-chirho",
+        "gbt_id_chirho": "OT/RDB/Lam",
+        "package_sha256_chirho": "5e82d55da585ec70a2745e9d4b518f47abb972e5780580d10853f64f651b7d94",
+        "chapter_sha256_chirho": "af82d09c46a766710ef8888fa38d90853269fa84b26ea86de1d43731312a0823",
+        "timings_sha256_chirho": "7f752452d9d94c95f03a7d8cefd3a27ea1e341cfe63bca7934a7101b38fd1667",
+        "start_chirho": 0,
+        "end_chirho": 13.6,
+        "chapter_duration_chirho": 318.816,
+        "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+        "license_chirho": "CC BY-SA 3.0",
+        "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+      "license_chirho": "CC BY-SA 3.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "review_chirho": "pending"
+    }
   ]
 }

@@ -8,6 +8,8 @@ import {
 } from 'vitest';
 import { render as renderChirho } from 'vitest-browser-svelte';
 import AudioVerseChirho from './AudioVerseChirho.svelte';
+import type { GreekLessonChirho } from '$lib/domain-chirho/greek-chirho';
+import { chapterRecipeChirho } from '$lib/domain-chirho/pronunciation-chirho/chapter-recipe-chirho';
 import type { RecordingChirho } from './recordings-chirho';
 import { installSpeechChirho } from './speech-controls-chirho';
 import { syntheticLessonChirho } from '../../../../tests-chirho/fixtures-chirho/synthetic-chirho';
@@ -101,7 +103,37 @@ async function clipChirho(
 	};
 }
 
+let greekLessonChirho: GreekLessonChirho;
+async function greekClipChirho(): Promise<RecordingChirho> {
+	const recipeIdChirho = 'chatterbox-v3-modern-greek-verse-v1-chirho';
+	const shaChirho = '6'.repeat(64);
+	return {
+		lesson_id_chirho: greekLessonChirho.id_chirho,
+		canonical_sha256_chirho: await hexChirho(
+			new TextEncoder().encode(greekLessonChirho.canonical_text_chirho)
+		),
+		language_chirho: 'el',
+		pronunciation_chirho: 'modern_greek',
+		token_id_chirho: null,
+		text_chirho: spokenVerseChirho(greekLessonChirho),
+		recipe_id_chirho: recipeIdChirho,
+		synthesis_text_chirho: chapterRecipeChirho(greekLessonChirho, recipeIdChirho)!
+			.synthesis_text_chirho,
+		bytes_chirho: 1000,
+		duration_chirho: 5,
+		review_chirho: 'audition',
+		voice_name_chirho: 'Chatterbox Multilingual V3 (built-in voice)',
+		sha256_chirho: shaChirho,
+		asset_path_chirho: `/audio-chirho/sha256-chirho/${shaChirho}-chirho.mp3`
+	};
+}
 beforeAllChirho(async () => {
+	const chapterChirho = (await (
+		await fetch('/content-chirho/matthew-chirho/chapter-01-chirho.json')
+	).json()) as { verses_chirho: GreekLessonChirho[] };
+	greekLessonChirho = chapterChirho.verses_chirho.find(
+		(lessonChirho) => lessonChirho.id_chirho === 'Matt.1.1'
+	)!;
 	const humanChirho = await clipChirho(1, '2', {
 		voice_name_chirho: "Rabbi Dan Be'eri",
 		duration_chirho: 4.95,
@@ -146,11 +178,27 @@ beforeAllChirho(async () => {
 			bytesChirho
 		])
 	);
+	const greekBytesChirho = encodeChirho({
+		schema_version_chirho: 1,
+		book_id_chirho: 'Matt',
+		chapter_chirho: 1,
+		clips_chirho: [await greekClipChirho()]
+	});
+	filesChirho.set('/audio-chirho/matthew-chirho/chapter-01-chirho.json', greekBytesChirho);
 	filesChirho.set(
 		'/audio-chirho/manifest-chirho.json',
 		encodeChirho({
 			schema_version_chirho: 1,
 			books_chirho: {
+				Matt: {
+					chapters_chirho: [
+						{
+							number_chirho: 1,
+							path_chirho: '/audio-chirho/matthew-chirho/chapter-01-chirho.json',
+							sha256_chirho: await hexChirho(greekBytesChirho)
+						}
+					]
+				},
 				Prov: {
 					chapters_chirho: await Promise.all(
 						chaptersChirho.map(async (bytesChirho, indexChirho) => ({
@@ -285,3 +333,52 @@ for (const [chapterChirho, enabledChirho, countChirho] of [
 		}
 	);
 }
+
+testChirho(
+	'a verified Greek full-verse clip can bind a video without claiming a human credit',
+	async () => {
+		const clipChirho = await greekClipChirho();
+		const reportedChirho: (RecordingChirho | null)[] = [];
+		const baseChirho = await videoForChirho();
+		for (const [shaChirho, expectedChirho] of [
+			[clipChirho.sha256_chirho, true],
+			['7'.repeat(64), false]
+		] as const) {
+			const videoChirho = {
+				...baseChirho,
+				lesson_id_chirho: clipChirho.lesson_id_chirho,
+				canonical_sha256_chirho: clipChirho.canonical_sha256_chirho,
+				duration_chirho: 5,
+				reading_language_chirho: 'el',
+				embedded_reading_chirho: null,
+				embedded_clip_chirho: {
+					sha256_chirho: shaChirho,
+					bytes_chirho: clipChirho.bytes_chirho,
+					duration_chirho: clipChirho.duration_chirho,
+					recipe_id_chirho: clipChirho.recipe_id_chirho!,
+					pronunciation_chirho: clipChirho.pronunciation_chirho
+				},
+				attribution_chirho: 'Hinneh / Love Jesus Software',
+				license_chirho: 'CC BY 4.0',
+				license_url_chirho: 'https://creativecommons.org/licenses/by/4.0/'
+			};
+			const { container: containerChirho, unmount: unmountChirho } = renderChirho(
+				AudioVerseChirho,
+				{
+					lessonChirho: greekLessonChirho,
+					videoChirho,
+					onHumanReadingChirho: (valueChirho) => reportedChirho.push(valueChirho)
+				}
+			);
+			await viChirho.waitFor(() => expectChirho(recordingsLoadedChirho(containerChirho)).toBe(1));
+			const controlsChirho = containerChirho.querySelector<HTMLElement>(
+				'[data-audio-controls-chirho]'
+			)!;
+			expectChirho(controlsChirho.dataset.verseVideoClipShaChirho).toBe(
+				expectedChirho ? clipChirho.sha256_chirho : undefined
+			);
+			expectChirho(reportedChirho.at(-1)).toBeNull();
+			unmountChirho();
+		}
+	}
+);

@@ -23,7 +23,48 @@ public struct ClipChirho: Codable, Sendable, Hashable {
     public let reviewChirho: String
     public var readingSourceChirho: HumanReadingSourceChirho? = nil
 
+    /// Raw-key identity needed only for synthetic video soundtracks; audio admission is unchanged.
+    private(set) var hasExplicitWholeFileIdentityChirho = false
+
+    enum CodingKeys: String, CodingKey {
+        case lessonIdChirho, tokenIdChirho, languageChirho, textChirho, canonicalSha256Chirho
+        case synthesisTextChirho, ipaChirho, recipeIdChirho, pronunciationChirho, voiceNameChirho
+        case assetPathChirho, sha256Chirho, bytesChirho, durationChirho
+        case startOffsetChirho, endOffsetChirho, reviewChirho, readingSourceChirho
+    }
+
     public var isApprovedChirho: Bool { reviewChirho == "approved" }
+}
+
+// An extension keeps the existing memberwise constructor and synthesized encoded keys intact.
+extension ClipChirho {
+    public init(from decoderChirho: any Decoder) throws {
+        let fieldsChirho = try decoderChirho.container(keyedBy: CodingKeys.self)
+        lessonIdChirho = try fieldsChirho.decode(String.self, forKey: .lessonIdChirho)
+        tokenIdChirho = try fieldsChirho.decodeIfPresent(String.self, forKey: .tokenIdChirho)
+        languageChirho = try fieldsChirho.decode(String.self, forKey: .languageChirho)
+        textChirho = try fieldsChirho.decode(String.self, forKey: .textChirho)
+        canonicalSha256Chirho = try fieldsChirho.decode(String.self, forKey: .canonicalSha256Chirho)
+        synthesisTextChirho = try fieldsChirho.decodeIfPresent(String.self, forKey: .synthesisTextChirho)
+        ipaChirho = try fieldsChirho.decodeIfPresent(String.self, forKey: .ipaChirho)
+        recipeIdChirho = try fieldsChirho.decodeIfPresent(String.self, forKey: .recipeIdChirho)
+        pronunciationChirho = try fieldsChirho.decode(String.self, forKey: .pronunciationChirho)
+        voiceNameChirho = try fieldsChirho.decode(String.self, forKey: .voiceNameChirho)
+        assetPathChirho = try fieldsChirho.decode(String.self, forKey: .assetPathChirho)
+        sha256Chirho = try fieldsChirho.decode(String.self, forKey: .sha256Chirho)
+        bytesChirho = try fieldsChirho.decode(Int.self, forKey: .bytesChirho)
+        durationChirho = try fieldsChirho.decode(Double.self, forKey: .durationChirho)
+        startOffsetChirho = try fieldsChirho.decodeIfPresent(Double.self, forKey: .startOffsetChirho)
+        endOffsetChirho = try fieldsChirho.decodeIfPresent(Double.self, forKey: .endOffsetChirho)
+        reviewChirho = try fieldsChirho.decode(String.self, forKey: .reviewChirho)
+        readingSourceChirho = try fieldsChirho.decodeIfPresent(HumanReadingSourceChirho.self, forKey: .readingSourceChirho)
+        hasExplicitWholeFileIdentityChirho = fieldsChirho.contains(.tokenIdChirho)
+            && !fieldsChirho.contains(.readingSourceChirho)
+            && !fieldsChirho.contains(.startOffsetChirho) && !fieldsChirho.contains(.endOffsetChirho)
+        if hasExplicitWholeFileIdentityChirho {
+            hasExplicitWholeFileIdentityChirho = try fieldsChirho.decodeNil(forKey: .tokenIdChirho)
+        }
+    }
 }
 
 struct AudioManifestEntryChirho: Codable, Sendable {

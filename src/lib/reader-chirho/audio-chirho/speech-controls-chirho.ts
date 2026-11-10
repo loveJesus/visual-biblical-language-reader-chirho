@@ -95,7 +95,11 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		);
 		const videoShaChirho = controlsChirho?.dataset.verseVideoShaChirho;
 		if (
-			!humanChirho(clipChirho) ||
+			clipChirho.token_id_chirho !== null ||
+			clipChirho.start_offset_chirho !== undefined ||
+			clipChirho.end_offset_chirho !== undefined ||
+			typeof clipChirho.sha256_chirho !== 'string' ||
+			!/^[a-f0-9]{64}$/.test(clipChirho.sha256_chirho) ||
 			!videoShaChirho ||
 			controlsChirho?.dataset.verseVideoClipShaChirho !== clipChirho.sha256_chirho
 		)

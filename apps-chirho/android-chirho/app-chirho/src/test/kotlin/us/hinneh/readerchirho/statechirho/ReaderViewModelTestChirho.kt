@@ -47,7 +47,10 @@ import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.domainchirho.SpokenChirho
 import us.hinneh.readerchirho.domainchirho.SpokenOverridesChirho
 import us.hinneh.readerchirho.mediachirho.VerseMediaChirho
+import us.hinneh.readerchirho.bundledCatalogueChirho
 import us.hinneh.readerchirho.publishedRecordsChirho
+import us.hinneh.readerchirho.publishedVerseClipChirho
+import us.hinneh.readerchirho.sampleGreekVideoChirho
 import us.hinneh.readerchirho.remotechirho.sha256HexChirho
 import us.hinneh.readerchirho.sampleVideoChirho
 import us.hinneh.readerchirho.videochirho.VideoPlaybackChirho
@@ -658,5 +661,162 @@ class ReaderViewModelTestChirho {
         settleChirho()
         assertEquals("Matt.1.16", aspiratesChirho.shownChirho())
         assertEquals("a saved Aspirates choice never borrows that plain Modern reading", 1, playbackChirho.playedChirho.size)
+    }
+
+    // Unit 194 (frozen contract 8c33593f, GPT DM #3807): a video whose sound is a synthesized Greek recording plays only
+    // while that exact recording is the one chosen under the reading in effect; otherwise the same Play reads the chosen one.
+
+    /** John 1:1 has Modern with Aspirates, Modern and Erasmian readings; with nothing saved it follows Aspirates. */
+    private fun johnGreekVideoChirho() =
+        sampleGreekVideoChirho("john-chirho", "John.1.1", publishedVerseClipChirho("john-chirho", "John.1.1", "modern_greek_aspirates"))
+
+    @Test
+    fun aGreekVideoPlaysOnlyWhileItsClipIsTheReadingInEffect() = runTest(dispatcherChirho) {
+        val greekVideoChirho = johnGreekVideoChirho()
+        worldChirho = PublishedWorldChirho.orSkipChirho(dispatcherChirho, FixedStagedVideosChirho(greekVideoChirho))
+        val viewModelChirho = viewModelChirho(explicitChirho = "John.1.1")
+        settleChirho()
+        val automaticChirho = viewModelChirho.uiStateChirho.value
+        assertEquals(GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO, automaticChirho.renditionChirho)
+        assertEquals(greekVideoChirho, automaticChirho.playableVideoChirho)
+        assertEquals(VersePlayChirho.VIDEO_CHIRHO, automaticChirho.versePlayChirho)
+        viewModelChirho.toggleVerseChirho()
+        settleChirho()
+        assertEquals(listOf("verse:John.1.1" to 1f), videoChirho.playedChirho)
+        assertTrue("its sound is the chosen recording, not a second track", playbackChirho.playedChirho.isEmpty())
+
+        viewModelChirho.setRenditionChirho(GreekRenditionChirho.MODERN_CHIRHO)
+        assertEquals("a reading change stops the video at once", PlaybackChirho.IdleChirho, videoChirho.playbackChirho.value)
+        val modernChirho = viewModelChirho.uiStateChirho.value
+        assertNull("a saved Modern choice is never overridden by the Aspirates video", modernChirho.playableVideoChirho)
+        assertEquals("the same Play now names the chosen recording", VersePlayChirho.RECORDING_CHIRHO, modernChirho.versePlayChirho)
+        assertEquals("modern_greek", modernChirho.verseClipChirho?.pronunciationChirho)
+        viewModelChirho.toggleVerseChirho()
+        assertEquals(listOf(modernChirho.verseClipChirho), playbackChirho.clipsChirho)
+        assertEquals("the video is not started again", 1, videoChirho.playedChirho.size)
+
+        viewModelChirho.setRenditionChirho(GreekRenditionChirho.ERASMIAN_CHIRHO)
+        val erasmianChirho = viewModelChirho.uiStateChirho.value
+        assertNull(erasmianChirho.playableVideoChirho)
+        assertEquals("erasmian_greek", erasmianChirho.verseClipChirho?.pronunciationChirho)
+
+        viewModelChirho.setRenditionChirho(GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO)
+        assertEquals("back on its own reading, the video returns", greekVideoChirho, viewModelChirho.uiStateChirho.value.playableVideoChirho)
+    }
+
+    /** Matthew 1:16 has rough breathing and only a plain Modern reading (theAutomaticRenditionFollowsTheVerseUntilAChoiceIsSaved). */
+    @Test
+    fun withoutAChosenRecordingAGreekVideoNeverPlays() = runTest(dispatcherChirho) {
+        val greekVideoChirho = sampleGreekVideoChirho(
+            "matthew-chirho", "Matt.1.16", publishedVerseClipChirho("matthew-chirho", "Matt.1.16", "modern_greek"),
+        )
+        worldChirho = PublishedWorldChirho.orSkipChirho(dispatcherChirho, FixedStagedVideosChirho(greekVideoChirho))
+        val viewModelChirho = viewModelChirho(explicitChirho = "Matt.1.16")
+        settleChirho()
+        assertEquals("with nothing saved its Modern reading is chosen, and so the video", greekVideoChirho, viewModelChirho.uiStateChirho.value.playableVideoChirho)
+        viewModelChirho.setRenditionChirho(GreekRenditionChirho.MODERN_ASPIRATES_CHIRHO)
+        val aspiratesChirho = viewModelChirho.uiStateChirho.value
+        assertNull("no recording is chosen for Aspirates here", aspiratesChirho.verseClipChirho)
+        assertNull("so no video either", aspiratesChirho.playableVideoChirho)
+        assertEquals(VersePlayChirho.NONE_CHIRHO, aspiratesChirho.versePlayChirho)
+        viewModelChirho.toggleVerseChirho()
+        assertTrue(videoChirho.playedChirho.isEmpty() && playbackChirho.playedChirho.isEmpty())
+
+        // While recordings load, after they fail, or with none, a synthesized soundtrack is never assumed.
+        val mediaChirho = OptionalChirho.ReadyChirho(VerseMediaChirho.EMPTY_CHIRHO.copy(videoChirho = greekVideoChirho))
+        val pendingChirho = listOf(
+            OptionalChirho.LoadingChirho, OptionalChirho.UnavailableChirho, OptionalChirho.ReadyChirho(VerseRecordingsChirho.EMPTY_CHIRHO),
+        )
+        for (recordingsChirho in pendingChirho) {
+            val stateChirho = ReaderUiStateChirho(
+                passageChirho = PassageChirho("Matt", 1, 16), catalogueChirho = bundledCatalogueChirho(),
+                mediaChirho = mediaChirho, recordingsChirho = recordingsChirho,
+            )
+            assertNull(stateChirho.playableVideoChirho)
+            assertEquals(VersePlayChirho.NONE_CHIRHO, stateChirho.versePlayChirho)
+        }
+        val humanChirho = ReaderUiStateChirho(
+            passageChirho = PassageChirho("Prov", 1, 1),
+            mediaChirho = OptionalChirho.ReadyChirho(VerseMediaChirho.EMPTY_CHIRHO.copy(videoChirho = sampleVideoChirho())),
+            recordingsChirho = OptionalChirho.UnavailableChirho,
+        )
+        assertEquals("a Be'eri video still plays with its own reading", sampleVideoChirho(), humanChirho.playableVideoChirho)
+    }
+
+    /** A word clip that shares the soundtrack's MP3 bytes is still a word's: it never unlocks the verse's video. */
+    @Test
+    fun aWordClipWithTheSameMp3NeverUnlocksAGreekVideo() = runTest(dispatcherChirho) {
+        val rowChirho = publishedVerseClipChirho("john-chirho", "John.1.1", "modern_greek_aspirates")
+        val greekVideoChirho = sampleGreekVideoChirho("john-chirho", "John.1.1", rowChirho)
+        val verseClipChirho = requireNotNull(AudioRepositoryChirho.decodeClipChirho(rowChirho))
+        val wordClipChirho = requireNotNull(AudioRepositoryChirho.decodeClipChirho(rowChirho.withChirho("token_id_chirho", "John.1.1!1")))
+        fun stateChirho(recordingsChirho: VerseRecordingsChirho) = ReaderUiStateChirho(
+            passageChirho = PassageChirho("John", 1, 1), catalogueChirho = bundledCatalogueChirho(),
+            mediaChirho = OptionalChirho.ReadyChirho(VerseMediaChirho.EMPTY_CHIRHO.copy(videoChirho = greekVideoChirho)),
+            recordingsChirho = OptionalChirho.ReadyChirho(recordingsChirho),
+        )
+        assertEquals(greekVideoChirho, stateChirho(VerseRecordingsChirho(emptyMap(), listOf(verseClipChirho))).playableVideoChirho)
+        assertNull(
+            "as a word's clip it is no verse recording",
+            stateChirho(VerseRecordingsChirho(mapOf("John.1.1!1" to listOf(wordClipChirho)), emptyList())).playableVideoChirho,
+        )
+        assertNull(
+            "even where a verse recording would be, a word token refuses",
+            stateChirho(VerseRecordingsChirho(emptyMap(), listOf(wordClipChirho))).playableVideoChirho,
+        )
+
+        worldChirho = PublishedWorldChirho.orSkipChirho(dispatcherChirho, FixedStagedVideosChirho(greekVideoChirho))
+        val viewModelChirho = viewModelChirho(explicitChirho = "John.1.1")
+        settleChirho()
+        val wordChirho = viewModelChirho.wordsChirho().first { viewModelChirho.wordClipAvailableChirho(it) }
+        viewModelChirho.toggleWordChirho(wordChirho)
+        settleChirho()
+        assertTrue("a word speaker never starts the video", videoChirho.playedChirho.isEmpty())
+        assertEquals("word:John.1.1:${wordChirho.idChirho}", playbackChirho.playedChirho.single().first)
+    }
+
+    @Test
+    fun aFailedGreekVideoGivesWayToItsChosenRecordingOverTheStill() = runTest(dispatcherChirho) {
+        val greekVideoChirho = johnGreekVideoChirho()
+        worldChirho = PublishedWorldChirho.orSkipChirho(dispatcherChirho, FixedStagedVideosChirho(greekVideoChirho))
+        val viewModelChirho = viewModelChirho(explicitChirho = "John.1.1")
+        settleChirho()
+        viewModelChirho.toggleVerseChirho()
+        videoChirho.failChirho("verse:John.1.1")
+        settleChirho()
+        val failedChirho = viewModelChirho.uiStateChirho.value
+        assertNull("the still returns in the video's place", failedChirho.playableVideoChirho)
+        assertEquals(VersePlayChirho.RECORDING_CHIRHO, failedChirho.versePlayChirho)
+        viewModelChirho.toggleVerseChirho()
+        assertEquals(
+            "the same Play reads the very recording the video carried",
+            greekVideoChirho.embeddedClipChirho?.sha256Chirho, playbackChirho.clipsChirho.single().sha256Chirho,
+        )
+        assertEquals("the video is not tried again", 1, videoChirho.playedChirho.size)
+    }
+
+    @Test
+    fun withAutoplayAGreekVideoStartsOnlyWhenItsClipIsChosen() = runTest(dispatcherChirho) {
+        val greekVideoChirho = johnGreekVideoChirho()
+        worldChirho = PublishedWorldChirho.orSkipChirho(dispatcherChirho, FixedStagedVideosChirho(greekVideoChirho))
+        preferencesChirho.autoplayChirho = true
+        val automaticChirho = viewModelChirho(explicitChirho = "John.1.2")
+        settleChirho()
+        automaticChirho.stepChirho(forwardChirho = false)
+        settleChirho()
+        assertEquals("John.1.1", automaticChirho.shownChirho())
+        assertEquals(listOf("verse:John.1.1" to 1f), videoChirho.playedChirho)
+        assertTrue(playbackChirho.playedChirho.isEmpty())
+        storeChirho.clear()
+
+        preferencesChirho.renditionChirho = GreekRenditionChirho.MODERN_CHIRHO
+        val modernChirho = viewModelChirho(explicitChirho = "John.1.2")
+        settleChirho()
+        modernChirho.stepChirho(forwardChirho = false)
+        settleChirho()
+        assertEquals("John.1.1", modernChirho.shownChirho())
+        assertEquals("a saved Modern choice autoplays its own recording", listOf("verse:John.1.1" to 1f), playbackChirho.playedChirho)
+        assertEquals("modern_greek", playbackChirho.clipsChirho.single().pronunciationChirho)
+        assertEquals("and not the video", 1, videoChirho.playedChirho.size)
     }
 }

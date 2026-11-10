@@ -4190,5 +4190,31 @@
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
       "selected_chirho": true
     }
+  ],
+  "videos_chirho": [
+    {
+      "lesson_id_chirho": "Rev.1.1",
+      "asset_path_chirho": "/video-chirho/sha256-chirho/59bcc26f9e329bcbd577430e76d9962f42e209e38dbe141eed446e3d26a31b66-chirho.mp4",
+      "sha256_chirho": "59bcc26f9e329bcbd577430e76d9962f42e209e38dbe141eed446e3d26a31b66",
+      "bytes_chirho": 2941166,
+      "duration_chirho": 9.958333333333334,
+      "width_chirho": 1108,
+      "height_chirho": 832,
+      "scene_sha256_chirho": "d1cc7d9d17b281b3b6cf0362386de70ea28c9827238d2c9c0bb97921f04c29b2",
+      "canonical_sha256_chirho": "5362c3266052003087f8fa192409f9194865ef35b492d5c2ceb115de23e3e117",
+      "reading_language_chirho": "el",
+      "embedded_reading_chirho": null,
+      "embedded_clip_chirho": {
+        "sha256_chirho": "e1f364a1d99b59a58edc925c9e54c8faa4c016fff10fb587748432bcb07a4ead",
+        "bytes_chirho": 80291,
+        "duration_chirho": 9.978776,
+        "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+        "pronunciation_chirho": "modern_greek"
+      },
+      "attribution_chirho": "Hinneh / Love Jesus Software",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "review_chirho": "pending"
+    }
   ]
 }

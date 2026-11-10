@@ -15,6 +15,7 @@ import us.hinneh.readerchirho.contentchirho.WordChirho
 import us.hinneh.readerchirho.domainchirho.PassageChirho
 import us.hinneh.readerchirho.mediachirho.VerseMediaChirho
 import us.hinneh.readerchirho.videochirho.VideoRecordChirho
+import us.hinneh.readerchirho.videochirho.VideoSelectionChirho
 
 enum class FailureChirho { BOOK_CHIRHO, VERSE_CHIRHO, ABSENT_CHIRHO }
 
@@ -102,11 +103,21 @@ data class ReaderUiStateChirho(
      * The verse video shown in the scene's place and played by Play. As on the website (speech-controls), a video
      * that failed is not tried again on this visit while a recording can be read over the still instead; with no
      * recording to fall back on, Play may try the video again.
+     *
+     * A video whose sound is a synthesized recording plays only while that exact clip is the verse recording chosen
+     * under the reading in effect (unit 194, GPT DM #3807). Otherwise the same Play reads the chosen recording over
+     * the still, and with none chosen the video stays withheld: a reading choice is never overridden by a video.
      */
     val playableVideoChirho: VideoRecordChirho?
         get() {
             val videoChirho = (mediaChirho as? OptionalChirho.ReadyChirho)?.valueChirho?.videoChirho ?: return null
-            return if (videoFailedChirho && verseClipChirho != null) null else videoChirho
+            val clipChirho = verseClipChirho
+            if (videoChirho.embeddedClipChirho != null &&
+                (clipChirho == null || !VideoSelectionChirho.sameEmbeddedReadingChirho(videoChirho, clipChirho))
+            ) {
+                return null
+            }
+            return if (videoFailedChirho && clipChirho != null) null else videoChirho
         }
 
     /**

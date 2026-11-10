@@ -4599,5 +4599,31 @@
       "display_authority_chirho": "General lemma illustration; another occurrence has not received a contextual sense review.",
       "selected_chirho": true
     }
+  ],
+  "videos_chirho": [
+    {
+      "lesson_id_chirho": "Matt.1.1",
+      "asset_path_chirho": "/video-chirho/sha256-chirho/d6e513b01febfea07d184ace4268f1342880ebe179c79033b78d968b494ef99d-chirho.mp4",
+      "sha256_chirho": "d6e513b01febfea07d184ace4268f1342880ebe179c79033b78d968b494ef99d",
+      "bytes_chirho": 1344923,
+      "duration_chirho": 3.9583333333333335,
+      "width_chirho": 1108,
+      "height_chirho": 832,
+      "scene_sha256_chirho": "db51d37133f692c178128306bd7865aeb27b1bb8876f9f79baf4bb6d3d496740",
+      "canonical_sha256_chirho": "2105d70fac9437b71f7398c094490320aa90996e70c1649264cbdcf7b9b9eb43",
+      "reading_language_chirho": "el",
+      "embedded_reading_chirho": null,
+      "embedded_clip_chirho": {
+        "sha256_chirho": "5afeec2d2df4f695f3848f3153979a5e0514d983d1191b4a054a1ec3beeed8f5",
+        "bytes_chirho": 32225,
+        "duration_chirho": 3.970612,
+        "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+        "pronunciation_chirho": "modern_greek"
+      },
+      "attribution_chirho": "Hinneh / Love Jesus Software",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "review_chirho": "pending"
+    }
   ]
 }

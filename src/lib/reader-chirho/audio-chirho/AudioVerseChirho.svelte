@@ -51,19 +51,26 @@
 	// The video's own sound is the clock only when it is exactly this reading (root's shared rule).
 	// The scene separately checks that the video starts from the picture displayed there.
 	const videoReadingChirho = $derived.by(() => {
-		const clipChirho = humanReadingChirho;
+		const verseChirho = recordingsChirho.find((clipChirho) => clipChirho.token_id_chirho === null);
 		const candidateChirho = videoChirho;
 		if (
-			!clipChirho ||
+			!verseChirho ||
 			!validVerseVideoChirho(
 				candidateChirho,
 				lessonChirho.id_chirho,
-				clipChirho.canonical_sha256_chirho,
+				verseChirho.canonical_sha256_chirho,
 				(candidateChirho as { scene_sha256_chirho?: string } | null)?.scene_sha256_chirho ?? ''
-			) ||
-			!sameEmbeddedReadingChirho(candidateChirho, clipChirho)
+			)
 		)
 			return null;
+		// Only already admitted recordings reach this list. The offline controller still chooses
+		// the current rendition first and uses this video only if that selected clip's SHA matches.
+		const clipChirho = recordingsChirho.find(
+			(clipChirho) =>
+				clipChirho.token_id_chirho === null &&
+				sameEmbeddedReadingChirho(candidateChirho, clipChirho)
+		);
+		if (!clipChirho) return null;
 		return { video_chirho: candidateChirho.sha256_chirho, clip_chirho: clipChirho.sha256_chirho };
 	});
 	// Human source-bound readings may include Aramaic; AI and assembled-word Aramaic stay unavailable.

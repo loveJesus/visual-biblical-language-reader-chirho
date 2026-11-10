@@ -3881,5 +3881,37 @@
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
       "selected_chirho": true
     }
+  ],
+  "videos_chirho": [
+    {
+      "lesson_id_chirho": "Job.1.1",
+      "asset_path_chirho": "/video-chirho/sha256-chirho/46da9d67519b62bd67f17c688a199636fad166829d92d6c23f683b62ba420e16-chirho.mp4",
+      "sha256_chirho": "46da9d67519b62bd67f17c688a199636fad166829d92d6c23f683b62ba420e16",
+      "bytes_chirho": 3400914,
+      "duration_chirho": 11.291666666666666,
+      "width_chirho": 1108,
+      "height_chirho": 832,
+      "scene_sha256_chirho": "620fa06911ce9c06d18314e1fb92d9f52fa2863c5b3ef5e943ab0bbc1a01c8f0",
+      "canonical_sha256_chirho": "18c3ee36c1769ca961bbc18baff43fe361370d066354d72db8925d5e0b514b86",
+      "reading_language_chirho": "he",
+      "embedded_reading_chirho": {
+        "kind_chirho": "human",
+        "reader_id_chirho": "rdb-chirho",
+        "gbt_id_chirho": "OT/RDB/Job",
+        "package_sha256_chirho": "29e3189587b542a2de6537923d5445c2c1f072d30feec39a220f48b2f69c0194",
+        "chapter_sha256_chirho": "6264c1e7612fe7bf1d598162c0d9357661b266e3fec5e8f045b4d2588a92e37b",
+        "timings_sha256_chirho": "827a6da79f70f049a733b01a2813a9ecf4eea32b42fb5ce716796cdbf7b9ab00",
+        "start_chirho": 0.43,
+        "end_chirho": 11.73,
+        "chapter_duration_chirho": 258.624,
+        "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+        "license_chirho": "CC BY-SA 3.0",
+        "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+      "license_chirho": "CC BY-SA 3.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "review_chirho": "pending"
+    }
   ]
 }

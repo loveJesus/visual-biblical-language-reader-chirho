@@ -180,6 +180,15 @@ export async function recordingsForLessonChirho(lessonChirho: {
 	const canonicalChirho = await shaChirho(
 		new TextEncoder().encode(lessonChirho.canonical_text_chirho)
 	);
+	return recordingsFromChapterChirho(lessonChirho, await chapterChirho, canonicalChirho);
+}
+/** Workflow: verse-media-chirho.md. Shared source admission/order after a caller verifies chapter bytes. */
+export function recordingsFromChapterChirho(
+	lessonChirho: Parameters<typeof recordingsForLessonChirho>[0],
+	catalogueChirho: AudioChapterChirho,
+	canonicalChirho: string
+): RecordingChirho[] {
+	const [bookChirho] = lessonChirho.id_chirho.split('.');
 	const wordsChirho = new Map(
 		lessonChirho.tokens_chirho.map((tokenChirho) => [
 			tokenChirho.id_chirho,
@@ -187,7 +196,6 @@ export async function recordingsForLessonChirho(lessonChirho: {
 		])
 	);
 	const verseChirho = spokenVerseChirho(lessonChirho);
-	const catalogueChirho = await chapterChirho;
 	// Workflow: verse-media-chirho.md. Human readings travel in their own optional array, so released
 	// apps that predate it never play one unattributed; every entry there must be a validated human reading.
 	const readingsChirho = (catalogueChirho.readings_chirho ?? []).filter((clipChirho) =>
@@ -276,4 +284,29 @@ export async function recordingsForLessonChirho(lessonChirho: {
 					Number(Boolean(leftChirho.recipe_id_chirho)) ||
 				Number(Boolean(rightChirho.ipa_chirho)) - Number(Boolean(leftChirho.ipa_chirho))
 		);
+}
+
+/** Workflow: verse-media-chirho.md. Same default rendition and first full-verse choice as the reader. */
+export function automaticVerseRecordingChirho(
+	clipsChirho: RecordingChirho[],
+	lessonChirho: Parameters<typeof recordingsForLessonChirho>[0]
+): RecordingChirho | undefined {
+	const greekChirho =
+		bibleBookChirho(lessonChirho.id_chirho.split('.')[0]).language_chirho === 'grc';
+	const aspiratesChirho = clipsChirho.some(
+		(clipChirho) =>
+			clipChirho.token_id_chirho === null &&
+			clipChirho.pronunciation_chirho === 'modern_greek_aspirates'
+	);
+	return clipsChirho.find(
+		(clipChirho) =>
+			clipChirho.token_id_chirho === null &&
+			clipChirho.text_chirho === spokenVerseChirho(lessonChirho) &&
+			(!greekChirho ||
+				(aspiratesChirho
+					? clipChirho.pronunciation_chirho === 'modern_greek_aspirates' ||
+						(clipChirho.pronunciation_chirho === 'modern_greek' &&
+							!clipChirho.text_chirho.normalize('NFD').includes('\u0314'))
+					: clipChirho.pronunciation_chirho === 'modern_greek'))
+	);
 }

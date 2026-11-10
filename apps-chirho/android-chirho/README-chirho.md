@@ -42,9 +42,12 @@ When a verse has a video, it takes the scene picture's place, and Play plays it 
 
 The credit of what Play plays, a video's own or a human reading's, is in the verse's folded Sources list: the exact published attribution and a License link, once. L.J., 2026-11-07: "credits etc can just show in like an info screen, not have the main user interface littered with dev notes" (agreed with GPT, DM #3486). The reading key's credits also name the Be'eri readings.
 
-Video records follow GPT's verse-video rules (DM #3399): each video is checked against its verse's exact text and the scene shown in its place, and carries either a Be'eri reading source or nothing (a silent CC0 video). Publication is GPT's; the first 19 Proverbs chapter-opening videos went live on 2026-11-07. Debug builds can also play videos staged on a device, labelled as not published; release builds cannot.
+Video records follow GPT's verse-video rules (DM #3399): each video is checked against its verse's exact text and the scene shown in its place, and carries a Be'eri reading source, a synthesized Greek reading (since 0.1.5) or nothing (a silent CC0 video). Publication is GPT's; the first 19 Proverbs chapter-opening videos went live on 2026-11-07. Debug builds can also play videos staged on a device, labelled as not published; release builds cannot.
 
 - **A silent video says so.** Both `reading_language_chirho` and `embedded_reading_chirho` must be present; an absent key is not an explicit null, and the record is refused (GPT, DM #3498).
+- **A Greek video with a synthesized reading** (unit 194: GPT DMs #3805–#3816; frozen shared contract `8c33593f`). Its record names, in `embedded_clip_chirho`, the exact whole-verse recording its soundtrack was made from: SHA-256, bytes, duration, recipe and pronunciation. It has no Be'eri reading key, reads `el`, lasts within 0.3 s of that recording and is CC BY 4.0; any other mix is refused.
+  - It plays only while that recording is the one Play would read under the pronunciation in effect (`ReaderStateChirho.playableVideoChirho`). Otherwise the same Play reads the chosen recording over the still.
+  - Only a bare whole-verse row can match: its token is an explicit JSON null, and it has no reading source or offsets (`ClipChirho.rawWholeVerseShapeChirho`, set from the raw row). A word clip with the same MP3 never unlocks the video.
 - **Duplicates.** Two rows for one verse withhold its video; the scene and word pictures still show.
 - **A failed video.** As on the website, a video that cannot be fetched, verified or played is not tried again on that visit. The still returns, and the next Play reads the verse's recording over it. With no recording to read, Play may try the video again.
 
@@ -151,7 +154,20 @@ A newer selection cancels the older passage's requests and stops its audio. A fa
   - Watch quick tour opens the website's shared tour, https://hinneh.us/tutorial-chirho/, in the browser and in the interface language (root row 170). Help and Info always link it too.
   - Nothing is fetched or played on the welcome.
 
-## Status (0.1.4 candidate, versionCode 5, 2026-11-08; not released)
+## Status (0.1.5 candidate, versionCode 6, 2026-11-09; not released)
+
+Version 0.1.5 adds Greek verse videos whose soundtrack is a synthesized Greek reading, for L.J.'s ordered chapter-opening videos (unit 194; see Verse video). Root landed the ten-path port as shared commit 62bdc90 (GPT, DM #3835). This candidate changes only the version and this README.
+- **Gates.** These ran on an isolated copy of 5e00427 plus the ten port files. Each of those files is byte-identical to 62bdc90, so the source tree is the same.
+  - JVM: 103 tests, the 2 opt-in skips, 0 failures.
+  - Kotlin `allWarningsAsErrors` and Android lint: no warnings.
+  - Six mutations, each caught and restored.
+  - The evidence is in `evidence-chirho/unit194-video-port-chirho/`.
+- **Not yet run.** A silent device check with a published Greek MP4 still has to cover playback, the pronunciation choice, Stop and autoplay. It waits for the first reviewed Greek video.
+- **The welcome.** Updating to versionCode 6 shows it once, as every higher versionCode does.
+
+**Release note:** see `evidence-chirho/release-0.1.5-candidate-chirho/` for the exact EN/ES text.
+
+## Status (0.1.4, versionCode 5, 2026-11-08; committed to Google Play production 04:37Z on 11-09, public 05:08Z)
 
 Version 0.1.4 combines three units, each its own checkpoint in the isolated copy.
 

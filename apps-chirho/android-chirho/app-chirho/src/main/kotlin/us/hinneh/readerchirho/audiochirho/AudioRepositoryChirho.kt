@@ -6,6 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
 import us.hinneh.readerchirho.contentchirho.ContentJsonChirho
@@ -111,10 +112,21 @@ class AudioRepositoryChirho(
             return fileChirho
         }
 
+        /** Every published clip decodes here; only its raw whole-verse shape is read from the row's keys themselves. */
         fun decodeClipChirho(objectChirho: JsonObject): ClipChirho? = try {
             ContentJsonChirho.decodeFromJsonElement(ClipChirho.serializer(), objectChirho)
+                .copy(rawWholeVerseShapeChirho = wholeVerseKeysChirho(objectChirho))
         } catch (ignoredChirho: IllegalArgumentException) {
             null
         }
+
+        /**
+         * The website's raw shape for a synthesized video's clip (verse-video-chirho.ts sameEmbeddedReadingChirho):
+         * token_id_chirho named as null, and no reading_source_chirho, start_offset_chirho or end_offset_chirho key at
+         * all. Decoding alone cannot tell an absent key from an explicit null (GPT, DM #3813).
+         */
+        private fun wholeVerseKeysChirho(objectChirho: JsonObject): Boolean =
+            objectChirho["token_id_chirho"] == JsonNull &&
+                listOf("reading_source_chirho", "start_offset_chirho", "end_offset_chirho").none { it in objectChirho }
     }
 }

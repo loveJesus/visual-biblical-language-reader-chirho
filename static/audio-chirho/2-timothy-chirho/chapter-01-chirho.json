@@ -6692,6 +6692,39 @@
       "generation_seed_chirho": 1,
       "source_phase_sha256_chirho": "f8d5ed905a1cb37a250faeb0f7472314e33dbf931e00afd1960af5e1c5c24e2e",
       "source_asr_sha256_chirho": "6482984660b96a286a2004edf1a21af9e24ea159a08ad043e01f1393cd020e6d"
+    },
+    {
+      "id_chirho": "local-greek-v6408-chirho",
+      "lesson_id_chirho": "2Tim.1.6",
+      "token_id_chirho": null,
+      "text_chirho": "Δι’ ἣν αἰτίαν ἀναμιμνῄσκω σε ἀναζωπυρεῖν τὸ χάρισμα τοῦ Θεοῦ, ὅ ἐστιν ἐν σοὶ διὰ τῆς ἐπιθέσεως τῶν χειρῶν μου.",
+      "synthesis_text_chirho": "Δι’ ην αιτίαν αναμιμνήσκω σε αναζωπυρείν το χάρισμα του Θεού, ο εστιν εν σοι διά της επιθέσεως των χειρών μου.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "8dfe77352cce58cdbc605b0d8f5f82d490e0e9a4393e76ad73eba8899a4db739",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "1579e647b1201fb6c8ce3e293ec7a8934c9b65a37f68d9f67c3966635fae56ba",
+      "raw_flac_sha256_chirho": "380ba77390aa256ac1629007f1af32885d3146a7d81a19f5da212e6780956adc",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/fb4c2d50b7e8cd8cf97b13a76722ad5cfbc32de9d0346e871463fb229729b942-chirho.mp3",
+      "sha256_chirho": "fb4c2d50b7e8cd8cf97b13a76722ad5cfbc32de9d0346e871463fb229729b942",
+      "bytes_chirho": 52078,
+      "duration_chirho": 6.452245,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2159
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "4a3b8b51ae60d4985116f7647ef108166ddab2a8f64c19697c46212d756f6cca",
+      "source_asr_sha256_chirho": "10dc6649009876548b8d55a60bebc6da3ce8ea45e6466e6d46d2e7cfc474a23b"
     }
   ]
 }

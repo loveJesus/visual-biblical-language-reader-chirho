@@ -11,9 +11,13 @@ import {
 } from 'node:fs/promises';
 import { tmpdir as tmpdirChirho } from 'node:os';
 import { join as joinChirho, dirname as dirnameChirho } from 'node:path';
-import { execFileSync as execFileSyncChirho } from 'node:child_process';
+import {
+	execFileSync as execFileSyncChirho,
+	spawnSync as spawnSyncChirho
+} from 'node:child_process';
 import {
 	installVideosChirho,
+	videoInstallArgumentsChirho,
 	GENESIS_VIDEO_HOME_CHIRHO,
 	PROVERBS_VIDEO_HOME_CHIRHO
 } from '../../../scripts-chirho/video-chirho/install_chirho';
@@ -23,6 +27,13 @@ import {
 	BEERI_LICENSE_URL_CHIRHO,
 	type ReadingSourceChirho
 } from '../../../src/lib/domain-chirho/pronunciation-chirho/reading-source-chirho';
+import { selectedSyntheticVerseChirho } from '../../../scripts-chirho/video-chirho/finite_batch_chirho';
+import {
+	recordingsForLessonChirho,
+	type RecordingChirho
+} from '../../../src/lib/reader-chirho/audio-chirho/recordings-chirho';
+import { recordingIdentityChirho } from '../../../scripts-chirho/video-chirho/selected_recording_chirho';
+import type { GreekLessonChirho } from '../../../src/lib/domain-chirho/greek-chirho';
 import type { VerseVideoChirho } from '../../../src/lib/domain-chirho/verse-video-chirho';
 import {
 	VIDEO_CATALOGUE_CHIRHO,
@@ -597,6 +608,620 @@ describe.sequential('bounded existing verse video installation', () => {
 			expect(
 				entriesChirho.some((rowChirho) => rowChirho.video_chirho.lesson_id_chirho === 'Gen.3.1')
 			).toBe(false);
+		}
+	});
+});
+
+/** Real codecs, synthetic source claims and fixture-only transport; never a provider or public archive. */
+async function finiteFixtureChirho(syntheticChirho = false) {
+	const valueChirho = await fixtureChirho();
+	const idChirho = syntheticChirho ? 'Matt.1.1' : 'Gen.3.1',
+		bookChirho = syntheticChirho ? 'Matt' : 'Gen';
+	const folderChirho = syntheticChirho ? 'matthew-chirho' : 'genesis-chirho',
+		chapterChirho = syntheticChirho ? 1 : 3,
+		suffixChirho = String(chapterChirho).padStart(2, '0');
+	const homeChirho = 'workspace-chirho/video-chirho/finite-fixture-chirho';
+	const audioFileChirho = homeChirho + '/reading-chirho.mp3';
+	await mkdirChirho(dirnameChirho(joinChirho(valueChirho.rootChirho, audioFileChirho)), {
+		recursive: true
+	});
+	execFileSyncChirho('ffmpeg', [
+		'-v',
+		'error',
+		'-nostdin',
+		'-n',
+		'-i',
+		joinChirho(valueChirho.rootChirho, 'fixture-chirho.mp4'),
+		'-vn',
+		'-ar',
+		'44100',
+		'-ac',
+		'1',
+		'-b:a',
+		'64k',
+		joinChirho(valueChirho.rootChirho, audioFileChirho)
+	]);
+	const audioBytesChirho = await readFileChirho(
+		joinChirho(valueChirho.rootChirho, audioFileChirho)
+	);
+	const canonicalChirho = syntheticChirho ? 'λόγος' : 'א',
+		scenePathChirho = '/assets-chirho/scenes-chirho/fixture-chirho.webp';
+	const contentPathChirho = `/content-chirho/${folderChirho}/chapter-${suffixChirho}-chirho.json`,
+		audioPathChirho = `/audio-chirho/${folderChirho}/chapter-${suffixChirho}-chirho.json`,
+		mediaPathChirho = `/media-chirho/${folderChirho}/chapter-${suffixChirho}-chirho.json`;
+	const videoChirho = structuredClone(valueChirho.videosChirho[0]);
+	videoChirho.lesson_id_chirho = idChirho;
+	videoChirho.canonical_sha256_chirho = digestChirho(canonicalChirho);
+	const clipChirho = {
+		lesson_id_chirho: idChirho,
+		token_id_chirho: null,
+		text_chirho: canonicalChirho,
+		canonical_sha256_chirho: digestChirho(canonicalChirho),
+		language_chirho: syntheticChirho ? 'el' : 'he',
+		pronunciation_chirho: syntheticChirho ? 'modern_greek' : 'israeli_hebrew',
+		voice_name_chirho: 'Fixture voice',
+		asset_path_chirho: `/audio-chirho/sha256-chirho/${digestChirho(audioBytesChirho)}-chirho.mp3`,
+		sha256_chirho: digestChirho(audioBytesChirho),
+		bytes_chirho: audioBytesChirho.length,
+		duration_chirho: 1,
+		review_chirho: 'audition',
+		...(syntheticChirho
+			? {
+					recipe_id_chirho: 'chatterbox-v3-modern-greek-verse-v1-chirho',
+					synthesis_text_chirho: canonicalChirho
+				}
+			: {
+					voice_name_chirho: "Rabbi Dan Be'eri",
+					reading_source_chirho: videoChirho.embedded_reading_chirho
+				})
+	};
+	if (syntheticChirho) {
+		videoChirho.reading_language_chirho = 'el';
+		videoChirho.embedded_reading_chirho = null;
+		videoChirho.embedded_clip_chirho = {
+			sha256_chirho: clipChirho.sha256_chirho,
+			bytes_chirho: clipChirho.bytes_chirho,
+			duration_chirho: 1,
+			recipe_id_chirho: 'chatterbox-v3-modern-greek-verse-v1-chirho',
+			pronunciation_chirho: 'modern_greek'
+		};
+		videoChirho.attribution_chirho = 'Hinneh / Love Jesus Software';
+		videoChirho.license_chirho = 'CC BY 4.0';
+		videoChirho.license_url_chirho = 'https://creativecommons.org/licenses/by/4.0/';
+	}
+	await valueChirho.jsonChirho('static' + contentPathChirho, {
+		book_id_chirho: bookChirho,
+		chapter_chirho: chapterChirho,
+		verses_chirho: [
+			{
+				id_chirho: idChirho,
+				canonical_text_chirho: canonicalChirho,
+				tokens_chirho: [
+					{
+						id_chirho: 'word-chirho',
+						text_chirho: canonicalChirho,
+						start_chirho: 0,
+						end_chirho: canonicalChirho.length
+					}
+				]
+			}
+		]
+	});
+	const contentShaChirho = digestChirho(
+		await readFileChirho(joinChirho(valueChirho.rootChirho, 'static' + contentPathChirho))
+	);
+	await valueChirho.jsonChirho(`static/content-chirho/${folderChirho}/manifest-chirho.json`, {
+		chapters_chirho: [{ path_chirho: contentPathChirho, sha256_chirho: contentShaChirho }]
+	});
+	const audioChirho = {
+		schema_version_chirho: 1,
+		book_id_chirho: bookChirho,
+		chapter_chirho: chapterChirho,
+		content_path_chirho: contentPathChirho,
+		content_sha256_chirho: contentShaChirho,
+		clips_chirho: syntheticChirho ? [clipChirho] : [],
+		readings_chirho: syntheticChirho ? [] : [clipChirho]
+	};
+	const mediaChirho = {
+		scenes_chirho: [
+			{
+				lesson_id_chirho: idChirho,
+				sha256_chirho: videoChirho.scene_sha256_chirho,
+				asset_path_chirho: scenePathChirho
+			}
+		]
+	};
+	await valueChirho.jsonChirho(
+		'build-chirho/preview-chirho/public-chirho' + mediaPathChirho,
+		mediaChirho
+	);
+	await valueChirho.jsonChirho(
+		`build-chirho/preview-chirho/public-chirho/media-chirho/${folderChirho}/summary-chirho.json`,
+		{
+			chapters_chirho: [
+				{
+					path_chirho: mediaPathChirho,
+					sha256_chirho: digestChirho(
+						await readFileChirho(
+							joinChirho(
+								valueChirho.rootChirho,
+								'build-chirho/preview-chirho/public-chirho' + mediaPathChirho
+							)
+						)
+					)
+				}
+			]
+		}
+	);
+	const sceneChirho = {
+		lesson_id_chirho: idChirho,
+		asset_path_chirho: scenePathChirho,
+		sha256_chirho: videoChirho.scene_sha256_chirho,
+		alt_chirho: 'Synthetic fixture'
+	};
+	const jobChirho = {
+		lesson_id_chirho: idChirho,
+		canonical_sha256_chirho: videoChirho.canonical_sha256_chirho,
+		holds_chirho: [] as string[],
+		scene_chirho: sceneChirho,
+		high_quality_chirho: {
+			ready_chirho: true,
+			delivery_sha256_chirho: videoChirho.scene_sha256_chirho,
+			source_sha256_chirho: 'a'.repeat(64),
+			kind_chirho: 'upgrade_chirho'
+		},
+		picture_review_chirho: {
+			accepted_chirho: true,
+			scene_sha256_chirho: videoChirho.scene_sha256_chirho
+		},
+		audio_chirho: clipChirho
+	};
+	const inventoryChirho = [
+		{
+			lesson_id_chirho: idChirho,
+			canonical_sha256_chirho: videoChirho.canonical_sha256_chirho,
+			content_path_chirho: contentPathChirho,
+			content_sha256_chirho: contentShaChirho,
+			picture_prerequisite_met_chirho: true,
+			scene_chirho: {
+				...sceneChirho,
+				source_sha256_chirho: 'a'.repeat(64),
+				high_quality_chirho: true,
+				quality_class_chirho: 'hq_upgrade_chirho',
+				delivery_lineage_chirho: {
+					source_sha256_chirho: 'a'.repeat(64),
+					delivery_sha256_chirho: videoChirho.scene_sha256_chirho
+				}
+			},
+			whole_verse_audio_chirho: { ready_chirho: true, selected_chirho: clipChirho }
+		}
+	];
+	const proofChirho = {
+		lesson_id_chirho: idChirho,
+		video_chirho: videoChirho,
+		audio_chirho: clipChirho,
+		picture_review_chirho: jobChirho.picture_review_chirho,
+		raw_scene_sha256_chirho: videoChirho.scene_sha256_chirho,
+		raw_clip_path_chirho: 'fixture-chirho.mp4',
+		raw_clip_sha256_chirho: valueChirho.shaChirho,
+		raw_frame_review_chirho: { accepted_for_composition_chirho: true, all_frames_chirho: 24 },
+		full_decode_chirho: true,
+		soundtrack_correlation_chirho: 1,
+		lag_ms_chirho: 0
+	};
+	const recordsChirho = { videos_chirho: [videoChirho] };
+	const batchPathChirho = homeChirho + '/batch-chirho.json',
+		proofPathChirho = homeChirho + '/build-proof-chirho.json';
+	const entryChirho = {
+		lesson_id_chirho: idChirho,
+		mp4_path_chirho: 'fixture-chirho.mp4',
+		audio_path_chirho: audioFileChirho,
+		build_proof_chirho: { path_chirho: proofPathChirho, sha256_chirho: '' }
+	};
+	const batchChirho = {
+		schema_version_chirho: 1,
+		source_plan_chirho: { path_chirho: homeChirho + '/plan-chirho.json', sha256_chirho: '' },
+		source_inventory_chirho: {
+			path_chirho: homeChirho + '/inventory-chirho.json',
+			sha256_chirho: ''
+		},
+		source_records_chirho: { path_chirho: homeChirho + '/records-chirho.json', sha256_chirho: '' },
+		entries_chirho: [entryChirho]
+	};
+	const optionsChirho = {
+		root_chirho: valueChirho.rootChirho,
+		scope_chirho: 'finite_batch_chirho' as const,
+		object_chirho: valueChirho.objectChirho,
+		batch_chirho: { path_chirho: batchPathChirho, sha256_chirho: '' }
+	};
+	const commitChirho = async () => {
+		await valueChirho.jsonChirho('static' + audioPathChirho, audioChirho);
+		await valueChirho.jsonChirho('static/audio-chirho/manifest-chirho.json', {
+			books_chirho: {
+				[bookChirho]: {
+					chapters_chirho: [
+						{
+							number_chirho: chapterChirho,
+							path_chirho: audioPathChirho,
+							sha256_chirho: digestChirho(
+								await readFileChirho(joinChirho(valueChirho.rootChirho, 'static' + audioPathChirho))
+							)
+						}
+					]
+				}
+			}
+		});
+		for (const [pinChirho, bodyChirho] of [
+			[batchChirho.source_plan_chirho, { schema_version_chirho: 1, jobs_chirho: [jobChirho] }],
+			[batchChirho.source_inventory_chirho, inventoryChirho],
+			[batchChirho.source_records_chirho, recordsChirho],
+			[entryChirho.build_proof_chirho, proofChirho]
+		] as const) {
+			await valueChirho.jsonChirho(pinChirho.path_chirho, bodyChirho);
+			pinChirho.sha256_chirho = digestChirho(
+				await readFileChirho(joinChirho(valueChirho.rootChirho, pinChirho.path_chirho))
+			);
+		}
+		await valueChirho.jsonChirho(batchPathChirho, batchChirho);
+		optionsChirho.batch_chirho.sha256_chirho = digestChirho(
+			await readFileChirho(joinChirho(valueChirho.rootChirho, batchPathChirho))
+		);
+	};
+	await commitChirho();
+	return {
+		...valueChirho,
+		optionsChirho,
+		batchChirho,
+		entryChirho,
+		jobChirho,
+		inventoryChirho,
+		proofChirho,
+		recordsChirho,
+		videoChirho,
+		clipChirho,
+		audioChirho,
+		proofPathChirho,
+		audioFileChirho,
+		commitChirho
+	};
+}
+describe.sequential('explicit finite chapter-opening video batches', () => {
+	it('requires an exact path/hash pair before touching any source or transport', () => {
+		expect(videoInstallArgumentsChirho([])).toMatchObject({
+			scope_chirho: 'proverbs_openings_chirho',
+			apply_chirho: false
+		});
+		expect(videoInstallArgumentsChirho(['--genesis3-chirho'])).toMatchObject({
+			scope_chirho: 'genesis_three_chirho'
+		});
+		for (const argsChirho of [
+			['--batch-chirho', 'private-chirho.json'],
+			['--batch-sha256-chirho', 'a'.repeat(64)],
+			['--batch-chirho', '../private.json', '--batch-sha256-chirho', 'a'.repeat(64)],
+			[
+				'--genesis3-chirho',
+				'--batch-chirho',
+				'batch-chirho.json',
+				'--batch-sha256-chirho',
+				'a'.repeat(64)
+			]
+		])
+			expect(() => videoInstallArgumentsChirho(argsChirho)).toThrow();
+	});
+	for (const syntheticChirho of [false, true])
+		it(`dry/apply/replay preserves prior objects with ${syntheticChirho ? 'synthetic' : 'human'} source`, async () => {
+			const valueChirho = await finiteFixtureChirho(syntheticChirho);
+			const originalChirho = await readFileChirho(
+				joinChirho(valueChirho.rootChirho, VIDEO_CATALOGUE_CHIRHO)
+			);
+			await installVideosChirho(valueChirho.optionsChirho);
+			expect(valueChirho.objectChirho).not.toHaveBeenCalled();
+			expect(
+				await readFileChirho(joinChirho(valueChirho.rootChirho, VIDEO_CATALOGUE_CHIRHO))
+			).toEqual(originalChirho);
+			expect(
+				await installVideosChirho({ ...valueChirho.optionsChirho, apply_chirho: true })
+			).toMatchObject({ archived_chirho: 1, installed_chirho: 32 });
+			valueChirho.objectChirho.mockClear();
+			const installedChirho = await readFileChirho(
+				joinChirho(valueChirho.rootChirho, VIDEO_CATALOGUE_CHIRHO)
+			);
+			expect(JSON.parse(installedChirho.toString()).entries_chirho.slice(0, 31)).toEqual(
+				valueChirho.priorChirho
+			);
+			await installVideosChirho({ ...valueChirho.optionsChirho, apply_chirho: true });
+			expect(valueChirho.objectChirho).not.toHaveBeenCalled();
+			expect(
+				await readFileChirho(joinChirho(valueChirho.rootChirho, VIDEO_CATALOGUE_CHIRHO))
+			).toEqual(installedChirho);
+		});
+	it('checks exact pins, HQ lineage, holds, frame approval and bytes before any archive request', async () => {
+		for (const mutationChirho of [
+			'hash',
+			'count',
+			'duplicate',
+			'hq',
+			'hold',
+			'lineage',
+			'frames',
+			'source',
+			'audio',
+			'silent'
+		] as const) {
+			const valueChirho = await finiteFixtureChirho();
+			if (mutationChirho === 'count')
+				valueChirho.batchChirho.entries_chirho = Array(31).fill(valueChirho.entryChirho);
+			if (mutationChirho === 'duplicate')
+				valueChirho.batchChirho.entries_chirho.push(valueChirho.entryChirho);
+			if (mutationChirho === 'hq') valueChirho.jobChirho.high_quality_chirho.ready_chirho = false;
+			if (mutationChirho === 'hold') valueChirho.jobChirho.holds_chirho.push('held-chirho');
+			if (mutationChirho === 'lineage')
+				valueChirho.inventoryChirho[0].scene_chirho.delivery_lineage_chirho.source_sha256_chirho =
+					'b'.repeat(64);
+			if (mutationChirho === 'frames')
+				valueChirho.proofChirho.raw_frame_review_chirho.accepted_for_composition_chirho = false;
+			if (mutationChirho === 'source')
+				valueChirho.proofChirho.raw_clip_sha256_chirho = 'b'.repeat(64);
+			if (mutationChirho === 'silent') {
+				valueChirho.videoChirho.embedded_reading_chirho = null;
+				valueChirho.videoChirho.reading_language_chirho = null;
+				valueChirho.videoChirho.license_chirho = 'CC0';
+				valueChirho.videoChirho.license_url_chirho =
+					'https://creativecommons.org/publicdomain/zero/1.0/';
+			}
+			await valueChirho.commitChirho();
+			if (mutationChirho === 'hash')
+				valueChirho.optionsChirho.batch_chirho.sha256_chirho = 'b'.repeat(64);
+			if (mutationChirho === 'audio')
+				await valueChirho.putChirho(valueChirho.audioFileChirho, new Uint8Array([1, 2, 3]));
+			await expect(
+				installVideosChirho({ ...valueChirho.optionsChirho, apply_chirho: true })
+			).rejects.toThrow();
+			expect(valueChirho.objectChirho).not.toHaveBeenCalled();
+		}
+	}, 30000);
+	it('reconciles a received but unpublished finite object after a pinned proof changes, without another PUT', async () => {
+		const valueChirho = await finiteFixtureChirho();
+		const originalChirho = await readFileChirho(
+			joinChirho(valueChirho.rootChirho, valueChirho.proofPathChirho)
+		);
+		const normalChirho = valueChirho.objectChirho.getMockImplementation()!;
+		let changedChirho = false;
+		valueChirho.objectChirho.mockImplementation(async (methodChirho, keyChirho, bytesChirho) => {
+			const resultChirho = await normalChirho(methodChirho, keyChirho, bytesChirho);
+			if (methodChirho === 'GET' && resultChirho.ok && !changedChirho) {
+				changedChirho = true;
+				await valueChirho.putChirho(
+					valueChirho.proofPathChirho,
+					Buffer.concat([originalChirho, Buffer.from(' ')])
+				);
+			}
+			return resultChirho;
+		});
+		await expect(
+			installVideosChirho({ ...valueChirho.optionsChirho, apply_chirho: true })
+		).rejects.toThrow(/source changed/);
+		expect(
+			JSON.parse(
+				await readFileChirho(joinChirho(valueChirho.rootChirho, VIDEO_CATALOGUE_CHIRHO), 'utf8')
+			).entries_chirho
+		).toEqual(valueChirho.priorChirho);
+		await valueChirho.putChirho(valueChirho.proofPathChirho, originalChirho);
+		valueChirho.objectChirho.mockClear();
+		await installVideosChirho({ ...valueChirho.optionsChirho, apply_chirho: true });
+		expect(valueChirho.objectChirho.mock.calls.map((rowChirho) => rowChirho[0])).toEqual(['GET']);
+	});
+	it('a finite video cannot keep an older convenient clip after the current preferred recording changes', async () => {
+		const valueChirho = await finiteFixtureChirho(true);
+		valueChirho.audioChirho.clips_chirho.push({
+			...valueChirho.clipChirho,
+			review_chirho: 'approved',
+			sha256_chirho: '8'.repeat(64),
+			asset_path_chirho: '/audio-chirho/sha256-chirho/' + '8'.repeat(64) + '-chirho.mp3'
+		});
+		await valueChirho.commitChirho();
+		await expect(
+			installVideosChirho({ ...valueChirho.optionsChirho, apply_chirho: true })
+		).rejects.toThrow(/selected verse soundtrack changed/);
+		expect(valueChirho.objectChirho).not.toHaveBeenCalled();
+	});
+});
+
+describe.sequential('finite video selection matches the actual admitted reader recordings', () => {
+	it('keeps preferred legacy clips and refuses profile-scoped verse claims before video matching', async () => {
+		const chapterChirho = JSON.parse(
+			await readFileChirho('static/content-chirho/john-chirho/chapter-01-chirho.json', 'utf8')
+		);
+		const lessonChirho = chapterChirho.verses_chirho.find(
+			(rowChirho: GreekLessonChirho) => rowChirho.id_chirho === 'John.1.1'
+		) as GreekLessonChirho;
+		const audioChirho = JSON.parse(
+			await readFileChirho('static/audio-chirho/john-chirho/chapter-01-chirho.json', 'utf8')
+		);
+		const clipsChirho = audioChirho.clips_chirho.filter(
+			(rowChirho: RecordingChirho) =>
+				rowChirho.lesson_id_chirho === lessonChirho.id_chirho && rowChirho.token_id_chirho === null
+		) as RecordingChirho[];
+		const legacyChirho = clipsChirho.find((rowChirho) => rowChirho.recipe_id_chirho === undefined)!;
+		const recipeChirho = clipsChirho.find(
+			(rowChirho) => rowChirho.recipe_id_chirho === 'modern-greek-phrasing-v1-chirho'
+		)!;
+		expect(legacyChirho.sha256_chirho).toBe(
+			'92ddb8cc02a1ae2a2fc9042e1cf332de8fe950b3d02e5c82d7700f1a5bff7d6e'
+		);
+		let bytesChirho = '',
+			clockChirho = Date.now();
+		vi.spyOn(Date, 'now').mockImplementation(() => clockChirho);
+		const fetchChirho = vi.fn(async (inputChirho: string | URL | Request) => {
+			if (String(inputChirho) === '/audio-chirho/manifest-chirho.json')
+				return Response.json({
+					schema_version_chirho: 1,
+					books_chirho: {
+						John: {
+							chapters_chirho: [
+								{
+									number_chirho: 1,
+									path_chirho: '/audio-chirho/john-chirho/chapter-01-chirho.json',
+									sha256_chirho: digestChirho(bytesChirho)
+								}
+							]
+						}
+					}
+				});
+			if (String(inputChirho) === '/audio-chirho/john-chirho/chapter-01-chirho.json')
+				return new Response(bytesChirho);
+			throw Error('No network allowed in source selection regression');
+		});
+		vi.stubGlobal('fetch', fetchChirho);
+		const checkChirho = async (rowsChirho: RecordingChirho[], expectedChirho: string | null) => {
+			clockChirho += 61001;
+			bytesChirho = JSON.stringify({
+				schema_version_chirho: 1,
+				book_id_chirho: 'John',
+				chapter_chirho: 1,
+				clips_chirho: rowsChirho,
+				readings_chirho: []
+			});
+			const admittedChirho = await recordingsForLessonChirho(lessonChirho);
+			const aspiratesChirho = admittedChirho.some(
+				(rowChirho) =>
+					rowChirho.token_id_chirho === null &&
+					rowChirho.pronunciation_chirho === 'modern_greek_aspirates'
+			);
+			const actualChirho = admittedChirho.find(
+				(rowChirho) =>
+					rowChirho.token_id_chirho === null &&
+					(aspiratesChirho
+						? rowChirho.pronunciation_chirho === 'modern_greek_aspirates' ||
+							(rowChirho.pronunciation_chirho === 'modern_greek' &&
+								!rowChirho.text_chirho.normalize('NFD').includes('\u0314'))
+						: rowChirho.pronunciation_chirho === 'modern_greek')
+			);
+			expect(actualChirho?.sha256_chirho ?? null).toBe(expectedChirho);
+			expect(selectedSyntheticVerseChirho(rowsChirho, lessonChirho)).toEqual(actualChirho);
+			return actualChirho;
+		};
+		try {
+			await checkChirho(
+				clipsChirho,
+				'7d137597d5744e3deea9c102170077b7977f3206f8804bce86b6d49ac447f5a1'
+			);
+			const preferredChirho = await checkChirho(
+				[{ ...legacyChirho, review_chirho: 'approved' }, recipeChirho],
+				legacyChirho.sha256_chirho
+			);
+			expect(preferredChirho?.recipe_id_chirho).toBeUndefined();
+			for (const claimChirho of [
+				{ source_context_chirho: 'profile_chirho' },
+				{ profile_id_chirho: 'fixture-chirho' },
+				{ id_chirho: 'profile-fixture-chirho' }
+			])
+				await checkChirho([{ ...recipeChirho, ...claimChirho }], null);
+			const otherChirho = {
+				...recipeChirho,
+				sha256_chirho: 'a'.repeat(64),
+				asset_path_chirho: '/audio-chirho/sha256-chirho/' + 'a'.repeat(64) + '-chirho.mp3',
+				voice_name_chirho: 'Second fixture voice'
+			};
+			await checkChirho([recipeChirho, otherChirho], recipeChirho.sha256_chirho);
+			await checkChirho([otherChirho, recipeChirho], otherChirho.sha256_chirho);
+			await checkChirho(
+				[recipeChirho, { ...otherChirho, review_chirho: 'approved' }],
+				otherChirho.sha256_chirho
+			);
+			expect(recordingIdentityChirho(recipeChirho).raw_whole_verse_shape_chirho).toBe(true);
+			expect(
+				recordingIdentityChirho({ ...recipeChirho, start_offset_chirho: undefined })
+					.raw_whole_verse_shape_chirho
+			).toBe(false);
+			expect(
+				recordingIdentityChirho({ ...recipeChirho, reading_source_chirho: undefined })
+					.raw_whole_verse_shape_chirho
+			).toBe(false);
+		} finally {
+			vi.unstubAllGlobals();
+			vi.restoreAllMocks();
+		}
+	});
+	it('the JSON bridge is bounded, silent and uses exactly the same selected delivery/window identity', async () => {
+		const chapterChirho = JSON.parse(
+			await readFileChirho('static/content-chirho/john-chirho/chapter-01-chirho.json', 'utf8')
+		);
+		const lessonChirho = chapterChirho.verses_chirho.find(
+			(rowChirho: GreekLessonChirho) => rowChirho.id_chirho === 'John.1.1'
+		);
+		const audioChirho = JSON.parse(
+			await readFileChirho('static/audio-chirho/john-chirho/chapter-01-chirho.json', 'utf8')
+		);
+		const contentJsonChirho = await readFileChirho(
+				'static/content-chirho/john-chirho/chapter-01-chirho.json',
+				'utf8'
+			),
+			audioJsonChirho = await readFileChirho(
+				'static/audio-chirho/john-chirho/chapter-01-chirho.json',
+				'utf8'
+			);
+		const inputChirho = {
+			lesson_id_chirho: lessonChirho.id_chirho,
+			content_chapter_json_chirho: contentJsonChirho,
+			content_sha256_chirho: digestChirho(contentJsonChirho),
+			audio_chapter_json_chirho: audioJsonChirho,
+			audio_sha256_chirho: digestChirho(audioJsonChirho)
+		};
+		const packetChirho = (audioChirho: unknown) => {
+			const audioJsonChirho = JSON.stringify(audioChirho);
+			return {
+				...inputChirho,
+				audio_chapter_json_chirho: audioJsonChirho,
+				audio_sha256_chirho: digestChirho(audioJsonChirho)
+			};
+		};
+		const runChirho = (valueChirho: string) =>
+			spawnSyncChirho(
+				'bun',
+				['--no-env-file', 'scripts-chirho/video-chirho/selected_recording_chirho.ts'],
+				{
+					input: valueChirho,
+					encoding: 'utf8',
+					env: { PATH: process.env.PATH, HOME: process.env.HOME, TMPDIR: process.env.TMPDIR },
+					maxBuffer: 1024 ** 2
+				}
+			);
+		const resultChirho = runChirho(JSON.stringify(inputChirho));
+		expect(resultChirho.status).toBe(0);
+		expect(resultChirho.stderr).toBe('');
+		const outputChirho = JSON.parse(resultChirho.stdout);
+		expect(Object.keys(outputChirho).sort()).toEqual(['lesson_id_chirho', 'selected_chirho']);
+		expect(outputChirho.lesson_id_chirho).toBe('John.1.1');
+		expect(outputChirho.selected_chirho.sha256_chirho).toBe(
+			'7d137597d5744e3deea9c102170077b7977f3206f8804bce86b6d49ac447f5a1'
+		);
+		expect(outputChirho.selected_chirho.raw_whole_verse_shape_chirho).toBe(true);
+		const emptyChirho = runChirho(
+			JSON.stringify(packetChirho({ ...audioChirho, clips_chirho: [], readings_chirho: [] }))
+		);
+		expect(emptyChirho.status).toBe(0);
+		expect(emptyChirho.stderr).toBe('');
+		expect(JSON.parse(emptyChirho.stdout)).toEqual({
+			lesson_id_chirho: 'John.1.1',
+			selected_chirho: null
+		});
+		for (const badChirho of [
+			'{',
+			JSON.stringify({ ...inputChirho, content_sha256_chirho: 'a'.repeat(64) }),
+			JSON.stringify(packetChirho({ ...audioChirho, chapter_chirho: 2 })),
+			JSON.stringify(
+				packetChirho({
+					...audioChirho,
+					clips_chirho: Array(2001).fill(audioChirho.clips_chirho[0])
+				})
+			),
+			' '.repeat(4 * 1024 ** 2 + 1)
+		]) {
+			const refusedChirho = runChirho(badChirho);
+			expect(refusedChirho.status).not.toBe(0);
+			expect(refusedChirho.stdout).toBe('');
+			expect(refusedChirho.stderr).toMatch(/refused|exceeds four MiB/u);
 		}
 	});
 });

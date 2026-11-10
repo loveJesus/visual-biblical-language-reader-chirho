@@ -176,7 +176,7 @@ final class ReaderModelChirho {
     var preferredVerseVideoChirho: VerseVideoChirho? {
         guard let videoChirho = mediaChirho.videoChirho,
               playerChirho.failedVideoShaChirho != videoChirho.sha256Chirho,
-              audioChirho.verseClipChirho.map(videoChirho.carriesChirho) ?? true else { return nil }
+              videoChirho.matchesSelectedReadingChirho(audioChirho.verseClipChirho) else { return nil }
         return videoChirho
     }
 

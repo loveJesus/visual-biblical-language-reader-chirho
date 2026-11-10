@@ -3628,5 +3628,37 @@
       "display_authority_chirho": "Local contextual review; generated artwork pending L.J. review.",
       "selected_chirho": true
     }
+  ],
+  "videos_chirho": [
+    {
+      "lesson_id_chirho": "Exod.1.1",
+      "asset_path_chirho": "/video-chirho/sha256-chirho/a0523ebc9b760b7231706c07db233430e3884f8dd7604afe448714eaa9f19769-chirho.mp4",
+      "sha256_chirho": "a0523ebc9b760b7231706c07db233430e3884f8dd7604afe448714eaa9f19769",
+      "bytes_chirho": 3360816,
+      "duration_chirho": 9,
+      "width_chirho": 1108,
+      "height_chirho": 832,
+      "scene_sha256_chirho": "c51477d6fdbf3ff56604bbad916b661cbc4fac89f8d3ae1dd3cda6da3dbb3393",
+      "canonical_sha256_chirho": "cad8abf070150adb8770409e4e21645d70a5e161c5ca66bd7ae6cfb9f82de082",
+      "reading_language_chirho": "he",
+      "embedded_reading_chirho": {
+        "kind_chirho": "human",
+        "reader_id_chirho": "rdb-chirho",
+        "gbt_id_chirho": "OT/RDB/Exo",
+        "package_sha256_chirho": "3b5ea47bef47a7b5253faf5db74a13473d86c8b7cc370e398d65147430adea75",
+        "chapter_sha256_chirho": "8518a6ce4bfc34b99ea1ebdf1c420c73b8451d41290e97f71cc90d0a108532dc",
+        "timings_sha256_chirho": "4dad726df259532ee13f3753f805be628cedb05b29604bf5054d9a2796f6e9da",
+        "start_chirho": 0.64,
+        "end_chirho": 9.64,
+        "chapter_duration_chirho": 204.048,
+        "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+        "license_chirho": "CC BY-SA 3.0",
+        "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "attribution_chirho": "Hebrew reading by Rabbi Dan Be'eri (CC BY-SA 3.0), compiled at archive.org; chapter files and verse timings from Global Bible Tools",
+      "license_chirho": "CC BY-SA 3.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "review_chirho": "pending"
+    }
   ]
 }
