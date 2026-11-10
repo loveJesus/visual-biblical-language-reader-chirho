@@ -256,12 +256,52 @@ async function newestInputMsChirho(rootChirho: string): Promise<number> {
 	return newestChirho;
 }
 
-function runChirho(
+/** Safe child termination facts. Workflow: whole-bible-chirho.md; never disclose argv/errors. */
+export function processTerminationChirho(resultChirho: {
+	status: number | null;
+	signal: string | null;
+	error?: { code?: unknown };
+}): string {
+	const factsChirho: string[] = [];
+	if (resultChirho.signal)
+		factsChirho.push(
+			/^SIG[A-Z0-9]{1,20}$/.test(resultChirho.signal)
+				? `signal ${resultChirho.signal}`
+				: 'unrecognized signal'
+		);
+	if (resultChirho.error) {
+		const codeChirho = resultChirho.error.code;
+		const safeCodesChirho = new Set([
+			'ENOENT',
+			'EAGAIN',
+			'EMFILE',
+			'ENFILE',
+			'EINVAL',
+			'ETIMEDOUT',
+			'ENOMEM',
+			'ENOBUFS',
+			'EACCES',
+			'E2BIG',
+			'EIO',
+			'EPIPE',
+			'EINTR',
+			'UNKNOWN'
+		]);
+		factsChirho.push(
+			typeof codeChirho === 'string' && safeCodesChirho.has(codeChirho)
+				? `spawn error ${codeChirho}`
+				: 'spawn error'
+		);
+	}
+	return factsChirho.length ? factsChirho.join(', ') : `exit ${resultChirho.status ?? 'unknown'}`;
+}
+
+export function runChirho(
 	commandChirho: string,
 	argumentsChirho: string[],
 	cwdChirho: string,
 	environmentChirho?: Record<string, string>
-): { status_chirho: number; output_chirho: string } {
+): { status_chirho: number; output_chirho: string; termination_chirho: string } {
 	const resultChirho = spawnSync(commandChirho, argumentsChirho, {
 		cwd: cwdChirho,
 		env: environmentChirho ?? process.env,
@@ -271,7 +311,12 @@ function runChirho(
 	});
 	return {
 		status_chirho: resultChirho.status ?? 1,
-		output_chirho: `${resultChirho.stdout ?? ''}${resultChirho.stderr ?? ''}`
+		output_chirho: `${resultChirho.stdout ?? ''}${resultChirho.stderr ?? ''}`,
+		termination_chirho: processTerminationChirho({
+			status: resultChirho.status,
+			signal: resultChirho.signal,
+			error: resultChirho.error as NodeJS.ErrnoException | undefined
+		})
 	};
 }
 
@@ -393,7 +438,7 @@ export async function runCycleChirho(
 	if (deployChirho.status_chirho !== 0) {
 		if (optionsChirho.apply_chirho)
 			throw new Error(
-				`Remote deploy exited ${deployChirho.status_chirho}; reconcile the provider result before another deploy.`
+				`Remote deploy ${deployChirho.termination_chirho}; reconcile the provider result before another deploy.`
 			);
 		throw new RefusalChirho([`wrangler deploy --dry-run exited ${deployChirho.status_chirho}`]);
 	}

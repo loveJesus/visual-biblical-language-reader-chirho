@@ -2,6 +2,8 @@
 
 # Whole-Bible text and reusable media
 
+Publisher subprocess failures retain safe exit, signal and known operating-system error codes. The remote-deploy failure still requires provider reconciliation before another deployment; child argv, environment and arbitrary error messages are excluded from the diagnostic. A null child status is not evidence that the child exited with code one.
+
 The shared 66-book registry is `config-chirho/bible-chirho/books-chirho.json`. Source editions, source verse numbering, combining-mark order and full lemma identities remain authoritative. The WLC/OSHB and Nestle 1904 editions produce 31,156 verses; this is not a claim that their numbering matches every English edition. The existing three book imports remain unchanged. New import code lives in `scripts-chirho/bible-chirho/` and reads the older corpus and lexicon modules without writing to them.
 
 ```mermaid
