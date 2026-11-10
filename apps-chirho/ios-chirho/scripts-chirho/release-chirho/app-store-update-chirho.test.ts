@@ -3,6 +3,7 @@ import { describe, expect, test } from 'bun:test';
 import {
 	APP_ID_CHIRHO,
 	BASE_VERSION_ID_CHIRHO,
+	BASE_BUILD_ID_CHIRHO,
 	BUNDLE_ID_CHIRHO,
 	argumentsChirho,
 	attachChirho,
@@ -32,9 +33,9 @@ const notesChirho: NotesChirho = {
 		'This update adds published verse readings and videos. No account is required.'
 };
 const optionsChirho: OptionsChirho = {
-	versionChirho: '0.1.1',
-	buildChirho: '3',
-	buildIdChirho: 'build-3-chirho',
+	versionChirho: '0.1.3',
+	buildChirho: '9',
+	buildIdChirho: 'build-9-chirho',
 	applyChirho: true,
 	notesChirho
 };
@@ -49,7 +50,7 @@ const relationChirho = (typeChirho: string, idChirho: string) => ({
 function storeChirho(): StoreChirho & { savedChirho: string[] } {
 	const savedChirho: string[] = [];
 	return {
-		journalChirho: { app_id_chirho: APP_ID_CHIRHO, version_chirho: '0.1.1', operations_chirho: {} },
+		journalChirho: { app_id_chirho: APP_ID_CHIRHO, version_chirho: '0.1.3', operations_chirho: {} },
 		savedChirho,
 		async saveChirho() {
 			savedChirho.push(JSON.stringify(this.journalChirho));
@@ -60,17 +61,19 @@ function storeChirho(): StoreChirho & { savedChirho: string[] } {
 class FakeAppleChirho implements ClientChirho {
 	appChirho = recordChirho('apps', APP_ID_CHIRHO, { bundleId: BUNDLE_ID_CHIRHO });
 	baseChirho = recordChirho('appStoreVersions', BASE_VERSION_ID_CHIRHO, {
-		versionString: '0.1',
+		versionString: '0.1.2',
 		platform: 'IOS',
 		appStoreState: 'READY_FOR_SALE',
 		appVersionState: 'READY_FOR_DISTRIBUTION',
 		releaseType: 'AFTER_APPROVAL',
 		copyright: '2026 Love Jesus Software'
 	});
+	baseBuildIdChirho = BASE_BUILD_ID_CHIRHO;
+	extraVersionsChirho: AppleRecordChirho[] = [];
 	versionChirho?: AppleRecordChirho;
 	buildChirho: AppleRecordChirho = {
-		...recordChirho('builds', 'build-3-chirho', {
-			version: '3',
+		...recordChirho('builds', 'build-9-chirho', {
+			version: '9',
 			processingState: 'VALID',
 			expired: false,
 			buildAudienceType: 'APP_STORE_ELIGIBLE',
@@ -82,7 +85,7 @@ class FakeAppleChirho implements ClientChirho {
 		}
 	};
 	prereleaseChirho = recordChirho('preReleaseVersions', 'prerelease-chirho', {
-		version: '0.1.1',
+		version: '0.1.3',
 		platform: 'IOS'
 	});
 	baseLocalesChirho = ['en-US', 'es-ES'].map((localeChirho) =>
@@ -125,7 +128,13 @@ class FakeAppleChirho implements ClientChirho {
 		if (methodChirho === 'GET') {
 			if (cleanChirho === '/v1/apps') return { data: [this.appChirho] };
 			if (cleanChirho.endsWith('/appStoreVersions'))
-				return { data: [this.baseChirho, ...(this.versionChirho ? [this.versionChirho] : [])] };
+				return {
+					data: [
+						this.baseChirho,
+						...this.extraVersionsChirho,
+						...(this.versionChirho ? [this.versionChirho] : [])
+					]
+				};
 			if (
 				cleanChirho ===
 				`/v1/appStoreVersions/${BASE_VERSION_ID_CHIRHO}/appStoreVersionLocalizations`
@@ -139,6 +148,15 @@ class FakeAppleChirho implements ClientChirho {
 				if (!this.reviewChirho) throw new Error('Apple API GET HTTP 404');
 				return { data: this.reviewChirho };
 			}
+			if (cleanChirho === `/v1/appStoreVersions/${BASE_VERSION_ID_CHIRHO}`)
+				return {
+					data: {
+						...this.baseChirho,
+						relationships: {
+							build: relationChirho('builds', this.baseBuildIdChirho)
+						}
+					}
+				};
 			if (cleanChirho.startsWith('/v1/builds/'))
 				return { data: this.buildChirho, included: [this.prereleaseChirho] };
 			if (cleanChirho.startsWith('/v1/appStoreVersions/')) return { data: this.versionChirho! };
@@ -272,12 +290,12 @@ describe('Hinneh next iOS release operator', () => {
 			['prepare-chirho'],
 			['inspect-chirho', '--version-chirho', '0.1'],
 			['prepare-chirho', '--version-chirho', '../../other'],
-			['inspect-chirho', '--version-chirho', '0.1.1', '--apply-chirho'],
-			['attach-chirho', '--version-chirho', '0.1.1', '--production-chirho']
+			['inspect-chirho', '--version-chirho', '0.1.3', '--apply-chirho'],
+			['attach-chirho', '--version-chirho', '0.1.3', '--production-chirho']
 		])
 			expect(() => argumentsChirho(argsChirho)).toThrow();
 		expect(
-			argumentsChirho(['prepare-chirho', '--version-chirho', '0.1.1']).flagsChirho.has(
+			argumentsChirho(['prepare-chirho', '--version-chirho', '0.1.3']).flagsChirho.has(
 				'--apply-chirho'
 			)
 		).toBe(false);
@@ -296,6 +314,40 @@ describe('Hinneh next iOS release operator', () => {
 			expect(clientChirho.writesChirho).toHaveLength(0);
 		}
 	});
+	test('finite successor and exact predecessor build refuse stale plans before writes', async () => {
+		for (const versionChirho of ['0.1.1', '0.1.2', '0.1.4']) {
+			expect(() =>
+				argumentsChirho(['prepare-chirho', '--version-chirho', versionChirho])
+			).toThrow();
+			const clientChirho = new FakeAppleChirho();
+			await expect(
+				prepareChirho(clientChirho, storeChirho(), { ...optionsChirho, versionChirho })
+			).rejects.toThrow();
+			expect(clientChirho.writesChirho).toHaveLength(0);
+		}
+		const newerChirho = new FakeAppleChirho();
+		newerChirho.extraVersionsChirho = [
+			recordChirho('appStoreVersions', 'newer-published-chirho', {
+				versionString: '0.1.4',
+				platform: 'IOS',
+				appStoreState: 'READY_FOR_SALE'
+			})
+		];
+		await expect(prepareChirho(newerChirho, storeChirho(), optionsChirho)).rejects.toThrow();
+		expect(newerChirho.writesChirho).toHaveLength(0);
+		const clientChirho = new FakeAppleChirho();
+		clientChirho.baseBuildIdChirho = 'different-base-build-chirho';
+		await expect(prepareChirho(clientChirho, storeChirho(), optionsChirho)).rejects.toThrow(
+			'predecessor build changed'
+		);
+		expect(clientChirho.writesChirho).toHaveLength(0);
+		expect(() =>
+			argumentsChirho(['attach-chirho', '--version-chirho', '0.1.3', '--build-chirho', '8'])
+		).toThrow();
+		await expect(
+			requireBuildChirho(new FakeAppleChirho(), { ...optionsChirho, buildChirho: '8' })
+		).rejects.toThrow('build9');
+	});
 	test('dry preparation has zero provider writes and no journal persistence', async () => {
 		const clientChirho = new FakeAppleChirho();
 		const journalChirho = storeChirho();
@@ -308,7 +360,7 @@ describe('Hinneh next iOS release operator', () => {
 		const journalChirho = storeChirho();
 		await prepareChirho(clientChirho, journalChirho, optionsChirho);
 		expect(clientChirho.versionChirho?.attributes?.releaseType).toBe('AFTER_APPROVAL');
-		expect(clientChirho.baseChirho.attributes?.versionString).toBe('0.1');
+		expect(clientChirho.baseChirho.attributes?.versionString).toBe('0.1.2');
 		for (const localeChirho of clientChirho.localesChirho) {
 			expect(localeChirho.attributes?.description).toBe(
 				'Saved description ' + localeChirho.attributes?.locale
@@ -546,6 +598,6 @@ describe('Hinneh next iOS release operator', () => {
 		expect(reportChirho.review_contact_present_chirho).toBe(true);
 		expect(JSON.stringify(reportChirho)).not.toContain('private-test-chirho');
 		expect(JSON.stringify(reportChirho)).not.toContain('+1-000');
-		await expect(targetChirho(clientChirho, '0.1')).rejects.toThrow('0.1.x');
+		await expect(targetChirho(clientChirho, '0.1')).rejects.toThrow();
 	});
 });

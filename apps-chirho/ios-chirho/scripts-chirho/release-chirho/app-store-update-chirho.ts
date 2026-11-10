@@ -19,7 +19,11 @@ import type {
 
 export const APP_ID_CHIRHO = '6830790082';
 export const BUNDLE_ID_CHIRHO = 'us.hinneh.readerchirho';
-export const BASE_VERSION_ID_CHIRHO = '459b634c-2aaf-46b8-a1fa-75f921c37367';
+export const BASE_VERSION_ID_CHIRHO = '6025f10d-bbc2-460d-aa16-21f348d774cf';
+export const BASE_VERSION_CHIRHO = '0.1.2';
+export const BASE_BUILD_ID_CHIRHO = '70a9da98-82ef-45e0-88c6-36eb03d77d48';
+export const NEXT_VERSION_CHIRHO = '0.1.3';
+export const NEXT_BUILD_CHIRHO = '9';
 const LOCALES_CHIRHO = ['en-US', 'es-ES'] as const;
 const EDITABLE_STATES_CHIRHO = ['PREPARE_FOR_SUBMISSION', 'READY_FOR_REVIEW'];
 const SUBMITTED_STATES_CHIRHO = ['WAITING_FOR_REVIEW', 'IN_REVIEW', 'COMPLETING', 'COMPLETE'];
@@ -139,13 +143,13 @@ export function requireNotesChirho(valueChirho: unknown): NotesChirho {
 	return notesChirho as NotesChirho;
 }
 
-/** Fixed app/bundle and public predecessor prevent adopting another app or editing version 0.1. */
+/** Finite 0.1.3/build9 plan: preserve the exact public 0.1.2/build8 predecessor and old journals. */
 export async function targetChirho(
 	clientChirho: ClientChirho,
 	versionChirho: string
 ): Promise<TargetChirho> {
-	if (!/^0\.1\.[1-9][0-9]*$/u.test(versionChirho))
-		throw new Error('This next-update operator requires a 0.1.x update after version 0.1.');
+	if (versionChirho !== NEXT_VERSION_CHIRHO)
+		throw new Error('This finite operator permits only the planned 0.1.3 update.');
 	const appChirho = oneChirho(
 		await listChirho(clientChirho, '/v1/apps?filter[bundleId]=' + BUNDLE_ID_CHIRHO + '&limit=200'),
 		'Hinneh app'
@@ -155,11 +159,20 @@ export async function targetChirho(
 	const versionsChirho = (
 		await listChirho(clientChirho, `/v1/apps/${APP_ID_CHIRHO}/appStoreVersions?limit=200`)
 	).filter((recordChirho) => recordChirho.attributes?.platform === 'IOS');
+	if (
+		versionsChirho.some(
+			(recordChirho) =>
+				!['0.1', '0.1.1', BASE_VERSION_CHIRHO, NEXT_VERSION_CHIRHO].includes(
+					String(recordChirho.attributes?.versionString)
+				)
+		)
+	)
+		throw new Error('An unexpected iOS version exists outside this finite release plan.');
 	const baseChirho = oneChirho(
 		versionsChirho.filter(
 			(recordChirho) =>
 				recordChirho.id === BASE_VERSION_ID_CHIRHO &&
-				recordChirho.attributes?.versionString === '0.1'
+				recordChirho.attributes?.versionString === BASE_VERSION_CHIRHO
 		),
 		'published predecessor'
 	);
@@ -168,6 +181,21 @@ export async function targetChirho(
 		baseChirho.attributes?.appStoreState !== 'READY_FOR_SALE'
 	)
 		throw new Error('The expected predecessor is not publicly distributed.');
+	const attachedBaseChirho = oneChirho(
+		rowsChirho(
+			await clientChirho.requestChirho(
+				'GET',
+				`/v1/appStoreVersions/${BASE_VERSION_ID_CHIRHO}?include=build`
+			)
+		),
+		'published predecessor build binding'
+	);
+	if (
+		attachedBaseChirho.id !== BASE_VERSION_ID_CHIRHO ||
+		attachedBaseChirho.attributes?.versionString !== BASE_VERSION_CHIRHO ||
+		relationIdChirho(attachedBaseChirho, 'build') !== BASE_BUILD_ID_CHIRHO
+	)
+		throw new Error('The published predecessor build changed; reconcile before any write.');
 	if (!['AFTER_APPROVAL', 'MANUAL'].includes(String(baseChirho.attributes?.releaseType)))
 		throw new Error('Scheduled or unknown release choice requires an explicit dated plan.');
 	const candidatesChirho = versionsChirho.filter(
@@ -437,6 +465,11 @@ export async function requireBuildChirho(
 	clientChirho: ClientChirho,
 	optionsChirho: OptionsChirho
 ): Promise<AppleRecordChirho> {
+	if (
+		optionsChirho.versionChirho !== NEXT_VERSION_CHIRHO ||
+		optionsChirho.buildChirho !== NEXT_BUILD_CHIRHO
+	)
+		throw new Error('The finite release requires exactly 0.1.3/build9.');
 	if (
 		!optionsChirho.buildIdChirho ||
 		!/^[A-Za-z0-9-]+$/u.test(optionsChirho.buildIdChirho) ||
@@ -903,8 +936,10 @@ export function argumentsChirho(valuesChirho: string[]) {
 		}
 	}
 	const versionChirho = flagsChirho.get('--version-chirho');
-	if (typeof versionChirho !== 'string' || !/^0\.1\.[1-9][0-9]*$/u.test(versionChirho))
-		throw new Error('Explicit next 0.1.x version required.');
+	if (versionChirho !== NEXT_VERSION_CHIRHO)
+		throw new Error('Explicit planned version 0.1.3 required.');
+	if (flagsChirho.has('--build-chirho') && flagsChirho.get('--build-chirho') !== NEXT_BUILD_CHIRHO)
+		throw new Error('Only planned build9 may be requested.');
 	if (
 		(modeChirho === 'inspect-chirho' || modeChirho === 'readiness-chirho') &&
 		flagsChirho.has('--apply-chirho')
