@@ -280,7 +280,7 @@ testChirho(
 	}
 );
 
-testChirho('one primary transport retains the speed, IPA and live status controls', async () => {
+testChirho('one primary transport retains speed and live status', async () => {
 	const { container: containerChirho, unmount: unmountChirho } = renderChirho(AudioVerseChirho, {
 		lessonChirho: lessonForChirho(1)
 	});
@@ -289,7 +289,6 @@ testChirho('one primary transport retains the speed, IPA and live status control
 		containerChirho.querySelectorAll('.verse-play-chirho [data-pronounce-chirho]')
 	).toHaveLength(1);
 	expectChirho(containerChirho.querySelectorAll('[data-speech-rate-chirho]')).toHaveLength(1);
-	expectChirho(containerChirho.querySelectorAll('[data-show-ipa-chirho]')).toHaveLength(1);
 	expectChirho(
 		containerChirho.querySelector('[data-audio-status-chirho]')?.getAttribute('aria-live')
 	).toBe('polite');

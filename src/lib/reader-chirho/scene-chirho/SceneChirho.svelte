@@ -2,7 +2,6 @@
 <script lang="ts">
 	import { artworkUrlChirho } from '$lib/media-review-chirho/artwork-url-chirho';
 	import ReportArtworkChirho from '$lib/media-review-chirho/ReportArtworkChirho.svelte';
-	import MeaningDisplayChirho from '../controls-chirho/MeaningDisplayChirho.svelte';
 	import { onMount, type Snippet } from 'svelte';
 	import type { ScenePresentationChirho } from '$lib/domain-chirho/media-chirho';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
@@ -21,7 +20,7 @@
 		/** The catalogue's record for this verse; shown only if it starts from the scene displayed here. */
 		videoChirho?: unknown;
 		canonicalTextChirho?: string;
-		controlsChirho?: Snippet;
+		controlsChirho?: Snippet<[Snippet]>;
 	} = $props();
 	let canonicalShaChirho = $state('');
 	$effect(() => {
@@ -204,16 +203,17 @@
 			</div>
 		{/if}
 	</div>
+	{#snippet sceneToolsChirho()}
+		{#if sceneChirho}<ReportArtworkChirho
+				assetPathChirho={sceneChirho.asset_path_chirho}
+				sha256Chirho={sceneChirho.sha256_chirho}
+				{verseIdChirho}
+			/>{/if}
+	{/snippet}
 	<div class="scene-controls-chirho">
-		{#if controlsChirho}{@render controlsChirho()}{/if}
-		<div class="scene-options-chirho">
-			<MeaningDisplayChirho />
-			{#if sceneChirho}<ReportArtworkChirho
-					assetPathChirho={sceneChirho.asset_path_chirho}
-					sha256Chirho={sceneChirho.sha256_chirho}
-					{verseIdChirho}
-				/>{/if}
-		</div>
+		{#if controlsChirho}{@render controlsChirho(
+				sceneToolsChirho
+			)}{:else}{@render sceneToolsChirho()}{/if}
 	</div>
 	{#if presentationChirho?.representation_reduced_chirho && sceneChirho}<figcaption
 			class="scene-reading-note-chirho"
@@ -244,14 +244,6 @@
 	.scene-controls-chirho {
 		padding: 16px 18px 6px;
 		background: #fcfcf7;
-	}
-	.scene-options-chirho {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		gap: 10px;
-		padding-bottom: 12px;
 	}
 	.scene-controls-chirho :global(.audio-controls-chirho) {
 		margin: 0;

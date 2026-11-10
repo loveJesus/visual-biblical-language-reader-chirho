@@ -23,6 +23,7 @@
 	let {
 		lessonChirho,
 		verseNavigationChirho,
+		sceneToolsChirho,
 		videoChirho = null,
 		onHumanReadingChirho,
 		navigationGenerationChirho = 0,
@@ -30,6 +31,7 @@
 	}: {
 		lessonChirho: LessonChirho | GreekLessonChirho;
 		verseNavigationChirho?: Snippet<[Snippet]>;
+		sceneToolsChirho?: Snippet;
 		/** The catalogue's verse video, if any; it plays only as the clock of this same reading. */
 		videoChirho?: unknown;
 		/** Reports the verse's validated human reading (or null), so its credit can be shown in the Sources fold. */
@@ -163,36 +165,6 @@
 		/>
 	</span>
 {/snippet}
-{#snippet phoneticChoiceChirho()}
-	<fieldset
-		class="phonetic-options-chirho reader-display-options-chirho"
-		aria-label={audioTChirho('phonetic_display_chirho')}
-	>
-		<legend>{audioTChirho('phonetic_show_chirho')}</legend>
-		<div>
-			{#each ['none', 'ipa', 'transliteration'] as choiceChirho (choiceChirho)}
-				<label>
-					<input
-						type="radio"
-						name="phonetic-{lessonChirho.id_chirho}-chirho"
-						value={choiceChirho}
-						data-phonetic-choice-chirho
-						data-show-ipa-chirho={choiceChirho === 'ipa' ? true : undefined}
-						checked={choiceChirho === 'none'}
-						disabled
-					/>
-					{audioTChirho(
-						choiceChirho === 'none'
-							? 'phonetic_none_chirho'
-							: choiceChirho === 'ipa'
-								? 'phonetic_ipa_chirho'
-								: 'phonetic_transliteration_chirho'
-					)}
-				</label>
-			{/each}
-		</div>
-	</fieldset>
-{/snippet}
 
 <div
 	class="audio-controls-chirho"
@@ -224,37 +196,39 @@
 				>{audioTChirho('stop_chirho')}</button
 			>
 		</div>
-		<div class="audio-settings-chirho">
-			{#if lessonChirho.language_chirho === 'grc'}
-				<label class="audio-speed-chirho audio-pronunciation-field-chirho">
-					<span>{audioTChirho('rendition_chirho')}</span>
+		<div class="audio-preferences-chirho">
+			<div class="audio-settings-chirho">
+				{#if lessonChirho.language_chirho === 'grc'}
+					<label class="audio-speed-chirho audio-pronunciation-field-chirho">
+						<span>{audioTChirho('rendition_chirho')}</span>
+						<select
+							data-greek-rendition-chirho
+							bind:value={renditionChirho}
+							onchange={persistRenditionChirho}
+							aria-label={audioTChirho('rendition_chirho')}
+						>
+							<option value="modern">{audioTChirho('modern_choice_chirho')}</option>
+							<option value="modern_aspirates">{audioTChirho('modern_aspirates_chirho')}</option>
+							<option value="erasmian">{audioTChirho('erasmian_chirho')}</option>
+						</select>
+					</label>
+				{/if}
+				<label class="audio-speed-chirho audio-rate-field-chirho">
+					<span>{audioTChirho('speed_chirho')}</span>
 					<select
-						data-greek-rendition-chirho
-						bind:value={renditionChirho}
-						onchange={persistRenditionChirho}
-						aria-label={audioTChirho('rendition_chirho')}
+						data-speech-rate-chirho
+						bind:value={speedChirho}
+						aria-label={audioTChirho('reading_speed_chirho')}
 					>
-						<option value="modern">{audioTChirho('modern_choice_chirho')}</option>
-						<option value="modern_aspirates">{audioTChirho('modern_aspirates_chirho')}</option>
-						<option value="erasmian">{audioTChirho('erasmian_chirho')}</option>
+						<option value="0.65">{audioTChirho('slow_chirho')}</option>
+						<option value="0.85">{audioTChirho('gentle_chirho')}</option>
+						<option value="0.88">{audioTChirho('slightly_slower_chirho')}</option>
+						<option value="1">{audioTChirho('normal_chirho')}</option>
 					</select>
 				</label>
-			{/if}
-			<label class="audio-speed-chirho audio-rate-field-chirho">
-				<span>{audioTChirho('speed_chirho')}</span>
-				<select
-					data-speech-rate-chirho
-					bind:value={speedChirho}
-					aria-label={audioTChirho('reading_speed_chirho')}
-				>
-					<option value="0.65">{audioTChirho('slow_chirho')}</option>
-					<option value="0.85">{audioTChirho('gentle_chirho')}</option>
-					<option value="0.88">{audioTChirho('slightly_slower_chirho')}</option>
-					<option value="1">{audioTChirho('normal_chirho')}</option>
-				</select>
-			</label>
+			</div>
+			{#if sceneToolsChirho}{@render sceneToolsChirho()}{/if}
 		</div>
-		{@render phoneticChoiceChirho()}
 	</div>
 	<p class="small-note-chirho" id="audio-status-chirho" data-audio-status-chirho aria-live="polite">
 		{audioTChirho('checking_chirho')}
@@ -267,10 +241,7 @@
 			{audioTChirho('qere_chirho')}
 		</p>
 	{/if}
-	<p class="small-note-chirho" data-ipa-guide-chirho hidden>{audioTChirho('ipa_guide_chirho')}</p>
-	<p class="small-note-chirho" data-transliteration-guide-chirho hidden>
-		{audioTChirho('transliteration_unavailable_chirho')}
-	</p>
+
 	<noscript><p class="small-note-chirho">{audioTChirho('javascript_chirho')}</p></noscript>
 </div>
 
@@ -279,6 +250,13 @@
 		flex-direction: column;
 		align-items: stretch;
 		gap: 12px;
+	}
+	.audio-preferences-chirho {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: end;
+		justify-content: space-between;
+		gap: 10px 12px;
 	}
 	.audio-playback-chirho {
 		width: 100%;
@@ -316,7 +294,22 @@
 		position: relative;
 	}
 
+	@container (min-width: 480px) {
+		.verse-transport-chirho:has(> :global(.verse-step-chirho)) {
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr) minmax(0, 1fr);
+			align-items: stretch;
+		}
+		.verse-transport-chirho:has(> :global(.verse-step-chirho)) .verse-play-chirho {
+			grid-column: 2;
+			grid-row: auto;
+		}
+	}
+
 	@container (max-width: 420px) {
+		.audio-settings-chirho:has(.audio-rate-field-chirho:only-child) {
+			grid-template-columns: minmax(0, 128px);
+			width: auto;
+		}
 		.audio-playback-chirho {
 			flex-wrap: wrap;
 			gap: 8px;

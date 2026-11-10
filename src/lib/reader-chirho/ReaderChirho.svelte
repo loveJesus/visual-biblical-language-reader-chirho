@@ -9,6 +9,7 @@
 	import { verseStudyNotesChirho } from '$lib/bible-chirho/study-aids-chirho';
 	import { installIpaChirho } from './controls-chirho/ipa-controls-chirho';
 	import SceneChirho from '$lib/reader-chirho/scene-chirho/SceneChirho.svelte';
+	import ReaderDisplayChirho from './controls-chirho/ReaderDisplayChirho.svelte';
 	import PronunciationNoteChirho from './audio-chirho/PronunciationNoteChirho.svelte';
 	import PictureNoteChirho from './PictureNoteChirho.svelte';
 	import SourceNotesChirho from '$lib/bible-chirho/SourceNotesChirho.svelte';
@@ -325,10 +326,11 @@
 				)}</span
 			>
 		</div>
-		{#snippet mediaControlsChirho()}
+		{#snippet mediaControlsChirho(sceneToolsChirho: Snippet)}
 			<AudioVerseChirho
 				{lessonChirho}
 				{verseNavigationChirho}
+				{sceneToolsChirho}
 				{videoChirho}
 				{navigationGenerationChirho}
 				onReadyChirho={onRecordingsReadyChirho}
@@ -349,6 +351,7 @@
 				<div class="verse-bottom-chirho">
 					<span class="small-note-chirho">{readerTChirho('read_rtl_chirho')}</span>
 				</div>
+				<ReaderDisplayChirho verseIdChirho={lessonChirho.id_chirho} />
 			</div>
 		</section>
 		<GrammarChirho

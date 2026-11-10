@@ -10,6 +10,7 @@
 	import { installIpaChirho } from '../controls-chirho/ipa-controls-chirho';
 	import { lexiconLinkChirho } from '$lib/bible-chirho/lexicon-links-chirho';
 	import SceneChirho from '$lib/reader-chirho/scene-chirho/SceneChirho.svelte';
+	import ReaderDisplayChirho from '../controls-chirho/ReaderDisplayChirho.svelte';
 	import PictureNoteChirho from '../PictureNoteChirho.svelte';
 	import AudioVerseChirho from '../audio-chirho/AudioVerseChirho.svelte';
 	import ReadingCreditChirho from '../audio-chirho/ReadingCreditChirho.svelte';
@@ -262,10 +263,11 @@
 				)}</span
 			>
 		</div>
-		{#snippet mediaControlsChirho()}
+		{#snippet mediaControlsChirho(sceneToolsChirho: Snippet)}
 			<AudioVerseChirho
 				{lessonChirho}
 				{verseNavigationChirho}
+				{sceneToolsChirho}
 				{videoChirho}
 				{navigationGenerationChirho}
 				onReadyChirho={onRecordingsReadyChirho}
@@ -285,6 +287,7 @@
 				<div class="verse-bottom-chirho">
 					<span class="small-note-chirho">{readerTChirho('read_ltr_chirho')}</span>
 				</div>
+				<ReaderDisplayChirho verseIdChirho={lessonChirho.id_chirho} />
 			</div>
 		</section>
 
