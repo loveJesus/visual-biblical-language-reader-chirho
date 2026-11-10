@@ -136,11 +136,12 @@ testChirho(
 		const wordsChirho = pageChirho.locator('.verse-chirho [data-source-word-chirho]');
 		await expectChirho(wordsChirho).toHaveCount(9);
 		const sourceChirho = await wordsChirho.allTextContents();
-		const toggleChirho = pageChirho.getByRole('checkbox', { name: 'Show IPA', exact: true });
+		const toggleChirho = pageChirho.getByRole('radio', { name: 'IPA', exact: true });
 		await expectChirho(toggleChirho).not.toBeChecked();
 		await expectChirho(
 			pageChirho.locator('.verse-chirho [data-word-ipa-chirho]').first()
 		).toBeHidden();
+		await expectChirho(toggleChirho).toBeEnabled();
 		await toggleChirho.focus();
 		await pageChirho.keyboard.press('Space');
 		await expectChirho(
@@ -155,7 +156,10 @@ testChirho(
 				await pageChirho.evaluate(() => document.documentElement.scrollWidth <= innerWidth)
 			).toBe(true);
 		}
-		await toggleChirho.uncheck();
+		await pageChirho
+			.getByRole('radio', { name: 'None', exact: true })
+			.and(pageChirho.locator('[data-phonetic-choice-chirho]'))
+			.check();
 		await expectChirho(
 			pageChirho.locator('.verse-chirho [data-word-ipa-chirho]').first()
 		).toBeHidden();
@@ -179,7 +183,7 @@ testChirho(
 	'Greek IPA follows the selected pronunciation and the Spanish switch',
 	async ({ page: pageChirho }) => {
 		await pageChirho.goto('/?lang_chirho=en#John.1.2');
-		await pageChirho.getByRole('checkbox', { name: 'Show IPA', exact: true }).check();
+		await pageChirho.getByRole('radio', { name: 'IPA', exact: true }).check();
 		const choiceChirho = pageChirho.locator('[data-greek-rendition-chirho]');
 		const ipaChirho = pageChirho.locator('.greek-verse-chirho [data-word-ipa-chirho]').first();
 		await choiceChirho.selectOption('modern_aspirates');
@@ -189,9 +193,7 @@ testChirho(
 		await choiceChirho.selectOption('erasmian');
 		await expectChirho(ipaChirho).toHaveText('/ˈhuːtos/');
 		await pageChirho.goto('/?lang_chirho=es#John.1.2');
-		await expectChirho(
-			pageChirho.getByRole('checkbox', { name: 'Mostrar AFI', exact: true })
-		).toBeChecked();
+		await expectChirho(pageChirho.getByRole('radio', { name: 'AFI', exact: true })).toBeChecked();
 		await expectChirho(ipaChirho).toHaveText('/ˈhuːtos/');
 		for (const widthChirho of [320, 390]) {
 			await pageChirho.setViewportSize({ width: widthChirho, height: 900 });

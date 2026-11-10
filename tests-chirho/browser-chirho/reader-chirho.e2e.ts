@@ -39,19 +39,9 @@ testChirho(
 			});
 		expectChirho(reconstructedChirho).toBe(fixtureChirho.canonical_text_chirho);
 		await expectChirho(
-			pageChirho.locator('.translation-chirho > [data-gloss-language-chirho="app"]')
-		).toBeHidden();
-		await expectChirho(pageChirho.locator('.word-gloss-chirho').first()).toBeVisible();
-		for (let iterationChirho = 0; iterationChirho < 2; iterationChirho++) {
-			await pageChirho.locator('.translation-chirho summary').click();
-			await expectChirho(
-				pageChirho.locator('.translation-chirho > [data-gloss-language-chirho="app"]')
-			).toBeVisible();
-			await pageChirho.locator('.translation-chirho summary').click();
-			await expectChirho(
-				pageChirho.locator('.translation-chirho > [data-gloss-language-chirho="app"]')
-			).toBeHidden();
-		}
+			pageChirho.locator('[data-translation-display-chirho][value="none"]')
+		).toBeChecked();
+		await expectChirho(pageChirho.locator('.word-gloss-chirho:visible').first()).toBeVisible();
 		const niphalChirho = pageChirho.getByRole('button', { name: '2 Niphal', exact: true });
 		await niphalChirho.focus();
 		await expectChirho(niphalChirho).toHaveAttribute('aria-expanded', 'true');
@@ -59,7 +49,7 @@ testChirho(
 		await expectChirho(niphalChirho).toHaveAttribute('aria-expanded', 'true');
 		await pageChirho.keyboard.press('Escape');
 		await expectChirho(niphalChirho).toHaveAttribute('aria-expanded', 'false');
-		await pageChirho.locator('.translation-chirho summary').focus();
+		await pageChirho.locator('[data-translation-display-chirho][value="none"]').focus();
 		await pageChirho.mouse.move(0, 0);
 		await niphalChirho.hover();
 		await expectChirho(niphalChirho).toHaveAttribute('aria-expanded', 'true');
@@ -201,7 +191,7 @@ testChirho(
 			await contextChirho.setOffline(true);
 			await pageChirho.goto(pathToFileURLChirho(outputChirho).href);
 			await expectChirho(pageChirho.locator('.word-unit-chirho')).toHaveCount(9);
-			await pageChirho.getByRole('checkbox', { name: 'Show IPA', exact: true }).check();
+			await pageChirho.getByRole('radio', { name: 'IPA', exact: true }).check();
 			await expectChirho(
 				pageChirho.locator('.verse-chirho [data-word-ipa-chirho]').filter({ hasText: '/naˈve/' })
 			).toBeVisible();
@@ -210,11 +200,7 @@ testChirho(
 			await wordLinkChirho.click();
 			await expectChirho(pageChirho.locator(`[id="${wordCardIdChirho}"]`)).toBeFocused();
 			await expectChirho(
-				pageChirho.locator('.translation-chirho > [data-gloss-language-chirho="app"]')
-			).toBeHidden();
-			await pageChirho.locator('.translation-chirho summary').click();
-			await expectChirho(
-				pageChirho.locator('.translation-chirho > [data-gloss-language-chirho="app"]')
+				pageChirho.locator(`[id="${wordCardIdChirho}"] .word-gloss-chirho:visible`).first()
 			).toBeVisible();
 			await pageChirho.getByRole('button', { name: '2 Niphal', exact: true }).click();
 			await expectChirho(
@@ -237,11 +223,13 @@ testChirho(
 	'reviewed language changes preserve expanded word meanings and explicit provenance',
 	async ({ page: pageChirho }) => {
 		await pageChirho.goto(`${readerOriginChirho}#Prov.26.1`);
+		await expectChirho(
+			pageChirho.locator('[data-translation-display-chirho][value="none"]')
+		).toBeEnabled();
 		const selectionChirho = pageChirho.getByLabel('Meaning language');
 		for (const languageChirho of glossFixtureChirho.languages_chirho) {
 			await selectionChirho.selectOption(languageChirho.id_chirho);
 			await expectChirho(pageChirho.locator('.word-details-chirho[open]')).toHaveCount(9);
-			await expectChirho(pageChirho.locator('.translation-chirho[open]')).toHaveCount(0);
 			const groupChirho = pageChirho
 				.locator('.word-card-chirho')
 				.first()
@@ -298,7 +286,7 @@ testChirho(
 		await pageChirho.locator('#qal-chirho-help-chirho').click();
 		await expectChirho(triggerChirho).toHaveAttribute('aria-expanded', 'true');
 		await pageChirho.keyboard.press('Escape');
-		await pageChirho.locator('.translation-chirho summary').focus();
+		await pageChirho.locator('[data-translation-display-chirho][value="none"]').focus();
 		await pageChirho.mouse.move(0, 0);
 		await triggerChirho.hover();
 		await pageChirho.mouse.move(0, 0);

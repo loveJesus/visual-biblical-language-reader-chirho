@@ -38,6 +38,10 @@
 		createSpanishGlossClientChirho,
 		type SpanishLayerResultChirho
 	} from '$lib/i18n-chirho/spanish-glosses-chirho';
+	import {
+		createTranslationClientChirho,
+		type VerseTranslationsChirho
+	} from '$lib/i18n-chirho/verse-translation-chirho';
 	import { resolve as resolveChirho } from '$app/paths';
 	import { page as pageChirho } from '$app/state';
 	import {
@@ -168,6 +172,33 @@
 			})
 			.catch(() => {
 				if (liveChirho) spanishChirho = null;
+			});
+		return () => {
+			liveChirho = false;
+		};
+	});
+	const translationClientChirho = createTranslationClientChirho();
+	let translationsChirho = $state<Record<string, VerseTranslationsChirho>>({});
+	let translationLanguageChirho = $state<string | null>(null);
+	$effect(() => {
+		const languageChirho = localeStateChirho.currentChirho;
+		const translationBookChirho = bookChirho;
+		const translationChapterChirho = chapterChirho;
+		const contentChirho = chaptersChirho[translationChapterChirho - 1];
+		translationsChirho = {};
+		translationLanguageChirho = null;
+		if (!restoredChirho || !contentChirho) return;
+		let liveChirho = true;
+		translationClientChirho
+			.chapterChirho(languageChirho, translationBookChirho, translationChapterChirho, contentChirho)
+			.then((layerChirho) => {
+				if (liveChirho) {
+					translationsChirho = layerChirho?.verses_chirho ?? {};
+					translationLanguageChirho = languageChirho;
+				}
+			})
+			.catch(() => {
+				if (liveChirho) translationsChirho = {};
 			});
 		return () => {
 			liveChirho = false;
@@ -666,6 +697,9 @@
 			presentationChirho={workerScenesChirho[greekLessonChirho.id_chirho] ?? null}
 			videoChirho={workerVideosChirho[greekLessonChirho.id_chirho] ?? null}
 			{spanishChirho}
+			translationsChirho={translationLanguageChirho === localeStateChirho.currentChirho
+				? (translationsChirho[`${bookChirho}.${chapterChirho}.${verseChirho}`] ?? null)
+				: null}
 			{artProgressChirho}
 			{navigationGenerationChirho}
 			onRecordingsReadyChirho={recordingsReadyChirho}
@@ -687,6 +721,9 @@
 			{headerChirho}
 			{verseNavigationChirho}
 			{spanishChirho}
+			translationsChirho={translationLanguageChirho === localeStateChirho.currentChirho
+				? (translationsChirho[`${bookChirho}.${chapterChirho}.${verseChirho}`] ?? null)
+				: null}
 			{artProgressChirho}
 			{navigationGenerationChirho}
 			onRecordingsReadyChirho={recordingsReadyChirho}

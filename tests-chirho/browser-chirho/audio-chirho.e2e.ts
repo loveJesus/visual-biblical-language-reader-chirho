@@ -528,9 +528,7 @@ testChirho(
 			await expectChirho(
 				pageChirho.getByRole('button', { name: 'Next verse', exact: true })
 			).toBeEnabled();
-			await expectChirho(
-				pageChirho.getByRole('checkbox', { name: 'Show IPA', exact: true })
-			).toBeVisible();
+			await expectChirho(pageChirho.getByRole('radio', { name: 'IPA', exact: true })).toBeVisible();
 			await expectChirho(pageChirho.locator('[data-speech-rate-chirho]')).toBeVisible();
 			await expectChirho(pageChirho.locator('[data-speech-rate-chirho]')).toHaveValue('1');
 			await pageChirho.getByRole('button', { name: 'Next verse', exact: true }).click();

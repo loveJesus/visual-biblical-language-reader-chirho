@@ -115,3 +115,121 @@ describe('Spanish static publication', () => {
 		expect(problemsChirho(filesChirho).length).toBeGreaterThan(0);
 	});
 });
+
+const EDITION_PATH_CHIRHO =
+	'glosses-chirho/editions-chirho/en-chirho/proverbs-chirho/chapter-01-chirho.json';
+const EDITION_MANIFEST_CHIRHO = 'glosses-chirho/editions-chirho/manifest-chirho.json';
+function editionFixtureChirho(
+	changeChirho?: (
+		wordChirho: { token_id_chirho: string; text_chirho: string; gloss_chirho: string },
+		receiptChirho: { url_chirho: string }
+	) => void
+): FilesChirho {
+	const canonicalChirho = JSON.stringify({
+		verses_chirho: [
+			{
+				id_chirho: 'Prov.1.1',
+				tokens_chirho: [{ id_chirho: 'word-chirho', text_chirho: 'מִשְׁלֵי' }]
+			}
+		]
+	});
+	const bindingChirho = {
+		content_path_chirho: `/${CONTENT_PATH_CHIRHO}`,
+		content_sha256_chirho: sha256Chirho(canonicalChirho)
+	};
+	const receiptChirho = {
+		id_chirho: 'receipt-chirho',
+		url_chirho: 'https://global-tools.bible.systems/read-chirho/eng/20001/__data.json?type=readers',
+		sha256_chirho: 'a'.repeat(64)
+	};
+	const wordChirho = {
+		token_id_chirho: 'word-chirho',
+		text_chirho: 'מִשְׁלֵי',
+		gloss_chirho: 'Proverbs',
+		state_chirho: 'UNAPPROVED',
+		source_chirho: 'IMPORT'
+	};
+	changeChirho?.(wordChirho, receiptChirho);
+	const chapterChirho = JSON.stringify({
+		schema_version_chirho: 1,
+		language_chirho: 'en',
+		book_id_chirho: 'Prov',
+		chapter_chirho: 1,
+		...bindingChirho,
+		sources_chirho: [receiptChirho],
+		verses_chirho: {
+			'Prov.1.1': {
+				readers_chirho: { source_id_chirho: receiptChirho.id_chirho, words_chirho: [wordChirho] }
+			}
+		}
+	});
+	const manifestChirho = JSON.stringify({
+		schema_version_chirho: 1,
+		complete_chirho: true,
+		languages_chirho: {
+			en: {
+				books_chirho: {
+					Prov: {
+						chapters_chirho: [
+							{
+								number_chirho: 1,
+								path_chirho: `/${EDITION_PATH_CHIRHO}`,
+								sha256_chirho: sha256Chirho(chapterChirho),
+								...bindingChirho
+							}
+						]
+					}
+				}
+			}
+		}
+	});
+	return new Map(
+		[
+			[CONTENT_PATH_CHIRHO, canonicalChirho],
+			[EDITION_PATH_CHIRHO, chapterChirho],
+			[EDITION_MANIFEST_CHIRHO, manifestChirho]
+		].map(([pathChirho, textChirho]) => [pathChirho, new TextEncoder().encode(textChirho)])
+	);
+}
+describe('Bible Tools edition publication', () => {
+	it('admits the declared edition without weakening the older Spanish approval gate', () => {
+		expect(classifyPathChirho(EDITION_PATH_CHIRHO)).toBe('static');
+		expect(classifyPathChirho('glosses-chirho/editions-chirho/en-chirho/raw-chirho.json')).not.toBe(
+			'static'
+		);
+		expect(problemsChirho(editionFixtureChirho())).toEqual([]);
+		expect(
+			problemsChirho(
+				fixtureChirho((chapterChirho) => {
+					chapterChirho.gloss_state_chirho = 'machine';
+				})
+			).join(' ')
+		).toContain('approval differs');
+	});
+	it('refuses a mismatched word or source even when the edition is rehashed', () => {
+		expect(
+			problemsChirho(
+				editionFixtureChirho((wordChirho) => {
+					wordChirho.text_chirho = 'שָׁלוֹם';
+				})
+			).join(' ')
+		).toContain('edition words differ');
+		expect(
+			problemsChirho(
+				editionFixtureChirho((_wordChirho, receiptChirho) => {
+					receiptChirho.url_chirho = receiptChirho.url_chirho.replace('type=readers', 'type=terse');
+				})
+			).join(' ')
+		).toContain('wrong edition source');
+	});
+	it('refuses changed source bytes and unlisted output', () => {
+		const filesChirho = editionFixtureChirho();
+		filesChirho.set(
+			EDITION_PATH_CHIRHO.replace('chapter-01', 'chapter-02'),
+			new TextEncoder().encode('{}')
+		);
+		expect(problemsChirho(filesChirho).join(' ')).toContain('not listed');
+		filesChirho.set(CONTENT_PATH_CHIRHO, new TextEncoder().encode('{}'));
+		expect(problemsChirho(filesChirho).join(' ')).toContain('source chapter changed');
+	});
+});

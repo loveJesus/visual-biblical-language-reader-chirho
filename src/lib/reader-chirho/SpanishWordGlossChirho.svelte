@@ -16,7 +16,7 @@
 <!-- One word's approved Spanish gloss, or the honest reason there is none; never a guess. -->
 {#if glossChirho}<p class="word-gloss-chirho" lang="es">{glossChirho}</p>
 	<small class="gloss-source-chirho">GBT</small>
-{:else}<p class="word-gloss-chirho">
+{:else}<p class="word-gloss-chirho" data-meaning-unavailable-chirho="true">
 		{layerChirho
 			? readerTChirho('spanish_gloss_missing_chirho')
 			: spanishNoticeChirho(spanishChirho)}

@@ -159,7 +159,9 @@ testChirho(
 						)
 					).toBe(true);
 					await surfaceChirho.locator('[data-word-jump-chirho]').click();
-					await expectChirho(pageChirho.locator('.word-card-chirho:focus')).toHaveCount(1);
+					await expectChirho(
+						pageChirho.getByRole('dialog').locator('.word-card-chirho')
+					).toHaveCount(1);
 				}
 			}
 		}

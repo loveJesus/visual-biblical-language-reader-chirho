@@ -36,7 +36,9 @@ for (const localeChirho of ['en', 'es'])
 						await linkChirho.focus();
 						await linkChirho.press('Enter');
 					}
-					await expectChirho(pageChirho.locator(`[id="${idChirho}"]`)).toBeFocused();
+					await expectChirho(
+						pageChirho.getByRole('dialog').locator(`[id="${idChirho}"]`)
+					).toBeVisible();
 					const inViewChirho = await pageChirho
 						.locator(`[id="${idChirho}"]`)
 						.evaluate((elementChirho) => {

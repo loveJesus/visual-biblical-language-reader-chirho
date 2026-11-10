@@ -5,6 +5,13 @@ import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
 export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 	en: {
 		show_ipa_chirho: 'Show IPA',
+		phonetic_show_chirho: 'Show',
+		phonetic_display_chirho: 'Phonetic guide',
+		phonetic_none_chirho: 'None',
+		phonetic_ipa_chirho: 'IPA',
+		phonetic_transliteration_chirho: 'Transliteration',
+		transliteration_unavailable_chirho:
+			'Transliteration is not available for these words in this language yet.',
 		ipa_unavailable_chirho: 'IPA unavailable for this reading',
 		ipa_guide_chirho: 'IPA guide · Draft; — marks an unresolved reading.',
 		pronunciation_note_chirho: 'Pronunciation note',
@@ -62,6 +69,13 @@ export const AUDIO_MESSAGES_CHIRHO = defineCatalogueChirho({
 	},
 	es: {
 		show_ipa_chirho: 'Mostrar AFI',
+		phonetic_show_chirho: 'Mostrar',
+		phonetic_display_chirho: 'Guía fonética',
+		phonetic_none_chirho: 'Nada',
+		phonetic_ipa_chirho: 'AFI',
+		phonetic_transliteration_chirho: 'Transliteración',
+		transliteration_unavailable_chirho:
+			'La transliteración de estas palabras aún no está disponible en este idioma.',
 		ipa_unavailable_chirho: 'AFI no disponible para esta lectura',
 		ipa_guide_chirho: 'Guía AFI · Borrador; — indica una lectura sin resolver.',
 		pronunciation_note_chirho: 'Nota de pronunciación',

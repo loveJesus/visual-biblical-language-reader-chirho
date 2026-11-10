@@ -12,9 +12,25 @@
 	import { greekWordIpaChirho } from '$lib/domain-chirho/pronunciation-chirho/greek-ipa-chirho';
 	let {
 		tokenChirho,
-		languageChirho
-	}: { tokenChirho: TokenChirho | GreekTokenChirho; languageChirho: 'he' | 'grc' } = $props();
+		languageChirho,
+		transliterationChirho = null
+	}: {
+		tokenChirho: TokenChirho | GreekTokenChirho;
+		languageChirho: 'he' | 'grc';
+		/** Supplied word data only; lemma spellings and prose notes are not transliteration sources. */
+		transliterationChirho?: {
+			token_id_chirho: string;
+			spoken_text_chirho: string;
+			values_chirho: Readonly<Record<string, string | null>>;
+		} | null;
+	} = $props();
 	const spokenChirho = $derived(spokenWordChirho(tokenChirho));
+	const transliterationsChirho = $derived(
+		transliterationChirho?.token_id_chirho === tokenChirho.id_chirho &&
+			transliterationChirho.spoken_text_chirho === spokenChirho
+			? transliterationChirho.values_chirho
+			: {}
+	);
 	const valuesChirho = $derived.by(() => {
 		if (languageChirho === 'grc')
 			return (['modern', 'modern_aspirates', 'erasmian'] as const).map((profileChirho) => ({
@@ -54,6 +70,7 @@
 	data-ipa-text-chirho={spokenChirho}
 	data-ipa-language-chirho={languageChirho}
 	data-ipa-values-chirho={JSON.stringify(valuesChirho)}
+	data-transliteration-values-chirho={JSON.stringify(transliterationsChirho)}
 	data-annotation-chirho
 	dir="ltr"
 	lang={languageChirho === 'he' ? 'he-fonipa' : 'grc-fonipa'}

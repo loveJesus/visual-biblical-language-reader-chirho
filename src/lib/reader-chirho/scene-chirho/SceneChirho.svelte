@@ -2,6 +2,7 @@
 <script lang="ts">
 	import { artworkUrlChirho } from '$lib/media-review-chirho/artwork-url-chirho';
 	import ReportArtworkChirho from '$lib/media-review-chirho/ReportArtworkChirho.svelte';
+	import MeaningDisplayChirho from '../controls-chirho/MeaningDisplayChirho.svelte';
 	import { onMount, type Snippet } from 'svelte';
 	import type { ScenePresentationChirho } from '$lib/domain-chirho/media-chirho';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
@@ -203,22 +204,23 @@
 			</div>
 		{/if}
 	</div>
-	{#if controlsChirho}<div class="scene-controls-chirho">{@render controlsChirho()}</div>{/if}
-	<figcaption>
-		<span class="scene-caption-mark-chirho" aria-hidden="true">✧</span>
-		{readerTChirho('scene_caption_chirho')}
-		<span>{readerTChirho('scene_caption_sub_chirho')}</span>
-		{#if presentationChirho?.representation_reduced_chirho && sceneChirho}
-			<p class="scene-reading-note-chirho" lang="en">{sceneChirho.reading_note_chirho}</p>
-		{/if}
-		{#if sceneChirho}<div>
-				<ReportArtworkChirho
+	<div class="scene-controls-chirho">
+		{#if controlsChirho}{@render controlsChirho()}{/if}
+		<div class="scene-options-chirho">
+			<MeaningDisplayChirho />
+			{#if sceneChirho}<ReportArtworkChirho
 					assetPathChirho={sceneChirho.asset_path_chirho}
 					sha256Chirho={sceneChirho.sha256_chirho}
 					{verseIdChirho}
-				/>
-			</div>{/if}
-	</figcaption>
+				/>{/if}
+		</div>
+	</div>
+	{#if presentationChirho?.representation_reduced_chirho && sceneChirho}<figcaption
+			class="scene-reading-note-chirho"
+			lang="en"
+		>
+			{sceneChirho.reading_note_chirho}
+		</figcaption>{/if}
 </figure>
 
 <style>
@@ -242,6 +244,14 @@
 	.scene-controls-chirho {
 		padding: 16px 18px 6px;
 		background: #fcfcf7;
+	}
+	.scene-options-chirho {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		padding-bottom: 12px;
 	}
 	.scene-controls-chirho :global(.audio-controls-chirho) {
 		margin: 0;

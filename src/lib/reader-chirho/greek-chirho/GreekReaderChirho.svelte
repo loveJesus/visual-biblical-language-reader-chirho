@@ -1,5 +1,10 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import {
+		translationsForWordsChirho,
+		type VerseTranslationsChirho
+	} from '$lib/i18n-chirho/verse-translation-chirho';
+	import TranslationCreditChirho from '$lib/reader-chirho/controls-chirho/TranslationCreditChirho.svelte';
 	import StudyAidLinkChirho from '$lib/bible-chirho/StudyAidLinkChirho.svelte';
 	import { verseStudyNotesChirho } from '$lib/bible-chirho/study-aids-chirho';
 	import { installIpaChirho } from '../controls-chirho/ipa-controls-chirho';
@@ -12,6 +17,8 @@
 	import SpeechButtonChirho from '../audio-chirho/SpeechButtonChirho.svelte';
 	import { installSpeechChirho } from '../audio-chirho/speech-controls-chirho';
 	import { onMount, type Snippet } from 'svelte';
+	import WordDetailsModalChirho from '$lib/reader-chirho/controls-chirho/WordDetailsModalChirho.svelte';
+	import { installMeaningsChirho } from '$lib/reader-chirho/controls-chirho/meaning-controls-chirho';
 	import GreekGrammarChirho from './GreekGrammarChirho.svelte';
 	import { installHelpChirho } from '../controls-chirho/help-controls-chirho';
 	import { installWordNavigationChirho } from '../controls-chirho/word-controls-chirho';
@@ -42,6 +49,7 @@
 		presentationChirho = null,
 		iconsChirho = {},
 		spanishChirho = null,
+		translationsChirho = null,
 		videoChirho = null,
 		artProgressChirho = null,
 		navigationGenerationChirho = 0,
@@ -60,6 +68,7 @@
 		presentationChirho?: ScenePresentationChirho | null;
 		iconsChirho?: Record<string, ContextualIconChirho>;
 		spanishChirho?: SpanishLayerResultChirho | null;
+		translationsChirho?: VerseTranslationsChirho | null;
 	} = $props();
 	const spanishLayerChirho = $derived(readyLayerChirho(spanishChirho));
 	// A caution repeated by every word is shown once, folded with the sources; cards keep their own notes.
@@ -80,19 +89,161 @@
 		speechControlsChirho?.refreshChirho();
 	});
 
+	let selectedWordChirho = $state<string | null>(null);
+	let selectedTriggerChirho = $state<HTMLElement | null>(null);
+	const selectedIndexChirho = $derived(
+		lessonChirho.tokens_chirho.findIndex(
+			(tokenChirho) => tokenChirho.id_chirho === selectedWordChirho
+		)
+	);
+	$effect(() => {
+		void lessonChirho.id_chirho;
+		selectedWordChirho = null;
+	});
+	function openWordChirho(cardIdChirho: string, triggerChirho: HTMLElement): void {
+		const tokenChirho = lessonChirho.tokens_chirho.find(
+			(tokenChirho) => `word-card-${tokenChirho.id_chirho}-chirho` === cardIdChirho
+		);
+		if (!tokenChirho) return;
+		selectedTriggerChirho = triggerChirho;
+		selectedWordChirho = tokenChirho.id_chirho;
+	}
 	onMount(() => {
 		const helpChirho = installHelpChirho(document);
 		const ipaChirho = installIpaChirho(document);
-		const wordsChirho = installWordNavigationChirho(document);
+		const meaningsChirho = installMeaningsChirho(document);
+		const wordsChirho = installWordNavigationChirho(document, openWordChirho);
 		speechControlsChirho = installSpeechChirho(document);
 		return () => {
 			speechControlsChirho?.destroyChirho();
 			ipaChirho();
 			helpChirho();
 			wordsChirho();
+			meaningsChirho();
 		};
 	});
 </script>
+
+<div
+	hidden
+	data-annotation-chirho
+	data-verse-translations-chirho={JSON.stringify(
+		translationsForWordsChirho(translationsChirho, lessonChirho.tokens_chirho) ?? {}
+	)}
+	data-translation-locale-chirho={localeStateChirho.currentChirho}
+></div>
+
+{#snippet wordCardChirho(tokenChirho: GreekLessonChirho['tokens_chirho'][number])}
+	{@const linkChirho = lexiconLinkChirho(tokenChirho, localeStateChirho.currentChirho)}
+	<article
+		class="word-card-chirho"
+		id="word-card-{tokenChirho.id_chirho}-chirho"
+		tabindex="-1"
+		style:--gender-chirho={tokenChirho.gender_chirho === 'masculine'
+			? '#dff0ff'
+			: tokenChirho.gender_chirho === 'feminine'
+				? '#ffe4ed'
+				: tokenChirho.gender_chirho === 'neuter'
+					? '#ecefe9'
+					: 'transparent'}
+	>
+		<a
+			class="back-to-verse-chirho"
+			href="#verse-word-{tokenChirho.id_chirho}-chirho"
+			data-word-jump-chirho="verse-word-{tokenChirho.id_chirho}-chirho"
+			><span aria-hidden="true">↑</span> {readerTChirho('back_to_verse_chirho')}</a
+		>
+		<div class="word-card-top-chirho">
+			<span class="card-hebrew-chirho" lang="grc" dir="ltr">{tokenChirho.text_chirho}</span
+			>{#if linkChirho}<a
+					class="lemma-link-chirho"
+					href={linkChirho.href_chirho}
+					target="_blank"
+					rel="external noreferrer"
+					>{tokenChirho.lemma_id_chirho} · {readerTChirho('lemma_search_chirho')} ↗</a
+				>{:else}<span class="small-note-chirho">{tokenChirho.lemma_id_chirho}</span>{/if}
+		</div>
+		<SpeechButtonChirho
+			tokenIdChirho={tokenChirho.id_chirho}
+			textChirho={tokenChirho.text_chirho}
+			languageChirho="grc"
+			wordChirho
+		/>
+		<p class="morphology-chirho">
+			{greekAnalysisLocalizedChirho(tokenChirho, localeStateChirho.currentChirho)}
+		</p>
+		<PictureNoteChirho
+			iconChirho={iconsChirho[tokenChirho.id_chirho]}
+			verseIdChirho={lessonChirho.id_chirho}
+		/>
+		<details class="word-details-chirho" open>
+			<summary>{readerTChirho('meaning_morphology_chirho')}</summary>
+			<div>
+				<div
+					class="edition-word-meaning-chirho"
+					data-edition-word-chirho={tokenChirho.id_chirho}
+					hidden
+				>
+					<p class="word-gloss-chirho" data-edition-gloss-chirho></p>
+					<small data-edition-source-chirho></small>
+				</div>
+				<div data-original-meaning-chirho>
+					{#if localeStateChirho.currentChirho === 'es'}<SpanishWordGlossChirho
+							{spanishChirho}
+							tokenIdChirho={tokenChirho.id_chirho}
+						/>{:else}
+						{#if tokenChirho.gloss_chirho === null || tokenChirho.gloss_chirho === '-'}<p
+								class="word-gloss-chirho"
+								data-meaning-unavailable-chirho="true"
+							>
+								{readerTChirho(
+									tokenChirho.gloss_chirho === null
+										? 'origin_unavailable_chirho'
+										: 'not_separately_translated_chirho'
+								)}
+							</p>{:else}<p
+								class="word-gloss-chirho"
+								lang="en"
+								data-meaning-unavailable-chirho={tokenChirho.gloss_chirho == null
+									? 'true'
+									: undefined}
+							>
+								{tokenChirho.gloss_chirho}
+							</p>{/if}
+						<small class="gloss-source-chirho">Berean</small>{/if}
+				</div>
+				<p>
+					{readerTChirho('lexical_form_chirho')}
+					<span lang="grc">{tokenChirho.lexical_form_chirho}</span> · {tokenChirho.lemma_id_chirho}
+				</p>
+				<p>
+					{readerTChirho('source_morphology_chirho')}
+					<code>{tokenChirho.raw_morphology_chirho}</code>
+				</p>
+				{#if studyNotesChirho.cardNotesChirho.get(tokenChirho.id_chirho)}<p
+						class="quiet-note-chirho"
+						lang="en"
+					>
+						{studyNotesChirho.cardNotesChirho.get(tokenChirho.id_chirho)}
+					</p>{/if}
+				{#if studyNotesChirho.verseNotesChirho.length}<p class="verse-note-link-chirho">
+						<a href="#verse-notes-chirho" data-word-jump-chirho="verse-notes-chirho"
+							>{readerTChirho('verse_note_link_chirho')}</a
+						>
+					</p>{/if}
+				{#each lessonChirho.source_notes_chirho ?? [] as noteChirho, indexChirho (indexChirho)}
+					{#if noteChirho.kind_chirho === 'gloss_editor_note' && noteChirho.before_token_id_chirho === tokenChirho.id_chirho}<p
+							class="quiet-note-chirho"
+						>
+							{readerTChirho('source_editor_note_chirho')}
+							<span lang="en">{noteChirho.text_chirho}</span>
+						</p>{/if}
+				{/each}
+			</div>
+		</details>
+		<StudyAidLinkChirho />
+	</article>
+{/snippet}
 
 <div class="page-shell-chirho">
 	<section class="reader-document-chirho">
@@ -130,11 +281,7 @@
 				controlsChirho={mediaControlsChirho}
 			/>
 			<div class="verse-panel-chirho">
-				{#key lessonChirho.id_chirho}<GreekPassageChirho
-						{lessonChirho}
-						{iconsChirho}
-						{spanishLayerChirho}
-					/>{/key}
+				{#key lessonChirho.id_chirho}<GreekPassageChirho {lessonChirho} {iconsChirho} />{/key}
 				<div class="verse-bottom-chirho">
 					<span class="small-note-chirho">{readerTChirho('read_ltr_chirho')}</span>
 				</div>
@@ -151,101 +298,22 @@
 			</div>
 			<div class="word-cards-chirho">
 				{#each lessonChirho.tokens_chirho as tokenChirho (tokenChirho.id_chirho)}
-					{@const linkChirho = lexiconLinkChirho(tokenChirho, localeStateChirho.currentChirho)}
-					<article
-						class="word-card-chirho"
-						id="word-card-{tokenChirho.id_chirho}-chirho"
-						tabindex="-1"
-						style:--gender-chirho={tokenChirho.gender_chirho === 'masculine'
-							? '#dff0ff'
-							: tokenChirho.gender_chirho === 'feminine'
-								? '#ffe4ed'
-								: tokenChirho.gender_chirho === 'neuter'
-									? '#ecefe9'
-									: 'transparent'}
-					>
-						<a
-							class="back-to-verse-chirho"
-							href="#verse-word-{tokenChirho.id_chirho}-chirho"
-							data-word-jump-chirho="verse-word-{tokenChirho.id_chirho}-chirho"
-							><span aria-hidden="true">↑</span> {readerTChirho('back_to_verse_chirho')}</a
-						>
-						<div class="word-card-top-chirho">
-							<span class="card-hebrew-chirho" lang="grc" dir="ltr">{tokenChirho.text_chirho}</span
-							>{#if linkChirho}<a
-									class="lemma-link-chirho"
-									href={linkChirho.href_chirho}
-									target="_blank"
-									rel="external noreferrer"
-									>{tokenChirho.lemma_id_chirho} · {readerTChirho('lemma_search_chirho')} ↗</a
-								>{:else}<span class="small-note-chirho">{tokenChirho.lemma_id_chirho}</span>{/if}
-						</div>
-						<SpeechButtonChirho
-							tokenIdChirho={tokenChirho.id_chirho}
-							textChirho={tokenChirho.text_chirho}
-							languageChirho="grc"
-							wordChirho
-						/>
-						<p class="morphology-chirho">
-							{greekAnalysisLocalizedChirho(tokenChirho, localeStateChirho.currentChirho)}
-						</p>
-						<PictureNoteChirho
-							iconChirho={iconsChirho[tokenChirho.id_chirho]}
-							verseIdChirho={lessonChirho.id_chirho}
-						/>
-						<details class="word-details-chirho" open>
-							<summary>{readerTChirho('meaning_morphology_chirho')}</summary>
-							<div>
-								{#if localeStateChirho.currentChirho === 'es'}<SpanishWordGlossChirho
-										{spanishChirho}
-										tokenIdChirho={tokenChirho.id_chirho}
-									/>{/if}
-								{#if tokenChirho.gloss_chirho === null || tokenChirho.gloss_chirho === '-'}<p
-										class="word-gloss-chirho"
-									>
-										{readerTChirho(
-											tokenChirho.gloss_chirho === null
-												? 'origin_unavailable_chirho'
-												: 'not_separately_translated_chirho'
-										)}
-									</p>{:else}<p class="word-gloss-chirho" lang="en">
-										{tokenChirho.gloss_chirho}
-									</p>{/if}
-								<small class="gloss-source-chirho">Berean</small>
-								<p>
-									{readerTChirho('lexical_form_chirho')}
-									<span lang="grc">{tokenChirho.lexical_form_chirho}</span> · {tokenChirho.lemma_id_chirho}
-								</p>
-								<p>
-									{readerTChirho('source_morphology_chirho')}
-									<code>{tokenChirho.raw_morphology_chirho}</code>
-								</p>
-								{#if studyNotesChirho.cardNotesChirho.get(tokenChirho.id_chirho)}<p
-										class="quiet-note-chirho"
-										lang="en"
-									>
-										{studyNotesChirho.cardNotesChirho.get(tokenChirho.id_chirho)}
-									</p>{/if}
-								{#if studyNotesChirho.verseNotesChirho.length}<p class="verse-note-link-chirho">
-										<a href="#verse-notes-chirho" data-word-jump-chirho="verse-notes-chirho"
-											>{readerTChirho('verse_note_link_chirho')}</a
-										>
-									</p>{/if}
-								{#each lessonChirho.source_notes_chirho ?? [] as noteChirho, indexChirho (indexChirho)}
-									{#if noteChirho.kind_chirho === 'gloss_editor_note' && noteChirho.before_token_id_chirho === tokenChirho.id_chirho}<p
-											class="quiet-note-chirho"
-										>
-											{readerTChirho('source_editor_note_chirho')}
-											<span lang="en">{noteChirho.text_chirho}</span>
-										</p>{/if}
-								{/each}
-							</div>
-						</details>
-						<StudyAidLinkChirho />
-					</article>{/each}
+					{#if selectedWordChirho !== tokenChirho.id_chirho}{@render wordCardChirho(tokenChirho)}
+					{/if}
+				{/each}
 			</div>
 		</section>
 
+		{#if selectedIndexChirho >= 0}
+			<WordDetailsModalChirho
+				cardIdChirho={`word-card-${selectedWordChirho}-chirho`}
+				triggerChirho={selectedTriggerChirho}
+				onCloseChirho={() => (selectedWordChirho = null)}
+				>{@render wordCardChirho(
+					lessonChirho.tokens_chirho[selectedIndexChirho]
+				)}</WordDetailsModalChirho
+			>
+		{/if}
 		<section
 			class="source-section-chirho greek-sources-chirho"
 			aria-labelledby="greek-source-heading-chirho"
@@ -296,6 +364,9 @@
 						</li>{/if}
 					<!-- L.J. (2026-11-07): credits live in this info fold, not the main reading flow. -->
 					<li><SourceCreditChirho languageChirho="grc" /></li>
+					{#if translationsForWordsChirho(translationsChirho, lessonChirho.tokens_chirho)}<li>
+							<TranslationCreditChirho />
+						</li>{/if}
 					{#each sourcesShownChirho as sourceChirho (sourceChirho.id_chirho)}<li>
 							{#if sourceChirho.url_chirho}<a
 									href={sourceChirho.url_chirho}

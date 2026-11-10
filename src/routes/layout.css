@@ -1094,3 +1094,112 @@ small {
 		width: 100%;
 	}
 }
+
+/* Workflow: local-reader-chirho.md. Meanings are optional annotations; source characters stay exact. */
+.word-meaning-chirho {
+	max-width: 12rem;
+	margin-top: 4px;
+	font:
+		12px/1.45 system-ui,
+		sans-serif;
+	text-align: center;
+	color: #485947;
+	unicode-bidi: isolate;
+	overflow-wrap: anywhere;
+}
+.word-meaning-chirho[hidden],
+.word-meaning-tooltip-chirho[hidden] {
+	display: none;
+}
+.word-meaning-tooltip-chirho {
+	position: fixed;
+	z-index: 80;
+	width: max-content;
+	max-width: 280px;
+	padding: 10px 14px;
+	border: 1px solid #bccbb3;
+	border-radius: 10px;
+	background: #fffef6;
+	color: #253c2b;
+	box-shadow: 0 8px 28px #172d1c24;
+	font:
+		14px/1.5 system-ui,
+		sans-serif;
+	text-align: center;
+	overflow-wrap: anywhere;
+	unicode-bidi: isolate;
+}
+
+/* Shared optional reader displays: current-language choices only, with identical touch targets. */
+.reader-display-options-chirho {
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.reader-display-options-chirho legend {
+	margin-bottom: 6px;
+	padding: 0;
+	color: #4c5c50;
+	font-size: 13px;
+	font-weight: 600;
+}
+.reader-display-options-chirho > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+.reader-display-options-chirho label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 40px;
+	padding: 7px 9px;
+	border: 1px solid #bac7b5;
+	border-radius: 7px;
+	background: #fafbf7;
+	color: #34503d;
+	font-size: 13px;
+	cursor: pointer;
+}
+.reader-display-options-chirho label[hidden] {
+	display: none;
+}
+.reader-display-options-chirho input {
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	accent-color: #355443;
+}
+.reader-display-options-chirho label:focus-within {
+	outline: 2px solid #405a89;
+	outline-offset: 3px;
+}
+.reader-display-options-chirho label:has(input:checked) {
+	background: #e7efe3;
+	border-color: #52705d;
+}
+.reader-display-options-chirho label:has(input:disabled) {
+	opacity: 0.6;
+	cursor: default;
+}
+.edition-word-meaning-chirho {
+	margin-block: 14px;
+	padding: 12px 14px;
+	border-radius: 9px;
+	background: #f0f4e9;
+}
+.edition-word-meaning-chirho[hidden] {
+	display: none;
+}
+.edition-word-meaning-chirho p {
+	margin: 0 0 4px;
+}
+.edition-word-meaning-chirho small {
+	font-size: 11px;
+	color: #4c5c50;
+}
+
+.word-details-chirho:has([data-edition-word-chirho]:not([hidden])) [data-original-meaning-chirho] {
+	display: none;
+}

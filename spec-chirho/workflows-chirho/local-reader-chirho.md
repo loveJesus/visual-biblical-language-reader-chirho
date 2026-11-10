@@ -13,7 +13,7 @@ flowchart TD
     validate_chirho -->|valid| cues_chirho[Derive independent visual cues]
     validate_chirho -->|invalid| unavailable_chirho[Safe unavailable state]
     cues_chirho --> reader_chirho[RTL verse and seven-row help]
-    reader_chirho --> reveal_chirho[Reader optionally reveals translation in the reading panel]
+    reader_chirho --> reveal_chirho[Saved phonetic and translation displays annotate the source words]
     reader_chirho --> word_jump_chirho[Click or press Enter on an original-language word]
     reader_chirho --> transport_chirho[Compact previous, play and next row above the words]
     reader_chirho --> trumpet_chirho[Separate word-corner pronunciation button]
@@ -22,7 +22,9 @@ flowchart TD
     recordings_chirho --> speech_chirho[Otherwise matching local voice and separate qere reading]
     recordings_chirho --> cancel_chirho
     speech_chirho --> cancel_chirho[Cancel on another playback, stop or passage change]
-    word_jump_chirho --> card_chirho[Scroll to and focus its own expanded Look closer card]
+    word_jump_chirho --> card_chirho[Open the same word card in a dialog online]
+    card_chirho --> list_chirho[View in all words restores and focuses the lower card]
+    word_jump_chirho -->|saved offline page| list_chirho
     card_chirho --> return_chirho[Back to verse returns focus to the same source word without changing passage]
     return_chirho --> word_jump_chirho
     reader_chirho --> export_chirho[Exclusive-create self-contained offline snapshot]
@@ -64,7 +66,7 @@ flowchart TD
     greek_left_chirho --> greek_word_chirho[Render cue row above preserved word and punctuation]
     greek_center_chirho --> greek_word_chirho
     greek_right_chirho --> greek_word_chirho
-    greek_word_chirho --> greek_details_chirho[Word click focuses expanded meaning and morphology]
+    greek_word_chirho --> greek_details_chirho[Word click opens its meaning and morphology dialog]
     greek_word_chirho --> cue_help_chirho[Hover, focus or tap a cue for its translated full explanation]
 ```
 
@@ -77,7 +79,7 @@ qatal to the existing P/I/M/A/C/B display codes. These are local teaching conven
 verb codes and sourced form/construction classifications do not change. No cue is inferred
 from waw or word spelling. Superscript help reuses the EN/ES grammar key, including noun state,
 stem, form and Greek case/tense/voice/person/mood. Cue buttons are siblings of the word link,
-so tapping help does not navigate away and word clicks still focus Look closer. Escape closes
+so tapping help does not navigate away and word clicks open the word detail dialog. Escape closes
 the shared hover/focus/tap popup. Short verbs reserve enough width for both cues.
 
 ```mermaid
@@ -252,3 +254,24 @@ flowchart TD
 ```
 
 `verseStudyNotesChirho` deduplicates only sentences shared by every word in a multi-word verse. A single-word note stays with its word. Missing glosses remain missing; no corpus or alignment data are repaired by presentation. The delegated word jump opens a details target before focusing it. Each card owns its Back link, including saved offline pages; focus scroll margins keep keyboard targets below the sticky link. `morphologySummaryLocalizedChirho` omits unknown/not-applicable fields from visible card prose while leaving the sourced parse, teaching cues and accessibility labels intact.
+
+## November 10 word details and translation editions
+
+```mermaid
+flowchart TD
+    fork_chirho[Bible Tools English Readers and English or Spanish Terse] --> capture_chirho[Capture exact chapter response and declared edition]
+    capture_chirho --> align_chirho[Match the whole verse source sequence and bind to its chapter hash]
+    align_chirho -->|exact| layer_chirho[Publish chapter layer with source identity and review status]
+    align_chirho -->|missing or different words| omit_chirho[Leave that edition unavailable for the verse]
+    layer_chirho --> fetch_chirho[Verify requested locale chapter bytes and ordered token identities]
+    fetch_chirho --> radios_chirho[Offer available editions in Translation and remember the choice]
+    radios_chirho --> annotation_chirho[Show edition glosses beneath their words]
+    word_chirho[Source word] -->|hover or focus for 250 ms| tip_chirho[Show the current word meaning]
+    word_chirho -->|activate| modal_chirho[Open its existing card in a dialog]
+    modal_chirho -->|close| word_chirho
+    modal_chirho -->|view in all words| lower_chirho[Restore and focus the lower card]
+```
+
+The browser loads the selected chapter layer on the same origin and caches at most four chapters. Translation and phonetics have separate saved choices. Missing editions and transliterations stay out of the choices. A saved choice applies when its data is available. Readers and Terse preserve the source word order, imported review status, and deliberate empty glosses. The display renders the source’s multiword separator as a space. The original word and recorded pronunciation identities do not change.
+
+The online dialog renders the same card as the lower list. Escape returns focus to the word, and View in all words focuses the card. Offline snapshots preserve word-card jumps, the saved phonetic control, and available word meanings. Scene reporting uses the existing control beside the media options.

@@ -163,15 +163,42 @@
 		/>
 	</span>
 {/snippet}
-{#snippet ipaToggleChirho()}
-	<label class="ipa-toggle-chirho"
-		><input type="checkbox" data-show-ipa-chirho disabled />{audioTChirho('show_ipa_chirho')}</label
+{#snippet phoneticChoiceChirho()}
+	<fieldset
+		class="phonetic-options-chirho reader-display-options-chirho"
+		aria-label={audioTChirho('phonetic_display_chirho')}
 	>
+		<legend>{audioTChirho('phonetic_show_chirho')}</legend>
+		<div>
+			{#each ['none', 'ipa', 'transliteration'] as choiceChirho (choiceChirho)}
+				<label>
+					<input
+						type="radio"
+						name="phonetic-{lessonChirho.id_chirho}-chirho"
+						value={choiceChirho}
+						data-phonetic-choice-chirho
+						data-show-ipa-chirho={choiceChirho === 'ipa' ? true : undefined}
+						checked={choiceChirho === 'none'}
+						disabled
+					/>
+					{audioTChirho(
+						choiceChirho === 'none'
+							? 'phonetic_none_chirho'
+							: choiceChirho === 'ipa'
+								? 'phonetic_ipa_chirho'
+								: 'phonetic_transliteration_chirho'
+					)}
+				</label>
+			{/each}
+		</div>
+	</fieldset>
 {/snippet}
 
 <div
 	class="audio-controls-chirho"
 	data-audio-controls-chirho
+	data-phonetic-locale-chirho={localeStateChirho.currentChirho}
+	data-phonetic-verse-chirho={lessonChirho.id_chirho}
 	data-speech-recordings-chirho={JSON.stringify(recordingsChirho)}
 	data-speech-words-chirho={JSON.stringify(wordPlaybackPlanChirho(lessonChirho))}
 	data-annotation-chirho
@@ -226,9 +253,8 @@
 					<option value="1">{audioTChirho('normal_chirho')}</option>
 				</select>
 			</label>
-			{#if lessonChirho.language_chirho !== 'grc'}{@render ipaToggleChirho()}{/if}
 		</div>
-		{#if lessonChirho.language_chirho === 'grc'}{@render ipaToggleChirho()}{/if}
+		{@render phoneticChoiceChirho()}
 	</div>
 	<p class="small-note-chirho" id="audio-status-chirho" data-audio-status-chirho aria-live="polite">
 		{audioTChirho('checking_chirho')}
@@ -242,6 +268,9 @@
 		</p>
 	{/if}
 	<p class="small-note-chirho" data-ipa-guide-chirho hidden>{audioTChirho('ipa_guide_chirho')}</p>
+	<p class="small-note-chirho" data-transliteration-guide-chirho hidden>
+		{audioTChirho('transliteration_unavailable_chirho')}
+	</p>
 	<noscript><p class="small-note-chirho">{audioTChirho('javascript_chirho')}</p></noscript>
 </div>
 
@@ -287,33 +316,6 @@
 		position: relative;
 	}
 
-	.ipa-toggle-chirho {
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-		min-height: 44px;
-		padding: 8px 10px;
-		border: 1px solid #bac7b5;
-		border-radius: 9px;
-		background: #fafbf7;
-		color: #34503d;
-		font-size: 13px;
-		cursor: pointer;
-	}
-	.ipa-toggle-chirho input {
-		width: 16px;
-		height: 16px;
-		margin: 0;
-		accent-color: #355443;
-	}
-	.ipa-toggle-chirho:focus-within {
-		outline: 2px solid #405a89;
-		outline-offset: 3px;
-	}
-	.ipa-toggle-chirho input:checked {
-		background-color: #355443;
-		border-color: #355443;
-	}
 	@container (max-width: 420px) {
 		.audio-playback-chirho {
 			flex-wrap: wrap;

@@ -6,7 +6,6 @@
 	import { greekCategoryChirho, type GreekTokenChirho } from '$lib/domain-chirho/greek-chirho';
 	import { greekAnalysisLocalizedChirho } from '$lib/i18n-chirho/labels-chirho';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
-	import { readerTChirho } from '$lib/i18n-chirho/reader-messages-chirho';
 	import { greekCuesChirho } from '$lib/domain-chirho/greek-cues-chirho';
 	import { greekCueHelpChirho } from '$lib/i18n-chirho/cue-help-chirho';
 	import HelpChirho from '../HelpChirho.svelte';
@@ -16,16 +15,11 @@
 	let {
 		tokenChirho,
 		textChirho,
-		iconChirho,
-		spanishGlossChirho = null,
-		meaningsOpenChirho
+		iconChirho
 	}: {
 		tokenChirho: GreekTokenChirho;
 		textChirho: string;
 		iconChirho?: ContextualIconChirho;
-		// The approved Spanish gloss, offered only while the interface is Spanish.
-		spanishGlossChirho?: string | null;
-		meaningsOpenChirho: boolean;
 	} = $props();
 	const categoryChirho = $derived(greekCategoryChirho(tokenChirho));
 	const cuesChirho = $derived(greekCuesChirho(tokenChirho));
@@ -66,7 +60,7 @@
 
 <!-- The cue row reserves intrinsic space, so short participles cannot collide with their case. -->
 <!-- prettier-ignore -->
-<span class="word-unit-chirho"><span class="sr-only-chirho" data-annotation-chirho lang={localeStateChirho.currentChirho}>{greekAnalysisLocalizedChirho(tokenChirho, localeStateChirho.currentChirho)}. </span><span class="word-pronunciation-chirho"><span class="word-surface-chirho greek-word-surface-chirho" style:background={backgroundChirho} style:border-bottom-color={tokenChirho.number_chirho === 'plural' ? paletteChirho.plural_chirho : 'transparent'}>{#if cuesChirho.left_chirho}<sup class="greek-cue-chirho greek-cue-left-chirho" data-greek-cue-chirho="tense-voice" data-annotation-chirho>{@render markerHelpChirho('left', cuesChirho.left_chirho)}</sup>{/if}{#if cuesChirho.center_chirho}<sup class="greek-cue-chirho greek-cue-center-chirho" data-greek-cue-chirho="case" data-annotation-chirho>{@render markerHelpChirho('center', cuesChirho.center_chirho)}</sup>{/if}{#if cuesChirho.right_chirho}<sup class="greek-cue-chirho greek-cue-right-chirho" data-greek-cue-chirho="person-mood" data-annotation-chirho>{@render markerHelpChirho('right', cuesChirho.right_chirho)}</sup>{/if}<a class="word-jump-chirho" id="verse-word-{tokenChirho.id_chirho}-chirho" href="#word-card-{tokenChirho.id_chirho}-chirho" data-word-jump-chirho="word-card-{tokenChirho.id_chirho}-chirho"><span class="greek-source-word-chirho" data-source-word-chirho>{textChirho}</span></a></span><SpeechButtonChirho tokenIdChirho={tokenChirho.id_chirho} textChirho={tokenChirho.text_chirho} languageChirho="grc" wordChirho compactChirho /></span><WordIpaChirho {tokenChirho} languageChirho="grc" /><IconChirho {iconChirho} tokenIdChirho={tokenChirho.id_chirho} posChirho={categoryChirho} {colorChirho} />{#if meaningsOpenChirho}<span class="meaning-chirho" data-annotation-chirho lang={localeStateChirho.currentChirho}>{#if spanishGlossChirho}{readerTChirho('top_meaning_spanish_chirho')} <span lang="es">{spanishGlossChirho}</span>{:else}{readerTChirho('top_meaning_berean_chirho')} {#if tokenChirho.gloss_chirho === null}{readerTChirho('meaning_unavailable_short_chirho')}{:else if tokenChirho.gloss_chirho === '-'}{readerTChirho('not_separately_short_chirho')}{:else}<span lang="en">{tokenChirho.gloss_chirho}</span>{/if}{/if}</span>{/if}</span>
+<span class="word-unit-chirho"><span class="sr-only-chirho" data-annotation-chirho lang={localeStateChirho.currentChirho}>{greekAnalysisLocalizedChirho(tokenChirho, localeStateChirho.currentChirho)}. </span><span class="word-pronunciation-chirho"><span class="word-surface-chirho greek-word-surface-chirho" style:background={backgroundChirho} style:border-bottom-color={tokenChirho.number_chirho === 'plural' ? paletteChirho.plural_chirho : 'transparent'}>{#if cuesChirho.left_chirho}<sup class="greek-cue-chirho greek-cue-left-chirho" data-greek-cue-chirho="tense-voice" data-annotation-chirho>{@render markerHelpChirho('left', cuesChirho.left_chirho)}</sup>{/if}{#if cuesChirho.center_chirho}<sup class="greek-cue-chirho greek-cue-center-chirho" data-greek-cue-chirho="case" data-annotation-chirho>{@render markerHelpChirho('center', cuesChirho.center_chirho)}</sup>{/if}{#if cuesChirho.right_chirho}<sup class="greek-cue-chirho greek-cue-right-chirho" data-greek-cue-chirho="person-mood" data-annotation-chirho>{@render markerHelpChirho('right', cuesChirho.right_chirho)}</sup>{/if}<a class="word-jump-chirho" data-meaning-token-chirho={tokenChirho.id_chirho} id="verse-word-{tokenChirho.id_chirho}-chirho" href="#word-card-{tokenChirho.id_chirho}-chirho" data-word-jump-chirho="word-card-{tokenChirho.id_chirho}-chirho"><span class="greek-source-word-chirho" data-source-word-chirho>{textChirho}</span></a></span><SpeechButtonChirho tokenIdChirho={tokenChirho.id_chirho} textChirho={tokenChirho.text_chirho} languageChirho="grc" wordChirho compactChirho /></span><WordIpaChirho {tokenChirho} languageChirho="grc" /><span class="word-meaning-chirho" data-word-meaning-chirho data-annotation-chirho dir="auto" hidden></span><IconChirho {iconChirho} tokenIdChirho={tokenChirho.id_chirho} posChirho={categoryChirho} {colorChirho} /></span>
 
 <style>
 	.word-jump-chirho {
@@ -101,12 +95,6 @@
 		justify-self: end;
 	}
 	.greek-source-word-chirho {
-		text-align: center;
-	}
-	.meaning-chirho {
-		max-width: 8rem;
-		font: 11px/1.4 sans-serif;
-		color: #4c5c50;
 		text-align: center;
 	}
 </style>
