@@ -2107,6 +2107,40 @@
     {
       "kind_chirho": "scene",
       "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-015-chirho/matt-015-038-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/b31e10b2f5df781039ebda7ea5c656fdcf9fc36daecc8b1edb2ff7edb057aeaa.webp",
+        "sha256_chirho": "b31e10b2f5df781039ebda7ea5c656fdcf9fc36daecc8b1edb2ff7edb057aeaa",
+        "bytes_chirho": 2655136,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T23:39:53.542Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/fd59b9b689810bc04302366e82725adccfe48550a9bbf19bc39b45c88e039628.webp",
+        "sha256_chirho": "fd59b9b689810bc04302366e82725adccfe48550a9bbf19bc39b45c88e039628",
+        "bytes_chirho": 267526,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T23:39:54.645Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
         "/assets-chirho/scenes-chirho/bible-schnell-v1-chirho/romans-chirho/chapter-005-chirho/rom-005-020-chirho.webp"
       ],
       "source_chirho": {

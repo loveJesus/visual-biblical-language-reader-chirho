@@ -10641,6 +10641,39 @@
       "generation_seed_chirho": 1,
       "source_phase_sha256_chirho": "c81cce595ec6a31d426ecd1ebefb2cab3e3601bc290c3f0dc1bfd7bea76e1591",
       "source_asr_sha256_chirho": "23e6aa5c836d6fcb5fd9ad1f61e31be3649c621c73f8dcedef8797532c685b17"
+    },
+    {
+      "id_chirho": "local-greek-v3640-chirho",
+      "lesson_id_chirho": "Acts.1.10",
+      "token_id_chirho": null,
+      "text_chirho": "καὶ ὡς ἀτενίζοντες ἦσαν εἰς τὸν οὐρανὸν πορευομένου αὐτοῦ, καὶ ἰδοὺ ἄνδρες δύο παρειστήκεισαν αὐτοῖς ἐν ἐσθήσεσι λευκαῖς,",
+      "synthesis_text_chirho": "και ως ατενίζοντες ήσαν εις τον ουρανόν πορευομένου αυτού, και ιδού άνδρες δύο παρειστήκεισαν αυτοίς εν εσθήσεσι λευκαίς,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "cd13aeb67424ebac157d3abdd8035b3b04b6b13b5033306f40f8304c9f2ccb6f",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "ee5590524309a21ba67451aba002f9bf0d25670445d2e784c9f4473cb6ec7137",
+      "raw_flac_sha256_chirho": "672908766ad3f7e60d2cf1e29ad02fd2084babc5f134b342dcecf957adb83319",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/23569c0d9990b7df7f14851a17ac0692085e5c6f906756c255cf2409896b111b-chirho.mp3",
+      "sha256_chirho": "23569c0d9990b7df7f14851a17ac0692085e5c6f906756c255cf2409896b111b",
+      "bytes_chirho": 49153,
+      "duration_chirho": 6.086531,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.1765
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "d750629608622cdfa3c4f27fc263bd9aaaa45980deeb18de5a98cf0ad49a23d4",
+      "source_asr_sha256_chirho": "94b8466ac36de4f9b11d6ab4a50010f66895ee2365a62e8e3d1245ff4fd15f72"
     }
   ]
 }

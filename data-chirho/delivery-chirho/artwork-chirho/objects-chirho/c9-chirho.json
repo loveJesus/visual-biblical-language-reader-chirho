@@ -6131,6 +6131,40 @@
         "model_chirho": "runware:100@1",
         "operation_chirho": "provider_passthrough"
       }
+    },
+    {
+      "kind_chirho": "scene",
+      "source_paths_chirho": [
+        "/assets-chirho/scenes-chirho/high-quality-v1-chirho/matthew-chirho/chapter-015-chirho/matt-015-029-chirho.webp"
+      ],
+      "source_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/c9ff8bc40589e817516f03914ad9372c8dabc1f30759603544781fd2359f4b5b.webp",
+        "sha256_chirho": "c9ff8bc40589e817516f03914ad9372c8dabc1f30759603544781fd2359f4b5b",
+        "bytes_chirho": 2726090,
+        "width_chirho": 1448,
+        "height_chirho": 1086,
+        "lossy_chirho": false,
+        "verified_at_chirho": "2026-11-09T23:23:55.920Z"
+      },
+      "delivery_chirho": {
+        "key_chirho": "media-chirho/sha256-chirho/d777e3da637ac78709c6b5feb53cf47963afa1858b93e3051a9a93872e96ce0a.webp",
+        "sha256_chirho": "d777e3da637ac78709c6b5feb53cf47963afa1858b93e3051a9a93872e96ce0a",
+        "bytes_chirho": 283522,
+        "width_chirho": 1200,
+        "height_chirho": 900,
+        "lossy_chirho": true,
+        "verified_at_chirho": "2026-11-09T23:23:57.099Z"
+      },
+      "recipe_chirho": {
+        "format_chirho": "webp",
+        "quality_chirho": 78,
+        "method_chirho": 6,
+        "max_width_chirho": 1200,
+        "alpha_quality_chirho": null,
+        "exact_chirho": false,
+        "metadata_chirho": "none",
+        "cwebp_version_chirho": "1.6.0\nlibsharpyuv: 0.4.2"
+      }
     }
   ]
 }

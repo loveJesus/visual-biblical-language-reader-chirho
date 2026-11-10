@@ -14524,6 +14524,39 @@
       "generation_seed_chirho": 1,
       "source_phase_sha256_chirho": "c81cce595ec6a31d426ecd1ebefb2cab3e3601bc290c3f0dc1bfd7bea76e1591",
       "source_asr_sha256_chirho": "23e6aa5c836d6fcb5fd9ad1f61e31be3649c621c73f8dcedef8797532c685b17"
+    },
+    {
+      "id_chirho": "local-greek-v3587-chirho",
+      "lesson_id_chirho": "John.20.11",
+      "token_id_chirho": null,
+      "text_chirho": "Μαρία δὲ εἱστήκει πρὸς τῷ μνημείῳ ἔξω κλαίουσα. ὡς οὖν ἔκλαιεν, παρέκυψεν εἰς τὸ μνημεῖον,",
+      "synthesis_text_chirho": "Μαρία δε ειστήκει προς τω μνημείω έξω κλαίουσα. ως ουν έκλαιεν, παρέκυψεν εις το μνημείον,",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "da77d25289ec6049af3cd2b00ce501b500f13c5134e5ce364532c0222c7f4aac",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "5d6df2815c7746bff7f774c2e02827ed69da446d2b21e0065ce318f7088b65e2",
+      "raw_flac_sha256_chirho": "d3d79ce3cdbb990188a557417ad531d5caefe9367a1a11eaf0dcaaf33c73739b",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/7d9da7c8c930b096f0c2d33f22b68b90c3dade57cc0238ed4d4679c459573818-chirho.mp3",
+      "sha256_chirho": "7d9da7c8c930b096f0c2d33f22b68b90c3dade57cc0238ed4d4679c459573818",
+      "bytes_chirho": 47899,
+      "duration_chirho": 5.929796,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2329
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "d750629608622cdfa3c4f27fc263bd9aaaa45980deeb18de5a98cf0ad49a23d4",
+      "source_asr_sha256_chirho": "94b8466ac36de4f9b11d6ab4a50010f66895ee2365a62e8e3d1245ff4fd15f72"
     }
   ]
 }

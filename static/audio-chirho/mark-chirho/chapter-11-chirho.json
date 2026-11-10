@@ -12687,6 +12687,39 @@
       "generation_seed_chirho": 1,
       "source_phase_sha256_chirho": "ee91189dd47556cff77517fe90ab1f4da0be470417fff83e36cb48afb876c6ad",
       "source_asr_sha256_chirho": "a9e11eacedf1b39c8e3127476eb5246d8e726473c643bc82f29368ef2dd7faf3"
+    },
+    {
+      "id_chirho": "local-greek-v1464-chirho",
+      "lesson_id_chirho": "Mark.11.13",
+      "token_id_chirho": null,
+      "text_chirho": "καὶ ἰδὼν συκῆν ἀπὸ μακρόθεν ἔχουσαν φύλλα ἦλθεν εἰ ἄρα τι εὑρήσει ἐν αὐτῇ, καὶ ἐλθὼν ἐπ’ αὐτὴν οὐδὲν εὗρεν εἰ μὴ φύλλα· ὁ γὰρ καιρὸς οὐκ ἦν σύκων.",
+      "synthesis_text_chirho": "και ιδών συκήν από μακρόθεν έχουσαν φύλλα ήλθεν ει άρα τι ευρήσει εν αυτή, και ελθών επ’ αυτήν ουδέν εύρεν ει μη φύλλα, ο γαρ καιρός ουκ ην σύκων.",
+      "recipe_id_chirho": "chatterbox-v3-modern-greek-verse-v1-chirho",
+      "canonical_sha256_chirho": "65f8ad8741ece00ddd24d5b771df775b0709695cdf64da1498e74ce9a99b8ed8",
+      "language_chirho": "el",
+      "pronunciation_chirho": "modern_greek",
+      "voice_name_chirho": "Chatterbox Multilingual V3 (built-in voice)",
+      "provider_chirho": "local",
+      "model_chirho": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18; t3 v3",
+      "model_license_chirho": "MIT",
+      "watermark_chirho": "Perth",
+      "original_mp3_sha256_chirho": "1f14865143a5fa8b4a7706edbfb985b28b83482115add0b8db4e5606a77f3bd4",
+      "raw_flac_sha256_chirho": "64d8ad5da3e12875076291ac58a3da15fb52dc34de0edcc8e86247becd86c4ef",
+      "derivation_chirho": "FLAC decoded; 44100Hz mono 64kbps MPEG-1 MP3; tail padded to a complete frame (0–26ms). No fidelity gain.",
+      "asset_path_chirho": "/audio-chirho/sha256-chirho/9741d7463ad5a4b5838a3159bf4bba107086d0d6962ee18d9c89335c2259f03e-chirho.mp3",
+      "sha256_chirho": "9741d7463ad5a4b5838a3159bf4bba107086d0d6962ee18d9c89335c2259f03e",
+      "bytes_chirho": 67752,
+      "duration_chirho": 8.411429,
+      "review_chirho": "audition",
+      "license_chirho": "CC BY 4.0",
+      "license_url_chirho": "https://creativecommons.org/licenses/by/4.0/",
+      "screening_chirho": {
+        "kind_chirho": "automated text check; not listener acceptance",
+        "cer_chirho": 0.2632
+      },
+      "generation_seed_chirho": 1,
+      "source_phase_sha256_chirho": "d750629608622cdfa3c4f27fc263bd9aaaa45980deeb18de5a98cf0ad49a23d4",
+      "source_asr_sha256_chirho": "94b8466ac36de4f9b11d6ab4a50010f66895ee2365a62e8e3d1245ff4fd15f72"
     }
   ]
 }
