@@ -54,20 +54,47 @@ class OrderedPoolChirho:
         )
 
     def recover_chirho(self):
-        for prepared_chirho in sorted(
+        prepared_chirho = []
+        for path_chirho in sorted(
             self.home_chirho.glob(f"attempt-{self.book_chirho.lower()}-*/prepared-chirho.json")
         ):
-            row_chirho = self.base_chirho.load_chirho(prepared_chirho)
+            row_chirho = self.base_chirho.load_chirho(path_chirho)
             if row_chirho["lesson_id_chirho"] not in self.by_id_chirho:
                 raise ValueError("Prepared record outside source queue")
+            prepared_chirho.append((path_chirho, row_chirho))
+        pending_reader_chirho = getattr(self.owner_chirho, "pending_prepared_chirho", None)
+        pending_chirho = pending_reader_chirho(self.root_chirho) if pending_reader_chirho else None
+        outside_chirho = (
+            pending_chirho is not None
+            and pending_chirho["lesson_id_chirho"] not in self.by_id_chirho
+        )
+        if outside_chirho and prepared_chirho:
+            self.status_chirho("waiting_for_archive")
+            return False
+        if pending_chirho is not None and not outside_chirho:
+            matches_chirho = [
+                item_chirho
+                for item_chirho in prepared_chirho
+                if item_chirho[1]["lesson_id_chirho"] == pending_chirho["lesson_id_chirho"]
+            ]
+            if len(matches_chirho) != 1 or matches_chirho[0][1] != pending_chirho:
+                raise ValueError(
+                    "Pending archive has no unique exact prepared output; reconcile first"
+                )
+            # UUID order has no authority over the append-only archive frontier.
+            first_chirho = matches_chirho[0]
+            prepared_chirho = [first_chirho] + [
+                item_chirho for item_chirho in prepared_chirho if item_chirho != first_chirho
+            ]
+        for path_chirho, row_chirho in prepared_chirho:
             self.owner_chirho.install_chirho(
                 self.root_chirho,
                 self.book_chirho,
                 self.by_id_chirho[row_chirho["lesson_id_chirho"]],
-                prepared_chirho.parent,
+                path_chirho.parent,
                 row_chirho,
             )
-            self.recovery_chirho.resolve_chirho(self.home_chirho, prepared_chirho.parent)
+            self.recovery_chirho.resolve_chirho(self.home_chirho, path_chirho.parent)
         path_chirho = self.owner_chirho.manifest_path_chirho(self.root_chirho, self.book_chirho)
         manifest_chirho = (
             self.base_chirho.load_chirho(path_chirho)
@@ -84,6 +111,9 @@ class OrderedPoolChirho:
                 self.root_chirho, self.by_id_chirho[identifier_chirho], row_chirho
             )
             self.seen_chirho.add(identifier_chirho)
+        if outside_chirho and len(self.seen_chirho) != len(self.jobs_chirho):
+            self.status_chirho("waiting_for_archive")
+            return False
         if not self.inflight_chirho.exists():
             return True
         previous_chirho = self.base_chirho.load_chirho(self.inflight_chirho)
@@ -164,7 +194,7 @@ class OrderedPoolChirho:
                 context_chirho["attempt_chirho"], finished_chirho=True
             )
 
-    def finish_chirho(self, context_chirho):
+    def prepare_chirho(self, context_chirho):
         context_chirho["future_chirho"].result()
         job_chirho, attempt_chirho = (
             context_chirho["job_chirho"],
@@ -172,12 +202,19 @@ class OrderedPoolChirho:
         )
         row_chirho = self.owner_chirho.record_chirho(self.root_chirho, job_chirho, attempt_chirho)
         self.base_chirho.atomic_json_chirho(attempt_chirho / "prepared-chirho.json", row_chirho)
-        self.owner_chirho.install_chirho(
-            self.root_chirho, self.book_chirho, job_chirho, attempt_chirho, row_chirho
+        return row_chirho
+
+    def install_prepared_chirho(self_chirho, context_chirho, row_chirho):
+        job_chirho, attempt_chirho = (
+            context_chirho["job_chirho"],
+            context_chirho["attempt_chirho"],
         )
-        self.recovery_chirho.resolve_chirho(self.home_chirho, attempt_chirho)
-        self.seen_chirho.add(job_chirho["id_chirho"])
-        self.failed_chirho = 0
+        self_chirho.owner_chirho.install_chirho(
+            self_chirho.root_chirho, self_chirho.book_chirho, job_chirho, attempt_chirho, row_chirho
+        )
+        self_chirho.recovery_chirho.resolve_chirho(self_chirho.home_chirho, attempt_chirho)
+        self_chirho.seen_chirho.add(job_chirho["id_chirho"])
+        self_chirho.failed_chirho = 0
 
     def run_chirho(self, generator_chirho, watch_chirho):
         if not self.recover_chirho():
@@ -193,11 +230,9 @@ class OrderedPoolChirho:
         fatal_chirho = None
         last_watch_chirho = 0
         with ThreadPoolExecutor(max_workers=self.concurrency_chirho) as pool_chirho:
-            while self.active_chirho or not exhausted_chirho:
-                if watch_chirho and time.monotonic() - last_watch_chirho >= 10:
-                    if watch_chirho() == "needs_reconciliation":
-                        print("Icon lane held; continuing independent verse scenes.", flush=True)
-                    last_watch_chirho = time.monotonic()
+
+            def refill_chirho():
+                nonlocal exhausted_chirho, fatal_chirho
                 while (
                     len(self.active_chirho) < self.concurrency_chirho
                     and not exhausted_chirho
@@ -206,6 +241,16 @@ class OrderedPoolChirho:
                     and self.failed_chirho < 3
                     and (self.failed_chirho == 0 or not self.active_chirho)
                 ):
+                    # Consume a peer's already-known failure before another external request.
+                    if any(
+                        item_chirho["future_chirho"].done()
+                        and (
+                            item_chirho["future_chirho"].cancelled()
+                            or item_chirho["future_chirho"].exception() is not None
+                        )
+                        for item_chirho in self.active_chirho
+                    ):
+                        break
                     job_chirho = next(pending_chirho, None)
                     if job_chirho is None:
                         exhausted_chirho = True
@@ -230,6 +275,13 @@ class OrderedPoolChirho:
                     context_chirho["future_chirho"] = pool_chirho.submit(
                         self.generate_chirho, generator_chirho, context_chirho
                     )
+
+            while self.active_chirho or not exhausted_chirho:
+                if watch_chirho and time.monotonic() - last_watch_chirho >= 10:
+                    if watch_chirho() == "needs_reconciliation":
+                        print("Icon lane held; continuing independent verse scenes.", flush=True)
+                    last_watch_chirho = time.monotonic()
+                refill_chirho()
                 if not self.active_chirho:
                     break
                 done_chirho, _waiting_chirho = wait(
@@ -241,7 +293,13 @@ class OrderedPoolChirho:
                     if context_chirho["future_chirho"] not in done_chirho:
                         continue
                     try:
-                        self.finish_chirho(context_chirho)
+                        row_chirho = self.prepare_chirho(context_chirho)
+                        # Prepared bytes survive a crash and recover before in-flight requests.
+                        # Only this finished slot is freed; the owner still installs serially.
+                        self.active_chirho.remove(context_chirho)
+                        self.checkpoint_chirho()
+                        refill_chirho()
+                        self.install_prepared_chirho(context_chirho, row_chirho)
                     except ERRORS_CHIRHO as error_chirho:
                         self.recovery_chirho.hold_chirho(
                             self.home_chirho,
@@ -261,7 +319,8 @@ class OrderedPoolChirho:
                             and error_chirho.errno in (13, 28, 30, 69)
                         ):
                             fatal_chirho = error_chirho
-                    self.active_chirho.remove(context_chirho)
+                    if context_chirho in self.active_chirho:
+                        self.active_chirho.remove(context_chirho)
                     self.checkpoint_chirho()
                 if fatal_chirho or self.failed_chirho >= 3 or self.owner_chirho.draining_chirho():
                     exhausted_chirho = True

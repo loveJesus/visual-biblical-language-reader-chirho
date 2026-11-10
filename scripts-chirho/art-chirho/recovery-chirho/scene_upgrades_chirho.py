@@ -80,6 +80,14 @@ def catalogue_chirho(root_chirho):
     return value_chirho
 
 
+def pending_prepared_chirho(root_chirho):
+    """Expose the exact unfinished archive; only the normal installer can advance it."""
+    document_chirho = catalogue_chirho(root_chirho)
+    rows_chirho = document_chirho["scenes_chirho"]
+    ready_chirho = document_chirho.get("archive_ready_count_chirho", len(rows_chirho))
+    return rows_chirho[ready_chirho] if ready_chirho < len(rows_chirho) else None
+
+
 def advance_archive_ready_chirho(root_chirho, record_chirho):
     """Workflow: media-delivery-chirho.md. Advance only after archive and checkpoint completion."""
     document_chirho = catalogue_chirho(root_chirho)

@@ -33,6 +33,12 @@ class ChapterOwnerChirho:
     def draining_chirho(self_chirho):
         return self_chirho.runner_chirho.draining_chirho()
 
+    def pending_prepared_chirho(self_chirho, root_chirho):
+        # A different chapter must not mistake an ongoing serialized install for a failed one.
+        return self_chirho.selected_chirho(
+            lambda: self_chirho.runner_chirho.pending_prepared_chirho(root_chirho)
+        )
+
     def record_chirho(self_chirho, *arguments_chirho):
         return self_chirho.runner_chirho.record_chirho(*arguments_chirho)
 

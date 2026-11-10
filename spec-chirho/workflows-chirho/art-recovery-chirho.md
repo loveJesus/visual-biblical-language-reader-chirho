@@ -324,7 +324,9 @@ flowchart TD
     recover_chirho --> capacity_chirho[At most three scene requests and 2 GiB free]
     capacity_chirho --> excerpt_chirho[Write exact one-verse source excerpt]
     excerpt_chirho --> generators_chirho[Same built-in generator and style]
-    generators_chirho --> owner_chirho[Single owner checks and installs pending art]
+    generators_chirho --> prepared_chirho[Owner verifies and fsyncs received output]
+    prepared_chirho --> capacity_chirho
+    prepared_chirho --> owner_chirho[Same owner installs while next renderer runs]
     owner_chirho --> capacity_chirho
     generators_chirho -->|item failure| hold_chirho[Retain attempt and continue disjoint verses]
     hold_chirho --> capacity_chirho
@@ -343,3 +345,7 @@ The October 30 handoff paused only the old serial Python owner, let its current 
 finish, inspected and installed John 6:69 through the normal tool-attested path, then replaced
 the paused owner. The icon child was retained. Its checkpoint and original source were saved
 under `build-chirho/30-10-ordered-pool-checkpoint-chirho/`; no image call was repeated.
+
+The shared ordered pool uses one-slot lookahead after a verified, fsynced prepared output. It refills only through the existing pending iterator and dispatch gates, checking already-completed peer failures before spending again. The installer stays on its original owner thread. The in-flight checkpoint still contains at most three requests; a separate saved output recovers before them. Drain prevents the refill. If installation fails after a replacement started, the saved result and at most three disjoint started requests remain bounded; unknown requests are never replayed and exact prepared outputs recover without regeneration.
+
+On recovery, the HQ owner exposes the exact incomplete catalogue record without changing its frontier. The matching chapter requires exactly one fully equal prepared record and installs it first, ahead of random attempt-folder order. Missing, changed or duplicate pending artifacts refuse before further installation or dispatch. Completed earlier scopes remain read-only; a different incomplete scope waits for that pending archive. Existing archive/source/checkpoint verification still runs for every recovered image.
