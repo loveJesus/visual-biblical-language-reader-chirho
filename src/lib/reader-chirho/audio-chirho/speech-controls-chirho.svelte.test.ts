@@ -288,11 +288,11 @@ testChirho(
 		});
 		hostChirho.setAttribute('data-speech-recordings-chirho', JSON.stringify(clipsChirho));
 		await viChirho.advanceTimersByTimeAsync(0);
-		expectChirho(statusChirho.textContent).toBe("Human reading · Rabbi Dan Be'eri.");
+		expectChirho(statusChirho.textContent).toMatch(/Human.*verse.*Rabbi Dan Be/u);
 		buttonChirho.click();
 		const humanChirho = ControlledAudioChirho.instancesChirho[0];
 		expectChirho(humanChirho.src).toContain('4'.repeat(64));
-		expectChirho(statusChirho.textContent).toBe("Playing the reading by Rabbi Dan Be'eri.");
+		expectChirho(statusChirho.textContent).toMatch(/Playing.*verse.*Rabbi Dan Be/u);
 		humanChirho.currentTime = 30;
 		viChirho.advanceTimersByTime(30_000);
 		expectChirho(humanChirho.paused).toBe(false);
@@ -623,5 +623,28 @@ testChirho(
 		wordButtonsChirho[0].click();
 		expectChirho(playedChirho).not.toHaveBeenCalled();
 		expectChirho(ControlledAudioChirho.instancesChirho.at(-1)!.src).toContain('4'.repeat(64));
+	}
+);
+
+testChirho(
+	'the active word control becomes Stop and cancels without adding a separate control',
+	() => {
+		const buttonsChirho = setupChirho(true);
+		const rootChirho = buttonsChirho[0].parentElement!;
+		rootChirho.querySelector('[data-speech-stop-chirho]')!.remove();
+		const messagesChirho = document.createElement('span');
+		messagesChirho.setAttribute(
+			'data-speech-messages-chirho',
+			JSON.stringify(AUDIO_MESSAGES_CHIRHO.en)
+		);
+		rootChirho.appendChild(messagesChirho);
+		const countChirho = rootChirho.querySelectorAll('button').length;
+		buttonsChirho[0].click();
+		expectChirho(buttonsChirho[0].getAttribute('aria-label')).toMatch(/stop/i);
+		expectChirho(rootChirho.querySelectorAll('button').length).toBe(countChirho);
+		buttonsChirho[0].click();
+		expectChirho(ControlledAudioChirho.instancesChirho[0].paused).toBe(true);
+		expectChirho(buttonsChirho[0].getAttribute('aria-label')).toMatch(/pronounce/i);
+		expectChirho(rootChirho.querySelectorAll('button').length).toBe(countChirho);
 	}
 );

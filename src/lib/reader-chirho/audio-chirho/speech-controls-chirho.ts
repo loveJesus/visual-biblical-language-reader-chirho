@@ -333,6 +333,22 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 	// Label the action the next click will actually take, using the same selected reading/video
 	// predicate as playback. A raw or failed video record cannot advertise motion.
 	function refreshVerseLabelsChirho() {
+		for (const wordButtonChirho of rootChirho.querySelectorAll<HTMLButtonElement>(
+			'.word-speech-chirho[data-pronounce-chirho]'
+		)) {
+			const activeChirho = activeButtonChirho === wordButtonChirho;
+			const labelChirho = messageChirho(
+				activeChirho ? 'stop_word_chirho' : 'pronounce_word_chirho',
+				{ word_chirho: wordButtonChirho.dataset.pronounceChirho ?? '' }
+			);
+			if (wordButtonChirho.getAttribute('aria-label') !== labelChirho)
+				wordButtonChirho.setAttribute('aria-label', labelChirho);
+			const textChirho = wordButtonChirho.querySelector('[data-word-action-label-chirho]');
+			const actionChirho = messageChirho(activeChirho ? 'stop_chirho' : 'hear_word_chirho');
+			if (textChirho && textChirho.textContent !== actionChirho)
+				textChirho.textContent = actionChirho;
+		}
+
 		for (const labelChirho of rootChirho.querySelectorAll<HTMLElement>(
 			'[data-verse-action-label-chirho]'
 		)) {
@@ -706,6 +722,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 		]
 	});
 	rootChirho.addEventListener('click', clickChirho);
+	rootChirho.addEventListener('hinneh-stop-playback-chirho', stopChirho);
 	rootChirho.addEventListener('change', changeChirho);
 	speechChirho?.addEventListener('voiceschanged', refreshChirho);
 	refreshChirho();
@@ -717,6 +734,7 @@ export function installSpeechChirho(rootChirho: Document | HTMLElement = documen
 			disposedChirho = true;
 			localeObserverChirho?.disconnect();
 			rootChirho.removeEventListener('click', clickChirho);
+			rootChirho.removeEventListener('hinneh-stop-playback-chirho', stopChirho);
 			rootChirho.removeEventListener('change', changeChirho);
 			speechChirho?.removeEventListener('voiceschanged', refreshChirho);
 		}

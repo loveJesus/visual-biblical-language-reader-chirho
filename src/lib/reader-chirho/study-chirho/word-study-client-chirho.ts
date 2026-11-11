@@ -6,6 +6,7 @@ export interface StudyExampleChirho {
 	text_chirho: string;
 }
 export interface StudyGlossChirho {
+	verse_ids_chirho?: string[];
 	gloss_chirho: string;
 	count_chirho: number;
 	examples_chirho: StudyExampleChirho[];
@@ -91,6 +92,14 @@ export function validStudyRecordChirho(rowChirho: WordStudyChirho): boolean {
 				groupChirho.count_chirho > 0 &&
 				Array.isArray(groupChirho.examples_chirho) &&
 				groupChirho.examples_chirho.length <= 3 &&
+				(groupChirho.verse_ids_chirho === undefined ||
+					(Array.isArray(groupChirho.verse_ids_chirho) &&
+						groupChirho.verse_ids_chirho.length <= 32000 &&
+						groupChirho.verse_ids_chirho.length <= groupChirho.count_chirho &&
+						new Set(groupChirho.verse_ids_chirho).size === groupChirho.verse_ids_chirho.length &&
+						groupChirho.verse_ids_chirho.every((idChirho) =>
+							/^[1-3]?[A-Za-z]+\.\d{1,3}\.\d{1,3}$/.test(idChirho)
+						))) &&
 				groupChirho.examples_chirho.every(
 					(exampleChirho) =>
 						/^[1-3]?[A-Za-z]+\.\d{1,3}\.\d{1,3}$/.test(exampleChirho.verse_chirho) &&

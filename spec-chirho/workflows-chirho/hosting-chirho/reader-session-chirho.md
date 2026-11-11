@@ -59,3 +59,23 @@ flowchart TD
 ```
 
 The same AudioVerse instance supplies the one primary action for either media path, with selectors and status retained. Scene has no duplicate caption Play. Below-art placement is shared by Hebrew and Greek; on narrow screens artwork and its transport precede the source words. The visible action keeps its selected-media label and Stop behavior. Scene/reading validation, failure fallback, cancellation, word speakers and pronunciation choices are unchanged.
+
+## Explicit study links, word Stop and AI handoff
+
+Study references use real passage URLs. Plain clicks inside the reader use the same explicit-navigation intent as the choosers and Next/Previous, respecting saved Autoplay. Modified clicks keep normal browser link behavior; cold loads and history restoration remain quiet. The active word speaker becomes Stop in place, then returns to Pronounce; there is no extra growing Stop row. Verse-reading status sits below scene actions, with space for ordinary status wrapping.
+
+Grammar cues use the accessible custom note without a native title tooltip. Delegated controls handle newly inserted words as well as the first render. Legend chips open their existing unfoldingWord topic in a separate tab; unsupported visual conventions use the grammar category rather than claiming a matching external explanation. This is an external reference, not a new internal grammar encyclopedia.
+
+```mermaid
+flowchart TD
+  AskChirho[Ask AI beside scene actions] --> SavedChirho{Valid local preferences?}
+  SavedChirho -->|No| SetupChirho[Choose provider mode and study focus]
+  SetupChirho --> StoreChirho[Store preference only or retain for visit]
+  SavedChirho -->|Yes| PreviewChirho[Current verified verse and optional question]
+  StoreChirho --> PreviewChirho
+  PreviewChirho --> CopyChirho[Explicit copy with selectable fallback]
+  CopyChirho --> OpenChirho[Explicit trusted external destination]
+  SettingsChirho[AI preferences in Settings] --> SetupChirho
+```
+
+AI preferences start unset and use localStorage only. Verse text and questions are never persisted or sent by Hinneh. An external provider opens only from its explicit link; there is no AI API, backend, provider prefetch, microphone request or D1 call. ChatGPT voice is a guided mobile copy/open flow, not automatic voice-session creation; other voice choices remain unavailable. Clipboard refusal opens and selects the visible prompt for manual copying. Closing or changing verse discards the question. Preferences remain usable for the visit if storage is denied.

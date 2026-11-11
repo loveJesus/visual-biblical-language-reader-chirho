@@ -110,3 +110,38 @@ export const greekKeyRowsChirho = [
 		)
 	}))
 ];
+
+// Workflow: hosting-chirho/reader-session-chirho.md. Verified unfoldingWord topic pages; local visual conventions keep category references.
+const greekReferenceBaseChirho = 'https://ugg.readthedocs.io/en/latest/';
+const greekReferencePagesChirho = new Map<string, string>([
+	['greek-noun-chirho', 'noun'],
+	['greek-verb-chirho', 'verb'],
+	['greek-adjective-chirho', 'adjective'],
+	['greek-particle-chirho', 'particle'],
+	['greek-pronoun-chirho', 'pronoun'],
+	['greek-article-chirho', 'determiner_article'],
+	['greek-masculine-chirho', 'gender_masculine'],
+	['greek-feminine-chirho', 'gender_feminine'],
+	['greek-neuter-chirho', 'gender_neuter'],
+	['greek-no-gender-chirho', 'gender'],
+	['greek-plural-chirho', 'number_plural'],
+	['greek-other-number-chirho', 'number']
+]);
+for (const [groupChirho, recordChirho] of Object.entries(greekCueGroupsChirho)) {
+	for (const [labelChirho, definitionChirho] of Object.entries(recordChirho.definitions_chirho)) {
+		const categoryChirho = groupChirho.replace('_chirho', '');
+		const topicChirho = labelChirho.replace(/^second /, '').replace(/ person$/, '');
+		const pageChirho =
+			categoryChirho === 'voice' && !['active', 'middle', 'passive'].includes(topicChirho)
+				? 'voice'
+				: categoryChirho + '_' + topicChirho.replace(/ /g, '_');
+		greekReferencePagesChirho.set(
+			`greek-${categoryChirho}-${definitionChirho.code_chirho.toLowerCase()}-chirho`,
+			pageChirho
+		);
+	}
+}
+export function greekKeyReferenceChirho(idChirho: string): string {
+	const pageChirho = greekReferencePagesChirho.get(idChirho);
+	return pageChirho ? greekReferenceBaseChirho + pageChirho + '.html' : greekReferenceBaseChirho;
+}

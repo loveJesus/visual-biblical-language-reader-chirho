@@ -49,6 +49,7 @@
 		headerChirho,
 		verseNavigationChirho,
 		autoplayControlsChirho,
+		aiControlsChirho,
 		presentationChirho = null,
 		iconsChirho = {},
 		spanishChirho = null,
@@ -69,6 +70,7 @@
 		headerChirho: Snippet;
 		verseNavigationChirho?: Snippet<[Snippet]>;
 		autoplayControlsChirho?: Snippet;
+		aiControlsChirho?: Snippet;
 		presentationChirho?: ScenePresentationChirho | null;
 		iconsChirho?: Record<string, ContextualIconChirho>;
 		spanishChirho?: SpanishLayerResultChirho | null;
@@ -271,6 +273,7 @@
 				{lessonChirho}
 				{verseNavigationChirho}
 				{autoplayControlsChirho}
+				{aiControlsChirho}
 				{sceneToolsChirho}
 				{mediaReadyChirho}
 				{videoChirho}

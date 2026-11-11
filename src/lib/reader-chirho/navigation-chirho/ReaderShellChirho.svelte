@@ -1,5 +1,7 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import AssistantPanelChirho from '../assistant-chirho/AssistantPanelChirho.svelte';
+	import { AI_MESSAGES_CHIRHO } from '../assistant-chirho/messages-chirho';
 	import AutoplayChirho from '../session-chirho/AutoplayChirho.svelte';
 	import type { Snippet } from 'svelte';
 	import { SvelteMap } from 'svelte/reactivity';
@@ -93,6 +95,10 @@
 	function bookLabelChirho(bookChirho: BookChirho) {
 		return bookNameChirho(bookChirho, localeStateChirho.currentChirho);
 	}
+	let assistantPanelChirho = $state<{
+		openAskChirho: () => void;
+		openSettingsChirho: () => void;
+	}>();
 	let bookChirho = $state<BookChirho>('Prov');
 	let greekLessonChirho = $state<GreekLessonChirho | null>(null);
 	let chaptersChirho = $state<ChapterEntryChirho[]>([]);
@@ -326,6 +332,32 @@
 			if (window.location.hash === `#${bookChirho}.${chapterChirho}.${verseChirho}`) return;
 			void restoreChirho();
 		};
+		const passageClickChirho = (eventChirho: MouseEvent) => {
+			if (
+				eventChirho.button !== 0 ||
+				eventChirho.metaKey ||
+				eventChirho.ctrlKey ||
+				eventChirho.shiftKey ||
+				eventChirho.altKey ||
+				!(eventChirho.target instanceof Element)
+			)
+				return;
+			const linkChirho = eventChirho.target.closest<HTMLAnchorElement>(
+				'a[data-passage-link-chirho]'
+			);
+			if (!linkChirho || !readerRootChirho?.contains(linkChirho)) return;
+			const passageChirho = openingPassageChirho('#' + linkChirho.dataset.passageLinkChirho);
+			if (!passageChirho) return;
+			eventChirho.preventDefault();
+			if (passageChirho.book_chirho !== bookChirho)
+				void changeBookChirho(
+					passageChirho.book_chirho,
+					passageChirho.chapter_chirho,
+					passageChirho.verse_chirho,
+					true
+				);
+			else void selectChirho(passageChirho.chapter_chirho, passageChirho.verse_chirho, true, true);
+		};
 		const cancelManualChirho = (eventChirho: Event) => {
 			const targetChirho = eventChirho.target;
 			if (
@@ -341,8 +373,11 @@
 		};
 		window.addEventListener('hashchange', hashChangedChirho);
 		document.addEventListener('click', cancelManualChirho, true);
+		document.addEventListener('click', passageClickChirho, true);
 		document.addEventListener('change', cancelManualChirho, true);
+		const stopStudyAutoplayChirho = () => sessionChirho?.cancelAutoplayChirho();
 		document.addEventListener('visibilitychange', visibilityChirho);
+		document.addEventListener('hinneh-stop-playback-chirho', stopStudyAutoplayChirho);
 		void prepareChirho()
 			.then(() => restoreChirho(true))
 			.finally(() => {
@@ -355,8 +390,10 @@
 			sessionChirho?.cancelAutoplayChirho();
 			window.removeEventListener('hashchange', hashChangedChirho);
 			document.removeEventListener('click', cancelManualChirho, true);
+			document.removeEventListener('click', passageClickChirho, true);
 			document.removeEventListener('change', cancelManualChirho, true);
 			document.removeEventListener('visibilitychange', visibilityChirho);
+			document.removeEventListener('hinneh-stop-playback-chirho', stopStudyAutoplayChirho);
 			window.clearInterval(timerChirho);
 		};
 	});
@@ -503,6 +540,17 @@
 	}
 </script>
 
+{#snippet aiControlsChirho()}
+	<button
+		type="button"
+		class="ask-ai-button-chirho"
+		disabled={loadingChirho}
+		onclick={() => assistantPanelChirho?.openAskChirho()}
+		>{AI_MESSAGES_CHIRHO[localeStateChirho.currentChirho].ask_chirho}
+		<span aria-hidden="true">✧</span></button
+	>
+{/snippet}
+
 {#snippet autoplayControlsChirho()}
 	<AutoplayChirho
 		enabledChirho={autoplayChirho}
@@ -540,6 +588,12 @@
 							>{sessionCopyChirho.today_chirho}<small>{sessionCopyChirho.today_hint_chirho}</small
 							></span
 						></label
+					>
+					<button
+						type="button"
+						class="ai-settings-button-chirho"
+						onclick={() => assistantPanelChirho?.openSettingsChirho()}
+						>{AI_MESSAGES_CHIRHO[localeStateChirho.currentChirho].settings_chirho}</button
 					>
 				</div>
 			</details>
@@ -691,6 +745,7 @@
 			{headerChirho}
 			{verseNavigationChirho}
 			{autoplayControlsChirho}
+			{aiControlsChirho}
 			iconsChirho={iconsForLessonChirho(workerIconsChirho, greekLessonChirho)}
 			presentationChirho={workerScenesChirho[greekLessonChirho.id_chirho] ?? null}
 			videoChirho={workerVideosChirho[greekLessonChirho.id_chirho] ?? null}
@@ -719,6 +774,7 @@
 			{headerChirho}
 			{verseNavigationChirho}
 			{autoplayControlsChirho}
+			{aiControlsChirho}
 			{spanishChirho}
 			translationsChirho={translationLanguageChirho === localeStateChirho.currentChirho
 				? (translationsChirho[`${bookChirho}.${chapterChirho}.${verseChirho}`] ?? null)
@@ -730,7 +786,44 @@
 	{/if}
 </div>
 
+<AssistantPanelChirho
+	bind:this={assistantPanelChirho}
+	verseChirho={bibleBookChirho(bookChirho).language_chirho === 'grc' && greekLessonChirho
+		? greekLessonChirho
+		: lessonChirho}
+/>
+
 <style>
+	.ask-ai-button-chirho {
+		min-height: 38px;
+		border: 1px solid #bbc8b2;
+		border-radius: 8px;
+		background: #f1f4eb;
+		color: #36513e;
+		padding: 7px 12px;
+		font-size: 12px;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.ask-ai-button-chirho span {
+		padding-left: 5px;
+	}
+	.ask-ai-button-chirho:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+	.navigation-chirho .ai-settings-button-chirho {
+		justify-self: start;
+		min-height: 38px;
+		padding: 7px 12px;
+		border: 1px solid #bdc9b4;
+		border-radius: 8px;
+		background: #f1f4eb;
+		color: #36513e;
+		font-size: 13px;
+		cursor: pointer;
+	}
+
 	.reader-tools-chirho {
 		display: flex;
 		flex-wrap: wrap;

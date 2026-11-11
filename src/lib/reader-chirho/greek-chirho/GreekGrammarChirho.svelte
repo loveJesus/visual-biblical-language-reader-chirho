@@ -1,7 +1,7 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
 	import HelpChirho from '../HelpChirho.svelte';
-	import { greekKeyRowsChirho } from './greek-key-chirho';
+	import { greekKeyRowsChirho, greekKeyReferenceChirho } from './greek-key-chirho';
 	import {
 		legendItemTextChirho,
 		legendRowTextChirho
@@ -34,6 +34,7 @@
 						{@const textChirho = legendItemTextChirho(itemChirho, localeStateChirho.currentChirho)}
 						<HelpChirho
 							idChirho={itemChirho.id_chirho}
+							hrefChirho={greekKeyReferenceChirho(itemChirho.id_chirho)}
 							labelChirho={textChirho.label_chirho}
 							helpChirho={textChirho.help_chirho}
 							styleChirho={itemChirho.style_chirho}

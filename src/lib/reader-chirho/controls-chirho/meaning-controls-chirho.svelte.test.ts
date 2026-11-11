@@ -81,3 +81,44 @@ testChirho(
 		).toBe('es');
 	}
 );
+
+testChirho(
+	'None hover uses Terse then Readers then the existing interface-language meaning',
+	async () => {
+		const hostChirho = fixtureChirho();
+		const dataChirho = hostChirho.querySelector<HTMLElement>('[data-verse-translations-chirho]')!;
+		const linkChirho = hostChirho.querySelector<HTMLElement>('a')!;
+		const setChirho = async (terseChirho: string | null, readersChirho: string | null) => {
+			dataChirho.dataset.verseTranslationsChirho = JSON.stringify({
+				...(terseChirho === null
+					? {}
+					: {
+							terse_chirho: {
+								words_chirho: [{ token_id_chirho: 'w1-chirho', gloss_chirho: terseChirho }]
+							}
+						}),
+				...(readersChirho === null
+					? {}
+					: {
+							readers_chirho: {
+								words_chirho: [{ token_id_chirho: 'w1-chirho', gloss_chirho: readersChirho }]
+							}
+						})
+			});
+			await new Promise((resolveChirho) => setTimeout(resolveChirho, 0));
+		};
+		await setChirho('short', 'expanded');
+		expectChirho(linkChirho.dataset.wordMeaningChirho).toBe('short');
+		expectChirho(hostChirho.querySelector<HTMLElement>('.word-meaning-chirho')!.hidden).toBe(true);
+		await setChirho('', 'expanded');
+		expectChirho(linkChirho.dataset.wordMeaningChirho).toBe('expanded');
+		await setChirho(null, null);
+		expectChirho(linkChirho.dataset.wordMeaningChirho).toBe('Word');
+		dataChirho.dataset.translationLocaleChirho = 'es';
+		await setChirho(null, null);
+		expectChirho(linkChirho.dataset.wordMeaningChirho).toBe('');
+		await setChirho('breve', 'amplio');
+		expectChirho(linkChirho.dataset.wordMeaningChirho).toBe('breve');
+		expectChirho(linkChirho.dataset.wordMeaningLanguageChirho).toBe('es');
+	}
+);

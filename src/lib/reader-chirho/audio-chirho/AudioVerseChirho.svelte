@@ -25,6 +25,7 @@
 		verseNavigationChirho,
 		sceneToolsChirho,
 		autoplayControlsChirho,
+		aiControlsChirho,
 		videoChirho = null,
 		onHumanReadingChirho,
 		navigationGenerationChirho = 0,
@@ -35,6 +36,7 @@
 		verseNavigationChirho?: Snippet<[Snippet]>;
 		sceneToolsChirho?: Snippet;
 		autoplayControlsChirho?: Snippet;
+		aiControlsChirho?: Snippet;
 		/** The catalogue's verse video, if any; it plays only as the clock of this same reading. */
 		videoChirho?: unknown;
 		/** Reports the verse's validated human reading (or null), so its credit can be shown in the Sources fold. */
@@ -213,9 +215,6 @@
 						playbackChirho
 					)}{:else}{@render playbackChirho()}{/if}
 			</div>
-			<button type="button" class="speech-stop-chirho" data-speech-stop-chirho disabled
-				>{audioTChirho('stop_chirho')}</button
-			>
 		</div>
 		<div class="audio-preferences-chirho">
 			<div class="audio-settings-chirho">
@@ -251,12 +250,21 @@
 						{@render autoplayControlsChirho()}
 					</div>{/if}
 			</div>
-			{#if sceneToolsChirho}{@render sceneToolsChirho()}{/if}
+			<div class="audio-scene-tools-chirho">
+				<div class="audio-scene-actions-chirho">
+					{#if aiControlsChirho}{@render aiControlsChirho()}{/if}{#if sceneToolsChirho}{@render sceneToolsChirho()}{/if}
+				</div>
+				<p
+					class="small-note-chirho"
+					id="audio-status-chirho"
+					data-audio-status-chirho
+					aria-live="polite"
+				>
+					{audioTChirho('checking_chirho')}
+				</p>
+			</div>
 		</div>
 	</div>
-	<p class="small-note-chirho" id="audio-status-chirho" data-audio-status-chirho aria-live="polite">
-		{audioTChirho('checking_chirho')}
-	</p>
 	{#if lessonChirho.language_chirho === 'grc'}<p class="small-note-chirho">
 			{audioTChirho('rendition_coverage_chirho')}
 		</p>{/if}
@@ -270,25 +278,48 @@
 </div>
 
 <style>
+	.audio-scene-actions-chirho {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		align-items: center;
+		justify-content: flex-end;
+	}
 	.audio-settings-chirho {
+		flex: 1 1 416px;
+		min-width: 0;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: start;
-		gap: 12px 20px;
+		gap: 12px;
 		max-width: 100%;
 	}
 	.audio-settings-chirho .audio-rate-field-chirho {
-		width: 128px;
+		width: 112px;
 	}
 	.audio-pronunciation-field-chirho {
-		width: min(196px, 100%);
+		width: min(180px, 100%);
 	}
 	.audio-autoplay-field-chirho {
 		padding-top: 15px;
 		max-width: 100%;
 	}
-	.audio-preferences-chirho > :global(button) {
+	.audio-scene-tools-chirho {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 8px;
 		margin-top: 21px;
+		max-width: min(100%, 240px);
+		flex: 1 1 134px;
+		min-width: 0;
+		text-align: end;
+	}
+	.audio-scene-tools-chirho .small-note-chirho {
+		min-height: 3em;
+		margin: 0;
+		font-size: 11px;
+		line-height: 1.5;
 	}
 
 	.audio-actions-chirho {
@@ -326,10 +357,6 @@
 	.verse-play-chirho :global(.speech-button-chirho) {
 		width: 100%;
 		min-height: 48px;
-	}
-	.speech-stop-chirho:disabled,
-	.audio-playback-chirho:has(:global(.verse-play-chirho [aria-busy='true'])) > .speech-stop-chirho {
-		display: none;
 	}
 
 	.verse-play-chirho {
@@ -380,11 +407,6 @@
 			width: 100%;
 			min-height: 44px;
 			padding-inline: 6px;
-		}
-		.speech-stop-chirho:disabled,
-		.audio-playback-chirho:has(:global(.verse-play-chirho [aria-busy='true']))
-			> .speech-stop-chirho {
-			display: none;
 		}
 	}
 </style>

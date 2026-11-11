@@ -80,9 +80,14 @@ def aggregate_chirho(content_chirho, layer_chirho, edition_chirho, records_chirh
                     "gloss_chirho": gloss_chirho,
                     "count_chirho": 0,
                     "examples_chirho": [],
+                    "verse_ids_chirho": [],
+                    "seen_verses_chirho": set(),
                 },
             )
             group_chirho["count_chirho"] += 1
+            if verse_chirho["id_chirho"] not in group_chirho["seen_verses_chirho"]:
+                group_chirho["seen_verses_chirho"].add(verse_chirho["id_chirho"])
+                group_chirho["verse_ids_chirho"].append(verse_chirho["id_chirho"])
             examples_chirho = group_chirho["examples_chirho"]
             if len(examples_chirho) < 3 and not any(
                 row_chirho["verse_chirho"] == verse_chirho["id_chirho"]
@@ -162,6 +167,8 @@ def build_chirho(root_chirho, output_chirho):
             shards_chirho = defaultdict(dict)
             for key_chirho, record_chirho in sorted(lemma_records_chirho.items()):
                 record_chirho["total_chirho"] = totals_chirho[key_chirho]
+                for group_chirho in record_chirho["glosses_chirho"].values():
+                    del group_chirho["seen_verses_chirho"]
                 record_chirho["glosses_chirho"] = sorted(
                     record_chirho["glosses_chirho"].values(),
                     key=lambda row_chirho: (

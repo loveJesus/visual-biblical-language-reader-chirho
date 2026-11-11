@@ -73,6 +73,15 @@ class WordStudyTestChirho(unittest.TestCase):
             "H157a",
         )
 
+    def test_repeated_lemma_in_one_verse_counts_uses_but_deduplicates_reference_chirho(self):
+        content_chirho, layer_chirho = self.fixture_chirho()
+        layer_chirho["verses_chirho"]["John.1.1"]["readers_chirho"]["words_chirho"][1]["gloss_chirho"] = "word"
+        rows_chirho = {}
+        module_chirho.aggregate_chirho(content_chirho, layer_chirho, "readers", rows_chirho)
+        group_chirho = rows_chirho["G3056"]["glosses_chirho"]["word"]
+        self.assertEqual(group_chirho["count_chirho"], 2)
+        self.assertEqual(group_chirho["verse_ids_chirho"], ["John.1.1"])
+
     def test_changed_token_identity_refuses_instead_of_counting_another_word_chirho(
         self,
     ):

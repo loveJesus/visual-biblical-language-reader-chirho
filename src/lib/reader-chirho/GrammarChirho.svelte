@@ -35,6 +35,7 @@
 						{@const textChirho = legendItemTextChirho(itemChirho, localeStateChirho.currentChirho)}
 						<HelpChirho
 							idChirho={itemChirho.id_chirho}
+							hrefChirho={itemChirho.source_chirho}
 							labelChirho={textChirho.label_chirho}
 							helpChirho={textChirho.help_chirho}
 							styleChirho={itemChirho.style_chirho}

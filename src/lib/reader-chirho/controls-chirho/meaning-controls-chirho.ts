@@ -80,7 +80,14 @@ export function installMeaningsChirho(rootChirho: Document = document): () => vo
 				selectedWordChirho ??
 				(originalChirho ? undefined : mapsChirho.get(fallbackModeChirho)?.get(tokenChirho));
 			const detailTextChirho = detailWordChirho?.textChirho ?? '';
-			const hoverTextChirho = originalChirho?.textContent?.trim() ?? detailTextChirho;
+			// None hides inline text; hover still prefers the current-language Terse then Readers edition.
+			const hoverWordChirho = [
+				selectedWordChirho,
+				mapsChirho.get('terse')?.get(tokenChirho),
+				mapsChirho.get('readers')?.get(tokenChirho)
+			].find((wordChirho) => wordChirho?.textChirho);
+			const hoverTextChirho =
+				hoverWordChirho?.textChirho ?? originalChirho?.textContent?.trim() ?? '';
 			if (linkChirho.dataset.wordMeaningChirho !== hoverTextChirho)
 				linkChirho.dataset.wordMeaningChirho = hoverTextChirho;
 			if (linkChirho.dataset.wordMeaningLanguageChirho !== languageChirho)

@@ -7,6 +7,7 @@
 		idChirho,
 		labelChirho,
 		helpChirho,
+		hrefChirho,
 		styleChirho = '',
 		langChirho,
 		helpLangChirho,
@@ -16,6 +17,7 @@
 		idChirho: string;
 		labelChirho: string;
 		helpChirho: string;
+		hrefChirho?: string;
 		styleChirho?: string;
 		// Language of the label and help; defaults to the interface. helpLangChirho marks a help
 		// body quoted from source data in another language.
@@ -29,7 +31,7 @@
 
 <!-- Keep the trigger's source text exact when this component wraps a flagged Hebrew word. -->
 <!-- prettier-ignore -->
-<button type="button" class="help-trigger-chirho {styleChirho}" data-help-trigger-chirho title={helpChirho} aria-describedby="{idChirho}-help-chirho" aria-expanded="false">{#if childrenChirho}{@render childrenChirho()}{:else}{labelChirho}{/if}</button><span
+<svelte:element this={hrefChirho ? 'a' : 'button'} type={hrefChirho ? undefined : 'button'} href={hrefChirho} target={hrefChirho ? '_blank' : undefined} rel={hrefChirho ? 'external noopener noreferrer' : undefined} hreflang={hrefChirho ? 'en' : undefined} class="help-trigger-chirho {styleChirho}" data-help-trigger-chirho aria-describedby="{idChirho}-help-chirho" aria-expanded="false">{#if childrenChirho}{@render childrenChirho()}{:else}{labelChirho}{/if}</svelte:element><span
 	class="help-popup-chirho"
 	id="{idChirho}-help-chirho"
 	role="tooltip"

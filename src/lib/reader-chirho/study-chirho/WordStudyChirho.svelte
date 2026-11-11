@@ -1,7 +1,8 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
 	import { resolve as resolveChirho } from '$app/paths';
-	import { referenceChirho } from '$lib/i18n-chirho/labels-chirho';
+	import StudyUseChirho from './StudyUseChirho.svelte';
+	import ContextUsesChirho from './ContextUsesChirho.svelte';
 	import { localeStateChirho } from '$lib/i18n-chirho/locale-state-chirho.svelte';
 	import { wordStudyClientChirho, type WordStudyChirho } from './word-study-client-chirho';
 	let { lemmaChirho, lexicalChirho }: { lemmaChirho: string; lexicalChirho: string } = $props();
@@ -11,6 +12,8 @@
 	let recordChirho = $state<WordStudyChirho | null>(null);
 	let statusChirho = $state<'loading' | 'ready' | 'failed'>('loading');
 	let pageChirho = $state(0);
+	let othersPageChirho = $state(0);
+	const othersChirho = $derived(recordChirho?.glosses_chirho.slice(6) ?? []);
 	let retryChirho = $state(0);
 	let filterChirho = $state('');
 	const filteredChirho = $derived(
@@ -68,6 +71,7 @@
 		recordChirho = null;
 		statusChirho = 'loading';
 		pageChirho = 0;
+		othersPageChirho = 0;
 		filterChirho = '';
 		wordStudyClientChirho
 			.wordChirho(languageChirho, editionChirho, keyChirho)
@@ -149,19 +153,55 @@
 				</div>
 			</div>
 			<ul class="study-legend-chirho">
-				{#each chartChirho as rowChirho, indexChirho (rowChirho.labelChirho)}<li>
-						<span class="study-swatch-chirho" style:background={colorsChirho[indexChirho]}
-						></span><span>{rowChirho.labelChirho}</span><strong
-							>{formatChirho(rowChirho.countChirho)}</strong
-						>
+				{#each chartChirho as rowChirho, indexChirho (rowChirho.labelChirho)}
+					<li class:study-other-row-chirho={indexChirho === 6}>
+						{#if indexChirho === 6}
+							<details class="study-other-chirho">
+								<summary
+									><i class="study-swatch-chirho" style:background={colorsChirho[indexChirho]}
+									></i><span>{rowChirho.labelChirho}</span><strong
+										>{formatChirho(rowChirho.countChirho)}</strong
+									></summary
+								>
+								<div class="other-translations-list-chirho">
+									{#each othersChirho.slice(othersPageChirho * 12, (othersPageChirho + 1) * 12) as groupChirho (groupChirho.gloss_chirho)}<StudyUseChirho
+											{groupChirho}
+											totalChirho={countChirho}
+											modeChirho={chosenModeChirho}
+										/>{/each}
+									<nav
+										class="study-pages-chirho"
+										aria-label={spanishChirho
+											? 'Páginas de otras traducciones'
+											: 'Other translation pages'}
+									>
+										<button
+											type="button"
+											disabled={othersPageChirho === 0}
+											onclick={() => (othersPageChirho -= 1)}>←</button
+										><span
+											>{othersPageChirho + 1}/{Math.max(1, Math.ceil(othersChirho.length / 12))} · {othersChirho.length}
+											{spanishChirho ? 'traducciones' : 'translations'}</span
+										><button
+											type="button"
+											disabled={(othersPageChirho + 1) * 12 >= othersChirho.length}
+											onclick={() => (othersPageChirho += 1)}>→</button
+										>
+									</nav>
+								</div>
+							</details>
+						{:else}<span class="study-swatch-chirho" style:background={colorsChirho[indexChirho]}
+							></span><span>{rowChirho.labelChirho}</span><strong
+								>{formatChirho(rowChirho.countChirho)}</strong
+							>{/if}
 					</li>{/each}
 			</ul>
 		</div>
 		<h4>{spanishChirho ? 'Traducciones y ejemplos' : 'Translations and examples'}</h4>
 		<p class="study-note-chirho">
 			{spanishChirho
-				? 'Abra una traducción para ver hasta tres ejemplos. Los recuentos incluyen las distintas formas del mismo lema.'
-				: 'Open a translation for up to three examples. Counts include the different forms of the same lemma.'}
+				? 'Abra una traducción para ver sus versículos. Pase el cursor por una referencia para ver el original y la traducción.'
+				: 'Open a translation to see its verses. Hover or focus a reference to preview the original and translation.'}
 		</p>
 		<label class="study-filter-chirho"
 			>{spanishChirho ? 'Buscar entre las traducciones' : 'Find a translation'}<input
@@ -177,24 +217,11 @@
 			{#if !filteredChirho.length}<p class="study-note-chirho">
 					{spanishChirho ? 'No hay traducciones que coincidan.' : 'No matching translations.'}
 				</p>{/if}
-			{#each visibleChirho as groupChirho (groupChirho.gloss_chirho)}<details>
-					<summary
-						><span>{groupChirho.gloss_chirho}</span><span class="study-count-chirho"
-							>{formatChirho(groupChirho.count_chirho)}
-							<small>{((groupChirho.count_chirho / countChirho) * 100).toFixed(1)}%</small></span
-						></summary
-					>
-					<ul>
-						{#each groupChirho.examples_chirho as exampleChirho (exampleChirho.verse_chirho)}<li>
-								<bdi dir="auto">{exampleChirho.text_chirho}</bdi><a
-									href={resolveChirho(
-										`/?lang_chirho=${localeStateChirho.currentChirho}#${exampleChirho.verse_chirho}`
-									)}
-									>{referenceChirho(exampleChirho.verse_chirho, localeStateChirho.currentChirho)}</a
-								>
-							</li>{/each}
-					</ul>
-				</details>{/each}
+			{#each visibleChirho as groupChirho (groupChirho.gloss_chirho)}<StudyUseChirho
+					{groupChirho}
+					totalChirho={countChirho}
+					modeChirho={chosenModeChirho}
+				/>{/each}
 		</div>
 		{#if filteredChirho.length > 12}<nav
 				class="study-pages-chirho"
@@ -202,7 +229,10 @@
 			>
 				<button type="button" disabled={pageChirho === 0} onclick={() => (pageChirho -= 1)}
 					>{spanishChirho ? 'Anterior' : 'Previous'}</button
-				><span>{pageChirho + 1} / {Math.ceil(filteredChirho.length / 12)}</span><button
+				><span
+					>{pageChirho + 1}/{Math.ceil(filteredChirho.length / 12)} · {filteredChirho.length}
+					{spanishChirho ? 'traducciones' : 'translations'}</span
+				><button
 					type="button"
 					disabled={(pageChirho + 1) * 12 >= filteredChirho.length}
 					onclick={() => (pageChirho += 1)}>{spanishChirho ? 'Siguiente' : 'Next'}</button
@@ -219,6 +249,7 @@
 					? 'usos alineados sin texto de traducción.'
 					: 'aligned uses have no translation text.'}
 			</p>{/if}
+		<ContextUsesChirho {recordChirho} {lemmaChirho} modeChirho={chosenModeChirho} />
 	{:else}<p>
 			{spanishChirho
 				? 'Esta edición aún no tiene usos alineados para este lema.'
@@ -237,6 +268,34 @@
 </section>
 
 <style>
+	.study-legend-chirho .study-other-row-chirho {
+		display: block;
+	}
+	.study-other-chirho > summary {
+		display: grid;
+		grid-template-columns: 8px minmax(0, 1fr) auto;
+		align-items: center;
+		gap: 9px;
+		padding: 0;
+		font-size: 12px;
+	}
+	.study-other-chirho > summary > span::before {
+		content: '+ ';
+		color: #819178;
+	}
+	.study-other-chirho[open] > summary > span::before {
+		content: '− ';
+	}
+	.other-translations-list-chirho {
+		border: 1px solid #dce2d5;
+		border-radius: 8px;
+		margin-top: 10px;
+		overflow: hidden;
+	}
+	.other-translations-list-chirho .study-pages-chirho {
+		padding: 8px;
+	}
+
 	.study-filter-chirho {
 		display: flex;
 		flex-direction: column;
@@ -400,9 +459,6 @@
 		border-radius: 10px;
 		overflow: hidden;
 	}
-	.study-uses-chirho details + details {
-		border-top: 1px solid #e4e8dd;
-	}
 	summary {
 		display: flex;
 		justify-content: space-between;
@@ -419,38 +475,9 @@
 	details[open] summary > span:first-child::before {
 		content: '− ';
 	}
-	.study-count-chirho {
-		flex-shrink: 0;
-		font-variant-numeric: tabular-nums;
-	}
-	.study-count-chirho small {
-		color: #7a8473;
-		display: inline-block;
-		min-width: 42px;
-		text-align: end;
-		font-size: 10px;
-	}
-	.study-uses-chirho ul {
-		list-style: none;
-		padding: 0 13px 10px;
-		margin: 0;
-	}
-	.study-uses-chirho li {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 12px;
-		padding: 5px 0;
-	}
-	.study-uses-chirho bdi {
-		font-size: 22px;
-	}
 	a {
 		color: #486943;
 		text-underline-offset: 3px;
-	}
-	.study-uses-chirho a {
-		font-size: 12px;
 	}
 	.study-pages-chirho {
 		display: flex;

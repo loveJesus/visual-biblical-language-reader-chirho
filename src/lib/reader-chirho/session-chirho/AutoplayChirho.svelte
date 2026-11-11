@@ -29,8 +29,8 @@
 				<li>
 					<strong>Safari (Mac):</strong>
 					{spanishChirho
-						? 'Safari → Ajustes de hinneh.us… → Reproducción automática → Permitir toda la reproducción automática.'
-						: 'Safari → Settings for hinneh.us… → Auto-Play → Allow All Auto-Play.'}
+						? 'Safari → Ajustes de hinneh.us… → Reproducción automática → Permitir toda la reproducción automática. Al abrir la página, puede ser necesario pulsar Reproducir una vez antes de cambiar de versículo con los menús.'
+						: 'Safari → Settings for hinneh.us… → Auto-Play → Allow All Auto-Play. Safari may still need one tap on Play after opening the page before changing verses with select menus.'}
 				</li>
 				<li>
 					<strong>Firefox:</strong>
