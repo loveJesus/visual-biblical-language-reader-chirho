@@ -33,15 +33,15 @@ const SPANISH_ITEMS_CHIRHO: Readonly<
 > = {
 	'masculine-chirho': [
 		'Masculino',
-		'El azul marca el género gramatical masculino según la fuente. El género gramatical no establece el sexo del referente.'
+		'Una clase gramatical marcada en azul. Los adjetivos, pronombres y formas verbales relacionadas pueden concordar con un sustantivo masculino en género y número. La concordancia ayuda a reconocer qué palabras se relacionan.'
 	],
 	'feminine-chirho': [
 		'Femenino',
-		'El rosa marca el género gramatical femenino según la fuente. Es independiente del número y de la clase de palabra.'
+		'Una clase gramatical marcada en rosa. Los adjetivos, pronombres y formas verbales relacionadas pueden concordar con un sustantivo femenino en género y número. La concordancia ayuda a reconocer qué palabras se relacionan.'
 	],
 	'clear-chirho': [
 		'Ambos / común',
-		'Un fondo transparente marca el género ambos/común según la fuente. Los detalles de la palabra lo distinguen de desconocido o no aplica.'
+		'Una forma que puede tener referencia masculina o femenina, como algunas formas verbales de primera persona, «yo» o «nosotros». Su fondo es transparente. Los detalles indican el género exacto según la fuente.'
 	],
 	'unknown-gender-chirho': [
 		'No aplica / desconocido',
@@ -49,11 +49,11 @@ const SPANISH_ITEMS_CHIRHO: Readonly<
 	],
 	'plural-chirho': [
 		'Plural',
-		'Una línea amarilla bajo la palabra marca el número plural según la fuente. El icono tiene su propio contorno.'
+		'Más de uno, como «reyes», «ellos» o «nosotros». La línea amarilla bajo la palabra marca el plural. El contorno de la imagen indica por separado la clase de palabra.'
 	],
 	'dual-chirho': [
 		'Dual',
-		'Una línea verde bajo la palabra marca el número dual según la fuente, a menudo asociado con un par.'
+		'Una forma de número que suele indicar dos o un par natural, como manos u ojos. La línea verde bajo la palabra marca el dual. La palabra concreta y la oración determinan la cantidad.'
 	],
 	'unmarked-chirho': [
 		'Sin línea',
@@ -61,100 +61,103 @@ const SPANISH_ITEMS_CHIRHO: Readonly<
 	],
 	'absolute-chirho': [
 		'i · absoluto',
-		'Una i romana minúscula centrada marca un sustantivo en estado absoluto. Aquí solo los sustantivos reciben este superíndice; el estado de los adjetivos queda en los detalles.'
+		'La forma habitual de un sustantivo cuando se usa por sí mismo, como «rey». En una cadena como «el rey de Israel», el último sustantivo suele estar en absoluto. Aquí se marca con una i centrada.'
 	],
 	'construct-chirho': [
 		'ii · constructo',
-		'Una ii romana minúscula centrada marca un sustantivo en estado constructo, usado en una construcción que lo une con lo que sigue. La determinación y la posesión no son estados adicionales.'
+		'Une un sustantivo con lo que sigue, a menudo mediante «de» en español, como «la palabra de Dios» o «el rey de Israel». Un sufijo puede señalar la persona relacionada, como «su palabra». Se marca con ii.'
 	],
 	'qal-chirho': [
 		'1 Qal',
-		'El tema básico puede expresar acciones o estados. No siempre corresponde a un verbo activo en la traducción. 1 es nuestro código local, colocado arriba a la izquierda del verbo.'
+		'El tema verbal básico del hebreo, un patrón de consonantes de la raíz y vocales. Puede expresar una acción, como «escribió», o un estado, como «era grande». El verbo concreto y el contexto dan el significado.'
 	],
 	'niphal-chirho': [
 		'2 Niphal',
-		'A menudo pasivo o medio, con variación léxica. Revise el verbo concreto y el contexto.'
+		'A menudo describe al sujeto recibiendo una acción o experimentando un cambio, como «fue guardado». También puede expresar la participación del propio sujeto, como «se reunieron». El verbo concreto determina el sentido.'
 	],
 	'piel-chirho': [
 		'3 Piel',
-		'Un tema con funciones léxicas variadas. No es un intensivo universal ni una acción más fuerte.'
+		'Un tema verbal que a menudo duplica la consonante central de la raíz. Su significado varía según el verbo, como «hablar» o «enseñar», y puede expresar un resultado o una acción intensificada. Consulte el verbo en su contexto.'
 	],
 	'pual-chirho': [
 		'4 Pual',
-		'A menudo la contraparte pasiva del Piel. El significado real depende del verbo.'
+		'Suele expresar la recepción de una acción Piel, como «fue enseñado». El sujeto experimenta la acción. El sentido preciso depende del verbo.'
 	],
 	'hiphil-chirho': [
 		'5 Hiphil',
-		'A menudo causativo, pero el contexto y el significado léxico siguen importando.'
+		'Suele expresar que alguien hace actuar a otra persona o cosa, o la lleva a un estado, como «hizo entrar» a partir de «entrar». Algunos verbos tienen sentidos más específicos en este tema.'
 	],
-	'hophal-chirho': ['6 Hophal', 'A menudo causativo pasivo, comúnmente relacionado con el Hiphil.'],
+	'hophal-chirho': [
+		'6 Hophal',
+		'Suele expresar la recepción de una acción causada, como «fue introducido». A menudo corresponde al Hiphil, donde alguien hace que ocurra esa acción.'
+	],
 	'hithpael-chirho': [
 		'7 Hithpael',
-		'A menudo reflexivo o medio, y a veces recíproco. También tiene otras funciones léxicas.'
+		'Suele describir al sujeto actuando sobre sí mismo, como «se escondió», o a varias personas actuando unas con otras. Algunos verbos tienen otros sentidos, por lo que el verbo concreto y la oración orientan la traducción.'
 	],
 	'qatal-chirho': [
 		'P qatal',
-		'Tradicionalmente llamado perfecto. El qatal no es un interruptor automático de tiempo pasado; el contexto determina su uso. P es un código didáctico local, colocado arriba a la derecha del verbo.'
+		'Tradicionalmente llamado perfecto. Suele presentar una acción como completa o un estado como establecido, como «escribió» o «ha escrito». La oración determina si la referencia temporal es pasada, presente o futura.'
 	],
 	'yiqtol-chirho': [
 		'I yiqtol',
-		'Tradicionalmente llamado imperfecto. El yiqtol no es un interruptor automático de tiempo futuro. La I es distinta de la M del imperativo. Una waw sola no establece un wayyiqtol.'
+		'Tradicionalmente llamado imperfecto. Suele describir una acción en desarrollo, repetida, posible o futura, como «escribe», «puede escribir» o «escribirá». La oración determina su tiempo y sentido.'
 	],
 	'imperative-chirho': [
 		'M imperativo',
-		'Una forma usada comúnmente en mandatos o peticiones. La M debe mantenerse distinta de la I del yiqtol.'
+		'Se dirige a alguien con una orden, instrucción o petición, como «¡escucha!» o «danos pan». La forma indica si se habla a una persona o a varias.'
 	],
 	'participle-chirho': [
 		'A participio',
-		'Un participio conserva su tema; 1A significa un participio Qal. Aquí la conjugación verbal es un grupo didáctico amplio: las conjugaciones finitas, más los participios e infinitivos no finitos. Su función en la oración sigue dependiendo del contexto.'
+		'Una forma verbal que puede describir una acción o a quien la realiza, como «guardando» o «el que guarda». Puede funcionar como verbo, adjetivo o sustantivo. El tema y el contexto orientan su sentido.'
 	],
 	'infinitive-construct-chirho': [
 		'C infinitivo constructo',
-		'Una forma verbal no finita con varios usos sintácticos. Es una forma verbal, no el numeral ii del estado del sustantivo.'
+		'Una forma verbal que puede nombrar una acción o relacionarla con otra, como «guardar», «para guardar» o «al guardar». Suele seguir a una preposición y puede llevar un sufijo.'
 	],
 	'infinitive-absolute-chirho': [
 		'B infinitivo absoluto',
-		'Una forma verbal no finita que puede enfatizar o matizar de otro modo una acción. Es distinta del estado absoluto i del sustantivo.'
+		'Una forma verbal que puede enfatizar otro verbo, como «ciertamente morirás», o describir cómo se realiza una acción. La oración determina su función.'
 	],
 	'weqatal-chirho': [
 		'W weqatal',
-		'La conjugación de perfecto secuencial se conecta con un verbo anterior en una secuencia de tiempo o de pensamiento. Su uso depende del contexto, no de un tiempo verbal fijo de la traducción. Puede parecerse a una waw + qatal ordinaria, así que el lector conserva la clasificación de la fuente en lugar de adivinarla a partir de la waw.'
+		'Waw más qatal usado para continuar una secuencia de sucesos o de pensamiento. Suele desarrollar instrucciones o una situación futura, como «entonces harás...». La oración determina su referencia temporal.'
 	],
 	'wayyiqtol-chirho': [
 		'Y wayyiqtol',
-		'La conjugación de imperfecto secuencial suele hacer avanzar una secuencia narrativa. Tiene un patrón especial de waw y es distinta de una waw + yiqtol ordinaria. Este nombre completo requiere morfología de la fuente; la sola presencia de la waw no lo establece.'
+		'Una forma verbal que suele hacer avanzar un relato, como «y dijo» o «entonces fue». Su patrón especial de waw ayuda a marcar el siguiente suceso narrado.'
 	],
 	'weyiqtol-chirho': [
 		'E weyiqtol',
-		'Waw conjuntiva ordinaria + yiqtol, con el yiqtol conservado como forma subyacente. Es distinta del wayyiqtol secuencial y por sí sola no asigna un tiempo verbal de la traducción. Esta etiqueta completa solo aparece cuando la fuente documenta explícitamente la construcción.'
+		'Una «y» ordinaria unida a yiqtol, como «y hará» o «y puede hacer». El yiqtol conserva su propio sentido, determinado por la oración.'
 	],
 	'jussive-chirho': [
 		'J yusivo',
-		'Una forma volitiva que expresa deseos, mandatos indirectos y significados afines según el contexto. Suele ser de tercera persona, pero las formas de segunda persona pueden expresar mandatos negativos. Puede parecerse al yiqtol; la clasificación de yusivo de la fuente se mantiene distinta tanto de la I del yiqtol como de la M del imperativo.'
+		'Expresa un deseo, permiso o mandato indirecto, como «que vaya» o «que sea». Suele ser de tercera persona. Con una negación también puede pedir a alguien que se abstenga de una acción.'
 	],
 	'cohortative-chirho': [
 		'O cohortativo',
-		'Una forma volitiva de primera persona que expresa peticiones, intenciones, deseos o significados afines según el contexto. Se parece al yiqtol, pero conserva su propia clasificación de la fuente y el código didáctico local O.'
+		'Una forma de primera persona que expresa intención, petición o decisión de quien habla, como «déjeme ir» o «vayamos». La terminación y la oración ayudan a determinar su sentido.'
 	],
 	'qatal-copulative-chirho': [
 		'Q waw + qatal',
-		'Un qatal unido por una waw copulativa ordinaria. Es distinto del weqatal secuencial aun cuando las formas escritas se parecen. El contexto y la clasificación registrada en la fuente determinan la distinción; una waw prefijada no basta.'
+		'Una «y» ordinaria unida a qatal, como «y escribió». La conjunción enlaza la oración con lo anterior. El contexto determina su referencia temporal.'
 	],
 	'noun-chirho': [
 		'Sustantivo',
-		'Un contorno redondeado verde azulado en el icono marca la palabra como sustantivo. El contorno codifica la clase de palabra, no el género.'
+		'Nombra una persona, lugar, cosa o idea, como «rey», «Jerusalén» o «sabiduría». Un contorno verde azulado alrededor de la imagen marca esta clase de palabra.'
 	],
 	'verb-chirho': [
 		'Verbo',
-		'Un contorno redondeado morado marca un verbo, incluidos los participios en este esquema didáctico.'
+		'Expresa una acción o un estado, como «escribió» o «era grande». Un contorno morado marca los verbos, incluidos los participios en esta clave de lectura.'
 	],
 	'adjective-chirho': [
 		'Adjetivo',
-		'Un contorno redondeado naranja marca un adjetivo. Un encabezado nominal del diccionario no prevalece sobre la morfología propia del versículo.'
+		'Describe un sustantivo, como «buena» en «una palabra buena». Su forma suele concordar con el sustantivo en género y número. Un contorno naranja marca esta clase de palabra.'
 	],
 	'particle-chirho': [
 		'Partícula',
-		'Un contorno redondeado gris marca una partícula. La morfología original propia del versículo sigue visible en los detalles.'
+		'Una palabra breve que enlaza o matiza otras palabras, como «y», «en» o «porque». El contorno gris agrupa estas palabras; los detalles indican su clase concreta.'
 	],
 	'unknown-pos-chirho': [
 		'Desconocido',
@@ -188,15 +191,15 @@ const SPANISH_ITEMS_CHIRHO: Readonly<
 	],
 	'greek-masculine-chirho': [
 		'Masculino',
-		'El azul marca el género gramatical masculino según el análisis de la fuente.'
+		'Una clase gramatical marcada en azul. Los artículos y adjetivos toman formas concordantes cuando acompañan a un sustantivo masculino. El género del sustantivo orienta esa concordancia.'
 	],
 	'greek-feminine-chirho': [
 		'Femenino',
-		'El rosa marca el género gramatical femenino según el análisis de la fuente.'
+		'Una clase gramatical marcada en rosa. Los artículos y adjetivos toman formas concordantes cuando acompañan a un sustantivo femenino. El género del sustantivo orienta esa concordancia.'
 	],
 	'greek-neuter-chirho': [
 		'Neutro',
-		'El gris marca el género gramatical neutro según el análisis de la fuente.'
+		'Una clase gramatical marcada en gris. Los artículos y adjetivos toman formas concordantes cuando acompañan a un sustantivo neutro. El género del sustantivo orienta esa concordancia.'
 	],
 	'greek-no-gender-chirho': [
 		'Desconocido o no aplica · transparente',
@@ -204,83 +207,131 @@ const SPANISH_ITEMS_CHIRHO: Readonly<
 	],
 	'greek-plural-chirho': [
 		'Plural · subrayado amarillo',
-		'El subrayado amarillo marca un análisis de la fuente con número plural.'
+		'Más de uno, como en «personas», «ellos» o «nosotros». El subrayado amarillo marca sustantivos, palabras relacionadas y formas verbales en plural.'
 	],
 	'greek-other-number-chirho': [
 		'Otro o desconocido · sin subrayado',
 		'No se subraya el número singular, desconocido o no aplicable.'
 	],
-	'greek-case-i-chirho': ['i nominativo', 'Caso nominativo, según el análisis de la fuente.'],
-	'greek-case-ii-chirho': ['ii genitivo', 'Caso genitivo, según el análisis de la fuente.'],
-	'greek-case-iii-chirho': ['iii dativo', 'Caso dativo, según el análisis de la fuente.'],
-	'greek-case-iv-chirho': ['iv acusativo', 'Caso acusativo, según el análisis de la fuente.'],
-	'greek-case-v-chirho': ['v vocativo', 'Caso vocativo, según el análisis de la fuente.'],
-	'greek-tense-p-chirho': ['P presente', 'La fuente analiza una forma de tiempo presente.'],
-	'greek-tense-i-chirho': ['I imperfecto', 'La fuente analiza una forma de tiempo imperfecto.'],
-	'greek-tense-f-chirho': ['F futuro', 'La fuente analiza una forma de tiempo futuro.'],
+	'greek-case-i-chirho': [
+		'i nominativo',
+		'Suele marcar el sujeto, la persona o cosa que actúa o de la que se dice algo. También aparece con verbos de enlace, como en «el Verbo era Dios», donde ambos sustantivos están en nominativo.'
+	],
+	'greek-case-ii-chirho': [
+		'ii genitivo',
+		'Suele relacionar un sustantivo con otra palabra, como «de Dios» o «el libro de Juan». Puede expresar posesión, una parte de algo, origen u otras relaciones. El contexto determina la conexión.'
+	],
+	'greek-case-iii-chirho': [
+		'iii dativo',
+		'Suele indicar quién recibe algo o a quién afecta la acción, como «a él» o «para ella». También expresa medio, lugar o tiempo, como «en el principio». El verbo o la preposición orientan su función.'
+	],
+	'greek-case-iv-chirho': [
+		'iv acusativo',
+		'Suele marcar el complemento directo, la persona o cosa a la que llega la acción, como «lo» en «ella lo vio». Con preposiciones también expresa dirección u otras relaciones.'
+	],
+	'greek-case-v-chirho': [
+		'v vocativo',
+		'Se usa para dirigirse directamente a alguien, como «¡Señor!» o «¡Maestro!». Identifica a la persona a quien se habla.'
+	],
+	'greek-tense-p-chirho': [
+		'P presente',
+		'Presenta una acción en desarrollo o repetida, como «está enseñando» o «enseña». En indicativo suele referirse al presente.'
+	],
+	'greek-tense-i-chirho': [
+		'I imperfecto',
+		'Presenta una acción en desarrollo o repetida en el pasado, como «estaba enseñando» o «solía enseñar». A menudo da el trasfondo de un relato.'
+	],
+	'greek-tense-f-chirho': [
+		'F futuro',
+		'Suele referirse a lo que sucederá, como «enseñará». La oración también puede darle el sentido de una promesa o una orden.'
+	],
 	'greek-tense-2f-chirho': [
 		'2F segundo futuro',
-		'La fuente distingue una forma de segundo futuro.'
+		'Una formación alternativa del futuro, a menudo con otra raíz o terminación. Como las demás formas de futuro, suele referirse a lo que sucederá.'
 	],
-	'greek-tense-a-chirho': ['A aoristo', 'La fuente analiza una forma de tiempo aoristo.'],
+	'greek-tense-a-chirho': [
+		'A aoristo',
+		'Presenta un acontecimiento en su conjunto, como «enseñó». En indicativo suele referirse al pasado. En otras formas verbales, la oración determina la referencia temporal.'
+	],
 	'greek-tense-2a-chirho': [
 		'2A segundo aoristo',
-		'La fuente distingue una forma de segundo aoristo.'
+		'Una formación alternativa del aoristo, con otra raíz. Presenta un acontecimiento en su conjunto, con el mismo sentido básico que las demás formas de aoristo.'
 	],
-	'greek-tense-r-chirho': ['R perfecto', 'La fuente analiza una forma de tiempo perfecto.'],
+	'greek-tense-r-chirho': [
+		'R perfecto',
+		'Destaca un estado que resulta de una acción anterior, como «ha escrito» o «está escrito». En indicativo, el estado resultante suele mantenerse en el presente.'
+	],
 	'greek-tense-2r-chirho': [
 		'2R segundo perfecto',
-		'La fuente distingue una forma de segundo perfecto.'
+		'Una formación alternativa del perfecto. Como las demás formas de perfecto, destaca un estado que resulta de una acción anterior.'
 	],
 	'greek-tense-l-chirho': [
 		'L pluscuamperfecto',
-		'La fuente analiza una forma de tiempo pluscuamperfecto.'
+		'Describe un estado resultante de una acción anterior, visto desde un momento del pasado, como «había escrito».'
 	],
 	'greek-tense-2l-chirho': [
 		'2L segundo pluscuamperfecto',
-		'La fuente distingue una forma de segundo pluscuamperfecto.'
+		'Una formación alternativa del pluscuamperfecto. Como las demás formas de este tiempo, contempla un estado resultante desde un momento del pasado.'
 	],
-	'greek-voice-a-chirho': ['a activa', 'Voz activa en el análisis de la fuente.'],
-	'greek-voice-m-chirho': ['m media', 'Voz media en el análisis de la fuente.'],
-	'greek-voice-p-chirho': ['p pasiva', 'Voz pasiva en el análisis de la fuente.'],
+	'greek-voice-a-chirho': [
+		'a activa',
+		'El sujeto realiza la acción o se encuentra en el estado que expresa el verbo, como «ella enseña» o «él está de pie».'
+	],
+	'greek-voice-m-chirho': [
+		'm media',
+		'El sujeto participa en su propia acción o resulta afectado por ella, como «él se lava» o «ella prepara algo para sí». El significado del verbo orienta la traducción.'
+	],
+	'greek-voice-p-chirho': [
+		'p pasiva',
+		'El sujeto recibe o experimenta la acción, como «él es enseñado». La oración también puede indicar quién realiza la acción.'
+	],
 	'greek-voice-e-chirho': [
 		'e media o pasiva',
-		'La fuente deja sin resolver la voz media o pasiva.'
+		'Estas terminaciones pueden expresar participación media, como «se lava», o recepción pasiva, como «es lavado». El verbo y el contexto determinan el sentido.'
 	],
 	'greek-voice-d-chirho': [
 		'd media deponente',
-		'La fuente la clasifica como media deponente; la indicación conserva esa clasificación.'
+		'Una forma media de un verbo llamado tradicionalmente deponente. Estos verbos suelen traducirse con voz activa en español, como «vengo». Su significado propio orienta la traducción.'
 	],
 	'greek-voice-o-chirho': [
 		'o pasiva deponente',
-		'La fuente la clasifica como pasiva deponente; la indicación conserva esa clasificación.'
+		'Una forma pasiva de un verbo llamado tradicionalmente deponente. Estas formas suelen describir una acción o experiencia del sujeto, como «fui». Su significado propio orienta la traducción.'
 	],
 	'greek-voice-n-chirho': [
 		'n media o pasiva deponente',
-		'La fuente la clasifica como media o pasiva deponente sin elegir entre ambas.'
+		'Una forma con terminaciones compartidas de media y pasiva, llamada tradicionalmente deponente. Suele traducirse con voz activa en español. El verbo y el contexto determinan el sentido.'
 	],
 	'greek-person-1-chirho': [
 		'1 primera',
-		'Primera persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.'
+		'Incluye a quien habla, como «yo» en singular o «nosotros» en plural. El subrayado amarillo marca el plural.'
 	],
 	'greek-person-2-chirho': [
 		'2 segunda',
-		'Segunda persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.'
+		'La persona a quien se habla, como «tú» o «vosotros». El subrayado amarillo marca el plural. La traducción también puede usar «usted» o «ustedes» según el trato.'
 	],
 	'greek-person-3-chirho': [
 		'3 tercera',
-		'Tercera persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.'
+		'La persona o cosa de la que se habla, como «él», «ella», «ello», «ellos» o «ellas». El subrayado amarillo marca el plural.'
 	],
-	'greek-mood-i-chirho': ['I indicativo', 'Una forma indicativa, según el análisis de la fuente.'],
-	'greek-mood-s-chirho': ['S subjuntivo', 'Una forma subjuntiva, según el análisis de la fuente.'],
-	'greek-mood-m-chirho': ['M imperativo', 'Una forma imperativa, según el análisis de la fuente.'],
+	'greek-mood-i-chirho': [
+		'I indicativo',
+		'Presenta una acción o un estado como una afirmación, o pregunta por ellos, como «él enseña» o «¿enseña él?».'
+	],
+	'greek-mood-s-chirho': [
+		'S subjuntivo',
+		'Se usa para posibilidades, propósitos, condiciones y exhortaciones, como «enseñe», «para que enseñe» o «vayamos». La oración determina su sentido.'
+	],
+	'greek-mood-m-chirho': [
+		'M imperativo',
+		'Expresa una orden, petición o instrucción, como «¡escucha!» o «danos pan».'
+	],
 	'greek-mood-n-chirho': [
 		'N infinitivo',
-		'Una forma de infinitivo; no tiene indicación de persona finita.'
+		'Una forma verbal que puede nombrar una actividad o completar otro verbo, como «enseñar» o «quiere enseñar».'
 	],
 	'greek-mood-p-chirho': [
 		'P participio',
-		'Un participio. Su caso documentado aparece en el centro; no tiene indicación de persona finita.'
+		'Una forma verbal que puede describir a una persona o cosa, como «el que enseña», o expresar circunstancias, como «mientras enseña». Su caso, número y género lo relacionan con la palabra que describe.'
 	]
 };
 

@@ -39,21 +39,21 @@ export const legendRowsChirho: LegendRowChirho[] = [
 			itemChirho(
 				'masculine-chirho',
 				'Masculine',
-				'Blue marks sourced masculine grammatical gender. Grammatical gender does not establish the sex of a referent.',
+				'A grammatical class marked in blue. Adjectives, pronouns and related verb forms can agree with a masculine noun in gender and number. This agreement helps show which words belong together.',
 				'gender_masculine',
 				'gender-masculine-chirho'
 			),
 			itemChirho(
 				'feminine-chirho',
 				'Feminine',
-				'Pink marks sourced feminine grammatical gender. It is independent of number and word class.',
+				'A grammatical class marked in pink. Adjectives, pronouns and related verb forms can agree with a feminine noun in gender and number. This agreement helps show which words belong together.',
 				'gender_feminine',
 				'gender-feminine-chirho'
 			),
 			itemChirho(
 				'clear-chirho',
 				'Both / common',
-				'A clear background marks sourced both/common gender. Word details distinguish this from unknown or not applicable.',
+				"A form usable with masculine or feminine reference, such as some first-person verb forms meaning 'I' or 'we'. It has a clear background. Word details give the source’s exact gender label.",
 				'gender_both'
 			),
 			itemChirho(
@@ -70,14 +70,14 @@ export const legendRowsChirho: LegendRowChirho[] = [
 			itemChirho(
 				'plural-chirho',
 				'Plural',
-				'A yellow line under the word marks sourced plural number. The sticker has its own outline.',
+				"More than one, as 'kings', 'they' or 'we'. The yellow line under the word marks plural number. The picture outline separately shows the word class.",
 				'number_plural',
 				'number-plural-chirho'
 			),
 			itemChirho(
 				'dual-chirho',
 				'Dual',
-				'A green line under the word marks sourced dual number, often associated with a pair.',
+				'A number form often used for two or a natural pair, such as hands or eyes. A green line under the word marks the dual. The particular word and sentence show the intended count.',
 				'number_dual',
 				'number-dual-chirho'
 			),
@@ -95,13 +95,13 @@ export const legendRowsChirho: LegendRowChirho[] = [
 			itemChirho(
 				'absolute-chirho',
 				'i · absolute',
-				'A centered lowercase Roman i marks a noun in the absolute state. Only nouns receive this superscript here; adjective state stays in details.',
+				"The usual form of a noun when it stands on its own, as 'king'. In a chain such as 'the king of Israel', the final noun is commonly absolute. A centered i marks this state here.",
 				'state_absolute'
 			),
 			itemChirho(
 				'construct-chirho',
 				'ii · construct',
-				'A centered lowercase Roman ii marks a noun in the construct state, used in a construction linking it with what follows. Definiteness and possession are not extra states.',
+				"Links a noun to what follows, often translated with 'of', as 'the word of God' or 'the king of Israel'. A suffix can express the connected person, as 'his word'. A centered ii marks this state.",
 				'state_construct'
 			)
 		]
@@ -112,43 +112,43 @@ export const legendRowsChirho: LegendRowChirho[] = [
 			itemChirho(
 				'qal-chirho',
 				'1 Qal',
-				'The basic stem can express actions or states. It does not always correspond to an active English verb. 1 is our local code, physically above the left of a verb.',
+				"The basic Hebrew verb stem, a pattern of root letters and vowels. It can express an action, as 'he wrote', or a state, as 'he was great'. The individual verb and its context give the meaning.",
 				'stem_qal'
 			),
 			itemChirho(
 				'niphal-chirho',
 				'2 Niphal',
-				'Often passive or middle, with lexical variation. Check the particular verb and context.',
+				"Often describes the subject receiving an action or undergoing a change, as 'was guarded'. It can also describe the subject’s own involvement, as 'gathered together'. The particular verb determines its meaning.",
 				'stem_niphal'
 			),
 			itemChirho(
 				'piel-chirho',
 				'3 Piel',
-				'A stem with varied lexical functions. It is not a universal intensive or stronger action.',
+				"A verb stem often formed with a doubled middle root letter. Its meaning varies by verb, as 'speak' or 'teach', and can express a resulting state or intensified action. Check the individual verb in context.",
 				'stem_piel'
 			),
 			itemChirho(
 				'pual-chirho',
 				'4 Pual',
-				'Often the passive counterpart of Piel. The actual meaning depends on the verb.',
+				"Often expresses the receiving side of a Piel action, as 'was taught'. The subject undergoes the action. Its precise meaning depends on the verb.",
 				'stem_pual'
 			),
 			itemChirho(
 				'hiphil-chirho',
 				'5 Hiphil',
-				'Often causative, but context and lexical meaning still matter.',
+				"Often expresses causing someone or something to act or enter a state, as 'brought in' from 'enter'. Some verbs have a more specialized meaning in this stem.",
 				'stem_hiphil'
 			),
 			itemChirho(
 				'hophal-chirho',
 				'6 Hophal',
-				'Often passive causative, commonly related to Hiphil.',
+				"Often expresses receiving a caused action, as 'was brought in'. It commonly corresponds to Hiphil, where someone causes that action.",
 				'stem_hophal'
 			),
 			itemChirho(
 				'hithpael-chirho',
 				'7 Hithpael',
-				'Often reflexive or middle, and sometimes reciprocal. It has other lexical functions too.',
+				"Often describes the subject acting on itself, as 'hid himself', or participants acting toward each other. Some verbs have other meanings, so the particular verb and sentence guide the translation.",
 				'stem_hithpael'
 			)
 		]
@@ -159,37 +159,37 @@ export const legendRowsChirho: LegendRowChirho[] = [
 			itemChirho(
 				'qatal-chirho',
 				'P qatal',
-				'Traditionally called perfect. Qatal is not an automatic past-tense switch; context determines its use. P is a local teaching code above the right of a verb.',
+				"Traditionally called perfect. Often presents an action as completed or a state as established, as 'he wrote' or 'he has written'. The sentence determines whether its time reference is past, present or future.",
 				'verb_perfect'
 			),
 			itemChirho(
 				'yiqtol-chirho',
 				'I yiqtol',
-				'Traditionally called imperfect. Yiqtol is not an automatic future-tense switch. I is distinct from imperative M. A waw alone does not establish wayyiqtol.',
+				"Traditionally called imperfect. Often describes an unfolding, repeated, possible or future action, as 'he writes', 'he may write' or 'he will write'. The sentence determines its time and force.",
 				'verb_imperfect'
 			),
 			itemChirho(
 				'imperative-chirho',
 				'M imperative',
-				'A form commonly used in commands or requests. M must remain distinct from yiqtol I.',
+				"Directly addresses someone with a command, instruction or request, as 'listen!' or 'give us bread'. Its form shows whether one or more people are addressed.",
 				'verb_imperative'
 			),
 			itemChirho(
 				'participle-chirho',
 				'A participle',
-				'A participle retains its stem; 1A means a Qal participle. Verb conjugation is a broad teaching group here: finite conjugations, plus non-finite participles and infinitives. Their function in a sentence still depends on context.',
+				"A verb form that can describe an action or the person doing it, as 'guarding' or 'the one guarding'. It may function like a verb, adjective or noun. Its stem and context guide its meaning.",
 				'verb'
 			),
 			itemChirho(
 				'infinitive-construct-chirho',
 				'C infinitive construct',
-				'A non-finite verb form with several syntactic uses. It is a verb form, not the noun-state numeral ii.',
+				"A verb form that can name an action or relate it to another action, as 'to guard', 'in order to guard' or 'when guarding'. It often follows a preposition and may carry a suffix.",
 				'infinitive_construct'
 			),
 			itemChirho(
 				'infinitive-absolute-chirho',
 				'B infinitive absolute',
-				'A non-finite verb form that may emphasize or otherwise qualify an action. It is distinct from noun absolute state i.',
+				"A verb form that can emphasize another verb, as 'you shall surely die', or describe how an action is done. Its function comes from the surrounding sentence.",
 				'infinitive_absolute'
 			),
 			...namedVerbFormsChirho.map((formChirho) =>
@@ -208,28 +208,28 @@ export const legendRowsChirho: LegendRowChirho[] = [
 			itemChirho(
 				'noun-chirho',
 				'Noun',
-				'A teal rounded icon outline marks the word as a noun. The outline encodes word class, not gender.',
+				"Names a person, place, thing or idea, as 'king', 'Jerusalem' or 'wisdom'. A teal outline around the picture marks this word class.",
 				'noun',
 				'pos-noun-chirho'
 			),
 			itemChirho(
 				'verb-chirho',
 				'Verb',
-				'A purple rounded outline marks a verb, including participles in this teaching scheme.',
+				"Expresses an action or state, as 'wrote' or 'was great'. A purple picture outline marks verbs, including participles in this reading key.",
 				'verb',
 				'pos-verb-chirho'
 			),
 			itemChirho(
 				'adjective-chirho',
 				'Adjective',
-				'An orange rounded outline marks an adjective. A dictionary noun heading does not override verse-specific morphology.',
+				"Describes a noun, as 'good' in 'a good word'. Its form commonly agrees with the noun in gender and number. An orange picture outline marks this word class.",
 				'adjective',
 				'pos-adjective-chirho'
 			),
 			itemChirho(
 				'particle-chirho',
 				'Particle',
-				'A gray rounded outline marks a particle. Raw verse-specific morphology remains visible in details.',
+				"A small word that connects or qualifies other words, as 'and', 'in' or 'because'. The gray picture outline groups these words, while the details give their particular kind.",
 				'particle',
 				'pos-particle-chirho'
 			),

@@ -37,7 +37,7 @@ export const namedVerbFormsChirho: readonly NamedVerbFormChirho[] = [
 		label_chirho: 'weqatal',
 		marker_chirho: 'W',
 		help_chirho:
-			'The sequential perfect conjugation connects with an earlier verb in a sequence of time or thought. Its use depends on context, not a fixed English tense. It can look like ordinary waw + qatal, so the reader preserves the sourced classification rather than guessing from waw.',
+			"Waw plus qatal used to continue a sequence of events or thought. It often follows through on instructions or a future situation, as 'then you shall do...'. The sentence determines its time reference.",
 		source_page_chirho: 'verb_sequential_perfect'
 	},
 	{
@@ -47,7 +47,7 @@ export const namedVerbFormsChirho: readonly NamedVerbFormChirho[] = [
 		label_chirho: 'wayyiqtol',
 		marker_chirho: 'Y',
 		help_chirho:
-			'The sequential imperfect conjugation often carries a narrative sequence forward. It has a specialized waw pattern and is distinct from ordinary waw + yiqtol. This full name requires sourced morphology; the presence of waw alone does not establish it.',
+			"A verb form that commonly carries a story forward, as 'and he said' or 'then he went'. Its special waw pattern helps mark the next event in the narrative.",
 		source_page_chirho: 'verb_sequential_imperfect'
 	},
 	{
@@ -57,7 +57,7 @@ export const namedVerbFormsChirho: readonly NamedVerbFormChirho[] = [
 		label_chirho: 'weyiqtol',
 		marker_chirho: 'E',
 		help_chirho:
-			'Ordinary conjunction waw + yiqtol, with yiqtol retained as the underlying form. It is distinct from sequential wayyiqtol and does not by itself assign an English tense. This full label appears only when the construction is explicitly sourced.',
+			"An ordinary 'and' joined to yiqtol, as 'and he will do' or 'and he may do'. Yiqtol keeps its own force, which the surrounding sentence determines.",
 		source_page_chirho: 'verb_imperfect'
 	},
 	{
@@ -67,7 +67,7 @@ export const namedVerbFormsChirho: readonly NamedVerbFormChirho[] = [
 		label_chirho: 'jussive',
 		marker_chirho: 'J',
 		help_chirho:
-			'A volitional form expressing wishes, indirect commands and related meanings according to context. It is commonly third person, but second-person forms can express negative commands. It may resemble yiqtol; sourced jussive classification remains distinct from both yiqtol I and imperative M.',
+			"Expresses a wish, permission or indirect command, as 'let him go' or 'may it be'. It is often third person. With a negative it can also tell someone to refrain from an action.",
 		source_page_chirho: 'verb_jussive'
 	},
 	{
@@ -77,7 +77,7 @@ export const namedVerbFormsChirho: readonly NamedVerbFormChirho[] = [
 		label_chirho: 'cohortative',
 		marker_chirho: 'O',
 		help_chirho:
-			'A first-person volitional form expressing requests, intentions, wishes or related meanings according to context. It resembles yiqtol but retains its own sourced classification and a distinct local teaching code O.',
+			"A first-person form expressing the speaker’s intention, request or resolve, as 'let me go' or 'let us go'. The ending and sentence help show its force.",
 		source_page_chirho: 'verb_cohortative'
 	},
 	{
@@ -87,7 +87,7 @@ export const namedVerbFormsChirho: readonly NamedVerbFormChirho[] = [
 		label_chirho: 'waw + qatal',
 		marker_chirho: 'Q',
 		help_chirho:
-			'Qatal joined by an ordinary copulative waw. It is distinct from sequential weqatal even when the written forms look alike. Context and the recorded source classification determine the distinction; a prefixed waw is not enough.',
+			"An ordinary 'and' joined to qatal, as 'and he wrote'. The conjunction links the clause to what comes before. The surrounding sentence determines its time reference.",
 		source_page_chirho: 'verb_sequential_perfect'
 	}
 ];

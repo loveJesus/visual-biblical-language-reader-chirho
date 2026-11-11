@@ -275,3 +275,15 @@ flowchart TD
 The browser loads the selected chapter layer on the same origin and caches at most four chapters. Translation and phonetics have separate saved choices. Missing editions and transliterations stay out of the choices. A saved choice applies when its data is available. Readers and Terse preserve the source word order, imported review status, and deliberate empty glosses. The display renders the source’s multiword separator as a space. The original word and recorded pronunciation identities do not change.
 
 The online dialog renders the same card as the lower list. Escape returns focus to the word, and View in all words focuses the card. Offline snapshots preserve word-card jumps, the saved phonetic control, and available word meanings. The word panel groups both display choices beneath the source text. The scene panel keeps the verse transport, speed and image reporting together. On wider panels Previous, Play and Next share a row. Narrow panels keep Play above the two step buttons.
+
+## November 11 grammar help
+
+```mermaid
+flowchart LR
+  parse_chirho[Recorded word grammar] --> cue_chirho[Existing displayed marker]
+  english_chirho[Shared plain-language grammar explanation] --> language_chirho[English or Spanish reading key]
+  language_chirho --> cue_chirho
+  cue_chirho --> popup_chirho[Mouseover, keyboard focus or tap]
+```
+
+The Greek cue descriptions and Hebrew legend descriptions explain common functions with short examples. They provide general teaching help while the recorded morphology and sentence context determine the interpretation of a particular word. The same localized descriptions appear on word markers and in the reading key. Source references include unfoldingWord [Greek dative](https://ugg.readthedocs.io/en/latest/case_dative.html), [Greek aorist](https://ugg.readthedocs.io/en/latest/tense_aorist.html), [Hebrew construct state](https://uhg.readthedocs.io/en/stable/state_construct.html), [Hebrew perfect](https://uhg.readthedocs.io/en/stable/verb_perfect.html), [Hebrew imperfect](https://uhg.readthedocs.io/en/stable/verb_imperfect.html), and [Piel](https://uhg.readthedocs.io/en/stable/stem_piel.html).

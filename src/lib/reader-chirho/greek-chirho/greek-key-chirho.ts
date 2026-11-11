@@ -55,19 +55,22 @@ export const greekKeyRowsChirho = [
 				id_chirho: 'greek-masculine-chirho',
 				label_chirho: 'Masculine',
 				style_chirho: 'gender-masculine-chirho',
-				help_chirho: 'Blue marks masculine grammatical gender as parsed in the source.'
+				help_chirho:
+					'A grammatical class shown in blue. Articles and adjectives use matching forms when they belong with a masculine noun. The noun’s gender guides this agreement.'
 			},
 			{
 				id_chirho: 'greek-feminine-chirho',
 				label_chirho: 'Feminine',
 				style_chirho: 'gender-feminine-chirho',
-				help_chirho: 'Pink marks feminine grammatical gender as parsed in the source.'
+				help_chirho:
+					'A grammatical class shown in pink. Articles and adjectives use matching forms when they belong with a feminine noun. The noun’s gender guides this agreement.'
 			},
 			{
 				id_chirho: 'greek-neuter-chirho',
 				label_chirho: 'Neuter',
 				style_chirho: 'greek-neuter-key-chirho',
-				help_chirho: 'Gray marks neuter grammatical gender as parsed in the source.'
+				help_chirho:
+					'A grammatical class shown in gray. Articles and adjectives use matching forms when they belong with a neuter noun. The noun’s gender guides this agreement.'
 			},
 			{
 				id_chirho: 'greek-no-gender-chirho',
@@ -84,7 +87,8 @@ export const greekKeyRowsChirho = [
 				id_chirho: 'greek-plural-chirho',
 				label_chirho: 'Plural · yellow underline',
 				style_chirho: 'number-plural-chirho',
-				help_chirho: 'The yellow underline marks a source parse of plural number.'
+				help_chirho:
+					'More than one, as in “people”, “they” or “we”. A yellow underline marks plural nouns, related words and verb forms.'
 			},
 			{
 				id_chirho: 'greek-other-number-chirho',
