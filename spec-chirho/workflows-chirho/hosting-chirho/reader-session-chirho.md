@@ -79,3 +79,5 @@ flowchart TD
 ```
 
 AI preferences start unset and use localStorage only. Verse text and questions are never persisted or sent by Hinneh. An external provider opens only from its explicit link; there is no AI API, backend, provider prefetch, microphone request or D1 call. ChatGPT voice is a guided mobile copy/open flow, not automatic voice-session creation; other voice choices remain unavailable. Clipboard refusal opens and selects the visible prompt for manual copying. Closing or changing verse discards the question. Preferences remain usable for the visit if storage is denied.
+
+Each reading-direction notice and recording-availability notice has a dismiss action. Local dismissal keys are separate for Hebrew and Greek and for the notice kind, so one language never hides the other's tip. Storage failure still permits a dismissal for the mounted visit. The information remains in Help after dismissal. No server, account, D1 or tracking state is involved.

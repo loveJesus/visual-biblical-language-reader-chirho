@@ -1,5 +1,6 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import ReaderNoticeChirho from './session-chirho/ReaderNoticeChirho.svelte';
 	import WordStudyChirho from '$lib/reader-chirho/study-chirho/WordStudyChirho.svelte';
 	import {
 		translationsForWordsChirho,
@@ -357,7 +358,11 @@
 				<SourceNotesChirho notesChirho={lessonChirho.source_notes_chirho} />
 				<VerseChirho {lessonChirho} {iconsChirho} />
 				<div class="verse-bottom-chirho">
-					<span class="small-note-chirho">{readerTChirho('read_rtl_chirho')}</span>
+					<ReaderNoticeChirho
+						languageChirho="he"
+						kindChirho="direction_chirho"
+						textChirho={readerTChirho('read_rtl_chirho')}
+					/>
 				</div>
 				<ReaderDisplayChirho verseIdChirho={lessonChirho.id_chirho} />
 			</div>

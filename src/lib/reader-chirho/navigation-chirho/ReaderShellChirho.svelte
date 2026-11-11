@@ -1,5 +1,6 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import { audioTChirho } from '../audio-chirho/audio-messages-chirho';
 	import AssistantPanelChirho from '../assistant-chirho/AssistantPanelChirho.svelte';
 	import { AI_MESSAGES_CHIRHO } from '../assistant-chirho/messages-chirho';
 	import AutoplayChirho from '../session-chirho/AutoplayChirho.svelte';
@@ -599,6 +600,11 @@
 			</details>
 			<details class="reader-help-chirho">
 				<summary>{sessionCopyChirho.help_chirho}</summary>
+				<p class="reader-tips-chirho">
+					{audioTChirho('hebrew_chirho')}: {readerTChirho('read_rtl_chirho')}<br />{audioTChirho(
+						'greek_chirho'
+					)}: {readerTChirho('read_ltr_chirho')}<br />{audioTChirho('rendition_coverage_chirho')}
+				</p>
 				<div class="help-links-chirho">
 					<a
 						href={resolveChirho(`/tutorial-chirho/?lang_chirho=${localeStateChirho.currentChirho}`)}
@@ -794,6 +800,13 @@
 />
 
 <style>
+	.reader-tips-chirho {
+		max-width: 52ch;
+		margin: 10px 0;
+		font-size: 12px;
+		line-height: 1.7;
+		color: #64745f;
+	}
 	.ask-ai-button-chirho {
 		min-height: 38px;
 		border: 1px solid #bbc8b2;
