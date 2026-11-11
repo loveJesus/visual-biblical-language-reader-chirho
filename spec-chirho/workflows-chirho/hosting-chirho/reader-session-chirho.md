@@ -26,6 +26,8 @@ flowchart TD
   BlockedChirho -->|Yes| ManualChirho[Manual Play remains available]
 ```
 
+Autoplay appears once beside Speed in the media controls, with a compact Problems disclosure beneath it. The existing session object remains its only storage and navigation-intent owner. Top Settings retains the start-today choice. The disclosure gives Safari site settings, Firefox audio/video permission and Chrome/Edge first-interaction guidance; changing the switch never changes browser permissions.
+
 Preferences use local storage only. Today and autoplay default on; an explicitly saved false keeps either preference off. Storage denial falls back to these defaults without preventing reading, and choices still work for the current visit. Only a successfully validated source replaces the single last-passage value. Neither foregrounding, hash restoration, retry, rendition changes nor closing the welcome creates an autoplay intent.
 
 After mounting, the pure mobile-store helper selects an existing App Store link for iPhone, iPad, iPod or touch-enabled desktop-mode iPadOS, or an existing Google Play link for Android. Desktop, unknown and legacy Windows Phone browsers receive no mobile suggestion. The matching optional link appears only in Welcome and Help; the tutorial remains available. Browser properties are used locally for this display hint, without network lookups, tracking or device persistence. A store opens only when the reader chooses its link.

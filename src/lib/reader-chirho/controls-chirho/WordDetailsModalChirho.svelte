@@ -91,6 +91,10 @@
 </dialog>
 
 <style>
+	.word-modal-body-chirho :global(.back-to-verse-chirho) {
+		position: static;
+	}
+
 	.word-details-modal-chirho {
 		width: min(620px, calc(100vw - 24px));
 		max-height: calc(100dvh - 32px);

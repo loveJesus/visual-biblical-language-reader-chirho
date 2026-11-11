@@ -8,6 +8,7 @@ import { WELCOME_HERO_CHIRHO } from '../../src/lib/site-chirho/apps-chirho/welco
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { readWebpChirho } from './webp_chirho';
+import { isStudyPathChirho } from './study-chirho/rules-chirho';
 import { isGlossPathChirho } from './gloss_rules_chirho';
 import { BIBLE_BOOKS_CHIRHO } from '../../src/lib/bible-chirho/books-chirho';
 import { isAudioPathChirho } from './audio_rules_chirho';
@@ -23,6 +24,10 @@ export const RELEASE_HEADERS_CHIRHO = `/*
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Content-Security-Policy: frame-ancestors 'none'; object-src 'none'; base-uri 'self'
+/study-chirho/manifest-chirho.json
+  Cache-Control: no-cache
+/study-chirho/shards-chirho/*
+  Cache-Control: public, max-age=31536000, immutable
 /_app/*
   X-Robots-Tag: noindex
   Cache-Control: no-cache
@@ -143,6 +148,7 @@ export function classifyPathChirho(pathChirho: string): FileAreaChirho | string 
 		/^tutorial-chirho\/(?:quick-tour-chirho\.json|(?:en|es)-(?:poster-chirho\.webp|captions-chirho\.vtt))$/.test(
 			pathChirho
 		) ||
+		isStudyPathChirho(pathChirho) ||
 		isGlossPathChirho(pathChirho) ||
 		isAudioPathChirho(pathChirho) ||
 		SHARD_PATH_CHIRHO.test(pathChirho)

@@ -1,5 +1,6 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import AutoplayChirho from '../session-chirho/AutoplayChirho.svelte';
 	import type { Snippet } from 'svelte';
 	import { SvelteMap } from 'svelte/reactivity';
 	import { onMount, untrack, tick as tickChirho } from 'svelte';
@@ -502,6 +503,16 @@
 	}
 </script>
 
+{#snippet autoplayControlsChirho()}
+	<AutoplayChirho
+		enabledChirho={autoplayChirho}
+		onChangeChirho={(enabledChirho) => {
+			autoplayChirho = enabledChirho;
+			preferencesChangedChirho();
+		}}
+	/>
+{/snippet}
+
 {#snippet headerChirho()}
 	<nav
 		id="reader-chirho"
@@ -527,20 +538,6 @@
 							}}
 						/><span
 							>{sessionCopyChirho.today_chirho}<small>{sessionCopyChirho.today_hint_chirho}</small
-							></span
-						></label
-					>
-					<label
-						><input
-							type="checkbox"
-							checked={autoplayChirho}
-							onchange={(eventChirho) => {
-								autoplayChirho = eventChirho.currentTarget.checked;
-								preferencesChangedChirho();
-							}}
-						/><span
-							>{sessionCopyChirho.autoplay_chirho}<small
-								>{sessionCopyChirho.autoplay_hint_chirho}</small
 							></span
 						></label
 					>
@@ -693,6 +690,7 @@
 			lessonChirho={greekLessonChirho}
 			{headerChirho}
 			{verseNavigationChirho}
+			{autoplayControlsChirho}
 			iconsChirho={iconsForLessonChirho(workerIconsChirho, greekLessonChirho)}
 			presentationChirho={workerScenesChirho[greekLessonChirho.id_chirho] ?? null}
 			videoChirho={workerVideosChirho[greekLessonChirho.id_chirho] ?? null}
@@ -720,6 +718,7 @@
 				: contextualIconsChirho}
 			{headerChirho}
 			{verseNavigationChirho}
+			{autoplayControlsChirho}
 			{spanishChirho}
 			translationsChirho={translationLanguageChirho === localeStateChirho.currentChirho
 				? (translationsChirho[`${bookChirho}.${chapterChirho}.${verseChirho}`] ?? null)

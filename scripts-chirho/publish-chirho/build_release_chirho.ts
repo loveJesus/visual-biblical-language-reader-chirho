@@ -19,6 +19,7 @@ import { spawnSync } from 'node:child_process';
 import { mkdir, readdir, readFile, realpath, rename, rm, writeFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
+import { verifyWordStudyChirho } from './study-chirho/rules-chirho';
 import { verifyGlossesChirho } from './gloss_rules_chirho';
 import { verifyAudioChirho } from './audio_rules_chirho';
 import { loadAudioSourceBodiesChirho } from './r2-chirho/audio-source-chirho';
@@ -285,6 +286,7 @@ export async function buildReleaseChirho(optionsChirho: BuildOptionsChirho): Pro
 	)
 		reasonsChirho.push('Sitemap differs from the public route registry');
 	verifyGlossesChirho(publicChirho, reasonsChirho);
+	verifyWordStudyChirho(publicChirho, reasonsChirho);
 	if (remoteModeChirho && optionsChirho.preview_chirho)
 		await loadAudioSourceBodiesChirho(
 			publicChirho,

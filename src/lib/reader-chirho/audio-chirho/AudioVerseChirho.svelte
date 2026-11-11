@@ -24,6 +24,7 @@
 		lessonChirho,
 		verseNavigationChirho,
 		sceneToolsChirho,
+		autoplayControlsChirho,
 		videoChirho = null,
 		onHumanReadingChirho,
 		navigationGenerationChirho = 0,
@@ -33,6 +34,7 @@
 		lessonChirho: LessonChirho | GreekLessonChirho;
 		verseNavigationChirho?: Snippet<[Snippet]>;
 		sceneToolsChirho?: Snippet;
+		autoplayControlsChirho?: Snippet;
 		/** The catalogue's verse video, if any; it plays only as the clock of this same reading. */
 		videoChirho?: unknown;
 		/** Reports the verse's validated human reading (or null), so its credit can be shown in the Sources fold. */
@@ -245,6 +247,9 @@
 						<option value="1">{audioTChirho('normal_chirho')}</option>
 					</select>
 				</label>
+				{#if autoplayControlsChirho}<div class="audio-autoplay-field-chirho">
+						{@render autoplayControlsChirho()}
+					</div>{/if}
 			</div>
 			{#if sceneToolsChirho}{@render sceneToolsChirho()}{/if}
 		</div>
@@ -265,6 +270,27 @@
 </div>
 
 <style>
+	.audio-settings-chirho {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: start;
+		gap: 12px 20px;
+		max-width: 100%;
+	}
+	.audio-settings-chirho .audio-rate-field-chirho {
+		width: 128px;
+	}
+	.audio-pronunciation-field-chirho {
+		width: min(196px, 100%);
+	}
+	.audio-autoplay-field-chirho {
+		padding-top: 15px;
+		max-width: 100%;
+	}
+	.audio-preferences-chirho > :global(button) {
+		margin-top: 21px;
+	}
+
 	.audio-actions-chirho {
 		flex-direction: column;
 		align-items: stretch;
@@ -273,7 +299,7 @@
 	.audio-preferences-chirho {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: end;
+		align-items: start;
 		justify-content: space-between;
 		gap: 10px 12px;
 	}

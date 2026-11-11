@@ -1,5 +1,6 @@
 <!-- For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. — John 3:16 (KJV) -->
 <script lang="ts">
+	import WordStudyChirho from '$lib/reader-chirho/study-chirho/WordStudyChirho.svelte';
 	import {
 		translationsForWordsChirho,
 		type VerseTranslationsChirho
@@ -47,6 +48,7 @@
 		lessonChirho,
 		headerChirho,
 		verseNavigationChirho,
+		autoplayControlsChirho,
 		presentationChirho = null,
 		iconsChirho = {},
 		spanishChirho = null,
@@ -66,6 +68,7 @@
 		lessonChirho: GreekLessonChirho;
 		headerChirho: Snippet;
 		verseNavigationChirho?: Snippet<[Snippet]>;
+		autoplayControlsChirho?: Snippet;
 		presentationChirho?: ScenePresentationChirho | null;
 		iconsChirho?: Record<string, ContextualIconChirho>;
 		spanishChirho?: SpanishLayerResultChirho | null;
@@ -267,6 +270,7 @@
 			<AudioVerseChirho
 				{lessonChirho}
 				{verseNavigationChirho}
+				{autoplayControlsChirho}
 				{sceneToolsChirho}
 				{mediaReadyChirho}
 				{videoChirho}
@@ -313,9 +317,10 @@
 				cardIdChirho={`word-card-${selectedWordChirho}-chirho`}
 				triggerChirho={selectedTriggerChirho}
 				onCloseChirho={() => (selectedWordChirho = null)}
-				>{@render wordCardChirho(
-					lessonChirho.tokens_chirho[selectedIndexChirho]
-				)}</WordDetailsModalChirho
+				>{@render wordCardChirho(lessonChirho.tokens_chirho[selectedIndexChirho])}<WordStudyChirho
+					lemmaChirho={lessonChirho.tokens_chirho[selectedIndexChirho].lemma_id_chirho}
+					lexicalChirho={lessonChirho.tokens_chirho[selectedIndexChirho].lexical_form_chirho}
+				/></WordDetailsModalChirho
 			>
 		{/if}
 		<section

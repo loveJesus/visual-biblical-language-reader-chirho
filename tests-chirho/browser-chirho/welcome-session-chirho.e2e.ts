@@ -199,7 +199,7 @@ for (const platformChirho of [
 						)
 					).toHaveCount(0);
 				await pageChirho.locator('.reader-settings-chirho summary').click();
-				const autoplayChirho = pageChirho.locator('.reader-settings-chirho input').nth(1);
+				const autoplayChirho = pageChirho.getByRole('switch');
 				await expectChirho(autoplayChirho).toBeChecked();
 				await autoplayChirho.uncheck();
 				expectChirho(
