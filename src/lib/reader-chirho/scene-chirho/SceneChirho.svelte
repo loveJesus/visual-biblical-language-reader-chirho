@@ -20,21 +20,37 @@
 		/** The catalogue's record for this verse; shown only if it starts from the scene displayed here. */
 		videoChirho?: unknown;
 		canonicalTextChirho?: string;
-		controlsChirho?: Snippet<[Snippet]>;
+		controlsChirho?: Snippet<[Snippet, boolean]>;
 	} = $props();
-	let canonicalShaChirho = $state('');
+	let canonicalCheckChirho = $state<{ text_chirho: string; sha256_chirho: string } | null>(null);
+	const canonicalShaChirho = $derived(
+		canonicalCheckChirho?.text_chirho === canonicalTextChirho
+			? canonicalCheckChirho.sha256_chirho
+			: ''
+	);
+	// Workflow: hosting-chirho/reader-session-chirho.md. Autoplay waits for this scene's check,
+	// including a settled rejection, before the shared selector can fall back to audio.
+	const mediaReadyChirho = $derived(
+		!canonicalTextChirho || canonicalCheckChirho?.text_chirho === canonicalTextChirho
+	);
 	$effect(() => {
 		const textChirho = canonicalTextChirho;
 		let currentChirho = true;
-		canonicalShaChirho = '';
+		canonicalCheckChirho = null;
 		if (textChirho)
 			void crypto.subtle
 				.digest('SHA-256', new TextEncoder().encode(textChirho))
 				.then((digestChirho) => {
 					if (currentChirho)
-						canonicalShaChirho = Array.from(new Uint8Array(digestChirho), (byteChirho) =>
-							byteChirho.toString(16).padStart(2, '0')
-						).join('');
+						canonicalCheckChirho = {
+							text_chirho: textChirho,
+							sha256_chirho: Array.from(new Uint8Array(digestChirho), (byteChirho) =>
+								byteChirho.toString(16).padStart(2, '0')
+							).join('')
+						};
+				})
+				.catch(() => {
+					if (currentChirho) canonicalCheckChirho = { text_chirho: textChirho, sha256_chirho: '' };
 				});
 		return () => {
 			currentChirho = false;
@@ -212,7 +228,8 @@
 	{/snippet}
 	<div class="scene-controls-chirho">
 		{#if controlsChirho}{@render controlsChirho(
-				sceneToolsChirho
+				sceneToolsChirho,
+				mediaReadyChirho
 			)}{:else}{@render sceneToolsChirho()}{/if}
 	</div>
 	{#if presentationChirho?.representation_reduced_chirho && sceneChirho}<figcaption

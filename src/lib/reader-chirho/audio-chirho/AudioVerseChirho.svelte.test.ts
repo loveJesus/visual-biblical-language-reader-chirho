@@ -381,3 +381,20 @@ testChirho(
 		}
 	}
 );
+
+testChirho(
+	'recordings cannot announce autoplay readiness before their scene has settled',
+	async () => {
+		const reportedChirho: string[] = [];
+		const { container: containerChirho } = renderChirho(AudioVerseChirho, {
+			lessonChirho: lessonForChirho(1),
+			mediaReadyChirho: false,
+			navigationGenerationChirho: 7,
+			onReadyChirho: (lessonIdChirho, generationChirho) => {
+				reportedChirho.push(`${lessonIdChirho}:${generationChirho}`);
+			}
+		});
+		await viChirho.waitFor(() => expectChirho(recordingsLoadedChirho(containerChirho)).toBe(1));
+		expectChirho(reportedChirho).toEqual([]);
+	}
+);

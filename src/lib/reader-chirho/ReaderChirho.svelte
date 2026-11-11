@@ -326,11 +326,12 @@
 				)}</span
 			>
 		</div>
-		{#snippet mediaControlsChirho(sceneToolsChirho: Snippet)}
+		{#snippet mediaControlsChirho(sceneToolsChirho: Snippet, mediaReadyChirho: boolean)}
 			<AudioVerseChirho
 				{lessonChirho}
 				{verseNavigationChirho}
 				{sceneToolsChirho}
+				{mediaReadyChirho}
 				{videoChirho}
 				{navigationGenerationChirho}
 				onReadyChirho={onRecordingsReadyChirho}

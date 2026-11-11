@@ -27,7 +27,8 @@
 		videoChirho = null,
 		onHumanReadingChirho,
 		navigationGenerationChirho = 0,
-		onReadyChirho
+		onReadyChirho,
+		mediaReadyChirho = true
 	}: {
 		lessonChirho: LessonChirho | GreekLessonChirho;
 		verseNavigationChirho?: Snippet<[Snippet]>;
@@ -38,8 +39,10 @@
 		onHumanReadingChirho?: (readingChirho: RecordingChirho | null) => void;
 		navigationGenerationChirho?: number;
 		onReadyChirho?: (lessonIdChirho: string, generationChirho: number) => void;
+		mediaReadyChirho?: boolean;
 	} = $props();
 	let recordingsChirho = $state<RecordingChirho[]>([]);
+	let settledChirho = $state<{ lesson_chirho: string; generation_chirho: number } | null>(null);
 	// Workflow: verse-media-chirho.md. The verse button plays this reading first; its credit is shown by
 	// the reader in the verse's Sources fold (L.J., 2026-11-07: credits in an info view, not the main UI).
 	const humanReadingChirho = $derived(
@@ -131,11 +134,18 @@
 								? 'modern_aspirates'
 								: 'modern';
 						// The captured generation prevents an older A callback from starting a later A visit.
-						onReadyChirho?.(currentLessonChirho.id_chirho, generationChirho);
+						settledChirho = {
+							lesson_chirho: currentLessonChirho.id_chirho,
+							generation_chirho: generationChirho
+						};
 					}
 				},
 				() => {
-					if (currentChirho) onReadyChirho?.(currentLessonChirho.id_chirho, generationChirho);
+					if (currentChirho)
+						settledChirho = {
+							lesson_chirho: currentLessonChirho.id_chirho,
+							generation_chirho: generationChirho
+						};
 					/* Optional recordings never remove the source or device fallback. */
 				}
 			);
@@ -145,6 +155,15 @@
 			currentChirho = false;
 			window.clearInterval(timerChirho);
 		};
+	});
+	$effect(() => {
+		const readyChirho = settledChirho;
+		if (
+			mediaReadyChirho &&
+			readyChirho?.lesson_chirho === lessonChirho.id_chirho &&
+			readyChirho.generation_chirho === navigationGenerationChirho
+		)
+			untrack(() => onReadyChirho?.(readyChirho.lesson_chirho, readyChirho.generation_chirho));
 	});
 </script>
 
