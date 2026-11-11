@@ -140,9 +140,9 @@
 					"style_chirho": "gender-masculine-chirho",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/gender_masculine.html",
 					"label_en_chirho": "Masculine",
-					"help_en_chirho": "Blue marks sourced masculine grammatical gender. Grammatical gender does not establish the sex of a referent.",
+					"help_en_chirho": "A grammatical class marked in blue. Adjectives, pronouns and related verb forms can agree with a masculine noun in gender and number. This agreement helps show which words belong together.",
 					"label_es_chirho": "Masculino",
-					"help_es_chirho": "El azul marca el género gramatical masculino según la fuente. El género gramatical no establece el sexo del referente.",
+					"help_es_chirho": "Una clase gramatical marcada en azul. Los adjetivos, pronombres y formas verbales relacionadas pueden concordar con un sustantivo masculino en género y número. La concordancia ayuda a reconocer qué palabras se relacionan.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -150,9 +150,9 @@
 					"style_chirho": "gender-feminine-chirho",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/gender_feminine.html",
 					"label_en_chirho": "Feminine",
-					"help_en_chirho": "Pink marks sourced feminine grammatical gender. It is independent of number and word class.",
+					"help_en_chirho": "A grammatical class marked in pink. Adjectives, pronouns and related verb forms can agree with a feminine noun in gender and number. This agreement helps show which words belong together.",
 					"label_es_chirho": "Femenino",
-					"help_es_chirho": "El rosa marca el género gramatical femenino según la fuente. Es independiente del número y de la clase de palabra.",
+					"help_es_chirho": "Una clase gramatical marcada en rosa. Los adjetivos, pronombres y formas verbales relacionadas pueden concordar con un sustantivo femenino en género y número. La concordancia ayuda a reconocer qué palabras se relacionan.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -160,9 +160,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/gender_both.html",
 					"label_en_chirho": "Both / common",
-					"help_en_chirho": "A clear background marks sourced both/common gender. Word details distinguish this from unknown or not applicable.",
+					"help_en_chirho": "A form usable with masculine or feminine reference, such as some first-person verb forms meaning 'I' or 'we'. It has a clear background. Word details give the source’s exact gender label.",
 					"label_es_chirho": "Ambos / común",
-					"help_es_chirho": "Un fondo transparente marca el género ambos/común según la fuente. Los detalles de la palabra lo distinguen de desconocido o no aplica.",
+					"help_es_chirho": "Una forma que puede tener referencia masculina o femenina, como algunas formas verbales de primera persona, «yo» o «nosotros». Su fondo es transparente. Los detalles indican el género exacto según la fuente.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -186,9 +186,9 @@
 					"style_chirho": "number-plural-chirho",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/number_plural.html",
 					"label_en_chirho": "Plural",
-					"help_en_chirho": "A yellow line under the word marks sourced plural number. The sticker has its own outline.",
+					"help_en_chirho": "More than one, as 'kings', 'they' or 'we'. The yellow line under the word marks plural number. The picture outline separately shows the word class.",
 					"label_es_chirho": "Plural",
-					"help_es_chirho": "Una línea amarilla bajo la palabra marca el número plural según la fuente. El icono tiene su propio contorno.",
+					"help_es_chirho": "Más de uno, como «reyes», «ellos» o «nosotros». La línea amarilla bajo la palabra marca el plural. El contorno de la imagen indica por separado la clase de palabra.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -196,9 +196,9 @@
 					"style_chirho": "number-dual-chirho",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/number_dual.html",
 					"label_en_chirho": "Dual",
-					"help_en_chirho": "A green line under the word marks sourced dual number, often associated with a pair.",
+					"help_en_chirho": "A number form often used for two or a natural pair, such as hands or eyes. A green line under the word marks the dual. The particular word and sentence show the intended count.",
 					"label_es_chirho": "Dual",
-					"help_es_chirho": "Una línea verde bajo la palabra marca el número dual según la fuente, a menudo asociado con un par.",
+					"help_es_chirho": "Una forma de número que suele indicar dos o un par natural, como manos u ojos. La línea verde bajo la palabra marca el dual. La palabra concreta y la oración determinan la cantidad.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -222,9 +222,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/state_absolute.html",
 					"label_en_chirho": "i · absolute",
-					"help_en_chirho": "A centered lowercase Roman i marks a noun in the absolute state. Only nouns receive this superscript here; adjective state stays in details.",
+					"help_en_chirho": "The usual form of a noun when it stands on its own, as 'king'. In a chain such as 'the king of Israel', the final noun is commonly absolute. A centered i marks this state here.",
 					"label_es_chirho": "i · absoluto",
-					"help_es_chirho": "Una i romana minúscula centrada marca un sustantivo en estado absoluto. Aquí solo los sustantivos reciben este superíndice; el estado de los adjetivos queda en los detalles.",
+					"help_es_chirho": "La forma habitual de un sustantivo cuando se usa por sí mismo, como «rey». En una cadena como «el rey de Israel», el último sustantivo suele estar en absoluto. Aquí se marca con una i centrada.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -232,9 +232,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/state_construct.html",
 					"label_en_chirho": "ii · construct",
-					"help_en_chirho": "A centered lowercase Roman ii marks a noun in the construct state, used in a construction linking it with what follows. Definiteness and possession are not extra states.",
+					"help_en_chirho": "Links a noun to what follows, often translated with 'of', as 'the word of God' or 'the king of Israel'. A suffix can express the connected person, as 'his word'. A centered ii marks this state.",
 					"label_es_chirho": "ii · constructo",
-					"help_es_chirho": "Una ii romana minúscula centrada marca un sustantivo en estado constructo, usado en una construcción que lo une con lo que sigue. La determinación y la posesión no son estados adicionales.",
+					"help_es_chirho": "Une un sustantivo con lo que sigue, a menudo mediante «de» en español, como «la palabra de Dios» o «el rey de Israel». Un sufijo puede señalar la persona relacionada, como «su palabra». Se marca con ii.",
 					"spanish_available_chirho": true
 				}
 			]
@@ -248,9 +248,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_qal.html",
 					"label_en_chirho": "1 Qal",
-					"help_en_chirho": "The basic stem can express actions or states. It does not always correspond to an active English verb. 1 is our local code, physically above the left of a verb.",
+					"help_en_chirho": "The basic Hebrew verb stem, a pattern of root letters and vowels. It can express an action, as 'he wrote', or a state, as 'he was great'. The individual verb and its context give the meaning.",
 					"label_es_chirho": "1 Qal",
-					"help_es_chirho": "El tema básico puede expresar acciones o estados. No siempre corresponde a un verbo activo en la traducción. 1 es nuestro código local, colocado arriba a la izquierda del verbo.",
+					"help_es_chirho": "El tema verbal básico del hebreo, un patrón de consonantes de la raíz y vocales. Puede expresar una acción, como «escribió», o un estado, como «era grande». El verbo concreto y el contexto dan el significado.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -258,9 +258,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_niphal.html",
 					"label_en_chirho": "2 Niphal",
-					"help_en_chirho": "Often passive or middle, with lexical variation. Check the particular verb and context.",
+					"help_en_chirho": "Often describes the subject receiving an action or undergoing a change, as 'was guarded'. It can also describe the subject’s own involvement, as 'gathered together'. The particular verb determines its meaning.",
 					"label_es_chirho": "2 Niphal",
-					"help_es_chirho": "A menudo pasivo o medio, con variación léxica. Revise el verbo concreto y el contexto.",
+					"help_es_chirho": "A menudo describe al sujeto recibiendo una acción o experimentando un cambio, como «fue guardado». También puede expresar la participación del propio sujeto, como «se reunieron». El verbo concreto determina el sentido.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -268,9 +268,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_piel.html",
 					"label_en_chirho": "3 Piel",
-					"help_en_chirho": "A stem with varied lexical functions. It is not a universal intensive or stronger action.",
+					"help_en_chirho": "A verb stem often formed with a doubled middle root letter. Its meaning varies by verb, as 'speak' or 'teach', and can express a resulting state or intensified action. Check the individual verb in context.",
 					"label_es_chirho": "3 Piel",
-					"help_es_chirho": "Un tema con funciones léxicas variadas. No es un intensivo universal ni una acción más fuerte.",
+					"help_es_chirho": "Un tema verbal que a menudo duplica la consonante central de la raíz. Su significado varía según el verbo, como «hablar» o «enseñar», y puede expresar un resultado o una acción intensificada. Consulte el verbo en su contexto.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -278,9 +278,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_pual.html",
 					"label_en_chirho": "4 Pual",
-					"help_en_chirho": "Often the passive counterpart of Piel. The actual meaning depends on the verb.",
+					"help_en_chirho": "Often expresses the receiving side of a Piel action, as 'was taught'. The subject undergoes the action. Its precise meaning depends on the verb.",
 					"label_es_chirho": "4 Pual",
-					"help_es_chirho": "A menudo la contraparte pasiva del Piel. El significado real depende del verbo.",
+					"help_es_chirho": "Suele expresar la recepción de una acción Piel, como «fue enseñado». El sujeto experimenta la acción. El sentido preciso depende del verbo.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -288,9 +288,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_hiphil.html",
 					"label_en_chirho": "5 Hiphil",
-					"help_en_chirho": "Often causative, but context and lexical meaning still matter.",
+					"help_en_chirho": "Often expresses causing someone or something to act or enter a state, as 'brought in' from 'enter'. Some verbs have a more specialized meaning in this stem.",
 					"label_es_chirho": "5 Hiphil",
-					"help_es_chirho": "A menudo causativo, pero el contexto y el significado léxico siguen importando.",
+					"help_es_chirho": "Suele expresar que alguien hace actuar a otra persona o cosa, o la lleva a un estado, como «hizo entrar» a partir de «entrar». Algunos verbos tienen sentidos más específicos en este tema.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -298,9 +298,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_hophal.html",
 					"label_en_chirho": "6 Hophal",
-					"help_en_chirho": "Often passive causative, commonly related to Hiphil.",
+					"help_en_chirho": "Often expresses receiving a caused action, as 'was brought in'. It commonly corresponds to Hiphil, where someone causes that action.",
 					"label_es_chirho": "6 Hophal",
-					"help_es_chirho": "A menudo causativo pasivo, comúnmente relacionado con el Hiphil.",
+					"help_es_chirho": "Suele expresar la recepción de una acción causada, como «fue introducido». A menudo corresponde al Hiphil, donde alguien hace que ocurra esa acción.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -308,9 +308,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/stem_hithpael.html",
 					"label_en_chirho": "7 Hithpael",
-					"help_en_chirho": "Often reflexive or middle, and sometimes reciprocal. It has other lexical functions too.",
+					"help_en_chirho": "Often describes the subject acting on itself, as 'hid himself', or participants acting toward each other. Some verbs have other meanings, so the particular verb and sentence guide the translation.",
 					"label_es_chirho": "7 Hithpael",
-					"help_es_chirho": "A menudo reflexivo o medio, y a veces recíproco. También tiene otras funciones léxicas.",
+					"help_es_chirho": "Suele describir al sujeto actuando sobre sí mismo, como «se escondió», o a varias personas actuando unas con otras. Algunos verbos tienen otros sentidos, por lo que el verbo concreto y la oración orientan la traducción.",
 					"spanish_available_chirho": true
 				}
 			]
@@ -324,9 +324,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_perfect.html",
 					"label_en_chirho": "P qatal",
-					"help_en_chirho": "Traditionally called perfect. Qatal is not an automatic past-tense switch; context determines its use. P is a local teaching code above the right of a verb.",
+					"help_en_chirho": "Traditionally called perfect. Often presents an action as completed or a state as established, as 'he wrote' or 'he has written'. The sentence determines whether its time reference is past, present or future.",
 					"label_es_chirho": "P qatal",
-					"help_es_chirho": "Tradicionalmente llamado perfecto. El qatal no es un interruptor automático de tiempo pasado; el contexto determina su uso. P es un código didáctico local, colocado arriba a la derecha del verbo.",
+					"help_es_chirho": "Tradicionalmente llamado perfecto. Suele presentar una acción como completa o un estado como establecido, como «escribió» o «ha escrito». La oración determina si la referencia temporal es pasada, presente o futura.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -334,9 +334,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_imperfect.html",
 					"label_en_chirho": "I yiqtol",
-					"help_en_chirho": "Traditionally called imperfect. Yiqtol is not an automatic future-tense switch. I is distinct from imperative M. A waw alone does not establish wayyiqtol.",
+					"help_en_chirho": "Traditionally called imperfect. Often describes an unfolding, repeated, possible or future action, as 'he writes', 'he may write' or 'he will write'. The sentence determines its time and force.",
 					"label_es_chirho": "I yiqtol",
-					"help_es_chirho": "Tradicionalmente llamado imperfecto. El yiqtol no es un interruptor automático de tiempo futuro. La I es distinta de la M del imperativo. Una waw sola no establece un wayyiqtol.",
+					"help_es_chirho": "Tradicionalmente llamado imperfecto. Suele describir una acción en desarrollo, repetida, posible o futura, como «escribe», «puede escribir» o «escribirá». La oración determina su tiempo y sentido.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -344,9 +344,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_imperative.html",
 					"label_en_chirho": "M imperative",
-					"help_en_chirho": "A form commonly used in commands or requests. M must remain distinct from yiqtol I.",
+					"help_en_chirho": "Directly addresses someone with a command, instruction or request, as 'listen!' or 'give us bread'. Its form shows whether one or more people are addressed.",
 					"label_es_chirho": "M imperativo",
-					"help_es_chirho": "Una forma usada comúnmente en mandatos o peticiones. La M debe mantenerse distinta de la I del yiqtol.",
+					"help_es_chirho": "Se dirige a alguien con una orden, instrucción o petición, como «¡escucha!» o «danos pan». La forma indica si se habla a una persona o a varias.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -354,9 +354,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb.html",
 					"label_en_chirho": "A participle",
-					"help_en_chirho": "A participle retains its stem; 1A means a Qal participle. Verb conjugation is a broad teaching group here: finite conjugations, plus non-finite participles and infinitives. Their function in a sentence still depends on context.",
+					"help_en_chirho": "A verb form that can describe an action or the person doing it, as 'guarding' or 'the one guarding'. It may function like a verb, adjective or noun. Its stem and context guide its meaning.",
 					"label_es_chirho": "A participio",
-					"help_es_chirho": "Un participio conserva su tema; 1A significa un participio Qal. Aquí la conjugación verbal es un grupo didáctico amplio: las conjugaciones finitas, más los participios e infinitivos no finitos. Su función en la oración sigue dependiendo del contexto.",
+					"help_es_chirho": "Una forma verbal que puede describir una acción o a quien la realiza, como «guardando» o «el que guarda». Puede funcionar como verbo, adjetivo o sustantivo. El tema y el contexto orientan su sentido.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -364,9 +364,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/infinitive_construct.html",
 					"label_en_chirho": "C infinitive construct",
-					"help_en_chirho": "A non-finite verb form with several syntactic uses. It is a verb form, not the noun-state numeral ii.",
+					"help_en_chirho": "A verb form that can name an action or relate it to another action, as 'to guard', 'in order to guard' or 'when guarding'. It often follows a preposition and may carry a suffix.",
 					"label_es_chirho": "C infinitivo constructo",
-					"help_es_chirho": "Una forma verbal no finita con varios usos sintácticos. Es una forma verbal, no el numeral ii del estado del sustantivo.",
+					"help_es_chirho": "Una forma verbal que puede nombrar una acción o relacionarla con otra, como «guardar», «para guardar» o «al guardar». Suele seguir a una preposición y puede llevar un sufijo.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -374,9 +374,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/infinitive_absolute.html",
 					"label_en_chirho": "B infinitive absolute",
-					"help_en_chirho": "A non-finite verb form that may emphasize or otherwise qualify an action. It is distinct from noun absolute state i.",
+					"help_en_chirho": "A verb form that can emphasize another verb, as 'you shall surely die', or describe how an action is done. Its function comes from the surrounding sentence.",
 					"label_es_chirho": "B infinitivo absoluto",
-					"help_es_chirho": "Una forma verbal no finita que puede enfatizar o matizar de otro modo una acción. Es distinta del estado absoluto i del sustantivo.",
+					"help_es_chirho": "Una forma verbal que puede enfatizar otro verbo, como «ciertamente morirás», o describir cómo se realiza una acción. La oración determina su función.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -384,9 +384,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_sequential_perfect.html",
 					"label_en_chirho": "W weqatal",
-					"help_en_chirho": "The sequential perfect conjugation connects with an earlier verb in a sequence of time or thought. Its use depends on context, not a fixed English tense. It can look like ordinary waw + qatal, so the reader preserves the sourced classification rather than guessing from waw.",
+					"help_en_chirho": "Waw plus qatal used to continue a sequence of events or thought. It often follows through on instructions or a future situation, as 'then you shall do...'. The sentence determines its time reference.",
 					"label_es_chirho": "W weqatal",
-					"help_es_chirho": "La conjugación de perfecto secuencial se conecta con un verbo anterior en una secuencia de tiempo o de pensamiento. Su uso depende del contexto, no de un tiempo verbal fijo de la traducción. Puede parecerse a una waw + qatal ordinaria, así que el lector conserva la clasificación de la fuente en lugar de adivinarla a partir de la waw.",
+					"help_es_chirho": "Waw más qatal usado para continuar una secuencia de sucesos o de pensamiento. Suele desarrollar instrucciones o una situación futura, como «entonces harás...». La oración determina su referencia temporal.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -394,9 +394,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_sequential_imperfect.html",
 					"label_en_chirho": "Y wayyiqtol",
-					"help_en_chirho": "The sequential imperfect conjugation often carries a narrative sequence forward. It has a specialized waw pattern and is distinct from ordinary waw + yiqtol. This full name requires sourced morphology; the presence of waw alone does not establish it.",
+					"help_en_chirho": "A verb form that commonly carries a story forward, as 'and he said' or 'then he went'. Its special waw pattern helps mark the next event in the narrative.",
 					"label_es_chirho": "Y wayyiqtol",
-					"help_es_chirho": "La conjugación de imperfecto secuencial suele hacer avanzar una secuencia narrativa. Tiene un patrón especial de waw y es distinta de una waw + yiqtol ordinaria. Este nombre completo requiere morfología de la fuente; la sola presencia de la waw no lo establece.",
+					"help_es_chirho": "Una forma verbal que suele hacer avanzar un relato, como «y dijo» o «entonces fue». Su patrón especial de waw ayuda a marcar el siguiente suceso narrado.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -404,9 +404,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_imperfect.html",
 					"label_en_chirho": "E weyiqtol",
-					"help_en_chirho": "Ordinary conjunction waw + yiqtol, with yiqtol retained as the underlying form. It is distinct from sequential wayyiqtol and does not by itself assign an English tense. This full label appears only when the construction is explicitly sourced.",
+					"help_en_chirho": "An ordinary 'and' joined to yiqtol, as 'and he will do' or 'and he may do'. Yiqtol keeps its own force, which the surrounding sentence determines.",
 					"label_es_chirho": "E weyiqtol",
-					"help_es_chirho": "Waw conjuntiva ordinaria + yiqtol, con el yiqtol conservado como forma subyacente. Es distinta del wayyiqtol secuencial y por sí sola no asigna un tiempo verbal de la traducción. Esta etiqueta completa solo aparece cuando la fuente documenta explícitamente la construcción.",
+					"help_es_chirho": "Una «y» ordinaria unida a yiqtol, como «y hará» o «y puede hacer». El yiqtol conserva su propio sentido, determinado por la oración.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -414,9 +414,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_jussive.html",
 					"label_en_chirho": "J jussive",
-					"help_en_chirho": "A volitional form expressing wishes, indirect commands and related meanings according to context. It is commonly third person, but second-person forms can express negative commands. It may resemble yiqtol; sourced jussive classification remains distinct from both yiqtol I and imperative M.",
+					"help_en_chirho": "Expresses a wish, permission or indirect command, as 'let him go' or 'may it be'. It is often third person. With a negative it can also tell someone to refrain from an action.",
 					"label_es_chirho": "J yusivo",
-					"help_es_chirho": "Una forma volitiva que expresa deseos, mandatos indirectos y significados afines según el contexto. Suele ser de tercera persona, pero las formas de segunda persona pueden expresar mandatos negativos. Puede parecerse al yiqtol; la clasificación de yusivo de la fuente se mantiene distinta tanto de la I del yiqtol como de la M del imperativo.",
+					"help_es_chirho": "Expresa un deseo, permiso o mandato indirecto, como «que vaya» o «que sea». Suele ser de tercera persona. Con una negación también puede pedir a alguien que se abstenga de una acción.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -424,9 +424,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_cohortative.html",
 					"label_en_chirho": "O cohortative",
-					"help_en_chirho": "A first-person volitional form expressing requests, intentions, wishes or related meanings according to context. It resembles yiqtol but retains its own sourced classification and a distinct local teaching code O.",
+					"help_en_chirho": "A first-person form expressing the speaker’s intention, request or resolve, as 'let me go' or 'let us go'. The ending and sentence help show its force.",
 					"label_es_chirho": "O cohortativo",
-					"help_es_chirho": "Una forma volitiva de primera persona que expresa peticiones, intenciones, deseos o significados afines según el contexto. Se parece al yiqtol, pero conserva su propia clasificación de la fuente y el código didáctico local O.",
+					"help_es_chirho": "Una forma de primera persona que expresa intención, petición o decisión de quien habla, como «déjeme ir» o «vayamos». La terminación y la oración ayudan a determinar su sentido.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -434,9 +434,9 @@
 					"style_chirho": "",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb_sequential_perfect.html",
 					"label_en_chirho": "Q waw + qatal",
-					"help_en_chirho": "Qatal joined by an ordinary copulative waw. It is distinct from sequential weqatal even when the written forms look alike. Context and the recorded source classification determine the distinction; a prefixed waw is not enough.",
+					"help_en_chirho": "An ordinary 'and' joined to qatal, as 'and he wrote'. The conjunction links the clause to what comes before. The surrounding sentence determines its time reference.",
 					"label_es_chirho": "Q waw + qatal",
-					"help_es_chirho": "Un qatal unido por una waw copulativa ordinaria. Es distinto del weqatal secuencial aun cuando las formas escritas se parecen. El contexto y la clasificación registrada en la fuente determinan la distinción; una waw prefijada no basta.",
+					"help_es_chirho": "Una «y» ordinaria unida a qatal, como «y escribió». La conjunción enlaza la oración con lo anterior. El contexto determina su referencia temporal.",
 					"spanish_available_chirho": true
 				}
 			]
@@ -450,9 +450,9 @@
 					"style_chirho": "pos-noun-chirho",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/noun.html",
 					"label_en_chirho": "Noun",
-					"help_en_chirho": "A teal rounded icon outline marks the word as a noun. The outline encodes word class, not gender.",
+					"help_en_chirho": "Names a person, place, thing or idea, as 'king', 'Jerusalem' or 'wisdom'. A teal outline around the picture marks this word class.",
 					"label_es_chirho": "Sustantivo",
-					"help_es_chirho": "Un contorno redondeado verde azulado en el icono marca la palabra como sustantivo. El contorno codifica la clase de palabra, no el género.",
+					"help_es_chirho": "Nombra una persona, lugar, cosa o idea, como «rey», «Jerusalén» o «sabiduría». Un contorno verde azulado alrededor de la imagen marca esta clase de palabra.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -460,9 +460,9 @@
 					"style_chirho": "pos-verb-chirho",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/verb.html",
 					"label_en_chirho": "Verb",
-					"help_en_chirho": "A purple rounded outline marks a verb, including participles in this teaching scheme.",
+					"help_en_chirho": "Expresses an action or state, as 'wrote' or 'was great'. A purple picture outline marks verbs, including participles in this reading key.",
 					"label_es_chirho": "Verbo",
-					"help_es_chirho": "Un contorno redondeado morado marca un verbo, incluidos los participios en este esquema didáctico.",
+					"help_es_chirho": "Expresa una acción o un estado, como «escribió» o «era grande». Un contorno morado marca los verbos, incluidos los participios en esta clave de lectura.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -470,9 +470,9 @@
 					"style_chirho": "pos-adjective-chirho",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/adjective.html",
 					"label_en_chirho": "Adjective",
-					"help_en_chirho": "An orange rounded outline marks an adjective. A dictionary noun heading does not override verse-specific morphology.",
+					"help_en_chirho": "Describes a noun, as 'good' in 'a good word'. Its form commonly agrees with the noun in gender and number. An orange picture outline marks this word class.",
 					"label_es_chirho": "Adjetivo",
-					"help_es_chirho": "Un contorno redondeado naranja marca un adjetivo. Un encabezado nominal del diccionario no prevalece sobre la morfología propia del versículo.",
+					"help_es_chirho": "Describe un sustantivo, como «buena» en «una palabra buena». Su forma suele concordar con el sustantivo en género y número. Un contorno naranja marca esta clase de palabra.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -480,9 +480,9 @@
 					"style_chirho": "pos-particle-chirho",
 					"source_chirho": "https://uhg.readthedocs.io/en/stable/particle.html",
 					"label_en_chirho": "Particle",
-					"help_en_chirho": "A gray rounded outline marks a particle. Raw verse-specific morphology remains visible in details.",
+					"help_en_chirho": "A small word that connects or qualifies other words, as 'and', 'in' or 'because'. The gray picture outline groups these words, while the details give their particular kind.",
 					"label_es_chirho": "Partícula",
-					"help_es_chirho": "Un contorno redondeado gris marca una partícula. La morfología original propia del versículo sigue visible en los detalles.",
+					"help_es_chirho": "Una palabra breve que enlaza o matiza otras palabras, como «y», «en» o «porque». El contorno gris agrupa estas palabras; los detalles indican su clase concreta.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -600,9 +600,9 @@
 					"style_chirho": "gender-masculine-chirho",
 					"source_chirho": null,
 					"label_en_chirho": "Masculine",
-					"help_en_chirho": "Blue marks masculine grammatical gender as parsed in the source.",
+					"help_en_chirho": "A grammatical class shown in blue. Articles and adjectives use matching forms when they belong with a masculine noun. The noun’s gender guides this agreement.",
 					"label_es_chirho": "Masculino",
-					"help_es_chirho": "El azul marca el género gramatical masculino según el análisis de la fuente.",
+					"help_es_chirho": "Una clase gramatical marcada en azul. Los artículos y adjetivos toman formas concordantes cuando acompañan a un sustantivo masculino. El género del sustantivo orienta esa concordancia.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -610,9 +610,9 @@
 					"style_chirho": "gender-feminine-chirho",
 					"source_chirho": null,
 					"label_en_chirho": "Feminine",
-					"help_en_chirho": "Pink marks feminine grammatical gender as parsed in the source.",
+					"help_en_chirho": "A grammatical class shown in pink. Articles and adjectives use matching forms when they belong with a feminine noun. The noun’s gender guides this agreement.",
 					"label_es_chirho": "Femenino",
-					"help_es_chirho": "El rosa marca el género gramatical femenino según el análisis de la fuente.",
+					"help_es_chirho": "Una clase gramatical marcada en rosa. Los artículos y adjetivos toman formas concordantes cuando acompañan a un sustantivo femenino. El género del sustantivo orienta esa concordancia.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -620,9 +620,9 @@
 					"style_chirho": "greek-neuter-key-chirho",
 					"source_chirho": null,
 					"label_en_chirho": "Neuter",
-					"help_en_chirho": "Gray marks neuter grammatical gender as parsed in the source.",
+					"help_en_chirho": "A grammatical class shown in gray. Articles and adjectives use matching forms when they belong with a neuter noun. The noun’s gender guides this agreement.",
 					"label_es_chirho": "Neutro",
-					"help_es_chirho": "El gris marca el género gramatical neutro según el análisis de la fuente.",
+					"help_es_chirho": "Una clase gramatical marcada en gris. Los artículos y adjetivos toman formas concordantes cuando acompañan a un sustantivo neutro. El género del sustantivo orienta esa concordancia.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -646,9 +646,9 @@
 					"style_chirho": "number-plural-chirho",
 					"source_chirho": null,
 					"label_en_chirho": "Plural · yellow underline",
-					"help_en_chirho": "The yellow underline marks a source parse of plural number.",
+					"help_en_chirho": "More than one, as in “people”, “they” or “we”. A yellow underline marks plural nouns, related words and verb forms.",
 					"label_es_chirho": "Plural · subrayado amarillo",
-					"help_es_chirho": "El subrayado amarillo marca un análisis de la fuente con número plural.",
+					"help_es_chirho": "Más de uno, como en «personas», «ellos» o «nosotros». El subrayado amarillo marca sustantivos, palabras relacionadas y formas verbales en plural.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -672,9 +672,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "i nominative",
-					"help_en_chirho": "Nominative case, as parsed in the source.",
+					"help_en_chirho": "Usually marks the subject, the person or thing doing something or being described. It also appears with linking verbs, as in 'the Word was God', where both nouns are nominative.",
 					"label_es_chirho": "i nominativo",
-					"help_es_chirho": "Caso nominativo, según el análisis de la fuente.",
+					"help_es_chirho": "Suele marcar el sujeto, la persona o cosa que actúa o de la que se dice algo. También aparece con verbos de enlace, como en «el Verbo era Dios», donde ambos sustantivos están en nominativo.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -682,9 +682,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "ii genitive",
-					"help_en_chirho": "Genitive case, as parsed in the source.",
+					"help_en_chirho": "Often links a noun to another word, as 'of God' or 'John’s book'. It can express possession, a part of something, source or other relationships. The surrounding words determine the connection.",
 					"label_es_chirho": "ii genitivo",
-					"help_es_chirho": "Caso genitivo, según el análisis de la fuente.",
+					"help_es_chirho": "Suele relacionar un sustantivo con otra palabra, como «de Dios» o «el libro de Juan». Puede expresar posesión, una parte de algo, origen u otras relaciones. El contexto determina la conexión.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -692,9 +692,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "iii dative",
-					"help_en_chirho": "Dative case, as parsed in the source.",
+					"help_en_chirho": "Often marks the recipient or person affected, as 'to him' or 'for her'. It can also express means, place or time, as 'in the beginning'. The verb or preposition helps show its role.",
 					"label_es_chirho": "iii dativo",
-					"help_es_chirho": "Caso dativo, según el análisis de la fuente.",
+					"help_es_chirho": "Suele indicar quién recibe algo o a quién afecta la acción, como «a él» o «para ella». También expresa medio, lugar o tiempo, como «en el principio». El verbo o la preposición orientan su función.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -702,9 +702,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "iv accusative",
-					"help_en_chirho": "Accusative case, as parsed in the source.",
+					"help_en_chirho": "Usually marks the direct object, the person or thing an action reaches, as 'him' in 'she saw him'. With prepositions it can also express direction or other relationships.",
 					"label_es_chirho": "iv acusativo",
-					"help_es_chirho": "Caso acusativo, según el análisis de la fuente.",
+					"help_es_chirho": "Suele marcar el complemento directo, la persona o cosa a la que llega la acción, como «lo» en «ella lo vio». Con preposiciones también expresa dirección u otras relaciones.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -712,9 +712,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "v vocative",
-					"help_en_chirho": "Vocative case, as parsed in the source.",
+					"help_en_chirho": "Used to address someone directly, as 'Lord!' or 'Teacher!' It identifies the person being spoken to.",
 					"label_es_chirho": "v vocativo",
-					"help_es_chirho": "Caso vocativo, según el análisis de la fuente.",
+					"help_es_chirho": "Se usa para dirigirse directamente a alguien, como «¡Señor!» o «¡Maestro!». Identifica a la persona a quien se habla.",
 					"spanish_available_chirho": true
 				}
 			]
@@ -728,9 +728,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "P present",
-					"help_en_chirho": "The source parses a present tense form.",
+					"help_en_chirho": "Presents an action as unfolding or repeated, as 'is teaching' or 'teaches'. In the indicative it often refers to present time.",
 					"label_es_chirho": "P presente",
-					"help_es_chirho": "La fuente analiza una forma de tiempo presente.",
+					"help_es_chirho": "Presenta una acción en desarrollo o repetida, como «está enseñando» o «enseña». En indicativo suele referirse al presente.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -738,9 +738,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "I imperfect",
-					"help_en_chirho": "The source parses an imperfect tense form.",
+					"help_en_chirho": "Presents an action as unfolding or repeated in the past, as 'was teaching' or 'used to teach'. It often supplies the background of a story.",
 					"label_es_chirho": "I imperfecto",
-					"help_es_chirho": "La fuente analiza una forma de tiempo imperfecto.",
+					"help_es_chirho": "Presenta una acción en desarrollo o repetida en el pasado, como «estaba enseñando» o «solía enseñar». A menudo da el trasfondo de un relato.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -748,9 +748,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "F future",
-					"help_en_chirho": "The source parses a future tense form.",
+					"help_en_chirho": "Usually refers to what will happen, as 'will teach'. The surrounding sentence can also give it the force of a promise or command.",
 					"label_es_chirho": "F futuro",
-					"help_es_chirho": "La fuente analiza una forma de tiempo futuro.",
+					"help_es_chirho": "Suele referirse a lo que sucederá, como «enseñará». La oración también puede darle el sentido de una promesa o una orden.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -758,9 +758,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "2F second future",
-					"help_en_chirho": "The source distinguishes a second future form.",
+					"help_en_chirho": "An alternative formation of the future tense, often with a different stem or ending. Like other future forms, it usually refers to what will happen.",
 					"label_es_chirho": "2F segundo futuro",
-					"help_es_chirho": "La fuente distingue una forma de segundo futuro.",
+					"help_es_chirho": "Una formación alternativa del futuro, a menudo con otra raíz o terminación. Como las demás formas de futuro, suele referirse a lo que sucederá.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -768,9 +768,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "A aorist",
-					"help_en_chirho": "The source parses an aorist tense form.",
+					"help_en_chirho": "Presents an event as a whole, as 'taught'. In the indicative it usually refers to the past. Other verb forms take their time reference from the surrounding sentence.",
 					"label_es_chirho": "A aoristo",
-					"help_es_chirho": "La fuente analiza una forma de tiempo aoristo.",
+					"help_es_chirho": "Presenta un acontecimiento en su conjunto, como «enseñó». En indicativo suele referirse al pasado. En otras formas verbales, la oración determina la referencia temporal.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -778,9 +778,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "2A second aorist",
-					"help_en_chirho": "The source distinguishes a second aorist form.",
+					"help_en_chirho": "An alternative formation of the aorist, using a different stem. It presents an event as a whole, with the same basic force as other aorist forms.",
 					"label_es_chirho": "2A segundo aoristo",
-					"help_es_chirho": "La fuente distingue una forma de segundo aoristo.",
+					"help_es_chirho": "Una formación alternativa del aoristo, con otra raíz. Presenta un acontecimiento en su conjunto, con el mismo sentido básico que las demás formas de aoristo.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -788,9 +788,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "R perfect",
-					"help_en_chirho": "The source parses a perfect tense form.",
+					"help_en_chirho": "Focuses on a state resulting from an earlier action, as 'has written' or 'stands written'. In the indicative the resulting state usually holds in the present.",
 					"label_es_chirho": "R perfecto",
-					"help_es_chirho": "La fuente analiza una forma de tiempo perfecto.",
+					"help_es_chirho": "Destaca un estado que resulta de una acción anterior, como «ha escrito» o «está escrito». En indicativo, el estado resultante suele mantenerse en el presente.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -798,9 +798,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "2R second perfect",
-					"help_en_chirho": "The source distinguishes a second perfect form.",
+					"help_en_chirho": "An alternative formation of the perfect tense. Like other perfect forms, it focuses on a state resulting from an earlier action.",
 					"label_es_chirho": "2R segundo perfecto",
-					"help_es_chirho": "La fuente distingue una forma de segundo perfecto.",
+					"help_es_chirho": "Una formación alternativa del perfecto. Como las demás formas de perfecto, destaca un estado que resulta de una acción anterior.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -808,9 +808,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "L pluperfect",
-					"help_en_chirho": "The source parses a pluperfect tense form.",
+					"help_en_chirho": "Describes a state resulting from an earlier action, viewed from a point in the past, as 'had written'.",
 					"label_es_chirho": "L pluscuamperfecto",
-					"help_es_chirho": "La fuente analiza una forma de tiempo pluscuamperfecto.",
+					"help_es_chirho": "Describe un estado resultante de una acción anterior, visto desde un momento del pasado, como «había escrito».",
 					"spanish_available_chirho": true
 				},
 				{
@@ -818,9 +818,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "2L second pluperfect",
-					"help_en_chirho": "The source distinguishes a second pluperfect form.",
+					"help_en_chirho": "An alternative formation of the pluperfect tense. Like other pluperfect forms, it views a resulting state from a point in the past.",
 					"label_es_chirho": "2L segundo pluscuamperfecto",
-					"help_es_chirho": "La fuente distingue una forma de segundo pluscuamperfecto.",
+					"help_es_chirho": "Una formación alternativa del pluscuamperfecto. Como las demás formas de este tiempo, contempla un estado resultante desde un momento del pasado.",
 					"spanish_available_chirho": true
 				}
 			]
@@ -834,9 +834,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "a active",
-					"help_en_chirho": "Active voice in the source parse.",
+					"help_en_chirho": "The subject performs the action or is in the state the verb describes, as 'she teaches' or 'he stands'.",
 					"label_es_chirho": "a activa",
-					"help_es_chirho": "Voz activa en el análisis de la fuente.",
+					"help_es_chirho": "El sujeto realiza la acción o se encuentra en el estado que expresa el verbo, como «ella enseña» o «él está de pie».",
 					"spanish_available_chirho": true
 				},
 				{
@@ -844,9 +844,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "m middle",
-					"help_en_chirho": "Middle voice in the source parse.",
+					"help_en_chirho": "The subject is involved in or affected by its own action, as 'he washes himself' or 'she prepares something for herself'. The verb’s meaning guides the translation.",
 					"label_es_chirho": "m media",
-					"help_es_chirho": "Voz media en el análisis de la fuente.",
+					"help_es_chirho": "El sujeto participa en su propia acción o resulta afectado por ella, como «él se lava» o «ella prepara algo para sí». El significado del verbo orienta la traducción.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -854,9 +854,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "p passive",
-					"help_en_chirho": "Passive voice in the source parse.",
+					"help_en_chirho": "The subject receives or undergoes the action, as 'he is taught'. The sentence may also name who performs the action.",
 					"label_es_chirho": "p pasiva",
-					"help_es_chirho": "Voz pasiva en el análisis de la fuente.",
+					"help_es_chirho": "El sujeto recibe o experimenta la acción, como «él es enseñado». La oración también puede indicar quién realiza la acción.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -864,9 +864,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "e middle or passive",
-					"help_en_chirho": "The source leaves middle or passive voice unresolved.",
+					"help_en_chirho": "These endings can express either middle involvement, as 'washes himself', or passive reception, as 'is washed'. The verb and its context determine the meaning.",
 					"label_es_chirho": "e media o pasiva",
-					"help_es_chirho": "La fuente deja sin resolver la voz media o pasiva.",
+					"help_es_chirho": "Estas terminaciones pueden expresar participación media, como «se lava», o recepción pasiva, como «es lavado». El verbo y el contexto determinan el sentido.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -874,9 +874,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "d middle deponent",
-					"help_en_chirho": "The source labels this middle deponent; the cue preserves that classification.",
+					"help_en_chirho": "A middle form of a verb traditionally called deponent. Such verbs often translate with an English active verb, as 'I come'. The verb’s own meaning guides the translation.",
 					"label_es_chirho": "d media deponente",
-					"help_es_chirho": "La fuente la clasifica como media deponente; la indicación conserva esa clasificación.",
+					"help_es_chirho": "Una forma media de un verbo llamado tradicionalmente deponente. Estos verbos suelen traducirse con voz activa en español, como «vengo». Su significado propio orienta la traducción.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -884,9 +884,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "o passive deponent",
-					"help_en_chirho": "The source labels this passive deponent; the cue preserves that classification.",
+					"help_en_chirho": "A passive form of a verb traditionally called deponent. Such forms often describe the subject’s action or experience, as 'I went'. The verb’s own meaning guides the translation.",
 					"label_es_chirho": "o pasiva deponente",
-					"help_es_chirho": "La fuente la clasifica como pasiva deponente; la indicación conserva esa clasificación.",
+					"help_es_chirho": "Una forma pasiva de un verbo llamado tradicionalmente deponente. Estas formas suelen describir una acción o experiencia del sujeto, como «fui». Su significado propio orienta la traducción.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -894,9 +894,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "n middle or passive deponent",
-					"help_en_chirho": "The source labels this middle or passive deponent without choosing between them.",
+					"help_en_chirho": "A form with shared middle/passive endings, traditionally called deponent. It often translates with an English active verb. The verb and its context determine the meaning.",
 					"label_es_chirho": "n media o pasiva deponente",
-					"help_es_chirho": "La fuente la clasifica como media o pasiva deponente sin elegir entre ambas.",
+					"help_es_chirho": "Una forma con terminaciones compartidas de media y pasiva, llamada tradicionalmente deponente. Suele traducirse con voz activa en español. El verbo y el contexto determinan el sentido.",
 					"spanish_available_chirho": true
 				}
 			]
@@ -910,9 +910,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "1 first",
-					"help_en_chirho": "First person in the source parse. Number is shown separately by the word underline.",
+					"help_en_chirho": "The speaker is involved, as 'I' for singular or 'we' for plural. A yellow underline marks plural.",
 					"label_es_chirho": "1 primera",
-					"help_es_chirho": "Primera persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.",
+					"help_es_chirho": "Incluye a quien habla, como «yo» en singular o «nosotros» en plural. El subrayado amarillo marca el plural.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -920,9 +920,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "2 second",
-					"help_en_chirho": "Second person in the source parse. Number is shown separately by the word underline.",
+					"help_en_chirho": "The person being addressed, as 'you' for one person or 'you all' for more than one. A yellow underline marks plural.",
 					"label_es_chirho": "2 segunda",
-					"help_es_chirho": "Segunda persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.",
+					"help_es_chirho": "La persona a quien se habla, como «tú» o «vosotros». El subrayado amarillo marca el plural. La traducción también puede usar «usted» o «ustedes» según el trato.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -930,9 +930,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "3 third",
-					"help_en_chirho": "Third person in the source parse. Number is shown separately by the word underline.",
+					"help_en_chirho": "Someone or something being spoken about, as 'he', 'she', 'it' or 'they'. A yellow underline marks plural.",
 					"label_es_chirho": "3 tercera",
-					"help_es_chirho": "Tercera persona en el análisis de la fuente. El número se muestra aparte con el subrayado de la palabra.",
+					"help_es_chirho": "La persona o cosa de la que se habla, como «él», «ella», «ello», «ellos» o «ellas». El subrayado amarillo marca el plural.",
 					"spanish_available_chirho": true
 				}
 			]
@@ -946,9 +946,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "I indicative",
-					"help_en_chirho": "An indicative form, as parsed in the source.",
+					"help_en_chirho": "Presents an action or state as a statement, or asks about it, as 'he teaches' or 'does he teach?'",
 					"label_es_chirho": "I indicativo",
-					"help_es_chirho": "Una forma indicativa, según el análisis de la fuente.",
+					"help_es_chirho": "Presenta una acción o un estado como una afirmación, o pregunta por ellos, como «él enseña» o «¿enseña él?».",
 					"spanish_available_chirho": true
 				},
 				{
@@ -956,9 +956,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "S subjunctive",
-					"help_en_chirho": "A subjunctive form, as parsed in the source.",
+					"help_en_chirho": "Used for possibilities, purposes, conditions and appeals, as 'may teach', 'so that he may teach' or 'let us go'. The surrounding clause determines its force.",
 					"label_es_chirho": "S subjuntivo",
-					"help_es_chirho": "Una forma subjuntiva, según el análisis de la fuente.",
+					"help_es_chirho": "Se usa para posibilidades, propósitos, condiciones y exhortaciones, como «enseñe», «para que enseñe» o «vayamos». La oración determina su sentido.",
 					"spanish_available_chirho": true
 				},
 				{
@@ -966,9 +966,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "M imperative",
-					"help_en_chirho": "An imperative form, as parsed in the source.",
+					"help_en_chirho": "Expresses a command, request or instruction, as 'listen!' or 'give us bread'.",
 					"label_es_chirho": "M imperativo",
-					"help_es_chirho": "Una forma imperativa, según el análisis de la fuente.",
+					"help_es_chirho": "Expresa una orden, petición o instrucción, como «¡escucha!» o «danos pan».",
 					"spanish_available_chirho": true
 				},
 				{
@@ -976,9 +976,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "N infinitive",
-					"help_en_chirho": "An infinitive form; it has no finite person cue.",
+					"help_en_chirho": "A verb form often translated with 'to', as 'to teach'. It can name an activity or complete another verb, as 'wants to teach'.",
 					"label_es_chirho": "N infinitivo",
-					"help_es_chirho": "Una forma de infinitivo; no tiene indicación de persona finita.",
+					"help_es_chirho": "Una forma verbal que puede nombrar una actividad o completar otro verbo, como «enseñar» o «quiere enseñar».",
 					"spanish_available_chirho": true
 				},
 				{
@@ -986,9 +986,9 @@
 					"style_chirho": "",
 					"source_chirho": null,
 					"label_en_chirho": "P participle",
-					"help_en_chirho": "A participle. Its sourced case appears in the center; it has no finite person cue.",
+					"help_en_chirho": "A verb form that can describe a person or thing, as 'the one teaching', or give circumstances, as 'while teaching'. Its case, number and gender connect it to the word it describes.",
 					"label_es_chirho": "P participio",
-					"help_es_chirho": "Un participio. Su caso documentado aparece en el centro; no tiene indicación de persona finita.",
+					"help_es_chirho": "Una forma verbal que puede describir a una persona o cosa, como «el que enseña», o expresar circunstancias, como «mientras enseña». Su caso, número y género lo relacionan con la palabra que describe.",
 					"spanish_available_chirho": true
 				}
 			]
